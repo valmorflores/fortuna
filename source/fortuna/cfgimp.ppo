@@ -1,0 +1,117 @@
+#line 1 "INKEY.CH"
+#line 2 "/mnt/projetos/dev/source/fortuna/cfgimp.prg"
+#line 1 "VPF.CH"
+#line 3 "/mnt/projetos/dev/source/fortuna/cfgimp.prg"
+
+
+
+
+
+
+
+
+
+
+
+Function Impressora(nCodigo )
+
+Local cCor:= SetColor(),nCursor:= SetCursor(),cTela:= ScreenSave(0,0,24,79 )
+Local nArea:= Select()
+Local nTecla,oTab
+
+   dbSelectArea("222" )
+   dbUseArea(.F.,,Gdir\CFGIMP.DBF,,if(.F. .or. .F.,!.F.,NIL),.F. ) 
+   dbCreateIndex("Impres","NOME",{||NOME},if(.F.,.t.,NIL ) )
+   __dbLocate({||SELECT=="*"},,,,.F.)
+
+   VPBox(06,20,16,72," IMPRESSORAS ","15/01" )
+   SetColor("15/01,15/09" )
+   oTab:=tbrowsedb(07,21,15,71)
+   oTab:addcolumn(tbcolumnnew("Impressora",{|| NOME + SPACE(35 ) }))
+   oTab:addcolumn(tbcolumnnew("M",{|| SELECT}))
+   oTab:AUTOLITE:=.f.
+   oTab:dehilite()
+   mensagem("[ENTER]Seleciona")
+   ajuda("[PGUP][PGDN]["+chr(24)+chr(27)+chr(25)+chr(26)+"]Movimenta‡†o [ESC]Retorna")
+   setcursor(0)
+   while .t.
+      oTab:colorrect({oTab:ROWPOS,1,oTab:ROWPOS,oTab:COLCOUNT},{2,1})
+      while nextkey()==0 .and. ! oTab:stabilize()
+      enddo
+      nTecla:=inkey(0)
+      do case
+         case nTecla==5 ;oTab:up()
+         case nTecla==24 ;oTab:down()
+         case nTecla==19 ;oTab:up()
+         case nTecla==4 ;oTab:down()
+         case nTecla==18 ;oTab:pageup()
+         case nTecla==31 ;oTab:gotop()
+         case nTecla==3 ;oTab:pagedown()
+         case nTecla==30 ;oTab:gobottom()
+         case nTecla==32
+              nRecno:= RECNO()
+              DBGoTop()
+              __dbLocate({||SELECT=="*"},,,,.F.)
+              Rlock()
+              _FIELD->SELECT := " " 
+              DBGoTo(nRecno )
+              RLock()
+              _FIELD->SELECT := "*" 
+              DBUnlockAll()
+         case nTecla==13
+              DO CASE
+                 CASE nCodigo == 1
+                      cString:= Comp0
+                 CASE nCodigo == 2
+                      cString:= Comp1
+                 CASE nCodigo == 3
+                      cString:= Comp2
+                 CASE nCodigo == 4
+                      cString:= Comp3
+                 CASE nCodigo == 5
+                      cString:= Comp4
+                 CASE nCodigo == 6
+                      cString:= Comp5
+                 CASE nCodigo == 7
+                      cString:= Expl
+                 CASE nCodigo == 8
+                      cString:= Expd
+                 CASE nCodigo == 9
+                      cString:= Neg
+                 CASE nCodigo == 10
+                      cString:= Norm
+                 CASE nCodigo == 11
+                      cString:= Cartl
+                 CASE nCodigo == 12
+                      cString:= CartD
+                 CASE nCodigo == 13
+                      cString:= LPP6
+                 CASE nCodigo == 14
+                      cString:= LPP8
+                 CASE nCodigo == 15
+                      cString:= COMPRIMENT
+                 CASE nCodigo == 16
+                      cString:= PORTRAIT
+                 CASE nCodigo == 17
+                      cString:= PCOMPR
+                 CASE nCodigo == 18
+                      cString:= LANDSCAPE
+                 CASE nCodigo == 19
+                      cString:= LCOMPR
+                 CASE nCodigo == 20
+                      cString:= PORTA
+              ENDCASE
+              Exit
+         otherwise
+         tone(125); tone(300)
+      endcase
+      oTab:refreshcurrent()
+      oTab:stabilize()
+   enddo
+   dbCloseArea()
+   SetColor(cCor )
+   SetCursor(nCursor )
+   ScreenRest(cTela )
+   DBSelectAr(nArea )
+   cString:= EVAL(&("{|| "+cString+" }" ) )
+   Return cString

@@ -1,0 +1,69 @@
+
+V        P31       113.721  22/07/99   9:14 V.P31      NAO APARECE O CUPOM INTERNO
+IMP      P06        46.508  22/07/99   9:07 IMP.P06
+
+V        P32       113.172  21/07/99  18:33 V.P32      APARECE O CUPOM INTERNO
+IMP      P07        46.475  21/07/99  17:55 IMP.P07
+
+   Function fDepur (cArq, cTex)
+
+      IF (FILE (cArq) == .T.)
+         cTmp := MEMOREAD (cArq)
+      ELSE
+         cTmp := ""
+      ENDIF
+      MEMOWRIT (cArq, cTmp + cTex + CHR (13) + CHR (10))
+
+   Return (.T.)
+
+   fDepur ("PDV_DEP.TXT", REPL ("Ä", 60))
+fDepur ("PDV_DEP.TXT", "OK 100000 = " + STRZERO (VDA->QUANT_, 15, 5))
+
+// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+   Function fDepur (cArq, cTex)
+
+      IF (FILE (cArq) == .T.)
+         cTmp := MEMOREAD (cArq)
+      ELSE
+//       cTmp := REPL ("Ä", 80) + CHR (13) + CHR (10)
+         cTmp := ""
+      ENDIF
+
+      MEMOWRIT (cArq, cTmp + DTOC (DATE ()) + " " + TIME () + " : " + ;
+                cTex + CHR (13) + CHR (10))
+
+   Return (.T.)
+
+// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+   // Salvamento do arquivo LOG de ABERTURA
+   nCnt := 0
+   WHILE (.T.)
+      nCnt ++
+      IF (nCnt > 99)
+          RUN COPY CONV_VPB.T?? CONV_VPB.SWL > NUL
+          RUN DEL CONV_VPB.T?? > NUL
+          nCnt := 1
+      ENDIF
+      cCnt := STRZERO (nCnt, 2)
+      IF (FILE ("CONV_VPB.T&cCnt") = .T.)
+         LOOP
+      ENDIF
+      MEMOWRIT ("CONV_VPB.T&cCnt", cFalta)
+      EXIT
+   END
+
+// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+      nCnt := 0
+      WHILE (.T.)
+         nCnt ++
+         cCnt := STRZERO (nCnt, 3)
+         IF (FILE ("TMP.&cCnt") = .T.)
+            LOOP
+         ENDIF
+         MEMOWRIT ("TMP.&cCnt", cArqVPB + " " + ALIAS ( _COD_CONVVPB) +_CRLF)
+         EXIT
+      END
+

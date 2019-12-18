@@ -1,0 +1,103 @@
+
+Dia 31/08/00 as 16:21:23h.
+Exce‡„o DBFNTX/1004  Create error: REPORT\SENHACFG.DBF (DOS Exce‡„o 3) 
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+LOCKERRHAN(0)      
+(b)INITHANDL$(0)   
+DBCREATE(0)        
+ACESSO(806)        *
+VPC91200(212)      
+VPC91000(34)       
+VPC00000(416)      
+VPCEI(24)          
+Ambiente & Status do FortunaÄÄÄÄÄÄÄÄÄÄÄÄ
+Versao   Fortuna v2.5-73
+Arquivo  
+Area     007
+Indice   
+Ordem    000
+Registro 0000000000
+GDir     \DEVELOP\FORTUNA\DADOS
+
+ALERTA °°±±²²
+Dia 31/08/00 as 16:21:22h.
+Exce‡„o DBFNTX/1004  Create error: REPORT\SENHACFG.DBF;(DOS Exce‡„o 3)
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Dia 31/08/00 as 16:00:41h.
+Exce‡„o DBFNTX/1004  Create error: REPORT\SENHACFG.DBF (DOS Exce‡„o 3) 
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+LOCKERRHAN(0)      
+(b)INITHANDL$(0)   
+DBCREATE(0)        
+ACESSO(806)        *
+VPC91200(212)      
+VPC91000(34)       
+VPC00000(416)      
+VPCEI(24)          
+Ambiente & Status do FortunaÄÄÄÄÄÄÄÄÄÄÄÄ
+Versao   Fortuna v2.5-73
+Arquivo  
+Area     007
+Indice   
+Ordem    000
+Registro 0000000000
+GDir     \DEVELOP\FORTUNA\DADOS
+
+ALERTA °°±±²²
+Dia 31/08/00 as 16:00:38h.
+Exce‡„o DBFNTX/1004  Create error: REPORT\SENHACFG.DBF;(DOS Exce‡„o 3)
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Dia 21/03/00 as 17:46:00h.
+Exce‡„o DBCMD/1011  Alias already in use: CFG
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+LOCKERRHAN(0)      
+(b)INITHANDL$(0)   
+DBUSEAREA(0)       
+SETCONFIG(426)     *
+CECONFIG(148)      
+SETCONFIG(423)     
+VPC00000(260)      
+VPCEI(21)          
+Ambiente & Status do FortunaÄÄÄÄÄÄÄÄÄÄÄÄ
+Versao   Fortuna v2.5-46
+Arquivo  
+Area     099
+Indice   
+Ordem    000
+Registro 0000000000
+GDir     C:\DEVELOP\FORTUNA\DADOS
+
+ALERTA °°±±²²
+Dia 21/03/00 as 17:45:57h.
+Exce‡„o DBCMD/1011  Alias already in use: CFG
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Dia 21/01/00 as 11:58:09h.
+Exce‡„o DBFNTX/1004  Create error: REPORT\GRUPODBF.DBF (DOS Exce‡„o 3) 
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+LOCKERRHAN(0)      
+(b)INITHANDL$(0)   
+DBCREATE(0)        
+CRIADBFGRU(155)    *
+USEDBFGRUP(124)    
+ABREGRUPO(25)      
+EXECUTEPDV(3491)   
+MENUMODAL(451)     
+VPC00000(313)      
+VPCEI(21)          
+Ambiente & Status do FortunaÄÄÄÄÄÄÄÄÄÄÄÄ
+Versao   Fortuna v2.5-41
+Arquivo  
+Area     001
+Indice   
+Ordem    000
+Registro 0000000000
+GDir     C:\DEVELOP\FORTUNA\DADOS
+
+ALERTA °°±±²²
+Dia 21/01/00 as 11:58:04h.
+Exce‡„o DBFNTX/1004  Create error: REPORT\GRUPODBF.DBF;(DOS Exce‡„o 3)
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+

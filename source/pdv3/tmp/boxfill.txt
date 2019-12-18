@@ -1,0 +1,373 @@
+// ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+//                          ---BAIXO----  ----CIMA----
+//AQUI            SWGBox  ( nCol1, nLin1, nCol2, nLin2, cTitulo, nCor, nTipo )
+//                BoxFill ( <nCol>, <nLin>, <nWidth>, <nHeight>, <nFill>, <nColor> )                 ฒ
+//                SnapCopy( <ColEsq>, <LinEsq>, <ColDir>, <LinDir>, <nMode> )                     ฒ
+
+// ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+ษอออออออออออ dGE, Version 5.0 ฏ Functions ฏ Standard Functions ฏ ... อฺฤฤฤฤฤฤฤฟป
+บ See also:  Polygon()  SetBkFill()  Shade()  XORBlock()              ณ 10:39 ณบ
+วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤภฤฤฤฤฤฤฤูถ
+บSyntax                                                                        
+บBoxFill( <nCol>, <nLin>, <nWidth>, <nHeight>, <nFill>, <nColor> )                 ฒ
+บ                                                                              ฐ
+บDescription                                                                   ฐ
+บDraws a rectangular box and fills it with a pattern or color. By              ฐ
+บdefault, the interior of the box is cleared before filling. You may           ฐ
+บoptionally select transparent fill, which will permit whatever                ฐ
+บimage is in the background to show through the fill pattern. You              ฐ
+บmay also instruct dGE to outline to box but not fill it, or to fill           ฐ
+บthe box but not outline it.                                                   ฐ
+บ                                                                              ฐ
+บParameters                                                                    ฐ
+บ<nX>                                                                          ฐ
+บX coordinate for the bottom left corner of the box.                           ฐ
+บ                                                                              ฐ
+บ<nY>                                                                          ฐ
+บY coordinate for the bottom left corner of the box.                           ฐ
+บ                                                                              ฐ
+บdGE's default coordinate system is described under the entry for              ฐ
+บSetVer().                                                                     ฐ
+บ                                                                              
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+ษอออออออออออ dGE, Version 5.0 ฏ Functions ฏ Standard Functions ฏ ... อฺฤฤฤฤฤฤฤฟป
+บ See also:  Polygon()  SetBkFill()  Shade()  XORBlock()              ณ 10:39 ณบ
+วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤภฤฤฤฤฤฤฤูถ
+บ                                                                              
+บ<nWidth>                                                                      ฐ
+บWidth of the box in screen units.                                             ฐ
+บ                                                                              ฐ
+บ<nHeight>                                                                     ฐ
+บHeight of the box in screen units.                                            ฐ
+บ                                                                              ฒ
+บ<nFill>                                                                       ฐ
+บInstructions for filling the space within the box.                            ฐ
+บ                                                                              ฐ
+บ        Value     Meaning                                                     ฐ
+บ        ฤฤฤฤฤฤฤ   ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ                     ฐ
+บ        0 to 19   Fill with one of the hatch patterns                         ฐ
+บ                  illustrated at Appendix A.                                  ฐ
+บ                                                                              ฐ
+บ           20     Fill with the current pattern background                    ฐ
+บ                  color.                                                      ฐ
+บ                                                                              ฐ
+บ        +  32     Transparent fill. The fill pattern will                     ฐ
+บ                  be painted over an underlying image in                      ฐ
+บ                  the background.                                             
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+ษอออออออออออ dGE, Version 5.0 ฏ Functions ฏ Standard Functions ฏ ... อฺฤฤฤฤฤฤฤฟป
+บ See also:  Polygon()  SetBkFill()  Shade()  XORBlock()              ณ 10:40 ณบ
+วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤภฤฤฤฤฤฤฤูถ
+บ                  the background.                                             
+บ                                                                              ฐ
+บ        +  64     No pattern; just outline the box.                           ฐ
+บ                                                                              ฐ
+บ        + 128     No outline; just fill the space.                            ฐ
+บ                                                                              ฐ
+บ<nColor>                                                                      ฐ
+บForeground color, 0 to (nColors - 1) where nColors is the value               ฐ
+บreturned by GetVideo(6). See the entry for SetRGBPal().                       ฐ
+บ                                                                              ฐ
+บExample                                                                       ฒ
+บ*:::::::::::::::::::::::::::::::::::::::::::::                                ฐ
+บ*           DITHER.PRG                                                        ฐ
+บ*  Combines patterns and colors to create                                     ฐ
+บ*  dithered colors beyond the standard 16                                     ฐ
+บ*  simultaneous colors available with EGA/VGA.                                ฐ
+บ*:::::::::::::::::::::::::::::::::::::::::::::                                ฐ
+บ                                                                              ฐ
+บPROCEDURE MAIN                                                                ฐ
+บ                                                                              ฐ
+บSET CURSOR OFF                                                                
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+ษอออออออออออ dGE, Version 5.0 ฏ Functions ฏ Standard Functions ฏ ... อฺฤฤฤฤฤฤฤฟป
+บ See also:  Polygon()  SetBkFill()  Shade()  XORBlock()              ณ 10:40 ณบ
+วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤภฤฤฤฤฤฤฤูถ
+บSET CURSOR OFF                                                                
+บ                                                                              ฐ
+บ* Set graphics mode on                                                        ฐ
+บr = SetHiRes(0)                                                               ฐ
+บ                                                                              ฐ
+บ* Draw title                                                                  ฐ
+บr = SayString(700, 40, 1, 0 + 8, 15, ;                                        ฐ
+บ    "This shows how transparency (mode + 32)")                                ฐ
+บr = SayString(700 ,10, 1, 0 + 8, 15, ;                                        ฐ
+บ    "can createcolors through dithering!")                                    ฐ
+บ                                                                              ฐ
+บFOR i = 1 to 15                                                               ฐ
+บ                                                                              ฐ
+บ   * Draw underlying colored boxes                                            ฐ
+บ   FOR j = i to 15                                                            ฒ
+บ      r = BoxFill(i * 70 + 115, j * 55, 50, 40, 0, j)                         ฐ
+บ   NEXT j                                                                     ฐ
+บ                                                                              ฐ
+บ   FOR k = i to 15                                                            ฐ
+บ      * Draw boxes for transparent overlay                                    ฐ
+บ      r = BoxFill(i * 70  +  115, k * 55, 50, 40, ;                           
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+ษอออออออออออ dGE, Version 5.0 ฏ Functions ฏ Standard Functions ฏ ... อฺฤฤฤฤฤฤฤฟป
+บ See also:  Polygon()  SetBkFill()  Shade()  XORBlock()              ณ 10:40 ณบ
+วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤภฤฤฤฤฤฤฤูถ
+บ      r = BoxFill(i * 70  +  115, k * 55, 50, 40, ;                           
+บ                  1 + 32 + 128, i)                                            ฐ
+บ      * Draw side (y) labels                                                  ฐ
+บ      r = SayString(155, k * 55, 1, 0 + 16, 13, ;                             ฐ
+บ                    ALLTRIM(STR(k)))                                          ฐ
+บ   NEXT k                                                                     ฐ
+บ                                                                              ฐ
+บ   * Draw bottom (x) labels                                                   ฐ
+บ   r = SayString(i * 70 + 115, 15, 1, 0, 13, ;                                ฐ
+บ                 ALLTRIM(STR(i)))                                             ฐ
+บ                                                                              ฐ
+บNEXT i                                                                        ฐ
+บ                                                                              ฐ
+บ* Draw axis titles                                                            ฐ
+บr = SayString(675, 930, 1, 0  +  8, 14, "Overlay color")                      ฐ
+บr = SayString(60, 690, 1, 1, 14, "Underlying color")                          ฐ
+บ                                                                              ฐ
+บ* Wait                                                                        ฐ
+บr = INKEY(0)                                                                  ฒ
+บ                                                                              ฐ
+บ* Set text mode                                                               
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+ษอออออออออออ dGE, Version 5.0 ฏ Functions ฏ Standard Functions ฏ ... อฺฤฤฤฤฤฤฤฟป
+บ See also:  Polygon()  SetBkFill()  Shade()  XORBlock()              ณ 10:41 ณบ
+วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤภฤฤฤฤฤฤฤูถ
+บ      * Draw side (y) labels                                                  
+บ      r = SayString(155, k * 55, 1, 0 + 16, 13, ;                             ฐ
+บ                    ALLTRIM(STR(k)))                                          ฐ
+บ   NEXT k                                                                     ฐ
+บ                                                                              ฐ
+บ   * Draw bottom (x) labels                                                   ฐ
+บ   r = SayString(i * 70 + 115, 15, 1, 0, 13, ;                                ฐ
+บ                 ALLTRIM(STR(i)))                                             ฐ
+บ                                                                              ฐ
+บNEXT i                                                                        ฐ
+บ                                                                              ฐ
+บ* Draw axis titles                                                            ฐ
+บr = SayString(675, 930, 1, 0  +  8, 14, "Overlay color")                      ฐ
+บr = SayString(60, 690, 1, 1, 14, "Underlying color")                          ฐ
+บ                                                                              ฐ
+บ* Wait                                                                        ฐ
+บr = INKEY(0)                                                                  ฐ
+บ                                                                              ฐ
+บ* Set text mode                                                               ฐ
+บr = SetText()                                                                 ฒ
+บ                                                                              
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+// ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+ษอออออออออออ dGE, Version 5.0 ฏ Functions ฏ Standard Functions ฏ ... อฺฤฤฤฤฤฤฤฟป
+บ See also:  PicRead()  PicWrite()  SnapKill  SnapPaste()             ณ 15:30 ณบ
+วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤภฤฤฤฤฤฤฤูถ
+บSyntax                                                                        
+บnHandle = SnapCopy( <nX0>, <nY0>, <nX1>, <nY1>, <nMode> )                     ฒ
+บnHandle = SnapCopy( <ColEsq>, <LinEsq>, <ColDir>, <LinDir>, <nMode> )                     ฒ
+บ                                                                              ฐ
+บDescription                                                                   ฐ
+บCopies a snapshot of a rectangular area of the screen to memory               ฐ
+บso that it can later be restored.                                             ฐ
+บ                                                                              ฐ
+บNote   This function is available only for Clipper. It stores                 ฐ
+บimages in virtual memory that is not available to FoxPro or C                 ฐ
+บprogrammers. However, similar effects can be produced using                   ฐ
+บthe functions PicWrite() and PicRead(). In this case, we                      ฐ
+บrecommend the BMP format for its speed.                                       ฐ
+บ                                                                              ฐ
+บParameters                                                                    ฐ
+บ<nX0>                                                                         ฐ
+บX coordinate for the lower left corner of the area to copy.                   ฐ
+บ                                                                              ฐ
+บ<nY0>                                                                         ฐ
+บY coordinate for the lower left corner.                                       ฐ
+บ                                                                              ฐ
+บ<nX1>                                                                         
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+ษอออออออออออ dGE, Version 5.0 ฏ Functions ฏ Standard Functions ฏ ... อฺฤฤฤฤฤฤฤฟป
+บ See also:  PicRead()  PicWrite()  SnapKill  SnapPaste()             ณ 15:31 ณบ
+วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤภฤฤฤฤฤฤฤูถ
+บ<nX1>                                                                         
+บX coordinate for the upper right corner.                                      ฐ
+บ                                                                              ฐ
+บ<nY1>                                                                         ฐ
+บY coordinate for the upper right corner.                                      ฐ
+บ                                                                              ฒ
+บdGE's coordinate system is described under the entry for                      ฐ
+บSetVer().                                                                     ฐ
+บ                                                                              ฐ
+บ<nMode>                                                                       ฐ
+บIndicates whether the area should be cleared after it is copied.              ฐ
+บ                                                                              ฐ
+บ        Value   Meaning                                                       ฐ
+บ        ฤฤฤฤฤ   ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ                      ฐ
+บ          0     Do not clear the area after it is copied.                     ฐ
+บ                                                                              ฐ
+บ          1     Clear the area exactly as it is specified                     ฐ
+บ                by the coordinates nX0, nY0 to nX1, nY1.                      ฐ
+บ                                                                              ฐ
+บ          2     Clear the area to the nearest left and                        ฐ
+บ                right byte boundary in video RAM. See the                     
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+ษอออออออออออ dGE, Version 5.0 ฏ Functions ฏ Standard Functions ฏ ... อฺฤฤฤฤฤฤฤฟป
+บ See also:  PicRead()  PicWrite()  SnapKill  SnapPaste()             ณ 15:32 ณบ
+วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤภฤฤฤฤฤฤฤูถ
+บ                right byte boundary in video RAM. See the                     
+บ                remarks below.                                                ฐ
+บ                                                                              ฐ
+บReturns                                                                       ฐ
+บA numeric handle to the saved image. The handle can be used                   ฐ
+บas an argument to SnapPaste() and SnapKill().                                 ฐ
+บ                                                                              ฐ
+บExample                                                                       ฐ
+บ*::::::::::::::::::::::::::::::::::::::::::::::::::::::                       ฒ
+บ*                    SNAP.PRG                                                 ฐ
+บ* This program uses SnapCopy() and SnapPaste to move a                        ฐ
+บ* box around the screen without disturbing the background.                    ฐ
+บ*::::::::::::::::::::::::::::::::::::::::::::::::::::::                       ฐ
+บ                                                                              ฐ
+บPROCEDURE MAIN                                                                ฐ
+บ                                                                              ฐ
+บSET CURSOR OFF                                                                ฐ
+บCLEAR                                                                         ฐ
+บ                                                                              ฐ
+บ* Set screen in graphics mode                                                 ฐ
+บr = SetHiRes(0)                                                               
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+ษอออออออออออ dGE, Version 5.0 ฏ Functions ฏ Standard Functions ฏ ... อฺฤฤฤฤฤฤฤฟป
+บ See also:  PicRead()  PicWrite()  SnapKill  SnapPaste()             ณ 15:32 ณบ
+วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤภฤฤฤฤฤฤฤูถ
+บr = SetHiRes(0)                                                               
+บ                                                                              ฐ
+บ* Make a blue background                                                      ฐ
+บr = BoxFill(0, 0, 1350, 1000, 0, 1)                                           ฐ
+บ* Cover the screen with interlocking circles                                  ฐ
+บFOR c = 100 TO 1300 STEP 100                                                  ฐ
+บ   FOR i = 100 TO 900 STEP 100                                                ฐ
+บ      r = DrawCircle(c, i, 100, 0, 360, 0, 0, 5)                              ฐ
+บ   NEXT i                                                                     ฐ
+บNEXT c                                                                        ฐ
+บ                                                                              ฐ
+บ* Take a 'snapshot' of the screen under where the box                         ฒ
+บ* will go, and then draw the box. The region under the                        ฐ
+บ* box is saved  to the variable 'nHandle'.                                    ฐ
+บnX = 675                                                                      ฐ
+บnY = 500                                                                      ฐ
+บnHandle = SnapCopy(nX, nY, nX + 150, nY + 150, 0)                             ฐ
+บr = BoxFill(nX, nY, 150, 150, 0, 14)                                          ฐ
+บ                                                                              ฐ
+บ* Loop. The ESC key stops the program.                                        ฐ
+บ* An arrow key moves the box.                                                 
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+ษอออออออออออ dGE, Version 5.0 ฏ Functions ฏ Standard Functions ฏ ... อฺฤฤฤฤฤฤฤฟป
+บ See also:  PicRead()  PicWrite()  SnapKill  SnapPaste()             ณ 15:33 ณบ
+วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤภฤฤฤฤฤฤฤูถ
+บ* An arrow key moves the box.                                                 
+บlFlag = .T.                                                                   ฐ
+บDO WHILE lFlag                                                                ฐ
+บ  * Wait for a key.                                                           ฐ
+บ                                                                              ฐ
+บ  nKey = INKEY(0)                                                             ฐ
+บ  * Restore the area under the box.                                           ฐ
+บ  r = SnapPaste(nX, nY, nHandle)                                              ฐ
+บ  r = SnapKill(nHandle)                                                       ฐ
+บ                                                                              ฐ
+บ  * Increment the coordinates appropriately.                                  ฐ
+บ  DO CASE                                                                     ฐ
+บ    CASE nKey = 4 && Right arrow                                              ฐ
+บ      IF nX < 1150                                                            ฐ
+บ        nX = MIN(nX + 20,  1150)                                              ฒ
+บ      ENDIF                                                                   ฐ
+บ                                                                              ฐ
+บ    CASE nKey = 5 && Up arrow                                                 ฐ
+บ      IF nY < 800                                                             ฐ
+บ        nY = MIN(nY + 20, 800)                                                ฐ
+บ      ENDIF                                                                   
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+ษอออออออออออ dGE, Version 5.0 ฏ Functions ฏ Standard Functions ฏ ... อฺฤฤฤฤฤฤฤฟป
+บ See also:  PicRead()  PicWrite()  SnapKill  SnapPaste()             ณ 15:33 ณบ
+วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤภฤฤฤฤฤฤฤูถ
+บ      ENDIF                                                                   
+บ                                                                              ฐ
+บ    CASE nKey = 19 && Left arrow                                              ฐ
+บ      IF nX > 20                                                              ฐ
+บ        nX = MAX(nX - 20,  20)                                                ฐ
+บ      ENDIF                                                                   ฐ
+บ                                                                              ฐ
+บ    CASE nKey = 24 && Down arrow                                              ฐ
+บ      IF nY > 20                                                              ฐ
+บ        nY = MAX(nY - 20, 20)                                                 ฐ
+บ      ENDIF                                                                   ฐ
+บ                                                                              ฐ
+บ    * This will exit the loop and the program                                 ฐ
+บ    CASE nKey = 27 && Escape                                                  ฐ
+บ      lFlag = .F.                                                             ฐ
+บ    ENDCASE                                                                   ฐ
+บ                                                                              ฐ
+บ    * Take a new snapshot, then redraw the box.                               ฐ
+บ    nHandle = SnapCopy(nX, nY, nX + 150, nY + 150, 0)                         ฒ
+บ    r = BoxFill(nX, nY, 150, 150, 0, 14)                                      ฐ
+บENDDO                                                                         
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+ษอออออออออออ dGE, Version 5.0 ฏ Functions ฏ Standard Functions ฏ ... อฺฤฤฤฤฤฤฤฟป
+บ See also:  PicRead()  PicWrite()  SnapKill  SnapPaste()             ณ 15:33 ณบ
+วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤภฤฤฤฤฤฤฤูถ
+บ      ENDIF                                                                   
+บ                                                                              ฐ
+บ    CASE nKey = 24 && Down arrow                                              ฐ
+บ      IF nY > 20                                                              ฐ
+บ        nY = MAX(nY - 20, 20)                                                 ฐ
+บ      ENDIF                                                                   ฐ
+บ                                                                              ฐ
+บ    * This will exit the loop and the program                                 ฐ
+บ    CASE nKey = 27 && Escape                                                  ฐ
+บ      lFlag = .F.                                                             ฐ
+บ    ENDCASE                                                                   ฐ
+บ                                                                              ฐ
+บ    * Take a new snapshot, then redraw the box.                               ฐ
+บ    nHandle = SnapCopy(nX, nY, nX + 150, nY + 150, 0)                         ฐ
+บ    r = BoxFill(nX, nY, 150, 150, 0, 14)                                      ฐ
+บENDDO                                                                         ฐ
+บ                                                                              ฐ
+บ* Set text mode and exit.                                                     ฐ
+บr = SetText()                                                                 ฐ
+บQUIT                                                                          ฒ
+บ                                                                              
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+// ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+ษอออออออ CA-Clipper 5.3 ฏ Guide To CA-Clipper ฏ Language ฏ Classes ฏ .ฺฤฤฤฤฤฤฤฟป
+บ                                                                     ณ 16:52 ณบ
+วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤภฤฤฤฤฤฤฤูถ
+บ                                                                              บ
+บ     colorRect(<aRect>, <aColors>) --> self                                   บ
+บ                                                                              บ
+บ        Directly alters the color of a rectangular group of cells.  <aRect>   บ
+บ        is an array of four numbers (top, left, bottom, and right).  The      บ
+บ        numbers refer to cells within the data area of the browse display,    บ
+บ        not to screen coordinates.  <aColors> is an array of two numbers.     บ
+บ        The numbers are used as indexes into the color table for the browse.  บ
+บ        These colors will become the normal and highlighted colors for the    บ
+บ        cells within the specified rectangle.                                 บ
+บ                                                                              บ
+บ        Cells that are colored using colorRect retain their color until they  บ
+บ        are scrolled off the screen up or down.  Horizontal panning has no    บ
+บ        affect on these colors and, in fact, cells that are currently off     บ
+บ        screen left or right can be colored even if they are not visible.     บ
+บ                                                                              บ
+บ        This example colors the entire virtual window (on and off screen):    บ
+บ                                                                              บ
+บ        aRect := {1, 1, browse:rowCount, browse:colCount}                     บ
+บ        browse:colorRect(aRect, {2, 1})                                       บ
+บ                                                                              บ
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+//    SetColor( "08/15,01/15,00/02" ) // CURSOR VERDE
+//    SetColor( "08/15,01/15,00/03" ) // CURSOR CIANO    (VERDE CLARO)
+//    SetColor( "08/15,01/15,00/04" ) // CURSOR VERMELHO
+//    SetColor( "08/15,01/15,00/05" ) // CURSOR MAGENTA
+//    SetColor( "08/15,01/15,00/06" ) // CURSOR MARROM
+//    SetColor( "08/15,01/15,00/07" ) // CURSOR BRANCO   (CINZA)
+      SetColor( "08/15,01/15,15/03" ) // CURSOR CIANO    (VERDE CLARO)

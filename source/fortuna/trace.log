@@ -1,0 +1,1900 @@
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   apres.prg   38376  2003.08.19  22:32:30     "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   atualiza.prg    5951  2003.08.19  22:32:30  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   cfgimp.prg    4068  2003.08.19  22:32:30    "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   config.prg    2903  2003.09.14  22:44:00    "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   config01.prg    3740  2003.09.14  17:43:06  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   conv_vpb.prg    5375  2003.08.19  22:32:30  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   excel.prg   40371  2003.08.19  22:32:32     "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   icliente.prg   11597  2003.09.17  17:30:10  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   iestoque.prg   28898  2003.08.20  17:32:16  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   ifornece.prg    4420  2003.08.19  22:32:32  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   impcfg.prg   12457  2003.09.14  17:43:20    "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   impfis.prg    2707  2003.09.14  16:14:28    "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   import.prg   79324  2003.08.20  17:25:44    "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   impprod.prg    1129  2003.09.14  17:43:36   "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   impressa.prg    1177  2003.09.14  17:43:50  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   imprim_.prg    6011  2003.08.19  22:32:34   "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   ioutros.prg    5896  2003.08.19  22:32:34   "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   iprecoc.prg    5492  2003.08.20  17:38:10   "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   iproduto.prg    5209  2003.08.20  17:44:18  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   iresumo.prg   21242  2003.08.19  22:32:34   "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   ivendedo.prg    4406  2003.08.19  22:32:34  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   libera.prg     688  2003.09.08  20:20:54    "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   mail.prg   13383  2003.09.14  17:44:04      "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   maximo.prg   44837  2003.09.14  17:35:10    "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   montagem.prg    6446  2003.09.15  19:01:12  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   natopera.prg    7893  2003.09.14  17:33:32  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   nfmanual.prg   24728  2003.09.14  17:45:06  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   pesquisa.prg   17465  2003.08.19  22:32:38  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   prodfarm.prg   45942  2003.09.14  19:13:12  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   remessa2.prg   22731  2003.08.19  22:32:38  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   sistfile.prg    4232  2003.09.14  17:45:42  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   suporte.prg   26070  2003.09.14  21:36:30   "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   swconfig.prg    1324  2003.09.14  22:44:32  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpbibcei.prg  206101  2003.09.15  00:51:58  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc12300.prg    1872  2003.09.14  18:03:36  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc12600.prg   11790  2003.08.19  22:32:42  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc14300.prg    2016  2003.09.14  17:47:20  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc14320.prg    2445  2003.09.14  17:47:42  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc21000.prg   16945  2003.09.14  17:48:00  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc21100.prg    1597  2003.09.14  17:48:16  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   estatist.prg   18989  2003.08.19  22:32:44  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpcctrlb.prg  131520  2003.08.26  11:42:38  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpbibaux.prg   46570  2003.08.19  22:32:44  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc41234.prg   13400  2003.09.14  17:48:42  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc70000.prg    9808  2003.09.14  17:48:58  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc91400.prg   71530  2003.09.14  17:49:20  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc21210.prg   27384  2003.08.19  22:32:46  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc21400.prg    1173  2003.09.14  17:49:30  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc21500.prg    7475  2003.09.14  17:49:48  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc22110.prg   51252  2003.08.19  22:32:48  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc26000.prg   13313  2003.09.14  17:50:24  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc28600.prg    5712  2003.09.14  17:50:38  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc28800.prg   17440  2003.09.14  17:50:48  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc31000.prg   20207  2003.09.14  17:51:46  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc35130.prg   35085  2003.09.14  17:51:12  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc35200.prg   27610  2003.09.14  17:36:22  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc35400.prg   16918  2003.09.14  17:52:08  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc35600.prg    9518  2003.09.14  17:52:20  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc35800.prg    6583  2003.09.14  17:52:50  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc36000.prg   13131  2003.09.14  17:53:00  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc37100.prg   17000  2003.09.14  17:53:08  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc40000.prg    5810  2003.09.14  17:54:24  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc41333.prg   24273  2003.09.14  17:56:10  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc51000.prg    1687  2003.09.14  17:54:48  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc51999.prg   57383  2003.09.14  21:44:58  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc55500.prg    2178  2003.09.14  17:54:56  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc91500.prg   21640  2003.09.14  17:56:50  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc57500.prg   10501  2003.08.19  22:32:52  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc95300.prg   51551  2003.09.14  17:56:58  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc66000.prg  110676  2003.09.14  18:00:20  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc82000.prg    6510  2003.08.19  22:32:54  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc87600.prg    7144  2003.09.14  17:58:08  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc87800.prg    9941  2003.09.14  17:58:18  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc87970.prg   25181  2003.09.14  17:35:42  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc88011.prg    6426  2003.09.14  17:58:28  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc88013.prg    5543  2003.09.14  17:58:36  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc88100.prg   14973  2003.09.14  17:58:44  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc88200.prg   15079  2003.09.14  17:58:52  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc88770.prg   45347  2003.09.14  17:59:02  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc88800.prg   28076  2003.09.14  21:46:28  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc88888.prg   63973  2003.09.14  17:59:46  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc91000.prg    8519  2003.09.14  17:57:06  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc91200.prg  120854  2003.09.14  17:57:14  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc91300.prg   14514  2003.09.14  17:57:22  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc91320.prg    4453  2003.09.14  17:57:30  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc91700.prg    3872  2003.09.14  17:57:38  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc91900.prg   35242  2003.09.14  21:48:26  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc92200.prg   14923  2003.09.14  18:00:44  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc98700.prg   11967  2003.09.14  18:01:06  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpcimppe.prg   21417  2003.08.20  17:31:32  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpcinipc.prg   32093  2003.08.19  22:33:04  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpcmovpc.prg   34497  2003.08.19  22:33:06  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   nfiscal.prg  169144  2003.09.14  18:01:16   "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   apagamov.prg    2428  2003.09.14  18:01:56  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc00000.prg   30291  2003.09.15  19:19:06  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   ceconfig.prg   16558  2003.09.14  18:02:22  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   clibarra.prg   25612  2003.09.14  18:02:34  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   config00.prg    3991  2003.09.14  18:13:06  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   conta.prg     498  2003.09.14  18:13:48     "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   diversos.prg    4211  2003.08.19  22:33:10  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   estoque.prg   29704  2003.09.14  18:35:22   "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   fluxo.prg   26872  2003.09.14  18:45:00     "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   fonte.prg   24850  2003.08.19  22:33:12     "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   grupos.prg    9381  2003.09.15  00:57:22    "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   ientsai.prg   17208  2003.08.19  22:33:12   "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   ifluxo.prg    5524  2003.08.19  22:33:12    "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   imp.prg   15139  2003.08.19  22:33:12       "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   impetq.prg   17786  2003.09.14  18:14:28    "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   impnf.prg   14932  2003.08.19  22:33:12     "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   impped.prg    2712  2003.09.14  18:14:52    "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   impres.prg   54743  2003.08.21  14:03:54    "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   imprime.prg    3726  2003.09.08  20:20:22   "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   ioimp2.prg   16251  2003.09.14  18:16:22    "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   ipagar.prg    8008  2003.08.19  22:33:14    "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   iprecov.prg    8214  2003.08.20  17:33:12   "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   ireceber.prg    9638  2003.08.19  22:33:14  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   ivendas.prg   30649  2003.08.19  22:33:14   "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   m.prg   78119  2003.08.19  22:33:16         "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   material.prg    3703  2003.08.19  22:33:16  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   mensfile.prg    4610  2003.08.19  22:33:16  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   multipro.prg   25480  2003.08.19  22:33:16  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   mvideo.prg     174  2003.08.19  22:33:16    "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc88701.prg    7611  2003.09.07  13:01:32  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   poebarra.prg    3482  2003.08.19  22:33:18  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   produtos.prg    2602  2003.08.19  22:33:18  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   reltela.prg    9259  2003.09.15  19:21:40   "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   serial.prg    6751  2003.08.19  22:33:18    "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   solucao.prg    1528  2003.08.19  22:33:18   "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   swa00000.prg   44663  2003.09.15  19:02:44  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   telacfg.prg   14708  2003.09.14  18:15:14   "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   valor.prg    9465  2003.08.19  22:33:20     "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc10000.prg   30003  2003.09.14  18:03:10  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc12350.prg   35617  2003.08.19  22:33:22  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc14100.prg   16086  2003.09.14  18:03:30  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc14310.prg   45273  2003.08.19  22:33:22  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc15000.prg    9059  2003.09.14  18:04:10  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc21110.prg   11192  2003.09.14  18:16:02  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   impoc.prg    8125  2003.08.19  22:33:22     "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   parcela.prg    8878  2003.09.14  21:32:50   "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc35100.prg    4006  2003.09.14  17:36:36  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc88300.prg    7827  2003.09.14  17:59:58  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc21111.prg   80943  2003.09.14  21:33:50  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc21300.prg   10867  2003.09.10  15:54:58  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc21410.prg    8893  2003.09.14  18:17:28  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc22100.prg    1445  2003.09.14  18:12:48  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc25000.prg    8021  2003.09.14  18:17:08  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc27000.prg    6020  2003.08.19  22:33:26  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc28700.prg   12391  2003.09.14  18:17:40  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc29700.prg   14884  2003.09.14  18:15:36  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc35120.prg    4363  2003.09.14  18:18:26  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc35140.prg   10147  2003.09.14  18:18:12  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc35300.prg    9431  2003.09.14  15:49:14  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc35500.prg    5330  2003.09.14  17:53:32  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc35700.prg    5707  2003.09.14  18:18:44  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc35900.prg   11041  2003.08.19  22:33:26  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc36600.prg    6641  2003.09.14  18:18:56  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc37200.prg    9326  2003.09.14  17:53:52  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc41000.prg   52720  2003.08.19  22:33:28  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc50000.prg   21438  2003.09.14  17:55:10  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc51100.prg   24261  2003.09.14  17:55:18  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc55000.prg    1644  2003.09.14  17:42:32  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc56000.prg   26647  2003.09.14  17:55:28  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc57400.prg   62505  2003.09.14  17:55:44  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc59999.prg  112067  2003.09.14  18:19:14  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc69999.prg   96593  2003.09.14  18:19:28  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc79999.prg   98017  2003.09.14  21:49:18  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc87500.prg    6216  2003.09.14  18:21:02  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc87700.prg    6970  2003.09.14  18:21:32  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc87900.prg   10304  2003.09.14  18:21:40  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc8800.prg    5591  2003.09.14  18:11:40   "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc88000.prg   11574  2003.09.14  18:11:48  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc88012.prg    9601  2003.09.14  18:11:56  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc88014.prg   10029  2003.09.14  21:46:52  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc88780.prg   17659  2003.09.14  21:46:02  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc88870.prg   23040  2003.09.14  18:30:04  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc90000.prg    6793  2003.09.14  18:10:26  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc91100.prg   37647  2003.09.14  18:27:26  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc91800.prg   37905  2003.09.14  21:47:36  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc91350.prg    4467  2003.09.14  18:26:52  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc91600.prg   88576  2003.09.14  18:30:24  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc99999.prg    9349  2003.09.14  18:10:56  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc92000.prg   10544  2003.09.14  18:00:52  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpcdoc.prg    6259  2003.09.14  18:28:14    "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpcprodu.prg    3685  2003.09.14  18:30:42  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpcimpp2.prg    2114  2003.08.19  22:33:42  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpcinitc.prg   12856  2003.09.14  18:47:56  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpc88700.prg   83704  2003.09.14  17:44:32  "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   atalho_.prg    6090  2003.08.19  22:33:08   "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   vpcei.prg    1956  2003.09.14  14:42:52     "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (   76) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>"   hbtemp.c     119  2003.09.08  20:18:08      "<<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>apres.prg   38376  2003.08.19  22:32:30     <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>atualiza.prg    5951  2003.08.19  22:32:30  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>cfgimp.prg    4068  2003.08.19  22:32:30    <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>config.prg    2903  2003.09.14  22:44:00    <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>config01.prg    3740  2003.09.14  17:43:06  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>conv_vpb.prg    5375  2003.08.19  22:32:30  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>excel.prg   40371  2003.08.19  22:32:32     <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>icliente.prg   11597  2003.09.17  17:30:10  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>iestoque.prg   28898  2003.08.20  17:32:16  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>ifornece.prg    4420  2003.08.19  22:32:32  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>impcfg.prg   12457  2003.09.14  17:43:20    <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>impfis.prg    2707  2003.09.14  16:14:28    <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>import.prg   79324  2003.08.20  17:25:44    <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>impprod.prg    1129  2003.09.14  17:43:36   <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>impressa.prg    1177  2003.09.14  17:43:50  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>imprim_.prg    6011  2003.08.19  22:32:34   <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>ioutros.prg    5896  2003.08.19  22:32:34   <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>iprecoc.prg    5492  2003.08.20  17:38:10   <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>iproduto.prg    5209  2003.08.20  17:44:18  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>iresumo.prg   21242  2003.08.19  22:32:34   <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>ivendedo.prg    4406  2003.08.19  22:32:34  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>libera.prg     688  2003.09.08  20:20:54    <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>mail.prg   13383  2003.09.14  17:44:04      <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>maximo.prg   44837  2003.09.14  17:35:10    <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>montagem.prg    6446  2003.09.15  19:01:12  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>natopera.prg    7893  2003.09.14  17:33:32  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>nfmanual.prg   24728  2003.09.14  17:45:06  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>pesquisa.prg   17465  2003.08.19  22:32:38  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>prodfarm.prg   45942  2003.09.14  19:13:12  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>remessa2.prg   22731  2003.08.19  22:32:38  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>sistfile.prg    4232  2003.09.14  17:45:42  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>suporte.prg   26070  2003.09.14  21:36:30   <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>swconfig.prg    1324  2003.09.14  22:44:32  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpbibcei.prg  206101  2003.09.15  00:51:58  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc12300.prg    1872  2003.09.14  18:03:36  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc12600.prg   11790  2003.08.19  22:32:42  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc14300.prg    2016  2003.09.14  17:47:20  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc14320.prg    2445  2003.09.14  17:47:42  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc21000.prg   16945  2003.09.14  17:48:00  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc21100.prg    1597  2003.09.14  17:48:16  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>estatist.prg   18989  2003.08.19  22:32:44  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpcctrlb.prg  131520  2003.08.26  11:42:38  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpbibaux.prg   46570  2003.08.19  22:32:44  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc41234.prg   13400  2003.09.14  17:48:42  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc70000.prg    9808  2003.09.14  17:48:58  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc91400.prg   71530  2003.09.14  17:49:20  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc21210.prg   27384  2003.08.19  22:32:46  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc21400.prg    1173  2003.09.14  17:49:30  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc21500.prg    7475  2003.09.14  17:49:48  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc22110.prg   51252  2003.08.19  22:32:48  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc26000.prg   13313  2003.09.14  17:50:24  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc28600.prg    5712  2003.09.14  17:50:38  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc28800.prg   17440  2003.09.14  17:50:48  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc31000.prg   20207  2003.09.14  17:51:46  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc35130.prg   35085  2003.09.14  17:51:12  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc35200.prg   27610  2003.09.14  17:36:22  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc35400.prg   16918  2003.09.14  17:52:08  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc35600.prg    9518  2003.09.14  17:52:20  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc35800.prg    6583  2003.09.14  17:52:50  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc36000.prg   13131  2003.09.14  17:53:00  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc37100.prg   17000  2003.09.14  17:53:08  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc40000.prg    5810  2003.09.14  17:54:24  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc41333.prg   24273  2003.09.14  17:56:10  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc51000.prg    1687  2003.09.14  17:54:48  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc51999.prg   57383  2003.09.14  21:44:58  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc55500.prg    2178  2003.09.14  17:54:56  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc91500.prg   21640  2003.09.14  17:56:50  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc57500.prg   10501  2003.08.19  22:32:52  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc95300.prg   51551  2003.09.14  17:56:58  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc66000.prg  110676  2003.09.14  18:00:20  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc82000.prg    6510  2003.08.19  22:32:54  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc87600.prg    7144  2003.09.14  17:58:08  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc87800.prg    9941  2003.09.14  17:58:18  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc87970.prg   25181  2003.09.14  17:35:42  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc88011.prg    6426  2003.09.14  17:58:28  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc88013.prg    5543  2003.09.14  17:58:36  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc88100.prg   14973  2003.09.14  17:58:44  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc88200.prg   15079  2003.09.14  17:58:52  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc88770.prg   45347  2003.09.14  17:59:02  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc88800.prg   28076  2003.09.14  21:46:28  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc88888.prg   63973  2003.09.14  17:59:46  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc91000.prg    8519  2003.09.14  17:57:06  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc91200.prg  120854  2003.09.14  17:57:14  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc91300.prg   14514  2003.09.14  17:57:22  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc91320.prg    4453  2003.09.14  17:57:30  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc91700.prg    3872  2003.09.14  17:57:38  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc91900.prg   35242  2003.09.14  21:48:26  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc92200.prg   14923  2003.09.14  18:00:44  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc98700.prg   11967  2003.09.14  18:01:06  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpcimppe.prg   21417  2003.08.20  17:31:32  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpcinipc.prg   32093  2003.08.19  22:33:04  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpcmovpc.prg   34497  2003.08.19  22:33:06  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>nfiscal.prg  169144  2003.09.14  18:01:16   <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>apagamov.prg    2428  2003.09.14  18:01:56  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc00000.prg   30291  2003.09.15  19:19:06  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>ceconfig.prg   16558  2003.09.14  18:02:22  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>clibarra.prg   25612  2003.09.14  18:02:34  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>config00.prg    3991  2003.09.14  18:13:06  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>conta.prg     498  2003.09.14  18:13:48     <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>diversos.prg    4211  2003.08.19  22:33:10  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>estoque.prg   29704  2003.09.14  18:35:22   <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>fluxo.prg   26872  2003.09.14  18:45:00     <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>fonte.prg   24850  2003.08.19  22:33:12     <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>grupos.prg    9381  2003.09.15  00:57:22    <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>ientsai.prg   17208  2003.08.19  22:33:12   <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>ifluxo.prg    5524  2003.08.19  22:33:12    <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>imp.prg   15139  2003.08.19  22:33:12       <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>impetq.prg   17786  2003.09.14  18:14:28    <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>impnf.prg   14932  2003.08.19  22:33:12     <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>impped.prg    2712  2003.09.14  18:14:52    <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>impres.prg   54743  2003.08.21  14:03:54    <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>imprime.prg    3726  2003.09.08  20:20:22   <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>ioimp2.prg   16251  2003.09.14  18:16:22    <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>ipagar.prg    8008  2003.08.19  22:33:14    <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>iprecov.prg    8214  2003.08.20  17:33:12   <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>ireceber.prg    9638  2003.08.19  22:33:14  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>ivendas.prg   30649  2003.08.19  22:33:14   <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>m.prg   78119  2003.08.19  22:33:16         <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>material.prg    3703  2003.08.19  22:33:16  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>mensfile.prg    4610  2003.08.19  22:33:16  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>multipro.prg   25480  2003.08.19  22:33:16  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>mvideo.prg     174  2003.08.19  22:33:16    <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc88701.prg    7611  2003.09.07  13:01:32  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>poebarra.prg    3482  2003.08.19  22:33:18  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>produtos.prg    2602  2003.08.19  22:33:18  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>reltela.prg    9259  2003.09.15  19:21:40   <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>serial.prg    6751  2003.08.19  22:33:18    <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>solucao.prg    1528  2003.08.19  22:33:18   <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>swa00000.prg   44663  2003.09.15  19:02:44  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>telacfg.prg   14708  2003.09.14  18:15:14   <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>valor.prg    9465  2003.08.19  22:33:20     <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc10000.prg   30003  2003.09.14  18:03:10  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc12350.prg   35617  2003.08.19  22:33:22  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc14100.prg   16086  2003.09.14  18:03:30  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc14310.prg   45273  2003.08.19  22:33:22  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc15000.prg    9059  2003.09.14  18:04:10  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc21110.prg   11192  2003.09.14  18:16:02  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>impoc.prg    8125  2003.08.19  22:33:22     <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>parcela.prg    8878  2003.09.14  21:32:50   <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc35100.prg    4006  2003.09.14  17:36:36  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc88300.prg    7827  2003.09.14  17:59:58  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc21111.prg   80943  2003.09.14  21:33:50  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc21300.prg   10867  2003.09.10  15:54:58  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc21410.prg    8893  2003.09.14  18:17:28  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc22100.prg    1445  2003.09.14  18:12:48  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc25000.prg    8021  2003.09.14  18:17:08  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc27000.prg    6020  2003.08.19  22:33:26  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc28700.prg   12391  2003.09.14  18:17:40  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc29700.prg   14884  2003.09.14  18:15:36  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc35120.prg    4363  2003.09.14  18:18:26  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc35140.prg   10147  2003.09.14  18:18:12  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc35300.prg    9431  2003.09.14  15:49:14  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc35500.prg    5330  2003.09.14  17:53:32  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc35700.prg    5707  2003.09.14  18:18:44  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc35900.prg   11041  2003.08.19  22:33:26  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc36600.prg    6641  2003.09.14  18:18:56  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc37200.prg    9326  2003.09.14  17:53:52  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc41000.prg   52720  2003.08.19  22:33:28  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc50000.prg   21438  2003.09.14  17:55:10  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc51100.prg   24261  2003.09.14  17:55:18  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc55000.prg    1644  2003.09.14  17:42:32  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc56000.prg   26647  2003.09.14  17:55:28  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc57400.prg   62505  2003.09.14  17:55:44  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc59999.prg  112067  2003.09.14  18:19:14  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc69999.prg   96593  2003.09.14  18:19:28  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc79999.prg   98017  2003.09.14  21:49:18  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc87500.prg    6216  2003.09.14  18:21:02  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc87700.prg    6970  2003.09.14  18:21:32  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc87900.prg   10304  2003.09.14  18:21:40  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc8800.prg    5591  2003.09.14  18:11:40   <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc88000.prg   11574  2003.09.14  18:11:48  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc88012.prg    9601  2003.09.14  18:11:56  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc88014.prg   10029  2003.09.14  21:46:52  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc88780.prg   17659  2003.09.14  21:46:02  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc88870.prg   23040  2003.09.14  18:30:04  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc90000.prg    6793  2003.09.14  18:10:26  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc91100.prg   37647  2003.09.14  18:27:26  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc91800.prg   37905  2003.09.14  21:47:36  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc91350.prg    4467  2003.09.14  18:26:52  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc91600.prg   88576  2003.09.14  18:30:24  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc99999.prg    9349  2003.09.14  18:10:56  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc92000.prg   10544  2003.09.14  18:00:52  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpcdoc.prg    6259  2003.09.14  18:28:14    <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpcprodu.prg    3685  2003.09.14  18:30:42  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpcimpp2.prg    2114  2003.08.19  22:33:42  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpcinitc.prg   12856  2003.09.14  18:47:56  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpc88700.prg   83704  2003.09.14  17:44:32  <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>atalho_.prg    6090  2003.08.19  22:33:08   <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>vpcei.prg    1956  2003.09.14  14:42:52     <<<
+
+[utils/hbmake/pickarry.prg->PICKARRY] (  137) Called from: 
+                              utils/hbmake/hbmake.prg->CREATEMAKEFILE( 1498)
+                              utils/hbmake/hbmake.prg->MAIN(  202)
+>>>hbtemp.c     119  2003.09.08  20:18:08      <<<
+

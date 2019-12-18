@@ -1,0 +1,7 @@
+
+
+
+@ 01,01 SAY TIME()
+@ 02,01 SAY DATE()
+@ 03,01 SAY SECONDS()
+INKEY(0)

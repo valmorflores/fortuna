@@ -1,0 +1,16 @@
+rem CLIPPER GRUPOS    > C.TXT
+rem CLIPPER CONV_VPB >> C.TXT
+rem CLIPPER @VPCEI6 > C.TXT
+rem CLIPPER @VPCEI7 >> C.TXT
+rem CLIPPER VPBIBCEI >> C.TXT
+rem CALL LIB
+rem CLIPPER NFISCAL >> C.TXT
+rem CLIPPER @VPCEI5 > C.TXT
+
+Clipper SWPDV       > C.TXT
+Clipper SWREPORT   >> C.TXT
+Clipper IMP        >> C.TXT
+Clipper DRIVER     >> C.TXT
+
+TYPE C.TXT
+

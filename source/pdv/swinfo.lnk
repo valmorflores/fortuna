@@ -1,0 +1,5 @@
+fi info
+fi driver
+fi ..\..\lib\swfiscal
+Lib \Clip52\Lib\ct.Lib, IMP10C51.Lib, CLIB.LIB, CL_ECF, C_ECF_PL
+

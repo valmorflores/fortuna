@@ -1,0 +1,46 @@
+000                   [ Iniciar ]
+000.01              ÚÄ[ 1 Utilitarios   ]                         <C¢pias, reindexa‡„o e configura‡„o do sistema.
+000.02              ÃÄ[ 2 Cadastro      ]                         <Cadastro geral do sistema.
+000.02.01           ³    ÃÄ[ 1 Clientes             ]             <Inclus„o, altera‡„o e exclus„o de clientes.                            
+000.02.01.01        ³    ³    ÃÄ[ 1 Especial         ]            <Inclus„o, altera‡„o e exclus„o de materia-prima.
+000.02.01.01.01     ³    ³    ³    ÃÄ[ 1 abc         ]            <Inclusao de produtos.
+000.02.01.01.01.01  ³    ³    ³    ³    ÃÄ[ 2 ssssssss    ]       <Alteracao de produtos.
+000.02.01.01.02     ³    ³    ³    ÃÄ[ 2 def         ]            <Alteracao de produtos.
+000.02.01.01.03     ³    ³    ³    ÃÄ[ 3 ggghhhhh    ]            <Exclusao de produtos.                      DEVOUT( "TESTE ESPECIAL" )
+000.02.01.01.04     ³    ³    ³    ÃÄ[ 4 iiiiiiiiijj ]            <Verificacao de produtos.
+000.02.01.02        ³    ³    ÃÄ[ 2 Simples          ]            <Composicao (Monstagem) de um produto final com base nos demais.
+000.02.01.03        ³    ³    ÃÄ[ 3 Comum            ]            <Diversas opcoes conforme necessario
+000.02.02           ³    ÃÄ[ 2 Fornecedores         ]             <Inclus„o, altera‡„o e exclus„o de fornecedores.
+000.02.03           ³    ÃÄ[ 3 Produtos             ]             <Inclusao, altera‡„o e exclus„o de produtos.
+000.02.03.01        ³    ³    ÃÄ[ 1 Materia-prima    ]            <Inclus„o, altera‡„o e exclus„o de materia-prima.
+000.02.03.01.01     ³    ³    ³    ÃÄ[ 1 Inclusao    ]            <Inclusao de produtos.
+000.02.03.01.01.01  ³    ³    ³    ³    ÀÄ[ 2 Especial    ]       <Alteracao de produtos.
+000.02.03.01.02     ³    ³    ³    ÃÄ[ 2 Alteracao   ]            <Alteracao de produtos.
+000.02.03.01.03     ³    ³    ³    ÃÄ[ 3 Exclusao    ]            <Exclusao de produtos.
+000.02.03.01.04     ³    ³    ³    ÃÄ[ 4 Verificacao ]            <Verificacao de produtos.
+000.02.03.02        ³    ³    ÃÄ[ 2 Composicao       ]            <Composicao (Monstagem) de um produto final com base nos demais.
+000.02.03.03        ³    ³    ÃÄ[ 3 Diversos         ]            <Diversas opcoes conforme necessario
+000.02.04           ³    ÃÄ[ 4 Origem / Fabricantes ]             <Inclusao, altera‡„o e exclus„o de fabricantes.
+000.02.05           ³    ÃÄ[ 5 Vendedores           ]             <Inclusao, altera‡„o e exclus„o de vendedores.
+000.02.06           ³    ÃÄ[ 6 Classificacao fiscal ]             <Inclusao, altera‡„o e exclus„o de classifica‡„o fiscal.
+000.02.07           ³    ÃÄ[ 7 Bancos               ]             <Inclusao, altera‡„o e exclus„o de bancos.
+000.02.08           ³    ÃÄ[ 8 Transportadoras      ]             <Inclusao, altera‡„o e exclus„o de transportadoras.
+000.02.09           ³    ÃÄ[ 9 Ficha de Despesas    ]             <Inclusao, altera‡„o e exclus„o de despesas.
+000.02.10           ³    ÃÄ[ A Tabela de Feriados   ]             <Inclusao, altera‡„o e exclus„o de feriados.
+000.02.11           ³    ÃÄ[ B Tabela de Atividades ]             <Inclusao, altera‡„o e exclus„o de atividades.
+000.03              ÃÄ[ 3 Estoque       ]                         <Movimento de Estoque.
+000.04              ÃÄ[ 4 Compras       ]                         <Controle de Compras.
+000.04.01           ³      [ 5 Buceta         ]                    <
+000.05              ÃÄ[ 5 Vendas        ]                         <Controle e Manutencao de Vendas.
+000.06              ÃÄ[ 6 Servicos      ]                         <Movimento de Contas a Pagar e Contas a Receber.
+000.07              ÃÄ[ 7 Relatorios    ]                         <Menu de Relatorios.
+000.08               Ä[ 8 Especialidades]                         <Menu de Especialidades.
+Coordenadas <000>                            = [ 04, 04 ] Menu Principal do Sistema
+Coordenadas <000.02>                         = [ 05, 05 ] Cadastro
+Coordenadas <000.02.01>                      = [ 06, 06 ] Diversos
+Coordenadas <000.02.01.01>                   = [ 07, 07 ] Continuacao
+Coordenadas <000.02.01.01.01>                = [ 08, 08 ] Simples  
+Coordenadas <000.02.03>                      = [ 09, 09 ] Cadastro de Produtos
+Coordenadas <000.02.03.01>                   = [ 10, 10 ] Materia-Prima
+Coordenadas <000.02.03.01.01>                = [ 11, 11 ] Menu produtos
+Coordenadas <000.04>                         = [ 12, 12 ] Diferente

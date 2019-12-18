@@ -1,0 +1,5 @@
+xHarbour Compiler build 0.91.1 (SimpLex)
+Copyright 1999-2003, http://www.xharbour.org http://www.harbour-project.org/
+Compiling 'testcgi.prg'...
+testcgi.prg(28) Error F0001  Can't open #include file: 'cgi.ch'; No such file or directory
+

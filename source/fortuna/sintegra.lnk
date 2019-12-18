@@ -1,0 +1,57 @@
+EXOSPACE PACKAGE NOVM
+File SINTEGRA
+LIB PTOOL52
+LIB FUNCky52,FUNCkyVM
+LIB FUNCky2c
+LIB Clipper.Lib,Terminal.Lib,Extend.Lib
+LIB BAR50.LIB,CT
+LIB DBFMDX
+LIB DBFNDX             
+LIB \DEV\LIBWIN\CPMI, \DEV\LIBWIN\OSLIB
+
+Section into FORTUNA
+Overlay PROG, $CONSTANTS
+BeginArea
+    Section Into FORTUNA.OVL
+        File RELATOR
+        File VPCIMPP2
+        File VPCFG95B
+        File VPC10000
+        
+        File APRES
+        File CONFIG00
+        File CONFIG01
+        File Valor
+        File Pesquisa
+        
+        File Grupos
+        File Conv_VPB
+        File NatOpera
+        File Config
+        File Atalho
+        File CfgImp
+        
+        File TELACFG
+        File ESTATIST
+    
+
+        #File REMESSA2
+        #File SWConfig
+
+        file VPBIBCEI
+        file VPBIBAUX
+        file ..\..\lib\VPBIBL96.OBJ
+        file ..\..\lib\VPBIBNET.OBJ
+        file ..\..\lib\SWMENU.OBJ
+        file ..\..\lib\SWREPORT.OBJ
+        file ..\..\lib\Swfonte.OBJ
+        file ..\..\lib\BOTAO
+        file ..\..\lib\ClipMous
+        file ..\..\lib\ERRORSYS.OBJ
+        file ..\..\lib\GETSYS
+        file impfis
+
+EndArea
+OutPut SINTEGRA
+Verbose
+

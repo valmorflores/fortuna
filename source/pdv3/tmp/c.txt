@@ -1,0 +1,12 @@
+349K available
+Compiling SWPDV.PRG
+Code size 35104, Symbols 5296, Constants 17296
+349K available
+Compiling SWREPORT.PRG
+Code size 6909, Symbols 1472, Constants 1011
+349K available
+Compiling IMP.PRG
+Code size 12879, Symbols 1712, Constants 6577
+349K available
+Compiling DRIVER.PRG
+Code size 588, Symbols 288, Constants 20

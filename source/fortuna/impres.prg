@@ -1,0 +1,1593 @@
+// ## CL2HB.EXE - Converted
+#include "VPF.CH" 
+#include "INKEY.CH" 
+ 
+/* 
+Convenio: 00272 
+DEBITO AUTOMATICO 
+Data 
+*/ 
+ 
+/***** 
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
+³ Funcao      ³ Preco Panarello 
+³ Finalidade  ³ Importacao de Precos Panarello 
+³ Parametros  ³ Nil 
+³ Retorno     ³ Nil 
+³ Programador ³ Valmor Flores 
+³ Data        ³ 
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+*/ 
+Function IPrecoPanarello() 
+Local cCor:= SetColor(), nCursor:= SetCursor(),; 
+      cTela:= ScreenSave( 0, 0, 24, 79 ) 
+   DBSelectAr( _COD_MPRIMA ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   UserScreen() 
+   VPBox( 0, 0, 22, 79, "LISTA DE PRECOS PANARELLO", _COR_GET_BOX ) 
+   SetColor( _COR_GET_EDICAO ) 
+   cArquivo:= "LISTA.TXT   " + Space( 25 ) 
+   @ 02,02 Say "Arquivo de Importacao:" Get cArquivo 
+   READ 
+   IF LastKey() == K_ESC .OR. !File( cArquivo ) 
+      SetColor( cCor ) 
+      SetCursor( nCursor ) 
+      ScreenRest( cTela ) 
+      Return Nil 
+   ENDIF 
+   aStr:= {{"ORIGEM","C",200,0}} 
+   DBSelectAr( 124 ) 
+   DBCreate( "PRECO.TMP", aStr ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   Use PRECO.TMP Alias TMP Shared 
+   Append From &cArquivo SDF 
+   DBGoTop() 
+   MPR->( DBSetOrder( 1 ) ) 
+   cDescricao:= "NIL" 
+   cCodigo:= 0 
+   WHILE !TMP->( EOF() ) 
+      cTipo:= SubStr( TMP->ORIGEM, 1, 2 ) 
+      nPreco:= 0 
+      IF cTipo=="01" 
+         dData:= SubStr( TMP->ORIGEM, 3, 6 ) 
+      ELSEIF cTipo=="02" 
+         cCodigo:= SubStr( TMP->ORIGEM, 3, 6 ) 
+         cDescricao:= SubStr( TMP->ORIGEM, 22, 32 ) 
+         nPreco:= VAL( TRAN( SubStr( TMP->ORIGEM, 69, 11 ), "@R XXXXXXXXX.XX" ) ) 
+      ENDIF 
+      IF cTipo=="02" 
+         IF MPR->( DBSeek( PAD( cCodigo + "0", 12 ) ) ) 
+            IF MPR->( NetRLock() ) 
+               Replace MPR->PRECOV With nPreco,; 
+                       MPR->PRECOD With nPreco 
+            ENDIF 
+         ENDIF 
+      ENDIF 
+      @ 20,02 Say cCodigo 
+      Scroll( 02,02, 20, 78, 1 ) 
+      @ 20,02 Say cDescricao 
+      Scroll( 02,02, 20, 78, 1 ) 
+      TMP->( DBSkip() ) 
+   ENDDO 
+   DiarioComunicacao( "Importacao de Lista de Precos", "PANARELLO" ) 
+   Aviso( "Operacao Finalizada!" ) 
+   Pausa() 
+   DBSelectAr( 124 ) 
+   DBCloseArea() 
+   SetColor( cCor ) 
+   SetCursor( nCursor ) 
+   ScreenRest( cTela ) 
+   Return Nil 
+ 
+/***** 
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
+³ Funcao      ³ IPRODABAFAR 
+³ Finalidade  ³ Importacao de Informacoes da Abafarma 
+³ Parametros  ³ Nil 
+³ Retorno     ³ Nil 
+³ Programador ³ Valmor Pereira Flores 
+³ Data        ³ 
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+*/ 
+FUNCTION IProdAbafar() 
+Local cCor:= SetColor(), nCursor:= SetCursor(),; 
+      cTela:= ScreenSave( 0, 0, 24, 79 ) 
+Local cArquivo:= "C:\ABFP1\PRODUTOS.DBF            ",; 
+      nMargem:= 42.86, cAtual:= "N", nCodFor:= 0,; 
+      cMudaMargem:= "S" 
+ 
+   FOR->( DBGoTop() ) 
+   WHILE !FOR->( EOF() ) 
+      IF AT( "ABAFARMA", FOR->DESCRI ) > 0 
+         nCodFor:= FOR->CODIGO 
+      ENDIF 
+      FOR->( DBSkip() ) 
+   ENDDO 
+   SetColor( _COR_GET_EDICAO ) 
+   VPBox( 0, 0, 22, 79, "LISTA DE PRECOS - ABAFARMA", _COR_GET_EDICAO ) 
+   @ 02,01 Say "Produtos:" Get cArquivo 
+   @ 03,01 Say "Margem de Lucro s/ Produtos nÆo Controlados:" Get nMargem Pict "@E 999.99" 
+   @ 04,01 Say "Atualizar base de dados de produtos j  cadastrados?" Get cAtual Valid cAtual $"SN" 
+   @ 05,01 Say "Codigo da ABAFARMA no cadastro de fornecedores:" Get nCodFor Pict "9999" 
+   @ 06,01 Say "Modificar a mergem de preco dos produtos?" Get cMudaMargem Pict "!" 
+   READ 
+   cArquivo:= ALLTRIM( cArquivo ) 
+   IF !File( cArquivo ) 
+      Aviso( "Arquivo " + cArquivo + " nao encontrado..." ) 
+      Mensagem( "Pressione [ENTER] para continuar..." ) 
+      Pausa() 
+      SetColor( cCor ) 
+      SetCursor( nCursor ) 
+      ScreenRest( cTela ) 
+      Return Nil 
+   ENDIF 
+   VPBox( 0, 0, 22, 79, "LISTA DE PRECOS - ABAFARMA", _COR_GET_EDICAO ) 
+   Sele 123 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   Use &cArquivo Alias TMP 
+   DBGoTop() 
+   nTotal:= LASTREC() 
+   IF nTotal > (17*60) 
+      @ 20,62 Say "  = " + Alltrim( Str( INT( nTotal / ( 17 * 60 ) ) ) ) + " Reg." Color "15/01" 
+   ELSE 
+      @ 20,62 Say "  = 1 Reg." Color "15/01" 
+   ENDIF 
+   MPR->( DBSetOrder( 1 ) ) 
+   WHILE !EOF() 
+      IF Inkey()==K_ESC .OR. LastKey()==K_ESC .OR. NextKey()==K_ESC 
+         EXIT 
+      ENDIF 
+      DisplayScan( RECNO(), nTotal, 17, 2, 2 ) 
+      @ 21,02 Say ALLTRIM( NOMEPROD ) + " " + UPPER( APRESENTA ) 
+      @ 17,62 Say "ÄImportacaoÄÄÄÄÄ" 
+      @ 18,62 Say Str( ( Recno() / nTotal ) * 100, 6, 2 ) + "%" 
+      @ 19,62 Say Str( Recno(), 6, 0 ) + "/" + Str( nTotal, 6, 0 ) 
+      IF !MPR->( DBSeek( ALLTRIM( TMP->CODPROD ) + "0" ) ) 
+         MPR->( DBAppend() ) 
+      ELSEIF cAtual=="N" 
+         DBSkip() 
+         Loop 
+      ENDIF 
+      IF MPR->( NetRLock() ) 
+         Repl MPR->CODRED With Alltrim( SubStr( CODPROD, 4 ) ) + "0",; 
+              MPR->CODIGO With ALLTRIM( CODPROD ) + "0",; 
+              MPR->INDICE With ALLTRIM( CODPROD ) + "0",; 
+              MPR->DESCRI With ALLTRIM( NOMEPROD ) + " - " + ALLTRIM( UPPER( APRESENTA ) ),; 
+              MPR->CODFAB With CODBARRAS,; 
+              MPR->CODIF_ With CODPROD,; 
+              MPR->PRECOV With PRVENDA,; 
+              MPR->ORIGEM With LEFT( NOMELAB, 3 ),; 
+              MPR->CODFOR With nCodFor,; 
+              MPR->PERCPV With IF( cMudaMargem=="S" .OR. MPR->PERCPV <= 0, nMargem, MPR->PERCPV ) 
+      ENDIF 
+      PXF->( DBSeek( MPR->INDICE ) ) 
+      WHILE MPR->INDICE==PXF->CPROD_ 
+          IF PXF->CODFOR==nCodFor .AND. MPR->INDICE==PXF->CPROD_ 
+             EXIT 
+          ENDIF 
+          PXF->( DBSkip() ) 
+      ENDDO 
+      IF !( PXF->CPROD_==MPR->INDICE ) 
+         PXF->( DBAppend() ) 
+      ENDIF 
+      IF PXF->( NetRLock() ) 
+         Replace PXF->PVELHO With PXF->VALOR_ 
+         Replace PXF->CPROD_ With MPR->INDICE,; 
+                 PXF->VALOR_ With PRFABRIC,; 
+                 PXF->DATA__ With DATE() 
+      ENDIF 
+      IF PRVENDA==0 
+         IF MPR->( NetRLock() ) 
+            Replace MPR->PRECOV With PXF->VALOR_ + ( ( PXF->VALOR_ * MPR->PERCPV ) / 100 ) 
+         ENDIF 
+      ENDIF 
+      DBSkip() 
+   ENDDO 
+   SetColor( cCor ) 
+   SetCursor( nCursor ) 
+   ScreenRest( cTela ) 
+   DBCloseAll() 
+   AbreGrupo( "TODOS_OS_ARQUIVOS" ) 
+   Return Nil 
+ 
+/***** 
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
+³ Funcao      ³ IPROPREABAFAR 
+³ Finalidade  ³ Importar precos / abafar 
+³ Parametros  ³ Nil 
+³ Retorno     ³ Nil 
+³ Programador ³ Valmor Pereira Flores 
+³ Data        ³ 
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+*/ 
+FUNCTION IProdPreAbafar() 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/***** 
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
+³ Funcao      ³ IFABABAFAR 
+³ Finalidade  ³ Importacao da tabela de fabricantes da abafarma 
+³ Parametros  ³ Nil 
+³ Retorno     ³ Nil 
+³ Programador ³ Valmor Pereira Flores 
+³ Data        ³ 
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+*/ 
+FUNCTION IFabAbafar() 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/***** 
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
+³ Funcao      ³ Nota Panarello 
+³ Finalidade  ³ Importacao de Nota Fiscal (Panarello) 
+³ Parametros  ³ Nil 
+³ Retorno     ³ Nil 
+³ Programador ³ Valmor Pereira Flores 
+³ Data        ³ 
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+*/ 
+Function INFPanarello() 
+Local cCor:= SetColor(), nCursor:= SetCursor(),; 
+      cTela:= ScreenSave( 0, 0, 24, 79 ) 
+   DBSelectAr( _COD_MPRIMA ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   UserScreen() 
+   VPBox( 0, 0, 22, 79, "NOTA FISCAL PANARELLO", _COR_GET_BOX ) 
+   SetColor( _COR_GET_EDICAO ) 
+   cArquivo:= "NFISCAL.TXT " + Space( 25 ) 
+   nCodFor:= 0 
+   dDataMv:= Date() 
+   @ 02,02 Say "Arquivo de Importacao:" Get cArquivo 
+   @ 04,02 Say "Codigo PANARELLO.....:" Get nCodFor Pict "999999" 
+   @ 06,02 Say "Data Mov. Estoque....:" Get dDataMv 
+   READ 
+   IF LastKey() == K_ESC .OR. !File( cArquivo ) 
+      SetColor( cCor ) 
+      SetCursor( nCursor ) 
+      ScreenRest( cTela ) 
+      Return Nil 
+   ENDIF 
+   aStr:= {{"ORIGEM","C",200,0}} 
+   DBSelectAr( 124 ) 
+   DBCreate( "NOTAS.TMP", aStr ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   Use NOTAS.TMP Alias TMP Shared 
+   Append From &cArquivo SDF 
+   DBGoTop() 
+   MPR->( DBSetOrder( 1 ) ) 
+   cDescricao:= "NIL" 
+   cCodigo:= 0 
+   WHILE !TMP->( EOF() ) 
+      cTipo:= SubStr( TMP->ORIGEM, 1, 1 ) 
+      IF cTipo=="I" 
+         cNotaFiscal:= Alltrim( Str( Val( SubStr( TMP->ORIGEM, 8, 6 ) ), 8, 0 ) ) 
+         cCodigo:= SubStr( TMP->ORIGEM, 14, 6 ) 
+         nQuantidade:= VAL( TRAN( SubStr( TMP->ORIGEM, 20, 5 ), "@R XXXXX" ) ) 
+         nPreco:= VAL( TRAN( SubStr( TMP->ORIGEM, 55, 9 ), "@R XXXXXXX.XX" ) ) 
+         nPrecoFinal:= VAL( TRAN( SubStr( TMP->ORIGEM, 64, 9 ), "@R XXXXXXX.XX" ) ) 
+      ELSEIF cTipo=="N"         /* Final da Nota Fiscal */ 
+         dData:= SubStr( TMP->ORIGEM, 3, 6 ) 
+      ENDIF 
+      /* Grava informacoes - Nota Fiscal */ 
+      IF cTipo=="I" 
+         IF MPR->( DBSeek( PAD( cCodigo + "0", 12 ) ) ) 
+         ENDIF 
+      ENDIF 
+      @ 20,02 Say cCodigo 
+      Scroll( 02,02, 20, 78, 1 ) 
+      @ 20,02 Say cDescricao 
+      Scroll( 02,02, 20, 78, 1 ) 
+      TMP->( DBSkip() ) 
+   ENDDO 
+   DiarioComunicacao( "Importacao de Nota Fiscal - Espelho", "PANARELLO" ) 
+   Aviso( "Operacao Finalizada!" ) 
+   Pausa() 
+   DBSelectAr( 124 ) 
+   DBCloseArea() 
+   SetColor( cCor ) 
+   SetCursor( nCursor ) 
+   ScreenRest( cTela ) 
+   Return Nil 
+ 
+/***** 
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
+³ Funcao      ³ Export SoftWare - Estoque 
+³ Finalidade  ³ Importacao de Estoque - SoftWare 
+³ Parametros  ³ Nil 
+³ Retorno     ³ Nil 
+³ Programador ³ Valmor Pereira Flores 
+³ Data        ³ 
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+*/ 
+Function ISWEstoque() 
+Local cCor:= SetColor(), nCursor:= SetCursor(),; 
+      cTela:= ScreenSave( 0, 0, 24, 79 ) 
+   DBSelectAr( _COD_MPRIMA ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   UserScreen() 
+   VPBox( 0, 0, 22, 79, "EXPORTACAO DE ESTOQUE - Soft&Ware Informatica", _COR_GET_BOX ) 
+   DBSelectAr( _COD_ESTOQUE ) 
+   DBGoTop() 
+   cArquivo:= "ESTOQUE.TXT" 
+   Set( 24, cArquivo ) 
+   Set Device To Print 
+   @ PRow(),01 Say "01******ESTOQUE******/Soft&Ware Informatica" 
+   nQtd:= 1 
+   WHILE !EOF() 
+      ++nQtd 
+      Set Device To Screen 
+      @ 21,02 Say CPROD_ + DOC___ + DTOC( DATAMV ) 
+      Scroll( 02, 02, 21, 78, 1 ) 
+      Set Device To Print 
+      @ PRow()+1,01 Say "02"+CPROD_+ENTSAI+Tran( QUANT_, "99999999.9999" )+; 
+                        DOC___+Str( CODIGO )+Tran( VLRSAI, "9999999999.9999" ) +; 
+                        DTOC( DATAMV ) + Str( CODMV_ ) + ANULAR + Tran( NATOPE, "9.999" ) 
+      DBSkip() 
+   ENDDO 
+   @ Prow()+1,01 Say "03" + StrZero( ++nQtd, 08, 0 ) 
+   Set Device To Screen 
+   Set( 24, "LPT1" ) 
+   DiarioComunicacao( "Exportacao de Estoque", "SOFTWARE" ) 
+   Aviso( "Operacao Finalizada!" ) 
+   Pausa() 
+   DBSelectAr( 124 ) 
+   DBCloseArea() 
+   SetColor( cCor ) 
+   SetCursor( nCursor ) 
+   ScreenRest( cTela ) 
+   Return Nil 
+ 
+/***** 
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
+³ Funcao      ³ Importar SoftWare - Produtos 
+³ Finalidade  ³ Importacao de Produtos - SoftWare 
+³ Parametros  ³ Nil 
+³ Retorno     ³ Nil 
+³ Programador ³ Valmor Pereira Flores 
+³ Data        ³ 
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+*/ 
+Function ISWProduto( ) 
+Local cCor:= SetColor(), nCursor:= SetCursor(),; 
+      cTela:= ScreenSave( 0, 0, 24, 79 ) 
+Local aStr 
+ 
+   DBSelectAr( _COD_MPRIMA ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   UserScreen() 
+   VPBox( 0, 0, 22, 79, "RELACAO DE PRODUTOS - DO FORMATO SOFT&WARE", _COR_GET_BOX ) 
+   SetColor( _COR_GET_EDICAO ) 
+   cArquivo:= "PRODUTOS.TXT" + Space( 25 ) 
+   @ 02,02 Say "Arquivo de Importacao:" Get cArquivo 
+   READ 
+   IF LastKey() == K_ESC .OR. !File( cArquivo ) 
+      SetColor( cCor ) 
+      SetCursor( nCursor ) 
+      ScreenRest( cTela ) 
+      Return Nil 
+   ENDIF 
+   cArquivo:= Alltrim( cArquivo ) 
+   aStr:= {{"ORIGEM","C",200,00}} 
+   DBCreate( "IMPORTAR.TMP", aStr ) 
+   Sele 123 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   Use IMPORTAR.TMP Alias TMP 
+   DBSelectAr( _COD_MPRIMA ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   UserScreen() 
+   VPBox( 0, 0, 22, 79, "IMPORTACAO DE PRODUTO - Soft&Ware Informatica", _COR_GET_BOX ) 
+   DBSelectAr( _COD_MPRIMA ) 
+   DBSelectAr( 123 ) 
+   APPEND FROM &cArquivo SDF 
+   nQtd:= 1 
+   DBGoTop() 
+   WHILE !EOF() 
+ 
+       cCodigo:= "0000000" 
+       cDescri:= SubStr( TMP->ORIGEM, 1, 50 ) 
+ 
+       /* Codigo do Produto */ 
+       nCt:= 1 
+       cCodigo:= SubStr( TMP->ORIGEM, 1, Ocorrencia( nCt, Chr(9), TMP->ORIGEM )-1 ) 
+       cCodigo:= SubStr( cCodigo, 2, 3 ) + SubStr( cCodigo, 6, 4 ) 
+ 
+       /* EAN */ 
+       nCt:= 1 
+       cEAN___:= SUBSTR( TMP->ORIGEM, Ocorrencia( nCt, Chr(9), TMP->ORIGEM )+1, Ocorrencia( nCt+1, Chr(9), TMP->ORIGEM ) - Ocorrencia( nCt, Chr(9), TMP->ORIGEM ) -1 ) 
+ 
+       /* Descricao */ 
+       ++nCt 
+       cDescri:= SUBSTR( TMP->ORIGEM, Ocorrencia( nCt, Chr(9), TMP->ORIGEM )+1, Ocorrencia( nCt+1, Chr(9), TMP->ORIGEM ) - Ocorrencia( nCt, Chr(9), TMP->ORIGEM ) -1 ) 
+ 
+       /* Fabricante */ 
+       ++nCt 
+       cOrigem:= SUBSTR( TMP->ORIGEM, Ocorrencia( nCt, Chr(9), TMP->ORIGEM )+1, Ocorrencia( nCt+1, Chr(9), TMP->ORIGEM ) - Ocorrencia( nCt, Chr(9), TMP->ORIGEM ) -1 ) 
+ 
+       /* Preco */ 
+       ++nCt 
+       nPreco:= Val( SUBSTR( TMP->ORIGEM, Ocorrencia( nCt, Chr(9), TMP->ORIGEM )+1, Ocorrencia( nCt+1, Chr(9), TMP->ORIGEM ) - Ocorrencia( nCt, Chr(9), TMP->ORIGEM ) -1 ) ) 
+ 
+       /* Fornecedor */ 
+       ++nCt 
+       nFornec:= Val( SUBSTR( TMP->ORIGEM, Ocorrencia( nCt, Chr(9), TMP->ORIGEM )+1, Ocorrencia( nCt+1, Chr(9), TMP->ORIGEM ) - Ocorrencia( nCt, Chr(9), TMP->ORIGEM ) -1 ) ) 
+ 
+       /* Cd.Tributario */ 
+       ++nCt 
+       nCodTri:= SUBSTR( TMP->ORIGEM, Ocorrencia( nCt, Chr(9), TMP->ORIGEM )+1, Ocorrencia( nCt+1, Chr(9), TMP->ORIGEM ) - Ocorrencia( nCt, Chr(9), TMP->ORIGEM ) -1 ) 
+ 
+       /* Unidade */ 
+       ++nCt 
+       cUnidad:= SUBSTR( TMP->ORIGEM, Ocorrencia( nCt, Chr(9), TMP->ORIGEM )+1, Ocorrencia( nCt+1, Chr(9), TMP->ORIGEM ) - Ocorrencia( nCt, Chr(9), TMP->ORIGEM ) -1 ) 
+ 
+       /* Cd.ICMSubst */ 
+       ++nCt 
+       nICMSub:= SUBSTR( TMP->ORIGEM, Ocorrencia( nCt, Chr(9), TMP->ORIGEM )+1, Ocorrencia( nCt+1, Chr(9), TMP->ORIGEM ) - Ocorrencia( nCt, Chr(9), TMP->ORIGEM ) -1 ) 
+ 
+ 
+       /* Cd.IPI */ 
+       ++nCt 
+       nIPI:= VAL( SUBSTR( TMP->ORIGEM, Ocorrencia( nCt, Chr(9), TMP->ORIGEM )+1, Ocorrencia( nCt+1, Chr(9), TMP->ORIGEM ) - Ocorrencia( nCt, Chr(9), TMP->ORIGEM ) -1 ) ) 
+ 
+ 
+       /* PesoBruto */ 
+       ++nCt 
+       nPesoBr:= VAL( SUBSTR( TMP->ORIGEM, Ocorrencia( nCt, Chr(9), TMP->ORIGEM )+1, Ocorrencia( nCt+1, Chr(9), TMP->ORIGEM ) - Ocorrencia( nCt, Chr(9), TMP->ORIGEM ) -1 ) ) 
+ 
+       /* Liquido */ 
+       ++nCt 
+       nPesoLq:= VAL( SUBSTR( TMP->ORIGEM, Ocorrencia( nCt, Chr(9), TMP->ORIGEM )+1, Ocorrencia( nCt+1, Chr(9), TMP->ORIGEM ) - Ocorrencia( nCt, Chr(9), TMP->ORIGEM ) -1 ) ) 
+ 
+       cSt____:= "000" 
+       /* Atual Venda */ 
+       ++nCt 
+       nPreco:= VAL( SUBSTR( TMP->ORIGEM, Ocorrencia( nCt, Chr(9), TMP->ORIGEM )+1, Ocorrencia( nCt+1, Chr(9), TMP->ORIGEM ) - Ocorrencia( nCt, Chr(9), TMP->ORIGEM ) -1 ) ) 
+ 
+       /* Clas.Fiscal */ 
+       ++nCt 
+       nClaFis:= VAL( SUBSTR( TMP->ORIGEM, Ocorrencia( nCt, Chr(9), TMP->ORIGEM )+1, Ocorrencia( nCt+1, Chr(9), TMP->ORIGEM ) - Ocorrencia( nCt, Chr(9), TMP->ORIGEM ) -1 ) ) 
+ 
+       MPR->( DBSetOrder( 4 ) ) 
+       IF !MPR->( DBSeek( cEAN___ ) ) 
+          MPR->( DBAppend() ) 
+          Repl MPR->INDICE With cCodigo,; 
+               MPR->CODIGO With cCodigo,; 
+               MPR->CODRED With SubStr( cCodigo, 4 ),; 
+               MPR->CODFAB With cEAN___,; 
+               MPR->DESCRI With cDescri,; 
+               MPR->UNIDAD With cUnidad,; 
+               MPR->PRECOV With nPreco,; 
+               MPR->ICMCOD With VAL( Left( cST____, 1 ) ),; 
+               MPR->IPICOD With VAL( Right( cST____, 1 ) ),; 
+               MPR->CLAFIS With nClaFis 
+       ELSE 
+          IF MPR->( NetRLock() ) 
+             Repl MPR->DESCRI With cDescri,; 
+                  MPR->UNIDAD With cUnidad,; 
+                  MPR->ICMCOD With VAL( Left( cST____, 1 ) ),; 
+                  MPR->IPICOD With VAL( Right( cST____, 1 ) ),; 
+                  MPR->CLAFIS With nClaFis 
+          ENDIF 
+       ENDIF 
+       ++nQtd 
+       Set Device To Screen 
+       @ 21,02 Say MPR->INDICE + MPR->DESCRI 
+       Scroll( 02, 02, 21, 78, 1 ) 
+       DBSkip() 
+   ENDDO 
+   @ Prow()+1,01 Say "03" + StrZero( ++nQtd, 08, 0 ) 
+   Set Device To Screen 
+   Set( 24, "LPT1" ) 
+   DiarioComunicacao( "Exportacao de Estoque", "SOFTWARE" ) 
+   Aviso( "Operacao Finalizada!" ) 
+   Pausa() 
+   DBSelectAr( 124 ) 
+   DBCloseArea() 
+   SetColor( cCor ) 
+   SetCursor( nCursor ) 
+   ScreenRest( cTela ) 
+   Return Nil 
+ 
+  /***** 
+  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
+  ³ Funcao      ³ OCORRENCIA 
+  ³ Finalidade  ³ Buscar a Posicao do cChr, nOcorrencia(1..9999) na 
+  ³             ³ cString (A..Z) 
+  ³ Parametros  ³ nOcorrencia, cChr, cString 
+  ³ Retorno     ³ nPosicao 
+  ³ Programador ³ Valmor P. Flores 
+  ³ Data        ³ 
+  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+  */ 
+  Function Ocorrencia( nOcorrencia, cChr, cString ) 
+  nPosicao:= RAT( cChr, StrTran( cString, cChr, "±", nOcorrencia + 1 ) ) 
+  Return nPosicao 
+ 
+/***** 
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
+³ Funcao      ³ DiarioComunicacao 
+³ Finalidade  ³ Armazenar informacoes de acesso ao modulo de comunicacao 
+³ Parametros  ³ cInformacao 
+³ Retorno     ³ Nil 
+³ Programador ³ Valmor Pereira Flores 
+³ Data        ³ 
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+*/ 
+Function DiarioComunicacao( cInformacao, cInfo2 ) 
+Local nArea:= Select() 
+Local aStr:= {} 
+DBSelectAr( _COD_DIARIO ) 
+IF !Used() 
+   IF !File( _VPB_DIARIO ) 
+      aStr:= {{"DATA__","D",08,00},; 
+              {"HORA__","C",08,00},; 
+              {"DESCRI","C",60,00},; 
+              {"RESPON","N",03,00},; 
+              {"TIPO__","C",01,00}} 
+      DBCreate( _VPB_DIARIO, aStr ) 
+   ENDIF 
+   NetUse( _VPB_DIARIO, .F., 1, "DC", .F. ) 
+   IF !File( GDir-"\DIARIO.NTX" ) 
+
+      // Linhas corrigidas pelo programa de correcao cl2hb.exe em 19/08/2003
+      #ifdef LINUX
+        index on data__ to "&gdir/diario.ntx" 
+      #else 
+        Index On DATA__ To "&GDir\DIARIO.NTX" 
+      #endif
+   ENDIF 
+
+   // Linhas corrigidas pelo programa de correcao cl2hb.exe em 19/08/2003
+   #ifdef LINUX
+     set index to "&gdir/diario.ntx" 
+   #else 
+     Set index To "&Gdir\DIARIO.NTX" 
+   #endif
+ENDIF 
+DBGoBottom() 
+IF BOF() 
+   DBAppend() 
+ENDIF 
+IF NetRLock() 
+   Repl DATA__ With Date(),; 
+        HORA__ With time(),; 
+        DESCRI With cInformacao,; 
+        RESPON With nGCodUser,; 
+        TIPO__ With Space( 1 ) 
+ENDIF 
+ 
+DBAppend() 
+Replace DATA__ With DATE(),; 
+        HORA__ With TIME(),; 
+        TIPO__ With "*",; 
+        DESCRI With cInfo2,; 
+        RESPON With nGCodUser 
+ 
+DBAppend() 
+Replace DATA__ With DATE(),; 
+        TIPO__ With "*",; 
+        DESCRI With Repl( "Ä", 60 ) 
+ 
+DBAppend() 
+Replace DATA__ With DATE(),; 
+        TIPO__ With "*" 
+ 
+Return Nil 
+ 
+ 
+ 
+/***** 
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
+³ Funcao      ³ VisualComunicacao 
+³ Finalidade  ³ Visualizacao da comunicacao 
+³ Parametros  ³ Nil 
+³ Retorno     ³ Nil 
+³ Programador ³ Valmor Pereira Flores 
+³ Data        ³ 
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+*/ 
+Function VisualComunicacao() 
+Local cCor:= SetColor(), nCursor:= SetCursor(),; 
+      cTela:= ScreenSave( 0, 0, 24, 79 ) 
+ 
+   DBSelectAr( _COD_DIARIO ) 
+   IF !Used() 
+      IF !File( _VPB_DIARIO ) 
+         aStr:= {{"DATA__","D",08,00},; 
+                 {"HORA__","C",08,00},; 
+                 {"DESCRI","C",60,00},; 
+                 {"RESPON","N",03,00},; 
+                 {"TIPO__","C",01,00}} 
+         DBCreate( _VPB_DIARIO, aStr ) 
+      ENDIF 
+      NetUse( _VPB_DIARIO, .F., 1, "DC", .F. ) 
+      IF !File( GDir-"\DIARIO.NTX" ) 
+
+         // Linhas corrigidas pelo programa de correcao cl2hb.exe em 19/08/2003
+         #ifdef LINUX
+           index on data__ to "&gdir/diario.ntx" 
+         #else 
+           Index On DATA__ To "&GDir\DIARIO.NTX" 
+         #endif
+      ENDIF 
+
+      // Linhas corrigidas pelo programa de correcao cl2hb.exe em 19/08/2003
+      #ifdef LINUX
+        set index to "&gdir/diario.ntx" 
+      #else 
+        Set index To "&Gdir\DIARIO.NTX" 
+      #endif
+   ENDIF 
+   DBGoBottom() 
+ 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   UserScreen() 
+   VPBox( 0, 0, 22, 79, "DIARIO DE COMUNICACAO", _COR_GET_BOX ) 
+   SetColor( _COR_GET_EDICAO ) 
+   Mensagem("Pressione [ENTER] p/ selecionar.") 
+   Ajuda("["+_SETAS+"][PgUp][PgDn]Move") 
+   SetColor( _COR_BROWSE ) 
+   oTB:=tbrowsedb( 01,01,21,78 ) 
+   oTB:addcolumn(tbcolumnnew(,{|| IF( !TIPO__=="*", DTOC( DATA__ ) + " " + HORA__, Space( 17 ) ) + " " + Left( DESCRI, 53 ) + " " + IF( !TIPO__=="*", Str( RESPON, 3, 0 ), "   " ) })) 
+   oTB:AUTOLITE:=.f. 
+   oTB:dehilite() 
+   SetCursor(0) 
+   whil .t. 
+       oTB:colorrect({oTB:ROWPOS,1,oTB:ROWPOS+1,1},{2,1}) 
+       whil nextkey()=0 .and.! oTB:stabilize() 
+       enddo 
+       IF Row()+1 < 22 
+          @ Row()+1,01 Say Space( 18 ) 
+       ENDIF 
+       nTecla:=inkey(0) 
+       if nTecla=K_ESC 
+          exit 
+       endif 
+       //Dispbegin() 
+       do case 
+          case nTecla==K_UP 
+               oTB:up() 
+               oTb:RefreshAll() 
+               WHILE !oTb:Stabilize() 
+               ENDDO 
+               IF( !EMPTY( TIPO__ ), oTb:up(), Nil ) 
+               oTb:RefreshAll() 
+               WHILE !oTb:Stabilize() 
+               ENDDO 
+               IF( !EMPTY( TIPO__ ), oTb:up(), Nil ) 
+               oTb:RefreshAll() 
+               WHILE !oTb:Stabilize() 
+               ENDDO 
+          case nTecla==K_LEFT 
+               oTB:up() 
+               oTb:RefreshAll() 
+               WHILE !oTb:Stabilize() 
+               ENDDO 
+               IF( !EMPTY( TIPO__ ), oTb:up(), Nil ) 
+               oTb:RefreshAll() 
+               WHILE !oTb:Stabilize() 
+               ENDDO 
+               IF( !EMPTY( TIPO__ ), oTb:up(), Nil ) 
+               oTb:RefreshAll() 
+               WHILE !oTb:Stabilize() 
+               ENDDO 
+          case nTecla==K_RIGHT 
+               oTB:down() 
+               oTb:RefreshAll() 
+               WHILE !oTb:Stabilize() 
+               ENDDO 
+               IF( !EMPTY( TIPO__ ), oTb:Down(), Nil ) 
+               oTb:RefreshAll() 
+               WHILE !oTb:Stabilize() 
+               ENDDO 
+               IF( !EMPTY( TIPO__ ), oTb:Down(), Nil ) 
+               oTb:RefreshAll() 
+               WHILE !oTb:Stabilize() 
+               ENDDO 
+          case nTecla==K_DOWN 
+               oTB:down() 
+               oTb:RefreshAll() 
+               WHILE !oTb:Stabilize() 
+               ENDDO 
+               IF( !EMPTY( TIPO__ ), oTb:Down(), Nil ) 
+               oTb:RefreshAll() 
+               WHILE !oTb:Stabilize() 
+               ENDDO 
+               IF( !EMPTY( TIPO__ ), oTb:Down(), Nil ) 
+               oTb:RefreshAll() 
+               WHILE !oTb:Stabilize() 
+               ENDDO 
+          case nTecla==K_PGUP       ;oTB:pageup() 
+               oTb:RefreshAll() 
+               WHILE !oTb:Stabilize() 
+               ENDDO 
+               IF( !EMPTY( TIPO__ ), oTb:Up(), Nil ) 
+               oTb:RefreshAll() 
+               WHILE !oTb:Stabilize() 
+               ENDDO 
+               IF( !EMPTY( TIPO__ ), oTb:Up(), Nil ) 
+               oTb:RefreshAll() 
+               WHILE !oTb:Stabilize() 
+               ENDDO 
+          case nTecla==K_PGDN       ;oTB:pagedown() 
+               oTb:RefreshAll() 
+               WHILE !oTb:Stabilize() 
+               ENDDO 
+               IF( !EMPTY( TIPO__ ), oTb:Down(), Nil ) 
+               oTb:RefreshAll() 
+               WHILE !oTb:Stabilize() 
+               ENDDO 
+               IF( !EMPTY( TIPO__ ), oTb:Down(), Nil ) 
+               oTb:RefreshAll() 
+               WHILE !oTb:Stabilize() 
+               ENDDO 
+          case nTecla==K_CTRL_PGUP  ;oTB:gotop() 
+          case nTecla==K_CTRL_PGDN  ;oTB:gobottom() 
+          otherwise                ;tone(125); tone(300) 
+       endcase 
+       oTB:refreshAll() 
+       oTB:stabilize() 
+       //DispEnd() 
+   enddo 
+   DBCloseArea() 
+   DBSelectAr( _COD_CLIENTE ) 
+   SetColor( cCor ) 
+   SetCursor( nCursor ) 
+   ScreenRest( cTela ) 
+   Return Nil 
+ 
+/***** 
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
+³ Funcao      ³ iACSBase 
+³ Finalidade  ³ Importacao de Base de dados ACS 
+³ Parametros  ³ Nil 
+³ Retorno     ³ Nil 
+³ Programador ³ Valmor Flores 
+³ Data        ³ 
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+*/ 
+Function IACSBase() 
+Local cCor:= SetColor(), nCursor:= SetCursor(),; 
+      cTela:= ScreenSave( 0, 0, 24, 79 ) 
+   DBSelectAr( _COD_MPRIMA ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   UserScreen() 
+   VPBox( 0, 0, 22, 79, "ACS/CORAL - BASE DE DADOS", _COR_GET_BOX ) 
+   SetColor( _COR_GET_EDICAO ) 
+   cDiretorio:= "C:\ACS\E001" + Space( 25 ) 
+   @ 02,02 Say "Diretorio do Sistema (Base de Dados):" Get cDiretorio 
+   READ 
+   IF !File( cDiretorio + "\COMPONEN.DBF" ) .OR.; 
+      !File( cDiretorio + "\PRODUTOS.DBF" ) 
+      Aviso( "Diretorio informado nÆo possui dados necessarios..." ) 
+      Pausa() 
+      SetColor( cCor ) 
+      SetCursor( nCursor ) 
+      ScreenRest( cTela ) 
+      Return Nil 
+   ENDIF 
+   DBSelectAr( 124 ) 
+   DBCloseArea() 
+
+   // Linhas corrigidas pelo programa de correcao cl2hb.exe em 19/08/2003
+   #ifdef LINUX
+     use "&cdiretorio/componen.dbf" alias cmp shared  
+   #else 
+     Use "&cDiretorio\COMPONEN.DBF" Alias CMP Shared  
+   #endif
+   MPR->( DBSetOrder( 4 ) ) 
+   nCodigo:= 8000001 
+   WHILE !CMP->( EOF() ) 
+       cCodigo:= StrZero( nCodigo, 7, 0 ) 
+       IF !MPR->( DBSeek( PAD( CMP->COMPONENT, Len( MPR->CODFAB ) ) ) ) 
+          MPR->( DBAppend() ) 
+          Replace MPR->CODIGO With cCodigo,; 
+                  MPR->DESCRI With CMP->DESCRICAO,; 
+                  MPR->INDICE With cCodigo,; 
+                  MPR->CODFAB With CMP->COMPONENT,; 
+                  MPR->ORIGEM With "COR" 
+          nCodigo:= nCodigo + 1 
+       ENDIF 
+       CMP->( DBSkip() ) 
+   ENDDO 
+   DBSelectAr( 124 ) 
+
+   // Linhas corrigidas pelo programa de correcao cl2hb.exe em 19/08/2003
+   #ifdef LINUX
+     use "&cdiretorio/produtos.dbf" alias pro shared  
+   #else 
+     Use "&cDiretorio\PRODUTOS.DBF" Alias PRO Shared  
+   #endif
+   MPR->( DBSetOrder( 1 ) ) 
+   cDescricao:= "NIL" 
+   cCodigo:= 0 
+   WHILE !PRO->( EOF() ) 
+      cCodigo:= SubStr( PRO->CODPRO, 6, 3 ) + SubStr( PRO->CODPRO, 1, 4 ) 
+      cDescricao:= Left( PRO->DESCOR, 25 ) + " " + Left( PRO->DESPRO, 10 ) + " " + PRO->STAYEA + "/" + PRO->ENDYEA + " " + PRO->CMONT 
+      cDetal1:= PRO->CMONT 
+      cDetal2:= PRO->VEHICL + " " + PRO->DESRED 
+      cDetal3:= PRO->VARIANTE + "      Ano: " + PRO->STAYEA + " " + PRO->ENDYEA 
+      lMPrima:= EMPTY( PRO->FCOMPON1 ) 
+      IF MPR->( DBSeek( PAD( cCodigo, 12 ) ) ) 
+         IF MPR->( NetRLock() ) 
+            Replace MPR->DESCRI With cDescricao 
+         ENDIF 
+      ELSE 
+         MPR->( DBAppend() ) 
+         IF MPR->( NetRLock() ) 
+            Replace MPR->DETAL1 With Alltrim( cDetal1 ),; 
+                    MPR->DETAL2 With Alltrim( cDetal2 ),; 
+                    MPR->DETAL3 With Alltrim( cDetal3 ),; 
+                    MPR->DESCRI With cDescricao,; 
+                    MPR->INDICE With cCodigo,; 
+                    MPR->CODIGO With cCodigo,; 
+                    MPR->CODRED With SubStr( cCodigo, 4 ),; 
+                    MPR->MPRIMA With IF( lMPrima, "S", "N" ) 
+            IF !lMPrima 
+               nRegistro:= MPR->( RECNO() ) 
+               MPR->( DBSetOrder( 4 ) ) 
+               IF MPR->( DBSeek( PAD( PRO->FCOMPON1, 13 ) ) ) 
+                  ASM->( DBAppend() ) 
+                  Repl ASM->CODPRD With cCodigo,; 
+                       ASM->DESCRI With MPR->DESCRI,; 
+                       ASM->CODMPR With MPR->INDICE,; 
+                       ASM->QUANT_ With PRO->FPERCEN1 
+               ENDIF 
+               IF MPR->( DBSeek( PAD( PRO->FCOMPON2, 13 ) ) ) 
+                  ASM->( DBAppend() ) 
+                  Repl ASM->CODPRD With cCodigo,; 
+                       ASM->DESCRI With MPR->DESCRI,; 
+                       ASM->CODMPR With MPR->INDICE,; 
+                       ASM->QUANT_ With PRO->FPERCEN2 
+               ENDIF 
+               IF MPR->( DBSeek( PAD( PRO->FCOMPON3, 13 ) ) ) 
+                  ASM->( DBAppend() ) 
+                  Repl ASM->CODPRD With cCodigo,; 
+                       ASM->DESCRI With MPR->DESCRI,; 
+                       ASM->CODMPR With MPR->INDICE,; 
+                       ASM->QUANT_ With PRO->FPERCEN3 
+               ENDIF 
+               IF MPR->( DBSeek( PAD( PRO->FCOMPON4, 13 ) ) ) 
+                  ASM->( DBAppend() ) 
+                  Repl ASM->CODPRD With cCodigo,; 
+                       ASM->DESCRI With MPR->DESCRI,; 
+                       ASM->CODMPR With MPR->INDICE,; 
+                       ASM->QUANT_ With PRO->FPERCEN4 
+               ENDIF 
+               IF MPR->( DBSeek( PAD( PRO->FCOMPON5, 13 ) ) ) 
+                  ASM->( DBAppend() ) 
+                  Repl ASM->CODPRD With cCodigo,; 
+                       ASM->DESCRI With MPR->DESCRI,; 
+                       ASM->CODMPR With MPR->INDICE,; 
+                       ASM->QUANT_ With PRO->FPERCEN5 
+               ENDIF 
+               IF MPR->( DBSeek( PAD( PRO->FCOMPON6, 13 ) ) ) 
+                  ASM->( DBAppend() ) 
+                  Repl ASM->CODPRD With cCodigo,; 
+                       ASM->DESCRI With MPR->DESCRI,; 
+                       ASM->CODMPR With MPR->INDICE,; 
+                       ASM->QUANT_ With PRO->FPERCEN6 
+               ENDIF 
+               IF MPR->( DBSeek( PAD( PRO->FCOMPON7, 13 ) ) ) 
+                  ASM->( DBAppend() ) 
+                  Repl ASM->CODPRD With cCodigo,; 
+                       ASM->DESCRI With MPR->DESCRI,; 
+                       ASM->CODMPR With MPR->INDICE,; 
+                       ASM->QUANT_ With PRO->FPERCEN7 
+               ENDIF 
+               IF MPR->( DBSeek( PAD( PRO->FCOMPON8, 13 ) ) ) 
+                  ASM->( DBAppend() ) 
+                  Repl ASM->CODPRD With cCodigo,; 
+                       ASM->DESCRI With MPR->DESCRI,; 
+                       ASM->CODMPR With MPR->INDICE,; 
+                       ASM->QUANT_ With PRO->FPERCEN8 
+               ENDIF 
+               IF MPR->( DBSeek( PAD( PRO->FCOMPON9, 13 ) ) ) 
+                  ASM->( DBAppend() ) 
+                  Repl ASM->CODPRD With cCodigo,; 
+                       ASM->DESCRI With MPR->DESCRI,; 
+                       ASM->CODMPR With MPR->INDICE,; 
+                       ASM->QUANT_ With PRO->FPERCEN9 
+               ENDIF 
+               IF MPR->( DBSeek( PAD( PRO->FCOMPON10, 13 ) ) ) 
+                  ASM->( DBAppend() ) 
+                  Repl ASM->CODPRD With cCodigo,; 
+                       ASM->DESCRI With MPR->DESCRI,; 
+                       ASM->CODMPR With MPR->INDICE,; 
+                       ASM->QUANT_ With PRO->FPERCEN10 
+               ENDIF 
+               IF MPR->( DBSeek( PAD( PRO->FCOMPON11, 13 ) ) ) 
+                  ASM->( DBAppend() ) 
+                  Repl ASM->CODPRD With cCodigo,; 
+                       ASM->DESCRI With MPR->DESCRI,; 
+                       ASM->CODMPR With MPR->INDICE,; 
+                       ASM->QUANT_ With PRO->FPERCEN11 
+               ENDIF 
+               IF MPR->( DBSeek( PAD( PRO->FCOMPON12, 13 ) ) ) 
+                  ASM->( DBAppend() ) 
+                  Repl ASM->CODPRD With cCodigo,; 
+                       ASM->DESCRI With MPR->DESCRI,; 
+                       ASM->CODMPR With MPR->INDICE,; 
+                       ASM->QUANT_ With PRO->FPERCEN12 
+               ENDIF 
+               MPR->( DBSetOrder( 1 ) ) 
+            ENDIF 
+         ENDIF 
+      ENDIF 
+      @ 20,02 Say cCodigo 
+      Scroll( 02,02, 20, 78, 1 ) 
+      @ 20,02 Say cDescricao 
+      Scroll( 02,02, 20, 78, 1 ) 
+      PRO->( DBSkip() ) 
+   ENDDO 
+   DBSelectAr( _COD_ASSEMBLER ) 
+   DBGoTop() 
+   @ 20,02 Say "Limpando informacoes desnecessarias, aguarde..." 
+   WHILE !EOF() 
+       @ ROW(),COL() Say Recno() 
+       IF QUANT_ == 0 
+          IF NetRLock() 
+             Dele 
+          ENDIF 
+       ENDIF 
+       DBSkip() 
+   ENDDO 
+   DiarioComunicacao( "Importacao da Base de dados", "A.C.S.-CORAL" ) 
+   Aviso( "Operacao Finalizada!" ) 
+   Pausa() 
+   DBSelectAr( 124 ) 
+   DBCloseArea() 
+   SetColor( cCor ) 
+   SetCursor( nCursor ) 
+   ScreenRest( cTela ) 
+   Return Nil 
+ 
+/***** 
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
+³ Funcao      ³ iACSPreco 
+³ Finalidade  ³ Importacao de Precos ACS 
+³ Parametros  ³ Nil 
+³ Retorno     ³ Nil 
+³ Programador ³ Valmor Flores 
+³ Data        ³ 
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+*/ 
+Function IACSPreco() 
+Local cCor:= SetColor(), nCursor:= SetCursor(),; 
+      cTela:= ScreenSave( 0, 0, 24, 79 ) 
+   DBSelectAr( _COD_MPRIMA ) 
+   DBSetOrder( 1 ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   UserScreen() 
+   VPBox( 0, 0, 22, 79, "ACS/CORAL - LISTA DE PRECOS", _COR_GET_BOX ) 
+   SetColor( _COR_GET_EDICAO ) 
+   cDiretorio:= "C:\ACS\E001" + Space( 25 ) 
+   @ 02,02 Say "Diretorio do Sistema (Base de Dados):" Get cDiretorio 
+   READ 
+   IF !File( cDiretorio + "\LISTAPRE.DBF" ) 
+      Aviso( "Diretorio informado nÆo possui dados necessarios..." ) 
+      Pausa() 
+      SetColor( cCor ) 
+      SetCursor( nCursor ) 
+      ScreenRest( cTela ) 
+      Return Nil 
+   ENDIF 
+   DBSelectAr( 124 ) 
+   DBCloseArea() 
+
+   // Linhas corrigidas pelo programa de correcao cl2hb.exe em 19/08/2003
+   #ifdef LINUX
+     use "&cdiretorio/listapre.dbf" alias im shared  
+   #else 
+     Use "&cDiretorio\LISTAPRE.DBF" Alias IM Shared  
+   #endif
+   IM->( DBGoTop() ) 
+   WHILE .T. 
+      cCodigo:= SubStr( IM->CODPRO, 6, 3 ) + SubStr( IM->CODPRO, 1, 4 ) 
+      IF IM->PREACSM == 0 
+         nPreco:= IM->PREGALM 
+      ELSE 
+         nPreco:= IM->PREACSM 
+      ENDIF 
+      IF MPR->( DBSeek( PAD( cCodigo, 12 ) ) ) 
+         IF MPR->( NetRLock() ) 
+            Replace MPR->PRECOV With nPreco,; 
+                    MPR->PRECOD With nPreco,; 
+                    MPR->ORIGEM With "COR" 
+         ENDIF 
+      ENDIF 
+      @ 20,02 Say MPR->CODIGO 
+      Scroll( 02,02, 20, 78, 1 ) 
+      @ 20,02 Say MPR->DESCRI + IF( !EOF(), " OK! ", "Buscando Informacoes." ) 
+      Scroll( 02,02, 20, 78, 1 ) 
+      IM->( DBSkip() ) 
+      IF IM->( EOF() ) 
+         EXIT 
+      ENDIF 
+   ENDDO 
+   **************/ 
+   DiarioComunicacao( "Importacao de Lista de Precos", "A.C.S.-CORAL" ) 
+   Aviso( "Operacao Finalizada!" ) 
+   Pausa() 
+   DBSelectAr( 124 ) 
+   DBCloseArea() 
+   SetColor( cCor ) 
+   SetCursor( nCursor ) 
+   ScreenRest( cTela ) 
+   Return Nil 
+ 
+/***** 
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
+³ Funcao      ³ iGlasBase 
+³ Finalidade  ³ Importacao de Precos FORMIX 
+³ Parametros  ³ Nil 
+³ Retorno     ³ Nil 
+³ Programador ³ Valmor Flores 
+³ Data        ³ 
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+*/ 
+Function iGlasBase() 
+Local cCor:= SetColor(), nCursor:= SetCursor(),; 
+      cTela:= ScreenSave( 0, 0, 24, 79 ) 
+   DBSelectAr( _COD_MPRIMA ) 
+   DBSetOrder( 1 ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   UserScreen() 
+   VPBox( 0, 0, 22, 79, "FORMIX/GLASURIT - LISTA DE PRECOS", _COR_GET_BOX ) 
+   SetColor( _COR_GET_EDICAO ) 
+   cArquivo:= "C:\FORMIX\BAS.TXT" + Space( 25 ) 
+   cGrupo:= "300" 
+   @ 02,02 Say "Arquivo c/ Informacoes:" Get cArquivo 
+   @ 03,02 Say "Grupo de Produtos.....:" Get cGrupo 
+   READ 
+   IF !File( cArquivo ) 
+      Aviso( "Diretorio informado nÆo possui dados necessarios..." ) 
+      Pausa() 
+      SetColor( cCor ) 
+      SetCursor( nCursor ) 
+      ScreenRest( cTela ) 
+      Return Nil 
+   ENDIF 
+   aStr:= {{"ORIGEM","C",200,0}} 
+   DBSelectAr( 124 ) 
+   DBCreate( "PRECO.TMP", aStr ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   Use PRECO.TMP Alias TMP Shared 
+   Append From &cArquivo SDF 
+   DBGoTop() 
+   MPR->( DBSetOrder( 1 ) ) 
+   cDescricao:= "NIL" 
+   cCodigo:= 0 
+   MPR->( DBSetOrder( 1 ) ) 
+   IF !MPR->( DBSeek( PAD( cGrupo + "0000", 12 ) ) ) 
+      MPR->( DBAppend() ) 
+      Replace MPR->CODIGO With cGrupo + "0000",; 
+              MPR->INDICE With cGrupo + "0000",; 
+              MPR->DESCRI With "--GRUPO GLASURIT--------------------------",; 
+              MPR->ORIGEM With "GLS" 
+   ENDIF 
+   MPR->( DBSetOrder( 4 ) ) 
+   WHILE !TMP->( EOF() ) 
+      cCodFab:= PAD( SubStr( TMP->ORIGEM, 1, 8 ), 13 ) 
+      cDescri:= SubStr( TMP->ORIGEM, 9, 43 ) 
+      nPreco:= VAL( SubStr( TMP->ORIGEM, 56, 10 ) ) 
+      IF MPR->( DBSeek( PAD( cCodFab, 13 ) ) ) 
+         IF MPR->( NetRLock() ) 
+            Replace MPR->PRECOV With nPreco,; 
+                    MPR->PRECOD With nPreco,; 
+                    MPR->ORIGEM With "GLS" 
+         ENDIF 
+      ELSE 
+         MPR->( DBSetOrder( 1 ) ) 
+         MPR->( DBSeek( PAD( cGrupo + "0001", 12 ), .T. ) ) 
+         IF cGrupo==LEFT( MPR->INDICE, 3 ) 
+            WHILE cGrupo==Left( MPR->INDICE, 3 ) 
+                MPR->( DBSkip() ) 
+                IF MPR->( EOF() ) 
+                   EXIT 
+                ENDIF 
+            ENDDO 
+            MPR->( DBSkip( -1 ) ) 
+            cIndice:= cGrupo + SubStr( StrZero( Val( MPR->INDICE ) + 1, 7, 0 ), 4 ) 
+         ELSE 
+            cIndice:= cGrupo + "0001" 
+         ENDIF 
+         cCodigo:= cIndice 
+         MPR->( DBSetOrder( 4 ) ) 
+         MPR->( DBAppend() ) 
+         Replace MPR->DESCRI With cDescri,; 
+                 MPR->CODFAB With cCodFab,; 
+                 MPR->PRECOV With nPreco,; 
+                 MPR->PRECOD With nPreco,; 
+                 MPR->INDICE With cIndice,; 
+                 MPR->CODIGO With cCodigo,; 
+                 MPR->CODRED With SubStr( cCodigo, 4 ),; 
+                 MPR->ORIGEM With "GLS" 
+      ENDIF 
+      @ 20,02 Say MPR->INDICE 
+      Scroll( 02,02, 20, 78, 1 ) 
+      @ 20,02 Say MPR->DESCRI 
+      Scroll( 02,02, 20, 78, 1 ) 
+      TMP->( DBSkip() ) 
+   ENDDO 
+   DiarioComunicacao( "Importacao de Lista de Precos", "PANARELLO" ) 
+   Aviso( "Operacao Finalizada!" ) 
+   Pausa() 
+   DBSelectAr( 124 ) 
+   DBCloseArea() 
+   SetColor( cCor ) 
+   SetCursor( nCursor ) 
+   ScreenRest( cTela ) 
+   Return Nil 
+ 
+/***** 
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
+³ Funcao      ³ iGlasFormula 
+³ Finalidade  ³ Importacao de Precos FORMIX/GLASURIT 
+³ Parametros  ³ Nil 
+³ Retorno     ³ Nil 
+³ Programador ³ Valmor Flores 
+³ Data        ³ 
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+*/ 
+Function iGlasFormula() 
+Local cCor:= SetColor(), nCursor:= SetCursor(),; 
+      cTela:= ScreenSave( 0, 0, 24, 79 ) 
+   DBSelectAr( _COD_MPRIMA ) 
+   DBSetOrder( 1 ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   UserScreen() 
+   VPBox( 0, 0, 22, 79, "FORMIX/GLASURIT - FORMULAS", _COR_GET_BOX ) 
+   SetColor( _COR_GET_EDICAO ) 
+   cArquivo:= "C:\FORMIX\FOR.TXT" + Space( 25 ) 
+   cGrupo:= "301" 
+   @ 02,02 Say "Arquivo c/ Informacoes:" Get cArquivo 
+   @ 03,02 Say "Grupo de Produtos.....:" Get cGrupo 
+   READ 
+   IF !File( cArquivo ) 
+      Aviso( "Diretorio informado nÆo possui dados necessarios..." ) 
+      Pausa() 
+      SetColor( cCor ) 
+      SetCursor( nCursor ) 
+      ScreenRest( cTela ) 
+      Return Nil 
+   ENDIF 
+   aStr:= {{"ORIGEM","C",200,0}} 
+   DBSelectAr( 124 ) 
+   DBCreate( "PRECO.TMP", aStr ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   Use PRECO.TMP Alias TMP Shared 
+   Append From &cArquivo SDF 
+   DBGoTop() 
+   MPR->( DBSetOrder( 1 ) ) 
+   cDescricao:= "NIL" 
+   cCodigo:= 0 
+   MPR->( DBSetOrder( 1 ) ) 
+   IF !MPR->( DBSeek( PAD( cGrupo + "0000", 12 ) ) ) 
+      MPR->( DBAppend() ) 
+      Replace MPR->CODIGO With cGrupo + "0000",; 
+              MPR->INDICE With cGrupo + "0000",; 
+              MPR->DESCRI With "--GRUPO GLASURIT--------------------------",; 
+              MPR->ORIGEM With "GLS" 
+   ENDIF 
+   MPR->( DBSetOrder( 4 ) ) 
+   WHILE !TMP->( EOF() ) 
+      cCodFab:= PAD( SubStr( TMP->ORIGEM, 44, 6 ) + "-" + SubStr( TMP->ORIGEM, 116, 4 ), 13 ) 
+      cDescri:= AllTrim( SubStr( TMP->ORIGEM, 48, 43 ) ) 
+      nPreco:=  VAL( SubStr( TMP->ORIGEM, 100, 13 ) ) 
+      IF MPR->( DBSeek( PAD( cCodFab, 13 ) ) ) 
+         IF MPR->( NetRLock() ) 
+            Replace MPR->PRECOV With nPreco,; 
+                    MPR->ORIGEM With "GLS" 
+         ENDIF 
+      ELSE 
+         MPR->( DBSetOrder( 1 ) ) 
+         MPR->( DBSeek( PAD( cGrupo + "0001", 12 ), .T. ) ) 
+         IF cGrupo==LEFT( MPR->INDICE, 3 ) 
+            WHILE cGrupo==Left( MPR->INDICE, 3 ) 
+                MPR->( DBSkip() ) 
+                IF MPR->( EOF() ) 
+                   EXIT 
+                ENDIF 
+            ENDDO 
+            MPR->( DBSkip( -1 ) ) 
+            cIndice:= cGrupo + SubStr( StrZero( Val( MPR->INDICE ) + 1, 7, 0 ), 4 ) 
+         ELSE 
+            cIndice:= cGrupo + "0001" 
+         ENDIF 
+         cCodigo:= cIndice 
+         MPR->( DBSetOrder( 4 ) ) 
+         MPR->( DBAppend() ) 
+         Replace MPR->DESCRI With cDescri,; 
+                 MPR->CODFAB With cCodFab,; 
+                 MPR->PRECOV With nPreco,; 
+                 MPR->PRECOD With nPreco,; 
+                 MPR->INDICE With cIndice,; 
+                 MPR->CODIGO With cCodigo,; 
+                 MPR->CODRED With SubStr( cCodigo, 4 ),; 
+                 MPR->ORIGEM With "GLS" 
+      ENDIF 
+      @ 20,02 Say MPR->INDICE 
+      Scroll( 02,02, 20, 78, 1 ) 
+      @ 20,02 Say MPR->DESCRI 
+      Scroll( 02,02, 20, 78, 1 ) 
+      TMP->( DBSkip() ) 
+   ENDDO 
+   DiarioComunicacao( "Importacao de Lista de Precos", "PANARELLO" ) 
+   Aviso( "Operacao Finalizada!" ) 
+   Pausa() 
+   DBSelectAr( 124 ) 
+   DBCloseArea() 
+   SetColor( cCor ) 
+   SetCursor( nCursor ) 
+   ScreenRest( cTela ) 
+   Return Nil 
+ 
+/***** 
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
+³ Funcao      ³ RennerPreco 
+³ Finalidade  ³ Importacao de Precos Renner Dupont 
+³ Parametros  ³ Nil 
+³ Retorno     ³ Nil 
+³ Programador ³ Valmor Flores 
+³ Data        ³ 
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+*/ 
+Function RennerPreco() 
+Local cCor:= SetColor(), nCursor:= SetCursor(),; 
+      cTela:= ScreenSave( 0, 0, 24, 79 ) 
+   cGrupo:= "401" 
+   DBSelectAr( _COD_MPRIMA ) 
+   DBSetOrder( 1 ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   UserScreen() 
+   VPBox( 0, 0, 22, 79, "RENNER - LISTA DE PRECOS", _COR_GET_BOX ) 
+   SetColor( _COR_GET_EDICAO ) 
+   cArquivo1:= "C:\MAUTO\MAC010.DBF" + Space( 25 ) 
+   cArquivo:=  "C:\MAUTO\MAD010.DBF" + Space( 25 ) 
+   cFormulas:= "C:\MAUTO\MAF010.DBF" + Space( 25 ) 
+   cArquivo2:= "C:\MAUTO\MAT010.DBF" + Space( 25 ) 
+   cArquivo3:= "C:\MAUTO\MAT020.DBF" + Space( 25 ) 
+   @ 02,02 Say "Base de Dados.........:" Get cArquivo 
+   @ 03,02 Say "Base de Dados (Precos):" Get cArquivo1 
+   @ 04,02 Say "Formulas..............:" Get cFormulas 
+   @ 05,02 Say "Montadoras............:" Get cArquivo2 
+   @ 06,02 Say "Grupo de Produtos.....:" Get cGrupo 
+   @ 07,02 Say "Grupo de Referencias..:" Get cArquivo3 
+   READ 
+   IF !File( cArquivo ) 
+      Aviso( "Diretorio informado nÆo possui dados necessarios..." ) 
+      Pausa() 
+      SetColor( cCor ) 
+      SetCursor( nCursor ) 
+      ScreenRest( cTela ) 
+      Return Nil 
+   ENDIF 
+   MPR->( DBSetOrder( 1 ) ) 
+   cDescricao:= "NIL" 
+   cCodigo:= 0 
+   MPR->( DBSetOrder( 1 ) ) 
+   IF !MPR->( DBSeek( PAD( cGrupo + "0000", 12 ) ) ) 
+      MPR->( DBAppend() ) 
+      Replace MPR->CODIGO With cGrupo + "0000",; 
+              MPR->INDICE With cGrupo + "0000",; 
+              MPR->DESCRI With "--GRUPO RENNER----------------------------",; 
+              MPR->ORIGEM With "REN" 
+   ENDIF 
+   MPR->( DBSetOrder( 4 ) ) 
+   DBSelectAr( 125 ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   Use &cArquivo3 Alias REF 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   Index On CODDESCR To Ind9393 
+   DBSelectAr( 121 ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   Use &cArquivo2 Alias MT 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   Index On CODMARCA To IND9123 
+   DBSelectAr( 123 ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   Use &cArquivo1 Alias TMP Shared 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   Index On PROD To Indice 
+   DBSelectAr( 124 ) 
+   DBCloseArea() 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   Use &cArquivo Alias IM Shared 
+   DBSelectAr( 122 ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   Use &cFormulas Alias TP Shared 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   Index On CODPROD + CORALT To IND9203 
+   Set Relation To Prod Into TMP 
+   DBSelectAr( 124 ) 
+   IM->( DBGoTop() ) 
+   WHILE !IM->( EOF() ) 
+      IF Inkey()==K_ESC .OR. NextKey()==K_ESC .OR. LastKey()==K_ESC 
+         EXIT 
+      ENDIF 
+      MT->(  DBSeek( IM->CODMARCA ) ) 
+      REF->( DBSeek( IM->CODDESCR ) ) 
+      cRef:= Abreviatura( REF->DESCR, 3 ) 
+      cCodFab:= Pad( CODPROD+CORALT, 13 ) 
+      cDescri:= Left( COR, 25 ) + PAD( cRef, 12 ) + " " + ANO + MT->MARCA 
+      nQuant:=  0 
+      nPreco:= 0 
+      /* Busca e compoe virtualmente o produto */ 
+      IF TP->( DBSeek( SubStr( cCodFab, 1, 12 ) ) ) 
+         WHILE SubStr( cCodFab, 1, 12 ) == TP->CODPROD + TP->CORALT 
+              nQuant:= nQuant + TP->QTD 
+              nPreco:= nPreco + ( TMP->VLR14 / 1000 ) * TP->QTD 
+              TP->( DBSkip() ) 
+         ENDDO 
+      ENDIF 
+      IF MPR->( DBSeek( PAD( cCodFab, 13 ) ) ) 
+         IF MPR->( NetRLock() ) 
+            Replace MPR->DESCRI With cDescri 
+            Replace MPR->PESOLI With nQuant,; 
+                    MPR->PESOBR With nQuant 
+            Replace MPR->PRECOV With nPreco,; 
+                    MPR->PRECOD With nPreco,; 
+                    MPR->ORIGEM With "REN" 
+         ENDIF 
+      ELSE 
+         MPR->( DBSetOrder( 1 ) ) 
+         MPR->( DBSeek( PAD( cGrupo + "0001", 12 ), .T. ) ) 
+         IF cGrupo==LEFT( MPR->INDICE, 3 ) 
+            WHILE cGrupo==Left( MPR->INDICE, 3 ) 
+                MPR->( DBSkip() ) 
+                IF MPR->( EOF() ) 
+                   EXIT 
+                ENDIF 
+            ENDDO 
+            MPR->( DBSkip( -1 ) ) 
+            cIndice:= cGrupo + SubStr( StrZero( Val( MPR->INDICE ) + 1, 7, 0 ), 4 ) 
+         ELSE 
+            cIndice:= cGrupo + "0001" 
+         ENDIF 
+         cCodigo:= cIndice 
+         MPR->( DBSetOrder( 4 ) ) 
+         MPR->( DBAppend() ) 
+         Replace MPR->DESCRI With cDescri,; 
+                 MPR->CODFAB With cCodFab,; 
+                 MPR->PRECOV With nPreco,; 
+                 MPR->PRECOD With nPreco,; 
+                 MPR->INDICE With cIndice,; 
+                 MPR->CODIGO With cCodigo,; 
+                 MPR->CODRED With SubStr( cCodigo, 4 ),; 
+                 MPR->ORIGEM With "REN",; 
+                 MPR->PESOLI With nQuant,; 
+                 MPR->PESOBR With nQuant 
+      ENDIF 
+      @ 20,02 Say MPR->INDICE 
+      Scroll( 02,02, 20, 78, 1 ) 
+      @ 20,02 Say MPR->DESCRI 
+      Scroll( 02,02, 20, 78, 1 ) 
+      IM->( DBSkip() ) 
+   ENDDO 
+   DiarioComunicacao( "Importacao de Lista de Precos", "RENNER" ) 
+   Aviso( "Operacao Finalizada!" ) 
+   Pausa() 
+   DBSelectAr( 125 ) 
+   DBCloseArea() 
+   DBSelectAr( 123 ) 
+   DBCloseArea() 
+   DBSelectAr( 124 ) 
+   DBCloseArea() 
+   SetColor( cCor ) 
+   SetCursor( nCursor ) 
+   ScreenRest( cTela ) 
+   Return Nil 
+ 
+/***** 
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
+³ Funcao      ³ PRODBARROS 
+³ Finalidade  ³ Importacao de Precos Barros 
+³ Parametros  ³ Nil 
+³ Retorno     ³ Nil 
+³ Programador ³ Valmor Pereira Flores 
+³ Data        ³ 
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+*/ 
+Function IPRODBarros() 
+Local cCor:= SetColor(), nCursor:= SetCursor(),; 
+      cTela:= ScreenSave( 0, 0, 24, 79 ) 
+   DBSelectAr( _COD_MPRIMA ) 
+   DBSetOrder( 1 ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   UserScreen() 
+   VPBox( 0, 0, 22, 79, "BARROS - CADASTRO DE PRODUTOS", _COR_GET_BOX ) 
+   nCodFor:= 0 
+   cMesma:= "S" 
+   cAtual:= "N" 
+   cGrupo:= "   " 
+   cArquivo:= "BARROS.TXT           " 
+   @ 02,03 Say "Arquivo com Informacoes.....................:" Get cArquivo 
+   @ 03,03 Say "Codigo do Fornecedor........................:" Get nCodFor Pict "999999" 
+   @ 04,03 Say "Utilizar a mesma Divis„o de Grupos da Barros:" Get cMesma Pict "!" 
+   @ 05,03 Say "  ÀÄÄÄÄ Se a Informacao for [N] Qual Grupo.:" Get cGrupo Pict "   " 
+   @ 06,03 Say "Atualizar os Produtos j  Gravados...........:" Get cAtual Pict "!" 
+   READ 
+   IF LastKey()==K_ESC 
+      SetColor( cCor ) 
+      SetCursor( nCursor ) 
+      ScreenRest( cTela ) 
+      Return Nil 
+   ENDIF 
+   cArquivo:= Alltrim( cArquivo ) 
+   IF !File( cArquivo ) 
+      Aviso( "Atencao! Arquivo " + cArquivo + " esta faltando." ) 
+      Mensagem( "Pressione [ENTER] para finalizar..." ) 
+      Pausa() 
+      SetColor( cCor ) 
+      SetCursor( nCursor ) 
+      ScreenRest( cTela ) 
+      Return Nil 
+   ENDIF 
+   SWGravar( 600 ) 
+   Ajuda( "Organizando produtos: Codigo fabricante + Fornecedor" ) 
+   Mensagem( "Organizando os produtos, aguarde..."  ) 
+   SetColor( _COR_GET_EDICAO ) 
+   DBSelectAr( _COD_MPRIMA ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   Set Index To 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   Index On CODIF_ + STR( CODFOR, 6, 0 ) TO INRES02 EVal {|| Processo() } 
+   Ajuda( "Organizando produtos: Codigo do Produto" ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   Index On INDICE To INRES01                       Eval {|| Processo() } 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   Set Index To INRES02, INRES01 
+ 
+   MPR->( DBSetOrder( 1 ) ) 
+   aStr:= {{ "ORIGEM", "C", 200, 00 }} 
+   DBCreate( "RESORI.TMP", aStr ) 
+   Sele 123 
+   Ajuda( "Convertendo informacoes..." ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   Use RESORI.TMP Alias TMP 
+   Append From &cArquivo SDF 
+   DBGoTop() 
+   Ajuda( "Gravando arquivo de produtos..." ) 
+   nTotal:= LASTREC() 
+   WHILE !tmp->( EOF() ) 
+       IF Inkey()==K_ESC .OR. LastKey()==K_ESC .OR. NextKey()==K_ESC 
+          EXIT 
+       ENDIF 
+       IF !MPR->( DBSeek( PAD( SubStr( TMP->ORIGEM, 1, 10 ), 20 ) + STR( nCodFor, 6, 0 ) ) ) .OR. cAtual=="S" 
+          cIndice:= MPR->INDICE 
+          IF !( ALLTRIM( SubStr( tmp->ORIGEM, 1, 10 ) )==ALLTRIM( MPR->CODIF_ ) ) 
+             IF cMesma=="S" 
+                cGrupo_:= SubStr( tmp->ORIGEM, 1, 3 ) 
+             ELSE 
+                cGrupo_:= cGrupo 
+             ENDIF 
+             MPR->( DBSetOrder( 2 ) ) 
+             MPR->( DBSeek( PAD( cGrupo_ + "9999", 12 ), .T. ) ) 
+             MPR->( DBSkip( -1 ) ) 
+             MPR->( DBSetOrder( 1 ) ) 
+             IF SUBSTR( MPR->INDICE, 1, 3 )==cGrupo_ 
+                cIndice:= cGrupo_ + StrZero( VAL( SubStr( MPR->INDICE, 4 ) ) + 1, 4 ) 
+             ELSE 
+                cIndice:= cGrupo_ + "0001" 
+             ENDIF 
+             MPR->( DBAppend() ) 
+          ENDIF 
+          IF MPR->( RLOCK() ) 
+             Replace MPR->CODIF_ With SubStr( tmp->ORIGEM, 1,  10 ),; 
+                     MPR->CODFAB With SubStr( tmp->ORIGEM, 11, 13 ),; 
+                     MPR->DESCRI With SubStr( tmp->ORIGEM, 27, 30 ),; 
+                     MPR->UNIDAD With SubStr( tmp->ORIGEM, 117, 2 ),; 
+                     MPR->PRECOV With Val( SubStr( tmp->ORIGEM, 119, 15 ) ),; 
+                     MPR->CODFOR With nCodFor,; 
+                     MPR->ORIGEM With SubStr( tmp->ORIGEM, 1, 3 ),; 
+                     MPR->INDICE With cIndice,; 
+                     MPR->CODRED With SubStr( cIndice, 4 ),; 
+                     MPR->CODIGO With cIndice,; 
+                     MPR->DETAL1 With SubStr( tmp->ORIGEM, 57, 60 ) 
+          ENDIF 
+       ENDIF 
+       DisplayScan( RECNO(), nTotal, 17, 2, 2 ) 
+       Processo() 
+       @ 17,62 Say "ÄImportacaoÄÄÄÄÄ" 
+       @ 18,62 Say Str( ( Recno() / nTotal ) * 100, 6, 2 ) + "%" 
+       @ 19,62 Say Str( Recno(), 6, 0 ) + "/" + Str( nTotal, 6, 0 ) 
+       TMP->( DBSkip() ) 
+   ENDDO 
+   SWGravar( 5 ) 
+   DBCloseAll() 
+   AbreGrupo( "TODOS_OS_ARQUIVOS" ) 
+   dbSelectAr( _COD_MPRIMA ) 
+   SetColor( cCor ) 
+   SetCursor( nCursor ) 
+   ScreenRest( cTela ) 
+   Return Nil 
+ 
+/***** 
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
+³ Funcao      ³ FABBARROS 
+³ Finalidade  ³ Importacao de Fabricantes Barros 
+³ Parametros  ³ Nil 
+³ Retorno     ³ Nil 
+³ Programador ³ Valmor Pereira Flores 
+³ Data        ³ 
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+*/ 
+Function IFabBarros() 
+Local cCor:= SetColor(), nCursor:= SetCursor(),; 
+      cTela:= ScreenSave( 0, 0, 24, 79 ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   UserScreen() 
+   VPBox( 0, 0, 22, 79, "BARROS - CADASTRO DE FABRICANTES", _COR_GET_BOX ) 
+   nCodFor:= 0 
+   cMesma:= "S" 
+   cAtual:= "N" 
+   cGrupo:= "   " 
+   cArquivo:= "ATUFOR.DBF           " 
+   @ 02,03 Say "Arquivo com Informacoes.....................:" Get cArquivo 
+   @ 03,03 Say "Codigo do Fornecedor........................:" Get nCodFor Pict "999999" 
+   READ 
+   IF LastKey()==K_ESC 
+      SetColor( cCor ) 
+      SetCursor( nCursor ) 
+      ScreenRest( cTela ) 
+      Return Nil 
+   ENDIF 
+   cArquivo:= Alltrim( cArquivo ) 
+   IF !File( cArquivo ) 
+      Aviso( "Atencao! Arquivo " + cArquivo + " esta faltando." ) 
+      Mensagem( "Pressione [ENTER] para finalizar..." ) 
+      Pausa() 
+      SetColor( cCor ) 
+      SetCursor( nCursor ) 
+      ScreenRest( cTela ) 
+      Return Nil 
+   ENDIF 
+   SWGravar( 600 ) 
+   Ajuda( "Organizando fabricantes/Origem..." ) 
+   SetColor( _COR_GET_EDICAO ) 
+   Sele 123 
+   Ajuda( "Convertendo informacoes..." ) 
+// ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+   Use &cArquivo Alias TMP 
+   DBGoTop() 
+   Ajuda( "Gravando arquivo de origem/fabricantes..." ) 
+   nTotal:= LASTREC() 
+   WHILE !tmp->( EOF() ) 
+       IF Inkey()==K_ESC .OR. LastKey()==K_ESC .OR. NextKey()==K_ESC 
+          EXIT 
+       ENDIF 
+       ORG->( DBSetOrder( 3 ) ) 
+       IF !ORG->( DBSeek( Left( TMP->FORBAP, 3 ) ) ) 
+          ORG->( DBAppend() ) 
+          Replace ORG->CODIGO With VAL( Left( TMP->FORBAP, 3 ) ),; 
+                  ORG->DESCRI With tmp->FORNOM,; 
+                  ORG->CODABR With Left( TMP->FORBAP, 3 ) 
+       ENDIF 
+       DisplayScan( RECNO(), nTotal, 17, 2, 2 ) 
+       Processo() 
+       @ 17,62 Say "ÄImportacaoÄÄÄÄÄ" 
+       @ 18,62 Say Str( ( Recno() / nTotal ) * 100, 6, 2 ) + "%" 
+       @ 19,62 Say Str( Recno(), 6, 0 ) + "/" + Str( nTotal, 6, 0 ) 
+       TMP->( DBSkip() ) 
+   ENDDO 
+   SWGravar( 5 ) 
+   DBCloseAll() 
+   AbreGrupo( "TODOS_OS_ARQUIVOS" ) 
+   dbSelectAr( _COD_MPRIMA ) 
+   SetColor( cCor ) 
+   SetCursor( nCursor ) 
+   ScreenRest( cTela ) 
+   Return Nil 
+ 

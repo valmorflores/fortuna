@@ -1,0 +1,14 @@
+xHarbour Compiler build 0.91.1 (SimpLex)
+Copyright 1999-2003, http://www.xharbour.org http://www.harbour-project.org/
+Compiling 'GRAVADOR.PRG'...
+Lines 33, Functions/Procedures 4
+Generating C source output to 'obj\GRAVADOR.c'...
+Done.
+Building object module output for 'obj\GRAVADOR.c'...Done.
+xHarbour Compiler build 0.91.1 (SimpLex)
+Copyright 1999-2003, http://www.xharbour.org http://www.harbour-project.org/
+Compiling 'SWGRAVA.PRG'...
+ 100 200 300 400 500 600 800 900Lines 985, Functions/Procedures 18
+Generating C source output to 'obj\SWGRAVA.c'...
+Done.
+Building object module output for 'obj\SWGRAVA.c'...Done.

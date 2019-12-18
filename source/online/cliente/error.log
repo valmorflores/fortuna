@@ -1,0 +1,4 @@
+Error DBFNTX/1004  Create error: \dev\source\pdv3\pdv_bak.dbf
+Called from ->DBCREATE(0)
+Called from FLINE.prg->EXECUTAR(184)
+Called from FLINE.prg->MAIN(95)

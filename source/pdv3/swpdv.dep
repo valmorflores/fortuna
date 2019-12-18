@@ -1,0 +1,6 @@
+SWPDV            79 : 컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴 09/22/99 14:54:54
+FIMPMOEDA      1142 : SWPDV.PRG : 1 : Str (nPgtDin, 14, 2) = [         50.00] 
+FIMPMOEDA      1156 : SWPDV.PRG : 1 : Str (nPgtTic, 14, 2) = [         10.00] 
+FIMPMOEDA      1169 : SWPDV.PRG : 1 : Str (nPgtChq, 14, 2) = [         20.00] 
+FIMPMOEDA      1195 : SWPDV.PRG : 1 : Str (nPgtOut, 14, 2) = [         30.00] 
+

@@ -1,0 +1,106 @@
+Set( 24, "IMP.PRN" )
+Set( 20, "PRINT" )
+nAreaAtual:= Select()
+LinhaOn()
+
+:Cabecalho
+INFORMACOES DO CLIENTE
+--------------------------------------------------------------------------------
+:Relatorio
+
+Codigo........: ®Str(CLI->CODIGO)¯
+Nome..........: ®(CLI->DESCRI)¯
+Endereco......: ®(CLI->ENDERE)¯
+Bairro........: ®(CLI->BAIRRO)¯
+Cidade........: ®(CLI->CIDADE+ "-"+CLI->ESTADO)¯
+Observacoes...: ®(CLI->OBSER1)¯
+                ®(CLI->OBSER2)¯
+                ®(CLI->OBSER3)¯
+                ®(CLI->OBSER4)¯
+
+
+   DBSelectAr( "MAISINFO" )
+   
+   VaiPara( !( Used() ), End001 ) 
+      DBSeek( CLI->CODIGO )
+
+                ®(MAISINFO->INFO01)¯
+                ®(MAISINFO->COMP01)¯
+
+                ®(MAISINFO->SUBC01)¯
+                ®(MAISINFO->INFO02)¯
+                ®(MAISINFO->COMP02)¯
+                ®(MAISINFO->SUBC02)¯
+                ®(MAISINFO->INFO03)¯
+                ®(MAISINFO->COMP03)¯
+                ®(MAISINFO->SUBC03)¯
+                ®(MAISINFO->INFO04)¯
+                ®(MAISINFO->COMP04)¯
+                ®(MAISINFO->SUBC04)¯
+                ®(MAISINFO->INFO05)¯
+                ®(MAISINFO->COMP05)¯
+                ®(MAISINFO->SUBC05)¯
+                ®(MAISINFO->INFO06)¯
+                ®(MAISINFO->COMP06)¯
+                ®(MAISINFO->SUBC06)¯
+                ®(MAISINFO->INFO07)¯
+                ®(MAISINFO->COMP07)¯
+                ®(MAISINFO->SUBC07)¯
+                ®(MAISINFO->INFO08)¯
+                ®(MAISINFO->COMP08)¯
+                ®(MAISINFO->SUBC08)¯
+                ®(MAISINFO->INFO09)¯
+                ®(MAISINFO->COMP09)¯
+                ®(MAISINFO->SUBC09)¯
+                ®(MAISINFO->INFO10)¯
+                ®(MAISINFO->COMP10)¯
+                ®(MAISINFO->SUBC10)¯
+                ®(MAISINFO->INFO11)¯
+                ®(MAISINFO->COMP11)¯
+                ®(MAISINFO->SUBC11)¯
+                ®(MAISINFO->INFO12)¯
+                ®(MAISINFO->COMP12)¯
+                ®(MAISINFO->SUBC12)¯
+                ®(MAISINFO->INFO13)¯
+                ®(MAISINFO->COMP13)¯
+                ®(MAISINFO->SUBC13)¯
+                ®(MAISINFO->INFO14)¯
+                ®(MAISINFO->COMP14)¯
+                ®(MAISINFO->SUBC14)¯
+                ®(MAISINFO->INFO15)¯
+                ®(MAISINFO->COMP15)¯
+                ®(MAISINFO->SUBC15)¯
+   :End001
+   nAreaRes:= Select()
+
+   
+
+   DBSelectAr( "CUP" )
+
+   CUP->( DBSetOrder( 2 ) )
+
+
+   === Informacoes Adicionais - Vendas Efetuadas ==================================
+   lAchou:= CUP->( DBSeek( CLI->DESCRI, .T.  ) )
+   VaiPara( !( lAchou ), LocalEndif )
+   
+   nLin:= 10
+
+   :InicioLoop
+     lNaoExiste:= ( AT( CUP->CDESCR, CLI->DESCRI ) <= 0 )
+     VaiPara( lNaoExiste, LoopEnd )
+       VaiPara( CUP->NFNULA=="*", NaoImprime )
+           ®StrZero( CUP->NUMERO, 9, 0 ) + " " + DTOC( CUP->DATAEM ) + " " + LEFT( CUP->OBSER1, 15 ) + " " + LEFT( CUP->OBSER2, 15 ) + " " + LEFT( CUP->OBSER3, 15 )¯
+       :NaoImprime
+       CUP->( DBSkip() )
+       VaiPara( CUP->( EOF() ), LoopEnd )
+   VaiPara( InicioLoop )
+
+   :LocalEndif
+   :LoopEnd
+   DBSelectAr( nAreaAtual )
+   Set( 24, "LPT1" )
+   Set( 24, "LPT2" )
+   Set( 24, "LPT1" )
+   Set( 20, "SCREEN" )
+$FIM

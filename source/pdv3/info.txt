@@ -1,0 +1,12 @@
+
+
+  Cotacao para cliente
+     Lista de Pre‡o - Por email = OK
+
+
+     VALORES - 100,00 A 140,00
+     -------------------------
+     1§) Cotacao de precos - por email ............................... Layout.
+     2§) Embalgem de material - campo p/ acrescimo de observacao .....
+
+

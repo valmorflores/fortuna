@@ -1,0 +1,17 @@
+Linhaon()
+Scroll( 0, 0, 24, 79, 0 )
+cNomeCliente:= Time()
+cNomeArquivo:= "c:\meusdo~1\" + "f" + StrTran( Time(), ":", "" ) + ".txt"
+set( 24, cNomeArquivo )
+set( 20, "PRINT" )
+Este arquivo foi gerado as ®(cNomeCliente)¯
+set( 24, "novo.txt" )
+set( 20, "PRINT" )
+<p><a href="file://®(cNomeArquivo)¯                           ">®(cNomeCliente)¯                          </a>
+set( 20, "SCREEN" )
+set( 24, "LPT1" )
+__Run( [copy LISTA.TXT V_LISTA.TXT >Nul] )
+__Run( [copy NOVO.TXT+V_LISTA.TXT LISTA.TXT >Nul] )
+__Run( [copy HTM_INI.TXT+LISTA.TXT+HTM_FIM.TXT INDICE.HTM >Nul] )
+INKEY(0)
+$FIM

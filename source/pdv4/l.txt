@@ -1,0 +1,19 @@
+
+BLINKER : overlay opsize set to 40 Kb - minimum is 24 Kb (MEMOEDIT_TEXT)
+
+BLINKER : 1115 : IMP.OBJ(IMP) : 'SALEITEM' : unresolved external
+BLINKER : 1115 : IMP.OBJ(IMP) : 'DISCOUNTIT' : unresolved external
+BLINKER : 1115 : IMP.OBJ(IMP) : 'PRINTHEADE' : unresolved external
+BLINKER : 1115 : IMP.OBJ(IMP) : 'REPORTXZBE' : unresolved external
+BLINKER : 1115 : IMP.OBJ(IMP) : 'REPORTXZEN' : unresolved external
+BLINKER : 1115 : IMP.OBJ(IMP) : 'ADVANCELIN' : unresolved external
+BLINKER : 1115 : IMP.OBJ(IMP) : 'OPENCASH' : unresolved external
+BLINKER : 1115 : IMP.OBJ(IMP) : 'READFISCAL' : unresolved external
+BLINKER : 1115 : IMP.OBJ(IMP) : 'CANCELITEM' : unresolved external
+BLINKER : 1115 : IMP.OBJ(IMP) : 'CANCELVOUC' : unresolved external
+BLINKER : 1115 : IMP.OBJ(IMP) : 'DISCOUNTSU' : unresolved external
+BLINKER : 1115 : IMP.OBJ(IMP) : 'PAYMENT' : unresolved external
+BLINKER : 1115 : IMP.OBJ(IMP) : 'COMERCIALT' : unresolved external
+BLINKER : 1115 : IMP.OBJ(IMP) : 'ENDSALE' : unresolved external
+BLINKER : 1115 : IMP.OBJ(IMP) : 'READREGIST' : unresolved external
+BLINKER : 1115 : IMP.OBJ(IMP) : 'AUTENTIC' : unresolved external

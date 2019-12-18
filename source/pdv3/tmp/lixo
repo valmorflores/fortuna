@@ -1,0 +1,23 @@
+      LoadCSet( 000, "VSYS14.PTX" )
+//    SayString( 1160, 580, 4, 0, 0, LEFT (cVersao, 10)) // Versao do Programa
+
+//    Espacos a partir da cadeia -->      5            18          30          42                60             75          87
+/*
+   SayString(    2,  3, 4, 0, 15, "   [   ] Quant  [   ] Desc  [   ] Canc  [        ] Venda  [   ] Cliente  [   ] Pgto  [   ] Fecha")
+
+   SayString( 10 *  5 +   8,  4, 4, 0,  0, "F1" )
+   SayString( 10 * 18 +  51,  4, 4, 0,  0, "F3" )
+   SayString( 10 * 30 +  98,  4, 4, 0,  0, "F4" )
+   SayString( 10 * 42 + 149,  4, 4, 0,  0, "ENTER" )
+   SayString( 10 * 60 + 208,  4, 4, 0,  0, "F8" )
+   SayString( 10 * 75 + 256,  4, 4, 0,  0, "F7" )
+   SayString( 10 * 87 + 295,  4, 4, 0,  0, "F6" )
+
+   SayString( 10 *  5 +   5,  3, 4, 0, 14, "F1" )
+   SayString( 10 * 18 +  50,  3, 4, 0, 14, "F3" )
+   SayString( 10 * 30 +  96,  3, 4, 0, 14, "F4" )
+   SayString( 10 * 42 + 148,  3, 4, 0, 14, "ENTER" )
+   SayString( 10 * 60 + 205,  3, 4, 0, 14, "F8" )
+   SayString( 10 * 75 + 254,  3, 4, 0, 14, "F7" )
+   SayString( 10 * 87 + 294,  3, 4, 0, 14, "F6" )
+*/

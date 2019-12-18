@@ -1,0 +1,89 @@
+           Mouse support for Clipper 5.1, 5.2x applications.
+
+ For adding mouse capabilities into your Clipper applications you need:
+
+ 1. Mouse library - written on C or Assembler set of functions, including,
+  as minimum :
+
+   a) M_INIT() - initialize mouse driver for your application;
+   b) M_SHOW() - show mouse cursor;
+   c) M_HIDE() - hide mouse cursor;
+   d) M_STAT() - indicate status of mouse buttons;
+   e) M_XPOS() - x coordinate of mouse cursor;
+   f) M_YPOS() - y coordinate of mouse cursor.
+
+  2. The replacement of INKEY() function, allowing input from keyboard and
+   from mouse buttons.
+
+  3. Clipper routines, using above mentioned functions in
+   a) Get system,
+   b) menu,
+   c) browse.
+
+ -------------------------------------------------------------------------
+
+ 1. I included into this package two mouse modules.
+  First of them (clipmous.asm, clipmous.obj) - is a simple module, written
+  by me with Assembler, which I use in some my applications (in DBC, for
+  example). I don't think that it needs any comments, becouse it's really
+  very simple, including only registers prepare, interrupt 33h calls and
+  some macros from EXTENDA.MAC (one of Extend system files, included in
+  Clipper package).
+
+    The second module I get in FIDO conference RU.CLIPPER some years ago,
+  it's written by Dmitry Grinenko. This is more sophisticated program,
+  allowing pseudo-graphical mouse cursor. I include here author's package
+  mouse.zip without any changes, so all comments are in Russian. If you'll
+  want to use it, only include arrmouse.obj and amouse_c.obj into your
+  link script.
+    Mouse function calls are the same, as described above, as in my module,
+  so you can use any of this two modules without changes in your clipper
+  program.
+
+ 2. You'll find IN_KM() - the replacement for INKEY() function in getsys.prg,
+  included in this package.
+
+ 3. And now about including mouse support into main components of Clipper
+  interface.
+  a) Get system.
+    There are two ways:
+    - writing of new function, which will replace standart GET statements.
+    This isn't a good way, I think, becouse you will need to rewrite all
+    your applications.
+
+    - changing of getsys.prg - this is the way that I offer you. Here is
+    changed getsys.prg. You need only include it to your link script (don't
+    forget about above mentioned obj) - and all GET screens in your applica-
+    tion will have mouse! Or you may look at changes that I made in getsys.prg
+    and write a better code.
+
+   b) Menu.
+     It's a pity, but there isn't such a replaceable module for menu system,
+   as getsys.prg for get system, in Clipper package, so you need write your
+   own menu function. I included an example of such a function here, in this
+   zip package.
+
+   c) Browse.
+    For adding mouse capabilities to browser you need write your own function,
+   too. It isn't a big problem. If it needed, I can place here my browse
+   function, that I use in all my applications ( in DBC, for example ).
+
+   -------------------------------------------------------------------------
+   Files, included in this package:
+   clipmous.asm  -  source code for mouse module,
+   clipmous.obj  -  mouse module,
+   mouse.zip     -  pseudo-graphical mouse modules with source of Dmitry Grinenko,
+   getsys.prg    -  changed Clipper getsys.prg,
+   menu.prg      -  source of menu functions,
+   menums.ch     -  include file for menu.prg,
+   sample.prg    -  source of sample program,
+   build.bat     -  bat file for building sample program,
+   clipmouse.txt -  the file you read now.
+   -------------------------------------------------------------------------
+
+
+   Best regardes,
+    Alexander Kresin
+
+   http://members.xoom.com/alkresin/
+   mailto://alex@belacy.belgorod.su

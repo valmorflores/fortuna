@@ -1,0 +1,6 @@
+xHarbour Compiler build 0.81.0 (SimpLex)
+Copyright 1999-2003, http://www.xharbour.org http://www.harbour-project.org/
+Compiling 'vpcprodu.prg'...
+ 100Lines 111, Functions/Procedures 3
+Generating C source output to 'obj\vpcprodu.c'... Done.
+Building object module output for 'obj\vpcprodu.c'...Done.

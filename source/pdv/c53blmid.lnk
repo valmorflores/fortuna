@@ -1,0 +1,122 @@
+#  C53BLMID.LNK - 95.04.25 Version 1.0
+#
+#  Blinker link script for CA-Clipper 5.3 - medium amount of overlaid code.
+#
+#  This script may help with tight memory situations, and when using the
+#  Clipper debugger (CLDR) with large programs.
+#
+#  For ease of use this script should be stored in your library directory,
+#  (the directory pointed to by the LIB environment variable), which will allow
+#  Blinker to find the script without you having to specify a full path.
+#
+#  This script MUST be included outside of any BEGINAREA / ENDAREA commands
+#  and after all libraries except the RDDs and LLIBCE if it is being used.
+#
+#  example:
+#
+#  FILE one
+#  BEGINAREA
+#       FILE two
+#       FILE three
+#       FILE four
+#  ENDAREA
+#  @C53BLMID
+#  LIB DBFCDX
+#  LIB LLIBCE # (if used)
+#
+#  Modules within CLIPPER.LIB are, by their nature, called very frequently
+#  within any CLIPPER application. Therefore, overlaying these routines
+#  will almost certainly result in some performance degradation, which can
+#  be minimised by increasing the OVERLAY OPSIZE.
+#
+#  You may also wish to consider using BLINKER OVERLAY PAGEFRAME ON to expand
+#  the overlay pool to 64K, and remove it from conventional memory, to both
+#  increase available memory and performance.
+#
+#  ie BLINKER OVERLAY PAGEFRAME ON
+#
+#  Specifying an overlay cache will increase execution speed significantly.
+#
+#  eg BLINKER CACHE XMS 256
+#     BLINKER CACHE EMS 256
+#
+#  The amount of performance degradation will vary from application to
+#  application, - it may be necessary to modify this script by commenting
+#  out some MODULE statements to increase performance to an acceptable level
+#  in some areas.
+#
+#  Please note that some third party libraries may replace or modify routines
+#  in the CLIPPER library, so that they are no longer overlayable. The link
+#  time command BLINKER MESSAGE DUPLICATES may help in determining such
+#  conflicts or replacements.
+#
+#
+# mod tbrowse0          #  Uncomment these three lines
+# mod tbrowse1          #  to speed up TBROWSE by forcing
+# mod linelen           #  it into the root.
+#
+lib clipper
+beginarea
+   mod ACCEPT           # .c
+   mod ACOPY            # .c
+   mod ADEL             # .c
+   mod AINS             # .c
+   mod APPEXIT          # .c
+   mod APPINIT          # .c
+   mod ATAIL            # .c
+   mod CMEM             # .c
+   mod DBCMD0           # .c
+   mod DBCMD1           # .c
+   mod DBCMD2           # .c
+   mod DBCMD3           # .c
+   mod DBCMD4           # .c
+   mod DBCMD5           # .c
+   mod DBCREATE         # .c
+   mod DBGAPI           # .c
+   mod DBGSHADO         # .c
+   mod DBNUBS           # .asm
+   mod DBSTRUCT         # .c
+   mod DELIMDYN         # .asm
+   mod DISKIO           # .c
+   mod DLM0             # .c
+   mod DLM1             # .c
+   mod ERRORSYS         # Clipper
+   mod ERRSYS0          # .c
+   mod ERRSYS1          # .c  (Overlay if not using PS ERROR)
+   mod EXACTCMP         # .c
+   mod GETENV           # .c
+   mod GETS0            # .c
+   mod GETS1            # .c
+   mod GETS2            # .c
+   mod INITEXIT         # .c
+   mod INSTD            # .asm
+   mod JOINLIST         # .c
+   mod LUPDATE          # .c
+   mod MAXROW           # .c
+   mod MEMORY           # .c
+   mod MRELEASE         # .c
+   mod MSAVE            # .c
+   mod OLDBOX           # .c
+   mod OLDCLEAR         # .c
+   mod OUTSTD           # .c
+   mod PHILES           # .c
+   mod RDDORD           # .c
+   mod RDDSVR           # .c
+   mod RUN              # .c
+   mod SAVEREST         # .c
+   mod SCROLL           # .c
+   mod SDF0             # .c
+   mod SDF1             # .c
+   mod SDFDYN           # .asm
+   mod SEND             # .c
+   mod SEQ              # .c
+   mod SORTOF           # .c
+   mod SQUAWK           # .asm
+   mod TBR              # .c
+   mod TXOPEN           # .c
+   mod VERSION          # .c
+   lib extend
+end
+lib terminal
+lib dbfntx
+

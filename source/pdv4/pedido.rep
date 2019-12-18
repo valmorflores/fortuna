@@ -1,0 +1,53 @@
+SelecaoImpressora(.t.)
+LinhaOn()
+SET( 24, "LPT1" )
+SET( 20, "PRINT" )
+/* Cliente.: 123456789.123456789.123456789.12345
+/* Endereco: 123456789.123456789.123456789.123456 BAirro: 123456789.123456789.*/
+/* Cidade..: 123456789.123456789.123456789.123-Rs CEP...: 123456789.123456789.*/
+                           BOA BOCA ALIMENTOS 
+                          Rua: Joao Pessoa,????
+                    Fone/Fax: 9999.9999 / 9999.9999
+  sCid := trim(subst(CUP->CCIDAD,1,33))+"-"+CUP->CESTAD
+-------------------------------------------------------------------------------
+  Comanda.: о(STRZERO(CUP->NUMERO, 8, 0)+" sem valor fiscal")п           о(dtoc(date()))п
+-------------------------------------------------------------------------------
+  Cliente.: о(CUP->CDESCR)п
+  Endereco: о(CUP->CENDER)п                      Bairro: о(subst(CUP->CBAIRR,1,20))п
+  Cidade..: о(sCid)п                             CEP...: о(transf(CUP->CCDCEP,"@r 99999-999"))п
+  CGC.....: о(CUP->CCGCMF)п                      Inscri: о(CUP->CINSCR)п
+  Fone....: о(CUP->CFONE2)п
+-------------------------------------------------------------------------------
+Codigo   Produto                          Qtde.     Preco  Desconto     Total
+-------------------------------------------------------------------------------
+CAU->( DBSetOrder( 5 ))
+CAU->( DBSeek( CUP->NUMERO ) )
+ntotdes := 0
+:while
+/* while ( CAU->( CODNF_ ) == CUP->NUMERO )*/
+   ccod := Tran( SubSTr( CAU->CODRED, 1, 7 ), "@R 999-9999" )
+   cNom := Left( CAU->DESCRI, 30 )
+   Cq   := str(CAU->QUANT_,4)
+   cPre := transf((CAU->PRECOT/CAU->QUANT_),"@E 99,999.99")
+   cDes := transf(((CAU->QUANT_*CAU->PRECOV)-CAU->PRECOT),"@E 9,999.99")
+   ntotdes := ntotdes + ((CAU->QUANT_*CAU->PRECOV)-CAU->PRECOT)
+   cTot := transf(CAU->PRECOT,"@E 99,999.99")
+о(ccod)п о(cnom)п                         о(cq)по(cpre)п   о(cdes)п о(ctot)п
+   CAU->( DBSkIP() )
+   vaipara( CAU->CODNF_ == CUP->NUMERO, while , endwhile)
+:endwhile
+csubtot := transf((VLRNOT+ntotdes),"@E 99,999.99")
+cTotdes := transf(ntotdes,"@E 99,999.99")
+ctotal  := transf(VLRNOT,"@E 99,999.99")
+Sub-Total......: о(csubtot)п
+Desconto.......: о(cTotdes)п
+Total do Pedido: о(ctotal)п
+
+о(OBSERV1)п
+о(OBSERV2)п
+/* enddo */
+/*123-1234 123456789.123456789.123456789.   9999  99.999.99  9,999.99 99,999.99*/
+SET( 20, "SCREEN" )
+// CAU->( DBGoTop() )
+$FIM
+

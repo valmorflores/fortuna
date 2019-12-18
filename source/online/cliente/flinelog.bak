@@ -1,0 +1,933 @@
+
+05/04/04-12:49:44: MySqL .T.
+05/04/04-12:49:44: DEBUG: abrir d:\dev\testes\fortuna\dados\cdmprima.dbf
+05/04/04-12:49:44: DEBUG: abertura de cdmprima.dbf realizada com sucesso 
+05/04/04-12:49:48: DEBUG: buscando informacoes na tabela
+05/04/04-12:49:54: MySqL .T.
+05/04/04-12:49:59: DEBUG: buscando informacoes na tabela
+05/04/04-12:50:05: MySqL .T.
+05/04/04-12:50:09: DEBUG: buscando informacoes na tabela
+05/04/04-12:50:15: MySqL .T.
+05/04/04-12:50:19: DEBUG: buscando informacoes na tabela
+05/04/04-12:50:25: MySqL .T.
+05/04/04-12:50:29: DEBUG: buscando informacoes na tabela
+05/04/04-12:50:35: MySqL .T.
+05/04/04-12:50:39: DEBUG: buscando informacoes na tabela
+05/04/04-12:50:45: MySqL .T.
+05/04/04-12:50:50: DEBUG: buscando informacoes na tabela
+05/04/04-12:50:56: MySqL .T.
+05/04/04-12:51:00: DEBUG: buscando informacoes na tabela
+05/04/04-12:51:06: MySqL .T.
+05/04/04-12:51:10: DEBUG: buscando informacoes na tabela
+05/04/04-12:51:16: MySqL .T.
+05/04/04-12:51:20: DEBUG: buscando informacoes na tabela
+05/04/04-12:51:26: MySqL .T.
+05/04/04-12:51:30: DEBUG: buscando informacoes na tabela
+05/04/04-12:51:37: MySqL .T.
+05/04/04-12:51:41: DEBUG: buscando informacoes na tabela
+05/04/04-12:51:47: MySqL .T.
+05/04/04-12:51:52: DEBUG: buscando informacoes na tabela
+05/04/04-12:51:58: MySqL .T.
+05/04/04-12:52:02: DEBUG: buscando informacoes na tabela
+05/04/04-12:52:08: MySqL .T.
+05/04/04-12:52:12: DEBUG: buscando informacoes na tabela
+05/04/04-12:52:19: MySqL .T.
+05/04/04-12:52:23: DEBUG: buscando informacoes na tabela
+05/04/04-12:52:29: MySqL .T.
+05/04/04-12:52:34: DEBUG: buscando informacoes na tabela
+05/04/04-12:52:39: MySqL .T.
+05/04/04-12:52:44: DEBUG: buscando informacoes na tabela
+05/04/04-12:52:49: MySqL .T.
+05/04/04-12:52:54: DEBUG: buscando informacoes na tabela
+05/04/04-12:53:00: MySqL .T.
+05/04/04-12:53:04: DEBUG: buscando informacoes na tabela
+05/04/04-12:53:10: MySqL .T.
+05/04/04-12:53:14: DEBUG: buscando informacoes na tabela
+05/04/04-12:53:20: MySqL .T.
+05/04/04-12:53:25: DEBUG: buscando informacoes na tabela
+05/04/04-12:53:32: MySqL .T.
+05/04/04-12:53:37: DEBUG: buscando informacoes na tabela
+05/04/04-12:53:43: MySqL .T.
+05/04/04-12:53:47: DEBUG: buscando informacoes na tabela
+05/04/04-12:53:54: MySqL .T.
+05/04/04-12:53:59: DEBUG: buscando informacoes na tabela
+05/04/04-12:54:06: MySqL .T.
+05/04/04-12:54:10: DEBUG: buscando informacoes na tabela
+05/04/04-12:54:16: MySqL .T.
+05/04/04-12:54:20: DEBUG: buscando informacoes na tabela
+05/04/04-12:54:26: MySqL .T.
+05/04/04-12:54:30: DEBUG: buscando informacoes na tabela
+05/04/04-12:54:37: MySqL .T.
+05/04/04-12:54:41: DEBUG: buscando informacoes na tabela
+05/04/04-12:54:47: MySqL .T.
+05/04/04-12:54:51: DEBUG: buscando informacoes na tabela
+05/04/04-12:54:57: MySqL .T.
+05/04/04-12:55:01: DEBUG: buscando informacoes na tabela
+05/04/04-12:55:08: MySqL .T.
+05/04/04-12:55:12: DEBUG: buscando informacoes na tabela
+05/04/04-12:55:18: MySqL .T.
+05/04/04-12:55:22: DEBUG: buscando informacoes na tabela
+05/04/04-12:55:28: MySqL .T.
+05/04/04-12:55:32: DEBUG: buscando informacoes na tabela
+05/04/04-12:55:39: MySqL .T.
+05/04/04-12:55:43: DEBUG: buscando informacoes na tabela
+05/04/04-12:55:49: MySqL .T.
+05/04/04-12:55:53: DEBUG: buscando informacoes na tabela
+05/04/04-12:56:00: MySqL .T.
+05/04/04-12:56:04: DEBUG: buscando informacoes na tabela
+05/04/04-12:56:11: MySqL .T.
+05/04/04-12:56:16: DEBUG: buscando informacoes na tabela
+05/04/04-12:56:21: MySqL .T.
+05/04/04-12:56:25: DEBUG: buscando informacoes na tabela
+05/04/04-12:56:32: MySqL .T.
+05/04/04-12:56:36: DEBUG: buscando informacoes na tabela
+05/04/04-12:56:42: MySqL .T.
+05/04/04-12:56:46: DEBUG: buscando informacoes na tabela
+05/04/04-12:56:52: MySqL .T.
+05/04/04-12:56:56: DEBUG: buscando informacoes na tabela
+05/04/04-12:57:02: MySqL .T.
+05/04/04-12:57:06: DEBUG: buscando informacoes na tabela
+05/04/04-12:57:13: MySqL .T.
+05/04/04-12:57:17: DEBUG: buscando informacoes na tabela
+05/04/04-12:57:23: MySqL .T.
+05/04/04-12:57:27: DEBUG: buscando informacoes na tabela
+05/04/04-12:57:33: MySqL .T.
+05/04/04-12:57:37: DEBUG: buscando informacoes na tabela
+05/04/04-12:57:44: MySqL .T.
+05/04/04-12:57:48: DEBUG: buscando informacoes na tabela
+05/04/04-12:57:54: MySqL .T.
+05/04/04-12:57:58: DEBUG: buscando informacoes na tabela
+05/04/04-12:58:04: MySqL .T.
+05/04/04-12:58:08: DEBUG: buscando informacoes na tabela
+05/04/04-12:58:15: MySqL .T.
+05/04/04-12:58:19: DEBUG: buscando informacoes na tabela
+05/04/04-12:58:25: MySqL .T.
+05/04/04-12:58:30: DEBUG: buscando informacoes na tabela
+05/04/04-12:58:36: MySqL .T.
+05/04/04-12:58:40: DEBUG: buscando informacoes na tabela
+05/04/04-12:58:46: MySqL .T.
+05/04/04-12:58:51: DEBUG: buscando informacoes na tabela
+05/04/04-12:58:56: MySqL .T.
+05/04/04-12:59:01: DEBUG: buscando informacoes na tabela
+05/04/04-12:59:07: MySqL .T.
+05/04/04-12:59:12: DEBUG: buscando informacoes na tabela
+05/04/04-12:59:17: MySqL .T.
+05/04/04-12:59:22: DEBUG: buscando informacoes na tabela
+05/04/04-12:59:27: MySqL .T.
+05/04/04-12:59:33: DEBUG: buscando informacoes na tabela
+05/04/04-12:59:37: MySqL .T.
+05/04/04-12:59:43: DEBUG: buscando informacoes na tabela
+05/04/04-12:59:47: MySqL .T.
+05/04/04-12:59:53: DEBUG: buscando informacoes na tabela
+05/04/04-12:59:58: MySqL .T.
+05/04/04-13:00:03: DEBUG: buscando informacoes na tabela
+05/04/04-13:00:11: MySqL .T.
+05/04/04-13:00:16: DEBUG: buscando informacoes na tabela
+05/04/04-13:00:22: MySqL .T.
+05/04/04-13:00:27: DEBUG: buscando informacoes na tabela
+05/04/04-13:00:33: MySqL .T.
+05/04/04-13:00:38: DEBUG: buscando informacoes na tabela
+05/04/04-13:00:43: MySqL .T.
+05/04/04-13:00:48: DEBUG: buscando informacoes na tabela
+05/04/04-13:00:54: MySqL .T.
+05/04/04-13:00:59: DEBUG: buscando informacoes na tabela
+05/04/04-13:01:04: MySqL .T.
+05/04/04-13:01:09: DEBUG: buscando informacoes na tabela
+05/04/04-13:01:15: MySqL .T.
+05/04/04-13:01:20: DEBUG: buscando informacoes na tabela
+05/04/04-13:01:26: MySqL .T.
+05/04/04-13:01:31: DEBUG: buscando informacoes na tabela
+05/04/04-13:01:37: MySqL .T.
+05/04/04-13:01:43: DEBUG: buscando informacoes na tabela
+05/04/04-13:01:48: MySqL .T.
+05/04/04-13:01:54: DEBUG: buscando informacoes na tabela
+05/04/04-13:01:58: MySqL .T.
+05/04/04-13:02:03: DEBUG: buscando informacoes na tabela
+05/04/04-13:02:09: MySqL .T.
+05/04/04-13:02:13: DEBUG: buscando informacoes na tabela
+05/04/04-13:02:19: MySqL .T.
+05/04/04-13:02:24: DEBUG: buscando informacoes na tabela
+05/04/04-13:02:31: MySqL .T.
+05/04/04-13:02:35: DEBUG: buscando informacoes na tabela
+05/04/04-13:02:41: MySqL .T.
+05/04/04-13:02:46: DEBUG: buscando informacoes na tabela
+05/04/04-13:02:52: MySqL .T.
+05/04/04-13:02:57: DEBUG: buscando informacoes na tabela
+05/04/04-13:03:03: MySqL .T.
+05/04/04-13:03:08: DEBUG: buscando informacoes na tabela
+05/04/04-13:03:13: MySqL .T.
+05/04/04-13:03:18: DEBUG: buscando informacoes na tabela
+05/04/04-13:03:24: MySqL .T.
+05/04/04-13:03:28: DEBUG: buscando informacoes na tabela
+05/04/04-13:03:34: MySqL .T.
+05/04/04-13:03:38: DEBUG: buscando informacoes na tabela
+05/04/04-13:03:44: MySqL .T.
+05/04/04-13:03:49: DEBUG: buscando informacoes na tabela
+05/04/04-13:03:54: MySqL .T.
+05/04/04-13:03:59: DEBUG: buscando informacoes na tabela
+05/04/04-13:04:04: MySqL .T.
+05/04/04-13:04:09: DEBUG: buscando informacoes na tabela
+05/04/04-13:04:15: MySqL .T.
+05/04/04-13:04:19: DEBUG: buscando informacoes na tabela
+05/04/04-13:04:25: MySqL .T.
+05/04/04-13:04:30: DEBUG: buscando informacoes na tabela
+05/04/04-13:04:35: MySqL .T.
+05/04/04-13:04:40: DEBUG: buscando informacoes na tabela
+05/04/04-13:04:46: MySqL .T.
+05/04/04-13:04:51: DEBUG: buscando informacoes na tabela
+05/04/04-13:04:56: MySqL .T.
+05/04/04-13:05:01: DEBUG: buscando informacoes na tabela
+05/04/04-13:05:06: MySqL .T.
+05/04/04-13:05:11: DEBUG: buscando informacoes na tabela
+05/04/04-13:05:18: MySqL .T.
+05/04/04-13:05:22: DEBUG: buscando informacoes na tabela
+05/04/04-13:05:28: MySqL .T.
+05/04/04-13:05:32: DEBUG: buscando informacoes na tabela
+05/04/04-13:05:38: MySqL .T.
+05/04/04-13:05:43: DEBUG: buscando informacoes na tabela
+05/04/04-13:05:48: MySqL .T.
+05/04/04-13:05:52: DEBUG: buscando informacoes na tabela
+05/04/04-13:05:59: MySqL .T.
+05/04/04-13:06:03: DEBUG: buscando informacoes na tabela
+05/04/04-13:06:09: MySqL .T.
+05/04/04-13:06:14: DEBUG: buscando informacoes na tabela
+05/04/04-13:06:19: MySqL .T.
+05/04/04-13:06:24: DEBUG: buscando informacoes na tabela
+05/04/04-13:06:30: MySqL .T.
+05/04/04-13:06:34: DEBUG: buscando informacoes na tabela
+05/04/04-13:06:40: MySqL .T.
+05/04/04-13:06:45: DEBUG: buscando informacoes na tabela
+05/04/04-13:06:50: MySqL .T.
+05/04/04-13:06:55: DEBUG: buscando informacoes na tabela
+05/04/04-13:07:01: MySqL .T.
+05/04/04-13:07:06: DEBUG: buscando informacoes na tabela
+05/04/04-13:07:11: MySqL .T.
+05/04/04-13:07:16: DEBUG: buscando informacoes na tabela
+05/04/04-13:07:22: MySqL .T.
+05/04/04-13:07:26: DEBUG: buscando informacoes na tabela
+05/04/04-13:07:32: MySqL .T.
+05/04/04-13:07:36: DEBUG: buscando informacoes na tabela
+05/04/04-13:07:42: MySqL .T.
+05/04/04-13:07:47: DEBUG: buscando informacoes na tabela
+05/04/04-13:07:53: MySqL .T.
+05/04/04-13:07:57: DEBUG: buscando informacoes na tabela
+05/04/04-13:08:03: MySqL .T.
+05/04/04-13:08:08: DEBUG: buscando informacoes na tabela
+05/04/04-13:08:14: MySqL .T.
+05/04/04-13:08:19: DEBUG: buscando informacoes na tabela
+05/04/04-13:08:24: MySqL .T.
+05/04/04-13:08:28: DEBUG: buscando informacoes na tabela
+05/04/04-13:08:35: MySqL .T.
+05/04/04-13:08:39: DEBUG: buscando informacoes na tabela
+05/04/04-13:08:45: MySqL .T.
+05/04/04-13:08:50: DEBUG: buscando informacoes na tabela
+05/04/04-13:08:56: MySqL .T.
+05/04/04-13:09:00: DEBUG: buscando informacoes na tabela
+05/04/04-13:09:07: MySqL .T.
+05/04/04-13:09:11: DEBUG: buscando informacoes na tabela
+05/04/04-13:09:17: MySqL .T.
+05/04/04-13:09:21: DEBUG: buscando informacoes na tabela
+05/04/04-13:09:27: MySqL .T.
+05/04/04-13:09:31: DEBUG: buscando informacoes na tabela
+05/04/04-13:09:37: MySqL .T.
+05/04/04-13:09:41: DEBUG: buscando informacoes na tabela
+05/04/04-13:09:47: MySqL .T.
+05/04/04-13:09:51: DEBUG: buscando informacoes na tabela
+05/04/04-13:09:58: MySqL .T.
+05/04/04-13:10:02: DEBUG: buscando informacoes na tabela
+05/04/04-13:10:08: MySqL .T.
+05/04/04-13:10:13: DEBUG: buscando informacoes na tabela
+05/04/04-13:10:19: MySqL .T.
+05/04/04-13:10:24: DEBUG: buscando informacoes na tabela
+05/04/04-13:10:29: MySqL .T.
+05/04/04-13:10:33: DEBUG: buscando informacoes na tabela
+05/04/04-13:10:39: MySqL .T.
+05/04/04-13:10:44: DEBUG: buscando informacoes na tabela
+05/04/04-13:10:49: MySqL .T.
+05/04/04-13:10:54: DEBUG: buscando informacoes na tabela
+05/04/04-13:11:00: MySqL .T.
+05/04/04-13:11:04: DEBUG: buscando informacoes na tabela
+05/04/04-13:11:10: MySqL .T.
+05/04/04-13:11:14: DEBUG: buscando informacoes na tabela
+05/04/04-13:11:20: MySqL .T.
+05/04/04-13:11:24: DEBUG: buscando informacoes na tabela
+05/04/04-13:11:30: MySqL .T.
+05/04/04-13:11:34: DEBUG: buscando informacoes na tabela
+05/04/04-13:11:40: MySqL .T.
+05/04/04-13:11:44: DEBUG: buscando informacoes na tabela
+05/04/04-13:11:50: MySqL .T.
+05/04/04-13:11:55: DEBUG: buscando informacoes na tabela
+05/04/04-13:12:00: MySqL .T.
+05/04/04-13:12:05: DEBUG: buscando informacoes na tabela
+05/04/04-13:12:11: MySqL .T.
+05/04/04-13:12:16: DEBUG: buscando informacoes na tabela
+05/04/04-13:12:21: MySqL .T.
+05/04/04-13:12:26: DEBUG: buscando informacoes na tabela
+05/04/04-13:12:31: MySqL .T.
+05/04/04-13:12:36: DEBUG: buscando informacoes na tabela
+05/04/04-13:12:41: MySqL .T.
+05/04/04-13:12:46: DEBUG: buscando informacoes na tabela
+05/04/04-13:12:52: MySqL .T.
+05/04/04-13:12:56: DEBUG: buscando informacoes na tabela
+05/04/04-13:13:02: MySqL .T.
+05/04/04-13:13:06: DEBUG: buscando informacoes na tabela
+05/04/04-13:13:12: MySqL .T.
+05/04/04-13:13:17: DEBUG: buscando informacoes na tabela
+05/04/04-13:13:23: MySqL .T.
+05/04/04-13:13:27: DEBUG: buscando informacoes na tabela
+05/04/04-13:13:33: MySqL .T.
+05/04/04-13:13:37: DEBUG: buscando informacoes na tabela
+05/04/04-13:13:44: MySqL .T.
+05/04/04-13:13:48: DEBUG: buscando informacoes na tabela
+05/04/04-13:13:54: MySqL .T.
+05/04/04-13:13:58: DEBUG: buscando informacoes na tabela
+05/04/04-13:14:04: MySqL .T.
+05/04/04-13:14:09: DEBUG: buscando informacoes na tabela
+05/04/04-13:14:14: MySqL .T.
+05/04/04-13:14:19: DEBUG: buscando informacoes na tabela
+05/04/04-13:14:25: MySqL .T.
+05/04/04-13:14:29: DEBUG: buscando informacoes na tabela
+05/04/04-13:14:35: MySqL .T.
+05/04/04-13:14:39: DEBUG: buscando informacoes na tabela
+05/04/04-13:14:45: MySqL .T.
+05/04/04-13:14:49: DEBUG: buscando informacoes na tabela
+05/04/04-13:14:55: MySqL .T.
+05/04/04-13:15:00: DEBUG: buscando informacoes na tabela
+05/04/04-13:15:05: MySqL .T.
+05/04/04-13:15:10: DEBUG: buscando informacoes na tabela
+05/04/04-13:15:16: MySqL .T.
+05/04/04-13:15:20: DEBUG: buscando informacoes na tabela
+05/04/04-13:15:26: MySqL .T.
+05/04/04-13:15:30: DEBUG: buscando informacoes na tabela
+05/04/04-13:15:36: MySqL .T.
+05/04/04-13:15:40: DEBUG: buscando informacoes na tabela
+05/04/04-13:15:47: MySqL .T.
+05/04/04-13:15:51: DEBUG: buscando informacoes na tabela
+05/04/04-13:15:57: MySqL .T.
+05/04/04-13:16:01: DEBUG: buscando informacoes na tabela
+05/04/04-13:16:07: MySqL .T.
+05/04/04-13:16:12: DEBUG: buscando informacoes na tabela
+05/04/04-13:16:17: MySqL .T.
+05/04/04-13:16:21: DEBUG: buscando informacoes na tabela
+05/04/04-13:16:28: MySqL .T.
+05/04/04-13:16:32: DEBUG: buscando informacoes na tabela
+05/04/04-13:16:38: MySqL .T.
+05/04/04-13:16:42: DEBUG: buscando informacoes na tabela
+05/04/04-13:16:48: MySqL .T.
+05/04/04-13:16:52: DEBUG: buscando informacoes na tabela
+05/04/04-13:16:58: MySqL .T.
+05/04/04-13:17:03: DEBUG: buscando informacoes na tabela
+05/04/04-13:17:09: MySqL .T.
+05/04/04-13:17:13: DEBUG: buscando informacoes na tabela
+05/04/04-13:17:19: MySqL .T.
+05/04/04-13:17:23: DEBUG: buscando informacoes na tabela
+05/04/04-13:17:29: MySqL .T.
+05/04/04-13:17:33: DEBUG: buscando informacoes na tabela
+05/04/04-13:17:39: MySqL .T.
+05/04/04-13:17:43: DEBUG: buscando informacoes na tabela
+05/04/04-13:17:49: MySqL .T.
+05/04/04-13:17:54: DEBUG: buscando informacoes na tabela
+05/04/04-13:17:59: MySqL .T.
+05/04/04-13:18:04: DEBUG: buscando informacoes na tabela
+05/04/04-13:18:10: MySqL .T.
+05/04/04-13:18:14: DEBUG: buscando informacoes na tabela
+05/04/04-13:18:20: MySqL .T.
+05/04/04-13:18:24: DEBUG: buscando informacoes na tabela
+05/04/04-13:18:30: MySqL .T.
+05/04/04-13:18:35: DEBUG: buscando informacoes na tabela
+05/04/04-13:18:40: MySqL .T.
+05/04/04-13:18:45: DEBUG: buscando informacoes na tabela
+05/04/04-13:18:51: MySqL .T.
+05/04/04-13:18:55: DEBUG: buscando informacoes na tabela
+05/04/04-13:19:01: MySqL .T.
+05/04/04-13:19:05: DEBUG: buscando informacoes na tabela
+05/04/04-13:19:11: MySqL .T.
+05/04/04-13:19:15: DEBUG: buscando informacoes na tabela
+05/04/04-13:19:21: MySqL .T.
+05/04/04-13:19:26: DEBUG: buscando informacoes na tabela
+05/04/04-13:19:31: MySqL .T.
+05/04/04-13:19:36: DEBUG: buscando informacoes na tabela
+05/04/04-13:19:41: MySqL .T.
+05/04/04-13:19:46: DEBUG: buscando informacoes na tabela
+05/04/04-13:19:51: MySqL .T.
+05/04/04-13:19:56: DEBUG: buscando informacoes na tabela
+05/04/04-13:20:02: MySqL .T.
+05/04/04-13:20:06: DEBUG: buscando informacoes na tabela
+05/04/04-13:20:12: MySqL .T.
+05/04/04-13:20:16: DEBUG: buscando informacoes na tabela
+05/04/04-13:20:22: MySqL .T.
+05/04/04-13:20:27: DEBUG: buscando informacoes na tabela
+05/04/04-13:20:33: MySqL .T.
+05/04/04-13:20:37: DEBUG: buscando informacoes na tabela
+05/04/04-13:20:43: MySqL .T.
+05/04/04-13:20:47: DEBUG: buscando informacoes na tabela
+05/04/04-13:20:53: MySqL .T.
+05/04/04-13:20:57: DEBUG: buscando informacoes na tabela
+05/04/04-13:21:03: MySqL .T.
+05/04/04-13:21:07: DEBUG: buscando informacoes na tabela
+05/04/04-13:21:13: MySqL .T.
+05/04/04-13:21:18: DEBUG: buscando informacoes na tabela
+05/04/04-13:21:24: MySqL .T.
+05/04/04-13:21:28: DEBUG: buscando informacoes na tabela
+05/04/04-13:21:34: MySqL .T.
+05/04/04-13:21:38: DEBUG: buscando informacoes na tabela
+05/04/04-13:21:44: MySqL .T.
+05/04/04-13:21:48: DEBUG: buscando informacoes na tabela
+05/04/04-13:21:54: MySqL .T.
+05/04/04-13:21:59: DEBUG: buscando informacoes na tabela
+05/04/04-13:22:05: MySqL .T.
+05/04/04-13:22:09: DEBUG: buscando informacoes na tabela
+05/04/04-13:22:15: MySqL .T.
+05/04/04-13:22:19: DEBUG: buscando informacoes na tabela
+05/04/04-13:22:25: MySqL .T.
+05/04/04-13:22:30: DEBUG: buscando informacoes na tabela
+05/04/04-13:22:35: MySqL .T.
+05/04/04-13:22:40: DEBUG: buscando informacoes na tabela
+05/04/04-13:22:45: MySqL .T.
+05/04/04-13:22:50: DEBUG: buscando informacoes na tabela
+05/04/04-13:22:55: MySqL .T.
+05/04/04-13:23:00: DEBUG: buscando informacoes na tabela
+05/04/04-13:23:06: MySqL .T.
+05/04/04-13:23:10: DEBUG: buscando informacoes na tabela
+05/04/04-13:23:16: MySqL .T.
+05/04/04-13:23:20: DEBUG: buscando informacoes na tabela
+05/04/04-13:23:26: MySqL .T.
+05/04/04-13:23:30: DEBUG: buscando informacoes na tabela
+05/04/04-13:23:36: MySqL .T.
+05/04/04-13:23:40: DEBUG: buscando informacoes na tabela
+05/04/04-13:23:46: MySqL .T.
+05/04/04-13:23:51: DEBUG: buscando informacoes na tabela
+05/04/04-13:23:56: MySqL .T.
+05/04/04-13:24:01: DEBUG: buscando informacoes na tabela
+05/04/04-13:24:07: MySqL .T.
+05/04/04-13:24:11: DEBUG: buscando informacoes na tabela
+05/04/04-13:24:17: MySqL .T.
+05/04/04-13:24:21: DEBUG: buscando informacoes na tabela
+05/04/04-13:24:27: MySqL .T.
+05/04/04-13:24:31: DEBUG: buscando informacoes na tabela
+05/04/04-13:24:37: MySqL .T.
+05/04/04-13:24:42: DEBUG: buscando informacoes na tabela
+05/04/04-13:24:47: MySqL .T.
+05/04/04-13:24:52: DEBUG: buscando informacoes na tabela
+05/04/04-13:24:57: MySqL .T.
+05/04/04-13:25:02: DEBUG: buscando informacoes na tabela
+05/04/04-13:25:08: MySqL .T.
+05/04/04-13:25:12: DEBUG: buscando informacoes na tabela
+05/04/04-13:25:18: MySqL .T.
+05/04/04-13:25:22: DEBUG: buscando informacoes na tabela
+05/04/04-13:25:28: MySqL .T.
+05/04/04-13:25:32: DEBUG: buscando informacoes na tabela
+05/04/04-13:25:38: MySqL .T.
+05/04/04-13:25:42: DEBUG: buscando informacoes na tabela
+05/04/04-13:25:48: MySqL .T.
+05/04/04-13:25:52: DEBUG: buscando informacoes na tabela
+05/04/04-13:25:58: MySqL .T.
+05/04/04-13:26:03: DEBUG: buscando informacoes na tabela
+05/04/04-13:26:08: MySqL .T.
+05/04/04-13:26:13: DEBUG: buscando informacoes na tabela
+05/04/04-13:26:18: MySqL .T.
+05/04/04-13:26:23: DEBUG: buscando informacoes na tabela
+05/04/04-13:26:28: MySqL .T.
+05/04/04-13:26:33: DEBUG: buscando informacoes na tabela
+05/04/04-13:26:39: MySqL .T.
+05/04/04-13:26:43: DEBUG: buscando informacoes na tabela
+05/04/04-13:26:49: MySqL .T.
+05/04/04-13:26:53: DEBUG: buscando informacoes na tabela
+05/04/04-13:26:59: MySqL .T.
+05/04/04-13:27:03: DEBUG: buscando informacoes na tabela
+05/04/04-13:27:09: MySqL .T.
+05/04/04-13:27:14: DEBUG: buscando informacoes na tabela
+05/04/04-13:27:20: MySqL .T.
+05/04/04-13:27:24: DEBUG: buscando informacoes na tabela
+05/04/04-13:27:30: MySqL .T.
+05/04/04-13:27:34: DEBUG: buscando informacoes na tabela
+05/04/04-13:27:40: MySqL .T.
+05/04/04-13:27:45: DEBUG: buscando informacoes na tabela
+05/04/04-13:27:50: MySqL .T.
+05/04/04-13:27:55: DEBUG: buscando informacoes na tabela
+05/04/04-13:28:01: MySqL .T.
+05/04/04-13:28:05: DEBUG: buscando informacoes na tabela
+05/04/04-13:28:11: MySqL .T.
+05/04/04-13:28:15: DEBUG: buscando informacoes na tabela
+05/04/04-13:28:21: MySqL .T.
+05/04/04-13:28:26: DEBUG: buscando informacoes na tabela
+05/04/04-13:28:32: MySqL .T.
+05/04/04-13:28:36: DEBUG: buscando informacoes na tabela
+05/04/04-13:28:42: MySqL .T.
+05/04/04-13:28:46: DEBUG: buscando informacoes na tabela
+05/04/04-13:28:52: MySqL .T.
+05/04/04-13:28:56: DEBUG: buscando informacoes na tabela
+05/04/04-13:29:02: MySqL .T.
+05/04/04-13:29:07: DEBUG: buscando informacoes na tabela
+05/04/04-13:29:13: MySqL .T.
+05/04/04-13:29:17: DEBUG: buscando informacoes na tabela
+05/04/04-13:29:23: MySqL .T.
+05/04/04-13:29:27: DEBUG: buscando informacoes na tabela
+05/04/04-13:29:33: MySqL .T.
+05/04/04-13:29:37: DEBUG: buscando informacoes na tabela
+05/04/04-13:29:43: MySqL .T.
+05/04/04-13:29:48: DEBUG: buscando informacoes na tabela
+05/04/04-13:29:54: MySqL .T.
+05/04/04-13:29:58: DEBUG: buscando informacoes na tabela
+05/04/04-13:30:04: MySqL .T.
+05/04/04-13:30:08: DEBUG: buscando informacoes na tabela
+05/04/04-13:30:14: MySqL .T.
+05/04/04-13:30:18: DEBUG: buscando informacoes na tabela
+05/04/04-13:30:24: MySqL .T.
+05/04/04-13:30:29: DEBUG: buscando informacoes na tabela
+05/04/04-13:30:34: MySqL .T.
+05/04/04-13:30:39: DEBUG: buscando informacoes na tabela
+05/04/04-13:30:45: MySqL .T.
+05/04/04-13:30:49: DEBUG: buscando informacoes na tabela
+05/04/04-13:30:55: MySqL .T.
+05/04/04-13:30:59: DEBUG: buscando informacoes na tabela
+05/04/04-13:31:05: MySqL .T.
+05/04/04-13:31:10: DEBUG: buscando informacoes na tabela
+05/04/04-13:31:16: MySqL .T.
+05/04/04-13:31:20: DEBUG: buscando informacoes na tabela
+05/04/04-13:31:26: MySqL .T.
+05/04/04-13:31:30: DEBUG: buscando informacoes na tabela
+05/04/04-13:31:36: MySqL .T.
+05/04/04-13:31:40: DEBUG: buscando informacoes na tabela
+05/04/04-13:31:46: MySqL .T.
+05/04/04-13:31:50: DEBUG: buscando informacoes na tabela
+05/04/04-13:31:56: MySqL .T.
+05/04/04-13:32:01: DEBUG: buscando informacoes na tabela
+05/04/04-13:32:06: MySqL .T.
+05/04/04-13:32:11: DEBUG: buscando informacoes na tabela
+05/04/04-13:32:17: MySqL .T.
+05/04/04-13:32:21: DEBUG: buscando informacoes na tabela
+05/04/04-13:32:27: MySqL .T.
+05/04/04-13:32:31: DEBUG: buscando informacoes na tabela
+05/04/04-13:32:37: MySqL .T.
+05/04/04-13:32:42: DEBUG: buscando informacoes na tabela
+05/04/04-13:32:48: MySqL .T.
+05/04/04-13:32:52: DEBUG: buscando informacoes na tabela
+05/04/04-13:32:58: MySqL .T.
+05/04/04-13:33:02: DEBUG: buscando informacoes na tabela
+05/04/04-13:33:08: MySqL .T.
+05/04/04-13:33:13: DEBUG: buscando informacoes na tabela
+05/04/04-13:33:18: MySqL .T.
+05/04/04-13:33:23: DEBUG: buscando informacoes na tabela
+05/04/04-13:33:29: MySqL .T.
+05/04/04-13:33:33: DEBUG: buscando informacoes na tabela
+05/04/04-13:33:39: MySqL .T.
+05/04/04-13:33:43: DEBUG: buscando informacoes na tabela
+05/04/04-13:33:49: MySqL .T.
+05/04/04-13:33:54: DEBUG: buscando informacoes na tabela
+05/04/04-13:33:59: MySqL .T.
+05/04/04-13:34:04: DEBUG: buscando informacoes na tabela
+05/04/04-13:34:10: MySqL .T.
+05/04/04-13:34:14: DEBUG: buscando informacoes na tabela
+05/04/04-13:34:20: MySqL .T.
+05/04/04-13:34:24: DEBUG: buscando informacoes na tabela
+05/04/04-13:34:30: MySqL .T.
+05/04/04-13:34:35: DEBUG: buscando informacoes na tabela
+05/04/04-13:34:40: MySqL .T.
+05/04/04-13:34:45: DEBUG: buscando informacoes na tabela
+05/04/04-13:34:51: MySqL .T.
+05/04/04-13:34:55: DEBUG: buscando informacoes na tabela
+05/04/04-13:35:01: MySqL .T.
+05/04/04-13:35:05: DEBUG: buscando informacoes na tabela
+05/04/04-13:35:11: MySqL .T.
+05/04/04-13:35:15: DEBUG: buscando informacoes na tabela
+05/04/04-13:35:21: MySqL .T.
+05/04/04-13:35:26: DEBUG: buscando informacoes na tabela
+05/04/04-13:35:31: MySqL .T.
+05/04/04-13:35:36: DEBUG: buscando informacoes na tabela
+05/04/04-13:35:42: MySqL .T.
+05/04/04-13:35:46: DEBUG: buscando informacoes na tabela
+05/04/04-13:35:52: MySqL .T.
+05/04/04-13:35:56: DEBUG: buscando informacoes na tabela
+05/04/04-13:36:02: MySqL .T.
+05/04/04-13:36:07: DEBUG: buscando informacoes na tabela
+05/04/04-13:36:12: MySqL .T.
+05/04/04-13:36:17: DEBUG: buscando informacoes na tabela
+05/04/04-13:36:23: MySqL .T.
+05/04/04-13:36:27: DEBUG: buscando informacoes na tabela
+05/04/04-13:36:33: MySqL .T.
+05/04/04-13:36:37: DEBUG: buscando informacoes na tabela
+05/04/04-13:36:43: MySqL .T.
+05/04/04-13:36:48: DEBUG: buscando informacoes na tabela
+05/04/04-13:36:53: MySqL .T.
+05/04/04-13:36:58: DEBUG: buscando informacoes na tabela
+05/04/04-13:37:04: MySqL .T.
+05/04/04-13:37:08: DEBUG: buscando informacoes na tabela
+05/04/04-13:37:14: MySqL .T.
+05/04/04-13:37:18: DEBUG: buscando informacoes na tabela
+05/04/04-13:37:19: Atualizadas informacoes de 1 produto(s).
+05/04/04-13:37:24: MySqL .T.
+05/04/04-13:37:28: DEBUG: buscando informacoes na tabela
+05/04/04-13:37:34: MySqL .T.
+05/04/04-13:37:39: DEBUG: buscando informacoes na tabela
+05/04/04-13:37:45: MySqL .T.
+05/04/04-13:37:49: DEBUG: buscando informacoes na tabela
+05/04/04-13:37:55: MySqL .T.
+05/04/04-13:37:59: DEBUG: buscando informacoes na tabela
+05/04/04-13:38:05: MySqL .T.
+05/04/04-13:38:10: DEBUG: buscando informacoes na tabela
+05/04/04-13:38:15: MySqL .T.
+05/04/04-13:38:20: DEBUG: buscando informacoes na tabela
+05/04/04-13:38:26: MySqL .T.
+05/04/04-13:38:30: DEBUG: buscando informacoes na tabela
+05/04/04-13:38:36: MySqL .T.
+05/04/04-13:38:40: DEBUG: buscando informacoes na tabela
+05/04/04-13:38:46: MySqL .T.
+05/04/04-13:38:51: DEBUG: buscando informacoes na tabela
+05/04/04-13:38:56: MySqL .T.
+05/04/04-13:39:01: DEBUG: buscando informacoes na tabela
+05/04/04-13:39:07: MySqL .T.
+05/04/04-13:39:11: DEBUG: buscando informacoes na tabela
+05/04/04-13:39:17: MySqL .T.
+05/04/04-13:39:21: DEBUG: buscando informacoes na tabela
+05/04/04-13:39:27: MySqL .T.
+05/04/04-13:39:31: DEBUG: buscando informacoes na tabela
+05/04/04-13:39:37: MySqL .T.
+05/04/04-13:39:42: DEBUG: buscando informacoes na tabela
+05/04/04-13:39:47: MySqL .T.
+05/04/04-13:39:52: DEBUG: buscando informacoes na tabela
+05/04/04-13:39:57: MySqL .T.
+05/04/04-13:40:02: DEBUG: buscando informacoes na tabela
+05/04/04-13:40:08: MySqL .T.
+05/04/04-13:40:12: DEBUG: buscando informacoes na tabela
+05/04/04-13:40:18: MySqL .T.
+05/04/04-13:40:22: DEBUG: buscando informacoes na tabela
+05/04/04-13:40:28: MySqL .T.
+05/04/04-13:40:32: DEBUG: buscando informacoes na tabela
+05/04/04-13:40:38: MySqL .T.
+05/04/04-13:40:43: DEBUG: buscando informacoes na tabela
+05/04/04-13:40:48: MySqL .T.
+05/04/04-13:40:53: DEBUG: buscando informacoes na tabela
+05/04/04-13:40:59: MySqL .T.
+05/04/04-13:41:03: DEBUG: buscando informacoes na tabela
+05/04/04-13:41:09: MySqL .T.
+05/04/04-13:41:13: DEBUG: buscando informacoes na tabela
+05/04/04-13:41:19: MySqL .T.
+05/04/04-13:41:24: DEBUG: buscando informacoes na tabela
+05/04/04-13:41:29: MySqL .T.
+05/04/04-13:41:34: DEBUG: buscando informacoes na tabela
+05/04/04-13:41:40: MySqL .T.
+05/04/04-13:41:44: DEBUG: buscando informacoes na tabela
+05/04/04-13:41:50: MySqL .T.
+05/04/04-13:41:54: DEBUG: buscando informacoes na tabela
+05/04/04-13:42:00: MySqL .T.
+05/04/04-13:42:05: DEBUG: buscando informacoes na tabela
+05/04/04-13:42:10: MySqL .T.
+05/04/04-13:42:15: DEBUG: buscando informacoes na tabela
+05/04/04-13:42:21: MySqL .T.
+05/04/04-13:42:25: DEBUG: buscando informacoes na tabela
+05/04/04-13:42:31: MySqL .T.
+05/04/04-13:42:35: DEBUG: buscando informacoes na tabela
+05/04/04-13:42:41: MySqL .T.
+05/04/04-13:42:46: DEBUG: buscando informacoes na tabela
+05/04/04-13:42:52: MySqL .T.
+05/04/04-13:42:56: DEBUG: buscando informacoes na tabela
+05/04/04-13:43:02: MySqL .T.
+05/04/04-13:43:06: DEBUG: buscando informacoes na tabela
+05/04/04-13:43:12: MySqL .T.
+05/04/04-13:43:16: DEBUG: buscando informacoes na tabela
+05/04/04-13:43:22: MySqL .T.
+05/04/04-13:43:26: DEBUG: buscando informacoes na tabela
+05/04/04-13:43:32: MySqL .T.
+05/04/04-13:43:37: DEBUG: buscando informacoes na tabela
+05/04/04-13:43:43: MySqL .T.
+05/04/04-13:43:47: DEBUG: buscando informacoes na tabela
+05/04/04-13:43:53: MySqL .T.
+05/04/04-13:43:57: DEBUG: buscando informacoes na tabela
+05/04/04-13:44:03: MySqL .T.
+05/04/04-13:44:07: DEBUG: buscando informacoes na tabela
+05/04/04-13:44:13: MySqL .T.
+05/04/04-13:44:18: DEBUG: buscando informacoes na tabela
+05/04/04-13:44:24: MySqL .T.
+05/04/04-13:44:28: DEBUG: buscando informacoes na tabela
+05/04/04-13:44:34: MySqL .T.
+05/04/04-13:44:38: DEBUG: buscando informacoes na tabela
+05/04/04-13:44:44: MySqL .T.
+05/04/04-13:44:48: DEBUG: buscando informacoes na tabela
+05/04/04-13:44:54: MySqL .T.
+05/04/04-13:44:59: DEBUG: buscando informacoes na tabela
+05/04/04-13:45:05: MySqL .T.
+05/04/04-13:45:09: DEBUG: buscando informacoes na tabela
+05/04/04-13:45:15: MySqL .T.
+05/04/04-13:45:20: DEBUG: buscando informacoes na tabela
+05/04/04-13:45:25: MySqL .T.
+05/04/04-13:45:30: DEBUG: buscando informacoes na tabela
+05/04/04-13:45:36: MySqL .T.
+05/04/04-13:45:40: DEBUG: buscando informacoes na tabela
+05/04/04-13:45:46: MySqL .T.
+05/04/04-13:45:50: DEBUG: buscando informacoes na tabela
+05/04/04-13:45:56: MySqL .T.
+05/04/04-13:46:00: DEBUG: buscando informacoes na tabela
+05/04/04-13:46:06: MySqL .T.
+05/04/04-13:46:10: DEBUG: buscando informacoes na tabela
+05/04/04-13:46:16: MySqL .T.
+05/04/04-13:46:21: DEBUG: buscando informacoes na tabela
+05/04/04-13:46:26: MySqL .T.
+05/04/04-13:46:31: DEBUG: buscando informacoes na tabela
+05/04/04-13:46:36: MySqL .T.
+05/04/04-13:46:41: DEBUG: buscando informacoes na tabela
+05/04/04-13:46:47: MySqL .T.
+05/04/04-13:46:51: DEBUG: buscando informacoes na tabela
+05/04/04-13:46:57: MySqL .T.
+05/04/04-13:47:01: DEBUG: buscando informacoes na tabela
+05/04/04-13:47:07: MySqL .T.
+05/04/04-13:47:11: DEBUG: buscando informacoes na tabela
+05/04/04-13:47:17: MySqL .T.
+05/04/04-13:47:21: DEBUG: buscando informacoes na tabela
+05/04/04-13:47:27: MySqL .T.
+05/04/04-13:47:31: DEBUG: buscando informacoes na tabela
+05/04/04-13:47:37: MySqL .T.
+05/04/04-13:47:41: DEBUG: buscando informacoes na tabela
+05/04/04-13:47:48: MySqL .T.
+05/04/04-13:47:52: DEBUG: buscando informacoes na tabela
+05/04/04-13:47:58: MySqL .T.
+05/04/04-13:48:02: DEBUG: buscando informacoes na tabela
+05/04/04-13:48:08: MySqL .T.
+05/04/04-13:48:12: DEBUG: buscando informacoes na tabela
+05/04/04-13:48:18: MySqL .T.
+05/04/04-13:48:23: DEBUG: buscando informacoes na tabela
+05/04/04-13:48:29: MySqL .T.
+05/04/04-13:48:33: DEBUG: buscando informacoes na tabela
+05/04/04-13:48:39: MySqL .T.
+05/04/04-13:48:44: DEBUG: buscando informacoes na tabela
+05/04/04-13:48:50: MySqL .T.
+05/04/04-13:48:54: DEBUG: buscando informacoes na tabela
+05/04/04-13:49:00: MySqL .T.
+05/04/04-13:49:04: DEBUG: buscando informacoes na tabela
+05/04/04-13:49:10: MySqL .T.
+05/04/04-13:49:15: DEBUG: buscando informacoes na tabela
+05/04/04-13:49:21: MySqL .T.
+05/04/04-13:49:25: DEBUG: buscando informacoes na tabela
+05/04/04-13:49:31: MySqL .T.
+05/04/04-13:49:35: DEBUG: buscando informacoes na tabela
+05/04/04-13:49:41: MySqL .T.
+05/04/04-13:49:46: DEBUG: buscando informacoes na tabela
+05/04/04-13:50:09: MySqL .T.
+05/04/04-13:50:14: DEBUG: buscando informacoes na tabela
+05/04/04-13:50:19: MySqL .T.
+05/04/04-13:50:24: DEBUG: buscando informacoes na tabela
+05/04/04-13:50:29: MySqL .T.
+05/04/04-13:50:34: DEBUG: buscando informacoes na tabela
+05/04/04-13:50:40: MySqL .T.
+05/04/04-13:50:44: DEBUG: buscando informacoes na tabela
+05/04/04-13:51:07: No connection to server
+05/04/04-13:51:17: MySqL .T.
+05/04/04-13:51:21: DEBUG: buscando informacoes na tabela
+05/04/04-13:51:27: MySqL .T.
+05/04/04-13:51:32: DEBUG: buscando informacoes na tabela
+05/04/04-13:51:37: MySqL .T.
+05/04/04-13:51:42: DEBUG: buscando informacoes na tabela
+05/04/04-13:51:48: MySqL .T.
+05/04/04-13:51:52: DEBUG: buscando informacoes na tabela
+05/04/04-13:51:58: MySqL .T.
+05/04/04-13:52:02: DEBUG: buscando informacoes na tabela
+05/04/04-13:52:08: MySqL .T.
+05/04/04-13:52:12: DEBUG: buscando informacoes na tabela
+05/04/04-13:52:18: MySqL .T.
+05/04/04-13:52:23: DEBUG: buscando informacoes na tabela
+05/04/04-13:52:28: MySqL .T.
+05/04/04-13:52:33: DEBUG: buscando informacoes na tabela
+05/04/04-13:52:38: MySqL .T.
+05/04/04-13:52:43: DEBUG: buscando informacoes na tabela
+05/04/04-13:52:49: MySqL .T.
+05/04/04-13:52:53: DEBUG: buscando informacoes na tabela
+05/04/04-13:52:59: MySqL .T.
+05/04/04-13:53:03: DEBUG: buscando informacoes na tabela
+05/04/04-13:53:09: MySqL .T.
+05/04/04-13:53:13: DEBUG: buscando informacoes na tabela
+05/04/04-13:53:19: MySqL .T.
+05/04/04-13:53:23: DEBUG: buscando informacoes na tabela
+05/04/04-13:53:29: MySqL .T.
+05/04/04-13:53:34: DEBUG: buscando informacoes na tabela
+05/04/04-13:53:39: MySqL .T.
+05/04/04-13:53:44: DEBUG: buscando informacoes na tabela
+05/04/04-13:53:50: MySqL .T.
+05/04/04-13:53:54: DEBUG: buscando informacoes na tabela
+05/04/04-13:54:00: MySqL .T.
+05/04/04-13:54:04: DEBUG: buscando informacoes na tabela
+05/04/04-13:54:10: MySqL .T.
+05/04/04-13:54:15: DEBUG: buscando informacoes na tabela
+05/04/04-13:54:20: MySqL .T.
+05/04/04-13:54:25: DEBUG: buscando informacoes na tabela
+05/04/04-13:54:31: MySqL .T.
+05/04/04-13:54:35: DEBUG: buscando informacoes na tabela
+05/04/04-13:54:41: MySqL .T.
+05/04/04-13:54:45: DEBUG: buscando informacoes na tabela
+05/04/04-13:54:51: MySqL .T.
+05/04/04-13:54:55: DEBUG: buscando informacoes na tabela
+05/04/04-13:55:01: MySqL .T.
+05/04/04-13:55:05: DEBUG: buscando informacoes na tabela
+05/04/04-13:55:11: MySqL .T.
+05/04/04-13:55:16: DEBUG: buscando informacoes na tabela
+05/04/04-13:55:22: MySqL .T.
+05/04/04-13:55:26: DEBUG: buscando informacoes na tabela
+05/04/04-13:55:32: MySqL .T.
+05/04/04-13:55:36: DEBUG: buscando informacoes na tabela
+05/04/04-13:55:42: MySqL .T.
+05/04/04-13:55:46: DEBUG: buscando informacoes na tabela
+05/04/04-13:55:52: MySqL .T.
+05/04/04-13:55:57: DEBUG: buscando informacoes na tabela
+05/04/04-13:56:03: MySqL .T.
+05/04/04-13:56:07: DEBUG: buscando informacoes na tabela
+05/04/04-13:56:13: MySqL .T.
+05/04/04-13:56:17: DEBUG: buscando informacoes na tabela
+05/04/04-13:56:23: MySqL .T.
+05/04/04-13:56:27: DEBUG: buscando informacoes na tabela
+05/04/04-13:56:33: MySqL .T.
+05/04/04-13:56:37: DEBUG: buscando informacoes na tabela
+05/04/04-13:56:43: MySqL .T.
+05/04/04-13:56:47: DEBUG: buscando informacoes na tabela
+05/04/04-13:56:53: MySqL .T.
+05/04/04-13:56:57: DEBUG: buscando informacoes na tabela
+05/04/04-13:57:03: MySqL .T.
+05/04/04-13:57:08: DEBUG: buscando informacoes na tabela
+05/04/04-13:57:13: MySqL .T.
+05/04/04-13:57:18: DEBUG: buscando informacoes na tabela
+05/04/04-13:57:24: MySqL .T.
+05/04/04-13:57:28: DEBUG: buscando informacoes na tabela
+05/04/04-13:57:34: MySqL .T.
+05/04/04-13:57:38: DEBUG: buscando informacoes na tabela
+05/04/04-13:57:44: MySqL .T.
+05/04/04-13:57:49: DEBUG: buscando informacoes na tabela
+05/04/04-13:57:54: MySqL .T.
+05/04/04-13:57:59: DEBUG: buscando informacoes na tabela
+05/04/04-13:58:05: MySqL .T.
+05/04/04-13:58:09: DEBUG: buscando informacoes na tabela
+05/04/04-13:58:15: MySqL .T.
+05/04/04-13:58:19: DEBUG: buscando informacoes na tabela
+05/04/04-13:58:25: MySqL .T.
+05/04/04-13:58:29: DEBUG: buscando informacoes na tabela
+05/04/04-13:58:35: MySqL .T.
+05/04/04-13:58:39: DEBUG: buscando informacoes na tabela
+05/04/04-13:58:45: MySqL .T.
+05/04/04-13:58:49: DEBUG: buscando informacoes na tabela
+05/04/04-13:58:55: MySqL .T.
+05/04/04-13:59:00: DEBUG: buscando informacoes na tabela
+05/04/04-13:59:05: MySqL .T.
+05/04/04-13:59:10: DEBUG: buscando informacoes na tabela
+05/04/04-13:59:16: MySqL .T.
+05/04/04-13:59:20: DEBUG: buscando informacoes na tabela
+05/04/04-13:59:26: MySqL .T.
+05/04/04-13:59:30: DEBUG: buscando informacoes na tabela
+05/04/04-13:59:36: MySqL .T.
+05/04/04-13:59:40: DEBUG: buscando informacoes na tabela
+05/04/04-13:59:46: MySqL .T.
+05/04/04-13:59:50: DEBUG: buscando informacoes na tabela
+05/04/04-13:59:56: MySqL .T.
+05/04/04-14:00:00: DEBUG: buscando informacoes na tabela
+05/04/04-14:00:06: MySqL .T.
+05/04/04-14:00:10: DEBUG: buscando informacoes na tabela
+05/04/04-14:00:16: MySqL .T.
+05/04/04-14:00:21: DEBUG: buscando informacoes na tabela
+05/04/04-14:00:26: MySqL .T.
+05/04/04-14:00:31: DEBUG: buscando informacoes na tabela
+05/04/04-14:00:37: MySqL .T.
+05/04/04-14:00:41: DEBUG: buscando informacoes na tabela
+05/04/04-14:00:47: MySqL .T.
+05/04/04-14:00:51: DEBUG: buscando informacoes na tabela
+05/04/04-14:00:57: MySqL .T.
+05/04/04-14:01:01: DEBUG: buscando informacoes na tabela
+05/04/04-14:01:07: MySqL .T.
+05/04/04-14:01:11: DEBUG: buscando informacoes na tabela
+05/04/04-14:01:17: MySqL .T.
+05/04/04-14:01:22: DEBUG: buscando informacoes na tabela
+05/04/04-14:01:27: MySqL .T.
+05/04/04-14:01:32: DEBUG: buscando informacoes na tabela
+05/04/04-14:01:37: MySqL .T.
+05/04/04-14:01:42: DEBUG: buscando informacoes na tabela
+05/04/04-14:01:48: MySqL .T.
+05/04/04-14:01:52: DEBUG: buscando informacoes na tabela
+05/04/04-14:01:58: MySqL .T.
+05/04/04-14:02:02: DEBUG: buscando informacoes na tabela
+05/04/04-14:02:08: MySqL .T.
+05/04/04-14:02:12: DEBUG: buscando informacoes na tabela
+05/04/04-14:02:18: MySqL .T.
+05/04/04-14:02:23: DEBUG: buscando informacoes na tabela
+05/04/04-14:02:29: MySqL .T.
+05/04/04-14:02:33: DEBUG: buscando informacoes na tabela
+05/04/04-14:02:39: MySqL .T.
+05/04/04-14:02:43: DEBUG: buscando informacoes na tabela
+05/04/04-14:02:49: MySqL .T.
+05/04/04-14:02:53: DEBUG: buscando informacoes na tabela
+05/04/04-14:02:59: MySqL .T.
+05/04/04-14:03:04: DEBUG: buscando informacoes na tabela
+05/04/04-14:03:10: MySqL .T.
+05/04/04-14:03:14: DEBUG: buscando informacoes na tabela
+05/04/04-14:03:20: MySqL .T.
+05/04/04-14:03:24: DEBUG: buscando informacoes na tabela
+05/04/04-14:03:30: MySqL .T.
+05/04/04-14:03:34: DEBUG: buscando informacoes na tabela
+05/04/04-14:03:40: MySqL .T.
+05/04/04-14:03:45: DEBUG: buscando informacoes na tabela
+05/04/04-14:03:50: MySqL .T.
+05/04/04-14:03:55: DEBUG: buscando informacoes na tabela
+05/04/04-14:03:56: Adicionando um novo produto 1000010      na tabela de produtos local...
+05/04/04-14:03:56: >PRODUTO 100/0010                                  
+05/04/04-14:03:56: Atualizadas informacoes de 1 produto(s).
+05/04/04-14:04:00: MySqL .T.
+05/04/04-14:04:04: DEBUG: buscando informacoes na tabela
+05/04/04-14:04:11: MySqL .T.
+05/04/04-14:04:15: DEBUG: buscando informacoes na tabela
+05/04/04-14:04:21: MySqL .T.
+05/04/04-14:04:26: DEBUG: buscando informacoes na tabela
+05/04/04-14:04:32: MySqL .T.
+05/04/04-14:04:36: DEBUG: buscando informacoes na tabela
+05/04/04-14:04:43: MySqL .T.
+05/04/04-14:04:48: DEBUG: buscando informacoes na tabela
+05/04/04-14:04:54: MySqL .T.
+05/04/04-14:04:58: DEBUG: buscando informacoes na tabela
+05/04/04-14:05:04: MySqL .T.
+05/04/04-14:05:09: DEBUG: buscando informacoes na tabela
+05/04/04-14:05:14: MySqL .T.
+05/04/04-14:05:19: DEBUG: buscando informacoes na tabela
+05/04/04-14:05:25: MySqL .T.
+05/04/04-14:05:29: DEBUG: buscando informacoes na tabela
+05/04/04-14:05:36: MySqL .T.
+05/04/04-14:05:40: DEBUG: buscando informacoes na tabela
+05/04/04-14:05:41: Adicionando um novo produto 1000011      na tabela de produtos local...
+05/04/04-14:05:41: >LENCOL 100/0011                                   
+05/04/04-14:05:41: Atualizadas informacoes de 1 produto(s).
+05/04/04-14:05:46: MySqL .T.
+05/04/04-14:05:51: DEBUG: buscando informacoes na tabela
+05/04/04-14:05:57: MySqL .T.
+05/04/04-14:06:03: DEBUG: buscando informacoes na tabela
+05/04/04-14:06:07: MySqL .T.
+05/04/04-14:06:12: DEBUG: buscando informacoes na tabela
+05/04/04-14:06:19: MySqL .T.
+05/04/04-14:06:25: DEBUG: buscando informacoes na tabela
+05/04/04-14:06:29: MySqL .T.
+05/04/04-14:06:34: DEBUG: buscando informacoes na tabela
+05/04/04-14:06:40: MySqL .T.
+05/04/04-14:06:44: DEBUG: buscando informacoes na tabela
+05/04/04-14:06:50: MySqL .T.
+05/04/04-14:06:54: DEBUG: buscando informacoes na tabela
+05/04/04-14:07:00: MySqL .T.
+05/04/04-14:07:06: DEBUG: buscando informacoes na tabela
+05/04/04-14:07:11: MySqL .T.
+05/04/04-14:07:15: DEBUG: buscando informacoes na tabela
+05/04/04-14:07:21: MySqL .T.
+05/04/04-14:07:25: DEBUG: buscando informacoes na tabela
+05/04/04-14:07:31: MySqL .T.
+05/04/04-14:07:36: DEBUG: buscando informacoes na tabela
+05/04/04-14:07:42: MySqL .T.
+05/04/04-14:07:46: DEBUG: buscando informacoes na tabela
+05/04/04-14:07:52: MySqL .T.
+05/04/04-14:07:56: DEBUG: buscando informacoes na tabela
+05/04/04-14:08:02: MySqL .T.
+05/04/04-14:08:06: DEBUG: buscando informacoes na tabela
+05/04/04-14:08:12: MySqL .T.
+05/04/04-14:08:16: DEBUG: buscando informacoes na tabela
+05/04/04-14:08:23: MySqL .T.
+05/04/04-14:08:27: DEBUG: buscando informacoes na tabela
+05/04/04-14:08:33: MySqL .T.
+05/04/04-14:08:37: DEBUG: buscando informacoes na tabela
+05/04/04-14:08:45: MySqL .T.
+05/04/04-14:08:49: DEBUG: buscando informacoes na tabela
+05/04/04-14:08:55: MySqL .T.
+05/04/04-14:08:59: DEBUG: buscando informacoes na tabela
+05/04/04-14:09:05: MySqL .T.
+05/04/04-14:09:10: DEBUG: buscando informacoes na tabela
+05/04/04-14:09:16: MySqL .T.
+05/04/04-14:09:20: DEBUG: buscando informacoes na tabela
+05/04/04-14:09:26: MySqL .T.
+05/04/04-14:09:30: DEBUG: buscando informacoes na tabela

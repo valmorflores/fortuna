@@ -1,0 +1,98 @@
+******************************* Error log file ********************************
+
+
+
+              Date: 10/28/03
+              Time: 18:15:49
+ Avaliavle Memory :265820
+-------------------------- Enviromental Information ---------------------------
+
+Exact is :Off
+Fixed is :Off
+Decimals is at :2
+Date Format is :mm/dd/yy
+Epoch is :1900
+Path is :
+Default is :
+Exclusive is :On
+SoftSeek is :Off
+Unique is :Off
+Deleted is :Off
+Cancel is :On
+Debug is :False
+Color is :W/N,N/W,N/N,N/N,N/W
+Cursor is :1
+Console is :On
+Alternate is :Off
+AltFile is :
+Device is :SCREEN
+Printer is :False
+PrintFile is :WIN:Generic / Text Only
+Margin is :0
+Bell is :Off
+Confirm is :Off
+Escape is :On
+Insert is :Off
+Intensity is :On
+Scoreboard is :On
+Delimeters is :Off
+Delimchars em :::
+Wrap is :Off
+Message is :0
+MCenter is :Off
+
+
+===========================Detalaid Work Area Items============================
+
+
+++++++++++++++++++++ Internal Error Handling Information  +++++++++++++++++++++
+
+Subsystem Call: BASE
+   System Code: 1003
+Default Status: False
+   Description: Variable does not exist
+     Operation: DIRETORIODEDADOSCDMPRIMA.DBF
+     Arguments:
+ Involved File: 
+Dos Error Code: 0
+
+ Trace Through:
+---------------
+ABREFILE             :     623 - in Module: SWGRAVA.PRG
+LANCAESTOQUE         :     346 in Module: SWGRAVA.PRG
+GRAVARINFORMACOES    :      21 in Module: GRAVADOR.PRG
+MAIN                 :      12 in Module: GRAVADOR.PRG
+
+
+ Video Screen Dump 
+
+
++--------------------------------------------------------------------------------+
+
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|     Compiling :SWGRAVA.PRG                                                     |
+|     旼컴컴컴컴컴�[ 100% ]컴컴컴컴컴컴컴�                                       |
+|     남께께께께께께께께께께께께께께께께껙                                       |
+|     읕c:\borland\bcc55\BIN\ilink32  @makefile.lnkTurbo Incremental Link 5.00 Co|
+|pyright (c) 1997, 2000 Borland                                                  |
+|                                                                                |
+|D:\dev\source\pdv3>gravador                                                     |
+|                                                                                |
+|Error BASE/1003  Variable does not exist: DIRETORIODEDADOSCDMPRIMA.DBF Arguments|
+|: ()                                                                            |
+|                                                                                |
+|Error at: ABREFILE(623) in Module: SWGRAVA.PRG                                  |
+|Called from: LANCAESTOQUE(346)  in Module: SWGRAVA.PRG                          |
+|Called from: GRAVARINFORMACOES(21)  in Module: GRAVADOR.PRG                     |
+|Called from: MAIN(12)  in Module: GRAVADOR.PRG                                  |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
+|                                                                                |
++--------------------------------------------------------------------------------+
+
+

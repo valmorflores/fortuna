@@ -1,0 +1,92 @@
+#include "common.ch"
+#include "inkey.ch"
+
+********************************
+static function DEFERROR(Arg1)
+
+   local Local1, Local2, Local3, Local4
+   if (Arg1:gencode() == 5)
+      return 0
+   endif
+   if (Arg1:gencode() == 21 .AND. Arg1:oscode() == 32 .AND. ;
+         Arg1:candefault())
+      neterr(.T.)
+      return .F.
+   endif
+   if (Arg1:gencode() == 40 .AND. Arg1:candefault())
+      neterr(.T.)
+      return .F.
+   endif
+   settext()
+   Local2:= errormessa(Arg1)
+   Local3:= {"Quit"}
+   if (Arg1:canretry())
+      AAdd(Local3, "Retry")
+   endif
+   if (Arg1:candefault())
+      AAdd(Local3, "Default")
+   endif
+   Local4:= 0
+   do while (Local4 == 0)
+      if (Empty(Arg1:oscode()))
+         Local4:= alert(Local2, Local3)
+      else
+         Local4:= alert(Local2 + "(DOS Error " + ;
+            LTrim(Str(Arg1:oscode())) + ")", Local3)
+      endif
+      if (ISNIL(Local4))
+         exit
+      endif
+   enddo
+   if (!Empty(Local4))
+      if (Local3[Local4] == "Break")
+         break(Arg1)
+      elseif (Local3[Local4] == "Retry")
+         return .T.
+      elseif (Local3[Local4] == "Default")
+         return .F.
+      endif
+   endif
+   if (!Empty(Arg1:oscode()))
+      Local2:= Local2 + (" (DOS Error " + LTrim(Str(Arg1:oscode())) ;
+         + ") ")
+   endif
+   outerr(Chr(13) + Chr(10))
+   outerr(Local2)
+   Local1:= 2
+   do while (!Empty(procname(Local1)))
+      outerr(Chr(13) + Chr(10))
+      outerr("Called from", Trim(procname(Local1)) + "(" + ;
+         LTrim(Str(procline(Local1))) + ")  ")
+      Local1++
+   enddo
+   errorlevel(1)
+   quit
+   return .F.
+
+********************************
+static function ERRORMESSA(Arg1)
+
+   local Local1
+   Local1:= iif(Arg1:severity() > 1, "Error ", "Warning ")
+   if (ISCHARACTER(Arg1:subsystem()))
+      Local1:= Local1 + Arg1:subsystem()
+   else
+      Local1:= Local1 + "???"
+   endif
+   if (ISNUMBER(Arg1:subcode()))
+      Local1:= Local1 + ("/" + LTrim(Str(Arg1:subcode())))
+   else
+      Local1:= Local1 + "/???"
+   endif
+   if (ISCHARACTER(Arg1:descriptio()))
+      Local1:= Local1 + ("  " + Arg1:descriptio())
+   endif
+   if (!Empty(Arg1:filename()))
+      Local1:= Local1 + (": " + Arg1:filename())
+   elseif (!Empty(Arg1:operation()))
+      Local1:= Local1 + (": " + Arg1:operation())
+   endif
+   return Local1
+
+* EOF

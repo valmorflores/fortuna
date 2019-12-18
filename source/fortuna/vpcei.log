@@ -1,0 +1,12 @@
+11:01:13: object error:, {description:no function, filename:/mnt/projetos/dev/source/fortuna/vpcei.prg, tries:1, operation:OL_AUTOYIELD, canDefault:.F., osCode:0, args:{}, canSubstitute:.F., subCode:0, subSystem:, syserr:, severity:2, genCode:12, canRetry:.F.}
+11:01:13: error message, Error /0;no function: OL_AUTOYIELD: /mnt/projetos/dev/source/fortuna/vpcei.prg;
+11:01:13: Called from, DEFERROR(32)  
+11:01:13: Called from, code_0(0)  
+11:01:13: Called from, eval(3895)  
+11:01:13: Called from, MAIN(98)  
+11:01:14 vpcei:7699:1 vpcei: runtime error: no function
+11:01:14 vpcei:7699:1 trace: file 'errorsys.prg' line 88
+11:01:14 vpcei:7699:1 trace: file 'errorsys.prg' line 88
+11:01:14 vpcei:7699:1 trace: file 'errorsys.prg' line 0
+11:01:14 vpcei:7699:1 trace: file '/mnt/projetos/dev/source/fortuna/vpcei.prg' line 98
+11:01:14 vpcei:7699:1 trace: file 'cliprt.c' line 9517

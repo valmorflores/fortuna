@@ -1,0 +1,19 @@
+SEG SEGMENT 'stack'
+Db 64 DUP(?)
+SEG ENDS
+Data SEGMENT 'Data'
+ a db 10
+ b db 20
+Data ENDS
+Code SEGMENT 'code'
+Assume CS:Code,DS:Data,SS:SEG
+Block proc
+Mov AX,Data
+Mov DS,AX
+
+Mov ah,4ch
+INT 21h
+
+Block ENDP
+Code ENDS
+End Block

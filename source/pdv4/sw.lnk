@@ -1,0 +1,18 @@
+BLI EXE NOD
+FI  SWPDV
+FI  SWREPORT
+FI  DRIVER
+FI  IMP
+FI  EPSON
+FI  ERRORSYS
+FI  C:\CLIP52\OBJ\DGEEXO
+FI  C:\CLIP52\OBJ\GTEXTCL5
+FI  C:\CLIP52\OBJ\DGE256
+LIB DGECL5
+LIB DBFCDX,_DBFCDX
+@CL530MAX
+
+
+#                        ---CAIXA+BANCO-------
+#                        CONTAS A PAGAR -> 157
+#                        ---------------------

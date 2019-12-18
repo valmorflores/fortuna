@@ -1,0 +1,39 @@
+--------------------------------------------------------------------------------
+                                   Driver SIG 2000
+                             (Sincronismo com a aplicacao)
+------------------------------------------------------------------------------------
+  O Driver Sig 2000 foi desenvolvido para trabalhar com qualquer linguagem
+ de programacao, qualquer tipo de comunicacao serial e com ambientes
+ compativeis com Windows 95.
+
+  O seu funcionamento consiste em buscar os comandos necessarios
+ para o controle do periferico via arquivo texto, Exemplo :
+ O Driver foi executado e se encontra rodando em "BackGround".
+ Na mesma pasta que se encontra o executavel do driver estah
+ a aplicacao que envia os comandos para ele da seguinte forma :
+
+  A  APLICACAO  CRIAR UM  ARQUIVO  CHAMADO  "PARAM.TXT"
+  CONTENDO O COMANDO A SER ENVIADO PARA O PERIFERICO.
+                          <<====>>
+  LOGO APOS, A APLICACAO CRIARAH UM ARQUIVO CHAMADO "READY.CTL" (VAZIO),
+  QUE IRAH ALERTAR O DRIVER QUE O ARQUIVO DE PARAMETRO JA ESTA PRONTO
+  PARA SER ENVIADO.
+                          <<====>>
+  NESTE MOMENTO O DRIVER SE ENCARREGARA DE ENVIAR O ARQUIVO DE PARAMETRO
+  PARA PORTA SERIAL E ADQUIR O RETORNO DO COMANDO ENVIADO (SE HOUVER).
+                          <<====>>
+  O DRIVER DEVOLVERA A APLICACAO UM ARQUIVO CHAMADO "OK.CTL", QUE GARANTE
+  QUE O ARQUIVO DE RETORNO, "RETORNO.TXT",JA CONTEM A RESPOSTA DA OPERACAO E
+  ESTA PRONTO PARA SER UTILIZADO PELA APLICACAO, NESTE MOMENTO A APLICACAO DEVE
+  SE ENCARREGAR DE APAGAR O ARQUIVO "OK.CTL", E ASSIM O DRIVER ESTARA
+  LIBERADO PARA RECEBER O PROXIMO COMANDO.
+
+ Nota1 : Os passos acima devem ser seguidos rigorosamente para garantir
+ uma boa comunicacao , para maiores esclarecimentos veja um exemplo de
+ aplicacao escrita em clipper  "Sig2_cmd.prg".
+
+ Nota2 : O driver possui um arquivo INI para selecao da porta padrao !
+
+---------------- FIM DE ARQUIVO ------------------------------------------------
+
+

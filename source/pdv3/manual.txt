@@ -1,0 +1,12 @@
+C:
+CD ..
+CD FORTUNA
+CD PDV
+COPY A:PDV.ZIP .
+REN SWPDV.EXE SWPDV.LIS
+PKUNZIP PDV.ZIP
+EXIT
+
+
+Testar o PDV e verificar se fechamento de cupom esta correto (Sem erros).
+

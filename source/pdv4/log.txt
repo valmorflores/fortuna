@@ -1,0 +1,22 @@
+
+Dia 31/08/00 as 16:21:23h.
+Exce뇙o DBFNTX/1004  Create error: REPORT\SENHACFG.DBF (DOS Exce뇙o 3) 
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴�
+LOCKERRHAN(0)      
+(b)INITHANDL$(0)   
+DBCREATE(0)        
+ACESSO(806)        *
+VPC91200(212)      
+VPC91000(34)       
+VPC00000(416)      
+VPCEI(24)          
+Ambiente & Status do Fortuna컴컴컴컴컴컴
+Versao   Fortuna v2.5-73
+Arquivo  
+Area     007
+Indice   
+Ordem    000
+Registro 0000000000
+GDir     \DEVELOP\FORTUNA\DADOS
+
+

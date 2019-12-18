@@ -1,0 +1,6 @@
+-Lc:\borland\bcc55\lib\obj;c:\borland\bcc55\lib;c:\xharbour\lib -Gn -M -m -s -Tpe -ap +
+c0x32.obj obj\dormwin.obj, +
+dw.exe,, +
+optcon.lib  bcc640.lib lang.lib vm.lib rtl.lib rdd.lib macro.lib pp.lib dbfntx.lib dbfcdx.lib dbffpt.lib dbfdbt.lib common.lib gtwin.lib codepage.lib  mysql.lib libmysql.lib mysqlclient.lib import32.lib cw32.lib, +
+, +
+
