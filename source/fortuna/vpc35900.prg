@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё CONVERSOR 
-Ё Finalidade  Ё Conversor de Moedas 
-Ё Parametros  Ё Nil 
-Ё Retorno     Ё Nil 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ CONVERSOR 
+О©╫ Finalidade  О©╫ Conversor de Moedas 
+О©╫ Parametros  О©╫ Nil 
+О©╫ Retorno     О©╫ Nil 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Function ConversorMoedas( cModulo, cVariavel, cOutros, cDiversos ) 
 Local cTela:= ScreenSave( 0, 0, 24, 79 ), cCor:= SetColor(),; 
@@ -46,7 +46,7 @@ Local aMoedas:= {}, dDataOrigem:= DATE(), nValor:= PrecoConvertido(),;
  
  
    IF len( aMoedas ) < 2 
-      Aviso( "A quantidade de moedas disponiveis ┌ insuficiente." ) 
+      Aviso( "A quantidade de moedas disponiveis О©╫ insuficiente." ) 
       Pausa() 
       ScreenRest( cTela ) 
       SetColor( cCor ) 
@@ -99,19 +99,19 @@ Local aMoedas:= {}, dDataOrigem:= DATE(), nValor:= PrecoConvertido(),;
       end 
       IF lDisplay 
           DispBegin() 
-          Mensagem( "[Seta Esquerda]Origem [Seta Direita]Destino [НОПЯ]Move [Enter]Valor [ЭЩЧЪ]Sair" ) 
+          Mensagem( "[Seta Esquerda]Origem [Seta Direita]Destino [О©╫О©╫О©╫О©╫]Move [Enter]Valor [О©╫О©╫О©╫О©╫]Sair" ) 
           VPBox( nLin1, nCol1, nLin1 + 15, nCol1 + 50, " CONVERSAO DE MOEDAS ", _COR_ALERTA_BOX ) 
           SetColor( _COR_ALERTA_BOX ) 
-          @ nLin1 + 1, nCol1 + 1 Say " Origem     Ё       VARIACOES       Ё Destino    " 
-          @ nLin1 + 2, nCol1 + 1 Say "ддддддддддддедддддддддддддддддддддддедддддддддддд" 
-          @ nLin1 + 3, nCol1 + 1 Say "            Ё     <<<ддддддд>>>     Ё            " 
-          @ nLin1 + 4, nCol1 + 1 Say "ддддддддддддедддддддддддддддддддддддедддддддддддд" 
-          @ nLin1 + 5, nCol1 + 1 Say "            Ё                       Ё            " 
-          @ nLin1 + 6, nCol1 + 1 Say "            Ё                       Ё            " 
-          @ nLin1 + 7, nCol1 + 1 Say "            Ё                       Ё            " 
-          @ nLin1 + 8, nCol1 + 1 Say "дддддддддддд╢                       цдддддддддддд" 
-          @ nLin1 + 9, nCol1 + 1 Say "            Ё                       Ё            " 
-          @ nLin1 +10, nCol1 + 1 Say "ддддддддддддадддддддддддддддддддддддадддддддддддд" 
+          @ nLin1 + 1, nCol1 + 1 Say " Origem     О©╫       VARIACOES       О©╫ Destino    " 
+          @ nLin1 + 2, nCol1 + 1 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
+          @ nLin1 + 3, nCol1 + 1 Say "            О©╫     <<<О©╫О©╫О©╫О©╫О©╫О©╫О©╫>>>     О©╫            " 
+          @ nLin1 + 4, nCol1 + 1 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
+          @ nLin1 + 5, nCol1 + 1 Say "            О©╫                       О©╫            " 
+          @ nLin1 + 6, nCol1 + 1 Say "            О©╫                       О©╫            " 
+          @ nLin1 + 7, nCol1 + 1 Say "            О©╫                       О©╫            " 
+          @ nLin1 + 8, nCol1 + 1 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢                       О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
+          @ nLin1 + 9, nCol1 + 1 Say "            О©╫                       О©╫            " 
+          @ nLin1 +10, nCol1 + 1 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
           @ nLin1 +11, nCol1 + 1 Say " Valor Base            999.999.9999              " 
           @ nLin1 +12, nCol1 + 1 Say " Data Inicial          DD/MM/AA                  " 
           @ nLin1 +13, nCol1 + 1 Say " Data Correcao         DD/MM/AA                  " 

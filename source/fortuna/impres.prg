@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
  
 /* 
 Convenio: 00272 
@@ -9,14 +9,14 @@ Data
 */ 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Preco Panarello 
-³ Finalidade  ³ Importacao de Precos Panarello 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Preco Panarello 
+ï¿½ Finalidade  ï¿½ Importacao de Precos Panarello 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function IPrecoPanarello() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -57,7 +57,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
       ENDIF 
       IF cTipo=="02" 
          IF MPR->( DBSeek( PAD( cCodigo + "0", 12 ) ) ) 
-            IF MPR->( NetRLock() ) 
+            IF MPR->( netrlock() ) 
                Replace MPR->PRECOV With nPreco,; 
                        MPR->PRECOD With nPreco 
             ENDIF 
@@ -80,14 +80,14 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IPRODABAFAR 
-³ Finalidade  ³ Importacao de Informacoes da Abafarma 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IPRODABAFAR 
+ï¿½ Finalidade  ï¿½ Importacao de Informacoes da Abafarma 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION IProdAbafar() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -106,8 +106,8 @@ Local cArquivo:= "C:\ABFP1\PRODUTOS.DBF            ",;
    SetColor( _COR_GET_EDICAO ) 
    VPBox( 0, 0, 22, 79, "LISTA DE PRECOS - ABAFARMA", _COR_GET_EDICAO ) 
    @ 02,01 Say "Produtos:" Get cArquivo 
-   @ 03,01 Say "Margem de Lucro s/ Produtos nÆo Controlados:" Get nMargem Pict "@E 999.99" 
-   @ 04,01 Say "Atualizar base de dados de produtos j  cadastrados?" Get cAtual Valid cAtual $"SN" 
+   @ 03,01 Say "Margem de Lucro s/ Produtos nï¿½o Controlados:" Get nMargem Pict "@E 999.99" 
+   @ 04,01 Say "Atualizar base de dados de produtos jï¿½ cadastrados?" Get cAtual Valid cAtual $"SN" 
    @ 05,01 Say "Codigo da ABAFARMA no cadastro de fornecedores:" Get nCodFor Pict "9999" 
    @ 06,01 Say "Modificar a mergem de preco dos produtos?" Get cMudaMargem Pict "!" 
    READ 
@@ -139,7 +139,7 @@ Local cArquivo:= "C:\ABFP1\PRODUTOS.DBF            ",;
       ENDIF 
       DisplayScan( RECNO(), nTotal, 17, 2, 2 ) 
       @ 21,02 Say ALLTRIM( NOMEPROD ) + " " + UPPER( APRESENTA ) 
-      @ 17,62 Say "ÄImportacaoÄÄÄÄÄ" 
+      @ 17,62 Say "ï¿½Importacaoï¿½ï¿½ï¿½ï¿½ï¿½" 
       @ 18,62 Say Str( ( Recno() / nTotal ) * 100, 6, 2 ) + "%" 
       @ 19,62 Say Str( Recno(), 6, 0 ) + "/" + Str( nTotal, 6, 0 ) 
       IF !MPR->( DBSeek( ALLTRIM( TMP->CODPROD ) + "0" ) ) 
@@ -148,7 +148,7 @@ Local cArquivo:= "C:\ABFP1\PRODUTOS.DBF            ",;
          DBSkip() 
          Loop 
       ENDIF 
-      IF MPR->( NetRLock() ) 
+      IF MPR->( netrlock() ) 
          Repl MPR->CODRED With Alltrim( SubStr( CODPROD, 4 ) ) + "0",; 
               MPR->CODIGO With ALLTRIM( CODPROD ) + "0",; 
               MPR->INDICE With ALLTRIM( CODPROD ) + "0",; 
@@ -170,14 +170,14 @@ Local cArquivo:= "C:\ABFP1\PRODUTOS.DBF            ",;
       IF !( PXF->CPROD_==MPR->INDICE ) 
          PXF->( DBAppend() ) 
       ENDIF 
-      IF PXF->( NetRLock() ) 
+      IF PXF->( netrlock() ) 
          Replace PXF->PVELHO With PXF->VALOR_ 
          Replace PXF->CPROD_ With MPR->INDICE,; 
                  PXF->VALOR_ With PRFABRIC,; 
                  PXF->DATA__ With DATE() 
       ENDIF 
       IF PRVENDA==0 
-         IF MPR->( NetRLock() ) 
+         IF MPR->( netrlock() ) 
             Replace MPR->PRECOV With PXF->VALOR_ + ( ( PXF->VALOR_ * MPR->PERCPV ) / 100 ) 
          ENDIF 
       ENDIF 
@@ -191,14 +191,14 @@ Local cArquivo:= "C:\ABFP1\PRODUTOS.DBF            ",;
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IPROPREABAFAR 
-³ Finalidade  ³ Importar precos / abafar 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IPROPREABAFAR 
+ï¿½ Finalidade  ï¿½ Importar precos / abafar 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION IProdPreAbafar() 
  
@@ -211,14 +211,14 @@ FUNCTION IProdPreAbafar()
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IFABABAFAR 
-³ Finalidade  ³ Importacao da tabela de fabricantes da abafarma 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IFABABAFAR 
+ï¿½ Finalidade  ï¿½ Importacao da tabela de fabricantes da abafarma 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION IFabAbafar() 
  
@@ -229,14 +229,14 @@ FUNCTION IFabAbafar()
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Nota Panarello 
-³ Finalidade  ³ Importacao de Nota Fiscal (Panarello) 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Nota Panarello 
+ï¿½ Finalidade  ï¿½ Importacao de Nota Fiscal (Panarello) 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function INFPanarello() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -302,14 +302,14 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Export SoftWare - Estoque 
-³ Finalidade  ³ Importacao de Estoque - SoftWare 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Export SoftWare - Estoque 
+ï¿½ Finalidade  ï¿½ Importacao de Estoque - SoftWare 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function ISWEstoque() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -350,14 +350,14 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Importar SoftWare - Produtos 
-³ Finalidade  ³ Importacao de Produtos - SoftWare 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Importar SoftWare - Produtos 
+ï¿½ Finalidade  ï¿½ Importacao de Produtos - SoftWare 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function ISWProduto( ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -472,7 +472,7 @@ Local aStr
                MPR->IPICOD With VAL( Right( cST____, 1 ) ),; 
                MPR->CLAFIS With nClaFis 
        ELSE 
-          IF MPR->( NetRLock() ) 
+          IF MPR->( netrlock() ) 
              Repl MPR->DESCRI With cDescri,; 
                   MPR->UNIDAD With cUnidad,; 
                   MPR->ICMCOD With VAL( Left( cST____, 1 ) ),; 
@@ -500,29 +500,29 @@ Local aStr
    Return Nil 
  
   /***** 
-  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-  ³ Funcao      ³ OCORRENCIA 
-  ³ Finalidade  ³ Buscar a Posicao do cChr, nOcorrencia(1..9999) na 
-  ³             ³ cString (A..Z) 
-  ³ Parametros  ³ nOcorrencia, cChr, cString 
-  ³ Retorno     ³ nPosicao 
-  ³ Programador ³ Valmor P. Flores 
-  ³ Data        ³ 
-  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+  ï¿½ Funcao      ï¿½ OCORRENCIA 
+  ï¿½ Finalidade  ï¿½ Buscar a Posicao do cChr, nOcorrencia(1..9999) na 
+  ï¿½             ï¿½ cString (A..Z) 
+  ï¿½ Parametros  ï¿½ nOcorrencia, cChr, cString 
+  ï¿½ Retorno     ï¿½ nPosicao 
+  ï¿½ Programador ï¿½ Valmor P. Flores 
+  ï¿½ Data        ï¿½ 
+  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
   */ 
   Function Ocorrencia( nOcorrencia, cChr, cString ) 
-  nPosicao:= RAT( cChr, StrTran( cString, cChr, "±", nOcorrencia + 1 ) ) 
+  nPosicao:= RAT( cChr, StrTran( cString, cChr, "ï¿½", nOcorrencia + 1 ) ) 
   Return nPosicao 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ DiarioComunicacao 
-³ Finalidade  ³ Armazenar informacoes de acesso ao modulo de comunicacao 
-³ Parametros  ³ cInformacao 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ DiarioComunicacao 
+ï¿½ Finalidade  ï¿½ Armazenar informacoes de acesso ao modulo de comunicacao 
+ï¿½ Parametros  ï¿½ cInformacao 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function DiarioComunicacao( cInformacao, cInfo2 ) 
 Local nArea:= Select() 
@@ -559,7 +559,7 @@ DBGoBottom()
 IF BOF() 
    DBAppend() 
 ENDIF 
-IF NetRLock() 
+IF netrlock() 
    Repl DATA__ With Date(),; 
         HORA__ With time(),; 
         DESCRI With cInformacao,; 
@@ -577,7 +577,7 @@ Replace DATA__ With DATE(),;
 DBAppend() 
 Replace DATA__ With DATE(),; 
         TIPO__ With "*",; 
-        DESCRI With Repl( "Ä", 60 ) 
+        DESCRI With Repl( "ï¿½", 60 ) 
  
 DBAppend() 
 Replace DATA__ With DATE(),; 
@@ -588,14 +588,14 @@ Return Nil
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VisualComunicacao 
-³ Finalidade  ³ Visualizacao da comunicacao 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VisualComunicacao 
+ï¿½ Finalidade  ï¿½ Visualizacao da comunicacao 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function VisualComunicacao() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -748,14 +748,14 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ iACSBase 
-³ Finalidade  ³ Importacao de Base de dados ACS 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ iACSBase 
+ï¿½ Finalidade  ï¿½ Importacao de Base de dados ACS 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function IACSBase() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -770,7 +770,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
    READ 
    IF !File( cDiretorio + "\COMPONEN.DBF" ) .OR.; 
       !File( cDiretorio + "\PRODUTOS.DBF" ) 
-      Aviso( "Diretorio informado nÆo possui dados necessarios..." ) 
+      Aviso( "Diretorio informado nï¿½o possui dados necessarios..." ) 
       Pausa() 
       SetColor( cCor ) 
       SetCursor( nCursor ) 
@@ -820,12 +820,12 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
       cDetal3:= PRO->VARIANTE + "      Ano: " + PRO->STAYEA + " " + PRO->ENDYEA 
       lMPrima:= EMPTY( PRO->FCOMPON1 ) 
       IF MPR->( DBSeek( PAD( cCodigo, 12 ) ) ) 
-         IF MPR->( NetRLock() ) 
+         IF MPR->( netrlock() ) 
             Replace MPR->DESCRI With cDescricao 
          ENDIF 
       ELSE 
          MPR->( DBAppend() ) 
-         IF MPR->( NetRLock() ) 
+         IF MPR->( netrlock() ) 
             Replace MPR->DETAL1 With Alltrim( cDetal1 ),; 
                     MPR->DETAL2 With Alltrim( cDetal2 ),; 
                     MPR->DETAL3 With Alltrim( cDetal3 ),; 
@@ -937,7 +937,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
    WHILE !EOF() 
        @ ROW(),COL() Say Recno() 
        IF QUANT_ == 0 
-          IF NetRLock() 
+          IF netrlock() 
              Dele 
           ENDIF 
        ENDIF 
@@ -954,14 +954,14 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ iACSPreco 
-³ Finalidade  ³ Importacao de Precos ACS 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ iACSPreco 
+ï¿½ Finalidade  ï¿½ Importacao de Precos ACS 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function IACSPreco() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -976,7 +976,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
    @ 02,02 Say "Diretorio do Sistema (Base de Dados):" Get cDiretorio 
    READ 
    IF !File( cDiretorio + "\LISTAPRE.DBF" ) 
-      Aviso( "Diretorio informado nÆo possui dados necessarios..." ) 
+      Aviso( "Diretorio informado nï¿½o possui dados necessarios..." ) 
       Pausa() 
       SetColor( cCor ) 
       SetCursor( nCursor ) 
@@ -1001,7 +1001,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
          nPreco:= IM->PREACSM 
       ENDIF 
       IF MPR->( DBSeek( PAD( cCodigo, 12 ) ) ) 
-         IF MPR->( NetRLock() ) 
+         IF MPR->( netrlock() ) 
             Replace MPR->PRECOV With nPreco,; 
                     MPR->PRECOD With nPreco,; 
                     MPR->ORIGEM With "COR" 
@@ -1028,14 +1028,14 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ iGlasBase 
-³ Finalidade  ³ Importacao de Precos FORMIX 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ iGlasBase 
+ï¿½ Finalidade  ï¿½ Importacao de Precos FORMIX 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function iGlasBase() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1052,7 +1052,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
    @ 03,02 Say "Grupo de Produtos.....:" Get cGrupo 
    READ 
    IF !File( cArquivo ) 
-      Aviso( "Diretorio informado nÆo possui dados necessarios..." ) 
+      Aviso( "Diretorio informado nï¿½o possui dados necessarios..." ) 
       Pausa() 
       SetColor( cCor ) 
       SetCursor( nCursor ) 
@@ -1083,7 +1083,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
       cDescri:= SubStr( TMP->ORIGEM, 9, 43 ) 
       nPreco:= VAL( SubStr( TMP->ORIGEM, 56, 10 ) ) 
       IF MPR->( DBSeek( PAD( cCodFab, 13 ) ) ) 
-         IF MPR->( NetRLock() ) 
+         IF MPR->( netrlock() ) 
             Replace MPR->PRECOV With nPreco,; 
                     MPR->PRECOD With nPreco,; 
                     MPR->ORIGEM With "GLS" 
@@ -1132,14 +1132,14 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ iGlasFormula 
-³ Finalidade  ³ Importacao de Precos FORMIX/GLASURIT 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ iGlasFormula 
+ï¿½ Finalidade  ï¿½ Importacao de Precos FORMIX/GLASURIT 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function iGlasFormula() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1156,7 +1156,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
    @ 03,02 Say "Grupo de Produtos.....:" Get cGrupo 
    READ 
    IF !File( cArquivo ) 
-      Aviso( "Diretorio informado nÆo possui dados necessarios..." ) 
+      Aviso( "Diretorio informado nï¿½o possui dados necessarios..." ) 
       Pausa() 
       SetColor( cCor ) 
       SetCursor( nCursor ) 
@@ -1187,7 +1187,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
       cDescri:= AllTrim( SubStr( TMP->ORIGEM, 48, 43 ) ) 
       nPreco:=  VAL( SubStr( TMP->ORIGEM, 100, 13 ) ) 
       IF MPR->( DBSeek( PAD( cCodFab, 13 ) ) ) 
-         IF MPR->( NetRLock() ) 
+         IF MPR->( netrlock() ) 
             Replace MPR->PRECOV With nPreco,; 
                     MPR->ORIGEM With "GLS" 
          ENDIF 
@@ -1235,14 +1235,14 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ RennerPreco 
-³ Finalidade  ³ Importacao de Precos Renner Dupont 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ RennerPreco 
+ï¿½ Finalidade  ï¿½ Importacao de Precos Renner Dupont 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function RennerPreco() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1267,7 +1267,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
    @ 07,02 Say "Grupo de Referencias..:" Get cArquivo3 
    READ 
    IF !File( cArquivo ) 
-      Aviso( "Diretorio informado nÆo possui dados necessarios..." ) 
+      Aviso( "Diretorio informado nï¿½o possui dados necessarios..." ) 
       Pausa() 
       SetColor( cCor ) 
       SetCursor( nCursor ) 
@@ -1333,7 +1333,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
          ENDDO 
       ENDIF 
       IF MPR->( DBSeek( PAD( cCodFab, 13 ) ) ) 
-         IF MPR->( NetRLock() ) 
+         IF MPR->( netrlock() ) 
             Replace MPR->DESCRI With cDescri 
             Replace MPR->PESOLI With nQuant,; 
                     MPR->PESOBR With nQuant 
@@ -1391,14 +1391,14 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ PRODBARROS 
-³ Finalidade  ³ Importacao de Precos Barros 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ PRODBARROS 
+ï¿½ Finalidade  ï¿½ Importacao de Precos Barros 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function IPRODBarros() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1415,9 +1415,9 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
    cArquivo:= "BARROS.TXT           " 
    @ 02,03 Say "Arquivo com Informacoes.....................:" Get cArquivo 
    @ 03,03 Say "Codigo do Fornecedor........................:" Get nCodFor Pict "999999" 
-   @ 04,03 Say "Utilizar a mesma Divis„o de Grupos da Barros:" Get cMesma Pict "!" 
-   @ 05,03 Say "  ÀÄÄÄÄ Se a Informacao for [N] Qual Grupo.:" Get cGrupo Pict "   " 
-   @ 06,03 Say "Atualizar os Produtos j  Gravados...........:" Get cAtual Pict "!" 
+   @ 04,03 Say "Utilizar a mesma Divisï¿½o de Grupos da Barros:" Get cMesma Pict "!" 
+   @ 05,03 Say "  ï¿½ï¿½ï¿½ï¿½ï¿½ Se a Informacao for [N] Qual Grupo.:" Get cGrupo Pict "   " 
+   @ 06,03 Say "Atualizar os Produtos jï¿½ Gravados...........:" Get cAtual Pict "!" 
    READ 
    IF LastKey()==K_ESC 
       SetColor( cCor ) 
@@ -1500,7 +1500,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
        ENDIF 
        DisplayScan( RECNO(), nTotal, 17, 2, 2 ) 
        Processo() 
-       @ 17,62 Say "ÄImportacaoÄÄÄÄÄ" 
+       @ 17,62 Say "ï¿½Importacaoï¿½ï¿½ï¿½ï¿½ï¿½" 
        @ 18,62 Say Str( ( Recno() / nTotal ) * 100, 6, 2 ) + "%" 
        @ 19,62 Say Str( Recno(), 6, 0 ) + "/" + Str( nTotal, 6, 0 ) 
        TMP->( DBSkip() ) 
@@ -1515,14 +1515,14 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ FABBARROS 
-³ Finalidade  ³ Importacao de Fabricantes Barros 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ FABBARROS 
+ï¿½ Finalidade  ï¿½ Importacao de Fabricantes Barros 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function IFabBarros() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1577,7 +1577,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
        ENDIF 
        DisplayScan( RECNO(), nTotal, 17, 2, 2 ) 
        Processo() 
-       @ 17,62 Say "ÄImportacaoÄÄÄÄÄ" 
+       @ 17,62 Say "ï¿½Importacaoï¿½ï¿½ï¿½ï¿½ï¿½" 
        @ 18,62 Say Str( ( Recno() / nTotal ) * 100, 6, 2 ) + "%" 
        @ 19,62 Say Str( Recno(), 6, 0 ) + "/" + Str( nTotal, 6, 0 ) 
        TMP->( DBSkip() ) 

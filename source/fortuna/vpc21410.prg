@@ -1,8 +1,7 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
-#include "PTFUNCS.CH" 
-#include "PTVERBS.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
+ 
  
 /* 
 * Funcao       - VPC21410 
@@ -62,9 +61,9 @@ stat func informacoes(MOD)
        case MOD=2 
             vpobsbox(.T.,10,42," Informacoes ",{"   Crie uma mascara utilizando   ",; 
                                                 "   os seguintes caracteres:      ",; 
-                                                "   9 => Valor ÄÄÄÄÄÄÄÄÄÄÄÄ¿      ",; 
-                                                "   . => Decimal ÄÄÄÄÄÄÄÄ¿ ³      ",; 
-                                                "   , => Separador ÄÄ¿   ³ ³      ",; 
+                                                "   9 => Valor ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿      ",; 
+                                                "   . => Decimal ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ ï¿½      ",; 
+                                                "   , => Separador ï¿½Ä¿   ï¿½ ï¿½      ",; 
                                                 "   Exemplo      [999.999,99  ]   ",; 
                                                 "   Sendo que nao podera  haver   ",; 
                                                 "   casos em que o usuario con-   ",; 
@@ -74,9 +73,9 @@ stat func informacoes(MOD)
        case MOD=3 
             vpobsbox(.T.,10,42," Informacoes ",{"   Crie uma mascara utilizando   ",; 
                                                 "   os seguintes caracteres:      ",; 
-                                                "   9 => Valor ÄÄÄÄÄÄÄÄÄÄÄÄ¿      ",; 
-                                                "   , => Decimal ÄÄÄÄÄÄÄÄ¿ ³      ",; 
-                                                "   . => Separador ÄÄ¿   ³ ³      ",; 
+                                                "   9 => Valor ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿      ",; 
+                                                "   , => Decimal ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ ï¿½      ",; 
+                                                "   . => Separador ï¿½Ä¿   ï¿½ ï¿½      ",; 
                                                 "   Exemplo  [999.999.999,99  ]   ",; 
                                                 "   Sendo que nao podera  haver   ",; 
                                                 "   casos em que o usuario con-   ",; 

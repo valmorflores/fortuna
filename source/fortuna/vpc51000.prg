@@ -7,8 +7,8 @@
 * Data        - 10/Outubro/1994 
 * Atualizacao - 
 */ 
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
 
 #ifdef HARBOUR
 function vpc51000()

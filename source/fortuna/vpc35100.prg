@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#Include "INKEY.CH" 
-#Include "VPF.CH" 
+#Include "inkey.ch" 
+#Include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VPC35100 
-³ Finalidade  ³ Ajuste de Precos de Venda 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VPC35100 
+ï¿½ Finalidade  ï¿½ Ajuste de Precos de Venda 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 #ifdef HARBOUR
 function vpc35100()
@@ -105,13 +105,13 @@ WHILE !( nTecla==K_ESC )
  
            /* Gravacao */ 
            IF ! LastKey() == K_ESC 
-              IF NetRLock() 
+              IF netrlock() 
                  Replace Precov With nPrecov,; 
                          PercPv With nMargem,; 
                          PercDc With nPercDc 
  
               ENDIF 
-              IF PXF->( NetRLock(5) ) 
+              IF PXF->( netrlock(5) ) 
                  IF PXF->CPROD_ <> cCodigo 
                     PXF->( dbAppend() ) 
                  ENDIF 
@@ -165,7 +165,7 @@ Function BuscaPrecoCompra()
    // Cria o fornecedor na lista de preco com preco 0
    IF PXF->CODFOR == MPR->CODFOR
       PXF->( DBAppend() )
-      IF PXF->( NetRLock() )
+      IF PXF->( netrlock() )
          Replace PXF->CPROD_ With MPR->INDICE
          Replace PXF->CODFOR With MPR->CODFOR
          PXF->( DBUnlock() )

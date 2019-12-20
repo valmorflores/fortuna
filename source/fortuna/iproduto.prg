@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IMPPRODUTOS 
-³ Finalidade  ³ Imprimir o cadastro de produtos ou lista de precos. 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 07/08/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IMPPRODUTOS 
+ï¿½ Finalidade  ï¿½ Imprimir o cadastro de produtos ou lista de precos. 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 07/08/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function ImpProdutos() 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -73,10 +73,10 @@ Function ImpProdutos()
          IF !aOpcao[ 2 ] == 4 
             cArquivo:= PAD( cArquivo, 30 ) 
             @ 05, 10 Say "Do Codigo.....................:" Get cCodigo1 Pict "@R 999-9999" 
-            @ 05, 55 Say "At‚:" Get cCodigo2 Pict "@R 999-9999" 
+            @ 05, 55 Say "Atï¿½:" Get cCodigo2 Pict "@R 999-9999" 
             @ 06, 10 Say "Fornecido por.................:" Get nCodFor  Pict "9999" 
 //            @ 07, 10 Say "Produtos com Movimento........:" Get cComSaldo Pict "!" 
-            @ 08, 10 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+            @ 08, 10 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
             @ 09, 10 Say "Arquivo de Relatorio (.REP)...:" Get cArquivo 
             READ 
          ENDIF 
@@ -91,7 +91,7 @@ Function ImpProdutos()
   ENDDO 
  
   DBSelectAr( _COD_MPRIMA ) 
-  /* Se estiver dispon¡vel para a tela */ 
+  /* Se estiver disponï¿½vel para a tela */ 
   IF aOpcao[ 5 ] == 2 
      SWGravar( 600 ) 
      Set( 24, "TELA0000.TMP" ) 
@@ -142,7 +142,7 @@ Function ImpProdutos()
      Relatorio( AllTrim( cArquivo ) ) 
   ENDIF 
  
-  /* Se estiver dispon¡vel para a tela */ 
+  /* Se estiver disponï¿½vel para a tela */ 
   IF aOpcao[ 5 ] == 2 
      ViewFile( "TELA0000.TMP" ) 
   ENDIF 

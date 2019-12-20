@@ -5,15 +5,15 @@
 #include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ImpFluxo() 
-³ Finalidade  ³ Relacao de Fluxo Financeiro 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ Fevereiro/1995 
-³ Atualizacao ³ Outubro/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ImpFluxo() 
+ï¿½ Finalidade  ï¿½ Relacao de Fluxo Financeiro 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ Fevereiro/1995 
+ï¿½ Atualizacao ï¿½ Outubro/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function ImpFluxo() 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -80,12 +80,12 @@ Function ImpFluxo()
  
  
          @ 05, 10 Say "Do Periodo entre.:" Get dData1 
-         @ 05, 41 Say "At‚:" Get dData2 
+         @ 05, 41 Say "Atï¿½:" Get dData2 
          IF aOpcao[ 2 ] == 3 
             @ 06, 10 Say "Conta.............:" Get nContaNumero Pict "9999" 
             @ 07, 10 Say "Tipo Conta........:" Get cTipoConta Pict "!" Valid cTipoConta $ "RDT" 
          ENDIF 
-         @ 08, 10 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+         @ 08, 10 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
          @ 09, 10 Say "Arquivo de Relatorio (.REP)...:" Get cArquivo 
          READ 
  
@@ -98,7 +98,7 @@ Function ImpFluxo()
  
   ENDDO 
  
-  /* Se estiver dispon¡vel para a tela */ 
+  /* Se estiver disponï¿½vel para a tela */ 
   IF aOpcao[ 5 ] == 2 
      SWGravar( 600 ) 
      Set( 24, "TELA0000.TMP" ) 
@@ -406,7 +406,7 @@ Function ImpFluxo()
   /* Emissao do relatorio */ 
   Relatorio( AllTrim( cArquivo ) ) 
  
-  /* Se estiver dispon¡vel para a tela */ 
+  /* Se estiver disponï¿½vel para a tela */ 
   IF aOpcao[ 5 ] == 2 
      ViewFile( "TELA0000.TMP" ) 
   ENDIF 

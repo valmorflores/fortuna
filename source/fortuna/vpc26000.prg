@@ -1,17 +1,17 @@
-// ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
-#include "PTFUNCS.CH" 
+// ## cl2hb.exe - converted
+#include "vpf.ch" 
+#include "inkey.ch" 
+ 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ TRANSPORTADORAS 
-³ Finalidade  ³ Cadastro de Transportadoras 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Airan Machado 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ TRANSPORTADORAS 
+ï¿½ Finalidade  ï¿½ Cadastro de Transportadoras 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Airan Machado 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */
 #ifdef HARBOUR
 function vpc26000()
@@ -87,14 +87,14 @@ Local oTab, nTecla
   return nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ TRANSPORTADORAS 
-³ Finalidade  ³ Cadastro de Transportadoras 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Airan Machado 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ TRANSPORTADORAS 
+ï¿½ Finalidade  ï¿½ Cadastro de Transportadoras 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Airan Machado 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function TranSeleciona( nCodigo ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -151,14 +151,14 @@ Local oTab, nTecla, nArea:= Select()
   return .T. 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ TraInclusao 
-³ Finalidade  ³ Inclusao de transportadoras 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ TraInclusao 
+ï¿½ Finalidade  ï¿½ Inclusao de transportadoras 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function TraInclusao( oTab ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -239,14 +239,14 @@ Local nOrdem:= IndexOrd()
   Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ TraAlteracao 
-³ Finalidade  ³ Inclusao de transportadoras 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ TraAlteracao 
+ï¿½ Finalidade  ï¿½ Inclusao de transportadoras 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function TraAlteracao( oTab ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -280,7 +280,7 @@ Local nOrdem:= IndexOrd()
   read 
   IF Confirma( 0, 0, "Confirma?",; 
      "Digite [S] para confirmar o cadastramento da transportadora.","S") 
-     IF NetRLock() 
+     IF netrlock() 
         Replace DESCRI with cDESCRI,; 
                 ENDERE With cEndere,; 
                 BAIRRO With cbairro,; 

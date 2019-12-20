@@ -1,17 +1,17 @@
 // ## CL2HB.EXE - Converted
  
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VPC88012 
-³ Finalidade  ³ Pesquisa Lancamento de pedidos 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 01/07/2000 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VPC88012 
+ï¿½ Finalidade  ï¿½ Pesquisa Lancamento de pedidos 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 01/07/2000 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 #ifdef HARBOUR
 function vpc88012()
@@ -105,19 +105,19 @@ function vpc88012()
  
           VPBox( 0, 0, 22, 79, "GRAFICO DE MOVIMENTACOES (COTACOES / PEDIDOS / NOTAS)", _COR_GET_BOX ) 
           SetColor( _COR_GET_EDICAO ) 
-          @ 02,01 Say "     ³ Cotacoes                                                             " 
-          @ 03,01 Say " Qtd ³                                                                      " 
-          @ 04,01 Say " Vlr ³                                                                      " 
-          @ 05,01 Say "     ³                                                                      " 
-          @ 06,01 Say "     ³ Pedidos Pendentes                                                    " 
-          @ 07,01 Say " Qtd ³                                                                      " 
-          @ 08,01 Say " Vlr ³                                                                      " 
-          @ 09,01 Say "     ³                                                                      " 
-          @ 10,01 Say "     ³ Notas Fiscais - Pedidos Processados                                  " 
-          @ 11,01 Say " Qtd ³                                                                      " 
-          @ 12,01 Say " Vlr ³                                                                      " 
-          @ 13,01 Say "     ³                                                                      " 
-          @ 14,01 Say "     ÃÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÂ " 
+          @ 02,01 Say "     ï¿½ Cotacoes                                                             " 
+          @ 03,01 Say " Qtd ï¿½                                                                      " 
+          @ 04,01 Say " Vlr ï¿½                                                                      " 
+          @ 05,01 Say "     ï¿½                                                                      " 
+          @ 06,01 Say "     ï¿½ Pedidos Pendentes                                                    " 
+          @ 07,01 Say " Qtd ï¿½                                                                      " 
+          @ 08,01 Say " Vlr ï¿½                                                                      " 
+          @ 09,01 Say "     ï¿½                                                                      " 
+          @ 10,01 Say "     ï¿½ Notas Fiscais - Pedidos Processados                                  " 
+          @ 11,01 Say " Qtd ï¿½                                                                      " 
+          @ 12,01 Say " Vlr ï¿½                                                                      " 
+          @ 13,01 Say "     ï¿½                                                                      " 
+          @ 14,01 Say "     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " 
           @ 15,01 Say "                                                                            " 
  
           @ 17,01 Say " " 
@@ -137,19 +137,19 @@ function vpc88012()
           @ 20,19 Say Tran( nValorNota, "@E 99999,999.99" )    Color "00/" + cCor2 
  
           nPerc:= ( nQuantNota / nQuantTotal ) * 70 
-          @ 11,07 Say Repl( "Û", nPerc ) Color cCor1 + "/" + CorFundoAtual() 
+          @ 11,07 Say Repl( "ï¿½", nPerc ) Color cCor1 + "/" + CorFundoAtual() 
           nPerc:= ( nValorNota / nValorTotal ) * 70 
-          @ 12,07 Say Repl( "Û", nPerc ) Color cCor2 + "/" + CorFundoAtual() 
+          @ 12,07 Say Repl( "ï¿½", nPerc ) Color cCor2 + "/" + CorFundoAtual() 
  
           nPerc:= ( nQuantPedido / nQuantTotal ) * 70 
-          @ 07,07 Say Repl( "Û", nPerc ) Color cCor1 + "/" + CorFundoAtual() 
+          @ 07,07 Say Repl( "ï¿½", nPerc ) Color cCor1 + "/" + CorFundoAtual() 
           nPerc:= ( nValorPedido / nValorTotal ) * 70 
-          @ 08,07 Say Repl( "Û", nPerc ) Color cCor2 + "/" + CorFundoAtual() 
+          @ 08,07 Say Repl( "ï¿½", nPerc ) Color cCor2 + "/" + CorFundoAtual() 
  
           nPerc:= ( nQuantCotacao / nQuantTotal ) * 70 
-          @ 03,07 Say Repl( "Û", nPerc ) Color cCor1 + "/" + CorFundoAtual() 
+          @ 03,07 Say Repl( "ï¿½", nPerc ) Color cCor1 + "/" + CorFundoAtual() 
           nPerc:= ( nValorCotacao / nValorTotal ) * 70 
-          @ 04,07 Say Repl( "Û", nPerc ) Color cCor2 + "/" + CorFundoAtual() 
+          @ 04,07 Say Repl( "ï¿½", nPerc ) Color cCor2 + "/" + CorFundoAtual() 
  
           nValorUni:= nValorTotal / 7 
           nQuantUni:= nQuantTotal / 7 

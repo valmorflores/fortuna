@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VPC28600 
-³ Finalidade  ³ Cadastro de Percentuais para Calculo de Comissoes 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VPC28600 
+ï¿½ Finalidade  ï¿½ Cadastro de Percentuais para Calculo de Comissoes 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */
 #ifdef HARBOUR
 function vpc28600()
@@ -102,14 +102,14 @@ Return Nil
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IncluiPerComissao 
-³ Finalidade  ³ Inclusao de Percentual de Comissao na Tabela 
-³ Parametros  ³ Nil 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IncluiPerComissao 
+ï¿½ Finalidade  ï¿½ Inclusao de Percentual de Comissao na Tabela 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function IncluiPerComissao( oTab ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -140,7 +140,7 @@ Local nCodigo:= CODIGO + 1, cDescri:= Space( 20 ),;
                nCodigo:= CODIGO + 1 
             ENDIF 
             DBAppend() 
-            IF NetRLock() 
+            IF netrlock() 
                Replace CODIGO With nCodigo,; 
                        DESCRI With cDescri,; 
                        PERC__ With nPerc__,; 
@@ -162,14 +162,14 @@ ENDDO
 Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ AlteraPerComissao 
-³ Finalidade  ³ Inclusao de Percentual de Comissao na Tabela 
-³ Parametros  ³ Nil 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ AlteraPerComissao 
+ï¿½ Finalidade  ï¿½ Inclusao de Percentual de Comissao na Tabela 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function AlteraPerComissao( oTab ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -183,7 +183,7 @@ Local cDescri:= DESCRI, nPerc__:= PERC__, nValor:= VLR___
    @ 05, 02 Say "Valor........:" Get nValor  Pict "@E 999,999,999.99" 
    READ 
    IF !LastKey() == K_ESC 
-      IF NetRLock() 
+      IF netrlock() 
          Replace DESCRI With cDescri,; 
                  PERC__ With nPerc__,; 
                  VLR___ With nValor 

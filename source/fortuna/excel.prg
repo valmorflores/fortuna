@@ -1,7 +1,7 @@
 // ## CL2HB.EXE - Converted
  
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
  
 FUNCTION Romaneio( nOrdemCmp, cProduto, nQuantidade, nCodFor, nNota ) 
 Local GetList:= {} 
@@ -20,25 +20,25 @@ SetColor( "14/01" )
 @ 02,11 Say MPR->DESCRI 
 @ 02,68 Say INT( nQuantidade ) 
 SetColor( _COR_BROWSE ) 
-@ 03,01 Say "ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿" 
-@ 04,01 Say "³            A             B             C             D             E       ³" 
-@ 05,01 Say "³   1  ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ³" 
-@ 06,01 Say "³   2  ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ³" 
-@ 07,01 Say "³   3  ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ³" 
-@ 08,01 Say "³   4  ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ³" 
-@ 09,01 Say "³   5  ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ³" 
-@ 10,01 Say "³   6  ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ³" 
-@ 11,01 Say "³   7  ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ³" 
-@ 12,01 Say "³   8  ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ³" 
-@ 13,01 Say "³   9  ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ³" 
-@ 14,01 Say "³  10  ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ³" 
-@ 15,01 Say "³  11  ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ³" 
-@ 16,01 Say "³  12  ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ³" 
-@ 17,01 Say "³  13  ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ³" 
-@ 18,01 Say "³  14  ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛÛÛ ³" 
-@ 19,01 Say "ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´" 
-@ 20,01 Say "³ Tipo de Codificacao do Produto: [1]Propria [2]Fabricante [3]Especial       ³" 
-@ 21,01 Say "ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ" 
+@ 03,01 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿" 
+@ 04,01 Say "ï¿½            A             B             C             D             E       ï¿½" 
+@ 05,01 Say "ï¿½   1  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½" 
+@ 06,01 Say "ï¿½   2  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½" 
+@ 07,01 Say "ï¿½   3  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½" 
+@ 08,01 Say "ï¿½   4  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½" 
+@ 09,01 Say "ï¿½   5  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½" 
+@ 10,01 Say "ï¿½   6  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½" 
+@ 11,01 Say "ï¿½   7  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½" 
+@ 12,01 Say "ï¿½   8  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½" 
+@ 13,01 Say "ï¿½   9  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½" 
+@ 14,01 Say "ï¿½  10  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½" 
+@ 15,01 Say "ï¿½  11  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½" 
+@ 16,01 Say "ï¿½  12  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½" 
+@ 17,01 Say "ï¿½  13  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½" 
+@ 18,01 Say "ï¿½  14  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½" 
+@ 19,01 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´" 
+@ 20,01 Say "ï¿½ Tipo de Codificacao do Produto: [1]Propria [2]Fabricante [3]Especial       ï¿½" 
+@ 21,01 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
 /* montagem do array */ 
 aCodigo:= {} 
 FOR nCt:= 1 TO INT( nQuantidade / 10 ) 
@@ -57,7 +57,7 @@ IF nQuantidade - ( nCt * 10 ) > 0
        IF nCt <= nFalta 
           AAdd( aCodigo[ Len( aCodigo ) ], Space( 100 ) ) 
        ELSE 
-          AAdd( aCodigo[ Len( aCodigo ) ], "°°°°°°°°°°°°°" ) 
+          AAdd( aCodigo[ Len( aCodigo ) ], "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" ) 
        ENDIF 
    NEXT 
 ENDIF 
@@ -115,7 +115,7 @@ DO CASE
         //Pausa() 
         FOR nCt:= 1 TO Len( aCodigo ) 
            FOR nCt2:= 2 TO Len( aCodigo[ nCt ] ) 
-               IF !ALLTRIM( aCodigo[ nCt ][ nCt2 ] ) == "°°°°°°°°°°°°°" 
+               IF !ALLTRIM( aCodigo[ nCt ][ nCt2 ] ) == "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
                   ++nCont 
                   cCodigo:= StrZero( nCodFor, 3, 0 ) + StrZero( nNota, 6, 0 ) + StrZero( nCont, 3, 0 ) 
                   aCodigo[ nCt ][ nCt2 ]:= PAD( cCodigo + TWCalcDig( cCodigo ), 100 ) 
@@ -143,7 +143,7 @@ DO CASE
         nCont:= nCodigoIni-1 
         FOR nCt:= 1 TO Len( aCodigo ) 
            FOR nCt2:= 2 TO Len( aCodigo[ nCt ] ) 
-               IF !ALLTRIM( aCodigo[ nCt ][ nCt2 ] ) == "°°°°°°°°°°°°°" 
+               IF !ALLTRIM( aCodigo[ nCt ][ nCt2 ] ) == "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
                   ++nCont 
                   cCodigo:= StrZero( nCont, 08, 0 ) 
                   cCodigo:= NossoNumero( cCodigo ) 
@@ -243,7 +243,7 @@ whil .t.
  
         case nTecla == K_ENTER 
  
-             IF oTb:ColPos > 1 .AND. ! ALLTRIM( aCodigo[ nRow ][ oTb:ColPos ] ) == "°°°°°°°°°°°°°" 
+             IF oTb:ColPos > 1 .AND. ! ALLTRIM( aCodigo[ nRow ][ oTb:ColPos ] ) == "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
                 nColPos:= oTb:ColPos 
                 WHILE !oTb:Stabilize() 
                 ENDDO 
@@ -281,14 +281,14 @@ Return(.T.)
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ GravaRomaneio 
-³ Finalidade  ³ Gravar informacoes de romaneio 
-³ Parametros  ³ aCodigo=>Array com informacoes de romaneio 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ GravaRomaneio 
+ï¿½ Finalidade  ï¿½ Gravar informacoes de romaneio 
+ï¿½ Parametros  ï¿½ aCodigo=>Array com informacoes de romaneio 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function GravaRomaneio( aCodigo, cIntExt ) 
  
@@ -296,7 +296,7 @@ Function GravaRomaneio( aCodigo, cIntExt )
     /* Gravacao dos dados */ 
     For nCt:= 1 TO Len( aCodigo ) 
         For nCt2:= 2 To Len( aCodigo[ nCt ] ) 
-            IF ! aCodigo[ nCt ][ nCt2 ] == "°°°°°°°°°°°°°" 
+            IF ! aCodigo[ nCt ][ nCt2 ] == "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
                DBAppend() 
                Repl ROMANE With aCodigo[ nCt ][ nCt2 ],; 
                     CODPRO With MPR->INDICE,; 
@@ -311,14 +311,14 @@ Function GravaRomaneio( aCodigo, cIntExt )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function VisualRomaneio( cCodProduto, aSelecionados, nNumero ) 
 Local GetList:= {} 
@@ -328,7 +328,7 @@ Local nArea:= Select(), nOrdem:= IndexOrd(), oTb, nTecla
 DBSelectAr( _COD_MPRIMA ) 
 DBSetOrder( 1 ) 
 IF !DBSeek( PAD( cCodProduto, 12 ) ) 
-   Aviso( "Um dos produtos nÆo foi localizado no cadastro.", 12 ) 
+   Aviso( "Um dos produtos nï¿½o foi localizado no cadastro.", 12 ) 
    Mensagem( "Pressione [Enter] para continuar." ) 
    Pausa() 
    ScreenRest( cTela ) 
@@ -342,7 +342,7 @@ SetColor( _COR_BROWSE )
 @ 03,34 Say "Produto Selecionado: " + Tran( cCodProduto, "@R 999-9999" ) 
 @ 04,34 Say MPR->CODFAB 
 @ 05,34 Say Left( MPR->DESCRI, 43 ) 
-@ 06,34 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+@ 06,34 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
 oTb:= TBrowseDb( 07, 34, 19, 76 ) 
 oTb:AddColumn( tbcolumnnew("Numero/Serie", {|| SELECT + " " + ROMANE } ) ) 
 oTb:AddColumn( tbcolumnnew("I/E",          {|| IF( IntExt == "I", "Cod.Interno", "Cod.Fabrica" ) } ) ) 
@@ -379,7 +379,7 @@ WHILE .T.
              SetColor( _COR_GET_BOX ) 
              @ 11, 08 Say "Cod.Produto....:" Get cCodProduto When; 
                   Mensagem( "Digite o codigo do produto." ) 
-             @ 12, 08 Say "N§Serie........:" Get cNumero Pict "@S20" When; 
+             @ 12, 08 Say "Nï¿½Serie........:" Get cNumero Pict "@S20" When; 
                   Mensagem( "Digite o numero se serie para cadastrar." ) 
              @ 13, 08 Say "Data Entrada...:" Get dDataEm When; 
                   Mensagem( "Digite a data de entrada deste item." ) 
@@ -388,7 +388,7 @@ WHILE .T.
              READ 
              IF Confirma( 0, 0, "Confirma?", "Confirma o cadastramento do item?", "S" ) 
                 DBAppend() 
-                IF NetRLock() 
+                IF netrlock() 
                    Replace CODPRO With PAD( cCodProduto, 12 ),; 
                            ROMANE With cNumero,; 
                            DATENT With dDataEm,; 
@@ -409,7 +409,7 @@ WHILE .T.
         CASE nTecla==K_ESC 
              Exit 
         case nTecla==K_ENTER 
-             IF NetRLock() 
+             IF netrlock() 
                 Replace Select With IF( Select == "*", " ", "*" ) 
                 IF CODNF_ == nNumero .OR. CODNF_ == 0 
                    Replace DatSai With IF( Select == "*", DATE(), CTOD( "  /  /  " ) ),; 
@@ -425,7 +425,7 @@ WHILE .T.
                    ENDIF 
                 ELSE 
                    cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-                   Aviso( "Foi vendido c/ a Nota Fiscal n§ " + StrZero( CODNF_, 6, 0 ) + " do dia " + DTOC( DatSai ) + ".", 12 ) 
+                   Aviso( "Foi vendido c/ a Nota Fiscal nï¿½ " + StrZero( CODNF_, 6, 0 ) + " do dia " + DTOC( DatSai ) + ".", 12 ) 
                    Pausa() 
                    ScreenRest( cTelaRes ) 
                 ENDIF 
@@ -454,14 +454,14 @@ Return .T.
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IMPROMANEIO 
-³ Finalidade  ³ Impressao de Romaneio com base nas notas fiscais 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IMPROMANEIO 
+ï¿½ Finalidade  ï¿½ Impressao de Romaneio com base nas notas fiscais 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function ImpRomaneio() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -600,7 +600,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
                               nRotaAtual:= PED->TRANSP 
                            ENDIF 
                            RES->( DBAppend() ) 
-                           RES->( NetRLock() ) 
+                           RES->( netrlock() ) 
                            Replace RES->PEDIDO With PED->CODPED,; 
                                    RES->PRAZO_ With NF_->PRAZOA,; 
                                    RES->CODNF_ With NF_->NUMERO,; 
@@ -688,12 +688,12 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
                                  nRotaAtual:= PED->TRANSP 
                               ENDIF 
                               IF RES->( DBSeek( Str( nRotaAtual, 3, 0 ) + PAD( PXP->DESCRI, 45 ) ) ) 
-                                 IF RES->( NetRLock() ) 
+                                 IF RES->( netrlock() ) 
                                     Replace RES->QUANT_ With RES->QUANT_ + PXP->QUANT_ 
                                  ENDIF 
                               ELSE 
                                  RES->( DBAppend() ) 
-                                 RES->( NetRLock() ) 
+                                 RES->( netrlock() ) 
                                  Replace RES->PEDIDO With PXP->CODIGO,; 
                                          RES->CODPRO With StrZero( PXP->CODPRO, 7, 0 ) + Space( 5 ),; 
                                          RES->DESPRO With PXP->DESCRI,; 
@@ -712,7 +712,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
                      Set Relation To CODPRO Into MPR 
                      DBGoTop() 
                      WHILE !EOF() 
-                        IF NetRlock() 
+                        IF netrlock() 
                            nCoef:=  QUANT_ / MPR->QTDPES 
                            nQuantInteira:= Int( nCoef ) 
                            nDifer:= QUANT_ - ( INT( nCoef ) * MPR->QTDPES ) 
@@ -752,7 +752,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
              AlteraRomaneio() 
  
         case nTecla==K_SPACE 
-             IF NetRLock() 
+             IF netrlock() 
                 Replace SELECT With IF( SELECT == "Sim", "Nao", "Sim" ) 
              ENDIF 
              DBUnlock() 
@@ -772,14 +772,14 @@ DBUnlockAll()
 Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function AlteraRomaneio() 
 Local nArea:= Select(), nOrdem:= IndexOrd() 
@@ -792,7 +792,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
   VPBox( 08, 0, 15, 79, " RELACAO DE PRODUTOS DA NOTA FISCAL ", _COR_BROW_BOX, .F., .F. ) 
  
   DBSelectAr( _COD_ROMANEIO ) 
-  Mensagem( "N§ Serie: [ENTER]Altera [INS]Inclui [ESC]Finalizar." ) 
+  Mensagem( "Nï¿½ Serie: [ENTER]Altera [INS]Inclui [ESC]Finalizar." ) 
   Ajuda("["+_SETAS+"][PgDn][PgUp]Move [TAB]Imprime [ESC]Cancela") 
 // ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
   Index On CODPRO To Indice99 eval {|| processo() } For CODNF_ == NF_->NUMERO 
@@ -866,7 +866,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
              cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
              dDataEntrada:= Date() 
              cRomaneio:= Space( LEN( ROMANE ) ) 
-             VPBOX( 09, 09, 12, 50, " INCLUSAO DE N§ NO ROMANEIO ", _COR_GET_BOX ) 
+             VPBOX( 09, 09, 12, 50, " INCLUSAO DE Nï¿½ NO ROMANEIO ", _COR_GET_BOX ) 
              SetColor( _COR_GET_EDICAO ) 
              @ 10, 10 Say "Numero de Serie:" Get cRomaneio when mensagem( "Digite o numero de serie." ) 
              @ 11, 10 Say "Data de Entrada:" Get dDataEntrada When mensagem( "Digite a data de entrada." ) 
@@ -906,7 +906,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
                 nQuantidade:= PNF->QUANT_ - nQuantidade 
                 FOR nCt:= 1 TO nQuantidade 
                     DBAppend() 
-                    IF NetRLock() 
+                    IF netrlock() 
                        Replace CODPRO With PNF->CODIGO,; 
                                CODNF_ With PNF->CODNF_ 
                     ENDIF 
@@ -934,7 +934,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
                           nLin:= 2 
                        ENDIF 
                     ENDIF 
-                    IF ROM->( NetRLock() ) 
+                    IF ROM->( netrlock() ) 
                        Replace ROMANE With cRomaneio 
                     ENDIF 
                     DBSkip() 
@@ -984,14 +984,14 @@ Return Nil
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ DISPLAYROMANEIO 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ DISPLAYROMANEIO 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function DisplayRomaneio() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 

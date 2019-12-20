@@ -26,7 +26,7 @@ WHILE .T.
    aadd(MENULIST,menunew(11,15," 3 Reindexacao    ",2,COR[11],; 
         "Reorganizacao dos arquivos.",,,COR[6],.T.)) 
    aadd(MENULIST,menunew(12,15," 4 Comunicacao    ",2,COR[11],; 
-        "Remessa de T¡tulos ao Banco / Importar Lista de Precos / Exportar Arquivos.",,,COR[6],.T.)) 
+        "Remessa de Tï¿½tulos ao Banco / Importar Lista de Precos / Exportar Arquivos.",,,COR[6],.T.)) 
    aadd(MENULIST,menunew(13,15," 5 Transferencia  ",2,COR[11],; 
         "Copias de seguranca.",,,COR[6],.T.)) 
    aadd(MENULIST,menunew(14,15," 6 Empresa        ",2,COR[11],; 
@@ -71,14 +71,14 @@ return(nil)
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function MenuComunica() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -90,29 +90,29 @@ Local nOpcao:= 0
               { " BANCO     ", " BAMERINDUS                ", 04, {|| Nil } },; 
               { " BANCO     ", " ITAU                      ", 05, {|| Nil } },; 
               { " BANCO     ", " REAL                      ", 06, {|| Nil } },; 
-              { "           ", "°°°°°°°°°°°°°°°°°°°°°°°°°°°",  0, {|| Nil } },; 
+              { "           ", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",  0, {|| Nil } },; 
               { " FEIRAS    ", " IMPORTACAO DE PEDIDOS     ", 47, {|| ImportaPedidos() } },; 
               { " FEIRAS    ", " PREPARACAO DO MICRO       ", 48, {|| PCF() } },; 
-              { "           ", "°°°°°°°°°°°°°°°°°°°°°°°°°°°",  0, {|| Nil } },; 
+              { "           ", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",  0, {|| Nil } },; 
               { " FARMACIA  ", " DIMED                     ", 07, {|| Nil } },; 
               { " FARMACIA  ", " ABAFARMA                  ", 08, {|| Abafarma() } },; 
               { " FARMACIA  ", " PANARELLO                 ", 09, {|| Panarello() } },; 
-              { "           ", "°°°°°°°°°°°°°°°°°°°°°°°°°°°",  0, {|| Nil } },; 
+              { "           ", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",  0, {|| Nil } },; 
               { " AUTOPECAS ", " BARROS                    ", 10, {|| Barros() } },; 
-              { "           ", "°°°°°°°°°°°°°°°°°°°°°°°°°°°",  0, {|| Nil } },; 
+              { "           ", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",  0, {|| Nil } },; 
               { " CORES     ", " COMBILUX GLASURIT         ", 19, {|| CGlasurit() } },; 
               { " CORES     ", " MIXING GLASURIT           ", 11, {|| Glasurit() } },; 
               { " CORES     ", " A.C.S. CORAL              ", 12, {|| ACS() } },; 
               { " CORES     ", " RENNER AUTOMOTIVO         ", 13, {|| Renner() } },; 
-              { "           ", "°°°°°°°°°°°°°°°°°°°°°°°°°°°",  0, {|| Nil } },; 
+              { "           ", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",  0, {|| Nil } },; 
               { " SISTEMA   ", " EVOLUTIVA                 ", 14, {|| SoftWare() } },; 
               { " SISTEMA   ", " ATUALIZACAO VIA INTERNET  ", 15, {|| Nil } },; 
               { " SISTEMA   ", " DIARIO DE COMUNICACAO     ", 16, {|| VisualComunicacao() } },; 
-              { "           ", "°°°°°°°°°°°°°°°°°°°°°°°°°°°",  0, {|| Nil } },; 
+              { "           ", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",  0, {|| Nil } },; 
               { " MERCADOS  ", " BALANCAS TOLEDO           ", 14, {|| ExpToledo() } },; 
-              { "           ", "°°°°°°°°°°°°°°°°°°°°°°°°°°°",  0, {|| Nil } },; 
+              { "           ", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",  0, {|| Nil } },; 
               { " LIVROS    ", " WinLIVROS - DATACEMPRO (R)", 16, {|| ExpWinLivros() } },; 
-              { "           ", "°°°°°°°°°°°°°°°°°°°°°°°°°°°",  0, {|| Nil } },; 
+              { "           ", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",  0, {|| Nil } },; 
               { " FINALIZA  ", " TERMINO DA EXECUCAO       ", 00, {|| Nil } } }
   vpbox(00,00,22,79, " SISTEMA DE IMPORTACOES / EXPORTACOES ", ,.F., .F. ) 
   lOk:= .F. 
@@ -173,14 +173,14 @@ Local nOpcao:= 0
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Panarello 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Panarello 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function Panarello() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -214,14 +214,14 @@ Return Nil
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Barros 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Barros 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function Barros() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -248,14 +248,14 @@ ScreenRest( cTela )
 Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Glasurit 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Glasurit 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function Glasurit() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -282,14 +282,14 @@ ScreenRest( cTela )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ funcao      ³ cglasurit 
-³ finalidade  ³ 
-³ parametros  ³ 
-³ retorno     ³ 
-³ programador ³ 
-³ data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ funcao      ï¿½ cglasurit 
+ï¿½ finalidade  ï¿½ 
+ï¿½ parametros  ï¿½ 
+ï¿½ retorno     ï¿½ 
+ï¿½ programador ï¿½ 
+ï¿½ data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 static function cglasurit() 
 local ccor:= setcolor(), ncursor:= setcursor(),; 
@@ -314,14 +314,14 @@ screenrest( ctela )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Renner 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Renner 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function Renner() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -344,14 +344,14 @@ SetCursor( nCursor )
 ScreenRest( cTela ) 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ACS 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ACS 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function ACS() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -378,14 +378,14 @@ ScreenRest( cTela )
 Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ABAFARMA 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ABAFARMA 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function Abafarma() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -447,14 +447,14 @@ ScreenRest( cTela )
 Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ SoftWare 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ SoftWare 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function SoftWare() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -504,14 +504,14 @@ SWSet( _GER_BARRAROLAGEM, .F. )
 Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ EMPRESA 
-³ Finalidade  ³ Cadastro de Multi-Empresas 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ EMPRESA 
+ï¿½ Finalidade  ï¿½ Cadastro de Multi-Empresas 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function Empresa() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -533,7 +533,7 @@ Local ctelaRes, aTelares:= {}
        nCol:= nCol + 10 
        nLin:= nLin + 3 
        Dispbegin() 
-       VPBox( nLin, nCol, nLin+22, nCol + 79, " < Multi E M P R E S A > - Soft&Ware Inform tica ", _COR_BROW_BOX ) 
+       VPBox( nLin, nCol, nLin+22, nCol + 79, " < Multi E M P R E S A > - Soft&Ware Informï¿½tica ", _COR_BROW_BOX ) 
        Inkey(.1) 
        DispEnd() 
    NEXT 
@@ -552,7 +552,7 @@ Local ctelaRes, aTelares:= {}
       DBCreate( SWSet( _SYS_DIRREPORT ) + "\EMPRESAS.DBF", aStr ) 
    ENDIF 
  
-   /* Abre empresa na area tempor ria 124 */ 
+   /* Abre empresa na area temporï¿½ria 124 */ 
    DBSelectAr( 124 ) 
    cDirEmp:= SWSet( _SYS_DIRREPORT ) + "\EMPRESAS.DBF" 
 // ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
@@ -567,7 +567,7 @@ Local ctelaRes, aTelares:= {}
  
    DispBegin() 
    SetColor( _COR_BROW_BOX ) 
-   VPBox( 0, 0, 22, 79, " < Multi E M P R E S A > - Soft&Ware Inform tica ", _COR_BROW_BOX ) 
+   VPBox( 0, 0, 22, 79, " < Multi E M P R E S A > - Soft&Ware Informï¿½tica ", _COR_BROW_BOX ) 
    SetCursor(0) 
    SetColor( _COR_BROWSE ) 
    Mensagem( "Pressione [ENTER] p/ Selecionar a Empresa.") 
@@ -738,14 +738,14 @@ Local ctelaRes, aTelares:= {}
    Return(.T.) 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IncluiEmp() 
-³ Finalidade  ³ Inclusao de uma nova empresa no sistema 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IncluiEmp() 
+ï¿½ Finalidade  ï¿½ Inclusao de uma nova empresa no sistema 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function IncluiEmp( oTab ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -799,14 +799,14 @@ Local nOrdem:= IndexOrd()
     Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ AlteraEmp() 
-³ Finalidade  ³ Alteracao da Empresa No Sistema 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ AlteraEmp() 
+ï¿½ Finalidade  ï¿½ Alteracao da Empresa No Sistema 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function AlteraEmp( oTab ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -831,7 +831,7 @@ Local nOrdem:= IndexOrd(), cPorta
     @ 17,12 Say "Data..........:" Get dData__ 
     READ 
     IF !LastKey()==K_ESC 
-       IF NetRLock() 
+       IF netrlock() 
           Repl DESCRI With cDescri,; 
                ENDERE With cEndere,; 
                BAIRRO With cBairro,; 
@@ -902,13 +902,13 @@ Function ExpWinLivros()
 Local cTELA:=zoom( 00, 00, 24, 78  ), cCOR:=setcolor(), nOPCAO:=0
 
    @ 03, 45 Say "Notas Fiscais de Saida?"
-   @ 04, 45 Say "De: [  /  /  ] at‚ [  /  /  ]"
+   @ 04, 45 Say "De: [  /  /  ] atï¿½ [  /  /  ]"
            
    @ 06, 45 Say "Notas Fiscais de Entrada?"
-   @ 07, 45 say "De: [  /  /  ] at‚ [  /  /  ]"
+   @ 07, 45 say "De: [  /  /  ] atï¿½ [  /  /  ]"
 
    @ 09, 45 say "Cupons Fiscais?"
-   @ 10, 45 say "De: [  /  /  ] at‚ [  /  /  ]"
+   @ 10, 45 say "De: [  /  /  ] atï¿½ [  /  /  ]"
 
    @ 12, 45 say "Este modulo permite a transferen-"
    @ 13, 45 say "cia de arquivos do nosso  sistema"

@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
 /* 
 **      Modulo - VPC91320 
 **  Finalidade - Inclusao, Alteracao e Exclusao de FERIADOS 
@@ -100,7 +100,7 @@ Whil LastKey()<>K_ESC
    Read 
    If Lastkey()<>K_ESC 
       DBAppend() 
-      If NetRlock() 
+      If netrlock() 
          Repl DIA___ With cDIA___,; 
               MES___ With cMES___,; 
               DESCRI With cDESCRI 
@@ -136,7 +136,7 @@ SetColor( _COR_GET_EDICAO )
   MENSAGEM("Digite a descricao do feriado.") 
 Read 
 If Lastkey()<>K_ESC 
-   If NetRlock() 
+   If netrlock() 
       Repl DIA___ With cDIA___,; 
            MES___ With cMES___,; 
            DESCRI With cDESCRI 

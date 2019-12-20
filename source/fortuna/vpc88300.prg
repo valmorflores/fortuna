@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#Include "INKEY.CH" 
-#Include "VPF.CH" 
+#Include "inkey.ch" 
+#Include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VPC88300.PRG 
-³ Finalidade  ³ Inclusao / Alteracao / Exclusao de tabela de CORES 
-³ Parametros  ³ Nil 
-³ Retorno     ³ 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VPC88300.PRG 
+ï¿½ Finalidade  ï¿½ Inclusao / Alteracao / Exclusao de tabela de CORES 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 #ifdef HARBOUR
 function vpc88300()
@@ -25,7 +25,7 @@ function vpc88300()
 // ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
    UserScreen() 
    VPBox( 00, 00, 04, 79,"TABELA DE CORES", _COR_GET_BOX, .F., .F. ) 
-   VPBox( 05, 00, 22, 79," Display de Informa‡”es ", _COR_BROW_BOX, .F., .F., ,.F. ) 
+   VPBox( 05, 00, 22, 79," Display de Informaï¿½ï¿½es ", _COR_BROW_BOX, .F., .F., ,.F. ) 
  
    /* Ajuste de mensagens */ 
    Mensagem("[INS]Incluir [ENTER]Alterar [DEL]Excluir ou [ESC]Finalizar") 
@@ -50,8 +50,8 @@ function vpc88300()
  
        /* Display das informacoes */ 
        SetColor( _COR_GET_EDICAO ) 
-       @ 02, 03 Say "C¢digo ...... [" + STR( CODIGO, 3 ) + "]" 
-       @ 03, 03 Say "Descri‡„o ... [" + DESCRI           + "]" 
+       @ 02, 03 Say "Cï¿½digo ...... [" + STR( CODIGO, 3 ) + "]" 
+       @ 03, 03 Say "Descriï¿½ï¿½o ... [" + DESCRI           + "]" 
  
        nTecla:=inkey(0) 
        IF nTecla=K_ESC 
@@ -85,14 +85,14 @@ function vpc88300()
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ CorIncluir 
-³ Finalidade  ³ Incluir itens na tabela de percentuais de CORES 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 05/Fevereiro/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ CorIncluir 
+ï¿½ Finalidade  ï¿½ Incluir itens na tabela de percentuais de CORES 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 05/Fevereiro/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION CorIncluir( oTb ) 
  
@@ -112,26 +112,26 @@ FUNCTION CorIncluir( oTb )
  
       /* Display das informacoes */ 
       SetColor( _COR_GET_EDICAO ) 
-      @ 02, 03 Say "C¢digo ......" Get nCodigo Pict "999" When; 
-         MENSAGEM("Digite o C¢digo da COR") VALID !DBSeek( nCodigo ) 
-      @ 03, 03 Say "Descri‡„o ..." Get cDescri When; 
-         MENSAGEM("Digite a Descri‡„o da COR") 
+      @ 02, 03 Say "Cï¿½digo ......" Get nCodigo Pict "999" When; 
+         MENSAGEM("Digite o Cï¿½digo da COR") VALID !DBSeek( nCodigo ) 
+      @ 03, 03 Say "Descriï¿½ï¿½o ..." Get cDescri When; 
+         MENSAGEM("Digite a Descriï¿½ï¿½o da COR") 
       READ 
  
       IF DBSeek( nCodigo ) 
  
          cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-         Aviso( "Aten‡„o ! O C¢digo da COR j  est  cadastrado !", 12 ) 
+         Aviso( "Atenï¿½ï¿½o ! O Cï¿½digo da COR jï¿½ estï¿½ cadastrado !", 12 ) 
          Pausa() 
          ScreenRest( cTelaRes ) 
  
       ELSEIF ! LastKey() == K_ESC 
  
           /* Gravacao de dados */ 
-          IF Confirma( 0, 0, "Confirma ?", "Confirma a grava‡„o dos dados [S/N]?", "S" ) 
+          IF Confirma( 0, 0, "Confirma ?", "Confirma a gravaï¿½ï¿½o dos dados [S/N]?", "S" ) 
  
              DBAppend() 
-             IF NetRLock() 
+             IF netrlock() 
                 Repl CODIGO With nCodigo,; 
                      DESCRI With cDESCRI 
              ENDIF 
@@ -156,14 +156,14 @@ FUNCTION CorIncluir( oTb )
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ CorAlterar 
-³ Finalidade  ³ Alterar itens na tabela de percentuais de CORES 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 05/Fevereiro/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ CorAlterar 
+ï¿½ Finalidade  ï¿½ Alterar itens na tabela de percentuais de CORES 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 05/Fevereiro/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION CorAlterar( oTb ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -175,16 +175,16 @@ Local nCodigo:= CODIGO, cDescri:= DESCRI
  
    /* Display das informacoes */ 
    SetColor( _COR_GET_EDICAO ) 
-   @ 03, 03 Say "Descri‡„o ..." Get cDescri When; 
-      MENSAGEM("Digite a Descri‡„o da COR") 
+   @ 03, 03 Say "Descriï¿½ï¿½o ..." Get cDescri When; 
+      MENSAGEM("Digite a Descriï¿½ï¿½o da COR") 
    READ 
  
    IF DBSeek( nCodigo ) .AND. ! LastKey() == K_ESC 
  
           /* Gravacao de dados */ 
-          IF Confirma( 0, 0, "Confirma ?", "Confirma a grava‡„o dos dados [S/N]?", "S" ) 
+          IF Confirma( 0, 0, "Confirma ?", "Confirma a gravaï¿½ï¿½o dos dados [S/N]?", "S" ) 
  
-             IF NetRLock() 
+             IF netrlock() 
                 Repl CODIGO With nCodigo,; 
                      DESCRI With cDESCRI 
              ENDIF 
@@ -204,7 +204,7 @@ Local nCodigo:= CODIGO, cDescri:= DESCRI
  
    Return Nil 
  
-//ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Function ExiCores( nCor ) 
  
@@ -225,8 +225,8 @@ Local nCodigo:= CODIGO, cDescri:= DESCRI
 //                999 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 
  
       SetColor( _COR_BROWSE ) 
-      @ 04, 18 SAY "C¢d Descri‡„o" 
-      @ 05, 18 SAY REPL ("Ä", 3) + " " + REPL ("Ä", 42) 
+      @ 04, 18 SAY "Cï¿½d Descriï¿½ï¿½o" 
+      @ 05, 18 SAY REPL ("ï¿½", 3) + " " + REPL ("ï¿½", 42) 
  
       /* Ajuste de mensagens */ 
       Mensagem("[ENTER]Selecionar [0]Zerar Cor [ESC]Finalizar") 

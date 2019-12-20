@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VPC912000 
-³ Finalidade  ³ Gerenciamento de Contas a Receber 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 26/Agosto/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VPC912000 
+ï¿½ Finalidade  ï¿½ Gerenciamento de Contas a Receber 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 26/Agosto/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */
 #ifdef HARBOUR
 function vpc91200()
@@ -133,7 +133,7 @@ Local nDesReg:= 0
          case nTecla==K_CTRL_F10   ;Calendar() 
          CASE nTecla==K_TAB        ;VPCDoc() 
          CASE nTecla==K_F10 
-              // Nosso N£mero 
+              // Nosso Nï¿½mero 
               cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
               cCorRes:=  SetColor() 
               cNossoN:=  DPA->NOSSON 
@@ -145,7 +145,7 @@ Local nDesReg:= 0
               @ 07,15 Say " impresso no boleto bancario " 
               @ 08,15 Say " -- " Get cNossoN 
               READ 
-              IF DPA->( NetRLock() ) 
+              IF DPA->( netrlock() ) 
                  Replace DPA->NOSSON With cNossoN 
               ENDIF 
               SetCursor( 0 ) 
@@ -166,11 +166,11 @@ Local nDesReg:= 0
               IF CLI->( DBSeek( DPA->CLIENT ) ) 
                  IF SITU__==" " 
                     IF SWAlerta( "Deseja colocar esta duplicata; com as remetidas p/ banco?", { "Confirmar", "Cancelar " } )==1 
-                       IF NetRLock() 
+                       IF netrlock() 
                           Replace SITU__ With "*" 
                        ENDIF 
                        CTB->( dbappend() ) 
-                       IF CTB->( NetRLock() ) 
+                       IF CTB->( netrlock() ) 
                           cTmp:= IF( !EMPTY( CLI->IDENTI ), CLI->IDENTI, DPA->CDESCR ) 
                           Replace CTB->CODIGO With IF( DPA->TIPO__ =="02", StrZero( DPA->CODIGO, 09, 0 ) + "m", StrZero( DPA->CODNF_, 9, 0 ) + DPA->LETRA_ ) 
                           Replace CTB->SUBCOD With StrZero( 1, 2, 0 ) 
@@ -212,17 +212,17 @@ Local nDesReg:= 0
                     ENDIF 
                  ELSE 
                     IF SWAlerta( "Deseja retirar esta duplicata; da relacao de remetidas p/ banco?", { "Confirmar", "Cancelar " } )==1 
-                       IF DPA->( NetRLock() ) 
+                       IF DPA->( netrlock() ) 
                           Replace SITU__ With " " 
                           CTB->( DBSetOrder( 1 ) ) 
                           IF CTB->( DBSeek( IF( DPA->TIPO__ =="02", StrZero( DPA->CODIGO, 09, 0 ) + "m", StrZero( DPA->CODNF_, 9, 0 ) + DPA->LETRA_ ) ) ) 
-                             IF CTB->( NetRLock() ) 
+                             IF CTB->( netrlock() ) 
                                 CTB->( DBDelete() ) 
                              ENDIF 
                              CTB->( DBSkip() ) 
                           ELSE 
                              cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-                             Aviso( "Registro nÆo localizado nas remetidas...." ) 
+                             Aviso( "Registro nï¿½o localizado nas remetidas...." ) 
                              Pausa() 
                              ScreenRest( cTelaRes ) 
                           ENDIF 
@@ -241,7 +241,7 @@ Local nDesReg:= 0
  
          CASE nTecla==K_CTRL_TAB 
               IF Confirma( 00, 00,; 
-                 "Confirma a impress„o desta duplicata?",; 
+                 "Confirma a impressï¿½o desta duplicata?",; 
                  "Digite [S] para confirmar ou [N] p/ cancelar.", "N" ) 
                  Relatorio( "DUP.REP" ) 
               ENDIF 
@@ -323,7 +323,7 @@ Local nDesReg:= 0
                                IF DPA->LETRA_ == cLetra 
                                   IF EMPTY( DPA->DTQT__ ) 
                                      Aviso( "Baixando " + StrZero( nDuplicata, 8, 0 ) + "-" + cLetra  + " em " + DTOC( dDataQuitacao ) ) 
-                                     IF DPA->( NetRLock() ) 
+                                     IF DPA->( netrlock() ) 
                                         Replace DPA->DTQT__ With dDataQuitacao 
                                      ENDIF 
                                      DPA->( BaixaReceber( oTab, .T. ) ) 
@@ -453,15 +453,15 @@ Local nDesReg:= 0
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ MOSTRASTR 
-³ Finalidade  ³ Apresenta a estrutura p/ apresentacao 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-³ Alteracao   ³ Alterado Alberto,Wed  11-04-01,colocar Letra junto com a dup. 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ MOSTRASTR 
+ï¿½ Finalidade  ï¿½ Apresenta a estrutura p/ apresentacao 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ Alteracao   ï¿½ Alterado Alberto,Wed  11-04-01,colocar Letra junto com a dup. 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function MostraStr() 
   Local cCor:= SetColor() 
@@ -520,7 +520,7 @@ Static Function MostraDados()
      @ 03,30 Say Space( 47 ) 
      REC->( DBSetOrder( 1 ) ) 
      IF REC->( DBSeek( DPA->CODNF_ ) ) 
-        @ 03,31 Say PADL( ALLTRIM( REC->DESCRI ), 44, "°" ) Color "14/" + _COR_GET_FUNDO 
+        @ 03,31 Say PADL( ALLTRIM( REC->DESCRI ), 44, "ï¿½" ) Color "14/" + _COR_GET_FUNDO 
      ELSE 
      ENDIF 
   ENDIF 
@@ -589,14 +589,14 @@ Static Function MostraDados()
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IncluiReceber 
-³ Finalidade  ³ Inclusao de Duplicatas a Receber 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 28/Agosto/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IncluiReceber 
+ï¿½ Finalidade  ï¿½ Inclusao de Duplicatas a Receber 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 28/Agosto/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function IncluiReceber( oTab ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -609,23 +609,23 @@ Local nOpcao:= 4
   Scroll( 02, 02, 15, 77 ) 
  
   // Box p/ Opcoes 
-  @ 01,02 Say "»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»" 
+  @ 01,02 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
   @ 02,02 Say " SELECIONE A OPCAO DESEJADA                     " 
-  @ 03,02 Say "µºººººººººººººººººººººººººººººººººººººººººººººº¶" 
-  @ 04,02 Say "¼                                              ½" 
-  @ 05,02 Say "¼                                              ½" 
-  @ 06,02 Say "¼                                              ½" 
-  @ 07,02 Say "¼                                              ½" 
-  @ 08,02 Say "¼                                              ½" 
-  @ 09,02 Say "¼                                              ½" 
-  @ 10,02 Say "¸»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»¹" 
+  @ 03,02 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+  @ 04,02 Say "ï¿½                                              ï¿½" 
+  @ 05,02 Say "ï¿½                                              ï¿½" 
+  @ 06,02 Say "ï¿½                                              ï¿½" 
+  @ 07,02 Say "ï¿½                                              ï¿½" 
+  @ 08,02 Say "ï¿½                                              ï¿½" 
+  @ 09,02 Say "ï¿½                                              ï¿½" 
+  @ 10,02 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
  
   // Opcoes 
   @ 04,03 Prompt " 1 Relacionadas Com Notas Fiscais           " 
   @ 05,03 Prompt " 2 Relacionadas Com Cupons                  " 
   @ 06,03 Prompt " 3 Outras Receitas (LANCAMENTO MANUAL)      " 
   @ 07,03 Prompt " 4 Outras Receitas (MULTIPLO)               " 
-  @ 08,03 Say    "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+  @ 08,03 Say    "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
   @ 09,03 Prompt " 5 Unificacao de Titulos - Quitacao         " 
   Menu To nOpcao 
  
@@ -653,14 +653,14 @@ Local nOpcao:= 4
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IncRecDuplicata 
-³ Finalidade  ³ Inclusao de Contas a Receber Duplicatas 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 28/Agosto/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IncRecDuplicata 
+ï¿½ Finalidade  ï¿½ Inclusao de Contas a Receber Duplicatas 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 28/Agosto/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function IncRecDuplicata( oTab ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -712,7 +712,7 @@ Local cLetra:= "A"
           ENDDO 
           IF lExiste 
              cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-             Aviso( "Esta nota fiscal j  possui movimento de duplicata!" ) 
+             Aviso( "Esta nota fiscal jï¿½ possui movimento de duplicata!" ) 
              Pausa() 
              ScreenRest( cTelaRes ) 
           ENDIF 
@@ -765,7 +765,7 @@ Local cLetra:= "A"
           Set( _SET_DELIMITERS, .T. ) 
           SetColor( _COR_BROWSE ) 
           DBAppend() 
-          IF NetRLock() 
+          IF netrlock() 
              Replace CLIENT With nClient,; 
                      CDESCR With cDescri,; 
                      CODNF_ With nCodNf_,; 
@@ -809,14 +809,14 @@ Local cLetra:= "A"
   Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ AltRecDuplicata 
-³ Finalidade  ³ Alteracao de Contas a Receber Duplicatas 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 28/Agosto/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ AltRecDuplicata 
+ï¿½ Finalidade  ï¿½ Alteracao de Contas a Receber Duplicatas 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 28/Agosto/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function AltRecDuplicata( oTab ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -905,7 +905,7 @@ Local cLetra_
         READ 
         Set( _SET_DELIMITERS, .T. ) 
         SetColor( _COR_BROWSE ) 
-        IF NetRLock() 
+        IF netrlock() 
            Replace CLIENT With nClient,; 
                    CDESCR With cDescri,; 
                    CODNF_ With nCodNf_,; 
@@ -957,14 +957,14 @@ Local cLetra_
   Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ BAIXARECEBER 
-³ Finalidade  ³ Baixa de Contas a Receber 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ BAIXARECEBER 
+ï¿½ Finalidade  ï¿½ Baixa de Contas a Receber 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function BaixaReceber( oTab, lAutomatico, dData ) 
   Local GETLIST:={} 
@@ -1049,7 +1049,7 @@ Function BaixaReceber( oTab, lAutomatico, dData )
                    CDUSER With nGCodUser 
            DBSelectAr( _COD_DUPAUX ) 
         ENDIF 
-        IF NetRLock(5) 
+        IF netrlock(5) 
            repl DTQT__ with CTOD( "  /  /  " ),; 
                 QUIT__ with If(dDATAPG<>ctod("  /  /  "),"S","N"),; 
                 CHEQ__ with cCHEQUE,; 
@@ -1162,8 +1162,8 @@ Function BaixaReceber( oTab, lAutomatico, dData )
               IF SWAlerta( " << AUTENTICACAO MECANICA >> ;Deseja realizar autenticacao de documento?", { "Sim", "Nao" } )==1 
  
                  cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-                 Mensagem( "Autentica‡Æo mecƒnica - Pressione <ENTER> " ) 
-                 // gelson Mensagem( "Autentica‡Æo mecƒnica - " + Tran( nVlrAut, "@E 9,999,999.999" ) + Tran( nJuros_, "@E 99,999.99" )  ) 
+                 Mensagem( "Autenticaï¿½ï¿½o mecï¿½nica - Pressione <ENTER> " ) 
+                 // gelson Mensagem( "Autenticaï¿½ï¿½o mecï¿½nica - " + Tran( nVlrAut, "@E 9,999,999.999" ) + Tran( nJuros_, "@E 99,999.99" )  ) 
                  Pausa() 
  
                  Aviso( "Carregando sistema de autenticacao, aguarde..."  ) 
@@ -1177,7 +1177,7 @@ Function BaixaReceber( oTab, lAutomatico, dData )
                  // 3=Acrescimo em valor 
                  // Juros 
                  // Valor 
-                 // Descricao (At‚ 40 caracteres) 
+                 // Descricao (Atï¿½ 40 caracteres) 
                  /* gelson 
                  cComando:= Chr( 27 ) + Chr( 217 ) + "A" + "3" +; 
                     IF( nJuros==Nil, "000000000000" + StrZero( nValor * 100, 12, 0 ),; 
@@ -1232,14 +1232,14 @@ Function BaixaReceber( oTab, lAutomatico, dData )
   Return nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IncRecManual 
-³ Finalidade  ³ Inclusao de Contas a Receber MANUAL 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 28/Agosto/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IncRecManual 
+ï¿½ Finalidade  ï¿½ Inclusao de Contas a Receber MANUAL 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 28/Agosto/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function IncRecManual( oTab ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1315,7 +1315,7 @@ Local aLancamentos:= {}, nRow:= 1
           Set( _SET_DELIMITERS, .T. ) 
           SetColor( _COR_BROWSE ) 
           DBAppend() 
-          IF NetRLock() 
+          IF netrlock() 
              Replace CLIENT With nClient,; 
                      CDESCR With cDescri,; 
                      CODNF_ With nCodNf_,; 
@@ -1359,14 +1359,14 @@ Local aLancamentos:= {}, nRow:= 1
   Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IncMulti 
-³ Finalidade  ³ Inclusao de Contas a Receber MULTI-LANCAMENTOS 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 28/Agosto/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IncMulti 
+ï¿½ Finalidade  ï¿½ Inclusao de Contas a Receber MULTI-LANCAMENTOS 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 28/Agosto/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function IncMulti() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1561,7 +1561,7 @@ Local nTotal:= 0
                       DBGoBottom() 
                       nCodigo:= CODIGO + 1 
                       DBAppend() 
-                      IF NetRLock() 
+                      IF netrlock() 
                          Repl CLIENT With nClient,; 
                               CDESCR With cDescri,; 
                               CODNF_ With nCodNf_,; 
@@ -1648,13 +1648,13 @@ Local nTotal:= 0
                   cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
                   VPBox( 05, 20, 14, 74, " INCLUSAO DE LANCAMENTOS ", _COR_GET_EDICAO ) 
                   SetColor( _COR_GET_EDICAO ) 
-                  @ 06,22 Say "N§Parcelas....:" Get nParcel Pict "999" 
+                  @ 06,22 Say "Nï¿½Parcelas....:" Get nParcel Pict "999" 
                   @ 07,22 Say "Valor.........:" Get nValor_ Pict "@E 999,999,999.99" 
                   @ 08,22 Say "% Juros ao Mes:" Get nPerJur Pict "@E 999.99" 
-                  @ 09,22 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+                  @ 09,22 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
                   @ 10,22 Say "Data Base.....:" Get dDataEm Valid PulaCampo() 
                   @ 11,22 Say "Prazo em Dias.:" Get nPraz__ Pict "999" Valid Vencimento( nPraz__, dDataEm, @dVenc__ ) 
-                  @ 12,22 Say "1§Vencimento..:" Get dVenc__ Valid VerDataVenc( dDataEm, @dVenc__, @nPraz__ ) 
+                  @ 12,22 Say "1ï¿½Vencimento..:" Get dVenc__ Valid VerDataVenc( dDataEm, @dVenc__, @nPraz__ ) 
                   READ 
                   IF !LastKey() == K_ESC 
                      nVlrIni:= nValorP - nValor_ 
@@ -1696,14 +1696,14 @@ Local nTotal:= 0
 #Define _TAB_OBS             4 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ BaixaMulti 
-³ Finalidade  ³ Inclusao de Contas a Receber MULTI-LANCAMENTOS 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 28/Agosto/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ BaixaMulti 
+ï¿½ Finalidade  ï¿½ Inclusao de Contas a Receber MULTI-LANCAMENTOS 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 28/Agosto/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function BaixaMulti( oTb ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1752,7 +1752,7 @@ Local cValores:=    Space( Len( DPA->OBSER1 ) )
     @ 02,11 Say "Quitar Titulos na Localizacao.:" Get nLocalQuitar Pict "999" 
     @ 03,11 Say "Novo Titulo na Localizacao....:" Get nLocalCheque Pict "999" 
     READ 
-    @ 04,11 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+    @ 04,11 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
  
     VPBox( 08, 10, 20, 76, " INCLUSAO MULTI-LANCAMENTOS / CFE CONDICOES DE PAGAMENTO ", _COR_BROW_BOX ) 
     SetColor( _COR_BROWSE ) 
@@ -1896,7 +1896,7 @@ Local cValores:=    Space( Len( DPA->OBSER1 ) )
                          WHILE DPA->CODNF_==aTabela[ i ][ _TAB_TITULO ] 
                              Mensagem( "Gravando baixa da duplicata " + StrZero( aTabela[ i ][ _TAB_TITULO ], 9, 0 ) ) 
                              IF DPA->LETRA_==aTabela[ i ][ _TAB_LETRA ] 
-                                IF DPA->( NetRLock() ) 
+                                IF DPA->( netrlock() ) 
                                    Replace DPA->LOCAL_ With nLocalQuitacao 
                                    cObservacao:= cObservacao + PAD( StrZero( DPA->CODNF_, 9, 0 ) + DPA->LETRA_, 10 ) 
                                    cValores:= cValores + Str( DPA->VLR___, 10, 02 ) 
@@ -1916,7 +1916,7 @@ Local cValores:=    Space( Len( DPA->OBSER1 ) )
                   DBGoBottom() 
                   nCodigo:= CODIGO + 1 
                   DBAppend() 
-                  IF NetRLock() 
+                  IF netrlock() 
                      Repl CLIENT With nClient,; 
                           CDESCR With cDescri,; 
                           CODNF_ With nCodNf_,; 
@@ -1978,7 +1978,7 @@ Local cValores:=    Space( Len( DPA->OBSER1 ) )
  
  
 Function ListaGrava( cObservacao, cObserv1 ) 
-   IF DPA->( NetRLock() ) 
+   IF DPA->( netrlock() ) 
       Replace DPA->OBSERV With cObservacao 
       Replace DPA->OBSER1 With cObserv1 
    ENDIF 
@@ -2086,14 +2086,14 @@ Return .T.
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VISUALFABERTA 
-³ Finalidade  ³ Apresentacao das condicoes de pagamento de forma aberta 
-³ Parametros  ³ aParcelas 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ Agosto de 1999 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VISUALFABERTA 
+ï¿½ Finalidade  ï¿½ Apresentacao das condicoes de pagamento de forma aberta 
+ï¿½ Parametros  ï¿½ aParcelas 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ Agosto de 1999 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function VisualFAberta( aParcelas, nTotalGeral ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -2162,14 +2162,14 @@ Function VisualFAberta( aParcelas, nTotalGeral )
   Set( _SET_DELIMITERS, lDelimiters ) 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ AltRecManual 
-³ Finalidade  ³ Alteracao de Contas a Receber MANUAL 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 28/Agosto/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ AltRecManual 
+ï¿½ Finalidade  ï¿½ Alteracao de Contas a Receber MANUAL 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 28/Agosto/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function AltRecManual( oTab ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -2253,7 +2253,7 @@ Local lQuitada:= .F.
         READ 
         Set( _SET_DELIMITERS, .T. ) 
         SetColor( _COR_BROWSE ) 
-        IF NetRLock() 
+        IF netrlock() 
            Replace CLIENT With nClient,; 
                    CDESCR With cDescri,; 
                    CODNF_ With nCodNf_,; 
@@ -2305,14 +2305,14 @@ Local lQuitada:= .F.
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ PESQCONTA 
-³ Finalidade  ³ Pesquisa da Conta de Lancamento 
-³ Parametros  ³ nCodigo / cDescricao 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ PESQCONTA 
+ï¿½ Finalidade  ï¿½ Pesquisa da Conta de Lancamento 
+ï¿½ Parametros  ï¿½ nCodigo / cDescricao 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function PesqConta( nCodigo, cDescricao ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -2374,14 +2374,14 @@ Local nArea:= Select(), oTB, nTecla, GETLIST:={}
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VENCIMENTO 
-³ Finalidade  ³ Calcular o vencimento com base em uma data 
-³ Parametros  ³ 
-³ Retorno     ³ .T. 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VENCIMENTO 
+ï¿½ Finalidade  ï¿½ Calcular o vencimento com base em uma data 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ .T. 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
   Function Vencimento( nPrazoDias, dData, dVencimento ) 
   dVencimento:= dData + nPrazoDias 
@@ -2390,19 +2390,19 @@ Local nArea:= Select(), oTB, nTecla, GETLIST:={}
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ AnulaDuplicata 
-³ Finalidade  ³ Anular uma Duplicata 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ AnulaDuplicata 
+ï¿½ Finalidade  ï¿½ Anular uma Duplicata 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
   Function AnulaDuplicata( oTab ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
         cTela:= ScreenSave( 0, 0, 24, 79 ) 
-   IF NetRLock() 
+   IF netrlock() 
       DBSelectAr( _COD_DUPAUX ) 
       nCodigo:= CODIGO 
       nValor_:= VLR___ 
@@ -2479,7 +2479,7 @@ Local nArea:= Select(), oTB, nTecla, GETLIST:={}
         ENDIF 
      ENDIF 
      DBSelectAr( _COD_DUPAUX ) 
-     IF NetRLock() 
+     IF netrlock() 
         Replace NFNula WITH IF( NFNula == "*", " ", "*" ) 
         /* Se a data de quitacao estiver em branco lanca o credito p/ cliente */ 
         IF !Empty( DTQT__ ) .AND. NFNULA == "*" 
@@ -2569,14 +2569,14 @@ Local nArea:= Select(), oTB, nTecla, GETLIST:={}
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ PESQCLIENTE 
-³ Finalidade  ³ Pesquisa de cliente 
-³ Parametros  ³ nCodigo / cDescricao 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ PESQCLIENTE 
+ï¿½ Finalidade  ï¿½ Pesquisa de cliente 
+ï¿½ Parametros  ï¿½ nCodigo / cDescricao 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function PesqCliente( nCodigo, cDescricao ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -2641,14 +2641,14 @@ Local nArea:= Select(), oTB, nTecla, GetList:= {}
  Return( .T. ) 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ PESQNFISCAL 
-³ Finalidade  ³ Pesquisa de Nota Fiscal 
-³ Parametros  ³ nCodigo / cDescricao 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ PESQNFISCAL 
+ï¿½ Finalidade  ï¿½ Pesquisa de Nota Fiscal 
+ï¿½ Parametros  ï¿½ nCodigo / cDescricao 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function PesqNFiscal( nCodigo, nCliente ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -2717,14 +2717,14 @@ Local nArea:= Select(), oTB, nTecla, GetList:= {}
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ QuitaReceber 
-³ Finalidade  ³ Quitacao de duplicatas a receber 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 10/Setembro/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ QuitaReceber 
+ï¿½ Finalidade  ï¿½ Quitacao de duplicatas a receber 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 10/Setembro/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function QuitaReceber() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -2810,7 +2810,7 @@ Local aLancamentos:= {}
              IF DBSeek( nCodNf_ ) 
                 WHILE !EOF() 
                    IF CODNF_ == nCodNf_ 
-                      IF NetRLock() 
+                      IF netrlock() 
                          Dele 
                       ENDIF 
                    ELSE 
@@ -2824,7 +2824,7 @@ Local aLancamentos:= {}
              FOR nCt:= 1 TO Len( aLancamentos ) 
                  IF aLancamentos[ nCt ][ 5 ] > 0 
                     DBAppend() 
-                    IF NetRlock() 
+                    IF netrlock() 
                        Replace CODIGO With nCodigo,; 
                                CODNF_ With nCodNf_,; 
                                VLR___ With aLancamentos[ nCt ][ 5 ],; 
@@ -2928,14 +2928,14 @@ return(.T.)
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ TestaValor 
-³ Finalidade  ³ Teste no valor da duplicata na baixa da mesma 
-³ Parametros  ³ nValor / Juros / VlrDesconto 
-³ Retorno     ³ 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ TestaValor 
+ï¿½ Finalidade  ï¿½ Teste no valor da duplicata na baixa da mesma 
+ï¿½ Parametros  ï¿½ nValor / Juros / VlrDesconto 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function TestaValor( nValor_, nJuros_, nVlrDes, nLocal_, dQuit__, nRecebido, nVlrAut ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -3030,7 +3030,7 @@ IF ! nValor_ == VLR___
                   nValorInicial:= VLR___ 
                   lQuitada:= IF( EMPTY( dQuit__ ), .F., .T. ) 
                   DBAppend() 
-                  IF NetRLock() 
+                  IF netrlock() 
                      Repl CLIENT With nClient,; 
                           CDESCR With cDescri,; 
                           CODNF_ With nCodNf_,; 

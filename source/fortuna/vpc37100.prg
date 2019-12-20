@@ -1,19 +1,19 @@
 // ## CL2HB.EXE - Converted
 
-#include "VPF.CH"
-#include "INKEY.CH" 
-#include "PTFUNCS.CH" 
-#include "PTVERBS.CH" 
+#include "vpf.ch"
+#include "inkey.ch" 
+#include "ptfuncs.ch" 
+#include "ptverbs.ch" 
  
-/*****ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Arquivo     ³ VPC37100 
-³ Finalidade  ³ Lancamento de Tabela Criterio 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 10/09/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+/*****ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Arquivo     ï¿½ VPC37100 
+ï¿½ Finalidade  ï¿½ Lancamento de Tabela Criterio 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 10/09/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */
 #ifdef HARBOUR
 function vpc37100()
@@ -94,7 +94,7 @@ Static Function ExibeStr()
   SetColor( _COR_GET_EDICAO ) 
   @ 01,02 Say "Itens                                                  Considerar " 
   @ 02,02 Say "V - Variedade dos Produtos Comprados                   A partir de" 
-  @ 03,02 Say "    E=[°°°°]  D=[    ]  C=[    ]  B=[    ]  A=[    ]   [  /  /  ]" 
+  @ 03,02 Say "    E=[ï¿½ï¿½ï¿½ï¿½]  D=[    ]  C=[    ]  B=[    ]  A=[    ]   [  /  /  ]" 
  
   @ 05,02 Say "Q - Quantidade de Pecas (Somatorio de Pecas)                     " 
   @ 06,02 Say "    E=[    ]  D=[    ]  C=[    ]  B=[    ]  A=[    ]   [  /  /  ]" 
@@ -158,14 +158,14 @@ Local cCor:= SetColor()
   Return nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Selecao 
-³ Finalidade  ³ 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Selecao 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function TabelaCriterios( nCodigo ) 
   Local nArea:= Select() 
@@ -235,14 +235,14 @@ Function TabelaCriterios( nCodigo )
    Return .F. 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IncluiCriterio 
-³ Finalidade  ³ Inclusao de registros 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IncluiCriterio 
+ï¿½ Finalidade  ï¿½ Inclusao de registros 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Func IncluiCriterio( oTab ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -319,7 +319,7 @@ Static Func IncluiCriterio( oTab )
            COR[16]+","+COR[18]+",,,"+COR[17]) 
            IF DBSeek( nCodigo ) 
               cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-              Aviso( "Codigo de lancamento ser  substituido" ) 
+              Aviso( "Codigo de lancamento serï¿½ substituido" ) 
               Pausa() 
               ScreenRest( cTelaRes ) 
               DBGoBottom() 
@@ -360,14 +360,14 @@ Static Func IncluiCriterio( oTab )
   Return nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ 
-³ Finalidade  ³ Alteracao de Criterios 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ 
+ï¿½ Finalidade  ï¿½ Alteracao de Criterios 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function AlteraCriterio( oTab ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -428,7 +428,7 @@ Function AlteraCriterio( oTab )
  
   IF !LastKey() == K_ESC 
      IF Confirma( 00, 00, "Confirma?","Digite [S] para confirmar o cadastramento.","S" ) 
-        If NetRLock() 
+        If netrlock() 
            Repl DESCRI With cDescri,; 
                 Q____A With nQ____A,; 
                 Q____B With nQ____B,; 

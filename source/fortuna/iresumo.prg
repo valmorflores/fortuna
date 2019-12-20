@@ -3,15 +3,15 @@
 #include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ImpResumo() 
-³ Finalidade  ³ Resumo de movimentacoes financeiras com estoque 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ Fevereiro/1995 
-³ Atualizacao ³ Agosto/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ImpResumo() 
+ï¿½ Finalidade  ï¿½ Resumo de movimentacoes financeiras com estoque 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ Fevereiro/1995 
+ï¿½ Atualizacao ï¿½ Agosto/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function ImpResumo() 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -69,7 +69,7 @@ Function ImpResumo()
          cArquivo:= PAD( cArquivo, 30 ) 
          @ 06, 10 Say "Periodo de....:" Get dDataIni 
          @ 06, 36 Say "Ate:" Get dDataFim 
-         @ 07, 10 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+         @ 07, 10 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
          @ 08, 10 Say "Arquivo de Relatorio (.REP)...:" Get cArquivo 
          READ 
  
@@ -83,7 +83,7 @@ Function ImpResumo()
   ENDDO 
  
   DBSelectAr( _COD_ESTOQUE ) 
-  /* Se estiver dispon¡vel para a tela */ 
+  /* Se estiver disponï¿½vel para a tela */ 
   IF aOpcao[ 5 ] == 2 
      SWGravar( 600 ) 
      Set( 24, "TELA0000.TMP" ) 
@@ -474,7 +474,7 @@ Function ImpResumo()
             ENDIF 
             CND->( DBSeek( NF_->TABCND ) ) 
             OPE->( DBSeek( NF_->TABOPE ) ) 
-            IF RES->( NetRLock() ) 
+            IF RES->( netrlock() ) 
                Replace RES->TABOPE With NF_->TABOPE,; 
                        RES->TABCND With NF_->TABCND,; 
                        RES->PRAZO_ With NF_->PRAZOA,; 
@@ -510,7 +510,7 @@ Function ImpResumo()
   DBSelectAr( 133 ) 
   dbCloseArea() 
  
-  /* Se estiver dispon¡vel para a tela */ 
+  /* Se estiver disponï¿½vel para a tela */ 
   IF aOpcao[ 5 ] == 2 
      ViewFile( "TELA0000.TMP" ) 
   ENDIF 

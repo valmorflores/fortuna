@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VPC28700 
-³ Finalidade  ³ Formulas de Calculo de Comissoes 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VPC28700 
+ï¿½ Finalidade  ï¿½ Formulas de Calculo de Comissoes 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */
 
 #ifdef HARBOUR
@@ -35,7 +35,7 @@ SetColor( _COR_GET_EDICAO )
 @ 02, 02 Say "Codigo.......: [  ]" 
 @ 03, 02 Say "Descricao....: [                    ]" 
 /* 
-@ 04, 02 Say "ComissionamentoÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+@ 04, 02 Say "Comissionamentoï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
 @ 05, 02 Say "Grupo........: [000]  [                                        ]" 
 @ 06, 02 Say "Tabela Precos: [000]  [                                        ]" 
 @ 07, 02 Say "Forma Pgto...: [0000] [                                        ]" 
@@ -107,14 +107,14 @@ Return Nil
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IncluiFormulaComissao 
-³ Finalidade  ³ Inclusao de Percentual de Comissao na Tabela 
-³ Parametros  ³ Nil 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IncluiFormulaComissao 
+ï¿½ Finalidade  ï¿½ Inclusao de Percentual de Comissao na Tabela 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function IncluiFormulaComissao( oTab ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -142,7 +142,7 @@ Local nCodigo:= CODIGO + 1, cDescri:= Space( 20 ),;
             nCodigo:= CODIGO + 1 
          ENDIF 
          DBAppend() 
-         IF NetRLock() 
+         IF netrlock() 
             Replace CODIGO With nCodigo,; 
                     DESCRI With cDescri 
          ENDIF 
@@ -163,14 +163,14 @@ ENDDO
 Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ AlteraFormulaComissao 
-³ Finalidade  ³ Inclusao de Percentual de Comissao na Tabela 
-³ Parametros  ³ Nil 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ AlteraFormulaComissao 
+ï¿½ Finalidade  ï¿½ Inclusao de Percentual de Comissao na Tabela 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function AlteraFormulaComissao( oTab ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -182,7 +182,7 @@ Local cDescri:= DESCRI
    @ 03, 02 Say "Descricao....:" Get cDescri 
    READ 
    IF !LastKey() == K_ESC 
-      IF NetRLock() 
+      IF netrlock() 
          Replace DESCRI With cDescri 
       ENDIF 
       DBUnlockAll() 
@@ -293,7 +293,7 @@ Local oTab, nTecla, nArea:= Select(), nOrdem:= IndexOrd()
               @ 09,51 get cFormaE Pict "9" 
               READ 
               IF !LastKey() == K_ESC 
-                 IF NetRLock() 
+                 IF netrlock() 
                     Replace GRUPO_ With nGrupo_,; 
                             PRECO_ With nPreco_,; 
                             INTERN With nIntern,; 
@@ -332,7 +332,7 @@ Local oTab, nTecla, nArea:= Select(), nOrdem:= IndexOrd()
               READ 
               IF !LastKey() == K_ESC 
                  DBAppend() 
-                 IF NetRLock() 
+                 IF netrlock() 
                     Replace GRUPO_ With nGrupo_,; 
                             PRECO_ With nPreco_,; 
                             INTERN With nIntern,; 

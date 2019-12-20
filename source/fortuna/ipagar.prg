@@ -3,14 +3,14 @@
 #include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ImpAPagar 
-³ Finalidade  ³ Impressao de Contas a Pagar 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 19/08/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ImpAPagar 
+ï¿½ Finalidade  ï¿½ Impressao de Contas a Pagar 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 19/08/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function ImpAPagar() 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -89,19 +89,19 @@ Function ImpAPagar()
          ENDCASE 
          cArquivo:= PAD( cArquivo, 30 ) 
          @ 05, 10 Say "Da Conta..........................:" Get nConta1  Pict "999999" 
-         @ 05, 56 Say "At‚:" Get nConta2 Pict "999999" 
+         @ 05, 56 Say "Atï¿½:" Get nConta2 Pict "999999" 
          @ 06, 10 Say "Situacao..[S]Quit [N]Pend [ ]Todas:" Get cQuit      Pict "!" Valid cQuit   $ "SN " 
          @ 07, 10 Say "Com Banco do codigo...............:" Get nBanco1    Pict "999" 
-         @ 07, 56 Say "At‚:" Get nBanco2 Pict "999" 
+         @ 07, 56 Say "Atï¿½:" Get nBanco2 Pict "999" 
          @ 08, 10 Say "Do Fornecedor.....................:" Get nFornec1    Pict "999999" 
-         @ 08, 56 Say "At‚:" Get nFornec2 Pict "999999" 
+         @ 08, 56 Say "Atï¿½:" Get nFornec2 Pict "999999" 
          @ 09, 10 Say "Com Vencimento Entre..............:" Get dVenc1 
          @ 09, 56 Say "e:" Get dVenc2 
          @ 10, 10 Say "Com Pagamento entre...............:" Get dPag1 
          @ 10, 56 Say "e:" Get dPag2 
          @ 11, 10 Say "Data de Competencia entre.........:" Get dCmp1 
          @ 11, 56 Say "e:" Get dCmp2 
-         @ 13, 10 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+         @ 13, 10 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
          @ 13, 10 Say "Arquivo de Relatorio (.REP).......:" Get cArquivo 
          READ 
  
@@ -119,7 +119,7 @@ Function ImpAPagar()
      cQuit:=   "SN " 
   ENDIF 
  
-  /* Se estiver dispon¡vel para a tela */ 
+  /* Se estiver disponï¿½vel para a tela */ 
   IF aOpcao[ 5 ] == 2 
      SWGravar( 600 ) 
      Set( 24, "TELA0000.TMP" ) 
@@ -217,7 +217,7 @@ Function ImpAPagar()
   /* Emissao do relatorio */ 
   Relatorio( AllTrim( cArquivo ) ) 
  
-  /* Se estiver dispon¡vel para a tela */ 
+  /* Se estiver disponï¿½vel para a tela */ 
   IF aOpcao[ 5 ] == 2 
      ViewFile( "TELA0000.TMP" ) 
   ENDIF 

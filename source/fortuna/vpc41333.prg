@@ -1,69 +1,69 @@
 // ## CL2HB.EXE - Converted
 /* 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ RG: XXXXXXXXXXXXXXXXXXXX                                                  ³ 
-³ Estado Civil: [X]  (1)Casado (2)Solteiro (3)Divorciado (4)                ³ 
-³ N§Dependentes: XX                                                         ³ 
-³ Filiacao                             Endereco dos mesmos:                 ³ 
-³ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ³ 
-³ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ³ 
-³ Empresa Onde Trabalha                                                     ³ 
-³ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                      ³ 
-³ Endereco                             Cargo              Secao             ³ 
-³ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXX ³ 
-³ Salario             XXXXXXXXXXXXXXXX Origem                               ³ 
-³ Outros Rendimentos  XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ³ 
-³ Total Ganhos        XXXXXXXXXXXXXXXX                                      ³ 
-³ Emprego Anterior    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                   ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Conjuge                          (35) Nascim.  RG                         ³ 
-³ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XX/XX/XX XXXXXXXXXXXXXXXXXXXXXXXXXX ³ 
-³ Filiacao                                                                  ³ 
-³ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                      ³ 
-³ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                      ³ 
-³ Empresa Onde Trabalha                XXXXXXXXXXXXXXXXXXXXXXXXXX XX        ³ 
-³ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                      ³ 
-³ Endereco                             Cargo              Secao             ³ 
-³ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXX ³ 
-³ Salario             XXXXXXXXXXXXXXXX Origem                               ³ 
-³ Outros Rendimentos  XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ³ 
-³ Total Ganhos        XXXXXXXXXXXXXXXX                                      ³ 
-³ Emprego Anterior    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                   ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Residencia (Ha Quanto Tempo Reside no Local): XXX                         ³ 
-³ Casa.: [x] (1)Propria  (2)Alugada  (3)Pensao  (4) Casa de Parentes        ³ 
-³ Valor: XXXXXXXXXXXX                                                       ³ 
-³ Complementos: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                        ³ 
-³ Residencia Anterior: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ³ 
-³ Avalista - Nome: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   Conta: XXXXXXXX ³ 
-³ Referencias                                                               ³ 
-³ Comerciais:                                                               ³ 
-³ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ³ 
-³ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ³ 
-³ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ³ 
-³ Pessoais:                                                                 ³ 
-³ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ³ 
-³ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ SPC                                                                       ³ 
-³ Estagio: [3]                                                              ³ 
-³ Observacoes                                                               ³ 
-³ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ³ 
-³ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ³ 
-³ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ³ 
-³                                                                           ³ 
-ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´ 
-³                                                                           ³ 
-³ Data de Informacoes: [DD/MM/AA]                                           ³ 
-³                                                                           ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ RG: XXXXXXXXXXXXXXXXXXXX                                                  ï¿½ 
+ï¿½ Estado Civil: [X]  (1)Casado (2)Solteiro (3)Divorciado (4)                ï¿½ 
+ï¿½ Nï¿½Dependentes: XX                                                         ï¿½ 
+ï¿½ Filiacao                             Endereco dos mesmos:                 ï¿½ 
+ï¿½ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ï¿½ 
+ï¿½ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ï¿½ 
+ï¿½ Empresa Onde Trabalha                                                     ï¿½ 
+ï¿½ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                      ï¿½ 
+ï¿½ Endereco                             Cargo              Secao             ï¿½ 
+ï¿½ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXX ï¿½ 
+ï¿½ Salario             XXXXXXXXXXXXXXXX Origem                               ï¿½ 
+ï¿½ Outros Rendimentos  XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ï¿½ 
+ï¿½ Total Ganhos        XXXXXXXXXXXXXXXX                                      ï¿½ 
+ï¿½ Emprego Anterior    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                   ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Conjuge                          (35) Nascim.  RG                         ï¿½ 
+ï¿½ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XX/XX/XX XXXXXXXXXXXXXXXXXXXXXXXXXX ï¿½ 
+ï¿½ Filiacao                                                                  ï¿½ 
+ï¿½ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                      ï¿½ 
+ï¿½ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                      ï¿½ 
+ï¿½ Empresa Onde Trabalha                XXXXXXXXXXXXXXXXXXXXXXXXXX XX        ï¿½ 
+ï¿½ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                      ï¿½ 
+ï¿½ Endereco                             Cargo              Secao             ï¿½ 
+ï¿½ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXX ï¿½ 
+ï¿½ Salario             XXXXXXXXXXXXXXXX Origem                               ï¿½ 
+ï¿½ Outros Rendimentos  XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ï¿½ 
+ï¿½ Total Ganhos        XXXXXXXXXXXXXXXX                                      ï¿½ 
+ï¿½ Emprego Anterior    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                   ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Residencia (Ha Quanto Tempo Reside no Local): XXX                         ï¿½ 
+ï¿½ Casa.: [x] (1)Propria  (2)Alugada  (3)Pensao  (4) Casa de Parentes        ï¿½ 
+ï¿½ Valor: XXXXXXXXXXXX                                                       ï¿½ 
+ï¿½ Complementos: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                        ï¿½ 
+ï¿½ Residencia Anterior: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ï¿½ 
+ï¿½ Avalista - Nome: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   Conta: XXXXXXXX ï¿½ 
+ï¿½ Referencias                                                               ï¿½ 
+ï¿½ Comerciais:                                                               ï¿½ 
+ï¿½ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ï¿½ 
+ï¿½ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ï¿½ 
+ï¿½ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ï¿½ 
+ï¿½ Pessoais:                                                                 ï¿½ 
+ï¿½ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ï¿½ 
+ï¿½ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ SPC                                                                       ï¿½ 
+ï¿½ Estagio: [3]                                                              ï¿½ 
+ï¿½ Observacoes                                                               ï¿½ 
+ï¿½ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ï¿½ 
+ï¿½ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ï¿½ 
+ï¿½ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ï¿½ 
+ï¿½                                                                           ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ 
+ï¿½                                                                           ï¿½ 
+ï¿½ Data de Informacoes: [DD/MM/AA]                                           ï¿½ 
+ï¿½                                                                           ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
  
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
  
 #ifdef HARBOUR
 function vpc41333()
@@ -188,58 +188,58 @@ Local cCor:= SetColor(), nCursor:= SetCursor()
    DO CASE 
       CASE nTela==1 
          Scroll( 01, 02, 15, 78 ) 
-         @ 02,02 Say "RG...........: [°°°°°°°°°°°°°°°°°°°°]  Nascimento: [°°/°°/°°]    " 
-         @ 03,02 Say "Estado Civil.: [°]  (1)Casado (2)Solteiro (3)Divorciado (4)Viuvo " 
-         @ 04,02 Say "N§Dependentes: [°°]                                              " 
-         @ 05,02 Say "Filiacao.....: [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
-         @ 06,02 Say "               [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
-         @ 07,02 Say "Endereco.....: [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
-         @ 08,02 Say "Empresa......: [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
-         @ 09,02 Say "End.Empresa..: [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
+         @ 02,02 Say "RG...........: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]  Nascimento: [ï¿½ï¿½/ï¿½ï¿½/ï¿½ï¿½]    " 
+         @ 03,02 Say "Estado Civil.: [ï¿½]  (1)Casado (2)Solteiro (3)Divorciado (4)Viuvo " 
+         @ 04,02 Say "Nï¿½Dependentes: [ï¿½ï¿½]                                              " 
+         @ 05,02 Say "Filiacao.....: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 06,02 Say "               [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 07,02 Say "Endereco.....: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 08,02 Say "Empresa......: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 09,02 Say "End.Empresa..: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
          @ 10,02 Say "Fone.........: [1234-1234.1234]" 
-         @ 11,02 Say "Admissao.....: [°°°°°°°°]" 
-         @ 12,02 Say "Cargo........: [°°°°°°°°°°°°°°°°°°°°°°°°] S: [°°°°°°°°°°°°°°°°°°°°°°°°°]" 
-         @ 13,02 Say "Salario......: [°°°°°°°°°°°°°°]" 
-         @ 14,02 Say "Out.Rendimen.: [°°°°°°°°°°°°°°]      Origem: [°°°°°°°°°°°°°°°°°°°°°°°°°]" 
-         @ 15,02 Say "Emprego Ant..: [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
+         @ 11,02 Say "Admissao.....: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 12,02 Say "Cargo........: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½] S: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 13,02 Say "Salario......: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 14,02 Say "Out.Rendimen.: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]      Origem: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 15,02 Say "Emprego Ant..: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
       CASE nTela==2 
          Scroll( 01, 02, 15, 78 ) 
-         @ 02,02 Say "Conjuge......: [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
-         @ 03,02 Say "Nascimento...: [°°°°°°°°]" 
-         @ 04,02 Say "RG...........: [°°°°°°°°°°°°°°°°°°°°]" 
-         @ 05,02 Say "Filiacao.....: [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
-         @ 06,02 Say "               [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
-         @ 07,02 Say "Empresa......: [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
-         @ 08,02 Say "End.Empresa..: [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
-         @ 09,02 Say "Fone.........: [°°°°-°°°°.°°°°]" 
-         @ 10,02 Say "Admissao.....: [°°°°°°°°]" 
-         @ 11,02 Say "Cargo........: [°°°°°°°°°°°°°°°°°°°°°°°°] S: [°°°°°°°°°°°°°°°°°°°°°°°°°]" 
-         @ 12,02 Say "Salario......: [°°°°°°°°°°°°°°]" 
-         @ 13,02 Say "Out.Rendimen.: [°°°°°°°°°°°°°°]      Origem: [°°°°°°°°°°°°°°°°°°°°°°°°°]" 
-         @ 14,02 Say "Emprego Ant..: [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
+         @ 02,02 Say "Conjuge......: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 03,02 Say "Nascimento...: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 04,02 Say "RG...........: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 05,02 Say "Filiacao.....: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 06,02 Say "               [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 07,02 Say "Empresa......: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 08,02 Say "End.Empresa..: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 09,02 Say "Fone.........: [ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½.ï¿½ï¿½ï¿½ï¿½]" 
+         @ 10,02 Say "Admissao.....: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 11,02 Say "Cargo........: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½] S: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 12,02 Say "Salario......: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 13,02 Say "Out.Rendimen.: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]      Origem: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 14,02 Say "Emprego Ant..: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
       CASE nTela==3 
          Scroll( 01, 02, 15, 78 ) 
-         @ 02,02 Say "Residencia...: [°] (1)Propria  (2)Alugada  (3)Pensao  (4)Casa Parentes" 
-         @ 03,02 Say "Valor/Contrib: [°°°°°°°°°°°°°°]" 
-         @ 04,02 Say "Tempo (Meses): [°°°°]     Nome...: [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
-         @ 05,02 Say "Res.Anterior.: [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
+         @ 02,02 Say "Residencia...: [ï¿½] (1)Propria  (2)Alugada  (3)Pensao  (4)Casa Parentes" 
+         @ 03,02 Say "Valor/Contrib: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 04,02 Say "Tempo (Meses): [ï¿½ï¿½ï¿½ï¿½]     Nome...: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 05,02 Say "Res.Anterior.: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
  
-         @ 07,02 Say "Avalista.....: [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
+         @ 07,02 Say "Avalista.....: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
  
          @ 09,02 Say "Referencias..: [COMERCIAIS]" 
-         @ 10,02 Say "               [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
-         @ 11,02 Say "               [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
-         @ 12,02 Say "               [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
-         @ 13,02 Say "               [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
+         @ 10,02 Say "               [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 11,02 Say "               [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 12,02 Say "               [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 13,02 Say "               [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
          @ 14,02 Say "               [PESSOAIS]" 
-         @ 15,02 Say "               [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
+         @ 15,02 Say "               [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
       CASE nTela==4 
          Scroll( 01, 02, 15, 78 ) 
-         @ 02,02 Say "SPCÄÄÄÄÄÄÄÄÄÄÄÄ[°] (0)S/Cartas (1)1§Aviso (2)2§Aviso (3)3§Aviso (4)Protesto" 
-         @ 03,02 Say "Observacoes..: [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
-         @ 04,02 Say "               [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
-         @ 05,02 Say "               [°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°]" 
-         @ 07,02 Say "Data.........: [°°°°°°°°]" 
+         @ 02,02 Say "SPCï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½] (0)S/Cartas (1)1ï¿½Aviso (2)2ï¿½Aviso (3)3ï¿½Aviso (4)Protesto" 
+         @ 03,02 Say "Observacoes..: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 04,02 Say "               [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 05,02 Say "               [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
+         @ 07,02 Say "Data.........: [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]" 
       CASE nTela==5 
          @ 02,02 Say "Periodicidade das Visitas: " 
          @ 03,02 Say "Proxima Visita...........: " 
@@ -528,7 +528,7 @@ Local nNDEPEN, cMae___, cPai___, cCI____, cORGAO_, cENDMAE, cENDPAI,;
    ENDCASE 
  
    IF nTela==5 
-      IF CLI->( NetRLock() ) 
+      IF CLI->( netrlock() ) 
          Replace CLI->PERDCD with nPERDCD,; 
                  CLI->PRXVST with dPRXVST 
       ENDIF 
@@ -536,7 +536,7 @@ Local nNDEPEN, cMae___, cPai___, cCI____, cORGAO_, cENDMAE, cENDPAI,;
       IF CCR->( EOF() ) 
          CCR->( DBAppend() ) 
       ENDIF 
-      IF CCR->( NetRLock() ) 
+      IF CCR->( netrlock() ) 
          Replace CCR->CODIGO With CLI->CODIGO,; 
                  CCR->DESCRI With CLI->DESCRI 
          Replace CCR->CI____ With cCI____,; 
@@ -588,7 +588,7 @@ Local nNDEPEN, cMae___, cPai___, cCI____, cORGAO_, cENDMAE, cENDPAI,;
                  CCR->DATA__ With dDATA__ 
  
  
-         IF CLI->( NetRLock() ) 
+         IF CLI->( netrlock() ) 
             Replace CLI->MAE___ With cMae___,; 
                     CLI->PAI___ With cPai___,; 
                     CLI->NASCIM With dNascim 

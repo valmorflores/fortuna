@@ -1,0 +1,1 @@
+#define SENHA "0"

@@ -1,7 +1,7 @@
 // ## CL2HB.EXE - Converted
  
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
  
 #Define _MSG_PRODUTO     " Produto                   " 
 #Define _MSG_QUANTIDADE  " Quantidade                " 
@@ -39,7 +39,7 @@ ExcluiOcorrencia() = Modulo de Exclusao de Ocorrencia/Ficha
 TabAtendimento()   = Pega tabela de atendimento conforme setor, pois podem haver 
                      diferentes metodos de captacao das informacoes conforme os 
                      setores. (ROTINA NAO DEVE SER MUDADA) 
-PegaTabela()       = Rotina auxiliar a TabAtendimento(), onde sÆo armazenados os 
+PegaTabela()       = Rotina auxiliar a TabAtendimento(), onde sï¿½o armazenados os 
                      arrays de possibilidades no que se refere os tipos de 
                      telas e informacoes  a serem captadas. 
                      Esta opcao pode ser modificada, acrescentando-se mais 
@@ -591,14 +591,14 @@ Static Function EditOcorrencias( nCodigo )
               ATD->( DBSetOrder( 1 ) ) 
               IF ! ATD->( DBSeek( VAL( aAtdCFE[ nRow ][ 1 ] ) ) ) 
                  cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-                 Aviso( "Atencao! Registro nÆo existe ou foi excluida neste momento." ) 
+                 Aviso( "Atencao! Registro nï¿½o existe ou foi excluida neste momento." ) 
                  Mensagem( "Pressione [ENTER] para continuar..." ) 
                  Pausa() 
                  ScreenRest( cTelaRes ) 
               ELSE 
                  IF !( SET->CODIGO==ATD->SETOR_ ) 
                     cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-                    Aviso( "Atencao! Esta ficha nÆo pertence a este setor." ) 
+                    Aviso( "Atencao! Esta ficha nï¿½o pertence a este setor." ) 
                     Mensagem( "Pressione [ENTER] para continuar..." ) 
                     Pausa() 
                     ScreenRest( cTelaRes ) 
@@ -661,7 +661,7 @@ Function IncluiOcorrencia( oTab, aAtdCFE, cCodAtdCFE )
    nCodigo:= ATD->CODIGO + 1 
    @ 14,02 Say " Codigo.........:" Get nCodigo 
    @ 15,02 Say " Descricao......:" Get cDescri 
-   @ 16,02 Say " Data InclusÆo..:" Get dData__ 
+   @ 16,02 Say " Data Inclusï¿½o..:" Get dData__ 
    @ 17,02 Say " Hora ..........:" Get cHora__ Pict "@R XX:XX.XX" 
    @ 18,02 Say " Data Conclusao.:" Get dDatFim 
    @ 19,02 Say " Responsavel....:" Get cAtend_ 
@@ -678,7 +678,7 @@ Function IncluiOcorrencia( oTab, aAtdCFE, cCodAtdCFE )
          nCodigo:= ATD->CODIGO + 1 
       ENDIF 
       ATD->( DBAppend() ) 
-      IF ATD->( NetRLock() ) 
+      IF ATD->( netrlock() ) 
          Replace ATD->CODIGO With nCodigo,; 
                  ATD->DESCRI With "RESERVADO" 
       ENDIF 
@@ -687,15 +687,15 @@ Function IncluiOcorrencia( oTab, aAtdCFE, cCodAtdCFE )
          na rotina editDetalhe, sendo que as informacoes que corresponsam 
          a um mesmo registro estarao no mesmo numero de registro, modicando 
          apenas o tipo de informacao. 
-         Os dados sÆo armazenados nas posicoes 3/4/5/6/7 do array: 
+         Os dados sï¿½o armazenados nas posicoes 3/4/5/6/7 do array: 
          Ex. 
          Caso seja informacao de Produto+Observacao: 
-         1§Elemento   { { 1, "Produto", "00000257", "110V ", Space(), Space(),; 
+         1ï¿½Elemento   { { 1, "Produto", "00000257", "110V ", Space(), Space(),; 
                                                     Space(), Space(), DTOC("") },; 
                         { 1, "Observacoes", "O PRODUTO ESTA COM DEFEITO",; 
                                                     Space(), Space(), Space(),; 
                                                     Space(), Space(), DTOC("") } } 
-         2§Elemento   { { 2, "Produto", "00012445", "220V ", Space(), Space(),; 
+         2ï¿½Elemento   { { 2, "Produto", "00012445", "220V ", Space(), Space(),; 
                                                     Space(), Space(), DTOC("") },; 
                         { 2, "Observacoes", "O PRODUTO ESTA COM DEFEITO",; 
                                                     Space(), Space(), Space(),; 
@@ -716,7 +716,7 @@ Function IncluiOcorrencia( oTab, aAtdCFE, cCodAtdCFE )
       ELSE 
          ATD->( DBSeek( nCodigo ) ) 
          IF ALLTRIM( ATD->DESCRI )=="RESERVADO" 
-            IF ATD->( NetRLock() ) 
+            IF ATD->( netrlock() ) 
                ATD->( DBDelete() ) 
             ENDIF 
          ENDIF 
@@ -754,7 +754,7 @@ Function AlteraOcorrencia( oTab, aAtdCFE, cCodAtdCFE, nRow )
    ATD->( DBSetOrder( 1 ) ) 
  
    IF !ATD->( DBSeek( nCodigo ) ) 
-      Aviso( "Codigo de Ficha nÆo encontrado na base de dados." ) 
+      Aviso( "Codigo de Ficha nï¿½o encontrado na base de dados." ) 
       Pausa() 
       Return Nil 
    ELSE 
@@ -775,7 +775,7 @@ Function AlteraOcorrencia( oTab, aAtdCFE, cCodAtdCFE, nRow )
    VPBox( 12, 0, 23, 79, " Alteracao de Ficha de Atendimento ", _COR_GET_EDICAO, .F., .F. ) 
    @ 14,02 Say " Codigo.........:" Get nCodigo 
    @ 15,02 Say " Descricao......:" Get cDescri 
-   @ 16,02 Say " Data InclusÆo..:" Get dData__ 
+   @ 16,02 Say " Data Inclusï¿½o..:" Get dData__ 
    @ 17,02 Say " Hora ..........:" Get cHora__ Pict "@R XX:XX.XX" 
    @ 18,02 Say " Data Conclusao.:" Get dDatFim 
    @ 19,02 Say " Responsavel....:" Get cAtend_ 
@@ -834,10 +834,10 @@ Function AlteraOcorrencia( oTab, aAtdCFE, cCodAtdCFE, nRow )
  
 /* Adiciona um novo registro em aInformacoes */ 
 // aOpcoes= neste caso serve para determinar quantos sub-elementos devem ser 
-//          adicionados ao array aInformacoes, para que nÆo hajam falhas no 
+//          adicionados ao array aInformacoes, para que nï¿½o hajam falhas no 
 //          momento da edicao 
 Function AAddInformacoes( aInformacoes, aOpcoes ) 
-   /* Acrescenta o 1§ elemento em aInformacoes */ 
+   /* Acrescenta o 1ï¿½ elemento em aInformacoes */ 
    AAdd( aInformacoes, { { Len( aInformacoes ) + 1,;                      && Numero do Registro 
                            Space( Len( _MSG_PRODUTO ) ),;                 && Tipo Cf.Tab #Define acima 
                            Space( 100 ),;                                  && Informacoes 
@@ -885,7 +885,7 @@ Function EditDetalheOcorr( aInformacoes )
                   no momento. pra exemplificar usaremos o mesmo ex. do aInformacoes. 
                   Ex. Naquele caso se nInfo estiver com conteudo 1, significa que 
                   o campo em exibicao eh ref. ao produto, bem como, se conter 2 
-                  significa que o campo em edicao eh o 2§ 
+                  significa que o campo em edicao eh o 2ï¿½ 
    */ 
    SetCursor( 1 ) 
    SetColor( COR[16] + "," + COR[18] + ",,," + COR[17] ) 
@@ -1051,7 +1051,7 @@ Function EditDetalheOcorr( aInformacoes )
                       READ 
                       Set Key K_F9 To Busca99() 
                       if !trim(cHisto5) == "" .and. aOpcoes[ nOpcao ][ 1 ]==_MSG_MATERIAL 
-                         IF SWAlerta( "Deseja lan‡ar mais Produtos ?", {"Sim", "Nao" } ) = 1 
+                         IF SWAlerta( "Deseja lanï¿½ar mais Produtos ?", {"Sim", "Nao" } ) = 1 
                             keyboard chr(K_INS)+repl(chr(K_DOWN),6)+chr(K_RIGHT)+chr(K_ENTER) 
                          Endif 
                       endif 
@@ -1081,14 +1081,14 @@ Static Function ExcluiOcorrencia( aAtdCFE, nRow, oTab )
    IF nRow >= 1 .AND. nRow <= Len( aAtdCFE ) .AND. Len( aAtdCfe ) >= 1 
       ATD->( DBSetOrder( 1 ) ) 
       IF ATD->( DBSeek( VAL( aAtdCFE[ nRow ][ 1 ] ) ) ) 
-         IF ATD->( NetRLock() ) 
+         IF ATD->( netrlock() ) 
             ATD->( DBDelete() ) 
             lDeletado:= .T. 
          ENDIF 
          ATA->( DBSetOrder( 1 ) ) 
          IF ATA->( DBSeek( VAL( aAtdCFE[ nRow ][ 1 ] ) ) ) 
             WHILE VAL( aAtdCFE[ nRow ][ 1 ] ) == ATA->CODIGO 
-                IF ATA->( NetRLock() ) 
+                IF ATA->( netrlock() ) 
                    ATA->( DBDelete() ) 
                 ENDIF 
                 ATA->( DBSkip() ) 
@@ -1452,7 +1452,7 @@ Local lInclusao:= .T., NtotMater := 0
          lInclusao:= .F. 
       ENDIF 
  
-      IF ATD->( NetRLock() ) 
+      IF ATD->( netrlock() ) 
          Replace ATD->CODIGO With nCodigo,; 
                  ATD->DESCRI With cDescri,; 
                  ATD->DATAEM With dData__,; 
@@ -1467,7 +1467,7 @@ Local lInclusao:= .T., NtotMater := 0
                  ATD->VALMAO With nValMao,; 
                  ATD->VALPRO With nValPro,; 
                  ATD->VALKMR With nValKmr 
-*         ATD->( NetRLock() ) 
+*         ATD->( netrlock() ) 
       ENDIF 
    ENDIF 
    ATA->( DBSetOrder( 1 ) ) 
@@ -1482,7 +1482,7 @@ Local lInclusao:= .T., NtotMater := 0
            IF !ATA->CODIGO==nCodigo 
               ATA->( DBAppend() ) 
            ENDIF 
-           IF ATA->( NetRLock() ) 
+           IF ATA->( netrlock() ) 
  
               /* Gravar informacoes de aOpcoes[ x ] na tabela de informacoes, pois, 
                  pode acontecer do usuario entrar nas opcoes e editar somente algumas, 
@@ -1527,13 +1527,13 @@ Local lInclusao:= .T., NtotMater := 0
    NEXT 
    /* Apaga registros que por ventura deixem de existir */ 
    WHILE ATA->CODIGO==nCodigo 
-      IF ATA->( NetRlock() ) 
+      IF ATA->( netrlock() ) 
          ATA->( DBDelete() ) 
       ENDIF 
       ATA->( DBSkip() ) 
    ENDDO 
    IF NtotMater <> 0 
-      IF ATD->( NetRLock() ) 
+      IF ATD->( netrlock() ) 
          Replace ATD->VALPRO With nTotMater 
          Replace ATD->VALOR_ With (ATD->VALPRO+ATD->VALMAO+ATD->VALKMR) 
       ENDIF 
@@ -1556,7 +1556,7 @@ Local cQuantidade:= cValor := ""
  
  
    Set Key K_F9 to Busca99() 
-   IF SWAlerta( "Lan‡ar movimento de estoque?", {"Sim", "Nao" } ) = 2 
+   IF SWAlerta( "Lanï¿½ar movimento de estoque?", {"Sim", "Nao" } ) = 2 
  
       // Informacoes 
       VisualProdutos() 

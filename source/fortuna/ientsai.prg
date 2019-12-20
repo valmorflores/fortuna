@@ -3,14 +3,14 @@
 #include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ImpEntSai 
-³ Finalidade  ³ Impressao de ENTRADAS / SAIDAS 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ Agosto/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ImpEntSai 
+ï¿½ Finalidade  ï¿½ Impressao de ENTRADAS / SAIDAS 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ Agosto/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function ImpEntSai() 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -93,7 +93,7 @@ Function ImpEntSai()
          dDataFim:= DATE() 
          @ 05, 10 Say "No periodo entre..:" Get dDataIni 
          @ 05, 51 Say "Ate:" Get dDataFim 
-         @ 09, 10 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+         @ 09, 10 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
          @ 10, 10 Say "Arquivo de Relatorio (.REP)...:" Get cArquivo 
          READ 
  
@@ -107,7 +107,7 @@ Function ImpEntSai()
   ENDDO 
  
  
-  /* Se estiver dispon¡vel para a tela */ 
+  /* Se estiver disponï¿½vel para a tela */ 
   IF aOpcao[ 5 ] == 2 
      SWGravar( 600 ) 
      Set( 24, "TELA0000.TMP" ) 
@@ -138,7 +138,7 @@ Function ImpEntSai()
      nCodope := 999 
 *     IF aOpcao[ 2 ] == 6 
         @ 06, 10 Say "Do Cliente........................: " Get nClient1    Pict "999999" 
-        @ 06, 56 Say "At‚:" Get nClient2 Pict "999999" 
+        @ 06, 56 Say "Atï¿½:" Get nClient2 Pict "999999" 
         @ 07, 10 Say "Natureza da Operacao (9.999 todas): " Get nnatop     Pict "@R 9.999" 
         @ 08, 10 Say "Codigo da Operacao (999) Todas....: " Get nCodope    Pict "999" 
         READ 
@@ -233,7 +233,7 @@ Function ImpEntSai()
                   ROUND( nValorServicos + nValorProdutos - NF_->VLRDES, 0 ) <> ROUND( NF_->VLRNOT, 0 ) .AND.; 
                   ROUND( nValorProdutos - NF_->VLRDES, 0 ) <> ROUND( NF_->VLRNOT, 0 ) 
  
-                  Aviso( "Nota Fiscal n§ " + StrZero( NF_->NUMERO, 8, 0 ) + " com diferencas de valores nos seus produtos." ) 
+                  Aviso( "Nota Fiscal nï¿½ " + StrZero( NF_->NUMERO, 8, 0 ) + " com diferencas de valores nos seus produtos." ) 
                   Pausa() 
                ENDIF 
  
@@ -448,7 +448,7 @@ Function ImpEntSai()
   /* Emissao do relatorio */ 
   Relatorio( AllTrim( cArquivo ) ) 
  
-  /* Se estiver dispon¡vel para a tela */ 
+  /* Se estiver disponï¿½vel para a tela */ 
   IF aOpcao[ 5 ] == 2 
      ViewFile( "TELA0000.TMP" ) 
   ENDIF 

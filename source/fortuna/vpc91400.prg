@@ -1,15 +1,15 @@
 // ## CL2HB.EXE - Converted
-#include "INKEY.CH" 
-#Include "VPF.CH" 
+#include "inkey.ch" 
+#Include "vpf.ch" 
  
 /* 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³       Funcao ³ VPC910000 
-³   Finalidade ³ Exibir menu de comissoes 
-³         Data ³ 
-³  Atualizacao ³ 
-³  Programador ³ VALMOR PEREIRA FLORES 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½       Funcao ï¿½ VPC910000 
+ï¿½   Finalidade ï¿½ Exibir menu de comissoes 
+ï¿½         Data ï¿½ 
+ï¿½  Atualizacao ï¿½ 
+ï¿½  Programador ï¿½ VALMOR PEREIRA FLORES 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 
 #ifdef HARBOUR
@@ -276,14 +276,14 @@ Static dDataInicio, dDataFim
    Return(.T.) 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ BaixaComissoes 
-³ Finalidade  ³ Visualizacao das comissoes 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ BaixaComissoes 
+ï¿½ Finalidade  ï¿½ Visualizacao das comissoes 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 STATIC FUNCTION BaixaComissoes() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -348,7 +348,7 @@ Static dDataInicio, dDataFim
       VPBox( 01, 02, 04, 77,,"15/03", .F., .F. ) 
       SetColor( "15/03" ) 
       @ 02,04 Say "Vendedor........: " + ALLTrim( StrZero( VEN->CODIGO, 6, 0 ) + " - " + VEN->DESCRI ) 
-      @ 03,04 Say "Total Dispon¡vel: " + Tran( nTotDisp, "@E 9,999,999.9999" ) 
+      @ 03,04 Say "Total Disponï¿½vel: " + Tran( nTotDisp, "@E 9,999,999.9999" ) 
       @ 03,40 Say "Total Geral (PEND+DISP): " + Tran( nTotGeral, "@E 9999.9999" ) 
       SetColor( _COR_BROWSE ) 
       oTab:=TBrowseNew( 05, 03, 16, 75 ) 
@@ -407,7 +407,7 @@ Static dDataInicio, dDataFim
          ENDDO 
          cCorRes:= SetColor() 
          SetColor( Cor[12] ) 
-         DispBox( 05, 07, 19, 07, "¼¼¼¼¼¼¼¼" ) 
+         DispBox( 05, 07, 19, 07, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" ) 
          SetColor( "15/02" ) 
          Scroll( 17, 08, 19, 74 ) 
          @ 17,08 Say " Total Disponivel: " + TRAN( aComissoes[ nRow ][ 9 ], "@E 999,999,999.99" ) 
@@ -429,7 +429,7 @@ Static dDataInicio, dDataFim
             CASE nTecla==K_CTRL_PGDN  ;oTab:gobottom() 
             CASE nTecla==K_SPACE 
                  DBGoTo( aComissoes[ nRow ][ 8 ] ) 
-                 IF NetRLock() 
+                 IF netrlock() 
                     REPLACE CODMV_ WITH nCodMV_,; 
                             SITUA_ With "QUITADA   ",; 
                             VLRPAG With VLRPAG+VLRPEN 
@@ -458,14 +458,14 @@ Static dDataInicio, dDataFim
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VISUALCOMISSOES 
-³ Finalidade  ³ Visualizacao das comissoes 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VISUALCOMISSOES 
+ï¿½ Finalidade  ï¿½ Visualizacao das comissoes 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 STATIC FUNCTION VisualComissoes() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -523,7 +523,7 @@ Static dDataInicio, dDataFinal
       cCorRes:= SetColor() 
       SetColor( "15/02" ) 
       @ 02,04 Say "Vendedor........: " + ALLTrim( StrZero( VEN->CODIGO, 6, 0 ) + " - " + VEN->DESCRI ) 
-      @ 03,04 Say "Total Dispon¡vel: " + Tran( nTotDisp, "@E 999999.99" ) +; 
+      @ 03,04 Say "Total Disponï¿½vel: " + Tran( nTotDisp, "@E 999999.99" ) +; 
                                      " Pendente:" + Tran( nTotPend, "@E 99999.99" ) +; 
                                      " Total (DISP+PEND):" + Tran( nTotPend + nTotDisp, "@E 99999.999" ) 
       SetColor( _COR_BROWSE ) 
@@ -571,7 +571,7 @@ Static dDataInicio, dDataFinal
          ENDDO 
          cCorRes:= SetColor() 
          SetColor( _COR_BROW_BOX ) 
-         DispBox( 05, 07, 19, 07, "¼¼¼¼¼¼¼¼" ) 
+         DispBox( 05, 07, 19, 07, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" ) 
          SetColor( cCorRes ) 
          nTecla:=inkey(0) 
          IF nTecla=K_ESC 
@@ -598,7 +598,7 @@ Static dDataInicio, dDataFinal
                  dLimiteEmiss:= DATE() 
                  SetColor( _COR_GET_EDICAO ) 
                  SetCursor(1) 
-                 @ 16,40 Say    "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+                 @ 16,40 Say    "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
                  @ 17,40 Say    "Data Inicial.:" Get dDataIni 
                  @ 18,40 Say    "Data Final...:" Get dDataFim 
                  @ 19,40 Say    "Limite (Venc):" Get dDataLimite 
@@ -626,7 +626,7 @@ Static dDataInicio, dDataFinal
                        Mensagem( "Alterando a situacao das informacoes que fogem do periodo..." ) 
                        WHILE !EOF() 
                            IF DTQUIT > dDataFim 
-                              IF NetRLock() 
+                              IF netrlock() 
                                  Replace DTQUIT With CTOD( "  /  /  " ),; 
                                          PGTO__ With " F ",; 
                                          VLRDSP With 0 
@@ -672,7 +672,7 @@ Static dDataInicio, dDataFinal
                            IF !RES->( DBSeek( cPerc ) ) 
                               RES->( DBAppend() ) 
                            ENDIF 
-                           IF RES->( NetRLock() ) 
+                           IF RES->( netrlock() ) 
                               nBase:= if( VLRPAR == 0, VLRBAS, VLRPAR ) 
                               Replace RES->VALOR_ With RES->VALOR_ + VLRDSP,; 
                                       RES->TOTAL_ With RES->TOTAL_ + IF( VLRDSP > 0, nBase, 0 ),; 
@@ -717,14 +717,14 @@ Static dDataInicio, dDataFinal
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VISUALDETALHES 
-³ Finalidade  ³ Visualizacao do detalhe 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VISUALDETALHES 
+ï¿½ Finalidade  ï¿½ Visualizacao do detalhe 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 STATIC FUNCTION VisualDetalhes( nCodNf_ ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -802,16 +802,16 @@ Local aDetalhes:= {}, nRow:= 1, nTecla:= 0
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ CalculoGeral 
-³ Finalidade  ³ Calcula as comissoes com base nas formulas de calculos 
-³             ³ que estao anexas ao cadastro de vendedores do sistema. 
-³ Parametros  ³ NIL 
-³ Retorno     ³ NIL 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 10/08/1997 
-³ Atualizacao ³ 01/03/2000 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ CalculoGeral 
+ï¿½ Finalidade  ï¿½ Calcula as comissoes com base nas formulas de calculos 
+ï¿½             ï¿½ que estao anexas ao cadastro de vendedores do sistema. 
+ï¿½ Parametros  ï¿½ NIL 
+ï¿½ Retorno     ï¿½ NIL 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 10/08/1997 
+ï¿½ Atualizacao ï¿½ 01/03/2000 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 STATIC FUNCTION CalculoGeral() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -834,11 +834,11 @@ Local nVend1:= 0, nVend2:= 999,;
     SetColor( _COR_GET_EDICAO ) 
     SetCursor( 1 ) 
     @ 05,32 Say "Periodo de..:" Get dDataIni 
-    @ 05,57 Say "At‚:" Get dDataFim 
+    @ 05,57 Say "Atï¿½:" Get dDataFim 
     @ 06,32 Say "Mes Calculo.:" Get dDataI2 
-    @ 06,57 Say "At‚:" Get dDataF2 
+    @ 06,57 Say "Atï¿½:" Get dDataF2 
     @ 07,32 Say "Data Calculo:" Get dDataBase 
-    @ 08,32 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+    @ 08,32 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
     READ 
  
     IF !LimpaCalculos() 
@@ -859,7 +859,7 @@ Local nVend1:= 0, nVend2:= 999,;
  
     FOR nCt:= 10 TO 10 
         Scroll( 09, 32, 20, 74, 1 ) 
-        @ 20,32 Say SubStr( Repl( "°°±±±²²²ÛÛÛÛ±±±±±", 20 ), nCt * 3, 42 ) COLOR StrZero( nCt, 2, 0 ) + "/01" 
+        @ 20,32 Say SubStr( Repl( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û±ï¿½ï¿½ï¿½ï¿½", 20 ), nCt * 3, 42 ) COLOR StrZero( nCt, 2, 0 ) + "/01" 
         @ 20,34 Say "< 1a.Fase >" COLOR StrZero( nCt, 2, 0 ) + "/01" 
         INKEY(0.01) 
     NEXT 
@@ -915,7 +915,7 @@ Local nVend1:= 0, nVend2:= 999,;
                  IF DBSeek( nCodVendedor ) .AND. nCodVendedor > 0 
                     FOR nCt:= 1 to 10 
                        DBSelectAr( _COD_VENDEDOR ) 
-                       /* Leitura e gravacao das comissoes da 1§/10§ Formula */ 
+                       /* Leitura e gravacao das comissoes da 1ï¿½/10ï¿½ Formula */ 
                        IF nCt == 1 
                           nFormula:=  VEN->FORM01 
                           nMesIni:=   VEN->MINI01 
@@ -965,7 +965,7 @@ Local nVend1:= 0, nVend2:= 999,;
                              dbSetOrder( 2 ) 
                              lAppend:= .T. 
                              IF DBSeek( NF_->NUMERO ) 
-                               /* Procura pelo calculo j  existente de comissao */ 
+                               /* Procura pelo calculo jï¿½ existente de comissao */ 
                                 WHILE CODNF_ == NF_->NUMERO 
                                     IF VENDE_ == nCodVendedor .AND. FORMUL == nFormula 
                                        lAppend:= .F. 
@@ -977,7 +977,7 @@ Local nVend1:= 0, nVend2:= 999,;
                              IF lAppend 
                                 BuscaNet( 5, {|| DBAppend(), !NetErr() } ) 
                              ENDIF 
-                             IF NetRLock() 
+                             IF netrlock() 
                                 cPag:= " " 
                                 dPgtoData:= CTOD( "  /  /  " ) 
                                 DPA->( DBSetOrder( 1 ) ) 
@@ -1014,7 +1014,7 @@ Local nVend1:= 0, nVend2:= 999,;
               IF DBSeek( nCodVendedor ) .AND. nCodVendedor == 0 
                  FOR nCt:= 1 to 10 
                      DBSelectAr( _COD_VENDEDOR ) 
-                     /* Leitura e gravacao das comissoes da 1§/10§ Formula */ 
+                     /* Leitura e gravacao das comissoes da 1ï¿½/10ï¿½ Formula */ 
                      IF nCt == 1 
                         nFormula:=  VEN->FORM01 
                         nMesIni:=   VEN->MINI01 
@@ -1063,7 +1063,7 @@ Local nVend1:= 0, nVend2:= 999,;
                            dbSetOrder( 2 ) 
                            lAppend:= .T. 
                            IF DBSeek( NF_->NUMERO ) 
-                             /* Procura pelo calculo j  existente de comissao */ 
+                             /* Procura pelo calculo jï¿½ existente de comissao */ 
                               WHILE CODNF_ == NF_->NUMERO 
                                   IF VENDE_ == nCodVendedor .AND. FORMUL == nFormula 
                                      lAppend:= .F. 
@@ -1075,7 +1075,7 @@ Local nVend1:= 0, nVend2:= 999,;
                            IF lAppend 
                               BuscaNet( 5, {|| DBAppend(), !NetErr() } ) 
                            ENDIF 
-                           IF NetRLock() 
+                           IF netrlock() 
                               cPag:= " " 
                               dPgtoData:= CTOD( "  /  /  " ) 
                               DPA->( DBSetOrder( 1 ) ) 
@@ -1114,7 +1114,7 @@ Local nVend1:= 0, nVend2:= 999,;
  
     FOR nCt:= 11 TO 11 
         Scroll( 09, 32, 20, 74, 1 ) 
-        @ 20,32 Say SubStr( Repl( "°°±±±²²²ÛÛÛÛ±±±±±", 20 ), nCt * 3, 42 ) COLOR StrZero( nCt, 2, 0 ) + "/01" 
+        @ 20,32 Say SubStr( Repl( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û±ï¿½ï¿½ï¿½ï¿½", 20 ), nCt * 3, 42 ) COLOR StrZero( nCt, 2, 0 ) + "/01" 
         @ 20,34 Say "< 2a.Fase >" COLOR StrZero( nCt, 2, 0 ) + "/01" 
         INKEY(0.01) 
     NEXT 
@@ -1175,7 +1175,7 @@ Local nVend1:= 0, nVend2:= 999,;
                  IF DBSeek( nCodVendedor ) .AND. nCodVendedor > 0 
                     FOR nCt:= 1 to 10 
                        DBSelectAr( _COD_VENDEDOR ) 
-                       /* Leitura e gravacao das comissoes da 1§/10§ Formula */ 
+                       /* Leitura e gravacao das comissoes da 1ï¿½/10ï¿½ Formula */ 
                        IF nCt == 1 
                           nFormula:=  VEN->FORM01 
                           nMesIni:=   VEN->MINI01 
@@ -1225,7 +1225,7 @@ Local nVend1:= 0, nVend2:= 999,;
                              dbSetOrder( 2 ) 
                              lAppend:= .T. 
                              IF DBSeek( CUP->NUMERO ) 
-                               /* Procura pelo calculo j  existente de comissao */ 
+                               /* Procura pelo calculo jï¿½ existente de comissao */ 
                                 WHILE CODNF_ == CUP->NUMERO 
                                     IF VENDE_ == nCodVendedor .AND. FORMUL == nFormula 
                                        lAppend:= .F. 
@@ -1237,7 +1237,7 @@ Local nVend1:= 0, nVend2:= 999,;
                              IF lAppend 
                                 BuscaNet( 5, {|| DBAppend(), !NetErr() } ) 
                              ENDIF 
-                             IF NetRLock() 
+                             IF netrlock() 
                                 cPag:= " " 
                                 dPgtoData:= CTOD( "  /  /  " ) 
                                 DPA->( DBSetOrder( 1 ) ) 
@@ -1274,7 +1274,7 @@ Local nVend1:= 0, nVend2:= 999,;
               IF DBSeek( nCodVendedor ) .AND. nCodVendedor == 0 
                  FOR nCt:= 1 to 10 
                      DBSelectAr( _COD_VENDEDOR ) 
-                     /* Leitura e gravacao das comissoes da 1§/10§ Formula */ 
+                     /* Leitura e gravacao das comissoes da 1ï¿½/10ï¿½ Formula */ 
                      IF nCt == 1 
                         nFormula:=  VEN->FORM01 
                         nMesIni:=   VEN->MINI01 
@@ -1323,7 +1323,7 @@ Local nVend1:= 0, nVend2:= 999,;
                            dbSetOrder( 2 ) 
                            lAppend:= .T. 
                            IF DBSeek( CUP->NUMERO ) 
-                             /* Procura pelo calculo j  existente de comissao */ 
+                             /* Procura pelo calculo jï¿½ existente de comissao */ 
                               WHILE CODNF_ == CUP->NUMERO 
                                   IF VENDE_ == nCodVendedor .AND. FORMUL == nFormula 
                                      lAppend:= .F. 
@@ -1335,7 +1335,7 @@ Local nVend1:= 0, nVend2:= 999,;
                            IF lAppend 
                               BuscaNet( 5, {|| DBAppend(), !NetErr() } ) 
                            ENDIF 
-                           IF NetRLock() 
+                           IF netrlock() 
                               cPag:= " " 
                               dPgtoData:= CTOD( "  /  /  " ) 
                               DPA->( DBSetOrder( 1 ) ) 
@@ -1377,7 +1377,7 @@ Local nVend1:= 0, nVend2:= 999,;
     DBGoTop() 
     WHILE !EOF() 
          IF !( CODMV_==0 ) 
-            IF NetRLock() 
+            IF netrlock() 
                Replace SITUA_ With "QUITADA" 
             ENDIF 
          ENDIF 
@@ -1386,7 +1386,7 @@ Local nVend1:= 0, nVend2:= 999,;
  
     FOR nCt:= 10 TO 10 
         Scroll( 09, 32, 20, 74, 1 ) 
-        @ 20,32 Say SubStr( Repl( "°°±±±²²²ÛÛÛÛ±±±±±", 20 ), nCt * 3, 42 ) COLOR StrZero( nCt, 2, 0 ) + "/01" 
+        @ 20,32 Say SubStr( Repl( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û±ï¿½ï¿½ï¿½ï¿½", 20 ), nCt * 3, 42 ) COLOR StrZero( nCt, 2, 0 ) + "/01" 
         @ 20,34 Say "<   FIM   >" COLOR StrZero( nCt, 2, 0 ) + "/01" 
         INKEY(0.01) 
     NEXT 
@@ -1429,15 +1429,15 @@ Local nArea:= Select(), nPercentual:= 0
   Return nPercentual 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ LeFormulas 
-³ Finalidade  ³ leitura de formulas de calculo de comissoes 
-³ Parametros  ³ nFormula, cIntExt 
-³             ³ nTipo=1 Nota Fiscal      nTipo=2 Cupom Fiscal 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ LeFormulas 
+ï¿½ Finalidade  ï¿½ leitura de formulas de calculo de comissoes 
+ï¿½ Parametros  ï¿½ nFormula, cIntExt 
+ï¿½             ï¿½ nTipo=1 Nota Fiscal      nTipo=2 Cupom Fiscal 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function LeFormulas( nFormula, cIntExt, nMesIni, nMesFim, nTipo ) 
  Loca nArea:= Select() 
@@ -1578,14 +1578,14 @@ Function LeFormulas( nFormula, cIntExt, nMesIni, nMesFim, nTipo )
  Return { nBaseTotal, nCalculoTotal, nTotalDisponivel, nBaseParcial } 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ BUSCAPERCENTUAL 
-³ Finalidade  ³ Pesquisa o percentual de comuissao 
-³ Parametros  ³ cIntExt=> Interno/Externo 
-³ Retorno     ³ nPrecentual 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ BUSCAPERCENTUAL 
+ï¿½ Finalidade  ï¿½ Pesquisa o percentual de comuissao 
+ï¿½ Parametros  ï¿½ cIntExt=> Interno/Externo 
+ï¿½ Retorno     ï¿½ nPrecentual 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
  Function BuscaPercentual( cIntExt ) 
  Local nPercentual:= 0 
@@ -1601,14 +1601,14 @@ Function LeFormulas( nFormula, cIntExt, nMesIni, nMesFim, nTipo )
  Return nPercentual 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ PERRECEBIDO 
-³ Finalidade  ³ Retornar o percentual recebido da nota fiscal atual 
-³ Parametros  ³ Nil 
-³ Retorno     ³ nPercentual 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ PERRECEBIDO 
+ï¿½ Finalidade  ï¿½ Retornar o percentual recebido da nota fiscal atual 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ nPercentual 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function PerRecebido( nTipo ) 
 Local nVlrBase:= IF( nTipo==1, NF_->VLRTOT, CUP->VLRTOT ), nPercentual:= 0, nRecebido:= 0, nPendente:= 0 
@@ -1637,14 +1637,14 @@ Local nArea:= Select()
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ STATUS 
-³ Finalidade  ³ Apresenta o Status na Tela 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ STATUS 
+ï¿½ Finalidade  ï¿½ Apresenta o Status na Tela 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 STATIC FUNCTION Status( cStatus ) 
 Local cCor:= SetColor() 
@@ -1665,14 +1665,14 @@ IF !Empty( cStatus )
 ENDIF 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ LimpaCalculos 
-³ Finalidade  ³ Limpar Calculos de Comissoes 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ LimpaCalculos 
+ï¿½ Finalidade  ï¿½ Limpar Calculos de Comissoes 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function LimpaCalculos() 
 Local nArea:= Select() 
@@ -1706,14 +1706,14 @@ Local nArea:= Select()
        DBSetOrder( 2 ) 
        IF DBSeek( COM->CODNF_ ) 
           WHILE COM->CODNF_ == CODNF_ .AND. !EOF() 
-             IF NetRLock() 
+             IF netrlock() 
                 Dele 
              ENDIF 
              DBSkip() 
           ENDDO 
       ENDIF 
       DBSelectAr( _COD_COMISSAO ) 
-      IF NetRLock() 
+      IF netrlock() 
          Dele 
       ENDIF 
     ENDIF 

@@ -4,10 +4,10 @@
 *                    Biblioteca de funcoes para o Sistema FORTUNA                        * 
 *                                                                                        * 
 ********************************* Valmor Pereira Flores ********************************** 
-#include "VPF.CH" 
-#include "INKEY.CH" 
-#include "FORMATOS.CH" 
-#include "BOX.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
+//#include "formatos.ch" 
+//#include "box.ch" 
  
  
 Function BuscaEmpresa( nCodigo ) 
@@ -481,7 +481,7 @@ oPOBJ:gotop()
 do case 
    case nOPCAO=1 
         vpbox(11,25,13,48,"",COR[20],.T.,.F.,COR[19]) 
-        @ 12,26 say "C¢digo " get nCOD pict "999999" when Mensagem( "Digite o c¢digo para pesquisa.") 
+        @ 12,26 say "Cï¿½digo " get nCOD pict "999999" when Mensagem( "Digite o cï¿½digo para pesquisa.") 
         read 
         Mensagem( "Executando a pesquisa pelo Codigo, aguarde...") 
         dbsetorder(1) 
@@ -662,12 +662,12 @@ If !Used()
 EndIf 
 DBSetOrder( 1 ) 
  
-/*................ Tenta buscar o banco informado e caso nÆo 
+/*................ Tenta buscar o banco informado e caso nï¿½o 
                    consiga exibe lista de bancos ...................*/ 
  
 If !DBSeek( nCodigo ) .AND. LastKey()<>K_UP 
    IF lInformar 
-      SWAlerta( "<< MOVIMENTO FINANCEIRO >>; O Sistema nÆo pode encontrar o banco que; foi informado para esta movimentacao,; favor escolher novamente conforme tabela a seguir.", { " OK " } ) 
+      SWAlerta( "<< MOVIMENTO FINANCEIRO >>; O Sistema nï¿½o pode encontrar o banco que; foi informado para esta movimentacao,; favor escolher novamente conforme tabela a seguir.", { " OK " } ) 
    ENDIF 
    VPBox( aPos[1], aPos[2], aPos[3], aPos[4], "Bancos", _COR_BROW_BOX ) 
    SetCursor(0) 
@@ -677,7 +677,7 @@ If !DBSeek( nCodigo ) .AND. LastKey()<>K_UP
    DBLeOrdem() 
    DBGoTop() 
    oTB:=tbrowsedb( aPos[1]+1, aPos[2]+1, aPos[3]-1, aPos[4]-1 ) 
-   oTB:addcolumn(tbcolumnnew("Cod³Nome",{|| STRZERO( Codigo, 3, 0) +"³"+ Descri })) 
+   oTB:addcolumn(tbcolumnnew("Codï¿½Nome",{|| STRZERO( Codigo, 3, 0) +"ï¿½"+ Descri })) 
    oTB:AUTOLITE:=.f. 
    oTB:dehilite() 
    whil .t. 
@@ -833,7 +833,7 @@ If !DBSeek(nCodigo) .AND. LastKey()<>K_UP
    DBLeOrdem() 
    DBGoTop() 
    oTB:=tbrowsedb( aPos[1]+1, aPos[2]+1, aPos[3]-1, aPos[4]-1 ) 
-   oTB:addcolumn(tbcolumnnew("Cod³Nome",{|| STRZERO( Codigo, 3, 0) +"³"+ Descri })) 
+   oTB:addcolumn(tbcolumnnew("Codï¿½Nome",{|| STRZERO( Codigo, 3, 0) +"ï¿½"+ Descri })) 
    oTB:AUTOLITE:=.f. 
    oTB:dehilite() 
    whil .t. 
@@ -878,15 +878,15 @@ Screenrest(cTELA)
 Return(.T.) 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ EXCLUI 
-³ Finalidade  ³ Solicitar a confirmacao e excluir registros de um DBF. 
-³ Parametros  ³ oObj 
-³ Retorno     ³ Set foi excluido 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 12/Novembro/1995 
-³ Atualizacao ³ 20/Janeiro/1996 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ EXCLUI 
+ï¿½ Finalidade  ï¿½ Solicitar a confirmacao e excluir registros de um DBF. 
+ï¿½ Parametros  ï¿½ oObj 
+ï¿½ Retorno     ï¿½ Set foi excluido 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 12/Novembro/1995 
+ï¿½ Atualizacao ï¿½ 20/Janeiro/1996 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function Exclui(oObj) 
    LOCAL cTela:= ScreenSave( 0, 0, 24, 79 ), cCor:= SetColor(),; 
@@ -896,7 +896,7 @@ Function Exclui(oObj)
    Ajuda("EXCLUSAO...") 
    IF Confirma(24,10,"Confirma a exclusao do lancamento?",; 
       "Digite [S] para excluir ou [N] para cancelar a exclusao do lancamento.","N") 
-      If(NetRLock(5),DBDelete(),nil) 
+      If(netrlock(5),DBDelete(),nil) 
       lExcluido:= .T. 
    ENDIF 
    SetCursor( nCursor ) 
@@ -996,16 +996,16 @@ Function PesqTransportadora( nCodigo )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VisualProdutos() 
-³ Finalidade  ³ Apresentar uma lista de produtos para o usuario escolher. 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 14/Dezembro/1995 
-³ Atualizacao ³ 05/Marco/1998 
-³             ³ 20/Agosto/1999       Visualizacao de Saldos p/ Cor & Tamanho 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VisualProdutos() 
+ï¿½ Finalidade  ï¿½ Apresentar uma lista de produtos para o usuario escolher. 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 14/Dezembro/1995 
+ï¿½ Atualizacao ï¿½ 05/Marco/1998 
+ï¿½             ï¿½ 20/Agosto/1999       Visualizacao de Saldos p/ Cor & Tamanho 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function VisualProdutos() 
  
@@ -1072,7 +1072,7 @@ Function VisualProdutos()
 
         ProVisualRefresh( oProd, cTraco1, cTraco2, cTracoB, lCompra )
         WHILE (( nTecla:= INKEY()) == 0 )
-            OL_Yield()
+            //OL_Yield()
             nRefreshTimer := IF( nRefreshTimer==Nil, SECONDS(), nRefreshTimer ) 
             IF (( nRefreshTimer + 2 ) < SECONDS() )    /* 2 = Tempo em segundos */ 
                 DISPBEGIN() 
@@ -1243,14 +1243,14 @@ Return Nil
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VisualClientes() 
-³ Finalidade  ³ Apresentar uma lista de Clientes para o usuario escolher. 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 14/Dezembro/1995 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VisualClientes() 
+ï¿½ Finalidade  ï¿½ Apresentar uma lista de Clientes para o usuario escolher. 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 14/Dezembro/1995 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function VisualClientes() 
    LOCAL cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1327,14 +1327,14 @@ Function VisualClientes()
    return(.T.) 
  
    /***** 
-   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-   ³ Funcao      ³ BUSCAPERICM 
-   ³ Finalidade  ³ Buscar percentuais de ICMs por estado 
-   ³ Parametros  ³ cEstado / [C]onsumo[I]ndustria / Percentual de Icms 
-   ³ Retorno     ³ Percentual de Icms 
-   ³ Programador ³ Valmor Pereira Flores 
-   ³ Data        ³ 12/novembro/1997 
-   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+   ï¿½ Funcao      ï¿½ BUSCAPERICM 
+   ï¿½ Finalidade  ï¿½ Buscar percentuais de ICMs por estado 
+   ï¿½ Parametros  ï¿½ cEstado / [C]onsumo[I]ndustria / Percentual de Icms 
+   ï¿½ Retorno     ï¿½ Percentual de Icms 
+   ï¿½ Programador ï¿½ Valmor Pereira Flores 
+   ï¿½ Data        ï¿½ 12/novembro/1997 
+   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
    */ 
    Function BuscaPerIcm( cEstado, cPCR, nPerIcm ) 
    Local cCor:= SetColor(), nCursor:= SetCursor(),; 

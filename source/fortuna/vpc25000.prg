@@ -1,17 +1,16 @@
-// ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
-#include "PTFUNCS.CH" 
+// ## cl2hb.exe - converted
+#include "vpf.ch" 
+#include "inkey.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VPC25000 - ORIGEM/FABRICANTES 
-³ Finalidade  ³ Cadastramento de Origem/Fabricantes 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VPC25000 - ORIGEM/FABRICANTES 
+ï¿½ Finalidade  ï¿½ Cadastramento de Origem/Fabricantes 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */
 #ifdef HARBOUR
 function vpc25000()
@@ -77,14 +76,14 @@ screenrest(cTELA)
 return(if(nTecla==K_ENTER,.T.,.F.)) 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ DISPLAYORIGEM 
-³ Finalidade  ³ Apresentar Informacoes da origem atual 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ DISPLAYORIGEM 
+ï¿½ Finalidade  ï¿½ Apresentar Informacoes da origem atual 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function DisplayOrigem() 
 Local cCor:= SetColor() 
@@ -100,14 +99,14 @@ Local cCor:= SetColor()
   Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ORIGEMINCLUI 
-³ Finalidade  ³ Inclusao de uma nova origem na base de dados 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ORIGEMINCLUI 
+ï¿½ Finalidade  ï¿½ Inclusao de uma nova origem na base de dados 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function OrigemInclui( oTb ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -145,14 +144,14 @@ Local nOrdem:= IndexOrd()
   Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ORIGEMALTERA 
-³ Finalidade  ³ Alteracao de uma origem na base de dados 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ORIGEMALTERA 
+ï¿½ Finalidade  ï¿½ Alteracao de uma origem na base de dados 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function OrigemAltera( oTb ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -171,7 +170,7 @@ Local nOrdem:= IndexOrd()
        mensagem("Digite o codigo de uso do fabricante / Abreviatura.") 
   READ 
   IF !LastKey()==K_ESC 
-     IF NetRLock() 
+     IF netrlock() 
         Replace CODIGO With nCodigo,; 
                 DESCRI With cDescri,; 
                 CODABR With cCodAbr 

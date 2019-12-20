@@ -11,17 +11,17 @@
  
 */ 
  
-*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ* 
+*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½* 
 * FORTUNA 
 * SISTEMA DE ATUALIZACAO DE SISTEMAS 
 * Programador - Valmor Pereira Flores 
-*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ* 
+*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½* 
  
-#Include "ATUAL.CH" 
+#Include "atual.ch" 
  
-#include "VPF.CH" 
-#include "INKEY.CH" 
-#include "PTFUNCS.CH"
+#include "vpf.ch" 
+#include "inkey.ch" 
+#include "ptfuncs.ch"
 
 
 #ifdef HARBOUR
@@ -81,7 +81,7 @@ Cor[17]:= "07/01"
 /*---------------------------------------------------------------------------*/ 
  
 SWSet( _SYS_CONFIGSENHAS, .F. ) 
-MenBarraRolagem:= " ìí Soft&Ware Inform tica ìí °°°±±±²² àá (51)471.6249 9134.6249 9112.8364 àá ²²²°°°±±±°°°±±±²²²" 
+MenBarraRolagem:= " ï¿½ï¿½ Soft&Ware Informï¿½tica ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ (51)471.6249 9134.6249 9112.8364 ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
  
  
 /* Configura Diretorio de Report como sendo \FORTUNA\REPORT -----------------*/ 
@@ -131,7 +131,7 @@ SetBlink(.F.)
  
 /* Protecao() */ 
 *Posicao* 12345678901234567890 * 
-WSIMNAO:="—xyz•†Š…€‹‚ƒ„†’‡–—" 
+WSIMNAO:="ï¿½xyzï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
  
 SETBLINK(.F.) 
  
@@ -177,7 +177,7 @@ Scroll( 0, 0, 24, 79 )
 Run MVIDEO RESTAURAMODO 
  
 SetBlink(.F.) 
-ScreenBack:= " ¯¯¯¯ Fortuna ®®®®ÄÄÄÄÄÄ¯¯¯¯ Disco de Atualizacao do Sistema ¯¯¯¯ " 
+ScreenBack:= " ï¿½ï¿½ï¿½ï¿½ Fortuna ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¯ï¿½ï¿½ï¿½ Disco de Atualizacao do Sistema ï¿½ï¿½ï¿½ï¿½ " 
 vptela() 
 // ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
 UserScreen() 
@@ -187,7 +187,7 @@ DevPos( 2,2 )
 DevOut( " FORTUNA " ) 
 WUSUARIO:=vpsenha() 
 MENULIST:={} 
-Guardiao( "<INICIO> Inicializacao do sistema ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" ) 
+Guardiao( "<INICIO> Inicializacao do sistema ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" ) 
 cPODER:=WPESQSN 
  
 SWSet( _GER_EMPRESA, IF( AT( "\0", GDir ) > 0, VAL( SubStr( Gdir, AT( "\0", GDir )+2, 3 ) ), 999 ) ) 
@@ -224,7 +224,7 @@ WHILE .t.
         "",,,COR[6],.F.)) 
    aadd( MENULIST, menunew( 09, 03," 4 Personalizada ",2,COR[11],; 
         "",,,COR[6],.F.)) 
-   @ 13,03 Say Repl( "Ä", 18 ) Color COR[6] 
+   @ 13,03 Say Repl( "ï¿½", 18 ) Color COR[6] 
    aadd( MENULIST, menunew(14,03," 0 Encerramento  ",2,COR[11],; 
         "Execucao da finalizacao do programa.",,,COR[6],.F.)) 
    menumodal(MENULIST,@nTipoAtualizacao ); MENULIST:={} 
@@ -290,7 +290,7 @@ WHILE .t.
                 "",,,COR[6],.F.)) 
            aadd( MENULIST, menunew(07,03," 2 Executar      ",2,COR[11],; 
                 "",,,COR[6],.F.)) 
-           @ 08,03 Say Repl( "Ä", 18 ) Color COR[6] 
+           @ 08,03 Say Repl( "ï¿½", 18 ) Color COR[6] 
            aadd( MENULIST, menunew(09,03," 3 CONFIG.SYS    ",2,COR[11],; 
                 "",,,COR[6],.F.)) 
            aadd( MENULIST, menunew(10,03," 4 AUTOEXEC.BAT  ",2,COR[11],; 
@@ -299,7 +299,7 @@ WHILE .t.
                 "",,,COR[6],.F.)) 
            aadd( MENULIST, menunew(12,03," 6 PDV.INI       ",2,COR[11],; 
                 "",,,COR[6],.F.)) 
-           @ 13,03 Say Repl( "Ä", 18 ) Color COR[6] 
+           @ 13,03 Say Repl( "ï¿½", 18 ) Color COR[6] 
            aadd( MENULIST, menunew(14,03," 0 Encerramento  ",2,COR[11],; 
                 "Execucao da finalizacao do programa.",,,COR[6],.F.)) 
            menumodal(MENULIST,@nOPCAO); MENULIST:={} 
@@ -320,7 +320,7 @@ WHILE .t.
    ENDCASE 
  
 ENDDO 
-Guardiao( "<FIM> Finalizacao do sistema ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" ) 
+Guardiao( "<FIM> Finalizacao do sistema ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" ) 
 fim() 
  
  
@@ -530,7 +530,7 @@ Function AtualExecuta( lAutomatico, nTipoMaquina )
    ENDIF 
  
    IF !lAutomatico 
-      nTipoMaquina:= SWAlerta( "Escolha o tipo de m quina que; est  sendo atualizada", { "Servidor / Mono Usuario", "Esta‡ao da Rede" } ) 
+      nTipoMaquina:= SWAlerta( "Escolha o tipo de mï¿½quina que; estï¿½ sendo atualizada", { "Servidor / Mono Usuario", "Estaï¿½ao da Rede" } ) 
    ENDIF 
  
    IF nTipoMaquina == 1 
@@ -542,7 +542,7 @@ Function AtualExecuta( lAutomatico, nTipoMaquina )
                 EXIT 
              ENDIF 
          NEXT 
-         Aviso( "Backup ser  resguardado na pasta " + cDirBackup ) 
+         Aviso( "Backup serï¿½ resguardado na pasta " + cDirBackup ) 
          Pausa() 
          ScreenRest( cTela ) 
          Aviso( "Realizando backup das informacoes, aguarde...." ) 
@@ -552,7 +552,7 @@ Function AtualExecuta( lAutomatico, nTipoMaquina )
  
       /* 
          Se existir o config.ini e o diretorio for FORTUNA\GENERIC deleta o 
-         arquivo CONFIG.INI pois o mesmo nÆo ‚ necessario nesta pasta 
+         arquivo CONFIG.INI pois o mesmo nï¿½o ï¿½ necessario nesta pasta 
       */ 
       /* Deletar o config.ini do F:\FORTUNA\GENERIC */ 
       IF File( cDirRelatorios-"\CONFIG.INI" )  .AND.; 
@@ -603,7 +603,7 @@ Function AtualExecuta( lAutomatico, nTipoMaquina )
    AtualizaFile(     cDirConfig - "\CONFIG.INI",   cDirInstalacao - "\REPORT\CONFIG.INI", lAutomatico ) 
    AtualizaFile( cDirRelatorios - "\CONFIGUR.SYS", cDirInstalacao - "\REPORT\CONFIGUR.SYS", lAutomatico ) 
  
-   /* Verificar se diretorio de configuracao ‚ diferente do diretorio de relatorios */ 
+   /* Verificar se diretorio de configuracao ï¿½ diferente do diretorio de relatorios */ 
    /* Coloca CONFIG.INI & CONFIGUR.SYS nos moldes atuais */ 
    MEMOWRIT( cDirConfig-"\FILE.CTL", "" ) 
    IF !File( cDirRelatorios-"\FILE.CTL" ) 
@@ -686,7 +686,7 @@ Function AtualExecuta( lAutomatico, nTipoMaquina )
          ENDDO 
       ELSE 
  
-         /* Copia da instalcao caso nÆo exista o arquivo GRUPODBF.DBF */ 
+         /* Copia da instalcao caso nï¿½o exista o arquivo GRUPODBF.DBF */ 
          !COPY "&cDirInstalacao\REPORT\GRUPODBF.DBF" &cArquivo > Nul  
  
       ENDIF 
@@ -812,7 +812,7 @@ Function AtualExecuta( lAutomatico, nTipoMaquina )
           FErase( cDirConfig - "\" - aConfig[ nCt ][ 1 ] ) 
       NEXT 
  
-      /* Exclui arquivos *.UPD, desnecessarios a computadores que nÆo sÆo 
+      /* Exclui arquivos *.UPD, desnecessarios a computadores que nï¿½o sï¿½o 
          responsaveis por atualizacoes do sistema */ 
       aUPD:= DIRECTORY( cDirFortuna - "\*.UPD" ) 
       FOR nCt:= 1 TO LEN( aUPD ) 
@@ -894,7 +894,7 @@ Static Function AtualizaFile( cArquivo, cArqAtual, lAutomatico )
       /* Verifica Configuracoes ja realizadas */ 
       FOR nCt:= 1 TO Len( aConfigNovo ) 
           IF ASCAN( aConfigSis, {|x| ALLTRIM( UPPER( x[ 1 ] ) )==ALLTRIM( UPPER( aConfigNovo[ nCt ][ 1 ] ) ) } ) > 0 
-             aConfigNovo[ nCt ][ 2 ]:= Repl( "°", 60 ) 
+             aConfigNovo[ nCt ][ 2 ]:= Repl( "ï¿½", 60 ) 
           ENDIF 
       NEXT 
  
@@ -933,10 +933,10 @@ Static Function GravaInformacoes( cArquivo, aConfigSis, aConfigNovo )
              cStringVelha:= "$SWSet( " + aConfigSis[ nCt ][ 1 ] + ", " + aConfigSis[ nCt ][ 2 ] + " )" 
           ENDIF 
  
-          /* Caso exista na mesma posicao uma configuracao no novo que nao seja "°°°" 
+          /* Caso exista na mesma posicao uma configuracao no novo que nao seja "ï¿½ï¿½ï¿½" 
              faz a gravacao da mesma no arquivo de configuracoes */ 
           IF LEN( aConfigNovo[ nCt ] ) >= 3 
-             IF !( aConfigNovo[ nCt ][ 2 ]==Repl( "°", 60 ) ) 
+             IF !( aConfigNovo[ nCt ][ 2 ]==Repl( "ï¿½", 60 ) ) 
                 cStringNova:= "" 
                 IF aConfigNovo[ nCt ][ 3 ]==">>>" 
                    cStringNova:= aConfigNovo[ nCt ][ 1 ] 
@@ -1175,8 +1175,8 @@ Function EditaParametro( aArray, nRow, oTb )
   VPBox( 06, 10, 17, 70, "EDICAO DE PARAMETRO", _COR_GET_BOX ) 
   SetColor( _COR_GET_EDICAO ) 
  
-  IF aArray[ nRow ][ 2 ]==Repl( "°", 60 ) 
-     Aviso( "Este parametro nÆo deve ser alterado nesta janela." ) 
+  IF aArray[ nRow ][ 2 ]==Repl( "ï¿½", 60 ) 
+     Aviso( "Este parametro nï¿½o deve ser alterado nesta janela." ) 
      Pausa() 
      ScreenRest( cTela ) 
      SetColor( cCor ) 

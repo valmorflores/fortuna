@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
  
 #Define _SELECAO   "SELECAO." + StrZero( nCodTra, 03, 00 ) 
 #Define _SELGERAL  "PEDSELEC.DBF" 
@@ -82,7 +82,7 @@ Local lDelimiters
     IF CODPED=="INFO    " 
        dData1_:= CTOD( SubStr( DESCRI, 1, 08 ) ) 
        dData2_:= CTOD( SubStr( DESCRI, 9, 08 ) ) 
-       IF NetRlock() 
+       IF netrlock() 
           DBDelete() 
        ENDIF 
     ELSE 
@@ -122,7 +122,7 @@ Local lDelimiters
            CASE nTecla==K_CTRL_F10   ;Calendar() 
            case nTecla==K_DEL 
                 IF Confirma( 0, 0, "Excluir item da relacao?" ) 
-                   IF NetRLock() 
+                   IF netrlock() 
                       DBDelete() 
                    ENDIF 
                 ENDIF 
@@ -158,7 +158,7 @@ Local lDelimiters
                          lIncluir:= .T. 
                          WHILE !EOF() 
                              IF CODPED==StrZero( nCodPed, 8, 0 ) 
-                                IF SWAlerta( "<< DUPLICIDADE DE INFORMACOES >>;Ja existe este pedido selecionado.; O que voce deseja fazer?", { "Incluir Novamente", "NÆo incluir" } )==2 
+                                IF SWAlerta( "<< DUPLICIDADE DE INFORMACOES >>;Ja existe este pedido selecionado.; O que voce deseja fazer?", { "Incluir Novamente", "Nï¿½o incluir" } )==2 
                                    lIncluir:= .F. 
                                    DBGoTo( nReg ) 
                                    oTb:RefreshAll() 
@@ -173,7 +173,7 @@ Local lDelimiters
                          ENDDO 
                          DBGoTo( nReg ) 
                       ELSE 
-                         Aviso( "Pedido nÆo foi gravado neste periodo." ) 
+                         Aviso( "Pedido nï¿½o foi gravado neste periodo." ) 
                          Pausa() 
                          lIncluir:= .F. 
                       ENDIF 
@@ -186,14 +186,14 @@ Local lDelimiters
                 ENDDO 
  
                 IF !LastKey()==K_ESC .AND. PED->( DBSeek( StrZero( nCodPed, 8, 0 ) ) ) 
-                   IF NetRLock() 
+                   IF netrlock() 
                       Replace DESCRI With PED->DESCRI,; 
                               CODPED With PED->CODPED,; 
                               CODCLI With PED->CODCLI 
                    ENDIF 
                    Keyboard Chr( K_INS ) 
                 ELSE 
-                   IF NetRLock() 
+                   IF netrlock() 
                       DBDelete() 
                    ENDIF 
                 ENDIF 
@@ -255,7 +255,7 @@ Local lDelimiters
     IF lImpresso 
        SLC->( DBGoTop() ) 
        WHILE !SLC->( EOF() ) 
-          IF SLC->( NetRLock() ) 
+          IF SLC->( netrlock() ) 
              Replace SLC->HORA__ With TIME(),; 
                      SLC->DATA__ With DATE(),; 
                      SLC->CODTRA With nCodTra 
@@ -369,7 +369,7 @@ Function VisualSelPedido()
                     ENDDO 
                     nReg:= 0 
                     WHILE !GER->( BOF() ) .AND. !Alltrim( GER->CODPED )=="INFO" 
-                       IF GER->( NetRLock() ) 
+                       IF GER->( netrlock() ) 
                           GER->( DBDelete() ) 
                        ENDIF 
                        GER->( DBSkip( -1 ) ) 
@@ -428,15 +428,15 @@ Function VisualSelPedido()
                  VPBox( 15, 30, 19, 70, " Relacao de Selecoes Realizadas ", _COR_GET_BOX ) 
                  @ 17,32 Say "Periodo Entre: [" + DTOC(  dDataIni ) + "]" 
                  @ 17,57 Say " [" + DTOC( dDataFim ) + "]" 
-                 @ 04,32 Say "1Ä" Get nCodTr1 Pict "@R 999" 
-                 @ 05,32 Say "2Ä" Get nCodTr2 Pict "@R 999" 
-                 @ 06,32 Say "3Ä" Get nCodTr3 Pict "@R 999" 
-                 @ 07,32 Say "4Ä" Get nCodTr4 Pict "@R 999" 
-                 @ 08,32 Say "5Ä" Get nCodTr5 Pict "@R 999" 
-                 @ 09,32 Say "6Ä" Get nCodTr6 Pict "@R 999" 
-                 @ 10,32 Say "7Ä" Get nCodTr7 Pict "@R 999" 
-                 @ 11,32 Say "8Ä" Get nCodTr8 Pict "@R 999" 
-                 @ 12,32 Say "9Ä" Get nCodTr9 Pict "@R 999" 
+                 @ 04,32 Say "1ï¿½" Get nCodTr1 Pict "@R 999" 
+                 @ 05,32 Say "2ï¿½" Get nCodTr2 Pict "@R 999" 
+                 @ 06,32 Say "3ï¿½" Get nCodTr3 Pict "@R 999" 
+                 @ 07,32 Say "4ï¿½" Get nCodTr4 Pict "@R 999" 
+                 @ 08,32 Say "5ï¿½" Get nCodTr5 Pict "@R 999" 
+                 @ 09,32 Say "6ï¿½" Get nCodTr6 Pict "@R 999" 
+                 @ 10,32 Say "7ï¿½" Get nCodTr7 Pict "@R 999" 
+                 @ 11,32 Say "8ï¿½" Get nCodTr8 Pict "@R 999" 
+                 @ 12,32 Say "9ï¿½" Get nCodTr9 Pict "@R 999" 
                  READ 
  
                  Priv aTransp:= { nCodTr1, nCodTr2, nCodTr3, nCodTr4,; 

@@ -5,10 +5,10 @@
  
 ==============================================================================*/ 
  
-#include "FORMATOS.CH" 
-#include "VPF.CH" 
-#include "INKEY.CH" 
-#include "BOX.CH" 
+#include "formatos.ch" 
+#include "vpf.ch" 
+#include "inkey.ch" 
+#include "box.ch" 
 #Include "NF.CH" 
 
 #ifdef HARBOUR
@@ -82,7 +82,7 @@ Local cCorRes
                  cTelaRes:=ScreenSave(00,00,24,79) 
                  Aviso( "Aguarde, alterando situacao da nota fiscal...." ) 
                  dbselectar(_COD_NFISCAL) 
-                 if NetRLock(5) 
+                 if netrlock(5) 
                     repl NFNULA with if(NFNULA="*"," ","*") 
                  endif 
                  DBUnlock() 
@@ -92,7 +92,7 @@ Local cCorRes
                  DBSetOrder( 3 ) 
                  DBSeek( pad( "NF: " + StrZero( NF_->NUMERO, 9, 0 ), LEN( DOC___ ) ) )
                  WHILE ALLTRIM( "NF: " + StrZero( NF_->NUMERO, 9, 0 ) ) $ DOC___
-                    IF NetRLock(5) 
+                    IF netrlock(5) 
                        Replace ANULAR with if(ANULAR="*"," ","*")
                     ENDIF 
                     DBUnlockAll() 
@@ -104,7 +104,7 @@ Local cCorRes
                  DBSetOrder( 1 ) 
                  IF dbseek( NF_->NUMERO ) 
                     WHILE CODNF_ == NF_->NUMERO 
-                       IF NetRLock( 5 ) 
+                       IF netrlock( 5 ) 
                           /* Se a duplicata tiver em aberto */ 
                           IF EMPTY( DPA->DTQT__ ) 
                              IF NF_->NFNULA=="*" 
@@ -127,7 +127,7 @@ Local cCorRes
                  DBSetOrder( 5 ) 
                  DBSeek( NF_->NUMERO ) 
                  WHILE CODNF_ == NF_->NUMERO 
-                    IF NetRLock(5) 
+                    IF netrlock(5) 
                        Repl NFNULA with if(NFNULA="*"," ","*") 
                        OPE->( DBSetOrder( 1 ) ) 
                        OPE->( DBSeek( NF_->TABOPE ) ) 
@@ -358,14 +358,14 @@ Local cConRev:= CONREV, nBasIcm:= BASICM, nVlrTot:= VLRTOT, nVlrNot:= VLRNOT,;
  
  
 /* 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ExibeDupLista 
-³ Finalidade  ³ Exibir a lista de produtos da nota fiscal 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ExibeDupLista 
+ï¿½ Finalidade  ï¿½ Exibir a lista de produtos da nota fiscal 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function ExibeDupLista( aDuplicatas ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -442,7 +442,7 @@ Local nNumero:= NUMERO
     If Confirma( , , "Confirma?", , "N" ) 
        Mensagem( "Aguarde, excluindo nota fiscal...." ) 
        aviso("Aguarde, limpando arquivos...",24/2) 
-       IF NetRLock() 
+       IF netrlock() 
           DBDelete() 
        EndIf 
        DBUnlock() 
@@ -466,7 +466,7 @@ Local nNumero:= NUMERO
                    CliInfo( DPA->CLIENT, DPA->VLR___, "+" ) 
                 ENDIF 
  
-                IF NetRlock() 
+                IF netrlock() 
                    DBDelete() 
                 ELSE 
                    Aviso( "Falha na exclusao do arquivo!" ) 
@@ -499,7 +499,7 @@ Local nNumero:= NUMERO
               ENDIF 
               // Controle de Reserva 
               ControleDeReserva( "+", Pad( CODRED, 12 ), QUANT_ ) 
-              IF NetRLock() 
+              IF netrlock() 
                  DBDelete() 
               Endif 
               DBUnlockAll() 
@@ -518,21 +518,21 @@ Local nNumero:= NUMERO
        cNumero:= "NF: " + STRZERO( nNumero, 9, 0 ) 
        IF DBSeek( cNumero, .T. ) 
           WHILE cNumero == LEFT( DOC___, 12 ) 
-             IF NetRLock() 
+             IF netrlock() 
                 DELE 
              ENDIF 
              DBUnlockAll() 
              DBSkip() 
           ENDDO 
        ELSE 
-          // AT A VERSAO 2.9-05 O PROGRAMA DE NOTA FISCAL GRAVAVA 
+          // ATï¿½ A VERSAO 2.9-05 O PROGRAMA DE NOTA FISCAL GRAVAVA 
           // A INFORMACAO COM APENAS 8 DIGITOS. EM 23/JULHO/2003 FOI 
           // FEITA A MODIFICACAO PARA ACEITACAO COM NOVE DIGITOS E ENTAO 
           // FOI FEITO ESTE TESTE 
           cNumero:= "NF: " + STRZERO( nNumero, 8, 0 ) 
           IF DBSeek( cNumero, .T. ) 
              WHILE cNumero == LEFT( DOC___, 12 ) 
-                IF NetRLock() 
+                IF netrlock() 
                    DELE 
                 ENDIF 
                 DBUnlockAll() 
@@ -572,7 +572,7 @@ Local cCor:= SetColor()
   @ 12,43 Say "Base ISSQN....: [" + Tran( ISSQNB, "@E 999,999,999.99" ) + "]" 
   @ 13,43 Say "Aliquota ISSQN: [" + Tran( ISSQNP, "@E 999,999,999.99" ) + "]" 
   @ 14,43 Say "Valor ISSQN...: [" + Tran( ISSQNV, "@E 999,999,999.99" ) + "]" 
-  @ 16,03 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+  @ 16,03 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
   @ 17,03 Say "Valor ICMs.......: ["+tran(VLRICM,"@E 999,999,999.99")+"]" 
   @ 18,03 Say "Condicoes=1,2,3,4: ["+tran(NVEZES,"9")+"]" 
   @ 15,43 Say "%Imp s/Revenda: [" + Tran( PERSRV, "@E 999.99" ) + "]" 
@@ -591,7 +591,7 @@ Local cCor:= SetColor()
   @ 03,36 Say "T.Operacao: " + StrZero( OPE->CODIGO, 3, 0 ) + " - " + PAD( OPE->DESCRI, 21 ) 
   @ 04,36 Say "F.Pagto...: " + StrZero( CND->CODIGO, 3, 0 ) + " - " + PAD( CND->DESCRI, 21 ) 
   @ 05,36 Say "T.Preco...: " + StrZero( PRE->CODIGO, 3, 0 ) + " - " + PAD( PRE->DESCRI, 21 ) 
-  @ 06,36 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+  @ 06,36 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
   @ 07,36 Say "Saida.....: " + DTOC( NF_->SAIDAT ) + " - " + Tran( NF_->SAIHOR, "@R 99:99" ) 
   @ 08,36 Say "Status....: " + IF( nf_->NFNULA==" ", "Ativa     ", "Anulada   " ) 
   DispEnd() 
@@ -600,14 +600,14 @@ Local cCor:= SetColor()
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ BUSCAULTIMA 
-³ Finalidade  ³ Buscar ultima nota de um determinado cliente 
-³ Parametros  ³ 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor P. Flores 
-³ Data        ³ Agosto/2001 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ BUSCAULTIMA 
+ï¿½ Finalidade  ï¿½ Buscar ultima nota de um determinado cliente 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor P. Flores 
+ï¿½ Data        ï¿½ Agosto/2001 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION BuscaUltima( oTb ) 
 Local cTela:= ScreenSave( 23, 00, 24, 79 ) 
@@ -641,14 +641,14 @@ Local cDescri, cDesRes
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ExibeProdLista 
-³ Finalidade  ³ Exibir a lista de produtos da nota fiscal 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ExibeProdLista 
+ï¿½ Finalidade  ï¿½ Exibir a lista de produtos da nota fiscal 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function ExibeProdLista( aProdutos ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 

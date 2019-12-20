@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
 /* PreparaCompFeira */ 
-#include "INKEY.CH" 
+#include "inkey.ch" 
  
 Function PCF 
  
@@ -16,7 +16,7 @@ Priv GDir1, GDir2
  
    @ 05,02 Say "Execute esta operacao preferencialmente no sistema da feira" 
  
-   if Confirma( 0, 0, "Prepara computador quer ser  levado a feira?" ) 
+   if Confirma( 0, 0, "Prepara computador quer serï¿½ levado a feira?" ) 
  
       GDir1:= "\\SERVIDOR\C\FORTUNA\DADOS" 
       GDir2:= "\\FEIRA\C\FORTUN~1\DADOS" 

@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#Include "INKEY.CH" 
-#Include "VPF.CH" 
+#Include "inkey.ch" 
+#Include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Impressora 
-³ Finalidade  ³ Selecionar Configuracao de Impressora 
-³ Parametros  ³ nCodigo = Codigo de caracteres 
-³ Retorno     ³ String com configuracao 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Impressora 
+ï¿½ Finalidade  ï¿½ Selecionar Configuracao de Impressora 
+ï¿½ Parametros  ï¿½ nCodigo = Codigo de caracteres 
+ï¿½ Retorno     ï¿½ String com configuracao 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function Impressora( nCodigo ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -38,7 +38,7 @@ Local nTecla, oTab
    oTab:AUTOLITE:=.f. 
    oTab:dehilite() 
    mensagem("[ENTER]Seleciona") 
-   ajuda("[PGUP][PGDN]["+chr(24)+chr(27)+chr(25)+chr(26)+"]Movimenta‡†o [ESC]Retorna") 
+   ajuda("[PGUP][PGDN]["+chr(24)+chr(27)+chr(25)+chr(26)+"]Movimentaï¿½ï¿½o [ESC]Retorna") 
    setcursor(0) 
    while .t. 
       oTab:colorrect({oTab:ROWPOS,1,oTab:ROWPOS,oTab:COLCOUNT},{2,1}) 

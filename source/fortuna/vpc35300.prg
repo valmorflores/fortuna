@@ -3,14 +3,14 @@
 #include "inkey.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ TABELA DE ROTAS 
-³ Finalidade  ³ Lancamento de Tabela Rotas de Entrega 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 10/09/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ TABELA DE ROTAS 
+ï¿½ Finalidade  ï¿½ Lancamento de Tabela Rotas de Entrega 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 10/09/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function Rotas() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -64,7 +64,7 @@ Local lFlag:= .F.
               nRegistro:= Recno() 
               DBGoTop() 
               WHILE !EOF() 
-                  IF NetRLock() 
+                  IF netrlock() 
                      IF Recno() == nRegistro 
                         Replace SELECT With "*" 
                      ELSE 
@@ -108,14 +108,14 @@ Static Function MostraDados(cTELA)
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IncluiRota 
-³ Finalidade  ³ Inclusao de registros em Contas a Pagar 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IncluiRota 
+ï¿½ Finalidade  ï¿½ Inclusao de registros em Contas a Pagar 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Func IncluiRota( oTab ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -133,7 +133,7 @@ Static Func IncluiRota( oTab )
   IF nCodigo == 1 
      IF !DBSeek( 0 ) 
         DBAppend() 
-        IF NetRLock() 
+        IF netrlock() 
            Replace CODIGO With 0,; 
                    DESCRI With "TABELA PADRAO" 
         ENDIF 
@@ -151,7 +151,7 @@ Static Func IncluiRota( oTab )
            COR[16]+","+COR[18]+",,,"+COR[17]) 
            IF DBSeek( nCodigo ) 
               cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-              Aviso( "Codigo de lancamento ser  substituido" ) 
+              Aviso( "Codigo de lancamento serï¿½ substituido" ) 
               Pausa() 
               ScreenRest( cTelaRes ) 
               DBGoBottom() 
@@ -188,14 +188,14 @@ Static Func IncluiRota( oTab )
   Return nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ALTERARota 
-³ Finalidade  ³ Alteracao de Rotas 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ALTERARota 
+ï¿½ Finalidade  ï¿½ Alteracao de Rotas 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function AlteraRota( oTab ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -216,7 +216,7 @@ Function AlteraRota( oTab )
      If confirma(12,63,"Confirma?",; 
         "Digite [S] para confirmar o cadastramento.","S",; 
         COR[16]+","+COR[18]+",,,"+COR[17]) 
-        If NetRLock() 
+        If netrlock() 
            repl DESCRI With cDescri 
         EndIf 
         dbUnlockAll() 
@@ -236,14 +236,14 @@ Function AlteraRota( oTab )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Selecao da Tabela de Rota 
-³ Finalidade  ³ 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Selecao da Tabela de Rota 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function TabelaRota() 
   Local nArea:= Select() 

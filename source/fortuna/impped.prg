@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
 
-#include "VPF.CH"
+#include "vpf.ch"
 
 #ifdef HARBOUR
 function impped()

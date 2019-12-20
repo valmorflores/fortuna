@@ -1,16 +1,16 @@
 ## CL2HB.EXE - Converted
-#Include "INKEY.CH" 
-#Include "VPF.CH" 
+#Include "inkey.ch" 
+#Include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VPC12300 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VPC12300 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */
 
 #ifdef HARBOUR
@@ -36,7 +36,7 @@ Local cContaT:= cContaR:= cContaD:= cCaixa:= "N"
         DBSelectAr( _COD_MOVIMENTO ) 
         DBGoTop() 
         WHILE !EOF() 
-            IF NetRlock() 
+            IF netrlock() 
                Dele 
             ENDIF 
             DBSkip() 
@@ -46,7 +46,7 @@ Local cContaT:= cContaR:= cContaD:= cCaixa:= "N"
      IF cContaT $ "Ss" 
         DBGoTop() 
         WHILE !EOF() 
-           IF NetRLock() 
+           IF netrlock() 
               Replace SALDO_ With 0 
            ENDIF 
            DBSkip() 
@@ -56,7 +56,7 @@ Local cContaT:= cContaR:= cContaD:= cCaixa:= "N"
      IF cContaT $ "Ss" 
         DBGoTop() 
         WHILE !EOF() 
-           IF NetRLock() 
+           IF netrlock() 
               Replace SALDO_ With 0 
            ENDIF 
            DBSkip() 
@@ -66,7 +66,7 @@ Local cContaT:= cContaR:= cContaD:= cCaixa:= "N"
      IF cContaT $ "Ss" 
         DBGoTop() 
         WHILE !EOF() 
-           IF NetRLock() 
+           IF netrlock() 
               Replace SALDO_ With 0 
            ENDIF 
            DBSkip() 

@@ -6,8 +6,8 @@
 * Data        - 27/Marco/1995 
 * Atualizacao - 
 */ 
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
 /* 
 menu de verificacao 
 */ 
@@ -175,13 +175,13 @@ While .T.
       Enddo 
       SetColor( _COR_GET_EDICAO ) 
       @ 01,02 Say "Produto...: [" + cDescricao + "]" 
-      @ 02,01 Say "дддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд" 
-      @ 03,02 Say "Codificфo.: [" + Tran( Left( CProd_, 7 ), "@R 999-9999" ) + "]     Codigo de Fabrica: [" + cCodFab + "]" 
+      @ 02,01 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
+      @ 03,02 Say "CodificО©╫o.: [" + Tran( Left( CProd_, 7 ), "@R 999-9999" ) + "]     Codigo de Fabrica: [" + cCodFab + "]" 
       @ 04,02 Say "Fabricante: [" + cCodOrigem + "]-[" + cOrigem + "]" 
       @ 05,02 Say "Fornecedor: [" + StrZero( nFornecedor, 3, 0 ) + "]-[" + cFornecedor + "]" 
-      @ 06,01 Say "дддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд" 
+      @ 06,01 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
       @ 07,02 Say "Saldo.....: [" + Tran( nSaldo, "@E 999,999.9999" ) + "]" 
-      @ 08,02 Say "Pre┤o.....: [" + Tran( nPrecoVenda, "@E 999,999.9999" ) + "]" 
+      @ 08,02 Say "PreО©╫o.....: [" + Tran( nPrecoVenda, "@E 999,999.9999" ) + "]" 
       SetColor( _COR_BROWSE ) 
       nTECLA:=inkey(0) 
       If nTecla=K_ESC .OR. nTecla=K_ENTER 
@@ -287,12 +287,12 @@ While .T.
       @ 02,02 Say "Telefone...: [" + cFone1 + "]" 
       @ 03,02 Say "Vendador...: [" + cVendador + "]" 
       @ 04,02 Say "Responsavel: [" + cResponsavel + "]" 
-      @ 05,02 Say "дддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд" 
+      @ 05,02 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
       @ 06,02 Say "Produto....: [" + MPR->DESCRI + " " + MPR->UNIDAD + "]" 
       @ 07,02 Say "Cod.Fabrica: [" + MPR->CODFAB + "]" 
       @ 08,02 Say "Fabricante.: [" + MPR->ORIGEM + "]" 
       @ 09,02 Say "Saldo......: [" + Tran( MPR->SALDO_, "@E 999,999.9999" ) + "]" 
-      @ 10,02 Say "Pre┤o......: [" + Tran( MPR->PRECOV, "@E 999,999.9999" ) + "]" 
+      @ 10,02 Say "PreО©╫o......: [" + Tran( MPR->PRECOV, "@E 999,999.9999" ) + "]" 
       SetColor( _COR_BROWSE ) 
       nTECLA:=inkey(0) 
       If nTecla=K_ESC .OR. nTecla=K_ENTER 
@@ -373,7 +373,7 @@ WHILE LastKey() <> K_ESC
      SetColor( _COR_GET_EDICAO ) 
      @ 02,03 Say "Produto......:" Get cGrupo_ Pict "999" Valid PCPVerGru( cGrupo_, @cCodigo ) 
      @ 02,23 Say "-" 
-     @ 02,24 Get cCodigo Pict "9999" Valid PCPVerCod( cCodigo, GetList ) when mensagem("Digite o c╒digo do produto.") 
+     @ 02,24 Get cCodigo Pict "9999" Valid PCPVerCod( cCodigo, GetList ) when mensagem("Digite o cО©╫digo do produto.") 
      @ 03,03 Say "Cod.Movimento:" Get nMovEst Pict "@R 99" Valid VerTabOperacoes( @nMovEst, @nNatOpe, @cEntSai, @cCliFor ) 
      @ 04,03 Say "Nat.Operacao.:" Get nNatOpe Pict "@E 9.999" 
      @ 05,03 say "Ent/Saida....:" Get cEntSai pict "!"  valid cENTSAI$"+-" when mensagem("Digite (+) para entradas ou (-) para saida.") 
@@ -432,14 +432,14 @@ ENDIF
 Return .T. 
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё vertabOperacoes 
-Ё Finalidade  Ё Busca tabela de operacoes 
-Ё Parametros  Ё 
-Ё Retorno     Ё 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ vertabOperacoes 
+О©╫ Finalidade  О©╫ Busca tabela de operacoes 
+О©╫ Parametros  О©╫ 
+О©╫ Retorno     О©╫ 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Static Function VerTabOperacoes( nMovEst, nNatOpe, cEntSai, cCliFor ) 
 IF !LastKey() == K_UP 
@@ -514,11 +514,11 @@ EndIf
            Case nTECLA==K_CTRL_PGUP  ;oTBROWSE:GoTop() 
            Case nTECLA==K_CTRL_PGDN  ;oTBROWSE:GoBottom() 
            Case Chr( nTecla ) == "*" 
-                IF NetRLock() .AND. ANULAR == " " 
+                IF netrlock() .AND. ANULAR == " " 
                    Replace ANULAR With "*" 
                    MPR->( DBSetOrder( 1 ) ) 
                    MPR->( DBSeek( PCE->CPROD_ ) ) 
-                   IF MPR->( NetRLock() ) 
+                   IF MPR->( netrlock() ) 
                       IF PCE->ENTSAI == "+" 
                          Replace MPR->SALDO_ With MPR->SALDO_ - PCE->QUANT_,; 
                                  MPR->SDOVLR With MPR->SDOVLR - PCE->CUSMED,; 
@@ -737,14 +737,14 @@ Stat Func PCPSelFor(nCODIGO)
  
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё PCPVerGru 
-Ё Finalidade  Ё Pesquisar um grupo especifico. 
-Ё Parametros  Ё cGrupo_ => Codigo do grupo 
-Ё Retorno     Ё cCodigo => Codigo do produto a ser retornado. 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 04/Dezembro/1995 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ PCPVerGru 
+О©╫ Finalidade  О©╫ Pesquisar um grupo especifico. 
+О©╫ Parametros  О©╫ cGrupo_ => Codigo do grupo 
+О©╫ Retorno     О©╫ cCodigo => Codigo do produto a ser retornado. 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 04/Dezembro/1995 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Static Function PCPVerGru( cGrupo_, cCodigo ) 
    LOCAL nArea:= Select(), nOrdem:= IndexOrd() 
@@ -769,14 +769,14 @@ Static Function PCPVerGru( cGrupo_, cCodigo )
  
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё PCPVerCod 
-Ё Finalidade  Ё Pesquisar a existencia de um codigo igual ao digitado 
-Ё Parametros  Ё cCodigo=> Codigo digitado pelo usu═rio 
-Ё Retorno     Ё 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 04/Dezembro/1995 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ PCPVerCod 
+О©╫ Finalidade  О©╫ Pesquisar a existencia de um codigo igual ao digitado 
+О©╫ Parametros  О©╫ cCodigo=> Codigo digitado pelo usuО©╫rio 
+О©╫ Retorno     О©╫ 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 04/Dezembro/1995 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Static Function PCPVerCod( cCodigo, GetList ) 
    LOCAL cGrupo_:= GetList[ 1 ]:VarGet() 
@@ -791,7 +791,7 @@ Static Function PCPVerCod( cCodigo, GetList )
    DBSetOrder( 1 ) 
    If !DBSeek( cGrupo_ + cCodigo + Space( 5 ) ) 
       Ajuda("[Enter]Continua") 
-      Aviso( "C╒digo n└o existente neste grupo...", 24 / 2 ) 
+      Aviso( "CО©╫digo nО©╫o existente neste grupo...", 24 / 2 ) 
       Mensagem( "Pressione qualquer tecla para ver lista..." ) 
       VisualProdutos( cGrupo_ + cCodigo ) 
       SetColor( cCor ) 
@@ -815,14 +815,14 @@ Static Function PCPVerCod( cCodigo, GetList )
  
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё PCPPesq 
-Ё Finalidade  Ё Pesquisar o codigo do produto no banco de dados. 
-Ё Parametros  Ё cCodigo => Codigo do Produto 
-Ё Retorno     Ё .F.>Nao encontrou / .T.>Encontrou 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 29/Novembro/1995 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ PCPPesq 
+О©╫ Finalidade  О©╫ Pesquisar o codigo do produto no banco de dados. 
+О©╫ Parametros  О©╫ cCodigo => Codigo do Produto 
+О©╫ Retorno     О©╫ .F.>Nao encontrou / .T.>Encontrou 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 29/Novembro/1995 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Static Function PCPPesq( cCodigo ) 
 LOCAL nArea:= Select(), nOrdem:= IndexOrd(), lResultado 
@@ -836,15 +836,15 @@ LOCAL nArea:= Select(), nOrdem:= IndexOrd(), lResultado
    Return( lResultado ) 
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё PCPExiEst 
-Ё Finalidade  Ё Apresentar os dados do registro setado no momento 
-Ё Parametros  Ё lTela=> Se for para exibir (.T.)Tela (.F.)Dados 
-Ё Retorno     Ё Nil 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 20/Janeiro/1996 
-Ё Atualizacao Ё 21/Janeiro/1996 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ PCPExiEst 
+О©╫ Finalidade  О©╫ Apresentar os dados do registro setado no momento 
+О©╫ Parametros  О©╫ lTela=> Se for para exibir (.T.)Tela (.F.)Dados 
+О©╫ Retorno     О©╫ Nil 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 20/Janeiro/1996 
+О©╫ Atualizacao О©╫ 21/Janeiro/1996 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 FUNCTION PCPExiEst( lTela ) 
    LOCAL cCor:= SetColor() 
@@ -880,10 +880,10 @@ FUNCTION PCPExiEst( lTela )
       CLI->( DBSeek( nCodigo ) ) 
       FOR->( DBSeek( nCodigo ) ) 
       @ 06,31 Say IF( OPE->CLIFOR=="C", CLI->DESCRI, FOR->DESCRI ) 
-      @ 09,55 Say "здCalculo de Impostosд©" 
-      @ 10,55 Say "Ё ICMs - " + Tran( VLRICM, "@E 9,999,999.99" ) + " Ё" 
-      @ 11,55 Say "Ё IPI  - " + Tran( VLRIPI, "@E 9,999,999.99" ) + " Ё" 
-      @ 12,55 Say "юддддддддддддддддддддды" 
+      @ 09,55 Say "О©╫О©╫Calculo de Impostosд©" 
+      @ 10,55 Say "О©╫ ICMs - " + Tran( VLRICM, "@E 9,999,999.99" ) + " О©╫" 
+      @ 11,55 Say "О©╫ IPI  - " + Tran( VLRIPI, "@E 9,999,999.99" ) + " О©╫" 
+      @ 12,55 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
    ENDIF 
    SetColor( cCor ) 
    Return Nil 

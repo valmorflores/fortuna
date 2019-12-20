@@ -6,8 +6,8 @@
 * Data        - 10/Outubro/1994 
 * Atualizacao - 09/Novembro/1994 
 */ 
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
 
 #ifdef HARBOUR
 function vpc21000()
@@ -28,10 +28,10 @@ whil .t.
         "Inclusao, alteracao e exclusao de grupos de classificacao de produtos.",,,COR[6],.F.)) 
    aadd(MENULIST,menunew(09,35," 5 Similaridade   ",2,COR[11],; 
         "Similaridade entre produtos.",,,COR[6],.F.)) 
-                   @ 10,35 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+                   @ 10,35 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
    aadd(MENULIST,menunew(11,35," 6 Pesquisas      ",2,COR[11],; 
         "Verificacao de produtos, montagem e servicos.",,,COR[6],.F.)) 
-                   @ 12,35 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+                   @ 12,35 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
    aadd(MENULIST,menunew(13,35," 7 Ajustes        ",2,COR[11],; 
         "Ajuste de saldos em estoque e codigo barras.",,,COR[6],.F.)) 
    aadd(MENULIST,menunew(14,35," 8 Complemento    ",2,COR[11],; 
@@ -109,14 +109,14 @@ return nil
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 stat func incluiGrupo(oOBJ) 
 Loca cTELA:=SCREENSAVE(00,00,24,79), nCURSOR:=SetCursor(),; 
@@ -156,7 +156,7 @@ Whil LastKey()<>K_ESC
    Read 
    If Lastkey()<>K_ESC 
       DBAppend() 
-      If NetRlock() 
+      If netrlock() 
          Repl CODIGO With strzero(val(cCodigo),3),; 
               DESCRI With cDESCRI,; 
               DESMAX With nDesconto,;
@@ -200,7 +200,7 @@ VPBOX( 02, 15, 11, 74, "Tabela de Grupos", _COR_GET_BOX, .T., .T., _COR_GET_TITU
 @ 10,16 Say "   Classe/Giro [D]: " Get nMargemD Pict "@EZ 999,999.999"
 READ
 If Lastkey()<>K_ESC
-   If NetRlock() 
+   If netrlock() 
       Repl CODIGO With cCodigo,; 
            DESCRI With cDescri,; 
            DESMAX With nDesconto,;
@@ -276,14 +276,14 @@ setcursor(nCURSOR)
 return nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ AJUSTES 
-³ Finalidade  ³ Ajustar campos / saldo e Cod Barras 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ AJUSTES 
+ï¿½ Finalidade  ï¿½ Ajustar campos / saldo e Cod Barras 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 STATIC FUNCTION Ajustes() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -426,7 +426,7 @@ whil .t.
            nDiferenca:= nSaldoF - nSaldoM 
            /* Gravacao */ 
            IF ! LastKey() == K_ESC 
-              IF NetRLock() 
+              IF netrlock() 
                  Replace SALDO_ With nSaldo_,; 
                          RESERV With nReserv 
                  AtualizaTabPreco( MPR->INDICE, MPR->DESCRI, MPR->CODFAB ) 
@@ -442,7 +442,7 @@ whil .t.
  
            IF nDiferenca > 0 
               EST->( DBAppend() ) 
-              IF EST->( NetRLock() ) 
+              IF EST->( netrlock() ) 
                  Replace EST->CPROD_ With MPR->INDICE,; 
                          EST->CODRED With MPR->INDICE,; 
                          EST->QUANT_ With nDiferenca,; 
@@ -476,7 +476,7 @@ whil .t.
            nSaldo_:= Saldo_ 
  
            IF MPR->RESERV < 0 
-              IF MPR->( NetRlock() ) 
+              IF MPR->( netrlock() ) 
                  Replace MPR->RESERV With 0 
               ENDIF 
               MPR->( DBUnlock() ) 
@@ -499,7 +499,7 @@ whil .t.
  
            /* Gravacao */ 
            IF ! LastKey() == K_ESC 
-              IF NetRLock() 
+              IF netrlock() 
                  Replace CodFab With cCodFab,; 
                          Saldo_ With nSaldo_,; 
                          Comis_ With cComis_,; 

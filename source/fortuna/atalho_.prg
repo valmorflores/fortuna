@@ -1,18 +1,18 @@
 // ## CL2HB.EXE - Converted
-#Include "Inkey.Ch" 
-#Include "VPF.Ch" 
+#Include "inkey.ch" 
+#Include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ATALHO 
-³ Finalidade  ³ Apresentar um atalho e permitir que o usuario acesse 
-³             ³ o modulo a partir deste, podendo tambem definir atalhos 
-³             ³ especificos 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ (  <-: ) 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ATALHO 
+ï¿½ Finalidade  ï¿½ Apresentar um atalho e permitir que o usuario acesse 
+ï¿½             ï¿½ o modulo a partir deste, podendo tambem definir atalhos 
+ï¿½             ï¿½ especificos 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (  <-: ) 
 */ 
 Function Atalho( cAtalho ) 
    LOCAL cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -32,8 +32,8 @@ Function Atalho( cAtalho )
    // aAtalhos:= { { nLin, nCol, cDescricao, cIcon, cLocalDestino } } 
  
    // Exemplo de matriz 
-   // { { 03, 02, "Clientes", "ìí", "CliInclusao()" },; 
-   // { 05, 02, "Materia-Prima", "ðñ", "MprInclusao()" } } 
+   // { { 03, 02, "Clientes", "ï¿½ï¿½", "CliInclusao()" },; 
+   // { 05, 02, "Materia-Prima", "ï¿½ï¿½", "MprInclusao()" } } 
  
    DBSelectAr( _COD_ATALHO ) 
    DBGoTop() 
@@ -43,7 +43,7 @@ Function Atalho( cAtalho )
    ENDDO 
  
    /* Colocacao de informacoes internas */ 
-   AAdd( aAtalhos, { 23, 02, "[ Criar Atalho p/ este m¢dulo ]", " ", "GERENCIAL", 1 } ) 
+   AAdd( aAtalhos, { 23, 02, "[ Criar Atalho p/ este mï¿½dulo ]", " ", "GERENCIAL", 1 } ) 
  
  
    WHILE .T. 
@@ -70,7 +70,7 @@ Function Atalho( cAtalho )
       IF !( nOpcao == 0 ) 
          M->Variavel:= aAtalhos[ nOpcao ][ 5 ] 
  
-         /* se a informacao for gerencial, executa neste m¢dulo mesmo. */ 
+         /* se a informacao for gerencial, executa neste mï¿½dulo mesmo. */ 
          IF m->Variavel == "GERENCIAL" 
  
             /* Salva a tela atual */ 
@@ -81,7 +81,7 @@ Function Atalho( cAtalho )
                     VPBox( 10, 10, 16, 70, " Inclusao de Atalho ", "15/01" ) 
                     SetColor( "15/01,01/15" ) 
                     cModulo:= PAD( ProcName( 4 ) + "()", 20 ) 
-                    cIcone:= "°°" 
+                    cIcone:= "ï¿½ï¿½" 
                     @ 11,12 Say "Descricao do Atalho:" Get cDescricao 
                     @ 12,12 Say "Modulo (destino)...:" Get cModulo 
                     @ 13,12 Say "Icone..............:" Get cIcone 
@@ -116,7 +116,7 @@ Function Atalho( cAtalho )
             IF lNovo 
                FOR nCt:= 1 TO LEN( aNovo ) 
                    DBAppend() 
-                   IF NetRLock() 
+                   IF netrlock() 
                       Repl ATL->LINHA_ With aNovo[ nCt ][ 1 ],; 
                            ATL->COLUNA With aNovo[ nCt ][ 2 ],; 
                            ATL->DESCRI With aNovo[ nCt ][ 3 ],; 
@@ -168,20 +168,20 @@ EXEMPLO DE APRESENTACAO
 ----------------------------------------->>> 
  
              SISTEMA GERENCIADOR DE ATALHOS 
- µºººººººººººººººººººººººººººººººººººººººººººººººººººººººº¶ 
- ¼                               ¼ Definicoes de Usuarios ½ 
- ¼ ÔÕ Clientes                   ¼                        ½ 
- ¼                               ¼                        ½ 
- ¼ àá Lista Telefonica           ¼                        ½ 
- ¼                               ¼                        ½ 
- ¼ êë Almoxarifado               ¼                        ½ 
- ¼                               ¼                        ½ 
- ¼ ìí Fechamento Mensal          ¼                        ½ 
- ¼                               ¼                        ½ 
- ¼                               ¼                        ½ 
- ¼                               ¼                        ½ 
- ¼                               ¼                        ½ 
- ¸»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»¹ 
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+ ï¿½                               ï¿½ Definicoes de Usuarios ï¿½ 
+ ï¿½ ï¿½ï¿½ Clientes                   ï¿½                        ï¿½ 
+ ï¿½                               ï¿½                        ï¿½ 
+ ï¿½ ï¿½ï¿½ Lista Telefonica           ï¿½                        ï¿½ 
+ ï¿½                               ï¿½                        ï¿½ 
+ ï¿½ ï¿½ï¿½ Almoxarifado               ï¿½                        ï¿½ 
+ ï¿½                               ï¿½                        ï¿½ 
+ ï¿½ ï¿½ï¿½ Fechamento Mensal          ï¿½                        ï¿½ 
+ ï¿½                               ï¿½                        ï¿½ 
+ ï¿½                               ï¿½                        ï¿½ 
+ ï¿½                               ï¿½                        ï¿½ 
+ ï¿½                               ï¿½                        ï¿½ 
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
 */ 
  

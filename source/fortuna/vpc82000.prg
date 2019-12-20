@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ BANCOS 
-³ Finalidade  ³ Distribuir o menu dos bancos 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ BANCOS 
+ï¿½ Finalidade  ï¿½ Distribuir o menu dos bancos 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION Banco() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -22,12 +22,12 @@ Local nOpcao:= 0
    WHILE .T. 
       aadd(MENULIST,menunew(12,36," 1 Bancos       ",2,COR[11],; 
            "Cadastro de bancos.",,,COR[6],.F.)) 
-      aadd(MENULIST,menunew(13,36," 2 Agˆncias     ",2,COR[11],; 
-           "Cadastros de agˆncias.",,,COR[6],.F.)) 
-      @ 14,36 Say  "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+      aadd(MENULIST,menunew(13,36," 2 Agï¿½ncias     ",2,COR[11],; 
+           "Cadastros de agï¿½ncias.",,,COR[6],.F.)) 
+      @ 14,36 Say  "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
       aadd(MENULIST,menunew(15,36," 3 Contas       ",2,COR[11],; 
            "Lancamento de contas correntes.",,,COR[6],.F.)) 
-      @ 16,36 Say  "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+      @ 16,36 Say  "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
       aadd(MENULIST,menunew(17,36," 0 Retorna      ",2,COR[11],; 
            "Retorna ao menu anterior.",,,COR[6],.F.)) 
       menumodal(MENULIST,@nOPCAO); MENULIST:={} 
@@ -120,14 +120,14 @@ return nil
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 stat func IncluiBanco(oOBJ) 
 Loca cTELA:=SCREENSAVE(00,00,24,79), nCURSOR:=SetCursor(),; 
@@ -146,7 +146,7 @@ Whil LastKey()<>K_ESC
    Read 
    If Lastkey()<>K_ESC 
       DBAppend() 
-      If NetRlock() 
+      If netrlock() 
          Repl CODIGO With nCodigo,; 
               DESCRI With cDESCRI 
       Endif 
@@ -184,7 +184,7 @@ Loca cDESCRI:=DESCRI, nCodigo:=Codigo, nSaldo_:= SALDO_, nSldAnter:=0
    ENDIF 
    Read 
    If Lastkey()<>K_ESC 
-      If NetRlock() 
+      If netrlock() 
          Repl CODIGO With nCodigo,; 
               DESCRI With cDescri,; 
               SALDO_ With nSaldo_ 

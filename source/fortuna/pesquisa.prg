@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#Include "Inkey.Ch" 
-#Include "VPF.Ch" 
+#Include "inkey.ch" 
+#Include "vpf.ch" 
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё Pesquisa 
-Ё Finalidade  Ё Pesquisar dados no arquivo 
-Ё Parametros  Ё 
-Ё Retorno     Ё 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 06/Janeiro/1996 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ Pesquisa 
+О©╫ Finalidade  О©╫ Pesquisar dados no arquivo 
+О©╫ Parametros  О©╫ 
+О©╫ Retorno     О©╫ 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 06/Janeiro/1996 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Function DBPesquisa( nTecla, Obj, cDescricao ) 
    Local GetList:= {} 
@@ -157,7 +157,7 @@ Function PesquisaAvancada( cDescricao )
 Local cTela:= ScreenSave( 0, 0, 24, 79 ), cCor:= SetColor() 
 Local oTb, aStr:= {} 
 Local nArea:= Select(), nTecla:= 0 
-Local cStrPadrao:= "╠╠╠ Nao Informado ╠╠╠" 
+Local cStrPadrao:= "О©╫О©╫О©╫ Nao Informado О©╫О©╫О©╫" 
 Local nCont:= 0, nLen:= Len( cDescricao ) 
 Local cTipo:= Nil 
 Local aCampos 
@@ -276,7 +276,7 @@ Local cTelaRes
    oTB:addcolumn( tbcolumnnew(, {|| SubStr( DESCRI, 181, 60 ) } ) ) 
    oTB:addcolumn( tbcolumnnew(, {|| SubStr( DESCRI, 241, 60 ) } ) ) 
    oTB:AUTOLITE:=.f. 
-   oTb:ColSep:= "╟" 
+   oTb:ColSep:= "О©╫" 
    oTB:dehilite() 
    DBSelectAr( nArea ) 
    IF FOUND() 
@@ -370,14 +370,14 @@ Return .T.
  
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё DBLeOrdem 
-Ё Finalidade  Ё Ler a ultima ordem colocada no arquivo 
-Ё Parametros  Ё Nil 
-Ё Retorno     Ё Nil 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 07/Janeiro/1996 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ DBLeOrdem 
+О©╫ Finalidade  О©╫ Ler a ultima ordem colocada no arquivo 
+О©╫ Parametros  О©╫ Nil 
+О©╫ Retorno     О©╫ Nil 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 07/Janeiro/1996 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Function DBLeOrdem() 
   Local nArea:=Select(), cArquivo:=DBF(), nOrdem:=IndexOrd(),; 
@@ -399,27 +399,27 @@ Function DBLeOrdem()
   Return Nil 
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё DBGuardaOrdem 
-Ё Finalidade  Ё Guardar as ordem setadas pelos usuarios do sistema 
-Ё Parametros  Ё Nil 
-Ё Retorno     Ё 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 07/Janeiro/1996 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ DBGuardaOrdem 
+О©╫ Finalidade  О©╫ Guardar as ordem setadas pelos usuarios do sistema 
+О©╫ Parametros  О©╫ Nil 
+О©╫ Retorno     О©╫ 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 07/Janeiro/1996 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Function DBGuardaOrdem() 
   Local nArea:= Select(), cArquivo:= DBF(), nOrdem:= IndexOrd() 
   If UseDBFInfo() 
      If !DBSeek( cArquivo ) 
         DBAppend() 
-        If NetRLock() 
+        If netrlock() 
            Replace DBF->Arquiv With cArquivo, DBF->Ordem_ With nOrdem,; 
                    DBF->UseNam With WUsuario, DBF->Data__ With Date(),; 
                    DBF->Hora__ With Time() 
         EndIf 
      Else 
-        If NetRLock() 
+        If netrlock() 
            Replace DBF->Ordem_ With nOrdem,; 
                    DBF->UseNam With WUsuario, DBF->Data__ With Date(),; 
                    DBF->Hora__ With Time() 
@@ -432,14 +432,14 @@ Function DBGuardaOrdem()
  
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё DBMudaOrdem 
-Ё Finalidade  Ё Mudar a Ordem do arquivo atual ( Utilizada em browse ) 
-Ё Parametros  Ё Nil 
-Ё Retorno     Ё Nil 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 07/Janeiro/1996 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ DBMudaOrdem 
+О©╫ Finalidade  О©╫ Mudar a Ordem do arquivo atual ( Utilizada em browse ) 
+О©╫ Parametros  О©╫ Nil 
+О©╫ Retorno     О©╫ Nil 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 07/Janeiro/1996 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Function DBMudaOrdem( nNovaOrdem, oObj ) 
   If Used() 
@@ -456,24 +456,24 @@ Function DBMudaOrdem( nNovaOrdem, oObj )
  
  
 /***** 
-здддддддддддддддддддддддддддддд©зддддддддддддддддддддддддддддддддддддддддддд© 
-Ё                              ЁЁ Funcoes para utilizacao pelas demais      Ё 
-Ё       ROTINAS INTERNAS       ЁЁ rotinas desta biblioteca                  Ё 
-Ё                              ЁЁ 07/Janeiro/1996                           Ё 
-юддддддддддддддддддддддддддддддыюддддддддддддддддддддддддддддддддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫                              О©╫О©╫ Funcoes para utilizacao pelas demais      О©╫ 
+О©╫       ROTINAS INTERNAS       О©╫О©╫ rotinas desta biblioteca                  О©╫ 
+О©╫                              О©╫О©╫ 07/Janeiro/1996                           О©╫ 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
  
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё UseDbfInfo 
-Ё Finalidade  Ё Abrir arquivo que contem informacoes sobre DBF's 
-Ё             Ё utilizados pelo sistema 
-Ё Parametros  Ё Nil 
-Ё Retorno     Ё Se Utilizado (.T.) 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 07/Janeiro/1996 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ UseDbfInfo 
+О©╫ Finalidade  О©╫ Abrir arquivo que contem informacoes sobre DBF's 
+О©╫             О©╫ utilizados pelo sistema 
+О©╫ Parametros  О©╫ Nil 
+О©╫ Retorno     О©╫ Se Utilizado (.T.) 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 07/Janeiro/1996 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Static Function UseDBFInfo() 
   CriaDBFInfo() 
@@ -492,15 +492,15 @@ Static Function UseDBFInfo()
   Return( Used() ) 
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё CriaDbfInfo 
-Ё Finalidade  Ё Criar arquivo que contem informacoes sobre DBF's 
-Ё             Ё utilizados pelo sistema 
-Ё Parametros  Ё Nil 
-Ё Retorno     Ё Nil 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 07/Janeiro/1996 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ CriaDbfInfo 
+О©╫ Finalidade  О©╫ Criar arquivo que contem informacoes sobre DBF's 
+О©╫             О©╫ utilizados pelo sistema 
+О©╫ Parametros  О©╫ Nil 
+О©╫ Retorno     О©╫ Nil 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 07/Janeiro/1996 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Static Function CriaDBFInfo() 
  

@@ -1,19 +1,19 @@
 // ## CL2HB.EXE - Converted
  
-#include "VPF.CH" 
-#include "INKEY.CH" 
-#include "PTFUNCS.CH" 
-#include "PTVERBS.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
+#include "ptfuncs.ch" 
+#include "ptverbs.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ CONTAS A PAGAR 
-³ Finalidade  ³ Lancamento de Contas a Pagar 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 10/09/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ CONTAS A PAGAR 
+ï¿½ Finalidade  ï¿½ Lancamento de Contas a Pagar 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 10/09/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */
 #ifdef HARBOUR
 function vpc91100
@@ -128,14 +128,14 @@ function vpc91100
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ INCLUIPAGAR 
-³ Finalidade  ³ Inclusao de registros em Contas a Pagar 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ INCLUIPAGAR 
+ï¿½ Finalidade  ï¿½ Inclusao de registros em Contas a Pagar 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 func incluipagar( oTab ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -215,7 +215,7 @@ func incluipagar( oTab )
         DBSelectAr( _COD_PAGAR ) 
         IF DBSeek( nCodigo ) 
            cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-           Aviso( "Codigo de lancamento ser  substituido" ) 
+           Aviso( "Codigo de lancamento serï¿½ substituido" ) 
            Pausa() 
            ScreenRest( cTelaRes ) 
            DBGoBottom() 
@@ -270,14 +270,14 @@ func incluipagar( oTab )
   Return nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ALTERAPAGAR 
-³ Finalidade  ³ Alteracao de Contas a Pagar 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ALTERAPAGAR 
+ï¿½ Finalidade  ï¿½ Alteracao de Contas a Pagar 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function AlteraPagar( oTab ) 
   Loca GETLIST:={} 
@@ -341,7 +341,7 @@ Function AlteraPagar( oTab )
      COR[16]+","+COR[18]+",,,"+COR[17]) 
      /* Gravacao de informacoes em contas a pagar */ 
      DBSelectAr( _COD_PAGAR ) 
-     If NetRLock(5) 
+     If netrlock(5) 
         Repl CODIGO with nCODIGO,; 
              DOC___ with cDOC___,; 
              CODFOR with nCODFOR,; 
@@ -372,14 +372,14 @@ Function AlteraPagar( oTab )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ BAIXAPAGAR 
-³ Finalidade  ³ Baixa de Contas a Pagar 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ BAIXAPAGAR 
+ï¿½ Finalidade  ï¿½ Baixa de Contas a Pagar 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function BaixaPagar( oTab ) 
   Loca GETLIST:={} 
@@ -437,7 +437,7 @@ Function BaixaPagar( oTab )
            DBSelectAr( _COD_PAGAR ) 
  
         ENDDO 
-        IF NetRLock(5) 
+        IF netrlock(5) 
            repl DATAPG with CTOD( "  /  /  " ),; 
                 QUITAD with If(dDATAPG<>ctod("  /  /  "),"S","N"),; 
                 CHEQUE with cCHEQUE,; 
@@ -514,7 +514,7 @@ Function BaixaPagar( oTab )
            ENDIF 
  
         ENDIF 
-        If NetRlock() 
+        If netrlock() 
            repl VALOR_ with nVALOR_, DATAPG with dDATAPG,; 
                 OBSERV with cOBSERV,; 
                 JUROS_ with nJUROS_,; 
@@ -653,7 +653,7 @@ Function BaixaPagar( oTab )
                  if nTOTDIA<>0 
  
                     AADD( aMatriz, { SPAC(80) } ) 
-                    AADD( aMatriz, { REPL("Í",80) } ) 
+                    AADD( aMatriz, { REPL("ï¿½",80) } ) 
  
                     cString:= semana(VENCIM)+", "+; 
                               alltrim(str(day(VENCIM)))+" de "+; 
@@ -668,7 +668,7 @@ Function BaixaPagar( oTab )
                           cString ) } ) 
  
                     nTOTGERAL+=nTOTDIA 
-                    AADD( aMatriz, { repl("Í",80) } ) 
+                    AADD( aMatriz, { repl("ï¿½",80) } ) 
                     nCODFOR:=CODFOR 
                     cDESCRI:=DES->DESCRI 
                     dDATA=VENCIM 
@@ -684,7 +684,7 @@ Function BaixaPagar( oTab )
            dDATA=VENCIM 
            if lIMPRIME 
               AADD( aMatriz, { SPACE(80) } ) 
-              AADD( aMatriz, { STRZERO(CODFOR,4,0) +" "+ ALLTRIM( DES->DESCRI ) + REPL("Ä",80) } ) 
+              AADD( aMatriz, { STRZERO(CODFOR,4,0) +" "+ ALLTRIM( DES->DESCRI ) + REPL("ï¿½",80) } ) 
               lIMPRIME:=.F. 
            endif 
            if QUITAD$cQUITADAS 
@@ -812,7 +812,7 @@ stat func pesqcodigo(nPCODIGO)
         exibedbf() 
      EndIf 
      Ajuda("[TAB]Altera [ESC]Cancela") 
-     Mensagem("Item j  cadastrado, pressione [ENTER] para continuar....") 
+     Mensagem("Item jï¿½ cadastrado, pressione [ENTER] para continuar....") 
      Pausa() 
      ScreenRest(cTELA) 
      dbgoto(nREGISTRO) 
@@ -1023,9 +1023,9 @@ Function VerData(dDATA)
       Dow(dDATA)=1 .OR.; 
       Dow(dDATA)=7 
       If Dow(dDATA)==1 .OR. Dow(dDATA)==7 
-         cMensagem:= "Esta data cair  num fim-de-semana:;Dia da semana: "+SEMANA(dDATA) 
+         cMensagem:= "Esta data cairï¿½ num fim-de-semana:;Dia da semana: "+SEMANA(dDATA) 
       Else 
-         cMensagem:= "Neste dia ser  feriado;"+FER->DESCRI 
+         cMensagem:= "Neste dia serï¿½ feriado;"+FER->DESCRI 
       Endif 
       If DES->ANTPOS=="A" 
          --dDATA 

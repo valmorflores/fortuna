@@ -1,7 +1,7 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
-#include "PTFUNCS.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
+#include "ptfuncs.ch" 
 /* 
 * 
 *      Modulo - VPC21110 
@@ -773,8 +773,8 @@ stat func pesquisa(oPOBJ)
           cCOD:=alltrim(cCOD) 
           cCOD:=strtran(cCOD,"9"," ") 
           vpbox(11,25,13,48,"",COR[20],.T.,.F.,COR[19]) 
-          @ 12,26 say "C¢digo " get cCOD pict "@R "+cxMASCACOD when; 
-            mensagem("Digite o c¢digo para pesquisa.") 
+          @ 12,26 say "Cï¿½digo " get cCOD pict "@R "+cxMASCACOD when; 
+            mensagem("Digite o cï¿½digo para pesquisa.") 
           read 
           mensagem("Executando a pesquisa pelo codigo, aguarde...") 
           cINDICE:=substr(cCOD,_PIGRUPO,_QTGRUPO)+; 

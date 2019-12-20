@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
 /* 
 **      Modulo - VPC875000 
 **  Finalidade - Cadastro DE Agencias (Inc/Alt/Excl) 
@@ -95,7 +95,7 @@ Whil LastKey()<>K_ESC
      Mensagem( "Digite o Codigo.") 
    @ 04,16 Say "Banco.......:" Get nBanco_ Pict "999" Valid PesqBco( @nBanco_ ) when; 
      Mensagem( "Digite o codigo do banco." ) 
-   @ 05,16 Say "N§ Agencia..:" Get cNumero When; 
+   @ 05,16 Say "Nï¿½ Agencia..:" Get cNumero When; 
      Mensagem( "Digite o numero da agencia cfe. tabela fornecida pelo banco." ) 
    @ 06,16 Say "Descricao...:" Get cDESCRI When; 
      Mensagem( "Digite a descricao da Agencia." ) 
@@ -116,7 +116,7 @@ Whil LastKey()<>K_ESC
    Read 
    If Lastkey()<>K_ESC 
       DBAppend() 
-      If NetRlock() 
+      If netrlock() 
          Repl CODIGO With nCODIGO,; 
               DESCRI With cDESCRI,; 
               GERADM With cGerAdm,; 
@@ -158,7 +158,7 @@ SetColor( _COR_GET_EDICAO )
    @ 03,16 Say "Codigo......: [" + StrZero( nCODIGO, 3, 0 ) + "]" 
    @ 04,16 Say "Banco.......:" Get nBanco_ Pict "999" Valid PesqBco( @nBanco_ ) when; 
      Mensagem( "Digite o codigo do banco." ) 
-   @ 05,16 Say "N§ Agencia..:" Get cNumero When; 
+   @ 05,16 Say "Nï¿½ Agencia..:" Get cNumero When; 
      Mensagem( "Digite o numero da agencia cfe. tabela fornecida pelo banco." ) 
    @ 06,16 Say "Descricao...:" Get cDESCRI When; 
      Mensagem( "Digite a descricao da Agencia." ) 
@@ -178,7 +178,7 @@ SetColor( _COR_GET_EDICAO )
      Mensagem( "Digite o contato nesta agencia." ) 
    Read 
    If Lastkey()<>K_ESC 
-      If NetRlock() 
+      If netrlock() 
          Repl CODIGO With nCODIGO,; 
               DESCRI With cDESCRI,; 
               GERADM With cGerAdm,; 

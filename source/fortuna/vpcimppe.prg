@@ -1,7 +1,7 @@
 // ## CL2HB.EXE - Converted
  
-#include "INKEY.CH" 
-#include "VPF.CH" 
+#include "inkey.ch" 
+#include "vpf.ch" 
  
 Function ImportaPedidos 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -173,12 +173,12 @@ Priv GDir1, GDir2
           INDEX ON DESCRI TO IND0202 FOR SELECT <> "OK " 
           CLS 
           @ 0,0 SAY "PROGRAMA DE IMPORTACAO DE INFORMACOES DE FEIRA" 
-          @ 1,0 Say "Í Informacoes "+Repl( "Í", 80 ) 
+          @ 1,0 Say "ï¿½ Informacoes "+Repl( "ï¿½", 80 ) 
           @ 2,0 Say "AUT=Inclusao com nova codificacao automatica no cadastro do FORTUNA" 
-          @ 3,0 Say "...=Codificacao especifica, pois, j  existe no fortuna com outro codigo " 
+          @ 3,0 Say "...=Codificacao especifica, pois, jï¿½ existe no fortuna com outro codigo " 
           @ 4,0 Say "AC =Codigo esta correto embora a descricao nao seja absolutamente igual " 
           @ 5,0 Say "NEW=Codigo e produto nao foram encontrados no FORTUNA e serao cadastrados." 
-          @ 6,0 Say Repl( "Í", 80 ) 
+          @ 6,0 Say Repl( "ï¿½", 80 ) 
  
           @ 21,00 Say " [G] GRAVA INFORMACOES DEFINITIVAMENTE, CUIDADO!!!!!!!                            " Color "15/04" 
           oTB:= TBrowseDB( 07, 01, 20, 78 ) 
@@ -189,7 +189,7 @@ Priv GDir1, GDir2
              oTB:colorrect( { oTB:ROWPOS, 1, oTB:ROWPOS, 1 }, { 2, 1 } ) 
              WHILE !oTB:stabilize() 
              ENDDO 
-             @ 22,01 Say Repl( "Í", 80 ) 
+             @ 22,01 Say Repl( "ï¿½", 80 ) 
              @ 23,05 Say DESCRI 
              @ 24,05 Say SERVER + " >>> " + NOVIND 
              nTecla:= Inkey( 0 ) 
@@ -509,7 +509,7 @@ Priv GDir1, GDir2
                    CLISERV->( DBAppend() ) 
                    aStr:= CLISERV->( dbStruct() ) 
                    FOR nCt:= 1 TO LEN( aStr ) 
-                       IF NetRLock() 
+                       IF netrlock() 
                           cCampo:= aStr[ nCt ][ 1 ] 
                           Replace CLISERV->&cCampo With CLIFEIRA->&cCampo 
                        ENDIF 

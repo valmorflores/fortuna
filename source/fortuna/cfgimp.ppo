@@ -1,6 +1,6 @@
-#line 1 "INKEY.CH"
+#line 1 "inkey.ch"
 #line 2 "/mnt/projetos/dev/source/fortuna/cfgimp.prg"
-#line 1 "VPF.CH"
+#line 1 "vpf.ch"
 #line 3 "/mnt/projetos/dev/source/fortuna/cfgimp.prg"
 
 
@@ -32,7 +32,7 @@ Local nTecla,oTab
    oTab:AUTOLITE:=.f.
    oTab:dehilite()
    mensagem("[ENTER]Seleciona")
-   ajuda("[PGUP][PGDN]["+chr(24)+chr(27)+chr(25)+chr(26)+"]Movimenta‡†o [ESC]Retorna")
+   ajuda("[PGUP][PGDN]["+chr(24)+chr(27)+chr(25)+chr(26)+"]Movimentaï¿½ï¿½o [ESC]Retorna")
    setcursor(0)
    while .t.
       oTab:colorrect({oTab:ROWPOS,1,oTab:ROWPOS,oTab:COLCOUNT},{2,1})

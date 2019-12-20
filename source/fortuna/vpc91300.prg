@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
 
 #ifdef HARBOUR
 function vpc91300()
@@ -118,8 +118,8 @@ return(nil)
   SetColor( _COR_GET_EDICAO ) 
   @ 05,32 SAY "Itervalo: " GET dDATA1 
   @ 05,52 SAY "ate" GET dDATA2 
-  @ 06,32 SAY "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ ATENCAO ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
-  @ 07,32 SAY "Este m¢dulo ‚ respons vel pela compara‡„o" 
+  @ 06,32 SAY "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ATENCAO ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+  @ 07,32 SAY "Este mï¿½dulo ï¿½ responsï¿½vel pela comparaï¿½ï¿½o" 
   @ 08,32 SAY "entre CONTAS A PAGAR e CONTAS  A RECEBER," 
   @ 09,32 SAY "dando como resultado a soma diaria de ca-" 
   @ 10,32 SAY "da uma delas.                            " 
@@ -201,7 +201,7 @@ return(nil)
        ENDIF 
      IF _FIELD->DATAPG == CTOD( "  /  /  " ) 
  
-        /* Acumulado at‚ a data inicial */ 
+        /* Acumulado atï¿½ a data inicial */ 
         IF _FIELD->VENCIM < dData1 .AND.; 
            _FIELD->VALOR_ <> 0 
            nAcumulado-= _FIELD->VALOR_ 
@@ -228,7 +228,7 @@ return(nil)
            Return Nil 
         ENDIF 
       Mensagem("CONTAS A PAGAR: Processando registro #"+strzero(nCT,4,0)+", aguarde...") 
-      /* Somat¢rio de ctas. a pagar p/ vencimento */ 
+      /* Somatï¿½rio de ctas. a pagar p/ vencimento */ 
       IF ( nPOS:= ASCAN( aRESULTADO, {|MATRIZ| MATRIZ[5]=aCTAPAGAR[nCT][2] } ) ) > 0 
          aRESULTADO[nPOS][3]+= aCTAPAGAR[nCT][1] 
          aRESULTADO[nPOS][4]= aRESULTADO[nPOS][2] - aRESULTADO[nPOS][3] 
@@ -256,7 +256,7 @@ return(nil)
            Return Nil 
         ENDIF 
       Mensagem("CONTAS A RECEBER: Processando registro #"+strzero(nCT,4,0)+", aguarde...") 
-      /* Somat¢rio de ctas. a receber p/ vencimento */ 
+      /* Somatï¿½rio de ctas. a receber p/ vencimento */ 
       IF ( nPOS:= ASCAN( aRESULTADO, {|MATRIZ| MATRIZ[5]=aCTARECEB[nCT][2] } ) ) > 0 
          aRESULTADO[nPOS][2]+=aCTARECEB[nCT][1] 
          aRESULTADO[nPOS][4]= aRESULTADO[nPOS][2] - aRESULTADO[nPOS][3] 
@@ -296,8 +296,8 @@ return(nil)
   @ 13,05 SAY "Total a Receber: "+Tran( nARECEB, "@E 999,999,999.99" ) 
   @ 14,05 SAY "Total a Pagar..: "+Tran( nAPAGAR, "@E 999,999,999.99" ) 
   @ 15,05 SAY "Saldo..........: "+Tran( nARECEB-nAPAGAR, "@E 999,999,999.99" ) 
-  @ 16,32 SAY "<< IPI >>ÍÍÍÍÍÍÍÍÍÍÍÍ<< ICMs >>" 
-  @ 17,05 SAY "Cr‚dito........: "+; 
+  @ 16,32 SAY "<< IPI >>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<< ICMs >>" 
+  @ 17,05 SAY "Crï¿½dito........: "+; 
                      Tran( nCREIPI, "@E 999,999,999.99" ) + SPAC( 6 ) + ; 
                      Tran( nCREICM, "@E 999,999,999.99" ) 
   @ 18,05 SAY "Debito.........: "+; 
@@ -321,7 +321,7 @@ return(nil)
      Set(_SET_DELIMITERS,.T.) 
      Return Nil 
   Endif 
-  Mensagem( "[TAB]Imprimir [G]Gr fico. Pressione ESC para sair..." ) 
+  Mensagem( "[TAB]Imprimir [G]Grï¿½fico. Pressione ESC para sair..." ) 
   oTAB:=TBROWSENEW( 03, 05, 11, 72) 
   oTAB:ADDCOLUMN( TBCOLUMNNEW("Data",      {|| aRESULTADO[nROW][5] } ) ) 
   oTAB:ADDCOLUMN( TBCOLUMNNEW("A Receber", {|| Tran( aRESULTADO[nROW][2], "@E 999,999,999.99" ) } ) ) 
@@ -358,7 +358,7 @@ return(nil)
         case CHR( TECLA ) $ "Gg" 
              cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
              cCorRes:= SetColor() 
-             VPBox( 10, 09, 18, 62, "Gr fico de Compara‡ao no dia " + DTOC( aResultado[ nRow ][ 5 ] ), "15/01", .T., .T., "00/15" ) 
+             VPBox( 10, 09, 18, 62, "Grï¿½fico de Comparaï¿½ao no dia " + DTOC( aResultado[ nRow ][ 5 ] ), "15/01", .T., .T., "00/15" ) 
              nIndice:= aResultado[ nRow ][ 2 ] + aResultado[ nRow ][ 3 ] 
              nGrafico1:= ( aResultado[ nRow ][ 2 ] / nIndice ) * 50 
              nGrafico2:= ( aResultado[ nRow ][ 3 ] / nIndice ) * 50 
@@ -367,14 +367,14 @@ return(nil)
              @ 13,11 Say "Contas a Pagar   - " + Tran( aResultado[ nRow ][ 3 ], "@e ***,***,***.**" ) + " " + Str( nGrafico2 * 2, 3, 0 ) + "%" 
              @ 14,11 Say "Resultado        = " + Tran( aResultado[ nRow ][ 4 ], "@e ***,***,***.**" ) 
  
-             @ 15,11 Say Repl( "Ä", 50 ) 
+             @ 15,11 Say Repl( "ï¿½", 50 ) 
              @ 16,11 Say "Representacao grafica" 
              SetColor( "G" ) 
-             @ 12,57 Say Replicate( "Û", 3 ) 
-             @ 17,11 Say Replicate( "Û", nGrafico1 ) 
+             @ 12,57 Say Replicate( "ï¿½", 3 ) 
+             @ 17,11 Say Replicate( "ï¿½", nGrafico1 ) 
              SetColor( "R+" ) 
-             @ Row(), Col() Say Replicate( "±", nGrafico2 ) 
-             @ 13,57 Say Replicate( "±", 3 ) 
+             @ Row(), Col() Say Replicate( "ï¿½", nGrafico2 ) 
+             @ 13,57 Say Replicate( "ï¿½", 3 ) 
              SetCursor( 0 ) 
              keyboard Chr( Inkey(0) ) 
              SetColor( cCorRes ) 

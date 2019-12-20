@@ -38,7 +38,7 @@ Local nCodEmpresa
 Loca WTELA, nOPCAO:=0 
 
 // Compatibilidade com versoes de fontes mais antigos
-Private WUSUARIO:="Usu rio"
+Private WUSUARIO:="Usuï¿½rio"
 Private cUserCode:= ""
 Public _FORTUNA_:= "_VERSAO_"+_VER
 
@@ -213,7 +213,7 @@ IF ! SWSet( _SYS_MOUSE )
 ENDIF 
  
 /* Protecao() */ 
-WSIMNAO:="—xyz•†Š…€‹‚ƒ„†’‡–—" 
+WSIMNAO:="ï¿½xyzï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
 
 SETBLINK(.F.) 
 /* NoCopy() */ 
@@ -276,7 +276,7 @@ CLS
 /* Empresa Selecionada ==== Exibir informacoes na tela */ 
 IF AT( _PATH_SEPARATOR + "0", GDir ) > 0 
    nCodEmpresa:= Val( SubStr( GDir, AT( _PATH_SEPARATOR + "0", GDir )+1, 4 ) ) 
-   /* Abre empresa na area tempor ria 124 */ 
+   /* Abre empresa na area temporï¿½ria 124 */ 
    DBSelectAr( 124 ) 
    cDirEmp:= SWSet( _SYS_DIRREPORT ) + _PATH_SEPARATOR + "empresas.dbf" 
    IF File( cDirEmp ) 
@@ -286,7 +286,7 @@ IF AT( _PATH_SEPARATOR + "0", GDir ) > 0
       Set Index To indice0_.ntx, indice1_.ntx
       IF DBSeek( nCodEmpresa ) 
          @ 00,00 Say Pad( " Empresa Selecionada: " + StrZero( nCodEmpresa, 4, 0 ) + " - " + DESCRI, 80 ) Color "04/15" 
-         @ 01,00 Say Repl( "Í", 80 ) Color "07/00" 
+         @ 01,00 Say Repl( "ï¿½", 80 ) Color "07/00" 
       ENDIF 
       DBCloseArea() 
    ELSE 
@@ -320,7 +320,7 @@ ENDIF
  
 WUSUARIO:=vpsenha() 
 MENULIST:={} 
-Guardiao( "<INICIO> Inicializacao do sistema ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" ) 
+Guardiao( "<INICIO> Inicializacao do sistema ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" ) 
 cPODER:=WPESQSN 
 xFile:= SWSet( _SYS_DIRREPORT ) - _PATH_SEPARATOR - "senhas." + cUserGrupo 
 IF File( xFile ) 
@@ -374,12 +374,12 @@ Static Functio X
 REQUEST DBFCDX
 REQUEST DBFNTX
 
-*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*
+*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*
 * SINTEGRA
 * GERADOR DE INFORMACOES PARA SINTEGRA 
 * Programador - Valmor Pereira Flores 
 * Janeiro de 2004
-*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ* 
+*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½* 
 
 
 
@@ -512,7 +512,7 @@ whil .t.
           SintExporta()
    endcase 
 enddo 
-Guardiao( "<FIM> Finalizacao do sistema ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" ) 
+Guardiao( "<FIM> Finalizacao do sistema ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" ) 
 fim() 
  
  
@@ -724,14 +724,14 @@ Function SintegraSalva()
 Function SintegraLe()
 
 Function SintegraGera()
-     IF SWAlerta( "Gerar informa‡äes da empresa;"  + ;
+     IF SWAlerta( "Gerar informaï¿½ï¿½es da empresa;"  + ;
                    "" + _EMP + ";" + ;
                    " IE: " + SWSet( _SIN_IE ), { "Sim", "Nao" } ) == 1
         Relatorio( "SINTEGRA.REP" )
      ENDIF
 
 Function SintExporta()
-     nOpcao:= SWAlerta( "Gerar informa‡äes da empresa;"  + ;
+     nOpcao:= SWAlerta( "Gerar informaï¿½ï¿½es da empresa;"  + ;
                    "" + _EMP + ";" + ;
                    " IE: " + SWSet( _SIN_IE ), { "A", "B", "C", "D" } )
      IF nOpcao == 1
@@ -787,7 +787,7 @@ function ProdExiste()
    IF TRIM( PNF->CODRED )=="1200025"
       SET( 20, "SCREEN" )
       IF ( LIS->( DBSeek( SUBSTR( PNF->CODRED, 1, 7 ) ) ) ) 
-         Mensagem( "ERRO! Produto j  existente na tabela" )
+         Mensagem( "ERRO! Produto jï¿½ existente na tabela" )
       ELSE
          Mensagem( "ERRO! Produto nao encontrado na tabela, incluir na lista" )
       ENDIF

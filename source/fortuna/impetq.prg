@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#Include "INKEY.CH" 
-#Include "VPF.CH" 
+#Include "inkey.ch" 
+#Include "vpf.ch" 
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё CLIBARRAS 
-Ё Finalidade  Ё Impressao de Codigo de Barras para produtos 
-Ё Parametros  Ё Nil 
-Ё Retorno     Ё Nil 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 08/02/1998 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ CLIBARRAS 
+О©╫ Finalidade  О©╫ Impressao de Codigo de Barras para produtos 
+О©╫ Parametros  О©╫ Nil 
+О©╫ Retorno     О©╫ Nil 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 08/02/1998 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 #ifdef HARBOUR
 function impetq()
@@ -35,9 +35,9 @@ SET DEVICE TO SCREEN
 VPBOX( 0, 0, 11, 79, " Impressao de Etiquetas de Codigo de Barras ", _COR_GET_BOX ) 
 VPBOX( 12, 0, 22, 79, " Informacoes de Impressao ", _COR_GET_BOX ) 
 SetColor( _COR_GET_EDICAO ) 
-@ 01,02 Say "здддддддддддддддддддддддддд©зддддддддддддддддддддддддддд д дддддддд д ддд©" 
-@ 02,02 Say "ЁЁЁшЁЁшЁЁЁЁЁ Formato EAN13 ЁЁ ╟╟╟╠╠╠╡╡ Sistema CodeBarra-BarSys ╡╡╠╠╠╟╟╟ Ё" 
-@ 03,02 Say "юддддддддддддддддддддддддддыюддддддддддддддддддддддддддд д дддддддд д ддды" 
+@ 01,02 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫ О©╫О©╫д©" 
+@ 02,02 Say "О©╫О©╫О©╫шЁО©╫шЁО©╫О©╫О©╫О©╫ Formato EAN13 О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ Sistema CodeBarra-BarSys О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫" 
+@ 03,02 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫ О©╫О©╫О©╫О©╫" 
 @ 04,02 Say "Etiqueta TP (1/2/3/4)...:" Get nEtiqueta Pict "9" 
 READ 
  
@@ -49,7 +49,7 @@ nColuna:= aEtiqueta[ nEtiqueta ][ 5 ]
 cDescricaoEtiqueta:= aEtiqueta[ nEtiqueta ][ 6 ] 
 @ 04,40 Say "Formulario: "  + cDescricaoEtiqueta 
 @ 05,02 Say "Intervalo de Produtos de:" Get cProduto1 Pict "@R 999-9999" 
-@ 05,40 Say "At┌:" Get cProduto2 Pict "@R 999-9999" 
+@ 05,40 Say "AtО©╫:" Get cProduto2 Pict "@R 999-9999" 
 @ 06,02 Say "Quantidade de Etiquetas.:" Get nQuantidade 
 @ 07,02 Say "Impressora..............: EPSON" 
 @ 08,02 Say "Formulario (Colunas)....:" Get nColuna Pict "999" 

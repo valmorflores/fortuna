@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VPC900000 
-³ Finalidade  ³ Menu de Vendas 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VPC900000 
+ï¿½ Finalidade  ï¿½ Menu de Vendas 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */
 #ifdef HARBOUR
 function vpc90000()
@@ -27,7 +27,7 @@ whil .t.
         "Inclusao, alteracao, verificacao e exclusao de pedidos de clientes.",,,; 
         COR[6],.T.)) 
    aadd(MENULIST,menunew( 11,15," 3 Romaneio         ",2,COR[11],; 
-        "ImpressÆo de Romaneio de Saida.",,,; 
+        "Impressï¿½o de Romaneio de Saida.",,,; 
         COR[6],.T.)) 
    aadd(MENULIST,menunew( 12,15," 4 Precos           ",2,COR[11],; 
         "Inclusao, alteracao, verificacao e exclusao de precos de venda.",,,; 
@@ -65,14 +65,14 @@ setcolor(cCOR)
 return(nil) 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ MENUPEDIDO 
-³ Finalidade  ³ Menu p/ lancamento dos pedidos 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ MENUPEDIDO 
+ï¿½ Finalidade  ï¿½ Menu p/ lancamento dos pedidos 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function MenuPedido() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -96,13 +96,13 @@ ELSE
            "Relacao de Pedidos Pendentes por Transportadora (ROTA).",,,COR[6],.T.)) 
       AAdd(MENULIST,menunew( 14, 30, " 4 Manual / Cotacao ",2,COR[ 11 ],; 
            "Inclusao / Alteracao de Cotacoes manualmente.",,,COR[ 6 ],.T.)) 
-      @ 15, 30 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" Color COR[ 11 ] 
+      @ 15, 30 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" Color COR[ 11 ] 
       AAdd(MENULIST,menunew( 16, 30, " 5 Selecao Multipla ",2,COR[ 11 ],; 
            "Seleciona Pedidos p/ Entrega.",,,COR[6],.T.)) 
-      @ 17, 30 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" Color COR[ 11 ] 
+      @ 17, 30 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" Color COR[ 11 ] 
       AAdd(MENULIST,menunew( 18, 30, " 6 Pesquisas        ",2,COR[ 11 ],; 
            "Pesquisas sobre pedidos.",,,COR[6],.T.)) 
-      @ 19, 30 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" Color COR[ 11 ] 
+      @ 19, 30 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" Color COR[ 11 ] 
       AAdd(MENULIST,menunew( 20, 30, " 0 Retorna          ",2,COR[ 11 ],; 
            "Retorna ao menu anterior.",,,COR[6],.T.)) 
       menumodal(MENULIST,@nOPCAO); MENULIST:={} 

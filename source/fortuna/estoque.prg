@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#Include "INKEY.CH" 
-#include "VPF.CH" 
+#Include "inkey.ch" 
+#include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ProdutoCustoMedio 
-³ Finalidade  ³ Retornar o calculo do custo medio de um produto 
-³ Parametros  ³ cProduto= Codigo do produto 
-³ Retorno     ³ nCusMed= Custo medio do produto 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 31/Marco/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ProdutoCustoMedio 
+ï¿½ Finalidade  ï¿½ Retornar o calculo do custo medio de um produto 
+ï¿½ Parametros  ï¿½ cProduto= Codigo do produto 
+ï¿½ Retorno     ï¿½ nCusMed= Custo medio do produto 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 31/Marco/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION ProdutoCustoMedio( cProduto ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -74,14 +74,14 @@ Local nArea:= Select(), nOrdem:= IndexOrd(), nSdoVlr:= 0, nSdoQtd:= 0,;
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IcmMedio 
-³ Finalidade  ³ Retornar o calculo do custo medio de ICM de um produto 
-³ Parametros  ³ cProduto= Codigo do produto 
-³ Retorno     ³ nCusMed= Custo medio do produto 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 31/Marco/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IcmMedio 
+ï¿½ Finalidade  ï¿½ Retornar o calculo do custo medio de ICM de um produto 
+ï¿½ Parametros  ï¿½ cProduto= Codigo do produto 
+ï¿½ Retorno     ï¿½ nCusMed= Custo medio do produto 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 31/Marco/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION IcmMedio( cProduto ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -142,14 +142,14 @@ Local nArea:= Select(), nOrdem:= IndexOrd(), nSdoVlr:= 0, nSdoQtd:= 0,;
    Return nIcmMed 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ UltimoPreco 
-³ Finalidade  ³ Ver ultimo preco do produto 
-³ Parametros  ³ cProduto= Codigo do produto 
-³ Retorno     ³ nCusMed= Custo medio do produto 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 31/Marco/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ UltimoPreco 
+ï¿½ Finalidade  ï¿½ Ver ultimo preco do produto 
+ï¿½ Parametros  ï¿½ cProduto= Codigo do produto 
+ï¿½ Retorno     ï¿½ nCusMed= Custo medio do produto 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 31/Marco/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION UltimoPreco( cProduto ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -191,14 +191,14 @@ Local nArea:= Select(), nOrdem:= IndexOrd(), nSdoVlr:= 0, nSdoQtd:= 0,;
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ OrdensPendentes 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ OrdensPendentes 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function OrdensPendentes( cProduto ) 
 Local nOrdem:= IndexOrd(), nArea:= Select() 
@@ -222,14 +222,14 @@ Return nQtdPendente
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ AtualizaPreco 
-³ Finalidade  ³ Atualizar preco dos produtos com base no preco de custo MEDIO 
-³ Parametros  ³ cProduto 
-³ Retorno     ³ 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ AtualizaPreco 
+ï¿½ Finalidade  ï¿½ Atualizar preco dos produtos com base no preco de custo MEDIO 
+ï¿½ Parametros  ï¿½ cProduto 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function AtualizaPreco( cProduto ) 
 cProduto:= PAD( cProduto, 12 ) 
@@ -240,7 +240,7 @@ IF DBSeek( cProduto )
    Mensagem( " Ajustando P. Venda Produto: " + Alltrim( CODFAB ) + "->" + Alltrim( DESCRI ) + ", aguarde..." ) 
    /* claculando e gravando o preco de venda */ 
    nPrecoVenda:= nCustoMedio + ( ( nCustoMedio * PERCPV ) / 100 ) 
-   IF NetRLock() 
+   IF netrlock() 
       Replace PRECOV With ROUND( nPrecoVenda, 2 ) 
       DBUnlock() 
    ENDIF 
@@ -248,7 +248,7 @@ IF DBSeek( cProduto )
    DBSelectAr( _COD_PRECOXFORN ) 
    DBSetOrder( 1 ) 
    IF DBSeek( cProduto ) 
-      IF NetRLock() 
+      IF netrlock() 
          Replace PVELHO With VALOR_ 
          Replace CPROD_ With cProduto,; 
                  VALOR_ With ROUND( nCustoMedio, 2 ),; 
@@ -258,15 +258,15 @@ IF DBSeek( cProduto )
 ENDIF 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ TiraDoEstoque 
-³ Finalidade  ³ Retirar saldo do arquivo de produtos 
-³ Parametros  ³ cProduto, nQuantidade 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 20/Janeiro/1996 
-³ Atualizacao ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ TiraDoEstoque 
+ï¿½ Finalidade  ï¿½ Retirar saldo do arquivo de produtos 
+ï¿½ Parametros  ï¿½ cProduto, nQuantidade 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 20/Janeiro/1996 
+ï¿½ Atualizacao ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function TiraDoEstoque( cProduto, nQuantidade ) 
    LOCAL nArea:= Select(), nOrdem:= IndexOrd(),; 
@@ -278,7 +278,7 @@ Function TiraDoEstoque( cProduto, nQuantidade )
       /* Ajuste da variavel cProduto para o tamanho original ( 12 ) */ 
       cProduto:= PAD( cProduto, 12 ) 
       IF dbSeek( cProduto ) 
-         IF NetRLock() 
+         IF netrlock() 
             Replace MPR->Saldo_ With ( MPR->SALDO_ - nQuantidade ) 
             GravaLogTmp( "ESTOQUE! " + "Gravacao realizada com sucesso!" + "Em " + DTOC( DATE() ) + "as " + TIME() + " USUARIO:" + StrZero( nGCodUser, 3, 0 ) + Chr( 13 ) + Chr( 10 ) ) 
  
@@ -289,7 +289,7 @@ Function TiraDoEstoque( cProduto, nQuantidade )
                   WHILE ASM->CODPRD == cProduto 
                       DBSelectAr( _COD_MPRIMA ) 
                       IF dbseek( ASM->CODMPR ) 
-                         IF NetRLock() 
+                         IF netrlock() 
                             Replace MPR->SALDO_ With MPR->SALDO_ - ( nQuantidade * ASM->QUANT_ ) 
                          ENDIF 
                       ENDIF 
@@ -301,13 +301,13 @@ Function TiraDoEstoque( cProduto, nQuantidade )
  
          ELSE 
             cTela:= ScreenSave( 0, 0, 21, 79 ) 
-            Aviso( "ESTOQUE: Atualizacao de saida do produto " + ALLTRIM( cProduto ) + " imposs¡vel...", .T. ) 
+            Aviso( "ESTOQUE: Atualizacao de saida do produto " + ALLTRIM( cProduto ) + " impossï¿½vel...", .T. ) 
             GravaLogTmp( "ESTOQUE! " + "Produto nao localizado...." + " USUARIO:" + StrZero( nGCodUser, 3, 0 ) + Chr( 13 ) + Chr( 10 ) ) 
          ENDIF 
          DBUnlock() 
       ELSE 
          cTela:= ScreenSave( 0, 0, 21, 79 ) 
-         Aviso( "ESTOQUE: Atualizacao de saida do produto " + ALLTRIM( cProduto ) + " imposs¡vel...", .T. ) 
+         Aviso( "ESTOQUE: Atualizacao de saida do produto " + ALLTRIM( cProduto ) + " impossï¿½vel...", .T. ) 
          GravaLogTmp( "ESTOQUE! " + "Produto nao localizado...." + " USUARIO:" + StrZero( nGCodUser, 3, 0 ) + " Em " + DTOC( DATE() ) + " as " + TIME() + Chr( 13 ) + Chr( 10 ) ) 
       ENDIF 
    ENDIF 
@@ -317,15 +317,15 @@ Function TiraDoEstoque( cProduto, nQuantidade )
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ PoeNoEstoque 
-³ Finalidade  ³ Colocar saldo no arquivo de produtos 
-³ Parametros  ³ cProduto, nQuantidade 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 20/Janeiro/1996 
-³ Atualizacao ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ PoeNoEstoque 
+ï¿½ Finalidade  ï¿½ Colocar saldo no arquivo de produtos 
+ï¿½ Parametros  ï¿½ cProduto, nQuantidade 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 20/Janeiro/1996 
+ï¿½ Atualizacao ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function PoeNoEstoque( cProduto, nQuantidade ) 
    LOCAL nArea:= Select(), nOrdem:= IndexOrd(), cTela:= ScreenSave( 22, 00, 24, 79 ) 
@@ -336,7 +336,7 @@ Function PoeNoEstoque( cProduto, nQuantidade )
       /* Ajuste da variavel cProduto para o tamanho original ( 12 ) */ 
       cProduto:= cProduto + Space( 12 - Len( cProduto ) ) 
       IF dbSeek( cProduto ) 
-         IF NetRLock() 
+         IF netrlock() 
             Replace MPR->Saldo_ With ( MPR->SALDO_ + nQuantidade ) 
             /* Atualizacao de sub-produtos em caso de 
                venda de um produto montado */ 
@@ -348,7 +348,7 @@ Function PoeNoEstoque( cProduto, nQuantidade )
                   WHILE ASM->CODPRD == cProduto 
                       DBSelectAr( _COD_MPRIMA ) 
                       IF dbseek( ASM->CODMPR ) 
-                         IF NetRLock() 
+                         IF netrlock() 
                             Replace MPR->SALDO_ With MPR->SALDO_ + ( nQuantidade * ASM->QUANT_ ) 
                          ENDIF 
                       ENDIF 
@@ -364,7 +364,7 @@ Function PoeNoEstoque( cProduto, nQuantidade )
          DBUnlock() 
       ELSE 
          cTela:= ScreenSave( 0, 0, 21, 79 ) 
-         Aviso( "ESTOQUE: Atualizacao de Entrada do produto " + cProduto + "nÆo foi poss¡vel...", .T. ) 
+         Aviso( "ESTOQUE: Atualizacao de Entrada do produto " + cProduto + "nï¿½o foi possï¿½vel...", .T. ) 
          GravaLogTmp( "ESTOQUE! " + "Produto nao localizado...." + " USUARIO: " + StrZero( nGCodUser, 3, 0 ) + Chr( 13 ) + Chr( 10 ) ) 
          ScreenRest( cTela ) 
       ENDIF 
@@ -376,17 +376,17 @@ Function PoeNoEstoque( cProduto, nQuantidade )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ LANCEstoque() 
-³ Finalidade  ³ Efetuar os lancamento no movimento de estoque 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÃÄÄÄÄÄÄÄÄÄÄÄÄÄ´ 
-³ Variaveis   ³ cTipoMovimento == "E/S/1/2/3/4" 
-³ Importantes ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ LANCEstoque() 
+ï¿½ Finalidade  ï¿½ Efetuar os lancamento no movimento de estoque 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ 
+ï¿½ Variaveis   ï¿½ cTipoMovimento == "E/S/1/2/3/4" 
+ï¿½ Importantes ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION LancEstoque( cProduto, cCodRed, cEntSai, cDoc, nCodigo, nVlrSdo, ; 
    nValor, nQuant, nRespons, dData, nVlrIcm, nVlrIpi, nVlrFre, nMovEst, ; 
@@ -411,7 +411,7 @@ FUNCTION LancEstoque( cProduto, cCodRed, cEntSai, cDoc, nCodigo, nVlrSdo, ;
  
    IF !( cEntSai $ "+-" ) 
       ScreenRest( cTela ) 
-      nEntSai:= SWAlerta( " << PROBLEMA NO ESTOQUE >>; NÆo esta definida uma operacao para; esta movimentacao com produtos; O que deseja fazer?", { "Dar Saida", "Dar Entrada", "Nao Atualizar Estoque" } ) 
+      nEntSai:= SWAlerta( " << PROBLEMA NO ESTOQUE >>; Nï¿½o esta definida uma operacao para; esta movimentacao com produtos; O que deseja fazer?", { "Dar Saida", "Dar Entrada", "Nao Atualizar Estoque" } ) 
       IF nEntSai==1 
          cEntSai:= "+" 
       ELSE 
@@ -441,7 +441,7 @@ FUNCTION LancEstoque( cProduto, cCodRed, cEntSai, cDoc, nCodigo, nVlrSdo, ;
       IF cEntSai == "+" 
          MPR->( DBSetOrder( 1 ) ) 
          IF MPR->( DBSeek( PAD( cProduto, 12 ) ) ) 
-            IF MPR->( NetRLock() ) 
+            IF MPR->( netrlock() ) 
                Replace MPR->SDOVLR With MPR->SDOVLR + nValor,; 
                        MPR->CUSMED With MPR->SDOVLR / MPR->SALDO_,; 
                        MPR->ENTQTD With MPR->ENTQTD + nQuant,; 
@@ -457,7 +457,7 @@ FUNCTION LancEstoque( cProduto, cCodRed, cEntSai, cDoc, nCodigo, nVlrSdo, ;
       ELSEIF cEntSai == "-" 
          MPR->( DBSetOrder( 1 ) ) 
          IF MPR->( DBSeek( PAD( cProduto, 12 ) ) ) 
-            IF MPR->( NetRLock() ) 
+            IF MPR->( netrlock() ) 
                Replace MPR->SDOVLR With MPR->SDOVLR - ( nQuant * MPR->CUSMED ),; 
                        MPR->SAIQTD With MPR->SAIQTD + nQuant,; 
                        MPR->DTULTS With dData,; 
@@ -587,18 +587,18 @@ Function TabelaMovimento( nCodigo )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ATUALIZACUSTOMEDIO 
-³ Finalidade  ³ Atualizar custo medio dos produtos 
-³             ³ Esta rotina foi baseada em IESTOQUE - cImpEstoque, portanto 
-³             ³ quaisquer modificacoes que a mesma venha a sofrer devera ser 
-³             ³ feita em ambos os modulos p/ que nao hajam diferencas. 
-³             ³ 
-³ Parametros  ³ Nil 
-³ Retorno     ³ 
-³ Programador ³ Valmor Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ATUALIZACUSTOMEDIO 
+ï¿½ Finalidade  ï¿½ Atualizar custo medio dos produtos 
+ï¿½             ï¿½ Esta rotina foi baseada em IESTOQUE - cImpEstoque, portanto 
+ï¿½             ï¿½ quaisquer modificacoes que a mesma venha a sofrer devera ser 
+ï¿½             ï¿½ feita em ambos os modulos p/ que nao hajam diferencas. 
+ï¿½             ï¿½ 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ Valmor Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function AtualizaCustoMedio() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -689,7 +689,7 @@ Local nSdoVlr:= 0, nREGISTROS:=0, nCusUni:= 0, nEntQtd:= 0, nSaiQtd:= 0,;
               IF NCPROD<>CPROD_ .AND. ! EOF() 
                  Mensagem( StrZero(nREGISTROS,4,0)+" Registro(s)" ) 
                  DBSkip( -1 ) 
-                 MPR->( NetRLock() ) 
+                 MPR->( netrlock() ) 
                  Replace MPR->CUSMED With nCusMed 
                  MPR->( DBUnlockAll() ) 
                  DBSkip( +1 ) 
@@ -726,7 +726,7 @@ Local nSdoVlr:= 0, nREGISTROS:=0, nCusUni:= 0, nEntQtd:= 0, nSaiQtd:= 0,;
      ScreenRest( cTela ) 
      Return Nil 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Function fAtuSalPCP (cEntSai, nClasse, nTamCod, nCorCod, nQuant) 
  
@@ -735,7 +735,7 @@ Local nSdoVlr:= 0, nREGISTROS:=0, nCusUni:= 0, nEntQtd:= 0, nSaiQtd:= 0,;
       IF (EAN -> (DBSeek (MPR -> INDICE + STR (nClasse, 3) + ; 
                           STR (nTamCod, 2) + STR (nCorCod, 2))) ; 
                           == .T.) 
-         IF EAN->( NetRlock() ) 
+         IF EAN->( netrlock() ) 
             IF (cEntSai == "-") 
                EAN -> SALDO_ -= nQuant 
             ELSE 
@@ -749,7 +749,7 @@ Local nSdoVlr:= 0, nREGISTROS:=0, nCusUni:= 0, nEntQtd:= 0, nSaiQtd:= 0,;
            STRZERO( VAL( LEFT( EAN->CODIGO, 12 ) ) + 1, 12 )  ) 
          cCodigo+= TWCalcDig ( cCodigo ) 
          EAN -> (DBAppend ()) 
-         IF EAN->( NetRLock () ) 
+         IF EAN->( netrlock () ) 
             EAN->CODIGO := cCodigo 
             EAN->CODPRO := MPR -> INDICE 
             EAN->PCPCLA := nClasse 
@@ -763,7 +763,7 @@ Local nSdoVlr:= 0, nREGISTROS:=0, nCusUni:= 0, nEntQtd:= 0, nSaiQtd:= 0,;
  
    Return (.T.) 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Function fAtuEstPCP(cProduto, cCodRed, cEntSai,  cDoc,    nCodigo, nVlrSdo, ; 
                         nValor,   nQuant,  nRespons, dData,   nVlrIcm, nVlrIpi, ; 
@@ -835,13 +835,13 @@ Local nOrdem:= MPR->( IndexOrd() ), nReg:= MPR->( RECNO() )
                  DBselectar( "MPR" ) 
                  IF DBSeek( cProduto ) 
                     IF RESERV - nQuantidade >= 0 
-                       IF NetRlock() 
+                       IF netrlock() 
                           Replace RESERV With RESERV - nQuantidade 
                           // RESERVA 
                           GravaLogTmp( "ESTOQUE! Reserva (-) " + cProduto + " " + Tran( nQuantidade, "@E 999,999.99" ) + " Usuario:" + StrZero( nGCodUser, 3, 0 ) + " Em " + DTOC( DATE() ) + " as " + TIME() ) 
                        ENDIF 
                     ELSE 
-                       IF NetRLock() 
+                       IF netrlock() 
                           Replace RESERV With 0 
                        ENDIF 
                        // RESERVA 
@@ -852,7 +852,7 @@ Local nOrdem:= MPR->( IndexOrd() ), nReg:= MPR->( RECNO() )
             CASE cMaisMenos=="+" 
                  DBselectar( "MPR" ) 
                  IF DBSeek( cProduto ) 
-                    IF NetRlock() 
+                    IF netrlock() 
                        Replace RESERV With RESERV + nQuantidade 
                        // RESERVA 
                        GravaLogTmp( "ESTOQUE! Reserva (+) " + cProduto + " " + Tran( nQuantidade, "@E 999,999.99" ) + " Usuario:" + StrZero( nGCodUser, 3, 0 ) + " Em " + DTOC( DATE() ) + " as " + TIME() ) 

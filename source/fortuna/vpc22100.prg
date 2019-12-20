@@ -7,8 +7,8 @@
 * Data        - 10/Outubro/1994 
 * Atualizacao - 09/Novembro/1994 
 */ 
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
 
 #ifdef HARBOUR
 function vpc22100()

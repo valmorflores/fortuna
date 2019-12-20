@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
  
-/*****ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Arquivo     ³ VPC37200 
-³ Finalidade  ³ Lancamento de Tabela de Tipos de Contato 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ Maio/2001 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+/*****ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Arquivo     ï¿½ VPC37200 
+ï¿½ Finalidade  ï¿½ Lancamento de Tabela de Tipos de Contato 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ Maio/2001 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */
 #ifdef HARBOUR
 function vpc37200()
@@ -87,14 +87,14 @@ Local lFlag:= .F.
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Selecao 
-³ Finalidade  ³ 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Selecao 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function TabelaMidia( nCodigo ) 
   Local nArea:= Select(), nOrdem:= IndexOrd() 
@@ -172,14 +172,14 @@ Function TabelaMidia( nCodigo )
    Return .T. 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IncluiMIDIA 
-³ Finalidade  ³ Inclusao de registros 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IncluiMIDIA 
+ï¿½ Finalidade  ï¿½ Inclusao de registros 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Func IncluiMIDIA( oTab ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -216,7 +216,7 @@ Static Func IncluiMIDIA( oTab )
            COR[16]+","+COR[18]+",,,"+COR[17]) 
            IF DBSeek( nCodigo ) 
               cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-              Aviso( "Codigo de lancamento ser  substituido" ) 
+              Aviso( "Codigo de lancamento serï¿½ substituido" ) 
               Pausa() 
               ScreenRest( cTelaRes ) 
               dbSetOrder( 1 ) 
@@ -258,14 +258,14 @@ Static Func IncluiMIDIA( oTab )
   Return nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ 
-³ Finalidade  ³ Alteracao de Midias 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ 
+ï¿½ Finalidade  ï¿½ Alteracao de Midias 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function AlteraMidia( oTab ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -286,7 +286,7 @@ Function AlteraMidia( oTab )
  
   IF !LastKey() == K_ESC 
      IF Confirma( 00, 00, "Confirma?","Digite [S] para confirmar o cadastramento.","S" ) 
-        If NetRLock() 
+        If netrlock() 
            Repl DESCRI With cDescri 
         ENDIF 
         dbUnlockAll() 

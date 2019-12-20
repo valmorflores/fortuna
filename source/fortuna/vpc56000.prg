@@ -1,10 +1,10 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
-#include "PTFUNCS.CH" 
-#include "PTVERBS.CH" 
-#include "BOX.Ch" 
-#include "FORMATOS.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
+#include "ptfuncs.ch" 
+#include "ptverbs.ch" 
+#include "box.ch" 
+#include "formatos.ch" 
  
 /* 
  
@@ -113,10 +113,10 @@ function vpc56000()
              cSaida := "V" 
              @ 05,06 Say "Vendedor   " Get nVendedor Pict "999" Valid VenSeleciona( @nVendedor, 1 ) 
              @ 06,06 Say "Emitida de " Get dDataIni 
-             @ 07,06 Say "At‚        " Get dDataFim 
+             @ 07,06 Say "Atï¿½        " Get dDataFim 
              @ 08,06 Say "--------------------------------------" 
              @ 09,06 Say "Numero de  " Get nNumeroIni 
-             @ 10,06 Say "At‚        " Get nNumeroFim 
+             @ 10,06 Say "Atï¿½        " Get nNumeroFim 
              @ 11,06 Say "Saida          (V)ideo (I)mpressora" 
              @ 11,18 get cSaida pict "@!" valid cSaida $ "VI" 
              READ 
@@ -191,7 +191,7 @@ function vpc56000()
              If Confirma( , , "Confirma?", , "N" ) 
                 Mensagem( "Aguarde, excluindo nota fiscal...." ) 
                 aviso("Aguarde, limpando arquivos...",24/2) 
-                IF NetRLock() 
+                IF netrlock() 
                    DBDelete() 
                 EndIf 
                 DBUnlock() 
@@ -215,7 +215,7 @@ function vpc56000()
                             CliInfo( DPA->CLIENT, DPA->VLR___, "+" ) 
                          ENDIF 
  
-                         IF NetRlock() 
+                         IF netrlock() 
                             DBDelete() 
                          ELSE 
                             Aviso( "Falha na exclusao do arquivo!" ) 
@@ -238,7 +238,7 @@ function vpc56000()
                        IF PRECOV > 0 
                           PoeNoEstoque( CODRED, QUANT_ ) 
                        ENDIF 
-                       IF NetRLock() 
+                       IF netrlock() 
                           DBDelete() 
                        Endif 
                        DBUnlockAll() 
@@ -258,7 +258,7 @@ function vpc56000()
                    WHILE AT( "CF:", DOC___ ) > 0 
                       IF AT( STRZERO( nNumero, 9, 0 ), DOC___ ) > 0 .OR.; 
                          AT( STRZERO( nNumero, 6, 0 ), DOC___ ) > 0 
-                         IF NetRLock() 
+                         IF netrlock() 
                             DELE 
                          ENDIF 
                          DBUnlockAll() 
@@ -412,14 +412,14 @@ ScreenRest(cTELA)
 return nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function BuscaUltima( oTb ) 
 Local cTela:= ScreenSave( 23, 00, 24, 79 ) 
@@ -454,26 +454,26 @@ ENDDO
 Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ MostraCupom 
-³ Finalidade  ³ Apresentar informacoes gravadas nocupom fiscal 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ MostraCupom 
+ï¿½ Finalidade  ï¿½ Apresentar informacoes gravadas nocupom fiscal 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function MostraCupom() 
 Local cCor:= SetColor() 
   SetColor( _COR_GET_BOX ) 
   @ 02,03 Say "C U P O M          [" + Tran( StrZero( NUMERO, 9, 0 ), "@R 999-999999" ) +"]" 
-  @ 03,03 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+  @ 03,03 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
   @ 04,03 Say "Data.............: ["+DTOC(DATAEM)+"]" 
   @ 05,03 Say "Cliente..........: ["+strzero(CLIENT,6,0)+"]-[" + CDESCR + "]" 
   @ 06,03 Say "Endereco.........: ["+CENDER + "]" 
   @ 07,03 Say "Bairro...........: ["+CBAIRR + "]" 
   @ 08,03 Say "Cidade...........: ["+CCIDAD + "-" + CESTAD + "] Fone: [" + CFONE2 + "]" 
-  @ 09,03 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+  @ 09,03 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
   @ 10,03 Say "Vend. Interno....: ["+strzero(VENIN_,4,0)+"]" 
   @ 11,03 Say "Vend. Externo....: ["+strzero(VENEX_,4,0)+"]" 
   VEN->( DBSetOrder(1)) 
@@ -481,7 +481,7 @@ Local cCor:= SetColor()
   @ 10,32 Say VEN->DESCRI 
   VEN->( DBSeek( CUP->VENEX_ ) ) 
   @ 11,32 Say VEN->DESCRI 
-  @ 12,03 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+  @ 12,03 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
   @ 13,03 Say "Total Mercadorias: ["+tran(VLRNOT,"@E 999,999,999.99")+"]" 
   @ 14,03 Say "Valor IPI total..: ["+tran(VLRIPI,"@E 999,999,999.99")+"]" 
   @ 15,03 Say "Vlr. total da NF.: ["+tran(VLRTOT,"@E 999,999,999.99")+"]" 
@@ -489,25 +489,25 @@ Local cCor:= SetColor()
   @ 17,03 Say "Valor ICMs.......: ["+tran(VLRICM,"@E 999,999,999.99")+"]" 
   @ 18,03 Say "Condicao Pgto....: ["+tran(NVEZES,"9")+"][" + StrZero( TABCND, 4, 0 ) + "]" 
  
-  @ 14,43 Say "ÚÄInformacoes AdicionaisÄÄÄÄÄÄÄÄÄÄ¿" 
-  @ 15,43 Say "³ " + LEFT( OBSER1, 31 ) + " ³" 
-  @ 16,43 Say "³ " + LEFT( OBSER2, 31 ) + " ³" 
-  @ 17,43 Say "³ " + LEFT( OBSER3, 31 ) + " ³" 
-  @ 18,43 Say "ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ" 
+  @ 14,43 Say "ï¿½ï¿½Informacoes Adicionaisï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿" 
+  @ 15,43 Say "ï¿½ " + LEFT( OBSER1, 31 ) + " ï¿½" 
+  @ 16,43 Say "ï¿½ " + LEFT( OBSER2, 31 ) + " ï¿½" 
+  @ 17,43 Say "ï¿½ " + LEFT( OBSER3, 31 ) + " ï¿½" 
+  @ 18,43 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
  
 SetColor( cCor ) 
 Return(.T.) 
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ExibeDupLista 
-³ Finalidade  ³ Exibir a lista de produtos da nota fiscal 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ExibeDupLista 
+ï¿½ Finalidade  ï¿½ Exibir a lista de produtos da nota fiscal 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function ExibeDupLista( aDuplicatas ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -568,14 +568,14 @@ Local oTab, nTecla, nRow:= 1
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ExibeProdLista 
-³ Finalidade  ³ Exibir a lista de produtos da nota fiscal 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ExibeProdLista 
+ï¿½ Finalidade  ï¿½ Exibir a lista de produtos da nota fiscal 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function ExibeProdLista( aProdutos ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -652,7 +652,7 @@ Local nNumero:= CUP->Numero, dData:= CUP->DATAEM, nVendedor:= CUP->VENIN_,;
       @ 10, 08 Say "Informacoes:" Get cObser1 Pict "@S30" 
       @ 11, 08 Say "            " Get cObser2 Pict "@S30" 
       READ 
-      IF CUP->( NetRLOck() ) 
+      IF CUP->( netrlock() ) 
          Replace CUP->DATAEM With dData,; 
                  CUP->VENIN_ With nVendedor,; 
                  CUP->OBSER1 With cObser1,; 
@@ -664,12 +664,12 @@ Local nNumero:= CUP->Numero, dData:= CUP->DATAEM, nVendedor:= CUP->VENIN_,;
                WHILE !EOF() 
                   IF TIPO__ == "03" .AND. nNumero == CODNF_ 
                      IF !Empty( DTQT__ ) 
-                        IF NetRLock() 
+                        IF netrlock() 
                            Replace DATAEM With dData,; 
                                    DTQT__ With dData 
                         ENDIF 
                      ELSE 
-                        IF NetRLock() 
+                        IF netrlock() 
                            Replace DATAEM With dData 
                         ENDIF 
                      ENDIF 

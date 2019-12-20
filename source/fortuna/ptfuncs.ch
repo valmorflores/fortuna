@@ -1,0 +1,1 @@
+#define LANG_PT "PT-BR"

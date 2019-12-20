@@ -1,17 +1,17 @@
 // ## CL2HB.EXE - Converted
  
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VPC28800 
-³ Finalidade  ³ Cadastro de Condicoes de Pagamento 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VPC28800 
+ï¿½ Finalidade  ï¿½ Cadastro de Condicoes de Pagamento 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */
 #ifdef HARBOUR
 function vpc28800()
@@ -34,7 +34,7 @@ VPBOX( 16, 00, 22, 79, " Display ", _COR_BROW_BOX, .F., .F. )
 SetColor( _COR_GET_EDICAO ) 
 @ 02, 02 Say "Codigo..............: [    ]" 
 @ 03, 02 Say "Descricao...........: [                                        ]" 
-@ 04, 02 Say "% 1§ Parcela........: [      ]" 
+@ 04, 02 Say "% 1ï¿½ Parcela........: [      ]" 
 @ 05, 02 Say "Condicoes (Em dias).: [  0] [  0] [  0] [  0] [  0] [  0] [  0] [  0] [  0]" 
 @ 06, 02 Say "                      [  0] [  0] [  0] [  0] [  0] [  0] [  0] [  0] [  0]" 
 @ 07, 02 Say "                      [  0] [  0] [  0] [  0] [  0] [  0] [  0] [  0]      " 
@@ -42,9 +42,9 @@ SetColor( _COR_GET_EDICAO )
 @ 09, 02 Say "Acrescimo p/ dia....: [   0.0000]" 
 @ 10, 02 Say "Acrescimo s/ tabela.: [  0.00]" 
 @ 11, 02 Say "Desconto s/ tabela..: [  0.00]" 
-@ 12, 02 Say "        Ú Multa.....: [  0.00]" 
-@ 13, 02 Say " ATRASO Ã Juros.....: [  0.00]" 
-@ 14, 02 Say "        À Tolerancia: [  0]" 
+@ 12, 02 Say "        ï¿½ Multa.....: [  0.00]" 
+@ 13, 02 Say " ATRASO ï¿½ Juros.....: [  0.00]" 
+@ 14, 02 Say "        ï¿½ Tolerancia: [  0]" 
 SetColor( _COR_BROWSE ) 
 DBSelectAr( _COD_CONDICOES ) 
  
@@ -139,14 +139,14 @@ Return Nil
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IncluiCondicoes 
-³ Finalidade  ³ Inclusao de Percentual de Comissao na Tabela 
-³ Parametros  ³ Nil 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IncluiCondicoes 
+ï¿½ Finalidade  ï¿½ Inclusao de Percentual de Comissao na Tabela 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function IncluiCondicoes( oTab ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -219,7 +219,7 @@ Local nCodigo:= CODIGO + 1, cDescri:= Space( 40 ),;
                nCodigo:= CODIGO + 1 
             ENDIF 
             DBAppend() 
-            IF NetRLock() 
+            IF netrlock() 
                Replace CODIGO With nCodigo,; 
                        DESCRI With cDescri,; 
                        PERCA_ With nPERCA_,; 
@@ -274,14 +274,14 @@ ENDDO
 Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ AlteraCondicoes 
-³ Finalidade  ³ Inclusao de Percentual de Comissao na Tabela 
-³ Parametros  ³ Nil 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ AlteraCondicoes 
+ï¿½ Finalidade  ï¿½ Inclusao de Percentual de Comissao na Tabela 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function AlteraCondicoes( oTab ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -337,7 +337,7 @@ Local nCodigo:= CODIGO, cDescri:= DESCRI,;
    @ 14, 25 Get nTOLERA Pict "999" 
    READ 
    IF !LastKey() == K_ESC 
-      IF NetRLock() 
+      IF netrlock() 
          Replace DESCRI With cDescri,; 
                  PERCA_ With nPERCA_,; 
                  PARCA_ With nPARCA_,; 
@@ -384,14 +384,14 @@ Local nCodigo:= CODIGO, cDescri:= DESCRI,;
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Selecao da Tabela de Preco 
-³ Finalidade  ³ 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Selecao da Tabela de Preco 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function TabelaCondicoes( nValor ) 
   Local nArea:= Select() 

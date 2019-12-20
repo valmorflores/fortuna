@@ -5,20 +5,18 @@
 ** industrializacao. 
 ** 
  
-#include "VPF.CH" 
-#include "INKEY.CH" 
-#include "PTFUNCS.CH" 
-#include "PTVERBS.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ CLASFISCAL 
-³ Finalidade  ³ Cadastro de Classificacao Fiscal 
-³ Parametros  ³ Nil 
-³ Retorno     ³ NIl 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ CLASFISCAL 
+ï¿½ Finalidade  ï¿½ Cadastro de Classificacao Fiscal 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ NIl 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function ClasFiscal() 
 Local cTela:= ScreenSave( 0, 0, 24, 79 ), nTecla:= 0,; 
@@ -73,14 +71,14 @@ Local nArea:= Select(), nOrdem:= IndexOrd()
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ DisplayClas 
-³ Finalidade  ³ Apresentacao das informacoes na tela 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ DisplayClas 
+ï¿½ Finalidade  ï¿½ Apresentacao das informacoes na tela 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function DisplayClas() 
 Local cCor:= SetColor() 
@@ -93,14 +91,14 @@ Local cCor:= SetColor()
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IncluiClassif 
-³ Finalidade  ³ Inclusao de Classificacao Fiscal 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IncluiClassif 
+ï¿½ Finalidade  ï¿½ Inclusao de Classificacao Fiscal 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 func IncluiClassif( oTb ) 
   loca cTELA:=screensave(00,00,24,79), cCOR:=setcolor(),; 
@@ -150,14 +148,14 @@ func IncluiClassif( oTb )
   Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ AlteraClassif 
-³ Finalidade  ³ Alteracao de Classificacao Fiscal 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ AlteraClassif 
+ï¿½ Finalidade  ï¿½ Alteracao de Classificacao Fiscal 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function AlteraClassif( oTb ) 
   loca cTELA:=screensave(00,00,24,79), cCOR:=setcolor(),; 
@@ -183,7 +181,7 @@ Static Function AlteraClassif( oTb )
   ELSE 
      IF Confirma( 0, 0, "Confirma?", "Digite [S] para confirmar o cadastramento do cliente.",; 
                         "S",COR[16]+","+COR[18]+",,,"+COR[17]) 
-        IF NetRLock() 
+        IF netrlock() 
            Replace CODIGO with nCodigo,; 
                    CODFIS with cCodFis,; 
                    OBSERV with cObserv,; 
@@ -235,8 +233,8 @@ oPOBJ:gotop()
 do case 
    case nOPCAO=1 
         vpbox(11,25,13,48,"",COR[20],.T.,.F.,COR[19]) 
-        @ 12,26 say "C¢digo " get nCOD pict "9999" when; 
-          mensagem("Digite o c¢digo para pesquisa.") 
+        @ 12,26 say "Cï¿½digo " get nCOD pict "9999" when; 
+          mensagem("Digite o cï¿½digo para pesquisa.") 
         read 
         mensagem("Executando a pesquisa pelo codigo, aguarde...") 
         dbsetorder(1) 

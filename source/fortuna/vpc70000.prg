@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ RECEITAS / DESPESAS (Fichas de Movimentacao Financeira) 
-³ Finalidade  ³ Cadastro das Contas de Receita / Despesa 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ RECEITAS / DESPESAS (Fichas de Movimentacao Financeira) 
+ï¿½ Finalidade  ï¿½ Cadastro das Contas de Receita / Despesa 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 
 #ifdef HARBOUR
@@ -94,7 +94,7 @@ WHILE .T.
          case nTecla==K_DEL 
               IF _FIELD->TIPO__="1" 
                  cTELA0:=SCREENSAVE(00,00,24,79) 
-                 Aviso("Este item s¢ podera ser excluido atravez do modulo de fornecedores.",13) 
+                 Aviso("Este item sï¿½ podera ser excluido atravez do modulo de fornecedores.",13) 
                  mensagem("Pressione [ENTER] para continuar....") 
                  Pausa() 
                  SCREENREST(cTELA0) 
@@ -105,7 +105,7 @@ WHILE .T.
          case nTecla==K_ENTER 
               IF _FIELD->TIPO__="1" 
                  cTELA0:=SCREENSAVE(00,00,24,79) 
-                 Aviso("Este item s¢ podera ser alterado atravez do modulo de fornecedores.",13) 
+                 Aviso("Este item sï¿½ podera ser alterado atravez do modulo de fornecedores.",13) 
                  mensagem("Pressione [ENTER] para continuar....") 
                  Pausa() 
                  SCREENREST(cTELA0) 
@@ -199,7 +199,7 @@ Whil LastKey()<>K_ESC
    Read 
    If Lastkey()<>K_ESC 
       DBAppend() 
-      If NetRlock() 
+      If netrlock() 
          Repl CODIGO With nCODIGO,; 
               DESCRI With cDESCRI,; 
               TIPO__ With "0",; 
@@ -218,14 +218,14 @@ Return Nil
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IncluiReceita 
-³ Finalidade  ³ Inclusao de uma nova ficha de receita 
-³ Parametros  ³ otab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IncluiReceita 
+ï¿½ Finalidade  ï¿½ Inclusao de uma nova ficha de receita 
+ï¿½ Parametros  ï¿½ otab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function incluiReceita( oObj ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -248,7 +248,7 @@ Whil LastKey()<>K_ESC
    Read 
    If Lastkey()<>K_ESC 
       DBAppend() 
-      If NetRlock() 
+      If netrlock() 
          Repl CODIGO With nCODIGO,; 
               DESCRI With cDESCRI 
       Endif 
@@ -265,14 +265,14 @@ Return Nil
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ AlteraReceita 
-³ Finalidade  ³ Alteracao de uma conta de Receita 
-³ Parametros  ³ otab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ AlteraReceita 
+ï¿½ Finalidade  ï¿½ Alteracao de uma conta de Receita 
+ï¿½ Parametros  ï¿½ otab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function AlteraReceita( oObj ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -286,7 +286,7 @@ SetCursor( 1 )
   MENSAGEM("Digite a descricao da despesa.") 
 Read 
 If Lastkey()<>K_ESC 
-   If NetRlock() 
+   If netrlock() 
        Repl DESCRI With cDESCRI 
    Endif 
 EndIf 
@@ -317,7 +317,7 @@ SetCursor( 1 )
  valid cANTPOS$"AP " 
 Read 
 If Lastkey()<>K_ESC 
-   If NetRlock() 
+   If netrlock() 
       Repl CODIGO With nCODIGO,; 
            DESCRI With cDESCRI,; 
            ANTPOS With cANTPOS 

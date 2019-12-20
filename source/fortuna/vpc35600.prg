@@ -1,18 +1,18 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
-#include "PTFUNCS.CH" 
-#include "PTVERBS.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
+#include "ptfuncs.ch" 
+#include "ptverbs.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ TABELA DE OBSERVACOES P/ NOTA FISCAL 
-³ Finalidade  ³ Lancamento de Tabela 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 10/09/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ TABELA DE OBSERVACOES P/ NOTA FISCAL 
+ï¿½ Finalidade  ï¿½ Lancamento de Tabela 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 10/09/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */
 #ifdef HARBOUR
 function vpc35600()
@@ -93,14 +93,14 @@ Static Function MostraDados(cTELA)
   Return nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Selecao 
-³ Finalidade  ³ 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Selecao 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function TabelaObservacoes( nCodigo ) 
   Local nArea:= Select() 
@@ -170,14 +170,14 @@ Function TabelaObservacoes( nCodigo )
    Return .F. 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IncluiObservacao 
-³ Finalidade  ³ Inclusao de registros 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IncluiObservacao 
+ï¿½ Finalidade  ï¿½ Inclusao de registros 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Func IncluiObservacao( oTab ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -207,7 +207,7 @@ Static Func IncluiObservacao( oTab )
            COR[16]+","+COR[18]+",,,"+COR[17]) 
            IF DBSeek( nCodigo ) 
               cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-              Aviso( "Codigo de lancamento ser  substituido" ) 
+              Aviso( "Codigo de lancamento serï¿½ substituido" ) 
               Pausa() 
               ScreenRest( cTelaRes ) 
               DBGoBottom() 
@@ -249,14 +249,14 @@ Static Func IncluiObservacao( oTab )
   Return nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ 
-³ Finalidade  ³ Alteracao de Observacoes 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ 
+ï¿½ Finalidade  ï¿½ Alteracao de Observacoes 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function AlteraObservacao( oTab ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -279,7 +279,7 @@ Function AlteraObservacao( oTab )
      If confirma(12,63,"Confirma?",; 
         "Digite [S] para confirmar o cadastramento.","S",; 
         COR[16]+","+COR[18]+",,,"+COR[17]) 
-        If NetRLock() 
+        If netrlock() 
            repl DESCRI With cDescri,; 
                 OBSERV With cObserv 
  

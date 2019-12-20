@@ -1,7 +1,7 @@
 // ## CL2HB.EXE - Converted
  
-#Include "Inkey.Ch" 
-#Include "VPF.Ch" 
+#Include "inkey.ch" 
+#Include "vpf.ch" 
  
 #Define COR_FRENTE    "14/09" 
 #Define COR_BOX       "15/09" 
@@ -58,7 +58,7 @@ Local nLin:= 4, nCol:= 10, nLin1, nCol1, nLin2, nCol2, aStruct, oTb, nTecla,;
  
    /* Teste de falha na abertura */ 
    If !Used() .OR. NetErr() 
-      Mensagem("Arquivo n„o dispon¡vel. Pressione [ENTER] para continuar...") 
+      Mensagem("Arquivo nï¿½o disponï¿½vel. Pressione [ENTER] para continuar...") 
       Ajuda( "[ENTER]Coninua" ) 
       Pausa() 
    Else 
@@ -72,7 +72,7 @@ Local nLin:= 4, nCol:= 10, nLin1, nCol1, nLin2, nCol2, aStruct, oTb, nTecla,;
 // ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
       Set Index to IMPCFG01.INT 
  
-      /* Formata‡„o das vari veis para uso geral */ 
+      /* Formataï¿½ï¿½o das variï¿½veis para uso geral */ 
       nLin1:= nLin 
       nCol1:= nCol 
       nLin2:= nLin + 16 
@@ -87,14 +87,14 @@ Local nLin:= 4, nCol:= 10, nLin1, nCol1, nLin2, nCol2, aStruct, oTb, nTecla,;
       SetColor( COR_LETRA ) 
       @ nLin1 + 2, nCol1 + 2  Say "IMPRESSORA" 
       @ nLin1 + 3, nCol1 + 2  Say "     Porta" 
-      @ nLin1 + 4, nCol1 + 2  Say "ÚÄFontesÄÄÄÄÄÄ¿ÚÄCodigoÄÂÄÄÄÄÄAtivarÄÄÄÄÄÂÄÄÄÄDesativarÄÄÄ¿" 
-      @ nLin1 + 5, nCol1 + 2  Say "³ Negrito     ³³        ³                ³                ³" 
-      @ nLin1 + 6, nCol1 + 2  Say "³ It lico     ³³        ³                ³                ³" 
-      @ nLin1 + 7, nCol1 + 2  Say "³ Expandido   ³³        ³                ³                ³" 
-      @ nLin1 + 8, nCol1 + 2  Say "³ Condensado  ³³        ³                ³                ³" 
-      @ nLin1 + 9, nCol1 + 2  Say "³ Normal      ³³        ³                ³                ³" 
-      @ nLin1 + 10, nCol1 + 2 Say "ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙÀÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ" 
-      @ nLin1 + 11, nCol1 + 2 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+      @ nLin1 + 4, nCol1 + 2  Say "ï¿½ï¿½Fontesï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Codigoï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ativarï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Desativarï¿½ï¿½Ä¿" 
+      @ nLin1 + 5, nCol1 + 2  Say "ï¿½ Negrito     ï¿½ï¿½        ï¿½                ï¿½                ï¿½" 
+      @ nLin1 + 6, nCol1 + 2  Say "ï¿½ Itï¿½lico     ï¿½ï¿½        ï¿½                ï¿½                ï¿½" 
+      @ nLin1 + 7, nCol1 + 2  Say "ï¿½ Expandido   ï¿½ï¿½        ï¿½                ï¿½                ï¿½" 
+      @ nLin1 + 8, nCol1 + 2  Say "ï¿½ Condensado  ï¿½ï¿½        ï¿½                ï¿½                ï¿½" 
+      @ nLin1 + 9, nCol1 + 2  Say "ï¿½ Normal      ï¿½ï¿½        ï¿½                ï¿½                ï¿½" 
+      @ nLin1 + 10, nCol1 + 2 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+      @ nLin1 + 11, nCol1 + 2 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
       Mensagem( "[INS]Incluir [ENTER]Alterar [DEL]Excluir [ESPACO]Selecionar" ) 
       DispEnd() 
  
@@ -237,7 +237,7 @@ Local nLin:= 4, nCol:= 10, nLin1, nCol1, nLin2, nCol2, aStruct, oTb, nTecla,;
              @ nLin1 + 5, nCol1 + 45 Get cD_Negr Pict "@S14" When Mensagem("Digite a sequencia de comandos para desativar o negrito.") 
  
              /* Italico */ 
-             @ nLin1 + 6, nCol1 + 19 Get nC_Ital Pict "999999" When Mensagem("Digite o codigo do it lico.") 
+             @ nLin1 + 6, nCol1 + 19 Get nC_Ital Pict "999999" When Mensagem("Digite o codigo do itï¿½lico.") 
              @ nLin1 + 6, nCol1 + 28 Get cA_Ital Pict "@S14" When Mensagem("Digite a sequencia de comandos para ativar o negrito.") 
              @ nLin1 + 6, nCol1 + 45 Get cD_Ital Pict "@S14" When Mensagem("Digite a sequencia de comandos para desativar o negrito.") 
  

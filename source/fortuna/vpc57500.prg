@@ -1,7 +1,7 @@
 // ## CL2HB.EXE - Converted
  
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
  
 Function PesqAtd() 
 Local cTela:= ScreenSave( 0, 0, 24, 79 ),; 
@@ -249,7 +249,7 @@ Priv  cOrdem_
                  @ 20, nColuna Say "___" Color StrZero( nCt, 2, 0 ) + "/00" 
               ELSE 
                  IF ( ( aNStatus[ nCt ] / nTotalAtend ) * 100 ) >= ( nPos * nPercLinha ) 
-                    @ nLinha, nColuna Say "۲�" Color StrZero( nCt, 2, 0 ) + "/15" 
+                    @ nLinha, nColuna Say "۲�" Color StrZero( nCt, 2, 0 ) + "/15" 
                  ENDIF 
               ENDIF 
           NEXT 

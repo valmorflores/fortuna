@@ -30,7 +30,7 @@ READ
 IF FILE( ALLTRIM( cArquivo ) ) 
    Relatorio( ALLTRIM( cArquivo ) ) 
 ELSE 
-   @ 02,03 SAY "Arquivo nao encontrado neste diret¢rio..." 
+   @ 02,03 SAY "Arquivo nao encontrado neste diretï¿½rio..." 
    INKEY(0) 
 ENDIF 
 SCROLL( 00, 00, 24, 79) 
@@ -42,7 +42,7 @@ IF FILE( ALLTRIM( cFile ) )
    Impressao( ALLTRIM( cFile ) ) 
 ELSE 
    DEVPOS( 24/2, 00 ) 
-   DEVOUT( "Arquivo nao encontrado neste diret¢rio..." ) 
+   DEVOUT( "Arquivo nao encontrado neste diretï¿½rio..." ) 
    INKEY(0) 
 ENDIF 
 RESTSCREEN( 00, 00, 24, 79, cTela ) 
@@ -175,7 +175,7 @@ WHILE .T.
               LEFT( ALLTRIM( aIMPRESSAO[nCt] ), 2 ) == "/*" .OR.; 
               LEFT( ALLTRIM( aIMPRESSAO[nCt] ), 1 ) == "*" 
           nCOMANDO:= 2 
-       ELSEIF AT( "®", aIMPRESSAO[nCT] ) > 0 
+       ELSEIF AT( "ï¿½", aIMPRESSAO[nCT] ) > 0 
           nCOMANDO:= 3 
        ELSEIF LEFT( ALLTRIM( aIMPRESSAO[nCt] ), 1 ) == ":" 
           nCOMANDO:= 5 
@@ -213,11 +213,11 @@ WHILE .T.
  
                cIMPRESSAO:= aIMPRESSAO[nCT] 
  
-               WHILE AT( "®", cIMPRESSAO ) > 0 
+               WHILE AT( "ï¿½", cIMPRESSAO ) > 0 
  
                    /* Pega as posicoes */ 
-                   nPosIni:= AT("®", cIMPRESSAO ) 
-                   nPosFim:= AT("¯", cIMPRESSAO ) 
+                   nPosIni:= AT("ï¿½", cIMPRESSAO ) 
+                   nPosFim:= AT("ï¿½", cIMPRESSAO ) 
                    nQtd:= nPosFim - nPosIni 
  
                    /* Pega a String que sera substituida */ 
@@ -290,7 +290,7 @@ WHILE .T.
                   ENDIF 
               NEXT 
  
-              /* Verifica se o primeiro parametro nao ‚ um label */ 
+              /* Verifica se o primeiro parametro nao ï¿½ um label */ 
               IF ( nCT2:= ASCAN( aIMP, ALLTRIM( VIf[1] ) ) ) > 0 
                  IF nCt2 > 1 .AND. nCt2 < LEN( aIMPRESSAO ) 
                     nCt:= nCt2 - 1 
@@ -302,7 +302,7 @@ WHILE .T.
                     QUIT 
                  ENDIF 
  
-              /* Testa a condicao, pois ‚ um jump (pulo) condicional */ 
+              /* Testa a condicao, pois ï¿½ um jump (pulo) condicional */ 
               ELSE 
                  /* Se for a primeira */ 
                  IF ( Verificador:= Eval( &("{|| "+VIf[1]+"}") ) ) 

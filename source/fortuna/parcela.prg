@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#Include "INKEY.CH" 
-#Include "VPF.CH" 
+#Include "inkey.ch" 
+#Include "vpf.ch" 
 
 #ifdef HARBOUR
 function parcela()
@@ -22,16 +22,16 @@ Parcelamento( 12550, aFormaPag )
  
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё Parcelamento 
-Ё Finalidade  Ё Processar parcelamento de dividas 
-Ё Parametros  Ё nValorTotal - Valor Total do Item a parcelar 
-Ё Retorno     Ё aParcelado - Array multi-dimencional com parcelamento 
-Ё             Ё              e forma de pagamento. 
-Ё             Ё aFormaPag  - Forma de pagamento 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ Parcelamento 
+О©╫ Finalidade  О©╫ Processar parcelamento de dividas 
+О©╫ Parametros  О©╫ nValorTotal - Valor Total do Item a parcelar 
+О©╫ Retorno     О©╫ aParcelado - Array multi-dimencional com parcelamento 
+О©╫             О©╫              e forma de pagamento. 
+О©╫             О©╫ aFormaPag  - Forma de pagamento 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Function Parcelamento( nValorTotal, aFormaPag ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -51,8 +51,8 @@ Local nDemaisParcelas:= 20, nParcelas:= 12
    VPBox( 10, 10, 19, 69, " Forma de Pagamento ", _COR_GET_BOX ) 
    SetColor( _COR_GET_EDICAO ) 
    @ 11,12 Say " Valor Total    " + Tran( nValorTotal, "@E 999,999,999.99" ) 
-   @ 12,12 Say "ддддддддддддддддддддддддддддддддддддддддддддддддддддддддд" 
-   @ 13,12 Say "    %    Prz Pr  % Acr           Valor 1╖ Vencim. Tipo  " 
+   @ 12,12 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
+   @ 13,12 Say "    %    Prz Pr  % Acr           Valor 1О©╫ Vencim. Tipo  " 
  
    IF Len( aFormaPag ) <= 1 
       AAdd( aFormaPag, { 100,; 
@@ -259,18 +259,18 @@ Local nDemaisParcelas:= 20, nParcelas:= 12
   Return Nil 
  
   /* 
-  здддддддддддбддддддддддддддддд© 
-  Ё TOTAL     Ё        1.250,00 Ё 
-  цдддддбдддддеддддбдддддддбддддадддддддбддддддддддбдддддд© 
-  Ё  %  ЁParc.Ё Pr Ё % Acr Ё      Valor Ё 1╖ Venc. Ё Tipo Ё 
-  Ё 050 Ё 03  Ё 01 Ё 10.50 Ё     125.00 Ё 15/01/98 Ё DUP  Ё 
-  Ё 050 Ё 03  Ё 01 Ё 10.50 Ё     135.00 Ё 15/04/98 Ё CCV  Ё 
-  Ё     Ё     Ё    Ё       Ё            Ё          Ё      Ё 
-  Ё     Ё     Ё    Ё       Ё            Ё          Ё      Ё 
-  Ё     Ё     Ё    Ё       Ё            Ё          Ё      Ё 
-  цдддддадддддеддддадддддддадддддбддддддеддддддддддадддддд╢ 
-  Ё VALOR     Ё                  Ё DIF  Ё                 Ё 
-  юдддддддддддаддддддддддддддддддаддддддаддддддддддддддддды 
+  О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+  О©╫ TOTAL     О©╫        1.250,00 О©╫ 
+  О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+  О©╫  %  О©╫Parc.О©╫ Pr О©╫ % Acr О©╫      Valor О©╫ 1О©╫ Venc. О©╫ Tipo О©╫ 
+  О©╫ 050 О©╫ 03  О©╫ 01 О©╫ 10.50 О©╫     125.00 О©╫ 15/01/98 О©╫ DUP  О©╫ 
+  О©╫ 050 О©╫ 03  О©╫ 01 О©╫ 10.50 О©╫     135.00 О©╫ 15/04/98 О©╫ CCV  О©╫ 
+  О©╫     О©╫     О©╫    О©╫       О©╫            О©╫          О©╫      О©╫ 
+  О©╫     О©╫     О©╫    О©╫       О©╫            О©╫          О©╫      О©╫ 
+  О©╫     О©╫     О©╫    О©╫       О©╫            О©╫          О©╫      О©╫ 
+  О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢ 
+  О©╫ VALOR     О©╫                  О©╫ DIF  О©╫                 О©╫ 
+  О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
   */ 
  
  

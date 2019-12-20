@@ -1,17 +1,17 @@
 // ## CL2HB.EXE - Converted
  
-#Include "INKEY.CH" 
-#Include "VPF.CH" 
+#Include "inkey.ch" 
+#Include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao 	  ³ VPC87970.PRG 
-³ Finalidade  ³ Inclusao / Alteracao / Exclusao de tabela de Garantia 
-³ Parametros  ³ Nil 
-³ Retorno	  ³ 
-³ Programador ³ Valmor Pereira Flores 
-³ Data		  ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao 	  ï¿½ VPC87970.PRG 
+ï¿½ Finalidade  ï¿½ Inclusao / Alteracao / Exclusao de tabela de Garantia 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno	  ï¿½ 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data		  ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 
 #ifdef HARBOUR
@@ -27,7 +27,7 @@ function vpc87970()
 // ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
 	UserScreen() 
 	VPBox( 00, 00, 08, 79,"TABELA DE GARANTIA/VALIDADE", _COR_GET_BOX, .F., .F. ) 
-	VPBox( 09, 00, 22, 79," Display de Informa‡”es ", _COR_BROW_BOX, .F., .F., ,.F. ) 
+	VPBox( 09, 00, 22, 79," Display de Informaï¿½ï¿½es ", _COR_BROW_BOX, .F., .F., ,.F. ) 
  
 	DBLeOrdem() 
 	DBGoTop() 
@@ -49,9 +49,9 @@ function vpc87970()
 		ENDDO 
 		/* Display das informacoes */ 
 		SetColor( _COR_GET_EDICAO ) 
-		@ 02, 03 Say "C¢digo ........ [" + STR( CODIGO, 3 ) + "]" 
-		@ 03, 03 Say "Descri‡„o ..... [" + DESCRI           + "]" 
-		@ 04, 03 Say "Observa‡”es ... [" + OBSERV           + "]" 
+		@ 02, 03 Say "Cï¿½digo ........ [" + STR( CODIGO, 3 ) + "]" 
+		@ 03, 03 Say "Descriï¿½ï¿½o ..... [" + DESCRI           + "]" 
+		@ 04, 03 Say "Observaï¿½ï¿½es ... [" + OBSERV           + "]" 
 		@ 05, 03 Say "Garantia Dias.. [" + STR( GARANT, 6 ) + "]" 
 		@ 06, 03 Say "Validade Dias.. [" + STR( VALIDA, 6 ) + "]" 
 		nTecla:=inkey(0) 
@@ -87,14 +87,14 @@ function vpc87970()
 	Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao 	  ³ GarIncluir 
-³ Finalidade  ³ Incluir itens na tabela de GARANTIA/VALIDADE 
-³ Parametros  ³ Nil 
-³ Retorno	  ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data		  ³ 05/Fevereiro/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao 	  ï¿½ GarIncluir 
+ï¿½ Finalidade  ï¿½ Incluir itens na tabela de GARANTIA/VALIDADE 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno	  ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data		  ï¿½ 05/Fevereiro/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION GarIncluir( oTb ) 
 	Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -112,12 +112,12 @@ FUNCTION GarIncluir( oTb )
  
 		/* Display das informacoes */ 
 		SetColor( _COR_GET_EDICAO ) 
-		@ 02, 03 Say "C¢digo ........" Get nCodigo Pict "999" When; 
-			Mensagem("Digite o C¢digo da Garantia/Validade") VALID !DBSeek( nCodigo ) 
-		@ 03, 03 Say "Descri‡„o ....." Get cDescri When; 
-			Mensagem("Digite a Descri‡„o da Garantia/Validade") 
-		@ 04, 03 Say "Observa‡”es ..." Get cObserv When; 
-			Mensagem("Digite as Observa‡”es da Garantia/Validade" ) 
+		@ 02, 03 Say "Cï¿½digo ........" Get nCodigo Pict "999" When; 
+			Mensagem("Digite o Cï¿½digo da Garantia/Validade") VALID !DBSeek( nCodigo ) 
+		@ 03, 03 Say "Descriï¿½ï¿½o ....." Get cDescri When; 
+			Mensagem("Digite a Descriï¿½ï¿½o da Garantia/Validade") 
+		@ 04, 03 Say "Observaï¿½ï¿½es ..." Get cObserv When; 
+			Mensagem("Digite as Observaï¿½ï¿½es da Garantia/Validade" ) 
 		@ 05, 03 Say "Garantia Dias.." Get nGarant Pict "999999" When; 
 			Mensagem("Digite a Garantia em dias") 
 		@ 06, 03 Say "Validade Dias.." Get nValida Pict "999999" When; 
@@ -126,17 +126,17 @@ FUNCTION GarIncluir( oTb )
  
 		IF DBSeek( nCodigo ) 
 			cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-			Aviso( "Aten‡„o! O C¢digo da Garantia/Validade j  est  cadastrado !", 12 ) 
+			Aviso( "Atenï¿½ï¿½o! O Cï¿½digo da Garantia/Validade jï¿½ estï¿½ cadastrado !", 12 ) 
 			Pausa() 
 			ScreenRest( cTelaRes ) 
  
 		ELSEIF ! LastKey() == K_ESC 
  
 			 /* Gravacao de dados */ 
-			 IF Confirma( 0, 0, "Confirma?", "Confirma a grava‡„o dos dados [S/N]?", "S" ) 
+			 IF Confirma( 0, 0, "Confirma?", "Confirma a gravaï¿½ï¿½o dos dados [S/N]?", "S" ) 
  
 				 DBAppend() 
-				 IF NetRLock() 
+				 IF netrlock() 
 					 Repl CODIGO With nCodigo,; 
 							DESCRI With cDESCRI,; 
 							OBSERV With cObserv,; 
@@ -157,14 +157,14 @@ FUNCTION GarIncluir( oTb )
 	Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao 	  ³ GarAlterar 
-³ Finalidade  ³ Alterar itens na tabela de Garantia/Validade 
-³ Parametros  ³ Nil 
-³ Retorno	  ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data		  ³ 05/Fevereiro/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao 	  ï¿½ GarAlterar 
+ï¿½ Finalidade  ï¿½ Alterar itens na tabela de Garantia/Validade 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno	  ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data		  ï¿½ 05/Fevereiro/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 STATIC FUNCTION GarAlterar( oTb ) 
 	Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -174,10 +174,10 @@ STATIC FUNCTION GarAlterar( oTb )
 	DBSelectAr( _COD_GARANTIA ) 
 	/* Display das informacoes */ 
 	SetColor( _COR_GET_EDICAO ) 
-	@ 03, 03 Say "Descri‡„o ....." Get cDescri When; 
-		Mensagem("Digite a Descri‡„o da Garantia/Validade.") 
-	@ 04, 03 Say "Observa‡”es ..." Get cObserv When; 
-		Mensagem("Digite as Observa‡”es da Garantia/Validade.") 
+	@ 03, 03 Say "Descriï¿½ï¿½o ....." Get cDescri When; 
+		Mensagem("Digite a Descriï¿½ï¿½o da Garantia/Validade.") 
+	@ 04, 03 Say "Observaï¿½ï¿½es ..." Get cObserv When; 
+		Mensagem("Digite as Observaï¿½ï¿½es da Garantia/Validade.") 
 	@ 05, 03 Say "Garantia Dias.." Get nGarant Pict "999999" When; 
 		Mensagem("Digite o Numero de Dias da Garantia do produto. ") 
 	@ 06, 03 Say "Validade Dias.." Get nValida Pict "999999" When; 
@@ -185,8 +185,8 @@ STATIC FUNCTION GarAlterar( oTb )
 	READ 
 	IF DBSeek( nCodigo ) .AND. ! LastKey() == K_ESC 
 		/* Gravacao de dados */ 
-		IF Confirma( 0, 0, "Confirma?", "Confirma a grava‡„o dos dados [S/N]?", "S" ) 
-			IF NetRLock() 
+		IF Confirma( 0, 0, "Confirma?", "Confirma a gravaï¿½ï¿½o dos dados [S/N]?", "S" ) 
+			IF netrlock() 
 				Repl CODIGO With nCodigo,; 
 					  DESCRI With cDESCRI,; 
 					  OBSERV With cObserv,; 
@@ -419,9 +419,9 @@ Function GarantiaEdita()
                  nMprOrdem:= MPR->( IndexOrd() ) 
                  MPR->( DBSetOrder( 1 ) ) 
                  IF MPR->( DBSeek( TMP->INDICE ) ) 
-                    IF MPR->( NetRLock() ) 
+                    IF MPR->( netrlock() ) 
                        Replace MPR->GARVAL With 0 
-                       IF TMP->( NetRLock() ) 
+                       IF TMP->( netrlock() ) 
                           Replace TMP->GARVAL With 0 
                        ENDIF 
                     ELSE 
@@ -439,9 +439,9 @@ Function GarantiaEdita()
 					  nTmp:= TMP->( IndexOrd() ) 
 					  TMP->( DBSetOrder( 3 ) ) 
 					  IF TMP->( DBSeek( MPR->INDICE ) ) 
-						  IF TMP->( NetRLock() ) 
+						  IF TMP->( netrlock() ) 
 							  Replace TMP->GARVAL With GAR->CODIGO 
-							  IF MPR->( NetRLock() ) 
+							  IF MPR->( netrlock() ) 
 								  /* Atualiza Produtos */ 
 								  Replace MPR->GARVAL With GAR->CODIGO 
 							  ELSE 
@@ -582,8 +582,8 @@ Function VerNumerosSerie( cProduto, nNotaFiscal )
 			case nTecla==K_F2 		  ;dbmudaordem( 1, otb ) 
 			case nTecla==K_F3 		  ;dbmudaordem( 2, otb ) 
          case nTecla==K_DEL 
-              IF Confirma( 0, 0, "Deseja excluir este registro (N§ de serie)?", "", "S" ) 
-                 IF NetRLock() 
+              IF Confirma( 0, 0, "Deseja excluir este registro (Nï¿½ de serie)?", "", "S" ) 
+                 IF netrlock() 
                     DBDelete() 
                  ENDIF 
               ENDIF 
@@ -617,7 +617,7 @@ Function VerNumerosSerie( cProduto, nNotaFiscal )
                     IF LastKey() <> K_ESC 
                        DBSelectAr( _COD_ROMANEIO ) 
                        DBGoTo( nReg ) 
-                       IF NetRLock() 
+                       IF netrlock() 
                           Replace ROMANE With cRomane,; 
                                   CODNF_ With nNotasaida,; 
                                   DATSAI With dDataSaida,; 

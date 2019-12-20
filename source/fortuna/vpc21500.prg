@@ -1,6 +1,6 @@
-// ## CL2HB.EXE - Converted
-#Include "INKEY.CH" 
-#Include "VPF.CH" 
+// ## cl2hb.exe - converted
+#include "inkey.ch" 
+#include "vpf.ch" 
  
 /* 
 * Modulo      - VPC21500 
@@ -73,7 +73,7 @@ Priv nZerar
  
               WHILE !EOF() 
                  IF QTDIMP > 0 .OR. SELECT=="Sim" 
-                    IF NetRLock() 
+                    IF netrlock() 
                        nCol1:= Int( 78 - Len( ALLTRIM( DESCRI ) ) ) / 2 
                        SetColor( "15/15" ) 
                        SetColor( "00/15" ) 
@@ -96,7 +96,7 @@ Priv nZerar
               ENDDO 
  
          case nTecla==K_SPACE 
-              IF NetRLock() 
+              IF netrlock() 
                  Replace QTDIMP With 0,; 
                          SELECT With "Nao" 
               ENDIF 
@@ -110,7 +110,7 @@ Priv nZerar
               @ 07,07 Say "" Get nQtdImp Pict "@E 999,999,999" 
               READ 
               IF LastKey()==K_ENTER 
-                 IF NetRLock() 
+                 IF netrlock() 
                     Replace SELECT With IF( nQtdImp > 0, "Sim", "Nao" ) 
                     Replace QTDIMP With nQtdImp 
                  ENDIF 
@@ -164,7 +164,7 @@ Priv nZerar
                  DBGoTop() 
                  WHILE !EOF() 
                      IF SELECT=="Sim" .AND. QTDIMP <= 0 
-                        IF NetRLock() 
+                        IF netrlock() 
                            Replace SELECT With "Nao",; 
                                    QTDIMP With 0 
                         ENDIF 
@@ -197,7 +197,7 @@ Priv nZerar
  
 Function ZeraQtdEtiqueta( nQEtiqueta ) 
  IF nZerar==1 
-    IF MPR->( NetRLock() ) 
+    IF MPR->( netrlock() ) 
        IF MPR->QTDIMP > 0 
           Replace MPR->QTDIMP With MPR->QTDIMP - nQEtiqueta 
           IF MPR->QTDIMP <= 0 

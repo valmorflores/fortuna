@@ -74,17 +74,17 @@ Private nCodigo:= 1
       /// CUSTO MEDIO -------------- //// 
       /// COMPRA ===> 1.420,00 ----- 1.300,00 /// 
       @ 02,40 Say PAD( IF( MPRIMA=="N", "<< PRODUTO COMPOSTO >>", "" ), 25 ) 
-      @ 02,03 Say "C¢digo..............: [" + SUBSTR( INDICE, 1, 3 ) + "]-[" + SUBSTR( INDICE, 4, 4 ) + "]" 
-      @ 03,03 Say "C¢digo de F brica...: [" + CODFAB                                                + "]" 
-      @ 04,03 Say "Descri‡„o do produto: [" + DESCRI                                                + "]" 
+      @ 02,03 Say "Cï¿½digo..............: [" + SUBSTR( INDICE, 1, 3 ) + "]-[" + SUBSTR( INDICE, 4, 4 ) + "]" 
+      @ 03,03 Say "Cï¿½digo de Fï¿½brica...: [" + CODFAB                                                + "]" 
+      @ 04,03 Say "Descriï¿½ï¿½o do produto: [" + DESCRI                                                + "]" 
       @ 05,03 Say "Origem/Fabricante...: [" + ORIGEM                                                + "]" 
       @ 06,03 Say "Unidade de Medida...: [" + UNIDAD                                                + "]" 
-      @ 07,03 Say "Medida Unit ria.....: [" + TRAN( QTDPES, "@E 99,999.9999" )                     + "]" 
+      @ 07,03 Say "Medida Unitï¿½ria.....: [" + TRAN( QTDPES, "@E 99,999.9999" )                     + "]" 
          @ 07,40 SAY "[" + Segura + "]" 
-      @ 08,03 Say "Medida M¡nima.......: [" + TRAN( QTDMIN, "@E 99,999.9999" )                     + "]" 
-      @ 09,03 Say "Estoque m¡nimo......: [" + TRAN( ESTMIN, "@E 99,999.999" )                       + "]" 
-      @ 10,03 Say "Estoque m ximo......: [" + TRAN( ESTMAX, "@E 99,999.999" )                       + "]" 
-      @ 11,03 Say "Peso L¡quido...(Kg).: [" + TRAN( PesoLi, "@E 99,999.999" )                  + "]" 
+      @ 08,03 Say "Medida Mï¿½nima.......: [" + TRAN( QTDMIN, "@E 99,999.9999" )                     + "]" 
+      @ 09,03 Say "Estoque mï¿½nimo......: [" + TRAN( ESTMIN, "@E 99,999.999" )                       + "]" 
+      @ 10,03 Say "Estoque mï¿½ximo......: [" + TRAN( ESTMAX, "@E 99,999.999" )                       + "]" 
+      @ 11,03 Say "Peso Lï¿½quido...(Kg).: [" + TRAN( PesoLi, "@E 99,999.999" )                  + "]" 
       @ 12,03 Say "Peso Bruto.....(Kg).: [" + TRAN( PesoBr, "@E 99,999.999" )                  + "]" 
  
       @ 13,03 Say "Situacao Tributaria.: [" + STR( SITT01, 1 )                                      + "]" 
@@ -111,16 +111,16 @@ Private nCodigo:= 1
          @ 16,40 Say Space( 35 ) 
       ENDIF 
  
-      @ 14,03 Say "Classifica‡„o fiscal: [" + STR( CLAFIS, 3 )                                      + "]" 
-      @ 15,03 Say "% p/ c lculo do IPI.: [" + TRAN( IPI___, "999.99")                            + "]" 
-      @ 16,03 Say "% p/ c lculo do ICMs: [" + TRAN( ICM___, "999.99" )                           + "]" 
+      @ 14,03 Say "Classificaï¿½ï¿½o fiscal: [" + STR( CLAFIS, 3 )                                      + "]" 
+      @ 15,03 Say "% p/ cï¿½lculo do IPI.: [" + TRAN( IPI___, "999.99")                            + "]" 
+      @ 16,03 Say "% p/ cï¿½lculo do ICMs: [" + TRAN( ICM___, "999.99" )                           + "]" 
       @ 17,03 Say "Fornecedor..........: [" + STR( CODFOR, 3 )                                      + "]" 
  
       @ 11,41 Say "De Compra.......: [" + TRAN( nPrecoCompra, "@E 999,999,999.999")               + "]" Color "10/" + _COR_GET_FUNDO 
       @ 12,41 Say "% Margem Lucro..:       [" + TRAN( PERCPV      , "@E 9,999.999")               + "]" 
       @ 13,41 Say "Venda Padrao....: [" + TRAN( PRECOV      , "@E 999,999,999.999")               + "]" Color "14/" + _COR_GET_FUNDO 
       @ 14,41 Say "% Desconto......:       [" + TRAN( PercDC      , "@e 9,999.999")               + "]" 
-      @ 15,41 SAY "Pre‡o Final.....: [" + Tran( nPrecoD     , "@e 999,999,999.999")               + "]" 
+      @ 15,41 SAY "Preï¿½o Final.....: [" + Tran( nPrecoD     , "@e 999,999,999.999")               + "]" 
  
       /* Exibir o nome do produto com cores */ 
       IF MPR->AVISO_ > 0 
@@ -144,13 +144,13 @@ Private nCodigo:= 1
          CASE nTecla==K_PGDN       ;oTb:pagedown() 
  
          CASE nTecla==K_CTRL_LEFT 
-              IF NetRLock() .AND. AVISO_ > 0 
+              IF netrlock() .AND. AVISO_ > 0 
                  Replace AVISO_ With AVISO_ - 1 
               ENDIF 
               DBUnlockAll() 
  
          CASE nTecla==K_CTRL_RIGHT 
-              IF NetRLock() .AND. AVISO_ < 16 
+              IF netrlock() .AND. AVISO_ < 16 
                  Replace AVISO_ With AVISO_ + 1 
               ENDIF 
               DBUnlockAll() 
@@ -179,7 +179,7 @@ Private nCodigo:= 1
               Mensagem( "Verificando possiveis problemas no cadastro, aguarde..." ) 
               WHILE !MPR->( EOF() ) 
                  IF EMPTY( MPR->( CODFAB ) ) 
-                    Aviso( "Codigo de F brica inexistente!" ) 
+                    Aviso( "Codigo de Fï¿½brica inexistente!" ) 
                     Pausa() 
                     exit 
                  ENDIF 
@@ -198,12 +198,12 @@ Private nCodigo:= 1
                     Pausa() 
                     exit 
                  ENDIF 
-                 IF AT( "‡", Lower( MPR->DESCRI+MPR->CODFAB+MPR->UNIDAD ) ) > 0 .OR.; 
-                    AT( "Æ", Lower( MPR->DESCRI+MPR->CODFAB+MPR->UNIDAD ) ) > 0 .OR.; 
+                 IF AT( "ï¿½", Lower( MPR->DESCRI+MPR->CODFAB+MPR->UNIDAD ) ) > 0 .OR.; 
+                    AT( "ï¿½", Lower( MPR->DESCRI+MPR->CODFAB+MPR->UNIDAD ) ) > 0 .OR.; 
                     AT( ",", Lower( MPR->DESCRI+MPR->CODFAB+MPR->UNIDAD ) ) > 0 .OR.; 
-                    AT( "“", Lower( MPR->DESCRI+MPR->CODFAB+MPR->UNIDAD ) ) > 0 .OR.; 
-                    AT( "ä", Lower( MPR->DESCRI+MPR->CODFAB+MPR->UNIDAD ) ) > 0 .OR.; 
-                    AT( "", Lower( MPR->DESCRI+MPR->CODFAB+MPR->UNIDAD ) ) > 0 .OR.; 
+                    AT( "ï¿½", Lower( MPR->DESCRI+MPR->CODFAB+MPR->UNIDAD ) ) > 0 .OR.; 
+                    AT( "ï¿½", Lower( MPR->DESCRI+MPR->CODFAB+MPR->UNIDAD ) ) > 0 .OR.; 
+                    AT( "ï¿½", Lower( MPR->DESCRI+MPR->CODFAB+MPR->UNIDAD ) ) > 0 .OR.; 
                     AT( '"', Lower( MPR->DESCRI+MPR->CODFAB+MPR->UNIDAD ) ) > 0 
                     Aviso( "Informacoes com acento nao sao aceitas pela impressora fiscal." ) 
                     Pausa() 

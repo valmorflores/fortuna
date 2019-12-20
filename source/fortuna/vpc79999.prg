@@ -1,9 +1,9 @@
 
 
 // ## CL2HB.EXE - Converted
-#Include "VPF.CH"
-#Include "FORMATOS.CH"
-#Include "INKEY.CH"
+#Include "vpf.ch"
+#Include "formatos.ch"
+#Include "inkey.ch"
 
 /*=============================================================================
 
@@ -12,15 +12,15 @@
 ==============================================================================*/
 
 /*
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao       ³ PConsulta
-³ Finalidade   ³ Consultar os dados de Clientes
-³ Programador  ³ Valmor Pereira Flores
-³ Parametros   ³ Nenhum
-³ Retorno      ³ Nenhum
-³ Data         ³ 03/Maio/1995
-³ Atualizacao  ³ 29/Maio/1995 - 16/Novembro/1998 - 20/Agosto/1999 - Jun/2001
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao       ï¿½ PConsulta
+ï¿½ Finalidade   ï¿½ Consultar os dados de Clientes
+ï¿½ Programador  ï¿½ Valmor Pereira Flores
+ï¿½ Parametros   ï¿½ Nenhum
+ï¿½ Retorno      ï¿½ Nenhum
+ï¿½ Data         ï¿½ 03/Maio/1995
+ï¿½ Atualizacao  ï¿½ 29/Maio/1995 - 16/Novembro/1998 - 20/Agosto/1999 - Jun/2001
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Function pConsulta( nCodCliente )
    Local cTelaRes
@@ -124,9 +124,9 @@ Function pConsulta( nCodCliente )
 
    SetColor( _COR_BROWSE )
    oClie:=TBrowseDb( 14, 02, 21, 75 )
-   oClie:AddColumn(TbColumnNew(,{|| StrZero(CLI->CODIGO,6,0)+"³"+;
-                                            CLI->DESCRI + "³"+;
-                                            IF( EMPTY( CLI->CGCMF_ ), PAD( Tran( CLI->CPF___, "@R 999.999.999-99" ), 18 ), Tran( CLI->CGCMF_, "@R XX.XXX.XXX/XXXX-XX" ) ) + IF( Cli->Client=="S", "³JCP ", "³NCP " ) + SPACE( 20 ) }))
+   oClie:AddColumn(TbColumnNew(,{|| StrZero(CLI->CODIGO,6,0)+"ï¿½"+;
+                                            CLI->DESCRI + "ï¿½"+;
+                                            IF( EMPTY( CLI->CGCMF_ ), PAD( Tran( CLI->CPF___, "@R 999.999.999-99" ), 18 ), Tran( CLI->CGCMF_, "@R XX.XXX.XXX/XXXX-XX" ) ) + IF( Cli->Client=="S", "ï¿½JCP ", "ï¿½NCP " ) + SPACE( 20 ) }))
    oClie:AUTOLITE:=.F.
    oClie:dehilite()
    oClie:RefreshAll()
@@ -192,7 +192,7 @@ Function pConsulta( nCodCliente )
          DBSetOrder( 1 )
          DBSeek( cCodigo )
          IF Alltrim( DESCRI ) == Alltrim( _RESERVADO )
-            IF NetRLock()
+            IF netrlock()
                DBDelete()
             ENDIF
             DBUnlock()
@@ -306,7 +306,7 @@ Function pConsulta( nCodCliente )
               ENDIF
 
               /* Verifica se data da ultima nota de
-                 venda p/ cliente ‚ maior que <n> dias */
+                 venda p/ cliente ï¿½ maior que <n> dias */
               IF SWSet( _NFA_DIAS ) > 0
                  lOk:= .T.
                  DPA->( DBSetOrder( 5 ) )
@@ -359,7 +359,7 @@ Function pConsulta( nCodCliente )
 
                     DBSelectAr( _COD_CLIENTE )
                     DBGoTo( nRegNovoCliente )
-                    IF NetRLock()
+                    IF netrlock()
                        Dele
                     ENDIF
                     DBUnlockAll()
@@ -382,14 +382,14 @@ Function pConsulta( nCodCliente )
      Return(.T.)
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ displayMPR
-³ Finalidade  ³ Display de Materia-Prima
-³ Parametros  ³ Nenhum
-³ Retorno     ³ Nenhum
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³ 05/Fevereiro/1996
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ displayMPR
+ï¿½ Finalidade  ï¿½ Display de Materia-Prima
+ï¿½ Parametros  ï¿½ Nenhum
+ï¿½ Retorno     ï¿½ Nenhum
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½ 05/Fevereiro/1996
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Function DisplayMPR()
 
@@ -430,7 +430,7 @@ Local aCorTamQua:= { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
    DBLeOrdem()
    SetColor( _COR_BROWSE )
    oPROD:=TBrowseDb(14, 01, 21, 78 )
-   oPROD:AddColumn( TbColumnNew(,{|| IF( MPR->AVISO_ > 0, StrZero( MPR->AVISO_, 2, 0 ), Space( 2 ) ) + MPR->MARCA_ + Tran( Indice, "@R XXXXXXX" ) + "³" + MPR->CodFab + "³" + LEFT( MPR->Descri, 35 ) + "³" + MPR->ORIGEM + "³" + MPR->UNIDAD + "³" + Tran( PrecoConvertido(),"@E **,***.***") }))
+   oPROD:AddColumn( TbColumnNew(,{|| IF( MPR->AVISO_ > 0, StrZero( MPR->AVISO_, 2, 0 ), Space( 2 ) ) + MPR->MARCA_ + Tran( Indice, "@R XXXXXXX" ) + "ï¿½" + MPR->CodFab + "ï¿½" + LEFT( MPR->Descri, 35 ) + "ï¿½" + MPR->ORIGEM + "ï¿½" + MPR->UNIDAD + "ï¿½" + Tran( PrecoConvertido(),"@E **,***.***") }))
    oPROD:AUTOLITE:=.F.
    oPROD:dehilite()
    While .T.
@@ -459,13 +459,13 @@ Local aCorTamQua:= { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
              nLin:= 4
           ENDIF
           @ nLin + 6, 36 Say Tran( StrZero( aPedido[ nCt ][ 11 ], 7, 0 ), "@R 999-9999" ) + ;
-                      " => " + aPedido[ nCt ][ 1 ] + " ³ Qtd:" +;
+                      " => " + aPedido[ nCt ][ 1 ] + " ï¿½ Qtd:" +;
                       Tran( aPedido[ nCt ][ 6 ], "@E 9,999.999" )
       NEXT
       IF Marca_ == "*"
          IF AScan( aPedido, {|x| x[11] == Val( MPr->Indice ) .AND. ! ( x[11] == 0 ) } ) > 0
             SetColor( "15/00" )
-            @ 12,36 SAY "»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»"
+            @ 12,36 SAY "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
          ELSE
             SetColor( "15/04" )
             @ 12,36 SAY " ESTE PRODUTO NAO FOI MARCADO POR VOCE  "
@@ -593,8 +593,8 @@ Local aCorTamQua:= { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
                     ENDIF
                  ENDIF
                  IF ( ALLTRIM( SWSet( _INT_ULTIMABUSCA ) ) == ALLTRIM( CODFAB ) ) .AND. !lEAN12
-                     /* Verifica se o n§de char procurado ‚ menor que o campo CODFAB e
-                       soh assim d  ENTER, caso contrario o proprio campo preenchera as
+                     /* Verifica se o nï¿½de char procurado ï¿½ menor que o campo CODFAB e
+                       soh assim dï¿½ ENTER, caso contrario o proprio campo preenchera as
                        informacoes nao sendo necessario o ENTER */
                     IF LEN( ALLTRIM( SWSet( _INT_ULTIMABUSCA ) ) ) < LEN( MPR->CODFAB )
                        Keyboard Chr( K_ENTER )
@@ -736,9 +736,9 @@ Local aCorTamQua:= { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
                        SetCursor(1)
                        SetColor( _COR_GET_EDICAO )
                        VPBox( 11, 10, 16, 70, "Dados do Produto Selecionado", _COR_GET_BOX, .T., .F., _COR_GET_TITULO )
-                       @ 12,12 Say "Pre‡o......:" Get nPrecoInicial Pict "@E 999,999,999.999" When MudaPreco() .AND. Mensagem( "Digite o novo preco de venda." )
+                       @ 12,12 Say "Preï¿½o......:" Get nPrecoInicial Pict "@E 999,999,999.999" When MudaPreco() .AND. Mensagem( "Digite o novo preco de venda." )
                        @ 13,12 Say "% Desconto.:" Get nPerDesconto  Pict "@E 999.99"          Valid CalculaDesconto( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
-                       @ 14,12 Say "Pre‡o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
+                       @ 14,12 Say "Preï¿½o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
                        @ 15,12 Say "Quantidade.:" Get nQuantidade   Pict "@E 999,999.999"
                        READ
                        setcursor(0)
@@ -751,11 +751,11 @@ Local aCorTamQua:= { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
                     VPBox( 08, 10, 20, 70, "Dados do Produto Selecionado", _COR_GET_BOX, .T., .F., _COR_GET_TITULO )
                     SetColor( _COR_GET_EDICAO )
                     @ 09,12 Say "Produto....: [" + MPR->CodFab + "]"
-                    @ 10,12 Say "Descri‡„o..: [" + Alltrim( MPR->Descri ) + "]"
+                    @ 10,12 Say "Descriï¿½ï¿½o..: [" + Alltrim( MPR->Descri ) + "]"
                     @ 11,12 Say "Fabrica....:" Get cOrigem Pict "XXXXXXXXXXXXXX"           When CodFabrica() .AND. Mensagem( "Digite o fabricante." )
-                    @ 12,12 Say "Pre‡o......:" Get nPrecoInicial Pict "@E 999,999,999.999" When MudaPreco() .AND. Mensagem( "Digite o novo preco de venda." )
+                    @ 12,12 Say "Preï¿½o......:" Get nPrecoInicial Pict "@E 999,999,999.999" When MudaPreco() .AND. Mensagem( "Digite o novo preco de venda." )
                     @ 13,12 Say "% Desconto.:" Get nPerDesconto  Pict "@E 999.99"          Valid CalculaDesconto( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
-                    @ 14,12 Say "Pre‡o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
+                    @ 14,12 Say "Preï¿½o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
                     @ 15,12 Say "% IPI......:" Get nPerIpi Pict "@E 999.99"
                     @ 16,12 Say "Unidade....:" Get cUnidade Pict "!!"
                     IF SWSet( _PED_DTENTREGA )
@@ -805,7 +805,7 @@ Local aCorTamQua:= { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
                        aPedido[ nPosicao ][ 24 ] := dDtentre
                        lAltera:= .F.
                     ELSE
-                       IF NetRLock()
+                       IF netrlock()
                           IF !( MPR->Marca_ == "*" )
                              Replace MPR->Marca_ With "*"
                           ENDIF
@@ -957,11 +957,11 @@ Local aCorTamQua:= { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
               lAltera:= .F.
               SetCursor(1)
               @ 09,12 Say "Produto....:" Get cCodFab Pict "@!"
-              @ 10,12 Say "Descri‡„o..:" Get cDescricao Pict "@!"
+              @ 10,12 Say "Descriï¿½ï¿½o..:" Get cDescricao Pict "@!"
               @ 11,12 Say "Fabrica....:" Get cOrigem Pict "XXXXXXXXXXXXXX"           When CodFabrica() .AND. Mensagem( "Digite o fabricante." )
-              @ 12,12 Say "Pre‡o......:" Get nPrecoInicial Pict "@E 999,999,999.999" When MudaPreco() .AND. Mensagem( "Digite o novo preco de venda." )
+              @ 12,12 Say "Preï¿½o......:" Get nPrecoInicial Pict "@E 999,999,999.999" When MudaPreco() .AND. Mensagem( "Digite o novo preco de venda." )
               @ 13,12 Say "% Desconto.:" Get nPerDesconto  Pict "@E 999.99"          Valid CalculaDesconto( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
-              @ 14,12 Say "Pre‡o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
+              @ 14,12 Say "Preï¿½o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
               @ 15,12 Say "% IPI......:" Get nPerIpi Pict "@E 999.99"
               @ 16,12 Say "Unidade....:" Get cUnidade Pict "!!"
               IF SWSet( _PED_DTENTREGA )
@@ -1039,7 +1039,7 @@ Function CalculaDesconto( GetList, nPrecoInicial, nPerDesconto, nPrecoFinal )
 Local cCor:= SetColor(), nCursor:= SetCursor(),;
       cTela:= ScreenSave( 0, 0, 24, 79 )
    IF nPerDesconto > SWSet( _PED_MAXDESCONTO )
-      Aviso( "Desconto m ximo permitido ‚ de " + StrZero( SWSet( _PED_MAXDESCONTO ), 2, 0 ) + "%.", 12 )
+      Aviso( "Desconto mï¿½ximo permitido ï¿½ de " + StrZero( SWSet( _PED_MAXDESCONTO ), 2, 0 ) + "%.", 12 )
       Pausa()
       SetColor( cCor )
       SetCursor( nCursor )
@@ -1065,7 +1065,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
       cTela:= ScreenSave( 0, 0, 24, 79 )
    nPerDesconto:= 100 - ( ( nPrecoFinal / nPrecoInicial ) * 100 )
    IF nPerDesconto > SWSet( _PED_MAXDESCONTO )
-      Aviso( "Desconto m ximo permitido ‚ de " + StrZero( SWSet( _PED_MAXDESCONTO ), 2, 0 ) + "%...", 12 )
+      Aviso( "Desconto mï¿½ximo permitido ï¿½ de " + StrZero( SWSet( _PED_MAXDESCONTO ), 2, 0 ) + "%...", 12 )
       Pausa()
       SetColor( cCor )
       SetCursor( nCursor )
@@ -1081,15 +1081,15 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
 
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ LIMPAMARCAS
-³ Finalidade  ³ Limpar as marcas deixadas pelo PEDIDO
-³ Parametros  ³ Nil
-³ Retorno     ³ Nil
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³ 26/Outubro/1995
-³ Atualizacao ³ 16/Novembro/1998
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ LIMPAMARCAS
+ï¿½ Finalidade  ï¿½ Limpar as marcas deixadas pelo PEDIDO
+ï¿½ Parametros  ï¿½ Nil
+ï¿½ Retorno     ï¿½ Nil
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½ 26/Outubro/1995
+ï¿½ Atualizacao ï¿½ 16/Novembro/1998
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Function LimpaMarcas( aPedidos )
 Local nCt, nOrdem:= Mpr->( IndexOrd() ), aPrBloqueados:= {}, nRegistro:= MPr->( Recno() ),;
@@ -1104,7 +1104,7 @@ IF !Empty( aPedidos )
           IF RLock()
              Replace MPr->Marca_ With " "
           ELSE
-             Mensagem("Imposs¡vel desmarcar o produto: " + aPedidos[ nCt ][ 1 ] + "..." )
+             Mensagem("Impossï¿½vel desmarcar o produto: " + aPedidos[ nCt ][ 1 ] + "..." )
              AAdd( aPrBloqueados, aPedidos[ nCt ][ 1 ] )
           ENDIF
           DBUnlock()
@@ -1115,7 +1115,7 @@ IF !Empty( aPedidos )
    DBSelectAr( nArea )
 ENDIF
 IF !Empty( aPrBloqueados )
-   Mensagem( ">>>" + STRZero( Len( aPrBloqueados ), 2, 0 ) + " do(s) " + STRZero( Len( aPedidos ), 2, 0 ) + " produto(s) n„o foram desmarcado(s)..." )
+   Mensagem( ">>>" + STRZero( Len( aPrBloqueados ), 2, 0 ) + " do(s) " + STRZero( Len( aPedidos ), 2, 0 ) + " produto(s) nï¿½o foram desmarcado(s)..." )
    Pausa()
 ENDIF
 /* Zera a Matriz de Produtos */
@@ -1157,7 +1157,7 @@ Priv cTama
    @ 1, 1 Say "Pedido.....: "
    @ 2, 1 Say "Codigo.....: " + StrZero( CLI->Codigo, 6, 0 )
    @ 3, 1 Say "Cliente....: " + Cli->Descri
-   @ 4, 1 Say "Endere‡o...: " + Cli->Endere
+   @ 4, 1 Say "Endereï¿½o...: " + Cli->Endere
    @ 5, 1 Say "Cidade.....: " + Cli->Cidade
    @ 6, 1 Say "Contato....: " + Cli->Compra
    @ 7, 1 Say "Fone/Fax...: " + Cli->Fone1_ + " / " + Cli->Fax___
@@ -1167,7 +1167,7 @@ Priv cTama
    @ 09, 01 Say "Produto"
    @ 09, 33 Say "Un"
    @ 09, 37 Say "Quantidade"
-   @ 09, 53 Say "Preco Unit rio"
+   @ 09, 53 Say "Preco Unitï¿½rio"
    @ 09, 68 Say "%IPI"
    Janela( 4 )
    DispEnd()
@@ -1179,10 +1179,10 @@ Priv cTama
    oTb:=TBrowseNew( 10, 1, 20, 78 )
    oTb:addcolumn(tbcolumnnew(,{|| Left( aPedido[ nRow ][ 1 ] + "-" + ;
                                         aPedido[ nRow ][ 2 ], 30 ) + ;
-                                   " ³ " + aPedido[ nRow ][ 7 ] + " ³ " +;
-                                     Tran( aPedido[ nRow ][ 6 ], "@E 9,999,999.99" ) + " ³ " +;
-                                     Tran( aPedido[ nRow ][ 5 ], "@E 9999,999.999" ) + " ³ " +;
-                                     Tran( aPedido[ nRow ][ 8 ], "@E 99.99" )       +  " ³" + aPedido[ nRow ][ 10 ] }))
+                                   " ï¿½ " + aPedido[ nRow ][ 7 ] + " ï¿½ " +;
+                                     Tran( aPedido[ nRow ][ 6 ], "@E 9,999,999.99" ) + " ï¿½ " +;
+                                     Tran( aPedido[ nRow ][ 5 ], "@E 9999,999.999" ) + " ï¿½ " +;
+                                     Tran( aPedido[ nRow ][ 8 ], "@E 99.99" )       +  " ï¿½" + aPedido[ nRow ][ 10 ] }))
    oTb:AUTOLITE:=.f.
    oTb:GOTOPBLOCK :={|| nRow:= 1}
    oTb:GOBOTTOMBLOCK:={|| nRow:= Len( aPedido ) }
@@ -1334,17 +1334,17 @@ Priv cTama
               @ 05,06 Say "Codigo da Transportadora..:" Get nCodTra Pict "999" Valid BuscaTransport( @nCodTra ) When Mensagem( "Digite o codigo da transportadora ou [F9] para ver lista." )
               @ 06,06 Say "Prazo de Entrega (EM DIAS):" Get cPrazo_ When Mensagem( "Digite o prazo de entrega desta mercadoria." )
               @ 07,06 Say "Validade da Proposta......:" Get nValid_ When Mensagem( "Digite o prazo de validade desta proposta em numero de dias." )
-              @ 08,06 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"
+              @ 08,06 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
               @ 09,06 Say "Operacao..................:" Get nTabOpe Pict "999" Valid BuscaOperacao( @nTabOpe )
               @ 10,06 Say "Tabela de Condicoes.......:" Get nTabCnd Pict "9999" Valid BuscaCondicao( @nTabCnd, @cCondi_, nTotal )
               @ 11,06 Say "Detalhamento de Condicoes.:" Get cCondi_
-              @ 12,06 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"
+              @ 12,06 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
               @ 13,06 Say "Tipo de Frete.............:" Get cFrete_ valid DisplayFrete( @cFrete_ ) When Mensagem( "Digite o tipo de frete ou [ENTER] para ver opcoes." )
               @ 14,06 Say "Vendedor Interno..........:" Get nVenIn1 Pict "@R 999" valid VenSeleciona( @nVenIn1, 1, @cVende1 ) When Mensagem( "Digite o codigo do vendedor interno.")
               @ 14,40 Get cVende1 Pict "!!!!!!!!!!!!" When Mensagem( "Digite o nome, numero ou sigla do vendedor." )
               @ 15,06 Say "Vendedor Externo..........:" Get nVenEx1 Pict "@R 999" Valid VenSeleciona( @nVenEx1, 2, @cVende2 ) When Mensagem( "Digite o codigo do vendedor interno.")
               @ 15,40 Get cVende2 Pict "!!!!!!!!!!!!" When Mensagem( "Digite o nome, numero ou sigla do vendedor." )
-              @ 16,06 Say "ObservacoesÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"
+              @ 16,06 Say "Observacoesï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
               @ 17,06 Get cObser1 Pict "@S60" When Mensagem( "Digite alguma observacao que se faca necessaria." )
               @ 18,06 Get cObser2 Pict "@S60" When Mensagem( "Digite alguma observacao que se faca necessaria." )
               @ 19,06 Say "Complemento Nota Fiscal...:"
@@ -1432,7 +1432,7 @@ Priv cTama
               ENDIF
 
               /* grava as informacoes do pedido */
-              IF NetRLock()
+              IF netrlock()
                  Replace CodCli With Cli->Codigo,;
                          Descri With Cli->Descri,;
                          Endere With Cli->Endere,;
@@ -1500,7 +1500,7 @@ Priv cTama
                  DBSelectar( _COD_PEDPROD )
                  IF aPedido[ nCt ][ 10 ]=="Sim"
                     DBAppend()
-                    IF NetRLock()
+                    IF netrlock()
                        Repl Codigo With cCodigo,;
                             CodPro With aPedido[ nCt ][ 11 ],;
                             CodFab With aPedido[ nCt ][ 1 ],;
@@ -1528,7 +1528,7 @@ Priv cTama
                            !EMPTY( aPedido[ nCt ][ 22 ] )  .or.;
                            !EMPTY( aPedido[ nCt ][ 23 ] )) .and. SWSet( _PED_DETALHE )
                           DET->( DBAppend() )
-                          IF DET->( NetRLock() )
+                          IF DET->( netrlock() )
                              Replace DET->INDICE With STRZERO( aPedido[ nCt ][ 11 ], 7, 0 ),;
                                      DET->DETAL1 With aPedido[ nCt ][ 21 ],;
                                      DET->DETAL2 With aPedido[ nCt ][ 22 ],;
@@ -1544,7 +1544,7 @@ Priv cTama
                   IF ! ( aOCompra[ nCt ][ 1 ] == Space( 6 ) ) .AND.;
                      ! ( aOCompra[ nCt ][ 2 ] == 0 )
                      DBAppend()
-                     IF NetRLock()
+                     IF netrlock()
                         Replace Codigo With cCodigo
                      ENDIF
                   ENDIF
@@ -1609,12 +1609,12 @@ Priv cTama
               ENDIF
 
               @ 09,12 Say "Produto....:" Get aPedido[ nRow ][ 1 ]
-              @ 10,12 Say "Descri‡„o..:" Get aPedido[ nRow ][ 2 ]
+              @ 10,12 Say "Descriï¿½ï¿½o..:" Get aPedido[ nRow ][ 2 ]
               Read
               @ 11,12 Say "Fabricante.:" Get cOrigem Pict "XXXXXXXXXXXXXX"           When CodFabrica() .AND. Mensagem( "Digite o fabricante." )
-              @ 12,12 Say "Pre‡o......:" Get nPrecoInicial Pict "@E 999,999,999.999" When MudaPreco() .AND. Mensagem( "Digite o novo preco de venda." )
+              @ 12,12 Say "Preï¿½o......:" Get nPrecoInicial Pict "@E 999,999,999.999" When MudaPreco() .AND. Mensagem( "Digite o novo preco de venda." )
               @ 13,12 Say "% Desconto.:" Get nPerDesconto  Pict "@E 999.99"          Valid CalculaDesconto( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
-              @ 14,12 Say "Pre‡o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
+              @ 14,12 Say "Preï¿½o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
               @ 15,12 Say "% IPI......:" Get nPerIpi       Pict "@E 999.99"
               @ 16,12 Say "Unidade....:" Get cUnidade Pict "!!"
               IF SWSet( _PED_DTENTREGA )
@@ -1724,7 +1724,7 @@ Return .T.
 
 /*
 * Modulo      - CalculoGeral
-* Finalidade  - Apresentar no rodap‚ o calculo total do pedido
+* Finalidade  - Apresentar no rodapï¿½ o calculo total do pedido
 * Programador - Valmor Pereira Flores
 * Data        - 26/Outubro/1995
 * Atualizacao -
@@ -1758,14 +1758,14 @@ Local nSubTotal:= 0, nIPI:= 0, nTotal:= 0, nDesconto:= 0, nAcrescimo:= 0
 Return ( nTotal + nAcrescimo - nDesconto )
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ LIMPAARQUIVO
-³ Finalidade  ³ Limpar marcas do arquivpo de produtos
-³ Parametros  ³ Nil
-³ Retorno     ³ Nil
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³ 05/Fevereiro/1996
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ LIMPAARQUIVO
+ï¿½ Finalidade  ï¿½ Limpar marcas do arquivpo de produtos
+ï¿½ Parametros  ï¿½ Nil
+ï¿½ Retorno     ï¿½ Nil
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½ 05/Fevereiro/1996
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Function LimpaArquivo()
    LOCAL cCor:= SetColor(), nCursor:= SetCursor(),;
@@ -1779,10 +1779,10 @@ Function LimpaArquivo()
    DBSeek( "*" )
    WHILE MPr->Marca_ == "*"
        Mensagem( StrZero( Mpr->( Recno() ), 5, 0 ) + " => Limpando..." )
-       IF NetRLock()
+       IF netrlock()
           Replace MPr->Marca_ WIth " "
        ELSE
-          Mensagem( "Nao foi poss¡vel desmarcar todos os produtos...", 1 )
+          Mensagem( "Nao foi possï¿½vel desmarcar todos os produtos...", 1 )
        ENDIF
        DBUnlock()
        DBSkip()
@@ -1806,14 +1806,14 @@ Function LimpaArquivo()
 
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³
-³ Finalidade  ³
-³ Parametros  ³
-³ Retorno     ³
-³ Programador ³
-³ Data        ³
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½
+ï¿½ Finalidade  ï¿½
+ï¿½ Parametros  ï¿½
+ï¿½ Retorno     ï¿½
+ï¿½ Programador ï¿½
+ï¿½ Data        ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
   Function BuscaTransport( nCodigo )
   Local cCor:= SetColor(), nCursor:= SetCursor(),;
@@ -1986,21 +1986,21 @@ FUNCTION VerificaLimiteCr( aPedido )
    RETURN .T.
 
    /*****
-   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-   ³ Funcao      ³ BuscaCliente
-   ³ Finalidade  ³ Pesquisa cliente no cadastro
-   ³ Parametros  ³ cDescri, nCodCli
-   ³ Retorno     ³ .T./.F.
-   ³ Programador ³ Valmor Pereira Flores
-   ³ Data        ³
-   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+   ï¿½ Funcao      ï¿½ BuscaCliente
+   ï¿½ Finalidade  ï¿½ Pesquisa cliente no cadastro
+   ï¿½ Parametros  ï¿½ cDescri, nCodCli
+   ï¿½ Retorno     ï¿½ .T./.F.
+   ï¿½ Programador ï¿½ Valmor Pereira Flores
+   ï¿½ Data        ï¿½
+   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
    */
    Static Function BuscaCliente( cDescri, nCodCli )
    Local cTela:= ScreenSave( 0, 0, 24, 79 )
    Local nOrdem:= IndexOrd(), lBusca:= .T.
    DBSetOrder( 2 )
    IF DBSeek( cDescri ) .AND. ! CLI->CODIGO == nCodCli
-      Aviso( "Atencao! Cliente j  existente no cadastro de n§ " + StrZero( CLI->CODIGO, 6, 0 ) + "...", 12 )
+      Aviso( "Atencao! Cliente jï¿½ existente no cadastro de nï¿½ " + StrZero( CLI->CODIGO, 6, 0 ) + "...", 12 )
       Mensagem( "Pressione [ENTER] para continuar..." )
       Pausa()
       lBusca:= .F.
@@ -2010,15 +2010,15 @@ FUNCTION VerificaLimiteCr( aPedido )
    Return lBusca
 
    /*****
-   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-   ³ Funcao      ³ PrecoConvertido
-   ³ Finalidade  ³ Retorna o preco convertido conforme a tabela de precos
-   ³             ³ utiliada no momento
-   ³ Parametros  ³ nPrecoBase= Condicional, frazendo a conversao do preco determinado
-   ³ Retorno     ³ nPrecoFinal
-   ³ Programador ³ Valmor Pereira Flores
-   ³ Data        ³
-   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+   ï¿½ Funcao      ï¿½ PrecoConvertido
+   ï¿½ Finalidade  ï¿½ Retorna o preco convertido conforme a tabela de precos
+   ï¿½             ï¿½ utiliada no momento
+   ï¿½ Parametros  ï¿½ nPrecoBase= Condicional, frazendo a conversao do preco determinado
+   ï¿½ Retorno     ï¿½ nPrecoFinal
+   ï¿½ Programador ï¿½ Valmor Pereira Flores
+   ï¿½ Data        ï¿½
+   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
    */
    Function PrecoConvertido( nPrecoBase )
    Local nPrecoPadrao, nPrecoFinal
@@ -2037,14 +2037,14 @@ FUNCTION VerificaLimiteCr( aPedido )
    Return nPrecoFinal
 
    /*****
-   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-   ³ Funcao      ³ TabelaComposta()
-   ³ Finalidade  ³ Retornar .T. se tabela selecionada for composta ou .F. caso contrario
-   ³ Parametros  ³ Nil
-   ³ Retorno     ³ Nil
-   ³ Programador ³ Valmor Pereira Flores
-   ³ Data        ³
-   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+   ï¿½ Funcao      ï¿½ TabelaComposta()
+   ï¿½ Finalidade  ï¿½ Retornar .T. se tabela selecionada for composta ou .F. caso contrario
+   ï¿½ Parametros  ï¿½ Nil
+   ï¿½ Retorno     ï¿½ Nil
+   ï¿½ Programador ï¿½ Valmor Pereira Flores
+   ï¿½ Data        ï¿½
+   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
    */
    Function TabelaComposta()
    TAX->( DBSetOrder( 1 ) )
@@ -2055,16 +2055,16 @@ FUNCTION VerificaLimiteCr( aPedido )
    Return .F.
 
    /*****
-   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-   ³ Funcao      ³ PrecoTabela
-   ³ Finalidade  ³ Retornar o preco Conforme a tabela que esta
-   ³             ³ sendo utilizada no momento ou retornar o preco
-   ³             ³ padrao do produto
-   ³ Parametros  ³ Nil
-   ³ Retorno     ³ Nil
-   ³ Programador ³ Valmor Pereira Flores
-   ³ Data        ³
-   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+   ï¿½ Funcao      ï¿½ PrecoTabela
+   ï¿½ Finalidade  ï¿½ Retornar o preco Conforme a tabela que esta
+   ï¿½             ï¿½ sendo utilizada no momento ou retornar o preco
+   ï¿½             ï¿½ padrao do produto
+   ï¿½ Parametros  ï¿½ Nil
+   ï¿½ Retorno     ï¿½ Nil
+   ï¿½ Programador ï¿½ Valmor Pereira Flores
+   ï¿½ Data        ï¿½
+   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
    */
    Function PrecoTabela()
    TAX->( DBSetOrder( 2 ) )
@@ -2086,14 +2086,14 @@ FUNCTION VerificaLimiteCr( aPedido )
 
 
    /*****
-   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-   ³ Funcao      ³ PrecoCusto
-   ³ Finalidade  ³ Retornar o preco de Custo do produto
-   ³ Parametros  ³ Nil
-   ³ Retorno     ³ nPrecoCusto
-   ³ Programador ³ Valmor Pereira Flores
-   ³ Data        ³
-   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+   ï¿½ Funcao      ï¿½ PrecoCusto
+   ï¿½ Finalidade  ï¿½ Retornar o preco de Custo do produto
+   ï¿½ Parametros  ï¿½ Nil
+   ï¿½ Retorno     ï¿½ nPrecoCusto
+   ï¿½ Programador ï¿½ Valmor Pereira Flores
+   ï¿½ Data        ï¿½
+   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
    */
    Function PrecoCusto()
    if !( PXF->CPROD_ == MPR->INDICE )
@@ -2103,17 +2103,17 @@ FUNCTION VerificaLimiteCr( aPedido )
    Return PXF->VALOR_
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ PrecoCompra
-³ Finalidade  ³ Retornar o preco de compra do produto passado por
-³             ³ referencia
-³ Parametros  ³ cProduto= Codigo do Produto
-³ Retorno     ³ nPrecoCompra
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³
-³ Atualizacao ³ Gelson Oliveira 28/01/2005
-³             ³ Valmor Florez 16/02/2005
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ PrecoCompra
+ï¿½ Finalidade  ï¿½ Retornar o preco de compra do produto passado por
+ï¿½             ï¿½ referencia
+ï¿½ Parametros  ï¿½ cProduto= Codigo do Produto
+ï¿½ Retorno     ï¿½ nPrecoCompra
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½
+ï¿½ Atualizacao ï¿½ Gelson Oliveira 28/01/2005
+ï¿½             ï¿½ Valmor Florez 16/02/2005
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Function PrecoCompra( cProduto )
    Local nPrecoCompra:= 0, dUltCmp:= CtoD( '01/01/1901' )
@@ -2134,16 +2134,16 @@ Function PrecoCompra( cProduto )
 
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ PrecoCnd
-³ Finalidade  ³ Calcular o preco de Venda conforme a condicao de pagamento
-³ Parametros  ³ nCondicao= Codigo da condicao de pagamento
-³             ³ nPrecoCompra= Preco de Compra do produto
-³             ³ nMargem= Opcional que indica qual margem utilizar no calculo
-³ Retorno     ³ nPrecoFinal
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ PrecoCnd
+ï¿½ Finalidade  ï¿½ Calcular o preco de Venda conforme a condicao de pagamento
+ï¿½ Parametros  ï¿½ nCondicao= Codigo da condicao de pagamento
+ï¿½             ï¿½ nPrecoCompra= Preco de Compra do produto
+ï¿½             ï¿½ nMargem= Opcional que indica qual margem utilizar no calculo
+ï¿½ Retorno     ï¿½ nPrecoFinal
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Function PrecoCnd( nCondicao, nPrecoCompra, nMargem )
    Local aPrecos:= 0
@@ -2171,14 +2171,14 @@ Function PrecoCnd( nCondicao, nPrecoCompra, nMargem )
    Return ROUND( PrecoCndAux( nCondicao, nPrecoCompra, nMargem ), SWSet( 1998 ) )
 
    /*****
-   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-   ³ Funcao      ³ PRECOCNDAUX
-   ³ Finalidade  ³ Preco / Condicoes - Auxiliar
-   ³ Parametros  ³ nCondicao / nPrecoCompra / nMargem
-   ³ Retorno     ³ nPreco
-   ³ Programador ³ Valmor Pereira Flores
-   ³ Data        ³
-   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+   ï¿½ Funcao      ï¿½ PRECOCNDAUX
+   ï¿½ Finalidade  ï¿½ Preco / Condicoes - Auxiliar
+   ï¿½ Parametros  ï¿½ nCondicao / nPrecoCompra / nMargem
+   ï¿½ Retorno     ï¿½ nPreco
+   ï¿½ Programador ï¿½ Valmor Pereira Flores
+   ï¿½ Data        ï¿½
+   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
    */
    Function PrecoCndAux( nCondicao, nPrecoCompra, nMargem )
    Local nPrecoFinal:= 0
@@ -2203,14 +2203,14 @@ Function PrecoCnd( nCondicao, nPrecoCompra, nMargem )
 
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ Condicao
-³ Finalidade  ³ Retorna a descricao da condicao de pagamento
-³ Parametros  ³ nCondicao= Codigo da condicao no cadastro
-³ Retorno     ³ cCondicao= Descricao da condicao
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ Condicao
+ï¿½ Finalidade  ï¿½ Retorna a descricao da condicao de pagamento
+ï¿½ Parametros  ï¿½ nCondicao= Codigo da condicao no cadastro
+ï¿½ Retorno     ï¿½ cCondicao= Descricao da condicao
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
    Function Condicao( nCondicao )
    Local cCondicao
@@ -2224,15 +2224,15 @@ Function PrecoCnd( nCondicao, nPrecoCompra, nMargem )
 
 
    /*****
-   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-   ³ Funcao      ³ ValorCondicional
-   ³ Finalidade  ³ Retornar o valor convertido conforme a tabela de
-   ³             ³ condicoes utilizada no momento
-   ³ Parametros  ³
-   ³ Retorno     ³
-   ³ Programador ³
-   ³ Data        ³
-   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+   ï¿½ Funcao      ï¿½ ValorCondicional
+   ï¿½ Finalidade  ï¿½ Retornar o valor convertido conforme a tabela de
+   ï¿½             ï¿½ condicoes utilizada no momento
+   ï¿½ Parametros  ï¿½
+   ï¿½ Retorno     ï¿½
+   ï¿½ Programador ï¿½
+   ï¿½ Data        ï¿½
+   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
    */
    Function ValorCondicional( nTotal )
    nTotal:= nTotal + ( ( nTotal * CND->PERACR ) / 100 )
@@ -2260,7 +2260,7 @@ LOCAL cTela:= ScreenSave( 0, 0, 24, 79 ), cCor:= SetColor()
     @ 02, 02 Say "Produto......: " + MPR->INDICE
     @ 03, 02 Say "Cod.Fabrica..: " + MPR->CODFAB
     @ 04, 02 Say "Descricao....: " + MPR->DESCRI
-    @ 05, 02 Say Repl( "±", 30 ) + " Detalhamento " + Repl( "±", 30 )
+    @ 05, 02 Say Repl( "ï¿½", 30 ) + " Detalhamento " + Repl( "ï¿½", 30 )
     @ 06, 02 Say MPR->DETAL1
     @ 07, 02 Say MPR->DETAL2
     @ 08, 02 Say MPR->DETAL3

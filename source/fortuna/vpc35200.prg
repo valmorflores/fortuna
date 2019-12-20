@@ -1,18 +1,18 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
-/// #include "PTFUNCS.CH" 
-/// #include "PTVERBS.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
+/// #include "ptfuncs.ch" 
+/// #include "ptverbs.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ TABELA DIFERENCIADA DE PRECOS 
-³ Finalidade  ³ Lancamento de Tabela Diferenciada de Precos 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 10/09/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ TABELA DIFERENCIADA DE PRECOS 
+ï¿½ Finalidade  ï¿½ Lancamento de Tabela Diferenciada de Precos 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 10/09/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 #ifdef HARBOUR
 function vpc35200()
@@ -62,7 +62,7 @@ Local lFlag:= .F.
          case Chr( nTecla ) == "+" 
               IF CODIGO == 0 
                  cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-                 Aviso( "Tabela Padrao nao poder  sofrer alteracoes." ) 
+                 Aviso( "Tabela Padrao nao poderï¿½ sofrer alteracoes." ) 
                  Pausa() 
                  ScreenRest( cTelaRes ) 
               ELSE 
@@ -79,7 +79,7 @@ Local lFlag:= .F.
          case nTecla==K_ENTER 
               IF CODIGO == 0 
                  cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-                 Aviso( "Tabela Padrao nao poder  sofrer alteracoes." ) 
+                 Aviso( "Tabela Padrao nao poderï¿½ sofrer alteracoes." ) 
                  Pausa() 
                  ScreenRest( cTelaRes ) 
               ELSE 
@@ -95,7 +95,7 @@ Local lFlag:= .F.
               nRegistro:= Recno() 
               DBGoTop() 
               WHILE !EOF() 
-                  IF NetRLock() 
+                  IF netrlock() 
                      IF Recno() == nRegistro 
                         Replace SELECT With "*" 
                      ELSE 
@@ -147,14 +147,14 @@ Static Function MostraDados(cTELA)
   Return nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ MONTATABELA 
-³ Finalidade  ³ Monta tabela 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ MONTATABELA 
+ï¿½ Finalidade  ï¿½ Monta tabela 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function MontaTabela( oTab ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -261,7 +261,7 @@ Static Function MontaTabela( oTab )
                 @ 11,11 Say "Margem......:" Get nMargem Pict "@E 999.999" Valid Margem( nPrecoC, nMargem, @nPrecoV ) 
                 @ 12,11 Say "Preco.......:" Get nPrecov Pict "@E 9,999,999.9999" 
                 READ 
-                IF NetRLock() 
+                IF netrlock() 
                    Replace CODIGO With nCodigo,; 
                            PERACR With nPerAcr,; 
                            PERDES With nPerDes,; 
@@ -311,12 +311,12 @@ Static Function MontaTabela( oTab )
                 nMargem:= MARGEM 
                 @ 04,11 Say "Esta funcao aplica uma margem aos itens, selecionando todos  os que" 
                 @ 05,11 Say "estejam disponiveis na listagem geral de produtos." 
-                @ 06,11 Say "Antes de continuar, esteja certo de que realmente ‚ isto que deseja" 
+                @ 06,11 Say "Antes de continuar, esteja certo de que realmente ï¿½ isto que deseja" 
                 @ 07,11 Say "pois esta atividade e irreversivel." 
-                @ 08,11 Say "ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ" 
+                @ 08,11 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
                 @ 09,11 Say "Margem que deseja aplicar ao preco de compra:"  Get nMargem Pict "@E 999.999" 
-                @ 10,11 Say "Modificar informacoes % de ¡tens j  selecionados?" Get cMudarSelecionados 
-                @ 14,11 Say "ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ" Color "15/" + CorFundoAtual() 
+                @ 10,11 Say "Modificar informacoes % de ï¿½tens jï¿½ selecionados?" Get cMudarSelecionados 
+                @ 14,11 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" Color "15/" + CorFundoAtual() 
  
                 READ 
                 IF IIF( LastKey()==K_ESC, .F., Confirma( 0, 0, "Confirma a gravacao de todos os produtos nesta tabela?", "S" ) ) 
@@ -345,7 +345,7 @@ Static Function MontaTabela( oTab )
                             @ 15,11 Say "Preco de Compra:" + Tran( nPrecoC, "@E 999,999,999.99" ) 
                             @ 16,11 Say "Margen (%).....:" + Tran( nMargem, "@E 999,999,999.99" ) 
                             @ 17,11 Say "Preco de Venda.:" + Tran( nPrecoV, "@E 999,999,999.99" ) 
-                            IF NetRLock() 
+                            IF netrlock() 
                                Repl CODIGO With nCodigo,; 
                                     CODPRO With MPR->INDICE,; 
                                     CODFAB With MPR->CODFAB,; 
@@ -381,7 +381,7 @@ Static Function MontaTabela( oTab )
                 cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
                 DBSelectAr( _COD_TABAUX ) 
                 IF TAX->( DBSeek( MPR->INDICE ) ) 
-                   Aviso( "Produto j  esta selecionado!" ) 
+                   Aviso( "Produto jï¿½ esta selecionado!" ) 
                    Pausa() 
                 ELSE 
                    PXF->( DBSetOrder( 1 ) ) 
@@ -400,7 +400,7 @@ Static Function MontaTabela( oTab )
                    @ 12,11 Say "Preco.......:" Get nPrecov Pict "@E 9,999,999.9999" 
                    READ 
                    DBAppend() 
-                   IF NetRLock() 
+                   IF netrlock() 
                       Replace CODIGO With nCodigo,; 
                               CODPRO With MPR->INDICE,; 
                               CODFAB With MPR->CODFAB,; 
@@ -446,14 +446,14 @@ Static Function MontaTabela( oTab )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Selecao da Tabela de Preco 
-³ Finalidade  ³ 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Selecao da Tabela de Preco 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function TabelaPreco() 
   Local nArea:= Select() 
@@ -521,7 +521,7 @@ Function TabelaPreco()
               nRegistro:= Recno() 
               DBGoTop() 
               WHILE !EOF() 
-                  IF NetRLock() 
+                  IF netrlock() 
                      IF Recno() == nRegistro 
                         Replace SELECT With "*" 
                      ELSE 
@@ -550,14 +550,14 @@ Function TabelaPreco()
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IncluiPreco 
-³ Finalidade  ³ Inclusao de registros em Contas a Pagar 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IncluiPreco 
+ï¿½ Finalidade  ï¿½ Inclusao de registros em Contas a Pagar 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Func IncluiPreco( oTab ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -576,7 +576,7 @@ Static Func IncluiPreco( oTab )
   IF nCodigo == 1 
      IF !DBSeek( 0 ) 
         DBAppend() 
-        IF NetRLock() 
+        IF netrlock() 
            Replace CODIGO With 0,; 
                    DESCRI With "TABELA PADRAO" 
         ENDIF 
@@ -602,7 +602,7 @@ Static Func IncluiPreco( oTab )
            COR[16]+","+COR[18]+",,,"+COR[17]) 
            IF DBSeek( nCodigo ) 
               cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-              Aviso( "Codigo de lancamento ser  substituido" ) 
+              Aviso( "Codigo de lancamento serï¿½ substituido" ) 
               Pausa() 
               ScreenRest( cTelaRes ) 
               DBGoBottom() 
@@ -645,14 +645,14 @@ Static Func IncluiPreco( oTab )
   Return nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ALTERAPRECO 
-³ Finalidade  ³ Alteracao de Precos 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ALTERAPRECO 
+ï¿½ Finalidade  ï¿½ Alteracao de Precos 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function AlteraPreco( oTab ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -689,7 +689,7 @@ Function AlteraPreco( oTab )
      If confirma(12,63,"Confirma?",; 
         "Digite [S] para confirmar o cadastramento.","S",; 
         COR[16]+","+COR[18]+",,,"+COR[17]) 
-        If NetRLock() 
+        If netrlock() 
            repl DESCRI With cDescri,; 
                 PERACR with nPerAcr, PERDES With nPerDes,; 
                 CND001 With nCnd001, CND002 With nCnd002,; 
@@ -712,14 +712,14 @@ Function AlteraPreco( oTab )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ MARGEM 
-³ Finalidade  ³ Calcula preco final com base numa margem de lucro 
-³ Parametros  ³ Nil 
-³ Retorno     ³ 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ MARGEM 
+ï¿½ Finalidade  ï¿½ Calcula preco final com base numa margem de lucro 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function Margem( nPrecoPadrao, nMargem, nPrecoFinal ) 
 IF nMargem > 0 

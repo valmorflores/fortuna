@@ -4,10 +4,10 @@
 *************************************** VPBIBCEI ****************************************
 *                 Biblioteca de funcoes para o Sistema VPCEI Versao 1.0                  *
 ********************************* Valmor Pereira Flores **********************************
-#include "VPF.CH"
-#include "INKEY.CH"
-#include "formatos.ch"
-#include "box.ch"
+#include "vpf.ch"
+#include "inkey.ch"
+//#include "formatos.ch"
+//#include "box.ch"
 
 
 
@@ -260,7 +260,7 @@ do case
                  {"PERDCD","N",03,00},; //PERIODICIDADE DE VISITAS
                  {"PRXVST","D",08,00},; // PROXIMA VISITA (AGENDA)
                  {"MIDIA_","N",03,00}}
-        /* Por compatibilizacao Verifica a nÆo existencia de um arquivo de no CLIENTES.DBF */
+        /* Por compatibilizacao Verifica a nï¿½o existencia de um arquivo de no CLIENTES.DBF */
         IF !File( StrTran( _VPB_CLIENTE, ".DBF", ".DBF" ) )
            dbcreate( _VPB_CLIENTE, aStrut )
         ENDIF
@@ -1812,8 +1812,8 @@ IF nNumero==0
 ELSEIF nNumero >= 65
    nNumero:= -1
 ELSE
-   @ 24,00 Say "°°±±±²²²²²²²²²²" Color "15/01"
-   @ 24,15 Say Repl( "°", nNumero ) + "  " + Repl( "Û", 63 - nNumero ) Color "07/03"
+   @ 24,00 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" Color "15/01"
+   @ 24,15 Say Repl( "ï¿½", nNumero ) + "  " + Repl( "ï¿½", 63 - nNumero ) Color "07/03"
 ENDIF
 /* Seleciona Area que foi passada como parametro */
 DBSelectAr( nDBF )
@@ -3094,7 +3094,7 @@ do case
         EndIf
    case nDBF==_COD_HISTORICO
         If NetUse( _VPB_HISTORICO, ( nModo==1 ), 1, "His", .F. )
-           Mensagem( "Conectando ao arquivo de hist¢ricos, aguarde..." )
+           Mensagem( "Conectando ao arquivo de histï¿½ricos, aguarde..." )
            If !File( M->GDir-"\HISIND01.NTX" ) .OR. !File( M->GDir-"\HISIND02.NTX" )
 
               // Linhas corrigidas pelo programa de correcao cl2hb.exe em 19/08/2003
@@ -4499,7 +4499,7 @@ Function AreaStatus()
   @ ++nlinha,02 Say "           Data " + DTOC( DATE() )
   @ ++nlinha,02 Say "           Hora " + TIME()
   @ ++nLinha,02 Say "  Base de Dados 255                                                           "
-  @ ++NliNHA,02 Say "    Verificacao NETRLOCK-LOCK-DBLOCK-UNLOCK                                   "
+  @ ++NliNHA,02 Say "    Verificacao netrlock-LOCK-DBLOCK-UNLOCK                                   "
   @ ++nLinha,02 Say "        Empresa " + ALLTRIM( _EMP )
   @ ++nLinha,02 Say "         Versao " + ALLTRIM( _VER )
   @ ++nLinha,02 Say "******************************************************************************"

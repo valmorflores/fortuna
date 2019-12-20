@@ -3,14 +3,14 @@
 #include "inkey.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ TABELA DE OPERACOES COM PRODUTOS 
-³ Finalidade  ³ Lancamento de Tabela 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 10/09/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ TABELA DE OPERACOES COM PRODUTOS 
+ï¿½ Finalidade  ï¿½ Lancamento de Tabela 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 10/09/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */
 #ifdef HARBOUR
 function vpc35400()
@@ -105,14 +105,14 @@ Static Function MostraDados(cTELA)
   Return nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Selecao 
-³ Finalidade  ³ 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Selecao 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function TabelaOperacoes( nCodigo ) 
   Local getlist:={}, ntecla 
@@ -157,7 +157,7 @@ Function TabelaOperacoes( nCodigo )
                // Importante! 
                // 
                // Browse( 0 ) = Elimina referencias do browse, pois neste 
-               // ponto o programa far  um fechamento de uma janela da funcao 
+               // ponto o programa farï¿½ um fechamento de uma janela da funcao 
                // browse() sem ser pelo modo convencional que seria com base 
                // no presionamento da tecla K_ESC 
                // 
@@ -180,14 +180,14 @@ Function TabelaOperacoes( nCodigo )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IncluiOperacao 
-³ Finalidade  ³ Inclusao de registros 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IncluiOperacao 
+ï¿½ Finalidade  ï¿½ Inclusao de registros 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Func IncluiOperacao( oTab ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -232,7 +232,7 @@ Static Func IncluiOperacao( oTab )
            COR[16]+","+COR[18]+",,,"+COR[17]) 
            IF DBSeek( nCodigo ) 
               cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-              Aviso( "Codigo de lancamento ser  substituido" ) 
+              Aviso( "Codigo de lancamento serï¿½ substituido" ) 
               Pausa() 
               ScreenRest( cTelaRes ) 
               DBGoBottom() 
@@ -284,14 +284,14 @@ Static Func IncluiOperacao( oTab )
   Return nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ALTERAPRECO 
-³ Finalidade  ³ Alteracao de Precos 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ALTERAPRECO 
+ï¿½ Finalidade  ï¿½ Alteracao de Precos 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function AlteraOperacao( oTab ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -341,7 +341,7 @@ Function AlteraOperacao( oTab )
      If confirma(12,63,"Confirma?",; 
         "Digite [S] para confirmar o cadastramento.","S",; 
         COR[16]+","+COR[18]+",,,"+COR[17]) 
-        If NetRLock() 
+        If netrlock() 
            repl DESCRI With cDescri,; 
                 ENTSAI with cEntSai,; 
                 NATOPE With nNatOpe,; 
@@ -417,7 +417,7 @@ Static cTela
           @ 10,34 Say "      bem como, correcoes de Estoque     " 
       CASE nCodigo==4 
           cTitulo:= " CLIENTE / FORNECEDOR " 
-          @ 05,34 Say " ÄÄÄ Para movimentacoes de estoque deve-" 
+          @ 05,34 Say " ï¿½ï¿½ï¿½ Para movimentacoes de estoque deve-" 
           @ 06,34 Say "      se informar qual dos cadastros dese" 
           @ 07,34 Say "      ja que seja exibido no momento da  " 
           @ 08,34 Say "      consulta?                          " 
@@ -431,14 +431,14 @@ Static cTela
           @ 10,34 Say "      zar esta Operacao.                 " 
       CASE nCodigo==5 
           cTitulo:= " MOVIMENTACOES FINANCEIRAS " 
-          @ 05,34 Say " ÄÄÄ Informe SIM ou NAO para que o sis- " 
+          @ 05,34 Say " ï¿½ï¿½ï¿½ Informe SIM ou NAO para que o sis- " 
           @ 06,34 Say "      tema solicite informacoes fimancei-" 
           @ 07,34 Say "      ras caso esta Operacao se destine  " 
           @ 08,34 Say "      ao processamento de Notas Fiscais  " 
           @ 09,34 Say "      de Entrada de Mercadoria.          "
       CASE nCodigo==7
           cTitulo:= " TIPO DE DOCUMENTO FISCAL " 
-          @ 05,34 Say " ÄÄÄ 001 = Nota Fiscal Modelo I         " 
+          @ 05,34 Say " ï¿½ï¿½ï¿½ 001 = Nota Fiscal Modelo I         " 
           @ 06,34 Say "      002 = Nota Fiscal Modelo I - Manual" 
           @ 07,34 Say "      003 = Nota Fiscal Balcao           " 
           @ 08,34 Say "      004 = Nota Fiscal Balcao D1        " 

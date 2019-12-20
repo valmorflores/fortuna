@@ -11,7 +11,7 @@
 // Multi-empresa 
 // Deve ser instalado no servidor 
 // 
-#INCLUDE "INKEY.CH" 
+#INCLUDE "inkey.ch" 
 Local nOpcoes, nEmpresa 
 Priv  GDir:= "DADOS" 
 CLS 

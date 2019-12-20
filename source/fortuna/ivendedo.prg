@@ -3,15 +3,15 @@
 #include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ImpVendedor() 
-³ Finalidade  ³ Relacao de Vendedor 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ Fevereiro/1995 
-³ Atualizacao ³ Agosto/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ImpVendedor() 
+ï¿½ Finalidade  ï¿½ Relacao de Vendedor 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ Fevereiro/1995 
+ï¿½ Atualizacao ï¿½ Agosto/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function ImpVendedor() 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -77,9 +77,9 @@ Function ImpVendedor()
          ENDCASE 
          cArquivo:= PAD( cArquivo, 30 ) 
          @ 05, 10 Say "Do Codigo.....................:" Get nForn1    Pict "999999" 
-         @ 05, 51 Say "At‚:" Get nForn2 Pict "999999" 
+         @ 05, 51 Say "Atï¿½:" Get nForn2 Pict "999999" 
          @ 06, 10 Say "Pgto. Feriado [A]Ant. [P]Pos..:" Get cAntPos    Pict "!" Valid cAntPos $ "AP " 
-         @ 07, 10 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+         @ 07, 10 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
          @ 08, 10 Say "Arquivo de Relatorio (.REP)...:" Get cArquivo 
          READ 
  
@@ -98,7 +98,7 @@ Function ImpVendedor()
   ENDIF 
  
   DBSelectAr( _COD_FORNECEDOR ) 
-  /* Se estiver dispon¡vel para a tela */ 
+  /* Se estiver disponï¿½vel para a tela */ 
   IF aOpcao[ 5 ] == 2 
      SWGravar( 600 ) 
      Set( 24, "TELA0000.TMP" ) 
@@ -131,7 +131,7 @@ Function ImpVendedor()
   /* Emissao do relatorio */ 
   Relatorio( AllTrim( cArquivo ) ) 
  
-  /* Se estiver dispon¡vel para a tela */ 
+  /* Se estiver disponï¿½vel para a tela */ 
   IF aOpcao[ 5 ] == 2 
      ViewFile( "TELA0000.TMP" ) 
   ENDIF 

@@ -1,17 +1,17 @@
 // ## CL2HB.EXE - Converted
-#Include "INKEY.CH" 
-#include "VPF.CH" 
+#Include "inkey.ch" 
+#include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Transferencia() 
-³ Finalidade  ³ Transferencia de Informacoes entre empresas 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 3/Janeiro/2000 
-³ Atualizacao ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Transferencia() 
+ï¿½ Finalidade  ï¿½ Transferencia de Informacoes entre empresas 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 3/Janeiro/2000 
+ï¿½ Atualizacao ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function Transferencia() 
 Local cTela:= ScreenSave( 0, 0, 24, 79 ), cCor:= SetColor(),; 
@@ -37,7 +37,7 @@ Private cDirEmp
      nHandle:= 0 
  NEXT 
  IF Len( aOpcoes ) <= 0 
-    Aviso( "NÆo Existem Arquivos de Filtros Disponiveis. Contacte o Suporte Tecnico." ) 
+    Aviso( "Nï¿½o Existem Arquivos de Filtros Disponiveis. Contacte o Suporte Tecnico." ) 
     Pausa() 
     ScreenRest( cTela ) 
     SetColor( cCor ) 
@@ -69,13 +69,13 @@ Private cDirEmp
  VPBox( 00, 00, 22, 79, "TRANSFERENCIA DE INFORMACOES" ) 
  VPBox( 04, 41, 18, 77, "Empresa Secundaria", _COR_GET_EDICAO, .F.,.F. ) 
  
- @ 02,30 Say "ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿" Color "14/" + CorFundoAtual() 
- @ 03,30 Say "³                   " Color "14/" + CorFundoAtual() 
+ @ 02,30 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿" Color "14/" + CorFundoAtual() 
+ @ 03,30 Say "ï¿½                   " Color "14/" + CorFundoAtual() 
  
  @ 01,03 Say LEFT( ALLTRIM( _EMP ), 33 ) 
  @ 02,03 Say "Ultima Transferencia " 
  @ 03,03 Say DTOC( DATE() ) + " " + TIME() + "Hs." 
- @ 08,03 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+ @ 08,03 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
  @ 09,03 Say "Informacoes Selecionadas.        " 
  
  aBotao:= { { 20, 05, " Iniciar Transferencia ", CorFundoAtual() },; 
@@ -150,14 +150,14 @@ Private cDirEmp
              ENDIF 
              IF nOpcao==1 
                 IF nVaiVem==1 
-                   nEscolha:= SWAlerta( "IMPORTACAO DE INFORMACOES;Os dados serÆo importados do diretorio;" + alltrim( aUnidade[ 1 ] ) + ".", {"Confirmar", "Cancelar", "Trocar Local"} ) 
+                   nEscolha:= SWAlerta( "IMPORTACAO DE INFORMACOES;Os dados serï¿½o importados do diretorio;" + alltrim( aUnidade[ 1 ] ) + ".", {"Confirmar", "Cancelar", "Trocar Local"} ) 
                    IF nEscolha==1 
                       Importar( aOpcoes, aUnidade ) 
                    ELSEIF nEscolha==3 
                       TrocaUnidades( aUnidade ) 
                    ENDIF 
                 ELSEIF nVaiVem==2 
-                   nEscolha:= SWAlerta( "EXPORTACAO DE INFORMACOES;Os dados serÆo gravados no diretorio ;" + alltrim( aUnidade[ 2 ] ) + "", {"Confirmar", "Cancelar", "Trocar Local"} ) 
+                   nEscolha:= SWAlerta( "EXPORTACAO DE INFORMACOES;Os dados serï¿½o gravados no diretorio ;" + alltrim( aUnidade[ 2 ] ) + "", {"Confirmar", "Cancelar", "Trocar Local"} ) 
                    IF nEscolha==1 
                       Exportar( aOpcoes, aUnidade ) 
                    ELSEIF nEscolha==3 
@@ -166,12 +166,12 @@ Private cDirEmp
                 ENDIF 
              ELSEIF nOpcao==2 
                 nVaiVem:= 1 
-                @ 02,30 Say "ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿" Color "14/"  + cCorFundo 
-                @ 03,30 Say "                   ³" Color "14/" + cCorFundo 
+                @ 02,30 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿" Color "14/"  + cCorFundo 
+                @ 03,30 Say "                   ï¿½" Color "14/" + cCorFundo 
              ELSEIF nOpcao==3 
                 nVaiVem:= 2 
-                @ 02,30 Say "ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿" Color "14/"  + cCorFundo 
-                @ 03,30 Say "³                   " Color "14/" + cCorFundo 
+                @ 02,30 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿" Color "14/"  + cCorFundo 
+                @ 03,30 Say "ï¿½                   " Color "14/" + cCorFundo 
              ENDIF 
         OTHERWISE 
      ENDCASE 
@@ -315,7 +315,7 @@ Private cDirEmp
  
                  cCampoInfo:= "" 
  
-                 /* Em aCampos (array multidimensional) serÆo armazenadas 
+                 /* Em aCampos (array multidimensional) serï¿½o armazenadas 
                     as informacoes dos campos dos arquivos ex. inform. 
                     de CLIE0001, CLIE0002 ..., na mesma sequencia em que 
                     forem abertos */ 
@@ -345,7 +345,7 @@ Private cDirEmp
  
                         /* Adiciona em aCampos um elemento correspondente ao 
                            arquivo de exportacao atual ex. CLIE0001.TXT onde 
-                           serÆo jogadas as informacoes dos arquivos, sequentemente */ 
+                           serï¿½o jogadas as informacoes dos arquivos, sequentemente */ 
  
                         AAdd( aCampos, {} ) 
                         cCampoInfo:= "" 
@@ -402,7 +402,7 @@ Private cDirEmp
                         /* posiciona na primeira area */ 
                         nAreaTmp:= 123 
  
-                        IF NetRLock() 
+                        IF netrlock() 
  
                            /* Passa p/todos os arquivos ex. CLIE0001, CLIE0002, .... */ 
                            FOR nCtFiles:= 1 TO Len( aArquivos ) 
@@ -453,7 +453,7 @@ Private cDirEmp
                                             _FIELD->&cCampo:= cConteudo 
                                          ENDIF 
                                       ELSE 
-                                         @ 03,04 Say PAD( "Campo NÆo Localizado", 65 ) Color "02/07" 
+                                         @ 03,04 Say PAD( "Campo Nï¿½o Localizado", 65 ) Color "02/07" 
                                       ENDIF 
                                       Inkey() 
                                       IF LastKey()==K_ESC .OR. NextKey()==K_ESC 
@@ -928,10 +928,10 @@ Priv cFieldName:= ALLTRIM( cCampos )
  
      DBSelectAr( nArea ) 
      DBGoTop() 
-     xCampoInfo:= IF( VALTYPE( &cFieldName )=="N", -1, Repl( "±", Len( &cFieldName ) ) ) 
+     xCampoInfo:= IF( VALTYPE( &cFieldName )=="N", -1, Repl( "ï¿½", Len( &cFieldName ) ) ) 
      WHILE !EOF() 
         IF &cFieldName==xCampoInfo 
-           IF NetRLock() 
+           IF netrlock() 
               DELE 
            ENDIF 
         ENDIF 

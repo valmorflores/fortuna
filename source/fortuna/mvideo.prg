@@ -1,5 +1,5 @@
 // ## CL2HB.EXE - Converted
-#Include "INKEY.CH" 
+#Include "inkey.ch" 
  
 SetColor( "00/00" ) 
 ScanLines( 350, 0 ) 

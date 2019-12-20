@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#Include "INKEY.CH" 
-#Include "VPF.CH" 
+#Include "inkey.ch" 
+#Include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VPC29700.PRG 
-³ Finalidade  ³ Inclusao / Alteracao / Exclusao de tabela de ICMs Reducao 
-³ Parametros  ³ Nil 
-³ Retorno     ³ 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VPC29700.PRG 
+ï¿½ Finalidade  ï¿½ Inclusao / Alteracao / Exclusao de tabela de ICMs Reducao 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */
 #ifdef HARBOUR
 function vpc29700()
@@ -133,7 +133,7 @@ LOCAL cCor:= SetColor(), nCursor:= SetCursor(),;
                  MPR->( DBGoTop() ) 
                  WHILE !MPR->( EOF() ) 
                      IF ALLTRIM( MPR->( TABRED ) )==ALLTRIM( cCodigo ) 
-                        IF MPR->( NetRLock() ) 
+                        IF MPR->( netrlock() ) 
                            Replace MPR->PERRED With 0,; 
                                    MPR->TABRED With Space( LEN( MPR->TABRED ) ) 
                         ENDIF 
@@ -163,14 +163,14 @@ LOCAL cCor:= SetColor(), nCursor:= SetCursor(),;
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ReducaoIncluir 
-³ Finalidade  ³ Incluir itens na tabela de percentuais de reducao 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 05/Fevereiro/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ReducaoIncluir 
+ï¿½ Finalidade  ï¿½ Incluir itens na tabela de percentuais de reducao 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 05/Fevereiro/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION ReducaoIncluir( oTb ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -202,7 +202,7 @@ Local cCodigo:= "  ", cDescri:= Space( 30 ), cObserv:= Space( 40 ), nPerRed:= 0
  
              ReducoesDiferenciadas( cCodigo ) 
              DBAppend() 
-             IF NetRLock() 
+             IF netrlock() 
                 Replace CODIGO With cCodigo,; 
                         DESCRI With cDescri,; 
                         OBSERV With cObserv,; 
@@ -316,7 +316,7 @@ Local nTecla, oTb
  
                 /* Gravar informacoes */ 
                 IF LastKey() <> K_ESC 
-                   IF NetRLock() 
+                   IF netrlock() 
                       Replace CODIGO With cCodigo,; 
                               PERICM With nPERICM,; 
                               PERRDc With nPERRDc,; 
@@ -381,14 +381,14 @@ Local nTecla, oTb
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ReducaoAlterar 
-³ Finalidade  ³ Alterar itens na tabela de percentuais de reducao 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 05/Fevereiro/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ReducaoAlterar 
+ï¿½ Finalidade  ï¿½ Alterar itens na tabela de percentuais de reducao 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 05/Fevereiro/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION ReducaoAlterar( oTb ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -412,7 +412,7 @@ Local cCodigo:= CODIGO, cDescri:= DESCRI, cObserv:= OBSERV, nPerRed:= PERRED
  
           IF LastKey() <> K_ESC 
              ReducoesDiferenciadas( cCodigo ) 
-             IF NetRLock() 
+             IF netrlock() 
                 Replace CODIGO With cCodigo,; 
                         DESCRI With cDescri,; 
                         OBSERV With cObserv,; 
@@ -426,7 +426,7 @@ Local cCodigo:= CODIGO, cDescri:= DESCRI, cObserv:= OBSERV, nPerRed:= PERRED
                  @ 21,03 Say MPR->DESCRI 
                  Scroll( 01, 01, 21, 78, 1 ) 
                  IF ALLTRIM( MPR->( TABRED ) )==ALLTRIM( cCodigo ) 
-                    IF MPR->( NetRLock() ) 
+                    IF MPR->( netrlock() ) 
                        Replace MPR->PERRED With nPerRed,; 
                                MPR->TABRED With cCodigo 
                     ENDIF 

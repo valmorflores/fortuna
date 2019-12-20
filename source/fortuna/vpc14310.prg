@@ -1,9 +1,7 @@
 // ## CL2HB.EXE - Converted
-#Include "BOX.CH" 
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
-#Include "PTFUNCS.CH" 
-#Include "PTVERBS.CH" 
+#include "box.ch" 
+#include "vpf.ch" 
+#include "inkey.ch" 
  
 /* 
 * 
@@ -44,38 +42,38 @@ func cfgmasc()
   setcolor( _COR_GET_EDICAO ) 
   setcursor(0) 
   mensagem("Pressione [ENTER][TAB] para selecionar ou [ESC] para retornar.") 
-  AADD( mOP, { 99, "°°±±²² FORTUNA ²²±±°°" } ) 
-  AADD( mOP, { 1,  "ÃÄCadastros          " } ) 
-  AADD( mOP, { 11, "³ ÃÄClientes         " } ) 
-  AADD( mOP, { 12, "³ ÃÄFornecedores     " } ) 
-  AADD( mOP, { 13, "³ ÃÄProdutos         " } ) 
-  AADD( mOP, { 14, "³ ÃÄBancos           " } ) 
-  AADD( mOP, { 141,"³ ³ ÀÄBanrisul       " } ) 
-  AADD( mOP, { 15, "³ ÀÄVendedores       " } ) 
-  AADD( mOP, { 2,  "ÃÄEstoque            " } ) 
-  AADD( mOP, { 3,  "ÃÄCompras (O.C.)     " } ) 
-  AADD( mOP, { 4,  "ÃÄVenda              " } ) 
-  AADD( mOP, { 41, "³ ÃÄPedido           " } ) 
-  AADD( mOP, { 42, "³ ÀÄNota Fiscal      " } ) 
-  AADD( mOP, { 5,  "ÃÄFinanceiro         " } ) 
-  AADD( mOP, { 51, "³ ÃÄComissoes        " } ) 
-  AADD( mOP, { 52, "³ ÀÄBloquetos        " } ) 
-  AADD( mOP, { 6,  "ÃÄRelatorios         " } ) 
-  AADD( mOP, { 61, "³ ÃÄClientes         " } ) 
-  AADD( mOP, { 62, "³ ÃÄProdutos         " } ) 
-  AADD( mOP, { 63, "³ ÃÄEstoque          " } ) 
-  AADD( mOP, { 64, "³ ÃÄContas a Pagar   " } ) 
-  AADD( mOP, { 65, "³ ÀÄContas a Receber " } ) 
-  AADD( mOP, { 0,  "ÃÄGeral              " } ) 
-  AADD( mOP, { 100,"ÀÄMeu Computador     " } ) 
-  AADD( mOP, { 110,"  ÃÄMouse            " } ) 
-  AADD( mOP, { 120,"  ÃÄProtecao de tela " } ) 
-  AADD( mOP, { 121,"  ³ ÃÄPadrao         " } ) 
-  AADD( mOP, { 122,"  ³ ÀÄNavegador      " } ) 
-  AADD( mOP, { 130,"  ÃÄBarra de Rolagem " } ) 
-  AADD( mOP, { 140,"  ÃÄMonitor          " } ) 
-  AADD( mOP, { 160,"  ÃÄAtualizacao      " } ) 
-  AADD( mOP, { 150,"  ÀÄPortas Impressao " } ) 
+  AADD( mOP, { 99, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ FORTUNA ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" } ) 
+  AADD( mOP, { 1,  "ï¿½ï¿½Cadastros          " } ) 
+  AADD( mOP, { 11, "ï¿½ ï¿½ï¿½Clientes         " } ) 
+  AADD( mOP, { 12, "ï¿½ ï¿½ï¿½Fornecedores     " } ) 
+  AADD( mOP, { 13, "ï¿½ ï¿½ï¿½Produtos         " } ) 
+  AADD( mOP, { 14, "ï¿½ ï¿½ï¿½Bancos           " } ) 
+  AADD( mOP, { 141,"ï¿½ ï¿½ ï¿½ï¿½Banrisul       " } ) 
+  AADD( mOP, { 15, "ï¿½ ï¿½ï¿½Vendedores       " } ) 
+  AADD( mOP, { 2,  "ï¿½ï¿½Estoque            " } ) 
+  AADD( mOP, { 3,  "ï¿½ï¿½Compras (O.C.)     " } ) 
+  AADD( mOP, { 4,  "ï¿½ï¿½Venda              " } ) 
+  AADD( mOP, { 41, "ï¿½ ï¿½ï¿½Pedido           " } ) 
+  AADD( mOP, { 42, "ï¿½ ï¿½ï¿½Nota Fiscal      " } ) 
+  AADD( mOP, { 5,  "ï¿½ï¿½Financeiro         " } ) 
+  AADD( mOP, { 51, "ï¿½ ï¿½ï¿½Comissoes        " } ) 
+  AADD( mOP, { 52, "ï¿½ ï¿½ï¿½Bloquetos        " } ) 
+  AADD( mOP, { 6,  "ï¿½ï¿½Relatorios         " } ) 
+  AADD( mOP, { 61, "ï¿½ ï¿½ï¿½Clientes         " } ) 
+  AADD( mOP, { 62, "ï¿½ ï¿½ï¿½Produtos         " } ) 
+  AADD( mOP, { 63, "ï¿½ ï¿½ï¿½Estoque          " } ) 
+  AADD( mOP, { 64, "ï¿½ ï¿½ï¿½Contas a Pagar   " } ) 
+  AADD( mOP, { 65, "ï¿½ ï¿½ï¿½Contas a Receber " } ) 
+  AADD( mOP, { 0,  "ï¿½ï¿½Geral              " } ) 
+  AADD( mOP, { 100,"ï¿½ï¿½Meu Computador     " } ) 
+  AADD( mOP, { 110,"  ï¿½ï¿½Mouse            " } ) 
+  AADD( mOP, { 120,"  ï¿½ï¿½Protecao de tela " } ) 
+  AADD( mOP, { 121,"  ï¿½ ï¿½ï¿½Padrao         " } ) 
+  AADD( mOP, { 122,"  ï¿½ ï¿½ï¿½Navegador      " } ) 
+  AADD( mOP, { 130,"  ï¿½ï¿½Barra de Rolagem " } ) 
+  AADD( mOP, { 140,"  ï¿½ï¿½Monitor          " } ) 
+  AADD( mOP, { 160,"  ï¿½ï¿½Atualizacao      " } ) 
+  AADD( mOP, { 150,"  ï¿½ï¿½Portas Impressao " } ) 
   oTAB:=tbrowsenew(02,01,24-3,21) 
   oTAB:addcolumn(tbcolumnnew(,{|| mOP[nROW][2]})) 
   oTAB:AUTOLITE:=.f. 
@@ -100,7 +98,7 @@ func cfgmasc()
         SetColor( "15/09" ) 
         @ 03, 25 Say " Sistema " + ALLTRIM( _VER ) 
         @ 05, 25 Say " Licenciado para " + ALLTRIM( _EMP ) 
-        @ 07, 25 Say " EVOLUTIVA °°°°°°±±±±±±²²²²²²²²²²²³³³³³³³³ÛÛÛÛÛÛÛÛÛÛÛÛÛÛ" 
+        @ 07, 25 Say " EVOLUTIVA ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
         @ 07, 25 Say " EVOLUTIVA Sistemas de Gestao Empresarial        " Color "14/09" 
         @ 08, 25 Say "  Av. Protasio Alves, 5040                       " 
         @ 09, 25 Say "  Petropolis      - Porto Alegre/RS              " 
@@ -356,9 +354,9 @@ stat func modulo( nMod )
           @ 11,25 Say "Outros Relatorios....: ["  + PAD( SWSet( _PRN_OUTROS ), 10 )     + "]" 
           @ 13,25 Say "Dir.Relatorios (Rede): ["  + PAD( SWSet( _SYS_DIRREPORT ), 25 )  + "]" 
      case nMod=160 
-          @ 03,25 Say "Comando de Captura de Versao ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+          @ 03,25 Say "Comando de Captura de Versao ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
           @ 04,25 Say LEFT( Alltrim( SWSet( _SYS_COMANDOVERSAO ) ), 53 ) Color "14/" + CorFundoAtual() 
-          @ 05,25 Say "Atualizacao de Executavel ÄÄÄÄÄÄÄ REPORT\VERSAO.INI Ä" 
+          @ 05,25 Say "Atualizacao de Executavel ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ REPORT\VERSAO.INI ï¿½" 
           IF File( "REPORT\VERSAO.INI" ) 
              aFileTmp:= IOFillText( MEMOREAD( "REPORT\VERSAO.INI" ) ) 
              FOR nCt:= 1 TO LEN( aFileTmp ) 
@@ -765,9 +763,9 @@ stat func editar()
  
           cComando:= PAD( Alltrim( SWSet( _SYS_COMANDOVERSAO ) ), 200 ) 
  
-          @ 03,25 Say "Comando de Captura de Versao ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+          @ 03,25 Say "Comando de Captura de Versao ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
  
-          @ 05,25 Say "Atualizacao de Executavel ÄÄÄÄÄÄÄ REPORT\VERSAO.INI Ä" 
+          @ 05,25 Say "Atualizacao de Executavel ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ REPORT\VERSAO.INI ï¿½" 
           IF File( "REPORT\VERSAO.INI" ) 
              aFileTmp:= IOFillText( MEMOREAD( "REPORT\VERSAO.INI" ) ) 
              FOR nCt:= 1 TO LEN( aFileTmp ) 
@@ -855,14 +853,14 @@ RETURN NIL
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ FazConfigur 
-³ Finalidade  ³ Montar arquivo de confirguracao 
-³ Parametros  ³ aArray - Matriz com as novas confirguracoes do arquivo CONFIGUR.Sys 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ FazConfigur 
+ï¿½ Finalidade  ï¿½ Montar arquivo de confirguracao 
+ï¿½ Parametros  ï¿½ aArray - Matriz com as novas confirguracoes do arquivo CONFIGUR.Sys 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION FazConfigur( aNewConfig ) 
  
@@ -873,7 +871,7 @@ Local nLinha:= 0, aConfig, nCt, cArqOrigem, cArqDestino
  
    IF Len( aNewConfig ) > 0 
  
-      IF Confirma( 0, 0, "Confirma a gravacao dos parƒmetros do sistema?",; 
+      IF Confirma( 0, 0, "Confirma a gravacao dos parï¿½metros do sistema?",; 
                         "Digite [S] para confirmar ou [N] para cancelar.", "*" ) 
  
           /* Copia de arquivos (Origem x Destino) */ 

@@ -1,17 +1,17 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
-#include "PTFUNCS.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
+#include "ptfuncs.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VENDEDORES 
-³ Finalidade  ³ Cadastro de Vendedores 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VENDEDORES 
+ï¿½ Finalidade  ï¿½ Cadastro de Vendedores 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */
 
 #ifdef HARBOUR
@@ -96,14 +96,14 @@ Local oTab, nTecla
   return nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ venInclusao 
-³ Finalidade  ³ Inclusao de Vendedores 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ venInclusao 
+ï¿½ Finalidade  ï¿½ Inclusao de Vendedores 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function VenInclusao( oTab ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -271,14 +271,14 @@ Local nOrdem:= IndexOrd()
   Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ venAlteracao 
-³ Finalidade  ³ Inclusao de Vendedores 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ venAlteracao 
+ï¿½ Finalidade  ï¿½ Inclusao de Vendedores 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function VenAlteracao( oTab ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -375,7 +375,7 @@ Priv  nMIni01:=MINI01, nMIni02:=MINI02, nMIni03:=MINI03, nMIni04:=MINI04,;
   ENDIF 
   IF Confirma( 0, 0, "Confirma?",; 
      "Digite [S] para confirmar o cadastramento do vendedor.","S") 
-     IF NetRLock() 
+     IF netrlock() 
         Replace DESCRI with cDESCRI,; 
                 SIGLA_ with cSIGLA_,; 
                 TIPO__ with cTIPO__,; 

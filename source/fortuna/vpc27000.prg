@@ -1,16 +1,16 @@
-// ## CL2HB.EXE - Converted
-#Include "INKEY.CH" 
-#Include "VPF.CH" 
+// ## cl2hb.exe - converted
+#include "inkey.ch" 
+#include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VPC27000.PRG 
-³ Finalidade  ³ CADASTRO DE PRODUTOS - COMPLEMENTO 
-³ Parametros  ³ Nil 
-³ Retorno     ³ 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VPC27000.PRG 
+ï¿½ Finalidade  ï¿½ CADASTRO DE PRODUTOS - COMPLEMENTO 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
    Function ProCompl ( nTecla ) 
  
@@ -45,7 +45,7 @@
       IF (nTec == 1 .OR. nTec == 2) 
          IF SWSet( _PRO_DETALHE ) 
             aDetalhe:= DigitaDetalhe() 
-            IF NetRlock() 
+            IF netrlock() 
                Replace DETAL1 With aDetalhe[1] 
                Replace DETAL2 With aDetalhe[2] 
                Replace DETAL3 With aDetalhe[3] 
@@ -58,7 +58,7 @@
          IF SWSet( _PRO_FORNECEDORES ) 
             cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
             cCorRes:= SetColor() 
-            VPBox( 03, 01, 21, 79, " Precos de Compra & Sin“nimos do Produto ", _COR_BROW_BOX, .F., .F. ) 
+            VPBox( 03, 01, 21, 79, " Precos de Compra & Sinï¿½nimos do Produto ", _COR_BROW_BOX, .F., .F. ) 
             SetColor( _COR_BROW_BOX ) 
             nLin:= 04 
             aForne:= 0 ; aForne:= {} 
@@ -156,7 +156,7 @@
                   EXIT
                ENDIF
             NEXT 
-            IF NetRlock()
+            IF netrlock()
                IF SWSet( _PRO_FORNECEDORES ) .AND. nGravar==1
                   FOR i:= 1 TO Len( aForne )
                       PutPrecoFornecedor( aForne[ i ][ 1 ], aForne[ i ][ 3 ] )
@@ -191,7 +191,7 @@
       IF (nTec == 1 .OR. nTec == 5) 
          nTabObs:= TABOBS 
          NFObservacao( @nTabObs ) 
-         IF NetRlock() 
+         IF netrlock() 
             Replace TABOBS With nTabObs 
          ENDIF 
       ENDIF 
@@ -200,7 +200,7 @@
          nCla:= PCPCLA 
          nClaAnt:= nCla 
          ExiClasse( @nCla ) 
-         IF NetRlock() 
+         IF netrlock() 
             Replace PCPCLA With nCla 
 // As proximas linhas fazem com que alterando-se a classificacao zera-se o 
 // tamanho especifico do produto e solicita-se um novo codigo de tamanho 
@@ -215,7 +215,7 @@
  
       IF (nTec == 1 .OR. nTec == 7) 
          nTam:= ExiTamanhos( PCPCLA, PCPTAM ) 
-         IF NetRlock() 
+         IF netrlock() 
             Replace PCPTAM With nTam 
          ENDIF 
       ENDIF 
@@ -225,7 +225,7 @@
 //       ExiCores( @nCor ) 
          lCor := Confirma( 0, 0, "Este produto possui Cores?", ; 
            "Digite 'S' se este produto POSSUI tratamento de CORES !", PCPCSN ) 
-         IF NetRlock() 
+         IF netrlock() 
 //          Replace PCPCOR With nCor 
             Replace PCPCSN With IIF (lCor = .T., "S", "N") 
          ENDIF 
@@ -237,7 +237,7 @@
  
       IF (nTec == 1 .OR. nTec == 11)
          nSitCompra:= STCompra()
-         IF NetRlock()
+         IF netrlock()
             Replace SITT03 With nSitCompra // gelson 21-09-2004
          ENDIF
       ENDIF 

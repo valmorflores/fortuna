@@ -22,14 +22,18 @@
 
 */
 
-#include "VPF.CH"
-#include "INKEY.CH"
-
-#ifdef HARBOUR
-   function vpcei()
-#endif
+#include "vpf.ch"
+#include "inkey.ch"
 
 
+//vpcei()
+
+//#ifdef HARBOUR
+
+function main()
+//#endif
+
+//REQUEST HB_GT_WIN_DEFAULT
 Para cCodigo, Debug
 
 
@@ -38,7 +42,7 @@ Local nCodEmpresa
 Loca WTELA, nOPCAO:=0
 
 // Compatibilidade com versoes de fontes mais antigos
-Private WUSUARIO:="Usu rio"
+Private WUSUARIO:="Usuï¿½rio"
 Private cUserCode:= ""
 Public _FORTUNA_:= "_VERSAO_"+_VER
 
@@ -95,7 +99,7 @@ SETBLINK( .F. )
 // FreeCPU
 // Compatibilidade Clipper x Windows
 // 10 de Setembro de 2003
-OL_AutoYield( .T. )
+//OL_AutoYield( .T. )
 
 IF Debug==Nil
    Debug:= ""
@@ -248,7 +252,7 @@ ENDIF
 
 /* Protecao() */
 *Posicao* 12345678901234567890 *
-WSIMNAO:="—xyz•†Š…€‹‚ƒ„†’‡–—"
+WSIMNAO:="ï¿½xyzï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
 
 SETBLINK(.F.)
 /* NoCopy() */
@@ -311,7 +315,7 @@ CLS
 /* Empresa Selecionada ==== Exibir informacoes na tela */
 IF AT( _PATH_SEPARATOR + "0", GDir ) > 0
    nCodEmpresa:= Val( SubStr( GDir, AT( _PATH_SEPARATOR + "0", GDir )+1, 4 ) )
-   /* Abre empresa na area tempor ria 124 */
+   /* Abre empresa na area temporï¿½ria 124 */
    DBSelectAr( 124 )
    cDirEmp:= SWSet( _SYS_DIRREPORT ) + _PATH_SEPARATOR + "empresas.dbf"
    IF File( cDirEmp )
@@ -321,7 +325,7 @@ IF AT( _PATH_SEPARATOR + "0", GDir ) > 0
       Set Index To indice0_.ntx, indice1_.ntx
       IF DBSeek( nCodEmpresa )
          @ 00,00 Say Pad( " Empresa Selecionada: " + StrZero( nCodEmpresa, 4, 0 ) + " - " + DESCRI, 80 ) Color "04/15"
-         @ 01,00 Say Repl( "Í", 80 ) Color "07/00"
+         @ 01,00 Say Repl( "ï¿½", 80 ) Color "07/00"
       ENDIF
       DBCloseArea()
    ELSE
@@ -355,7 +359,7 @@ ENDIF
 
 WUSUARIO:=vpsenha()
 MENULIST:={}
-Guardiao( "<INICIO> Inicializacao do sistema ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" )
+Guardiao( "<INICIO> Inicializacao do sistema ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" )
 cPODER:=WPESQSN
 xFile:= SWSet( _SYS_DIRREPORT ) - _PATH_SEPARATOR - "senhas." + cUserGrupo
 IF File( xFile )

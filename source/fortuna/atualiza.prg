@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
  
 *********************** 
 Func AtualizaClientes() 
@@ -73,7 +73,7 @@ Whil ! eof()
               //* Inadimplente (+DE 45 DIAS) *// 
               ++aDADOS[nPOS][2] 
          CASE DTQT__==CTOD( "  /  /  " ) .AND. VENC__ < DATE() 
-              //* Vlr. Pendente At‚ a data atual *// 
+              //* Vlr. Pendente Atï¿½ a data atual *// 
               ++aDADOS[nPOS][3] 
       ENDCASE 
    ENDIF 
@@ -111,7 +111,7 @@ WHILE ! EOF()
     Repl DATA__ With Date() 
     DBUnlockAll() 
     If ( nPOS := ascan( aDADOS, {|aVAL| aVAL[5]==CODIGO } ) ) > 0 
-       If NetRlock() 
+       If netrlock() 
           Repl DATA__ With Date(),; 
                ATRA__ With aDADOS[nPOS][1],; 
                INAD__ With aDADOS[nPOS][2],; 
@@ -129,9 +129,9 @@ WHILE ! EOF()
  
        /* Se nao contem eu exibo a seguinte mensagem */ 
        VPObsBox(.T.,10,30, "Atencao",; 
-              {"Informa‡äes na Base de dados",; 
-               "sÆo insuficientes para gerar",; 
-               "esta estat¡stica...         "},"15/04" ) 
+              {"Informaï¿½ï¿½es na Base de dados",; 
+               "sï¿½o insuficientes para gerar",; 
+               "esta estatï¿½stica...         "},"15/04" ) 
  
        /* aguardando a tecla ENTER */ 
        Mensagem( "Pressione ENTER para continuar..." ) 
@@ -153,10 +153,10 @@ WHILE ! EOF()
  
     ELSE 
        IF Len( aDados[1] ) = 0 
-          VPObsBox(.T.,10,30, "AtencÆo",; 
-                 {"Informa‡äes na Base de dados",; 
-                  "sÆo insuficientes para gerar",; 
-                  "esta estat¡stica...         "},"15/04" ) 
+          VPObsBox(.T.,10,30, "Atencï¿½o",; 
+                 {"Informaï¿½ï¿½es na Base de dados",; 
+                  "sï¿½o insuficientes para gerar",; 
+                  "esta estatï¿½stica...         "},"15/04" ) 
           Mensagem( "Pressione ENTER para continuar..." ) 
           Ajuda( "[ENTER]Retorna" ) 
           Pausa() 

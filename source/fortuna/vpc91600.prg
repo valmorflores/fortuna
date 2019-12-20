@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#include "INKEY.CH" 
-#include "VPF.CH" 
+#include "inkey.ch" 
+#include "vpf.ch" 
 /* 
 *      Funcao - VPC916000 
 *  Finalidade - Exibir menu de CONTAS A PAGAR & CONTAS A RECEBER. 
@@ -85,7 +85,7 @@ Local nCliente:= 0, dDataIni:= CTOD( "01" + SubStr( DTOC( Date() ), 3 ) ),;
    @ 13,53 Say "    Monitor   " 
    @ 12,14 Say "De:" Get dDataIni When; 
      Mensagem( "Digite a data de inicio para pesquisa." ) 
-   @ 12,30 Say "At‚:" Get dDataFim When; 
+   @ 12,30 Say "Atï¿½:" Get dDataFim When; 
      Mensagem( "Digite a data de termino para pesquisa." ) 
    @ 15,20 Say "Numero:" Get nCliente Pict "999999" Valid PesqCli( @nCliente ) When; 
      Mensagem( "Digite o nome do cliente." ) 
@@ -112,9 +112,9 @@ Local nCliente:= 0, dDataIni:= CTOD( "01" + SubStr( DTOC( Date() ), 3 ) ),;
       ENDDO 
  
       IF nDevice == 1 
-         AAdd( aMatriz, { "ÄÄÄ", "QUITADAS  ", 0, 0, 0, 0, Space(8), nSoma1, Space(8), Space(8), nSoma4, 0 } ) 
-         AAdd( aMatriz, { "ÄÄÄ", "PENDENTES ", 0, 0, 0, 0, Space(8), nSoma2, Space(8), Space(8), 0, 0 } ) 
-         AAdd( aMatriz, { "ÄÄÄ", "TOTAL     ", 0, 0, 0, 0, Space(8), nSoma3, Space(8), Space(8), 0, 0 } ) 
+         AAdd( aMatriz, { "ï¿½ï¿½ï¿½", "QUITADAS  ", 0, 0, 0, 0, Space(8), nSoma1, Space(8), Space(8), nSoma4, 0 } ) 
+         AAdd( aMatriz, { "ï¿½ï¿½ï¿½", "PENDENTES ", 0, 0, 0, 0, Space(8), nSoma2, Space(8), Space(8), 0, 0 } ) 
+         AAdd( aMatriz, { "ï¿½ï¿½ï¿½", "TOTAL     ", 0, 0, 0, 0, Space(8), nSoma3, Space(8), Space(8), 0, 0 } ) 
          vpbox(0,0,22,79,"Bloquetos de Cobranca",COR[20],.T.,.T.,COR[19]) 
          @ 01,01 Say cCliente 
          @ 01,45 Say "Periodo de " + DTOC( dDataIni ) + " ate " + DTOC( dDataFim ) + "." 
@@ -183,7 +183,7 @@ Local nCliente:= 0, dDataIni:= CTOD( "01" + SubStr( DTOC( Date() ), 3 ) ),;
    @ 13,53 Say "    Monitor   " 
    @ 12,14 Say "De:" Get dDataIni When; 
      Mensagem( "Digite a data de inicio para pesquisa." ) 
-   @ 12,30 Say "At‚:" Get dDataFim When; 
+   @ 12,30 Say "Atï¿½:" Get dDataFim When; 
      Mensagem( "Digite a data de termino para pesquisa." ) 
    //@ 15,20 Say "Numero:" Get nCliente Pict "999999" Valid PesqCli( @nCliente ) When; 
    //  Mensagem( "Digite o nome do cliente." ) 
@@ -208,9 +208,9 @@ Local nCliente:= 0, dDataIni:= CTOD( "01" + SubStr( DTOC( Date() ), 3 ) ),;
       ENDDO 
  
       IF nDevice == 1 
-         AAdd( aMatriz, { "ÄÄÄ", "QUITADAS  ", 0, 0, 0, 0, Space(8), nSoma1, Space(8), Space(8), nSoma4, 0, "TOTAL" + SPACE( 40 ) } ) 
-         AAdd( aMatriz, { "ÄÄÄ", "PENDENTES ", 0, 0, 0, 0, Space(8), nSoma2, Space(8), Space(8), 0, 0, "TOTAL" + SPACE( 40 ) } ) 
-         AAdd( aMatriz, { "ÄÄÄ", "TOTAL     ", 0, 0, 0, 0, Space(8), nSoma3, Space(8), Space(8), 0, 0, "TOTAL" + SPACE( 40 ) } ) 
+         AAdd( aMatriz, { "ï¿½ï¿½ï¿½", "QUITADAS  ", 0, 0, 0, 0, Space(8), nSoma1, Space(8), Space(8), nSoma4, 0, "TOTAL" + SPACE( 40 ) } ) 
+         AAdd( aMatriz, { "ï¿½ï¿½ï¿½", "PENDENTES ", 0, 0, 0, 0, Space(8), nSoma2, Space(8), Space(8), 0, 0, "TOTAL" + SPACE( 40 ) } ) 
+         AAdd( aMatriz, { "ï¿½ï¿½ï¿½", "TOTAL     ", 0, 0, 0, 0, Space(8), nSoma3, Space(8), Space(8), 0, 0, "TOTAL" + SPACE( 40 ) } ) 
          vpbox(0,0,22,79,"Bloquetos de Cobranca",COR[20],.T.,.T.,COR[19]) 
          @ 01,45 Say "Periodo de " + DTOC( dDataIni ) + " ate " + DTOC( dDataFim ) + "." 
          SetColor( "W+/BG" ) 
@@ -280,7 +280,7 @@ Local nCliente:= 0, dDataIni:= CTOD( "01" + SubStr( DTOC( Date() ), 3 ) ),;
    @ 13,53 Say "    Monitor   " 
    @ 12,14 Say "De:" Get dDataIni When; 
      Mensagem( "Digite a data de inicio para pesquisa." ) 
-   @ 12,30 Say "At‚:" Get dDataFim When; 
+   @ 12,30 Say "Atï¿½:" Get dDataFim When; 
      Mensagem( "Digite a data de termino para pesquisa." ) 
    //@ 15,20 Say "Numero:" Get nCliente Pict "999999" Valid PesqCli( @nCliente ) When; 
    //  Mensagem( "Digite o nome do cliente." ) 
@@ -305,9 +305,9 @@ Local nCliente:= 0, dDataIni:= CTOD( "01" + SubStr( DTOC( Date() ), 3 ) ),;
       ENDDO 
  
       IF nDevice == 1 
-         AAdd( aMatriz, { "ÄÄÄ", "QUITADAS  ", 0, 0, 0, 0, Space(8), nSoma1, Space(8), Space(8), nSoma4, 0, "TOTAL" + SPACE( 40 ) } ) 
-         AAdd( aMatriz, { "ÄÄÄ", "PENDENTES ", 0, 0, 0, 0, Space(8), nSoma2, Space(8), Space(8), 0, 0, "TOTAL" + SPACE( 40 ) } ) 
-         AAdd( aMatriz, { "ÄÄÄ", "TOTAL     ", 0, 0, 0, 0, Space(8), nSoma3, Space(8), Space(8), 0, 0, "TOTAL" + SPACE( 40 ) } ) 
+         AAdd( aMatriz, { "ï¿½ï¿½ï¿½", "QUITADAS  ", 0, 0, 0, 0, Space(8), nSoma1, Space(8), Space(8), nSoma4, 0, "TOTAL" + SPACE( 40 ) } ) 
+         AAdd( aMatriz, { "ï¿½ï¿½ï¿½", "PENDENTES ", 0, 0, 0, 0, Space(8), nSoma2, Space(8), Space(8), 0, 0, "TOTAL" + SPACE( 40 ) } ) 
+         AAdd( aMatriz, { "ï¿½ï¿½ï¿½", "TOTAL     ", 0, 0, 0, 0, Space(8), nSoma3, Space(8), Space(8), 0, 0, "TOTAL" + SPACE( 40 ) } ) 
          vpbox(0,0,22,79,"Bloquetos de Cobranca",COR[20],.T.,.T.,COR[19]) 
          @ 01,45 Say "Periodo de " + DTOC( dDataIni ) + " ate " + DTOC( dDataFim ) + "." 
          SetColor( "W+/BG" ) 
@@ -376,7 +376,7 @@ Local nHistor:= 0, dDataIni:= CTOD( "01" + SubStr( DTOC( Date() ), 3 ) ),;
    @ 13,53 Say "    Monitor   " 
    @ 12,14 Say "De:" Get dDataIni When; 
      Mensagem( "Digite a data de inicio para pesquisa." ) 
-   @ 12,30 Say "At‚:" Get dDataFim When; 
+   @ 12,30 Say "Atï¿½:" Get dDataFim When; 
      Mensagem( "Digite a data de termino para pesquisa." ) 
    @ 15,20 Say "Numero:" Get nHistor Pict "999999" Valid PesqHis2( @nHistor ) When; 
      Mensagem( "Digite o codigo do historico." ) 
@@ -411,9 +411,9 @@ Local nHistor:= 0, dDataIni:= CTOD( "01" + SubStr( DTOC( Date() ), 3 ) ),;
       ENDDO 
  
       IF nDevice == 1 
-         AAdd( aMatriz, { "ÄÄÄ", "QUITADAS  ", 0, 0, 0, 0, Space(8), nSoma1, Space(8), Space(8), nSoma4, 0, "TOTAL" + SPACE( 40 ) } ) 
-         AAdd( aMatriz, { "ÄÄÄ", "PENDENTES ", 0, 0, 0, 0, Space(8), nSoma2, Space(8), Space(8), 0, 0, "TOTAL" + SPACE( 40 ) } ) 
-         AAdd( aMatriz, { "ÄÄÄ", "TOTAL     ", 0, 0, 0, 0, Space(8), nSoma3, Space(8), Space(8), 0, 0, "TOTAL" + SPACE( 40 ) } ) 
+         AAdd( aMatriz, { "ï¿½ï¿½ï¿½", "QUITADAS  ", 0, 0, 0, 0, Space(8), nSoma1, Space(8), Space(8), nSoma4, 0, "TOTAL" + SPACE( 40 ) } ) 
+         AAdd( aMatriz, { "ï¿½ï¿½ï¿½", "PENDENTES ", 0, 0, 0, 0, Space(8), nSoma2, Space(8), Space(8), 0, 0, "TOTAL" + SPACE( 40 ) } ) 
+         AAdd( aMatriz, { "ï¿½ï¿½ï¿½", "TOTAL     ", 0, 0, 0, 0, Space(8), nSoma3, Space(8), Space(8), 0, 0, "TOTAL" + SPACE( 40 ) } ) 
          vpbox(0,0,22,79,"Bloquetos de Cobranca",COR[20],.T.,.T.,COR[19]) 
          @ 22,33 Say " Historico: " + cHistor + "    " 
          @ 01,45 Say "Periodo de " + DTOC( dDataIni ) + " ate " + DTOC( dDataFim ) + "." 
@@ -471,14 +471,14 @@ Return Nil
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ BLOQUETOS 
-³ Finalidade  ³ Modulo responsavbel pela emissao de bloquetos 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ BLOQUETOS 
+ï¿½ Finalidade  ï¿½ Modulo responsavbel pela emissao de bloquetos 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 STATIC FUNCTION Bloquetos 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -525,7 +525,7 @@ whil .t.
    @ 07,03 Say "Valor Total....: " + Tran( VALOR_, "@E 999,999,999.99" ) 
    @ 08,03 Say "Tipo...........: " + IF( GERAR_ <> 0, "DOC.PROGRAMADO     ",; 
                                                       "NORMAL             " ) +; 
-                                     IF( MANUAL <> 0, "<Lancamento Manual>     ", "<Lancamento Autom tico> " ) +; 
+                                     IF( MANUAL <> 0, "<Lancamento Manual>     ", "<Lancamento Automï¿½tico> " ) +; 
                                      IF( !Empty( Duplic ), "D:" + Duplic, Space( 12 ) ) 
    SetColor( _COR_BROWSE ) 
    TECLA:=inkey(0) 
@@ -569,7 +569,7 @@ whil .t.
               IF Marca_== " " 
                  EXIT 
               ELSE 
-                 IF NetRLock() 
+                 IF netrlock() 
                     Replace MARCA_ With Space( 1 ) 
                  ENDIF 
               ENDIF 
@@ -670,7 +670,7 @@ Local nCtaPgt:= Conta_, nJuros_:= 0, dDtQuit:= Date(), nRegistro:= 0,;
        @ 10,11 Say "Data de Emissao.....: ["+DTOC( Emiss_ )+"]" 
        @ 11,11 Say "Data de Vencimento..: ["+DTOC( Venc__ )+"]" 
        @ 12,11 Say "Valor...............: ["+Tran( Valor_, "@E 999,999,999.99" ) + "]" 
-       @ 13,11 Say Repl( "Ä", 58 ) 
+       @ 13,11 Say Repl( "ï¿½", 58 ) 
        @ 14,11 Say "Juros...............: ["+Tran( Juros_, "@E 999,999,999.99" ) + "]" 
        @ 15,11 Say "Data Quitacao.......: ["+DTOC( DtQuit )+"]" 
        @ 16,11 Say "Conta...............: ["+StrZero( CtaPgt, 3, 0 ) +"]" 
@@ -678,7 +678,7 @@ Local nCtaPgt:= Conta_, nJuros_:= 0, dDtQuit:= Date(), nRegistro:= 0,;
        Inkey(0) 
        IF LastKey() == K_ENTER 
           IF Confirma( 00,00, "Deseja desfazer esta quitacao?", ,"N" ) 
-             IF NetRLock() 
+             IF netrlock() 
                 REPLACE JUROS_ With 0,; 
                         DTQuit With CTOD( "  /  /  " ),; 
                         CtaPgt With 0,; 
@@ -693,7 +693,7 @@ Local nCtaPgt:= Conta_, nJuros_:= 0, dDtQuit:= Date(), nRegistro:= 0,;
        @ 10,11 Say "Data de Emissao.....: ["+DTOC( Emiss_ )+"]" 
        @ 11,11 Say "Data de Vencimento..: ["+DTOC( Venc__ )+"]" 
        @ 12,11 Say "Valor...............: ["+Tran( Valor_, "@E 999,999,999.99" ) + "]" 
-       @ 13,11 Say Repl( "Ä", 58 ) 
+       @ 13,11 Say Repl( "ï¿½", 58 ) 
        @ 14,11 Say "Juros...............:" Get nJuros_ Pict "@E 999,999,999.99" 
        @ 15,11 Say "Data Quitacao.......:" Get dDtQuit 
        @ 16,11 Say "Conta...............:" Get nCtaPgt Pict "999" 
@@ -701,7 +701,7 @@ Local nCtaPgt:= Conta_, nJuros_:= 0, dDtQuit:= Date(), nRegistro:= 0,;
        READ 
        cMarca_:= MARCA_ 
        IF LastKey() <> K_ESC 
-          IF NetRLock() 
+          IF netrlock() 
              REPLACE JUROS_ With nJuros_,; 
                      DTQuit With dDtQuit,; 
                      CtaPgt With nCtaPgt,; 
@@ -718,7 +718,7 @@ Local nCtaPgt:= Conta_, nJuros_:= 0, dDtQuit:= Date(), nRegistro:= 0,;
                 DBGoTop() 
                 WHILE !EOF() 
                     IF MARCA_ == "+" 
-                       IF NetRLock() 
+                       IF netrlock() 
                           Replace JUROS_ With nJuros_,; 
                                   DTQuit With dDtQuit,; 
                                   CtaPgt With nCtaPgt,; 
@@ -951,7 +951,7 @@ IF DBSeek( nNotaFiscal )
    IF VENC__ == dVenc__ .AND.; 
       Empty( DTQT__ ) .AND.; 
       Month( VENC__ ) == nMes 
-      IF NetRLock() 
+      IF netrlock() 
          REPLACE DTQT__ With DtQuit,; 
                  CHEQ__ With Cheque,; 
                  QUIT__ With "S" 
@@ -973,14 +973,14 @@ Return Nil
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ALTERADOC 
-³ Finalidade  ³ Alteracao dos DOCs de cobranca 
-³ Parametros  ³ NIL 
-³ Retorno     ³ NIL 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ NIL 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ALTERADOC 
+ï¿½ Finalidade  ï¿½ Alteracao dos DOCs de cobranca 
+ï¿½ Parametros  ï¿½ NIL 
+ï¿½ Retorno     ï¿½ NIL 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ NIL 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 STATIC FUNCTION AlteraDOC( oVer ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1232,14 +1232,14 @@ Local nConta_:= 0, nHistor:= 900, cHistor:= "REF. OMERCIO DE MERCADORIAS",;
  @ 04,03 Say "Valor Limite.................:" Get nValorL Pict "@R 999,999,999.99" 
  @ 05,03 Say "Conta Corrente...............:" Get nConta_ Pict "999" Valid PesqCtaCorrente( @nConta_ ) 
  @ 06,03 Say "No. Documento................:" Get cDocum_ Pict "@!" 
- @ 07,03 Say "Tipo de geracao..............: [Autom tica]" 
- @ 08,03 Say "Hist¢rico....................:" Get nHistor Pict "999" Valid PesqHistorico( nHistor, @cHistor ) 
+ @ 07,03 Say "Tipo de geracao..............: [Automï¿½tica]" 
+ @ 08,03 Say "Histï¿½rico....................:" Get nHistor Pict "999" Valid PesqHistorico( nHistor, @cHistor ) 
  @ 09,03 Say "Sequencia/Duplicata..........:" Get nSeque_ Pict "99999999" 
  READ 
  DBGoBottom() 
  WHILE !BOF() 
      IF Marca_ == "+" 
-        IF NetRLock() 
+        IF netrlock() 
            Replace MARCA_ With Space( 1 ) 
         ENDIF 
      ENDIF 
@@ -1247,7 +1247,7 @@ Local nConta_:= 0, nHistor:= 900, cHistor:= "REF. OMERCIO DE MERCADORIAS",;
  ENDDO 
  SWGravar( 600 ) 
  IF LastKey() <> K_ESC 
-    IF Confirma( 00,00, "Confirma a geracao autom tica de bloquetos?", , "N" ) 
+    IF Confirma( 00,00, "Confirma a geracao automï¿½tica de bloquetos?", , "N" ) 
        DBSelectAr( _COD_DUPAUX ) 
        DBGoTop() 
        WHILE !EOF() 
@@ -1260,7 +1260,7 @@ Local nConta_:= 0, nHistor:= 900, cHistor:= "REF. OMERCIO DE MERCADORIAS",;
                 DBSetOrder( 1 ) 
                 DBSeek( CON->AGENC_ ) 
                 DBSelectAR( _COD_DUPAUX ) 
-                IF NetRLock() 
+                IF netrlock() 
                    Replace LOCAL_ With AGE->BANCO_,; 
                            SITU__ With "*",; 
                            SEQUE_ With nSeque_ 
@@ -1272,7 +1272,7 @@ Local nConta_:= 0, nHistor:= 900, cHistor:= "REF. OMERCIO DE MERCADORIAS",;
                 IF !NetErr() 
                    lGerado:= .T. 
                    NF_->( DBSetOrder( 1 ) ) 
-                   /* Busca o codigo do cliente origin rio, nao matriz */ 
+                   /* Busca o codigo do cliente originï¿½rio, nao matriz */ 
                    IF NF_->( DBSeek( DPA->CODNF_ ) ) 
                       nCodCliente:= NF_->CLIENT 
                    ELSE 
@@ -1523,14 +1523,14 @@ Return Nil
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ALTERADOC 
-³ Finalidade  ³ Alteracao dos DOCs de cobranca 
-³ Parametros  ³ NIL 
-³ Retorno     ³ NIL 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ NIL 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ALTERADOC 
+ï¿½ Finalidade  ï¿½ Alteracao dos DOCs de cobranca 
+ï¿½ Parametros  ï¿½ NIL 
+ï¿½ Retorno     ï¿½ NIL 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ NIL 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 STATIC FUNCTION AlteraDOCProg( oVer ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1993,7 +1993,7 @@ WHILE !EOF()
           _FIELD->EMISS_ := Emiss_ + nDias 
        ENDIF 
        DBUnlockAll() 
-       Mensagem( "Gravando DOCs autom ticos. aguarde..." ) 
+       Mensagem( "Gravando DOCs automï¿½ticos. aguarde..." ) 
    ELSE 
        DBSkip() 
    ENDIF 
@@ -2029,7 +2029,7 @@ cAceite:= " 02 "
 @ 05,30 Say "Formato do Bloqueto.:" Get cBanco Pict "XX" Valid BuscaFormato( @cBanco ) 
 @ 06,30 say "Quantidade de copias:" get nQuant pict "99" 
 @ 07,30 say "Data de emissao.....:" get dData 
-@ 08,30 say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+@ 08,30 say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
 @ 09,30 Say "Porta Impressao.....:" Get cDevice 
 @ 10,30 Say "Arquivo de Instrucao:" Get cArquivoInst 
 read 

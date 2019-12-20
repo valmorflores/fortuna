@@ -1,18 +1,18 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
-#include "PTFUNCS.CH" 
-#include "PTVERBS.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
+#include "ptfuncs.ch" 
+#include "ptverbs.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ COPIA TABELA DIFERENCIADA DE PRECOS 
-³ Finalidade  ³ Copia itens da tabela diferenciada 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 10/09/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ COPIA TABELA DIFERENCIADA DE PRECOS 
+ï¿½ Finalidade  ï¿½ Copia itens da tabela diferenciada 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 10/09/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */
 #ifdef HARBOUR
 function vpc36600()
@@ -27,11 +27,11 @@ Local nTabela1:= 0, nTabela2:= 0
    Set( _SET_DELIMITERS, .T. ) 
    VPBox( 00, 00, 24, 79, "TABELAS DIFERENCIADAS DE PRECOS", _COR_GET_BOX,.F.,.F.  ) 
    SetColor( _COR_GET_EDICAO ) 
-   @ 10,01 Say "ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿" 
-   @ 11,01 Say "³   Modulo responsavel pela copia de informacoes entre  ³" 
-   @ 12,01 Say "³  de uma tabela de precos para outra mantendo os mesmos  ³" 
-   @ 13,01 Say "³  percentuais da tabela origin ria.                      ³" 
-   @ 14,01 Say "ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ" 
+   @ 10,01 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿" 
+   @ 11,01 Say "ï¿½   Modulo responsavel pela copia de informacoes entre  ï¿½" 
+   @ 12,01 Say "ï¿½  de uma tabela de precos para outra mantendo os mesmos  ï¿½" 
+   @ 13,01 Say "ï¿½  percentuais da tabela originï¿½ria.                      ï¿½" 
+   @ 14,01 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
    @ 01,01 Say "Tabela a Copiar (Origem):" Get nTabela1 Pict "999" 
    @ 02,01 Say "Tabela Destino..........:" Get nTabela2 Pict "999" 
    READ 
@@ -40,7 +40,7 @@ Local nTabela1:= 0, nTabela2:= 0
    TAX->( DBSetOrder( 1 ) ) 
    IF TAX->( DBSeek( nTabela2 ) ) 
       ctelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-      Aviso( "Precos atuais da tabela destino serÆo excluidos." ) 
+      Aviso( "Precos atuais da tabela destino serï¿½o excluidos." ) 
       Inkey(0) 
       ScreenRest( cTelaRes ) 
       IF LastKey() == K_ESC 
@@ -50,7 +50,7 @@ Local nTabela1:= 0, nTabela2:= 0
          Return Nil 
       ELSE 
          WHILE TAX->CODIGO == nTabela2 .AND. !EOF() 
-            IF TAX->( NetRLock() ) 
+            IF TAX->( netrlock() ) 
                TAX->( DBDelete() ) 
             ENDIF 
             TAX->( DBSkip() ) 
@@ -93,14 +93,14 @@ Static Function MostraDados(cTELA)
   Return nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ COPIATABELA 
-³ Finalidade  ³ Monta tabela 
-³ Parametros  ³ nTabela2 - Tabela Destino 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ COPIATABELA 
+ï¿½ Finalidade  ï¿½ Monta tabela 
+ï¿½ Parametros  ï¿½ nTabela2 - Tabela Destino 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function CopiaTabela( nTabela2 ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -175,7 +175,7 @@ Static Function CopiaTabela( nTabela2 )
      nPrecov:= PRECOV 
      nMargem:= MARGEM 
      DBAppend() 
-     IF NetRLock() 
+     IF netrlock() 
         Replace CODPRO With cCodPro,; 
                 DESCRI With cDesPro,; 
                 CODFAB With cCodFab,; 

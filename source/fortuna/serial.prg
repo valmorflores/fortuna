@@ -1,7 +1,7 @@
 // ## CL2HB.EXE - Converted
 // VPCEI1U2.EXE
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
  
 Function Le_serial() 
  
@@ -40,7 +40,7 @@ Function Le_serial()
          else
             if !(MPR->( DBSeek( PAD( subst(cLinha,1,(at(",",cLinha)-1)), 13 ) ) )) 
  
-               /* Se ‚ EAN com 12 digitos - Codigo de Barras no Fortuna ‚ gerado com um 0 ao final */ 
+               /* Se ï¿½ EAN com 12 digitos - Codigo de Barras no Fortuna ï¿½ gerado com um 0 ao final */ 
                /*                           que deve ser disconsiderado nesta pesquisa com Seek    */ 
                IF !( MPR->( DBSeek( PAD( subst(cLinha,1,(at(",",cLinha)-2)), 13 ) ) )) 
                   Aviso( "Produto nao Cadastrado "+subst(cLinha,1,(at(",",cLinha)-1)), .t.) 
@@ -88,7 +88,7 @@ Function Le_serial()
         //        @ 03,05 Say "Produto       Descricao                            Saldo Q.Pedido "
         @ 03,03 Say "Quantidades insuficientes para "  + AllTrim( Str( Len( aFalta ) ) ) + " produto(s) no seu pedido"
         @ 04,03 Say "Favor informar o cliente e verificar junto ao responsavel pelo estoque"
-        @ 05,03 Say "para evitar o fornecimento de materiais indispon¡veis.                " 
+        @ 05,03 Say "para evitar o fornecimento de materiais indisponï¿½veis.                " 
         @ 06,03 Say "----------------------------------------------------------------------"
         SetCursor( 1 ) 
         oTAB:=tbrowsenew( 07, 03, 18, 78 )
@@ -156,9 +156,9 @@ Function Le_serial()
              if nCliatu <> aPedSerial[i,1]
                 nCliatu := aPedSerial[i,1]
                 DBSelectAr( _COD_PEDIDO )
-                /* Verifica se j  existe soma em nTotPed */
+                /* Verifica se jï¿½ existe soma em nTotPed */
                 IF nTotped <> 0
-                   IF NetRLock()
+                   IF netrlock()
                       Replace VLRTOT With nTotped
                       DBunlock()
                    ENDIF
@@ -188,12 +188,12 @@ Function Le_serial()
                    DBGoBottom()
                    cCodigo:= StrZero( Val( Codigo ) + 1, 8, 0 )
                    DBAppend()
-                   IF NetRLock()
+                   IF netrlock()
                       Replace CODIGO With cCodigo, DESCRI With _RESERVADO
                       Dbunlock()
                    endif
                    CLI->(Dbseek(nCliatu))
-                   IF NetRLock()
+                   IF netrlock()
                       if LEN( ALLTRIM( STR( aPedSerial[ i, 1 ] ) ) ) <= 6     &&& Cliente VIP
                          Replace CODCLI With CLI->CODIGO,;
                                  DESCRI With CLI->DESCRI
@@ -219,7 +219,7 @@ Function Le_serial()
              MPR->( DBSeek( PAD( aPedSerial[ i, 2 ], 13 ) ) )
              DBSelectar( _COD_PEDPROD )
              DBAppend()
-             IF NetRLock()
+             IF netrlock()
                 Repl CODIGO With cCodigo,;
                      CODPRO With VAL( ALLTRIM( MPR->INDICE ) ),;
                      CODFAB With MPR->CODFAB,;
@@ -249,9 +249,9 @@ Function Le_serial()
          next
 
          Aviso( "Finalizando rotina de importacao..." )
-         /* Verifica se j  existe soma em nTotPed */
+         /* Verifica se jï¿½ existe soma em nTotPed */
          IF nTotped <> 0
-            IF PED->( NetRLock() )
+            IF PED->( netrlock() )
                Replace PED->VLRTOT With nTotped
                PED->( DBunlock() )
              ENDIF

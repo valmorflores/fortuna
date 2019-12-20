@@ -20,7 +20,7 @@ vpbox( 11, 34, 21, 54 )
 whil .t. 
    Mensagem("") 
    aadd( MENULIST, menunew( 12,35," 1 Edicao         ", 2, COR[11], "Inclusao de clientes.",,, COR[6],.T.)) 
-                  @ 13,35 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"   Color COR[11] 
+                  @ 13,35 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"   Color COR[11] 
    aadd( MenuList, menunew( 14,35," 2 Pesquisa       ", 2, COR[11], "Pesquisa interativa de clientes.",,, COR[6],.T.)) 
    aadd( MENULIST, menunew( 15,35," 3 Complementos   ", 2, COR[11], "Informacoes complementares de clientes.",,, COR[6],.T.)) 
    aadd( MENULIST, menunew( 16,35," 4 Crediario      ", 2, COR[11], "Informacoes complementares de clientes.",,, COR[6],.T.)) 

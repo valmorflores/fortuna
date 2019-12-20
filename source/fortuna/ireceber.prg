@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#Include "INKEY.CH" 
-#include "VPF.CH" 
+#Include "inkey.ch" 
+#include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ImpCtaReceber 
-³ Finalidade  ³ Impressao de Contas a receber 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 12/Agosto/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ImpCtaReceber 
+ï¿½ Finalidade  ï¿½ Impressao de Contas a receber 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 12/Agosto/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function ImpCtaReceber() 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -97,12 +97,12 @@ Function ImpCtaReceber()
          cArquivo:= PAD( cArquivo, 30 ) 
          cAVista:= "N" 
          @ 05, 10 Say "Da Conta ou Nota Fiscal...........:" Get nDuplic1  Pict "999999999" 
-         @ 05, 58 Say "At‚:" Get nDuplic2 Pict "999999999" 
+         @ 05, 58 Say "Atï¿½:" Get nDuplic2 Pict "999999999" 
          @ 06, 10 Say "Situacao..[S]Quit [N]Pend [ ]Todas:" Get cQuit      Pict "!" Valid cQuit   $ "SN " 
          @ 07, 10 Say "Com Banco do codigo...............:" Get nBanco1    Pict "999" 
-         @ 07, 56 Say "At‚:" Get nBanco2 Pict "999" 
+         @ 07, 56 Say "Atï¿½:" Get nBanco2 Pict "999" 
          @ 08, 10 Say "Do Cliente........................:" Get nClient1    Pict "999999" 
-         @ 08, 56 Say "At‚:" Get nClient2 Pict "999999" 
+         @ 08, 56 Say "Atï¿½:" Get nClient2 Pict "999999" 
          @ 09, 10 Say "Com Vencimento Entre..............:" Get dVenc1 
          @ 09, 56 Say "e:" Get dVenc2 
          @ 10, 10 Say "Com Quitacao Entre................:" Get dQuit1 
@@ -111,7 +111,7 @@ Function ImpCtaReceber()
          @ 11, 56 Say "e:" Get dEmiss2 
          @ 12, 10 Say "Incluir Contas Anuladas na Relacao:" Get cAnuladas   Pict "!" Valid cAnuladas $ "SN" 
          @ 13, 10 Say "Incluir Contas A VISTA............:" Get cAVista     Pict "!" Valid cAVista   $ "SN" 
-         @ 14, 10 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+         @ 14, 10 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
          @ 15, 10 Say "Arquivo de Relatorio (.REP).......:" Get cArquivo 
          READ 
  
@@ -136,7 +136,7 @@ Function ImpCtaReceber()
   ENDIF 
  
   DBSelectAr( _COD_DUPAUX ) 
-  /* Se estiver dispon¡vel para a tela */ 
+  /* Se estiver disponï¿½vel para a tela */ 
   IF aOpcao[ 5 ] == 2 
      SWGravar( 600 ) 
      Set( 24, "TELA0000.TMP" ) 
@@ -225,7 +225,7 @@ Function ImpCtaReceber()
   /* Emissao do relatorio */ 
   Relatorio( AllTrim( cArquivo ) ) 
  
-  /* Se estiver dispon¡vel para a tela */ 
+  /* Se estiver disponï¿½vel para a tela */ 
   IF aOpcao[ 5 ] == 2 
      ViewFile( "TELA0000.TMP" ) 
   ENDIF 

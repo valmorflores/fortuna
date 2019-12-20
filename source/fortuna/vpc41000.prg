@@ -1,16 +1,16 @@
-#include "VPF.CH"
-#include "INKEY.CH"
-#include "FORMATOS.CH"
+#include "vpf.ch"
+#include "inkey.ch"
+#include "formatos.ch"
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ CLIENTES
-³ Finalidade  ³ Cadastramento de Clientes
-³ Parametros  ³ Nil
-³ Retorno     ³ Nil
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ CLIENTES
+ï¿½ Finalidade  ï¿½ Cadastramento de Clientes
+ï¿½ Parametros  ï¿½ Nil
+ï¿½ Retorno     ï¿½ Nil
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Function Clientes()
 Local cTELA:=screensave( 0, 0, 24, 79 ), cCOR:=setcolor(),;
@@ -175,7 +175,7 @@ Local nTela:= 1   // Controle da Tela de Edicao Atual
               IF Exclui( oTb )
                  CCR->( DBSetOrder( 1 ) )
                  IF CCR->( DBSeek( nCodigo ) )
-                    IF CCR->( NetRLock() )
+                    IF CCR->( netrlock() )
                        CCR->( DBDelete() )
                     ENDIF
                  ENDIF
@@ -274,7 +274,7 @@ local cENDERE:=spac(35), cBAIRRO:=spac(25),;
       nCodigo:= CODIGO + 1
 
       DBAppend()
-      IF NetRlock()
+      IF netrlock()
          Replace CODIGO With nCodigo
          DBUnlockAll()
          nRegistro:= RECNO()
@@ -290,7 +290,7 @@ local cENDERE:=spac(35), cBAIRRO:=spac(25),;
       IF DBSeek( nCodigo )
          IF RECNO() <> nRegistro
             Inkey(0)
-            Aviso( "Registro j  existe, reinicie esta ficha cadastral.", .T. )
+            Aviso( "Registro jï¿½ existe, reinicie esta ficha cadastral.", .T. )
             Keyboard Chr( K_ESC )
          ENDIF
       ELSE
@@ -416,7 +416,7 @@ local cENDERE:=spac(35), cBAIRRO:=spac(25),;
          DBGoTo( nRegAtual )
          DBSelectAr( _COD_CLIENTE )
 
-         IF NetRLock()
+         IF netrlock()
             //* GRAVACAO DOS DADOS *//
             Replace CODFIL With nCodFil, FILIAL With SWSet( _GER_EMPRESA )
             repl CODIGO with nCODIGO, DESCRI with cDESCRI, ENDERE with cENDERE,;
@@ -438,14 +438,14 @@ local cENDERE:=spac(35), cBAIRRO:=spac(25),;
          ENDIF
       ELSE
          IF nOperacao==1
-            IF NetRlock()
+            IF netrlock()
                Dele
             ENDIF
          ENDIF
       ENDIF
    ELSE
       IF nOperacao==1
-         IF NetRlock()
+         IF netrlock()
             Dele
          ENDIF
       ENDIF
@@ -531,10 +531,10 @@ Local nOrdem:= IndexOrd()
    cConCar:= CCR->CONCAR
    nSPCEst:= CCR->SPCEST
 
-   cCont:= Repl( "°", 40 ) + "±" + "²" + "Û"
+   cCont:= Repl( "ï¿½", 40 ) + "ï¿½" + "ï¿½" + "ï¿½"
    cCorPad:= "08/11"
 
-   @ 01,01 SAY PADC( " " + ALLTRIM( CLI->DESCRI ) + " ", 78, "°" ) Color "14/" + CorFundoAtual()
+   @ 01,01 SAY PADC( " " + ALLTRIM( CLI->DESCRI ) + " ", 78, "ï¿½" ) Color "14/" + CorFundoAtual()
 
    Set Delimiters Off
 
@@ -568,10 +568,10 @@ Local nOrdem:= IndexOrd()
 
 /*
    nCustoCarta:= 0
-   @ 19,01 Say Repl( "Ä", 78 )
+   @ 19,01 Say Repl( "ï¿½", 78 )
    @ 20,02 Say "Situacao/Avisos" Get nSpcEst Pict "9" Valid;
               ( ( nCustoCarta:= ( nSpcEst * 0.50 ) ) >= 0 )
-   @ 20,21 Say "(0)-Nenhuma (1)-1§Aviso (2)-2§Aviso (3)-3§Aviso (4)-SPC"
+   @ 20,21 Say "(0)-Nenhuma (1)-1ï¿½Aviso (2)-2ï¿½Aviso (3)-3ï¿½Aviso (4)-SPC"
    @ 21,02 Say "Custo em Operacoes de Cobranca" Get nCustoCarta Pict "@E 999,999.99"
 */
    DispEnd()
@@ -651,11 +651,11 @@ Local nOrdem:= IndexOrd()
    cConCar:= CCR->CONCAR
    nSPCEst:= CCR->SPCEST
 
-   cCont:= Repl( "°", 40 ) + "±" + "²" + "Û"
+   cCont:= Repl( "ï¿½", 40 ) + "ï¿½" + "ï¿½" + "ï¿½"
    cCorPad:= "08/11"
 
 
-   @ 01,01 SAY PADC( " " + ALLTRIM( CLI->DESCRI ) + " ", 78, "°" ) Color "14/" + CorFundoAtual()
+   @ 01,01 SAY PADC( " " + ALLTRIM( CLI->DESCRI ) + " ", 78, "ï¿½" ) Color "14/" + CorFundoAtual()
 
    Set Delimiters Off
 
@@ -687,7 +687,7 @@ Local nOrdem:= IndexOrd()
    READ
 
    ////////////////// CREDIARIO /////////////////
-   IF CCR->( NetRLock() )
+   IF CCR->( netrlock() )
       Replace CCR->CI____ With cRG____,;
               CCR->ORGAO_ With cOrgao_,;
               CCR->ESTCIV With cEstCiv,;
@@ -706,7 +706,7 @@ Local nOrdem:= IndexOrd()
    ENDIF
 
    ////////// CADASTRO DE CLIENTES //////////
-   IF CLI->( NetRlock() )
+   IF CLI->( netrlock() )
       Replace CLI->DESCRI With cDESCRI,;
               CLI->FANTAS With cFANTAS,;
               CLI->ENDERE With cENDERE,;
@@ -761,13 +761,13 @@ ENDIF
 RETURN .T.
 
 /*
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao       ³ CLIEXIBESTR
-³ Finalidade   ³ Exibir a estrutura do cadastro na tela
-³ Programador  ³ VPF
-³ Data         ³
-³ Atualizacao  ³
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao       ï¿½ CLIEXIBESTR
+ï¿½ Finalidade   ï¿½ Exibir a estrutura do cadastro na tela
+ï¿½ Programador  ï¿½ VPF
+ï¿½ Data         ï¿½
+ï¿½ Atualizacao  ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Static Function CliExibeStr()
 LOCAL cCor:= Setcolor( _COR_GET_EDICAO )
@@ -799,13 +799,13 @@ SetColor( cCor )
 return nil
 
 /*
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ CLIEXIBEDADOS
-³ Finalidade  ³ Exibir os dados dos clientes na tela do sistema
-³ Programador ³ VPF
-³ Data        ³
-³ Atualizacao ³
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ CLIEXIBEDADOS
+ï¿½ Finalidade  ï¿½ Exibir os dados dos clientes na tela do sistema
+ï¿½ Programador ï¿½ VPF
+ï¿½ Data        ï¿½
+ï¿½ Atualizacao ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 func CliExibeDados()
 loca cCOR:=setcolor()
@@ -852,14 +852,14 @@ setcolor(cCOR)
 return nil
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ CLICOMPLEMENTO
-³ Finalidade  ³ Complemento a Clientes
-³ Parametros  ³ Nil
-³ Retorno     ³ Nil
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ CLICOMPLEMENTO
+ï¿½ Finalidade  ï¿½ Complemento a Clientes
+ï¿½ Parametros  ï¿½ Nil
+ï¿½ Retorno     ï¿½ Nil
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Function CliComplemento()
 loca cTELA:=screensave( 0, 0, 24, 79 ), cCOR:=setcolor(),;
@@ -975,20 +975,20 @@ Local cCor:= SetColor()
    SetColor( _COR_GET_EDICAO )
    VPBox( 0, 0, 16, 79, " Informacoes Complementares ", _COR_GET_BOX, .F., .F. )
    VPBox( 17, 00, 22, 79, "Clientes", _COR_BROW_BOX, .F., .F. )
-   @ 02,02 Say "INFORMACOES DIVERSAS                         Operacao Principal.: °°°    "
-   @ 03,02 Say "                                             Condicao Pagamento.: °°°    "
-   @ 04,02 Say "                                             Optante Simples....: °      "
+   @ 02,02 Say "INFORMACOES DIVERSAS                         Operacao Principal.: ï¿½ï¿½ï¿½    "
+   @ 03,02 Say "                                             Condicao Pagamento.: ï¿½ï¿½ï¿½    "
+   @ 04,02 Say "                                             Optante Simples....: ï¿½      "
    @ 05,02 Say "                                             Nascimento / Fundacao       "
-   @ 06,02 Say "                                             °°°°°°°°"
+   @ 06,02 Say "                                             ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
    @ 07,02 Say "                                             Debito em Conta Automatizado"
-   @ 08,02 Say "Notas Fiscais M1    Data           Valor     ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"
-   @ 09,02 Say "1a.Compra       °°°°°°°° °°°°°°°°°°°°°°°     Banco   °°°"
-   @ 10,02 Say "Maior Compra    °°°°°°°° °°°°°°°°°°°°°°°     Agencia °°°°"
-   @ 11,02 Say "Ultima Compra   °°°°°°°° °°°°°°°°°°°°°°°     C/C     °°°°°°°°°-°"
-   @ 12,02 Say "Limite Credito  °°°°°°°° °°°°°°°°°°°°°°°     Identif °°°°°°°°°°°°°°°°°°°°"
-   @ 13,02 Say "Saldo Credito ÄÄÄÄÄÄÄÄÄ> °°°°°°°°°°°°°°°     Dias p/Novo Vcto °°°"
-   @ 14,02 Say "Tabela de Preco     °°°° °°°°°°°°°°°°°°°     Cartao Afinidade °°°°°°°°°°°°°"
-   @ 15,02 Say "Informacao      °°°°°°°°                     Folha: >°°°°°°-°°°°°°°°°°°°°°°"
+   @ 08,02 Say "Notas Fiscais M1    Data           Valor     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
+   @ 09,02 Say "1a.Compra       ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½     Banco   ï¿½ï¿½ï¿½"
+   @ 10,02 Say "Maior Compra    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½     Agencia ï¿½ï¿½ï¿½ï¿½"
+   @ 11,02 Say "Ultima Compra   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½     C/C     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½"
+   @ 12,02 Say "Limite Credito  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½     Identif ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
+   @ 13,02 Say "Saldo Credito ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½     Dias p/Novo Vcto ï¿½ï¿½ï¿½"
+   @ 14,02 Say "Tabela de Preco     ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½     Cartao Afinidade ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
+   @ 15,02 Say "Informacao      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½                     Folha: >ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
    SetColor( cCor )
    Return Nil
 
@@ -1060,7 +1060,7 @@ Local cCor:= SetColor(), cSimpl_
 
       // CODIGO DE BARRAS
       IF CODBAR==Space( 13 )
-         IF NetRLock()
+         IF netrlock()
             Replace CODBAR With StrZero( CODIGO, 12, 0 ) + AllTrim( twCalcDig( StrZero( CODIGO, 12, 0 ) ) )
          ENDIF
          DBUnlock()
@@ -1070,13 +1070,13 @@ Local cCor:= SetColor(), cSimpl_
       IF ! VALID_ == CTOD( "  /  /  " )
          IF VALID_ < Date()
             IF ! Alltrim( OBSER5 ) == cAviso
-               IF NetRLock()
+               IF netrlock()
                   Replace Obser5 With cAviso
                ENDIF
             ENDIF
          ELSE
             IF Alltrim( OBSER5 ) == cAviso
-               IF NetRLock()
+               IF netrlock()
                   Replace Obser5 With Space( Len( Obser5 ) )
                ENDIF
             ENDIF
@@ -1135,7 +1135,7 @@ Local cObser1:= OBSER1, cObser2:= OBSER2, cObser3:= OBSER3, cObser4:= OBSER4,;
     @ 15,62 Get cFolCod
     READ
 
-    IF NetRLock()
+    IF netrlock()
        dDatInf:= DATE()
        Replace SALDO_ With ( SALDO_ - LIMCR_ + nValorCred )
        Replace CODBAR With cCodBar
@@ -1190,14 +1190,14 @@ Local nVlrDevedor:= 0
 
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ CLIPESQUISA
-³ Finalidade  ³ Pesquisa diferenciada ao cadastro de clientes
-³ Parametros  ³ Nil
-³ Retorno     ³ Nil
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³ 19/Fevereiro/98
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ CLIPESQUISA
+ï¿½ Finalidade  ï¿½ Pesquisa diferenciada ao cadastro de clientes
+ï¿½ Parametros  ï¿½ Nil
+ï¿½ Retorno     ï¿½ Nil
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½ 19/Fevereiro/98
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Function CliPesquisa()
 Local cCNPJ__:= Space( 14 )
@@ -1231,7 +1231,7 @@ WHILE LastKey() <> 27
      @ 02,09 Say " CNPJ..........: " Get cCNPJ__ Pict "@R 99.999.999/9999-99"
      @ 04,09 Say " Razao Social..: " Get cDescri Pict "@!"
      @ 06,09 Say " Nome Fantasia.: " Get cFantas Pict "@!"
-     @ 08,09 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"
+     @ 08,09 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
      //@ 08,09 Say " Endereco......: " Get cEndere
      @ 10,09 Say " Cidade........: " Get cCidade Pict "@!"
      @ 12,09 Say " Estado........: " Get cEstado Pict "@!"
@@ -1359,14 +1359,14 @@ ScreenRest( cTela )
 Return Nil
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ DisplayCliente <STATIC>
-³ Finalidade  ³ Apresentar os dados cadastrais do cliente (Aux. a CliPesquisa())
-³ Parametros  ³ Nil
-³ Retorno     ³ Nil
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³ 18/02/98
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ DisplayCliente <STATIC>
+ï¿½ Finalidade  ï¿½ Apresentar os dados cadastrais do cliente (Aux. a CliPesquisa())
+ï¿½ Parametros  ï¿½ Nil
+ï¿½ Retorno     ï¿½ Nil
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½ 18/02/98
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Static Function DisplayCliente
 Local cCor:= SetColor(), nCursor:= SetCursor(),;
@@ -1401,17 +1401,17 @@ Return Nil
 
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ CLIINFO
-³ Finalidade  ³ Dar Manutencao ao Cadastro de Clientes
-³             ³ Exemplos de utilizacao
-³ Uso         ³ CliInfo( 100 )                                        => Retorna o saldo de credito do cliente
-³             ³ CliInfo( 100, 1250.30, "+", CTOD( "15/03/00" ), 189 ) => Joga informacoes de credito inclusive
-³             ³ CliInfo( 100, 1470.30, "+" )                          => Inclui informacoes de credito s/ atualizacao de Credito
-³             ³ CliInfo( 100, 350.30, "-" )                           => Retira Informacoes
-³ Data        ³
-³ Atualizacao ³
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ CLIINFO
+ï¿½ Finalidade  ï¿½ Dar Manutencao ao Cadastro de Clientes
+ï¿½             ï¿½ Exemplos de utilizacao
+ï¿½ Uso         ï¿½ CliInfo( 100 )                                        => Retorna o saldo de credito do cliente
+ï¿½             ï¿½ CliInfo( 100, 1250.30, "+", CTOD( "15/03/00" ), 189 ) => Joga informacoes de credito inclusive
+ï¿½             ï¿½ CliInfo( 100, 1470.30, "+" )                          => Inclui informacoes de credito s/ atualizacao de Credito
+ï¿½             ï¿½ CliInfo( 100, 350.30, "-" )                           => Retira Informacoes
+ï¿½ Data        ï¿½
+ï¿½ Atualizacao ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Function CliInfo( nCliente, nValor, cEntSai, dDataEmissao, nNotaFiscal, nValorNota )
 Local nArea:= Select(), nOrdem
@@ -1420,9 +1420,9 @@ Local nArea:= Select(), nOrdem
    nOrdem:= CLI->( IndexOrd() )
    CLI->( DBSetOrder( 1 ) )
    IF CLI->( DBSeek( nCliente ) )
-      IF CLI->( NetRLock() )
+      IF CLI->( netrlock() )
          IF nValor==Nil .AND. nValorNota==Nil
-            /* Se ambos os valores de atualizacao estiverem em branco ÄÄÄÄÄÄÄÄ*/
+            /* Se ambos os valores de atualizacao estiverem em branco ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
             CLI->( DBSetOrder( nOrdem ) )
             DBUnlockAll()
          ELSE
@@ -1435,12 +1435,12 @@ Local nArea:= Select(), nOrdem
                /* Informacoes de Maior Venda p/ Cliente e Ultima Venda */
                IF !( nNotaFiscal == Nil ) .AND. !( nValorNota == Nil )
                   IF nValorNota > CLI->MAIVLR
-                     IF NetRLock()
+                     IF netrlock()
                         Replace MAICMP With dDataEmissao,;
                                 MAIVLR With nValorNota
                      ENDIF
                   ENDIF
-                  IF NetRLock()
+                  IF netrlock()
                      Replace ULTCMP With dDataEmissao,;
                              ULTVLR With nValorNota
                   ENDIF
@@ -1457,14 +1457,14 @@ Local nArea:= Select(), nOrdem
 
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ LancaCliente
-³ Finalidade  ³
-³ Parametros  ³ nCodCli, nValorEntrada, nValorSaida
-³ Retorno     ³ Nil
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ LancaCliente
+ï¿½ Finalidade  ï¿½
+ï¿½ Parametros  ï¿½ nCodCli, nValorEntrada, nValorSaida
+ï¿½ Retorno     ï¿½ Nil
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Function LancaCliente( nCodCli, nValorQuitacao, nValorFatura )
 Local nArea:= Select(), nOrdem:= IndexOrd(),;
@@ -1472,7 +1472,7 @@ Local nArea:= Select(), nOrdem:= IndexOrd(),;
    DBSelectAr( _COD_CLIENTE )
    DBSetOrder( 1 )
    IF DBSeek( nCodCli )
-      IF NetRLock()
+      IF netrlock()
          IF !nValorQuitacao == 0
             CliInfo( nCodCli, nValorQuitacao, "+" )
          ELSE
@@ -1492,14 +1492,14 @@ Local nArea:= Select(), nOrdem:= IndexOrd(),;
    Return Nil
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ SALDOCLIENTE
-³ Finalidade  ³ Verifica o saldo do cliente
-³ Parametros  ³ nCodCli, nValor=Valor a comparar com o saldo
-³ Retorno     ³ Nil
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ SALDOCLIENTE
+ï¿½ Finalidade  ï¿½ Verifica o saldo do cliente
+ï¿½ Parametros  ï¿½ nCodCli, nValor=Valor a comparar com o saldo
+ï¿½ Retorno     ï¿½ Nil
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Function SaldoCliente( nCodCli, nValor )
 Local cCor:= SetColor(), nCursor:= SetCursor(),;
@@ -1517,7 +1517,7 @@ Local nArea:= Select(), nOrdem:= IndexOrd(),;
                Pausa()
             ELSE
                IF CliInfo( nCodCli ) < 999999.99
-                  Aviso( "Saldo de credito do cliente ‚ " + Alltrim( Tran( CliInfo( nCodCli ), "@E 999,999.99" ) ) )
+                  Aviso( "Saldo de credito do cliente ï¿½ " + Alltrim( Tran( CliInfo( nCodCli ), "@E 999,999.99" ) ) )
                   Pausa()
                ENDIF
             ENDIF
@@ -1538,13 +1538,13 @@ Local nArea:= Select(), nOrdem:= IndexOrd(),;
 
 
 /*
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ TELEFONE
-³ Finalidade  ³ Executar a edicao de telefones do cliente.
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³ 21/Setembro/1993
-³ Atualizacao ³ 01/Fevereiro/1994 - 02/Outubro/2000
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ TELEFONE
+ï¿½ Finalidade  ï¿½ Executar a edicao de telefones do cliente.
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½ 21/Setembro/1993
+ï¿½ Atualizacao ï¿½ 01/Fevereiro/1994 - 02/Outubro/2000
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 func telefone(aFONE,nPQTD,nPLIN,nPCOL,cPTXT)
 loca nCT:=1, cTELA:=screensave(15,00,15,79), GETLIST:={}
@@ -1560,14 +1560,14 @@ screenrest(cTELA)
 return(.t.)
 
 /*
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Modulo      ³ VPC41000
-³ Funcao      ³ PesqCliDes
-³ Finalidade  ³ Busca Clientes pelo nome e retorna .T. / .F.
-³ Data        ³ Novembro/2000
-³ Programador ³ Valmor Pereira Flores
-³             ³
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Modulo      ï¿½ VPC41000
+ï¿½ Funcao      ï¿½ PesqCliDes
+ï¿½ Finalidade  ï¿½ Busca Clientes pelo nome e retorna .T. / .F.
+ï¿½ Data        ï¿½ Novembro/2000
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½             ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Function PesqCliDes( cDescri )
 Local nOrdem:= CLI->( IndexOrd() ), nRecno:= CLI->( RECNO() )
@@ -1686,7 +1686,7 @@ Local lAppend:= .F.
    SetColor( _COR_GET_EDICAO )
    IF lAppend
       DBAppend()
-      IF NetRLock()
+      IF netrlock()
          Replace CODIGO With nCodCli
       ENDIF
       DBUnlock()
@@ -1707,7 +1707,7 @@ Local lAppend:= .F.
    @ 15,07 Say "Comprador...:" Get cCompra When Mensagem( "Digite o nome do(a) comprador(a)." )
    @ 16,07 Say "CGCMf.......:" Get cCGCMf_ Pict "@R 99.999.999/9999-99" Valid CGCMF( cCgcMf_ ) When Mensagem( "Digite o CGC do cliente:" )
    @ 17,07 Say "CPF.........:" Get cCPF___ Pict "@R 999.999.999-99" Valid CPF( cCPF___ ) When Mensagem( "Digite o CPF do cliente." )
-   @ 18,07 Say "I.E.........:" Get cInscri When Mensagem( "Digite o n§ da inscricao estadual." )
+   @ 18,07 Say "I.E.........:" Get cInscri When Mensagem( "Digite o nï¿½ da inscricao estadual." )
    @ 19,07 Say "Data........:" Get dDataCd
    @ 19,40 Say "Contato/Midia:" Get nMidia_ Pict "999" Valid TabelaMidia( @nMidia_ )
    @ 20,07 Say "Vend.Interno:" Get nVenIn_ Pict "999"
@@ -1721,7 +1721,7 @@ Local lAppend:= .F.
       ScreenRest( cTela )
       DBSetOrder( 1 )
       DBSeek( nCodCli )
-      IF NetRLock()
+      IF netrlock()
          DBDelete()
       ENDIF
       DBUnlock()
@@ -1747,7 +1747,7 @@ Local lAppend:= .F.
    DBSetOrder( 1 )
    CLI->( DBSetOrder( 1 ) )
    CLI->( DBSeek( nCodCli ) )
-   IF CLI->( NetRLock() ) .AND. !EOF()
+   IF CLI->( netrlock() ) .AND. !EOF()
       Replace CodFil With nCodFil,;
               Bairro With cBairro,;
               Fantas With cFantas,;

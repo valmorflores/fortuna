@@ -8,9 +8,9 @@
 ** Atualizacao - 
 */ 
 #Define DESCRI_TAMANHO  43 
-#INCLUDE "FORMATOS.CH" 
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#INCLUDE "formatos.ch" 
+#include "vpf.ch" 
+#include "inkey.ch" 
 
 
 
@@ -116,7 +116,7 @@ Loca oTb, cCor:= SetColor(), cTela:= ScreenSave( 0, 0, 24, 79 ),;
 //         DBSkip() 
 //      EndDo 
 //   Else 
-//      Aviso( "Nenhuma cota‡„o foi selecionada...", 24 /2 ) 
+//      Aviso( "Nenhuma cotaï¿½ï¿½o foi selecionada...", 24 /2 ) 
 //      Pausa() 
 //      SetColor( cCor ) 
 //      SetCursor( nCursor ) 
@@ -130,7 +130,7 @@ Loca oTb, cCor:= SetColor(), cTela:= ScreenSave( 0, 0, 24, 79 ),;
    /* Coloca em ordem default */ 
    DBSetOrder( 1 ) 
  
-   /* Apaga o arquivo de indice provis¢rio */ 
+   /* Apaga o arquivo de indice provisï¿½rio */ 
    FErase( "IndiceRes.Ntx" ) 
  
    DBSelectar( _COD_PEDPROD ) 
@@ -171,7 +171,7 @@ Loca oTb, cCor:= SetColor(), cTela:= ScreenSave( 0, 0, 24, 79 ),;
    @ 1, 1 Say "Pedido.....: " + Ped->Codigo 
    @ 2, 1 Say "Codigo.....: " + StrZero( Ped->CodCli, 4, 0 ) 
    @ 3, 1 Say "Cliente....: " + Ped->Descri 
-   @ 4, 1 Say "Endere‡o...: " + Ped->Endere 
+   @ 4, 1 Say "Endereï¿½o...: " + Ped->Endere 
    @ 5, 1 Say "Cidade.....: " + Ped->Cidade 
    @ 6, 1 Say "Contato....: " + Ped->Compra 
    @ 7, 1 Say "Fone/Fax...: " + Ped->FonFax 
@@ -181,7 +181,7 @@ Loca oTb, cCor:= SetColor(), cTela:= ScreenSave( 0, 0, 24, 79 ),;
    @ 09, 01 Say "Produto" 
    @ 09, 33 Say "Un" 
    @ 09, 37 Say "Quantidade" 
-   @ 09, 53 Say "Preco Unit rio" 
+   @ 09, 53 Say "Preco Unitï¿½rio" 
    @ 09, 68 Say "%IPI" 
    DispEnd() 
    DBSelectar( _COD_PEDPROD ) 
@@ -194,10 +194,10 @@ Loca oTb, cCor:= SetColor(), cTela:= ScreenSave( 0, 0, 24, 79 ),;
    oTb:=TBrowseNew( 10, 1, 20, 78 ) 
    oTb:addcolumn(tbcolumnnew(,{|| Left( aPedido[ nRow ][ 1 ] + "-" + ; 
                                      aPedido[ nRow ][ 2 ], 30 ) + ; 
-                                " ³ " + aPedido[ nRow ][ 7 ] + " ³ " +; 
-                                  Tran( aPedido[ nRow ][ 6 ], "@E 9,999,999.99" ) + " ³ " +; 
-                                  Tran( aPedido[ nRow ][ 5 ], "@E 9999,999.999" ) + " ³ " +; 
-                                  Tran( aPedido[ nRow ][ 8 ], "@E 99.99" )       +  " ³" + aPedido[ nRow ][ 10 ] })) 
+                                " ï¿½ " + aPedido[ nRow ][ 7 ] + " ï¿½ " +; 
+                                  Tran( aPedido[ nRow ][ 6 ], "@E 9,999,999.99" ) + " ï¿½ " +; 
+                                  Tran( aPedido[ nRow ][ 5 ], "@E 9999,999.999" ) + " ï¿½ " +; 
+                                  Tran( aPedido[ nRow ][ 8 ], "@E 99.99" )       +  " ï¿½" + aPedido[ nRow ][ 10 ] })) 
    oTb:AUTOLITE:=.f. 
    oTb:GOTOPBLOCK :={|| nRow:= 1} 
    oTb:GOBOTTOMBLOCK:={|| nRow:= Len( aPedido ) } 
@@ -245,7 +245,7 @@ Loca oTb, cCor:= SetColor(), cTela:= ScreenSave( 0, 0, 24, 79 ),;
                         EndIf 
                         DBUnLock() 
                      Else 
-                        Aviso( " Cotacao n§ " + aCotacoes[ nCt ][ 1 ] + " nao foi encontrada...", 24 / 2 ) 
+                        Aviso( " Cotacao nï¿½ " + aCotacoes[ nCt ][ 1 ] + " nao foi encontrada...", 24 / 2 ) 
                         Pausa() 
                      EndIf 
                  Next 
@@ -268,7 +268,7 @@ Loca oTb, cCor:= SetColor(), cTela:= ScreenSave( 0, 0, 24, 79 ),;
                         DBSkip() 
                     EndDo 
                  EndIf 
-                 Aviso( "Foi gerado o pedido de N§ " + cCodPed + "...", 24 / 2 ) 
+                 Aviso( "Foi gerado o pedido de Nï¿½ " + cCodPed + "...", 24 / 2 ) 
                  Mensagem( "Pressione [ENTER] para continuar..." ) 
                  Pausa() 
  
@@ -306,11 +306,11 @@ Loca oTb, cCor:= SetColor(), cTela:= ScreenSave( 0, 0, 24, 79 ),;
               SetCursor(1) 
               @ 11,12 Say "Produto....:" Get cGrupo_ Pict "999" Valid VerGrupo( cGrupo_, @cCodigo ) 
               @ 11,30 Say "-" 
-              @ 11,31 Get cCodigo Pict "9999" Valid VerCodigo( cCodigo, GetList ) when mensagem("Digite o c¢digo do produto.") 
-              @ 12,12 Say "Descri‡„o..: [" + LEFT( aPedido[ nRow ][ 2 ], DESCRI_TAMANHO ) + "]" 
-              @ 13,12 Say "Pre‡o......:" Get nPrecoInicial Pict "@E 999,999,999.999" 
+              @ 11,31 Get cCodigo Pict "9999" Valid VerCodigo( cCodigo, GetList ) when mensagem("Digite o cï¿½digo do produto.") 
+              @ 12,12 Say "Descriï¿½ï¿½o..: [" + LEFT( aPedido[ nRow ][ 2 ], DESCRI_TAMANHO ) + "]" 
+              @ 13,12 Say "Preï¿½o......:" Get nPrecoInicial Pict "@E 999,999,999.999" 
               @ 14,12 Say "% Desconto.:" Get nPerDesconto  Pict "@E 999.99" Valid {|oGet| CalculaDesconto( oGet, GetList, 3, 5 ) } 
-              @ 15,12 Say "Pre‡o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" 
+              @ 15,12 Say "Preï¿½o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" 
               VPBox( 18, 10, 20, 70,, _COR_GET_BOX, .T., .F., _COR_GET_TITULO ) 
               @ 19,12 Say "Quantidade.:" Get nQuantidade   Pict "@E 999,999.999" 
               DisplayIPI( nPrecoFinal ) 
@@ -346,10 +346,10 @@ Loca oTb, cCor:= SetColor(), cTela:= ScreenSave( 0, 0, 24, 79 ),;
               nQuantidade:= aPedido[ nRow ][ 6 ] 
               SetCursor(1) 
               @ 11,12 Say "Produto....: [" + aPedido[ nRow ][ 1 ] + "]" 
-              @ 12,12 Say "Descri‡„o..: [" + LEFT( aPedido[ nRow ][ 2 ], DESCRI_TAMANHO ) + "]" 
-              @ 13,12 Say "Pre‡o......:" Get nPrecoInicial Pict "@E 999,999,999.999" 
+              @ 12,12 Say "Descriï¿½ï¿½o..: [" + LEFT( aPedido[ nRow ][ 2 ], DESCRI_TAMANHO ) + "]" 
+              @ 13,12 Say "Preï¿½o......:" Get nPrecoInicial Pict "@E 999,999,999.999" 
               @ 14,12 Say "% Desconto.:" Get nPerDesconto  Pict "@E 999.99" Valid {|oGet| CalculaDesconto( oGet, GetList, 1, 3 ) } 
-              @ 15,12 Say "Pre‡o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" 
+              @ 15,12 Say "Preï¿½o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" 
               VPBox( 18, 10, 20, 70,, _COR_GET_BOX, .T., .F., _COR_GET_TITULO ) 
               @ 19,12 Say "Quantidade.:" Get nQuantidade   Pict "@E 999,999.999" 
               DisplayIPI( nPrecoFinal ) 
@@ -404,7 +404,7 @@ VPBox( 0, 0, 22, 79, " Cotacao", _COR_BROW_BOX , .F., .F., _COR_BROW_TITULO, .F.
 @ 1, 1 Say "Pedido.....: " 
 @ 2, 1 Say "Codigo.....: " + StrZero( CLI->Codigo, 4, 0 ) 
 @ 3, 1 Say "Cliente....: " + Cli->Descri 
-@ 4, 1 Say "Endere‡o...: " + Cli->Endere 
+@ 4, 1 Say "Endereï¿½o...: " + Cli->Endere 
 @ 5, 1 Say "Cidade.....: " + Cli->Cidade 
 @ 6, 1 Say "Contato....: " + Cli->Compra 
 @ 7, 1 Say "Fone/Fax...: " + Cli->Fone1_ + " / " + Cli->Fax___ 
@@ -414,7 +414,7 @@ Scroll( 9, 0, 9, 79 )
 @ 09, 01 Say "Produto" 
 @ 09, 33 Say "Un" 
 @ 09, 37 Say "Quantidade" 
-@ 09, 53 Say "Preco Unit rio" 
+@ 09, 53 Say "Preco Unitï¿½rio" 
 @ 09, 68 Say "%IPI" 
 DispEnd() 
 CalculoGeral( aPedido ) 
@@ -424,10 +424,10 @@ SetColor( _COR_BROWSE )
 oTb:=TBrowseNew( 10, 1, 20, 78 ) 
 oTb:addcolumn(tbcolumnnew(,{|| Left( aPedido[ nRow ][ 1 ] + "-" + ; 
                                      aPedido[ nRow ][ 2 ], 30 ) + ; 
-                                " ³ " + aPedido[ nRow ][ 7 ] + " ³ " +; 
-                                  Tran( aPedido[ nRow ][ 6 ], "@E 9,999,999.99" ) + " ³ " +; 
-                                  Tran( aPedido[ nRow ][ 5 ], "@E 9999,999.999" ) + " ³ " +; 
-                                  Tran( aPedido[ nRow ][ 8 ], "@E 99.99" )       +  " ³" + aPedido[ nRow ][ 10 ] })) 
+                                " ï¿½ " + aPedido[ nRow ][ 7 ] + " ï¿½ " +; 
+                                  Tran( aPedido[ nRow ][ 6 ], "@E 9,999,999.99" ) + " ï¿½ " +; 
+                                  Tran( aPedido[ nRow ][ 5 ], "@E 9999,999.999" ) + " ï¿½ " +; 
+                                  Tran( aPedido[ nRow ][ 8 ], "@E 99.99" )       +  " ï¿½" + aPedido[ nRow ][ 10 ] })) 
 oTb:AUTOLITE:=.f. 
 oTb:GOTOPBLOCK :={|| nRow:= 1} 
 oTb:GOBOTTOMBLOCK:={|| nRow:= Len( aPedido ) } 
@@ -472,12 +472,12 @@ whil .t.
  
            @ 11,11 Say " Vendedor(a)..........:" Get nVendedor Pict "@E 9999" VALID VenSeleciona( @nVendedor, 1 ) When; 
              Mensagem( "Digite o codigo do vendedor." ) 
-           @ 12,11 Say " ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ°Û°Û°Û" 
-           @ 13,11 Say " VALOR TOTAL......... °" + Tran( nValor, "@E 99,999,999,999.99" ) 
-           @ 14,11 Say " Desconto (%)........ °" Get nDesconto Pict "@E 99.99" Valid Desconto( nValor, @nDesconto, @nApagar ) When; 
+           @ 12,11 Say " ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä°Û°Û°ï¿½" 
+           @ 13,11 Say " VALOR TOTAL......... ï¿½" + Tran( nValor, "@E 99,999,999,999.99" ) 
+           @ 14,11 Say " Desconto (%)........ ï¿½" Get nDesconto Pict "@E 99.99" Valid Desconto( nValor, @nDesconto, @nApagar ) When; 
              Mensagem( "Digite o percentual de desconto." ) 
-           @ 15,11 Say " TOTAL A PAGAR....... °" + Tran( nAPagar, "@E 999,999,999,999.99" ) 
-           @ 16,11 Say " Pago................ °"  Get nPago Pict "@E 999,999,999,999.99" Valid nPago >= nApagar WHEN; 
+           @ 15,11 Say " TOTAL A PAGAR....... ï¿½" + Tran( nAPagar, "@E 999,999,999,999.99" ) 
+           @ 16,11 Say " Pago................ ï¿½"  Get nPago Pict "@E 999,999,999,999.99" Valid nPago >= nApagar WHEN; 
              DisplayNumero( nAPagar, " Total a Pagar " ) .AND. Mensagem( "Digite o valor pago pelo cliente." ) 
            cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
            READ 
@@ -491,7 +491,7 @@ whil .t.
            ELSE 
               nTroco:= 0 
            ENDIF 
-           @ 17,11 Say " TrocoÄÄÄÄÄÄÄÄÄÄÄÄ-" + Tran( nTroco, "@E 999,999,999,999.99" ) 
+           @ 17,11 Say " Trocoï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-" + Tran( nTroco, "@E 999,999,999,999.99" ) 
            DisplayNumero( nTroco, "Troco R$" ) 
            Inkey( 3 ) 
            ScreenRest( cTelaRes ) 
@@ -624,9 +624,9 @@ whil .t.
            cOrigem:= aPedido[ nRow ][ 9 ] 
            SetCursor(1) 
            @ 10,12 Say "Produto....: [" + aPedido[ nRow ][ 1 ] + "]" 
-           @ 11,12 Say "Descri‡„o..: [" + LEFT( aPedido[ nRow ][ 2 ], DESCRI_TAMANHO ) + "]" 
+           @ 11,12 Say "Descriï¿½ï¿½o..: [" + LEFT( aPedido[ nRow ][ 2 ], DESCRI_TAMANHO ) + "]" 
            @ 12,12 Say "Fabricante.: [" + cOrigem + "]" 
-           @ 13,12 Say "Pre‡o......: [" + Tran( nPrecoInicial, "@E 999,999,999.999" ) + "]" 
+           @ 13,12 Say "Preï¿½o......: [" + Tran( nPrecoInicial, "@E 999,999,999.999" ) + "]" 
            VPBox( 18, 10, 20, 70,, _COR_GET_BOX, .T., .F., _COR_GET_TITULO ) 
            @ 19,12 Say "Quantidade.:" Get nQuantidade   Pict "@E 999,999.999" 
            DisplayIPI( nPrecoFinal ) 
@@ -656,14 +656,14 @@ return(if(nTecla=27,.f.,.t.))
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ DESCONTO 
-³ Finalidade  ³ Processar descontos 
-³ Parametros  ³ nValor / nDesconto / nApagar 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor P. Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ DESCONTO 
+ï¿½ Finalidade  ï¿½ Processar descontos 
+ï¿½ Parametros  ï¿½ nValor / nDesconto / nApagar 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor P. Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function Desconto( nValor, nDesconto, nApagar ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -682,13 +682,13 @@ IF ! nDesconto == 0
    nValorDesc:= ( nValor * nDesconto ) / 100 
 ENDIF 
 nAPagar:= nValor - nValorDesc 
-@ 15,11 SAY " TOTAL A PAGAR....... Û" + Tran( nAPagar, "@E 999,999,999,999.99" ) 
+@ 15,11 SAY " TOTAL A PAGAR....... ï¿½" + Tran( nAPagar, "@E 999,999,999,999.99" ) 
 Return .T. 
  
  
 /* 
 * Modulo      - CalculoGeral 
-* Finalidade  - Apresentar no rodap‚ o calculo total do pedido 
+* Finalidade  - Apresentar no rodapï¿½ o calculo total do pedido 
 * Programador - Valmor Pereira Flores 
 * Data        - 26/Outubro/1995 
 * Atualizacao - 
@@ -715,14 +715,14 @@ Return Nil
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VerGrupo 
-³ Finalidade  ³ Pesquisar um grupo especifico. 
-³ Parametros  ³ cGrupo_ => Codigo do grupo 
-³ Retorno     ³ cCodigo => Codigo do produto a ser retornado. 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 04/Dezembro/1995 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VerGrupo 
+ï¿½ Finalidade  ï¿½ Pesquisar um grupo especifico. 
+ï¿½ Parametros  ï¿½ cGrupo_ => Codigo do grupo 
+ï¿½ Retorno     ï¿½ cCodigo => Codigo do produto a ser retornado. 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 04/Dezembro/1995 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function VerGrupo( cGrupo_, cCodigo ) 
    Local nArea:= Select(), nOrdem:= IndexOrd() 
@@ -744,14 +744,14 @@ Static Function VerGrupo( cGrupo_, cCodigo )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VerCodigo 
-³ Finalidade  ³ Pesquisar a existencia de um codigo igual ao digitado 
-³ Parametros  ³ cCodigo=> Codigo digitado pelo usu rio 
-³ Retorno     ³ 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 04/Dezembro/1995 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VerCodigo 
+ï¿½ Finalidade  ï¿½ Pesquisar a existencia de um codigo igual ao digitado 
+ï¿½ Parametros  ï¿½ cCodigo=> Codigo digitado pelo usuï¿½rio 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 04/Dezembro/1995 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function VerCodigo( cCodigo, GetList ) 
    LOCAL cGrupo_:= GetList[ 1 ]:VarGet() 
@@ -773,7 +773,7 @@ Static Function VerCodigo( cCodigo, GetList )
    DBSetOrder( 1 ) 
    If !DBSeek( cGrupo_ + cCodigo + Space( 5 ) ) 
       Ajuda("[Enter]Continua") 
-      Aviso( "C¢digo n„o existente neste grupo...", 24 / 2 ) 
+      Aviso( "Cï¿½digo nï¿½o existente neste grupo...", 24 / 2 ) 
       Mensagem( "Pressione [Enter] para ver lista..." ) 
       Pausa() 
       VisualProdutos( cGrupo_ + cCodigo ) 
@@ -860,9 +860,9 @@ DBLeOrdem()
 DBGoTop() 
 SetColor( _COR_BROWSE ) 
 oClie:=TBrowseDb(14,02,20,75) 
-oClie:AddColumn(TbColumnNew(,{|| StrZero(CLI->CODIGO,4,0)+"³"+; 
-                                         CLI->DESCRI + "³"+; 
-                                         Tran( CLI->CGCMF_, "@R XX.XXX.XXX/XXXX-XX" ) + IF( Cli->Client=="S", "³JCP ", "³NCP " ) })) 
+oClie:AddColumn(TbColumnNew(,{|| StrZero(CLI->CODIGO,4,0)+"ï¿½"+; 
+                                         CLI->DESCRI + "ï¿½"+; 
+                                         Tran( CLI->CGCMF_, "@R XX.XXX.XXX/XXXX-XX" ) + IF( Cli->Client=="S", "ï¿½JCP ", "ï¿½NCP " ) })) 
 oClie:AUTOLITE:=.F.; oClie:dehilite() 
 oClie:GoTop() 
 While .T. 
@@ -923,7 +923,7 @@ While .T.
       //    IF !MPr->( NetErr() ) 
       //       Replace MPr->Marca_ WIth " " 
       //    ELSE 
-      //       Mensagem( "Nao foi poss¡vel desmarcar todos os produtos...", 1 ) 
+      //       Mensagem( "Nao foi possï¿½vel desmarcar todos os produtos...", 1 ) 
       //    ENDIF 
       //    MPr->( DBSkip() ) 
       //EndDo 
@@ -987,7 +987,7 @@ While .T.
            @ 09,18 Get cCompra When Mensagem( "Digite o nome do(a) comprador(a)." ) 
            @ 10,02 Say "CGCMf.........:" Get cCGCMf_ Pict "@R 99.999.999/9999-99" Valid CGCMF( cCgcMf_ ) When; 
                   Mensagem( "Digite o CGC do cliente:" ) 
-           @ 10,40 Say "I.E.:" Get cInscri When Mensagem( "Digite o n§ da inscricao estadual." ) 
+           @ 10,40 Say "I.E.:" Get cInscri When Mensagem( "Digite o nï¿½ da inscricao estadual." ) 
            @ 11,18 Get dDataCd 
            READ 
            IF LastKey() == K_ESC 
@@ -1104,14 +1104,14 @@ While .T.
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ displayMPR 
-³ Finalidade  ³ Display de Materia-Prima 
-³ Parametros  ³ Nenhum 
-³ Retorno     ³ Nenhum 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 05/Fevereiro/1996 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ displayMPR 
+ï¿½ Finalidade  ï¿½ Display de Materia-Prima 
+ï¿½ Parametros  ï¿½ Nenhum 
+ï¿½ Retorno     ï¿½ Nenhum 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 05/Fevereiro/1996 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function DisplayMPR() 
    LOCAL cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1143,7 +1143,7 @@ Static Function DisplayMPR()
    DBSelectAr( _COD_MPRIMA ) 
    SetColor( _COR_BROWSE ) 
    oPROD:=TBrowseDb(14,02,20,75) 
-   oPROD:AddColumn( TbColumnNew(,{|| MPR->MARCA_ + "³"+ Tran( MPR->Indice, "@R XXX-XXXX" ) + "³" + MPR->CodFab + "³" + LEFT( MPR->Descri, 35 ) + "³" + MPR->ORIGEM + "³" + Tran(MPR->PRECOV,"@E **,***.***") })) 
+   oPROD:AddColumn( TbColumnNew(,{|| MPR->MARCA_ + "ï¿½"+ Tran( MPR->Indice, "@R XXX-XXXX" ) + "ï¿½" + MPR->CodFab + "ï¿½" + LEFT( MPR->Descri, 35 ) + "ï¿½" + MPR->ORIGEM + "ï¿½" + Tran(MPR->PRECOV,"@E **,***.***") })) 
    oPROD:AUTOLITE:=.F. 
    oPROD:dehilite() 
    While .T. 
@@ -1166,7 +1166,7 @@ Static Function DisplayMPR()
              SetColor( "15/00" ) 
           ENDIF 
           @ nCt + 6, 36 Say Tran( StrZero( aPedido[ nCt ][ 11 ], 7, 0 ), "@R 999-9999" ) + ; 
-                      " => " + aPedido[ nCt ][ 1 ] + " ³ Qtd:" +; 
+                      " => " + aPedido[ nCt ][ 1 ] + " ï¿½ Qtd:" +; 
                       Tran( aPedido[ nCt ][ 6 ], "@E 9,999.999" ) 
           IF nCt >= 5 
              EXIT 
@@ -1175,7 +1175,7 @@ Static Function DisplayMPR()
       IF mpr->Marca_ == "*" 
          IF AScan( aPedido, {|x| x[11] == Val( MPr->Indice ) .AND. ! ( x[11] == 0 ) } ) > 0 
             SetColor( "15/00" ) 
-            @ 12,36 SAY "»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»" 
+            @ 12,36 SAY "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
          ELSE 
             SetColor( "15/04" ) 
             @ 12,36 SAY " ESTE PRODUTO NAO FOI MARCADO POR VOCE  " 
@@ -1322,9 +1322,9 @@ Static Function DisplayMPR()
               ENDIF 
               SetCursor(1) 
               @ 10,12 Say "Produto....: [" + MPR->CodFab + "]" 
-              @ 11,12 Say "Descri‡„o..: [" + Alltrim( MPR->Descri ) + "]" 
+              @ 11,12 Say "Descriï¿½ï¿½o..: [" + Alltrim( MPR->Descri ) + "]" 
               @ 12,12 Say "Fabricante.: [" + cOrigem + "]" 
-              @ 13,12 Say "Pre‡o......: [" + Tran( nPrecoInicial, "@E 999,999,999.999" ) + "]" 
+              @ 13,12 Say "Preï¿½o......: [" + Tran( nPrecoInicial, "@E 999,999,999.999" ) + "]" 
               VPBox( 18, 10, 20, 70,, _COR_GET_BOX, .T., .F., _COR_GET_TITULO ) 
               @ 19,12 Say "Quantidade.:" Get nQuantidade   Pict "@E 999,999.999" 
               DisplayIPI( nPrecoFinal ) 
@@ -1386,11 +1386,11 @@ Static Function DisplayMPR()
               lAltera:= .F. 
               SetCursor(1) 
               @ 10,12 Say "Produto....:" Get cCodFab Pict "@!" 
-              @ 11,12 Say "Descri‡„o..:" Get cDescricao Pict "@!" 
+              @ 11,12 Say "Descriï¿½ï¿½o..:" Get cDescricao Pict "@!" 
               @ 12,12 Say "Fabricante.:" Get cOrigem Pict "XXXXXXXXXXXXXX" 
-              @ 13,12 Say "Pre‡o......:" Get nPrecoInicial Pict "@E 999,999,999.999" 
+              @ 13,12 Say "Preï¿½o......:" Get nPrecoInicial Pict "@E 999,999,999.999" 
               @ 14,12 Say "% Desconto.:" Get nPerDesconto  Pict "@E 999.99"          Valid {|oGet| CalculaDesconto( oGet, GetList, 4, 6 ) } 
-              @ 15,12 Say "Pre‡o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" 
+              @ 15,12 Say "Preï¿½o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" 
               VPBox( 18, 10, 20, 70,, _COR_GET_BOX, .T., .F., _COR_GET_TITULO ) 
               @ 19,12 Say "Quantidade.:" Get nQuantidade   Pict "@E 999,999.999" 
               DisplayIPI( nPrecoFinal ) 
@@ -1458,7 +1458,7 @@ IF !Empty( aPedidos )
           IF RLock() 
              Replace MPr->Marca_ With " " 
           ELSE 
-             Mensagem("Imposs¡vel desmarcar o produto: " + PAD( StrZero( aPedidos[ nCt ][ 11 ], 7, 0 ), 12 ) + "..." ) 
+             Mensagem("Impossï¿½vel desmarcar o produto: " + PAD( StrZero( aPedidos[ nCt ][ 11 ], 7, 0 ), 12 ) + "..." ) 
              AAdd( aPrBloqueados, PAD( StrZero( aPedidos[ nCt ][ 11 ], 7, 0 ), 12 ) ) 
           ENDIF 
           DBUnlockAll() 
@@ -1469,7 +1469,7 @@ IF !Empty( aPedidos )
    DBSelectAr( nArea ) 
 ENDIF 
 IF !Empty( aPrBloqueados ) 
-   Mensagem( ">>>" + STRZero( Len( aPrBloquados ), 2, 0 ) + " do(s) " + STRZero( Len( aPedidos ), 2, 0 ) + " produto(s) n„o foram desmarcado(s)..." ) 
+   Mensagem( ">>>" + STRZero( Len( aPrBloquados ), 2, 0 ) + " do(s) " + STRZero( Len( aPedidos ), 2, 0 ) + " produto(s) nï¿½o foram desmarcado(s)..." ) 
    Pausa() 
 ENDIF 
 /* Zera a Matriz de Produtos */ 
@@ -1486,7 +1486,7 @@ Return Nil
  
 /* 
 * Modulo      - CalculoGeral 
-* Finalidade  - Apresentar no rodap‚ o calculo total do pedido 
+* Finalidade  - Apresentar no rodapï¿½ o calculo total do pedido 
 * Programador - Valmor Pereira Flores 
 * Data        - 26/Outubro/1995 
 * Atualizacao - 
@@ -1514,14 +1514,14 @@ Return Nil
 */ 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ LIMPAARQUIVO 
-³ Finalidade  ³ Limpar marcas do arquivpo de produtos 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 05/Fevereiro/1996 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ LIMPAARQUIVO 
+ï¿½ Finalidade  ï¿½ Limpar marcas do arquivpo de produtos 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 05/Fevereiro/1996 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function LimpaArquivo() 
    LOCAL cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1539,7 +1539,7 @@ Static Function LimpaArquivo()
        IF !NetErr() 
           Replace MPr->Marca_ WIth " " 
        ELSE 
-          Mensagem( "Nao foi poss¡vel desmarcar todos os produtos...", 1 ) 
+          Mensagem( "Nao foi possï¿½vel desmarcar todos os produtos...", 1 ) 
        ENDIF 
        DBUnlockAll() 
        DBSkip() 
@@ -1563,14 +1563,14 @@ Static Function LimpaArquivo()
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
   Static Function BuscaTransport( nCodigo ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1655,22 +1655,22 @@ Static Function LimpaArquivo()
    Local cCor:= SetColor(), nCursor:= SetCursor(),; 
          cTela:= ScreenSave( 0, 0, 24, 79 ) 
  
-   /*aNumero:={ "       ÛÛ ÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛ ÛÛ    ÛÛ ÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛ",; 
-                "       ÛÛ       ÛÛ       ÛÛ ÛÛ    ÛÛ ÛÛ       ÛÛ             ÛÛ ÛÛ    ÛÛ ÛÛ    ÛÛ Û   ÛÛÛÛ",; 
-                "       ÛÛ ÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛ       ÛÛ ÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛ Û ÛÛÛÛ Û",; 
-                "       ÛÛ ÛÛ             ÛÛ       ÛÛ       ÛÛ ÛÛ    ÛÛ       ÛÛ ÛÛ    ÛÛ       ÛÛ ÛÛÛÛ   Û",; 
-                "       ÛÛ ÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛ       ÛÛ ÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛ       ÛÛ ÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛ" } 
+   /*aNumero:={ "       ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½    ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",; 
+                "       ï¿½ï¿½       ï¿½ï¿½       ï¿½ï¿½ ï¿½ï¿½    ï¿½ï¿½ ï¿½ï¿½       ï¿½ï¿½             ï¿½ï¿½ ï¿½ï¿½    ï¿½ï¿½ ï¿½ï¿½    ï¿½ï¿½ ï¿½   ï¿½ï¿½ï¿½ï¿½",; 
+                "       ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½       ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½",; 
+                "       ï¿½ï¿½ ï¿½ï¿½             ï¿½ï¿½       ï¿½ï¿½       ï¿½ï¿½ ï¿½ï¿½    ï¿½ï¿½       ï¿½ï¿½ ï¿½ï¿½    ï¿½ï¿½       ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½   ï¿½",; 
+                "       ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½       ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½       ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" } 
     */ 
-    aNumero:={ "    ÜÜ ÜÜÜÜÜ ÜÜÜÜÜ Ü   Ü ÜÜÜÜÜ ÜÜÜÜÜ ÜÜÜÜÜ ÜÜÜÜÜ ÜÜÜÜÜ ÜÜÜÜÜ",; 
-               "     Û     Û     Û Û   Û Û     Û         Û Û   Û Û   Û Û   Û",; 
-               "     Û Ûßßßß  ßßßÛ ßßßßÛ ßßßßÛ ÛßßßÛ     Û ÛßßßÛ ßßßßÛ Û   Û",; 
-               "     Û ÛÜÜÜÜ ÜÜÜÜÛ     Û ÜÜÜÜÛ ÛÜÜÜÛ     Û ÛÜÜÜÛ ÜÜÜÜÛ ÛÜÜÜÛ" } 
+    aNumero:={ "    ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½   ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½",; 
+               "     ï¿½     ï¿½     ï¿½ ï¿½   ï¿½ ï¿½     ï¿½         ï¿½ ï¿½   ï¿½ ï¿½   ï¿½ ï¿½   ï¿½",; 
+               "     ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½     ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½   ï¿½",; 
+               "     ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½     ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½     ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½" } 
  
    IF cNumero == "*" 
       Return .T. 
    ENDIF 
    IF cNumero == "." 
-      @ nLin+=4, nCol Say "  ßÛ  " 
+      @ nLin+=4, nCol Say "  ï¿½ï¿½  " 
       Return .T. 
    ENDIF 
    nNumero:= VAL( cNumero ) 

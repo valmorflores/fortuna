@@ -1,7 +1,7 @@
 // ## CL2HB.EXE - Converted
  
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
 /* 
 * Modulo      - VPC99999 
 * Descricao   - Modulo responsavel pelo gerenciamento de relatorios. 
@@ -85,14 +85,14 @@ setcolor(cCOR)
 return(nil) 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ SUBMenu 
-³ Finalidade  ³ Apresentacao de Sub-menu para relatorios 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ Outubro/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ SUBMenu 
+ï¿½ Finalidade  ï¿½ Apresentacao de Sub-menu para relatorios 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ Outubro/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function SubMenu 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -190,7 +190,7 @@ Priv cDescricao:= Space( 35 ), nValor:= 0, cBarra
  
    vpbox( 00, 00, 22, 79, "ETIQUETAS DE BARRAS - IMPRESSORAS ELTRON", _COR_GET_BOX ) 
    SetColor( _COR_GET_EDICAO ) 
-   @ 03,02 Say "Intervalo de Numera‡äes:" Get nNumero1 Pict "@R 999999999999" 
+   @ 03,02 Say "Intervalo de Numeraï¿½ï¿½es:" Get nNumero1 Pict "@R 999999999999" 
    @ 04,02 Say "                        " Get nNumero2 Pict "@R 999999999999" 
    @ 05,02 Say "Descricao..............:" Get cDescricao 
    @ 06,02 Say "Valor..................:" Get nValor Pict "@E 999999.99" 

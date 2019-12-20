@@ -1,17 +1,17 @@
 // ## CL2HB.EXE - Converted
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ HEADER ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/ 
-#include "VPF.CH" 
-#include "INKEY.CH" 
-#include "PTFUNCS.CH" 
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ DEVELOPMENT ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/ 
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ HEADER ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/ 
+#include "vpf.ch" 
+#include "inkey.ch" 
+#include "ptfuncs.ch" 
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ DEVELOPMENT ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/ 
 /* 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Modulo      ³ VPC22110                                         ³ 
-³ Finalidade  ³ Controlar o cadastro de PRODUTOS MONTADOS        ³ 
-³ Programador ³ Valmor Pereira Flores                            ³ 
-³ Data        ³ 10/Novembro/1994                                 ³ 
-³ Atualizacao ³ 15/Agosto/1995                                   ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Modulo      ï¿½ VPC22110                                         ï¿½ 
+ï¿½ Finalidade  ï¿½ Controlar o cadastro de PRODUTOS MONTADOS        ï¿½ 
+ï¿½ Programador ï¿½ Valmor Pereira Flores                            ï¿½ 
+ï¿½ Data        ï¿½ 10/Novembro/1994                                 ï¿½ 
+ï¿½ Atualizacao ï¿½ 15/Agosto/1995                                   ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION AsmInclusao() 
 loca cTELA:=screensave(00,00,24,79), cCOR:=setcolor(), nCURSOR:=setcursor() 
@@ -106,22 +106,22 @@ else
 endif 
  
  
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ CONFIGURACAO ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/ 
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ CONFIGURACAO ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/ 
  
-/*Í Codigo do Produto Í*/ 
+/*ï¿½ Codigo do Produto ï¿½*/ 
 LOCATE FOR Variav="cMASCACOD" 
 cMascaCod:=Mascar 
 cVerif_:=Verif_ 
  
-/*Í Quantidade ÍÍÍÍÍÍÍÍ*/ 
+/*ï¿½ Quantidade ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/ 
 locate for VARIAV="cMASCQUAN" 
 cMASCQUAN:=MASCAR 
  
-/*Í Valores ÍÍÍÍÍÍÍÍÍÍÍ*/ 
+/*ï¿½ Valores ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/ 
 locate for VARIAV="cMASCPREC" 
 cMASCPREC:=MASCAR 
  
-/*Í Origem? ÍÍÍÍÍÍÍÍÍÍÍ*/ 
+/*ï¿½ Origem? ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/ 
 locate for VARIAV="cORIGEM" 
 M->cxORIGEM:=QUEST_ 
  
@@ -129,11 +129,11 @@ locate for VARIAV="cASSOCIAR"
 cASSOCIAR:=QUEST_ 
  
  
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ ABERTURA DE ARQUIVOS ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/ 
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ABERTURA DE ARQUIVOS ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/ 
  
-/*ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-  ³ ORIGENS                              ³ 
-  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ*/ 
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+  ï¿½ ORIGENS                              ï¿½ 
+  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/ 
  
   IF M->cxOrigem="S" 
      IF !FILE( _VPB_ORIGEM ) 
@@ -148,9 +148,9 @@ cASSOCIAR:=QUEST_
      ENDIF 
   ENDIF 
  
-/*ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-  ³ FORNECEDORES                         ³ 
-  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ*/ 
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+  ï¿½ FORNECEDORES                         ï¿½ 
+  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/ 
  
   IF !lFim 
      IF !FILE( _VPB_FORNECEDOR ) 
@@ -166,9 +166,9 @@ cASSOCIAR:=QUEST_
      ENDIF 
   ENDIF 
  
-/*ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-  ³ PRECOS POR FORNECEDOR                ³ 
-  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ*/ 
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+  ï¿½ PRECOS POR FORNECEDOR                ï¿½ 
+  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/ 
  
   IF !lFim 
      IF !FILE( _VPB_PRECOXFORN ) 
@@ -183,9 +183,9 @@ cASSOCIAR:=QUEST_
      ENDIF 
   ENDIF 
  
-/*ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-  ³ CLASSIFICACAO FISCAL                 ³ 
-  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ*/ 
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+  ï¿½ CLASSIFICACAO FISCAL                 ï¿½ 
+  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/ 
  
   IF !lFim 
      IF !FILE( _VPB_CLASFISCAL ) 
@@ -200,9 +200,9 @@ cASSOCIAR:=QUEST_
      ENDIF 
   ENDIF 
  
-/*ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-  ³ MATERIA-PRIMA                        ³ 
-  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ*/ 
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+  ï¿½ MATERIA-PRIMA                        ï¿½ 
+  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/ 
   IF !lFim 
      IF !FILE( _VPB_MPRIMA ) 
          CreateVpb( _COD_MPRIMA ) 
@@ -214,9 +214,9 @@ cASSOCIAR:=QUEST_
      ENDIF 
   ENDIF 
  
-/*ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-  ³ ARQUIVO DE ASSEMBLY                  ³ 
-  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ*/ 
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+  ï¿½ ARQUIVO DE ASSEMBLY                  ï¿½ 
+  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/ 
   IF !lFim 
      IF !FILE( _VPB_ASSEMBLER ) 
         CreateVpb( _COD_ASSEMBLER ) 
@@ -239,12 +239,12 @@ cASSOCIAR:=QUEST_
      RETURN Nil 
   ENDIF 
  
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ FORMULARIO DE ENTRADA ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/ 
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ FORMULARIO DE ENTRADA ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/ 
  
   VPBOX( 1, 0, 24 - 2, 79,, _COR_GET_BOX, .F., .F., _COR_GET_TITULO ) 
   Ajuda("["+_SETAS+"][PgDn][PgUp]Move [ENTER]Confirma [ESC]Cancela") 
  
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ VARIAVEIS DE MASCARA ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/ 
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ VARIAVEIS DE MASCARA ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/ 
  
   M->_cMRESER:=STRTRAN( M->cMASCACOD, ".", "" ) 
   M->_cMRESER:=STRTRAN( M->_cMRESER, "-", "" ) 
@@ -271,7 +271,7 @@ cASSOCIAR:=QUEST_
      RETURN Nil 
   ENDIF 
  
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ MAIN MODULE ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/ 
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ MAIN MODULE ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/ 
  
   WHILE .T. 
  
@@ -280,9 +280,9 @@ cASSOCIAR:=QUEST_
      nLin:=2 
      nCol:=3 
  
-             /*ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ» 
-     ÍÍÍÍÍÍÍÍÍÍ¹ ENTRADA DE DADOS ÌÍÍÍÍÍÍÍÍÍÍ 
-               ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼*/ 
+             /*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í» 
+     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¹ ENTRADA DE DADOS ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+               ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼*/ 
  
      @ nLin++, nCol say "Codigo..............:" get cCODIGO pict "@R "+M->cxMASCACOD valid digitover(@cCODIGO,cMASCACOD) when mensagem("Digite o codigo para produto.") 
      @ nLin++, nCol say "Codigo Fab..........:" get cCODFAB when mensagem("Digite o codigo de fabrica do produto.") 
@@ -306,9 +306,9 @@ cASSOCIAR:=QUEST_
      READ 
      IF LASTKEY()=K_ESC; EXIT; ENDIF 
  
-                /*ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ» 
-     ÍÍÍÍÍÍÍÍÍÍÍÍÍ¹ INPUT - PRODUTOS ÌÍÍÍÍÍÍÍÍÍÍÍÍ 
-                  ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼*/ 
+                /*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í» 
+     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¹ INPUT - PRODUTOS ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+                  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼*/ 
  
      cTela3:= ScreenSave( 00, 00, 24, 79 ) 
      VPBox( 05, 10, 24 - 3, 79 - 3, "Produtos", _COR_GET_BOX, .F., .F., _COR_GET_TITULO ) 
@@ -317,7 +317,7 @@ cASSOCIAR:=QUEST_
      @ 06,11 Say "Produto...: " + cCODFAB + " - " + Left( cDESCRI, 40 ) 
      @ 07,11 Say "Preco Comp: " + TRAN( nPRECOV, "@E 99,999,999.9999" ) + TRAN( nPRECO_, "@E 99,999,999.9999" ) 
      @ 08,11 Say "Quantidade: " + TRAN( nQUANT0, "@E 9,999.9999" ) 
-     @ 09,11 Say Repl("Í",65) 
+     @ 09,11 Say Repl("ï¿½",65) 
      @ 10,11 Say " Codigo  Quantidade     Descricao" 
      cCODIGO_:=REPL( " ", LEN( cCodigo ) ) 
      cCODRES:=cCODIGO_ 
@@ -328,7 +328,7 @@ cASSOCIAR:=QUEST_
          dbsetorder(3) 
          nCODPRO:=0 
          nQTDPRO:=0 
-         @ ++nLIN,12 get nCODPRO pict "9999" valid pesquisadados(@nCODPRO) when mensagem("Digite o c¢digo do produto.") 
+         @ ++nLIN,12 get nCODPRO pict "9999" valid pesquisadados(@nCODPRO) when mensagem("Digite o cï¿½digo do produto.") 
          @ nLIN,20 get nQTDPRO pict "@E 9,999.999" when mensagem("Digite a quantidade de produtos.") 
          read 
          If LastKey() == K_ESC 
@@ -356,9 +356,9 @@ cASSOCIAR:=QUEST_
         cIndice:= SUBSTR( cCODIGO, M->_PIGRUPO, M->_QtGRUPO ) + SUBSTR( cCODIGO, M->_PICODIG, M->_QtCODIG ) 
         cCodRed:= SUBSTR( cCODIGO, M->_PICODIG, M->_QtCODIG) 
  
-                  /*ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ» 
-        ÍÍÍÍÍÍÍÍÍÍÍÍ¹ GRAVACAO EM ARQUIVO ÌÍÍÍÍÍÍÍÍÍÍÍÍÍ 
-                    ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼*/ 
+                  /*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í» 
+        ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¹ GRAVACAO EM ARQUIVO ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+                    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼*/ 
  
         IF BuscaNet( 5, {|| DBAPPEND(), !NETERR() } ) 
  
@@ -934,8 +934,8 @@ stat func pesquisa(oPOBJ)
           cCOD:=alltrim(cCOD) 
           cCOD:=strtran(cCOD,"9"," ") 
           vpbox(11,25,13,48,"",M->Cor[20],.T.,.F.,M->Cor[19]) 
-          @ 12,26 say "C¢digo " get cCOD pict "@R "+cxMASCACOD when; 
-            mensagem("Digite o c¢digo para pesquisa.") 
+          @ 12,26 say "Cï¿½digo " get cCOD pict "@R "+cxMASCACOD when; 
+            mensagem("Digite o cï¿½digo para pesquisa.") 
           read 
           mensagem("Executando a pesquisa pelo codigo, aguarde...") 
           cINDICE:=substr(cCOD,M->_PIGRUPO,M->_QtGRUPO)+; 
@@ -1336,7 +1336,7 @@ Static Function PesquisaDados( Produto )
         nCODPRO=val(CODRED) 
         @ 24-3,12 say spac(44) 
         if SALDO_<ESTMIN 
-           @ 24-3,12 say "Produto abaixo do estoque m¡nimo: " + alltrim(str(SALDO_,5,0)) 
+           @ 24-3,12 say "Produto abaixo do estoque mï¿½nimo: " + alltrim(str(SALDO_,5,0)) 
         else 
            @ 24-3,12 say "Saldo do produto: "+alltrim(str(SALDO_,5,0)) 
         endif 
@@ -1421,8 +1421,8 @@ oPOBJ:gotop()
 do case 
    case nOPCAO=3 
         vpbox(11,25,13,48,"",M->Cor[20],.T.,.F.,M->Cor[19]) 
-        @ 12,26 say "C¢digo " get nCOD pict "9999" when; 
-          mensagem("Digite o c¢digo para pesquisa.") 
+        @ 12,26 say "Cï¿½digo " get nCOD pict "9999" when; 
+          mensagem("Digite o cï¿½digo para pesquisa.") 
         read 
         mensagem("Executando a pesquisa pelo codigo, aguarde...") 
         dbsetorder(3) 

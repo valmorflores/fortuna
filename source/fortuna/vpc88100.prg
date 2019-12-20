@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#Include "INKEY.CH" 
-#Include "VPF.CH" 
+#Include "inkey.ch" 
+#Include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VPC88100.PRG 
-³ Finalidade  ³ Inclusao / Alteracao / Exclusao de tabela de SETORES 
-³ Parametros  ³ Nil 
-³ Retorno     ³ 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VPC88100.PRG 
+ï¿½ Finalidade  ï¿½ Inclusao / Alteracao / Exclusao de tabela de SETORES 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 
 #ifdef HARBOUR
@@ -26,7 +26,7 @@ function vpc88100()
 // ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
    UserScreen() 
    VPBox( 00, 00, 08, 79,"TABELA DE SETORES", _COR_GET_BOX, .F., .F. ) 
-   VPBox( 09, 00, 22, 79," Display de Informa‡”es ", _COR_BROW_BOX, .F., .F., ,.F. ) 
+   VPBox( 09, 00, 22, 79," Display de Informaï¿½ï¿½es ", _COR_BROW_BOX, .F., .F., ,.F. ) 
  
    /* Ajuste de mensagens */ 
    Mensagem("[INS]Incluir [ENTER]Alterar [DEL]Excluir ou [ESC]Finalizar") 
@@ -51,9 +51,9 @@ function vpc88100()
  
       /* Display das informacoes */ 
       SetColor( _COR_GET_EDICAO ) 
-      @ 02, 03 Say "C¢digo ........ [" + STR( CODIGO, 3 ) + "]" 
-      @ 03, 03 Say "Descri‡„o ..... [" + DESCRI           + "]" 
-      @ 04, 03 Say "Observa‡”es ... [" + OBSERV           + "]" 
+      @ 02, 03 Say "Cï¿½digo ........ [" + STR( CODIGO, 3 ) + "]" 
+      @ 03, 03 Say "Descriï¿½ï¿½o ..... [" + DESCRI           + "]" 
+      @ 04, 03 Say "Observaï¿½ï¿½es ... [" + OBSERV           + "]" 
       @ 05, 03 Say "Fornecedor .... [" + STR( CODFOR, 4 ) + "]     Buscar: ["  + BSCFOR + "]" 
       @ 06, 03 Say "Cliente ....... [" + STR( CODCLI, 6 ) + "]   Buscar: ["    + BSCCLI + "]" 
       @ 07, 03 Say "Empresa ....... [" + STR( CODEMP, 3 ) + "]      Buscar: [" + BSCEMP + "]" 
@@ -90,14 +90,14 @@ function vpc88100()
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ SetIncluir 
-³ Finalidade  ³ Incluir itens na tabela de percentuais de SETORES 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 05/Fevereiro/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ SetIncluir 
+ï¿½ Finalidade  ï¿½ Incluir itens na tabela de percentuais de SETORES 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 05/Fevereiro/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION SetIncluir( oTb ) 
  
@@ -118,38 +118,38 @@ FUNCTION SetIncluir( oTb )
  
       /* Display das informacoes */ 
       SetColor( _COR_GET_EDICAO ) 
-      @ 02, 03 Say "C¢digo ........" Get nCodigo Pict "999" When; 
-         MENSAGEM("Digite o C¢digo do SETOR") VALID !DBSeek( nCodigo ) 
-      @ 03, 03 Say "Descri‡„o ....." Get cDescri When; 
-         MENSAGEM("Digite a Descri‡„o do SETOR") ; 
+      @ 02, 03 Say "Cï¿½digo ........" Get nCodigo Pict "999" When; 
+         MENSAGEM("Digite o Cï¿½digo do SETOR") VALID !DBSeek( nCodigo ) 
+      @ 03, 03 Say "Descriï¿½ï¿½o ....." Get cDescri When; 
+         MENSAGEM("Digite a Descriï¿½ï¿½o do SETOR") ; 
          VALID LastKey()==K_UP .OR. VerForCli( @cDescri, @nCodFor, @nCodCli, GetList  ) 
-      @ 04, 03 Say "Observa‡”es ..." Get cObserv When; 
-         MENSAGEM("Digite as Observa‡”es do SETOR") 
+      @ 04, 03 Say "Observaï¿½ï¿½es ..." Get cObserv When; 
+         MENSAGEM("Digite as Observaï¿½ï¿½es do SETOR") 
       @ 05, 03 Say "Fornecedor ...." Get nCodFor Pict "9999" When; 
-         MENSAGEM("Digite o C¢digo do FORNECEDOR relacionado ao SETOR") 
+         MENSAGEM("Digite o Cï¿½digo do FORNECEDOR relacionado ao SETOR") 
       @ 05, 30 Say "Buscar:" Get cBscFor when nCodFor==0 valid cBscFor$'NS' pict '!' 
       @ 06, 03 Say "Cliente ......." Get nCodCli Pict "999999" When; 
-         MENSAGEM("Digite o C¢digo do CLIENTE relacionado ao SETOR") 
+         MENSAGEM("Digite o Cï¿½digo do CLIENTE relacionado ao SETOR") 
       @ 06, 30 Say "Buscar:" Get cBscCli when nCodCli==0 valid cBscCli$'NS' pict '!' 
       @ 07, 03 Say "Empresa ......." Get nCodEmp  Pict "999" When; 
-         MENSAGEM("Digite o C¢digo da EMPRESA relacionada ao SETOR") 
+         MENSAGEM("Digite o Cï¿½digo da EMPRESA relacionada ao SETOR") 
       @ 07, 30 Say "Buscar:" Get cBscEmp when nCodEmp==0 valid cBscEmp$'NS' pict '!' 
       READ 
  
       TabAtendimento( @nTipTab ) 
       IF DBSeek( nCodigo ) 
          cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-         Aviso( "Aten‡„o! O C¢digo do SETOR j  est  cadastrado!", 12 ) 
+         Aviso( "Atenï¿½ï¿½o! O Cï¿½digo do SETOR jï¿½ estï¿½ cadastrado!", 12 ) 
          Pausa() 
          ScreenRest( cTelaRes ) 
  
       ELSEIF ! LastKey() == K_ESC 
  
           /* Gravacao de dados */ 
-          IF Confirma( 0, 0, "Confirma ?", "Confirma a grava‡„o dos dados [S/N]?", "S" ) 
+          IF Confirma( 0, 0, "Confirma ?", "Confirma a gravaï¿½ï¿½o dos dados [S/N]?", "S" ) 
  
              DBAppend() 
-             IF NetRLock() 
+             IF netrlock() 
                 Repl CODIGO With nCodigo,; 
                      DESCRI With cDESCRI,; 
                      OBSERV With cObserv,; 
@@ -183,14 +183,14 @@ FUNCTION SetIncluir( oTb )
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ SetAlterar 
-³ Finalidade  ³ Alterar itens na tabela de percentuais de SETORES 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 05/Fevereiro/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ SetAlterar 
+ï¿½ Finalidade  ï¿½ Alterar itens na tabela de percentuais de SETORES 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 05/Fevereiro/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION SetAlterar( oTb ) 
  
@@ -206,19 +206,19 @@ FUNCTION SetAlterar( oTb )
  
    /* Display das informacoes */ 
    SetColor( _COR_GET_EDICAO ) 
-   @ 03, 03 Say "Descri‡„o ....." Get cDescri When; 
-      MENSAGEM("Digite a Descri‡„o do SETOR") ; 
+   @ 03, 03 Say "Descriï¿½ï¿½o ....." Get cDescri When; 
+      MENSAGEM("Digite a Descriï¿½ï¿½o do SETOR") ; 
       VALID VerForCli( @cDescri, @nCodFor, @nCodCli, GetList  ) 
-   @ 04, 03 Say "Observa‡”es ..." Get cObserv When; 
-      MENSAGEM("Digite as Observa‡”es do SETOR") 
+   @ 04, 03 Say "Observaï¿½ï¿½es ..." Get cObserv When; 
+      MENSAGEM("Digite as Observaï¿½ï¿½es do SETOR") 
    @ 05, 03 Say "Fornecedor ...." Get nCodFor Pict "9999" When; 
-      MENSAGEM("Digite o C¢digo do FORNECEDOR relacionado ao SETOR") 
+      MENSAGEM("Digite o Cï¿½digo do FORNECEDOR relacionado ao SETOR") 
    @ 05, 30 Say "Buscar:" Get cBscFor when nCodFor==0 
    @ 06, 03 Say "Cliente ......." Get nCodCli Pict "999999" When; 
-      MENSAGEM("Digite o C¢digo do CLIENTE relacionado ao SETOR") 
+      MENSAGEM("Digite o Cï¿½digo do CLIENTE relacionado ao SETOR") 
    @ 06, 30 Say "Buscar:" Get cBscCli when nCodCli==0 
    @ 07, 03 Say "Empresa ......." Get nCodEmp  Pict "999" When; 
-      MENSAGEM("Digite o C¢digo da EMPRESA relacionada ao SETOR") 
+      MENSAGEM("Digite o Cï¿½digo da EMPRESA relacionada ao SETOR") 
    @ 07, 30 Say "Buscar:" Get cBscEmp when nCodEmp==0 
    READ 
  
@@ -227,9 +227,9 @@ FUNCTION SetAlterar( oTb )
    IF DBSeek( nCodigo ) .AND. ! LastKey() == K_ESC 
  
           /* Gravacao de dados */ 
-          IF Confirma( 0, 0, "Confirma ?", "Confirma a grava‡„o dos dados [S/N]?", "S" ) 
+          IF Confirma( 0, 0, "Confirma ?", "Confirma a gravaï¿½ï¿½o dos dados [S/N]?", "S" ) 
  
-             IF NetRLock() 
+             IF netrlock() 
                 Repl CODIGO With nCodigo,; 
                      DESCRI With cDESCRI,; 
                      OBSERV With cObserv,; 

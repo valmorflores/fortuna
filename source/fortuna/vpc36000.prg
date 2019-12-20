@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VPC36000 
-³ Finalidade  ³ Cadastro de Similaridades 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VPC36000 
+ï¿½ Finalidade  ï¿½ Cadastro de Similaridades 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */
 #ifdef HARBOUR
 function vpc36000
@@ -71,14 +71,14 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ incluiSimilar 
-³ Finalidade  ³ Cadastramento de Contas Similares 
-³ Parametros  ³ oTab 
-³ Retorno     ³ 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ incluiSimilar 
+ï¿½ Finalidade  ï¿½ Cadastramento de Contas Similares 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function IncluiSimilar( oTab ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -114,7 +114,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
              Loop 
           ELSEIF DBSeek( cCodig1 + cCodig2 ) .OR. DBSeek( cCodig2 + cCodig1 ) 
              cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-             Aviso( "Atencao! J  existe esta similaridade." ) 
+             Aviso( "Atencao! Jï¿½ existe esta similaridade." ) 
              Pausa() 
              ScreenRest( cTelaRes ) 
              Loop 
@@ -122,7 +122,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
              DBSetOrder( 4 ) 
              IF DBSeek( cCodig2 + cCodig1 ) .OR. DBSeek( cCodig1 + cCodig2 ) 
                 cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-                Aviso( "Atencao! J  existe esta similaridade." ) 
+                Aviso( "Atencao! Jï¿½ existe esta similaridade." ) 
                 Pausa() 
                 ScreenRest( cTelaRes ) 
                 Loop 
@@ -131,7 +131,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
        ENDIF 
        IF LastKey() <> K_ESC 
           Scroll( 03, 51, 07, 77, 1 ) 
-          @ 07,51 Say Tran( cCodig1, "@R 999-9999" ) + IF( cSimNao=="S", " <°> ", " °°> " )+ ; 
+          @ 07,51 Say Tran( cCodig1, "@R 999-9999" ) + IF( cSimNao=="S", " <ï¿½> ", " ï¿½ï¿½> " )+ ; 
                       Tran( cCodig2, "@R 999-9999" ) + cSimNao 
           DBAppend() 
           Replace CODIG1 With cCodig1,; 
@@ -191,7 +191,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
                  ENDIF 
                  IF lGravar 
                     Scroll( 03, 51, 07, 77, 1 ) 
-                    @ 07,51 Say Tran( cCodig1, "@R 999-9999" ) + IF( cSimNao=="S", " <°> ", " °°> " )+ ; 
+                    @ 07,51 Say Tran( cCodig1, "@R 999-9999" ) + IF( cSimNao=="S", " <ï¿½> ", " ï¿½ï¿½> " )+ ; 
                                 Tran( cCodig2, "@R 999-9999" ) + cSimNao 
  
                     DBAppend() 
@@ -219,14 +219,14 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ExibeInfo 
-³ Finalidade  ³ Exibicao de Informacoes 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ExibeInfo 
+ï¿½ Finalidade  ï¿½ Exibicao de Informacoes 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
    Function ExibeInfo() 
    Local cCor:= SetColor() 
@@ -239,14 +239,14 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ BUSCAPRODUTOS 
-³ Finalidade  ³ Fazer pesquisa de um produto en uma tabela de produtos 
-³ Parametros  ³ cCodigo 
-³ Retorno     ³ .T./.F. 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ BUSCAPRODUTOS 
+ï¿½ Finalidade  ï¿½ Fazer pesquisa de um produto en uma tabela de produtos 
+ï¿½ Parametros  ï¿½ cCodigo 
+ï¿½ Retorno     ï¿½ .T./.F. 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function BuscaProdutos( cCodigo, cDescri ) 
 MPR->( DBSetOrder( 1 ) ) 
@@ -259,14 +259,14 @@ Return IF( !LastKey()==K_ESC, .T., .F. )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ SIMILARIDADE 
-³ Finalidade  ³ Lancar os produtos similares em uma tela 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 28/Abril/1999 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ SIMILARIDADE 
+ï¿½ Finalidade  ï¿½ Lancar os produtos similares em uma tela 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 28/Abril/1999 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function Similaridade( oTbR ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 

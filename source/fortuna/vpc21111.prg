@@ -1,14 +1,14 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
-#include "PTFUNCS.CH" 
-#include "FORMATOS.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
+#include "ptfuncs.ch" 
+#include "formatos.ch" 
  
 ///////////////----------------------------------------------//////////////* 
 *                                                                          * 
 *               ATENCAO: MODULO PRINCIPAL E' VPC21110.PRG                  * 
 *  Aqui estao contidas todas as funcoes de Inclusao / Exclusao / Alteracao * 
-*     embora a rotina principal, de exibi‡Æo de informacoes no browse      * 
+*     embora a rotina principal, de exibiï¿½ï¿½o de informacoes no browse      * 
 *            esteja localizada no fonte principal VPC21110.prg             * 
 *               ------------------------------------------                 * 
 *                        VALMOR PEREIRA FLORES                             * 
@@ -88,7 +88,7 @@ func mprinclusao()
   priv nORDEMG:=1                         && Var c/ ordem geral do arquivo. 
   priv aTELA1                             && Var c/a tela limpa p/ PESQUISADBF. 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 /* 
   priv _PIGRUPO, _QTGRUPO, _PICODIG, _QTCODIG 
   cMASCACOD:=SWSet( _PRO_MASCACOD ) 
@@ -100,7 +100,7 @@ func mprinclusao()
   _PICODIG:=at("N",_cMRESER) 
   _QTCODIG:=StrVezes("N",_cMRESER) 
 */ 
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
   //* MASCARA C/ INFORMACOES P/ APRESENTACAO DE PRODUTO *// 
 //Priv bMASCARA:="' ' + Tran( Codigo, '@R XXX-XXXX' )+'  '+ CodFab + ' ' + LEFT( Descri, 40 ) + ' ' + Left( ORG->DESCRI, 10 ) " 
@@ -206,7 +206,7 @@ func mprinclusao()
   /* Relaciona com arquivo de origem/fabricante */ 
   Set Relation To ORIGEM Into ORG 
  
-  /* Modulo de usu rio */ 
+  /* Modulo de usuï¿½rio */ 
 // ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
   UserScreen() 
 // ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
@@ -232,32 +232,32 @@ func mprinclusao()
  
      cSegura:= Space( 1 ) 
      SetColor( _COR_GET_EDICAO ) 
-     @ 02,03 Say "C¢digo..............:" Get cGrupo_ Pict "999" Valid Grupo( @cGrupo_, @cCodigo ) 
+     @ 02,03 Say "Cï¿½digo..............:" Get cGrupo_ Pict "999" Valid Grupo( @cGrupo_, @cCodigo ) 
      @ 02,30 Say "-" 
      @ 02,31 Get cCodigo Pict "9999" Valid Codigo( @cCodigo, GetList )                       when mensagem("Digite o codigo para produto ou [ENTER] ara continuar.")
      @ 02,50 Say "Classe/Giro:" Get cClasse Valid ClasseMargem( cGrupo_, cClasse, @nPercPv ) when mensagem( "Digite a classe do produto quanto ao giro [ A / B / C / D ]" )
-     @ 03,03 Say "C¢digo de F brica...:" Get cCODFAB Valid BuscaCodFab( @cCodFab, GetList )  when mensagem("Digite o C¢digo de F brica do produto.") 
-     @ 04,03 Say "Descri‡„o do produto:" Get cDESCRI Valid BuscaDescri( @cDescri ) when mensagem("Digite a Descri‡„o do produto.") 
+     @ 03,03 Say "Cï¿½digo de Fï¿½brica...:" Get cCODFAB Valid BuscaCodFab( @cCodFab, GetList )  when mensagem("Digite o Cï¿½digo de Fï¿½brica do produto.") 
+     @ 04,03 Say "Descriï¿½ï¿½o do produto:" Get cDESCRI Valid BuscaDescri( @cDescri ) when mensagem("Digite a Descriï¿½ï¿½o do produto.") 
      @ 05,03 Say "Origem/Fabricante...:" Get cORIGEM pict "@!" valid oseleciona(@cORIGEM)    when mensagem("Digite a abreveatura da origem ou [999] p/ ver na lista.") 
      @ 06,03 Say "Unidade de Medida...:" Get cUNIDAD                                         when mensagem("Digite a unidade de medida do produto.") 
-     @ 07,03 Say "Medida Unit ria.....:" Get nQTDPES pict "@E 99,999.9999"                  when mensagem("Digite o peso, tamanho ou quantidade de pecas do produto.") 
+     @ 07,03 Say "Medida Unitï¿½ria.....:" Get nQTDPES pict "@E 99,999.9999"                  when mensagem("Digite o peso, tamanho ou quantidade de pecas do produto.") 
      @ 07,40 Get cSegura Pict "!" Valid ( cSegura=="*" .OR. cSegura == " " ) 
-     @ 08,03 say "Medida M¡nima.......:" Get nQTDMIN Pict "@E 99,999.9999" 
-     @ 09,03 say "Estoque m¡nimo......:" get nESTMIN pict "@E 99,999.999"                    when mensagem("Digite a quantidade permitida para estoque minimo.") 
-     @ 10,03 say "Estoque m ximo......:" get nESTMAX pict "@E 99,999.999"                    when mensagem("Digite a quantidade valida para estoque maximo.") 
-     @ 11,03 Say "Peso L¡quido...(Kg).:" Get nPesoLi Pict "@E 99,999.999" When Mensagem( "Digite o peso L¡quido." ) 
+     @ 08,03 say "Medida Mï¿½nima.......:" Get nQTDMIN Pict "@E 99,999.9999" 
+     @ 09,03 say "Estoque mï¿½nimo......:" get nESTMIN pict "@E 99,999.999"                    when mensagem("Digite a quantidade permitida para estoque minimo.") 
+     @ 10,03 say "Estoque mï¿½ximo......:" get nESTMAX pict "@E 99,999.999"                    when mensagem("Digite a quantidade valida para estoque maximo.") 
+     @ 11,03 Say "Peso Lï¿½quido...(Kg).:" Get nPesoLi Pict "@E 99,999.999" When Mensagem( "Digite o peso Lï¿½quido." ) 
      @ 12,03 Say "Peso Bruto.....(Kg).:" Get nPesoBr Pict "@E 99,999.999" Valid nPesoBr >= nPesoLi When Mensagem( "Digite o peso bruto." ) 
-     @ 13,03 say "Situa‡„o Tribut ria.:" Get nSITT01 pict "9" valid classtrib(@nSITT01,1)    when mensagem("Digite o codigo tributavel do produto p/ ICMs.") 
+     @ 13,03 say "Situaï¿½ï¿½o Tributï¿½ria.:" Get nSITT01 pict "9" valid classtrib(@nSITT01,1)    when mensagem("Digite o codigo tributavel do produto p/ ICMs.") 
         @ 13,28 Get nSITT02 pict "99" valid classtrib(@nSITT02,2)    when mensagem("Digite o codigo de tributacao do IPI.") 
-     @ 14,03 say "Classifica‡„o fiscal:" get nCLAFIS pict "999" valid verclasse(@nCLAFIS)    when mensagem("Digite o codigo de classificacao fiscal do produto.") 
+     @ 14,03 say "Classificaï¿½ï¿½o fiscal:" get nCLAFIS pict "999" valid verclasse(@nCLAFIS)    when mensagem("Digite o codigo de classificacao fiscal do produto.") 
      @ 15,03 say "% IPI (Venda/Compra):" get nIPI___ pict "999.99"                           when mensagem("Digite o percentual p/ calculo do IPI.")
      @ 15,33 say "" get nIPICMP pict "999.99"                           when mensagem("Digite o percentual p/ calculo do IPI nas compras.")
-     @ 16,03 say "% p/ c lculo do ICMs:" get nICM___ pict "999.99"                           when mensagem("Digite o percentual p/ calculo do ICMs.") 
+     @ 16,03 say "% p/ cï¿½lculo do ICMs:" get nICM___ pict "999.99"                           when mensagem("Digite o percentual p/ calculo do ICMs.") 
      @ 17,03 say "Fornecedor..........:" get nCODFOR pict "999999" valid forseleciona(@nCODFOR) when mensagem("Digite o codigo do fornecedor.") 
  
        @ 11,45 say "De Compra....:" Get nPrecoCompra Pict "@E 999,999,999.999" Valid PrecoFinal( @nPrecoCompra, @nPercPv, @nPrecov, 2, GetList ) 
-       @ 12,45 say "% Marg. Lucro:      " Get nPERCPV pict "@E 9,999.999" Valid PrecoFinal( @nPrecoCompra, @nPercPv, @nPrecov, 1, GetList ) when mensagem("Digite o percentual p/ venda sobre o Pre‡o de compra.") 
-       @ 13,45 say "Venda Padrao.:" get nPRECOV pict "@E 999,999,999.999" Valid PrecoFinal( @nPrecoCompra, @nPercPv, @nPrecov, 3, GetList ) when mensagem("Digite o Pre‡o de venda do produto.") 
+       @ 12,45 say "% Marg. Lucro:      " Get nPERCPV pict "@E 9,999.999" Valid PrecoFinal( @nPrecoCompra, @nPercPv, @nPrecov, 1, GetList ) when mensagem("Digite o percentual p/ venda sobre o Preï¿½o de compra.") 
+       @ 13,45 say "Venda Padrao.:" get nPRECOV pict "@E 999,999,999.999" Valid PrecoFinal( @nPrecoCompra, @nPercPv, @nPrecov, 3, GetList ) when mensagem("Digite o Preï¿½o de venda do produto.") 
        @ 14,45 SAY "% Desconto...:      " get nPercDC Pict "@e 9,999.999" when Mensagem("Digite o percentual de desconto.") 
  
      Read 
@@ -273,7 +273,7 @@ func mprinclusao()
  
  
      nPrecoD:= nPrecov - ( nPrecoV * nPercDC / 100 ) 
-     @ 16,40 SAY "Pre‡o Final.........:" + Tran( nPrecoD, "@e 99,999,999.999" ) 
+     @ 16,40 SAY "Preï¿½o Final.........:" + Tran( nPrecoD, "@e 99,999,999.999" ) 
  
      cTelaReserva:= ScreenSave( 0, 0, 24, 79 ) 
  
@@ -287,7 +287,7 @@ func mprinclusao()
         // Buscando informacoes 
         MPR->( DBSetOrder( 1 ) ) 
         If MPR->( DBSeek( pad( cGrupo_+cCodigo, 12 ) ) ) 
-           Aviso( "J  existe produto com este codigo. Corrigindo automaticamente, aguarde..." ) 
+           Aviso( "Jï¿½ existe produto com este codigo. Corrigindo automaticamente, aguarde..." ) 
            GrupoG( cGrupo_+cCodigo, @cCodigo )        // by Gelson 
            mensagem("Gravando "  + trim( cGrupo_ + cCodigo ) + " no arquivo de produtos...",1) 
         Else 
@@ -354,9 +354,9 @@ func mprinclusao()
                    VALOR_ with nPrecoCompra 
            endif 
  
-           Mensagem("Limpando os dados inutiliz veis, aguarde...",1) 
+           Mensagem("Limpando os dados inutilizï¿½veis, aguarde...",1) 
  
-           /* limpeza das variaveis para a reutiliza‡„o */ 
+           /* limpeza das variaveis para a reutilizaï¿½ï¿½o */ 
            cCodFab:= Space( 13 ) 
            cDescri:= Space( _ESP_DESCRICAO ) 
            cUnidad:= Space( 2 ) 
@@ -390,14 +390,14 @@ func mprinclusao()
 return nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ BuscaCodFab 
-³ Finalidade  ³ Busca a existencia de codigo de fabrica igual 
-³ Parametros  ³ cCodFab 
-³ Retorno     ³ .T./.F. 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ Agosto de 1999 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ BuscaCodFab 
+ï¿½ Finalidade  ï¿½ Busca a existencia de codigo de fabrica igual 
+ï¿½ Parametros  ï¿½ cCodFab 
+ï¿½ Retorno     ï¿½ .T./.F. 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ Agosto de 1999 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function BuscaCodFab( cCodFab, GetList ) 
 Local cTela:= ScreenSave( 0, 0, 24, 79 ) 
@@ -422,14 +422,14 @@ Local nTecla
   Return .F. 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ BuscaDescri 
-³ Finalidade  ³ Busca a existencia de descricao do produto. 
-³ Parametros  ³ cDescri 
-³ Retorno     ³ .T./.F. 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ Agosto de 1999 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ BuscaDescri 
+ï¿½ Finalidade  ï¿½ Busca a existencia de descricao do produto. 
+ï¿½ Parametros  ï¿½ cDescri 
+ï¿½ Retorno     ï¿½ .T./.F. 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ Agosto de 1999 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function BuscaDescri( cDescri, GetList ) 
 Local cTela:= ScreenSave( 0, 0, 24, 79 ) 
@@ -453,14 +453,14 @@ Local nTecla
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ PrecoFinal 
-³ Finalidade  ³ Calculo do Preco Final do Produto 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ PrecoFinal 
+ï¿½ Finalidade  ï¿½ Calculo do Preco Final do Produto 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function PrecoFinal( nPrecoCompra, nPercPv, nPrecov, nPosicao, GetList ) 
 LOCAL nPercentual 
@@ -487,14 +487,14 @@ NEXT
 Return .T. 
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ STCompra
-³ Finalidade  ³ Digitacao da Situacao Tributaria para Compra
-³ Parametros  ³ Nil 
-³ Retorno     ³ nSitCompra =
-³ Programador ³ Gelson Oliveira da Silva
-³ Data        ³ 21/Setembro/2004
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ STCompra
+ï¿½ Finalidade  ï¿½ Digitacao da Situacao Tributaria para Compra
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ nSitCompra =
+ï¿½ Programador ï¿½ Gelson Oliveira da Silva
+ï¿½ Data        ï¿½ 21/Setembro/2004
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function STCompra( nSitC )
 Local GetList:= {} 
@@ -522,14 +522,14 @@ Return nSitCompra
 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ DigitaDetalhe 
-³ Finalidade  ³ Digitacao de detalhe 
-³ Parametros  ³ Nil 
-³ Retorno     ³ aDetalhe = Array com detalhamento 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 13/Fevereiro/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ DigitaDetalhe 
+ï¿½ Finalidade  ï¿½ Digitacao de detalhe 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ aDetalhe = Array com detalhamento 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 13/Fevereiro/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function DigitaDetalhe( aDetal ) 
 Local GetList:= {} 
@@ -564,14 +564,14 @@ Return aDetalhe
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Grupo 
-³ Finalidade  ³ Pesquisar um grupo especifico. 
-³ Parametros  ³ cGrupo_ => Codigo do grupo 
-³ Retorno     ³ cCodigo => Codigo do produto a ser retornado. 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 04/Dezembro/1995 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Grupo 
+ï¿½ Finalidade  ï¿½ Pesquisar um grupo especifico. 
+ï¿½ Parametros  ï¿½ cGrupo_ => Codigo do grupo 
+ï¿½ Retorno     ï¿½ cCodigo => Codigo do produto a ser retornado. 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 04/Dezembro/1995 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function Grupo( cGrupo_, cCodigo ) 
    Local nArea:= Select(), nOrdem:= IndexOrd() 
@@ -644,14 +644,14 @@ Function GrupoG( cProduto, cCodigo )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Codigo 
-³ Finalidade  ³ Pesquisar a existencia de um codigo igual ao digitado 
-³ Parametros  ³ cCodigo=> Codigo digitado pelo usu rio 
-³ Retorno     ³ 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 04/Dezembro/1995 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Codigo 
+ï¿½ Finalidade  ï¿½ Pesquisar a existencia de um codigo igual ao digitado 
+ï¿½ Parametros  ï¿½ cCodigo=> Codigo digitado pelo usuï¿½rio 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 04/Dezembro/1995 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function Codigo( cCodigo, GetList ) 
    Local cGrupo_:= GetList[ 1 ]:VarGet() 
@@ -661,7 +661,7 @@ Function Codigo( cCodigo, GetList )
    DBSetOrder( 1 ) 
    If DBSeek( cGrupo_ + cCodigo ) 
       Ajuda("[Enter]Continua") 
-      Aviso( "C¢digo j  existente neste grupo...", 24 / 2 ) 
+      Aviso( "Cï¿½digo jï¿½ existente neste grupo...", 24 / 2 ) 
       Mensagem( "Pressione [Enter] para continuar a execucao..." ) 
       Pausa() 
       cCodigo:= StrZero( Val( MPr->CodRed ) + 1, 4, 0 ) 
@@ -677,53 +677,53 @@ Function Codigo( cCodigo, GetList )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ MPrExibeStru 
-³ Finalidade  ³ Exibir a extrutura dos dados na tela 
-³ Parametros  ³ Nenhum 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 04/Dezembro/1995 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ MPrExibeStru 
+ï¿½ Finalidade  ï¿½ Exibir a extrutura dos dados na tela 
+ï¿½ Parametros  ï¿½ Nenhum 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 04/Dezembro/1995 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function MPrExibeStru() 
    Local cCor:= SetColor() 
    SetColor( _COR_GET_LETRA ) 
-   @ 02,03 Say "C¢digo..............:"
+   @ 02,03 Say "Cï¿½digo..............:"
    @ 02,50 Say "Classe/Giro:"
 //   Get cClasse Valid cClasse $ "ABCD" when mensagem( "Digite a classe do produto quanto ao giro [ A / B / C / D ]" )
-   @ 03,03 Say "C¢digo de F brica...:" 
-   @ 04,03 Say "Descri‡„o do produto:" 
+   @ 03,03 Say "Cï¿½digo de Fï¿½brica...:" 
+   @ 04,03 Say "Descriï¿½ï¿½o do produto:" 
    @ 05,03 Say "Origem/Fabricante...:" 
    @ 06,03 Say "Unidade de Medida...:" 
-   @ 07,03 Say "Medida Unit ria.....:" 
+   @ 07,03 Say "Medida Unitï¿½ria.....:" 
    @ 08,03 Say "Medida Minima.......:" 
-   @ 09,03 Say "Situa‡„o Tribut ria.:" 
-   @ 10,03 Say "Classifica‡„o fiscal:" 
-   @ 11,03 Say "Estoque m¡nimo......:" 
-   @ 12,03 Say "Estoque m ximo......:" 
+   @ 09,03 Say "Situaï¿½ï¿½o Tributï¿½ria.:" 
+   @ 10,03 Say "Classificaï¿½ï¿½o fiscal:" 
+   @ 11,03 Say "Estoque mï¿½nimo......:" 
+   @ 12,03 Say "Estoque mï¿½ximo......:" 
    @ 13,03 Say "% IPI (Venda/Compra):" 
-   @ 14,03 Say "% p/ c lculo do ICMs:" 
+   @ 14,03 Say "% p/ cï¿½lculo do ICMs:" 
    @ 15,03 Say "Fornecedor..........:" 
-   @ 16,03 Say "% s/ pre‡o Compra...:" 
-   @ 17,03 Say "Pre‡o de Compra.....:" 
-   @ 12,40 Say "Peso L¡quido...(Kg).:" 
+   @ 16,03 Say "% s/ preï¿½o Compra...:" 
+   @ 17,03 Say "Preï¿½o de Compra.....:" 
+   @ 12,40 Say "Peso Lï¿½quido...(Kg).:" 
    @ 13,40 Say "Peso Bruto.....(Kg).:" 
-   @ 14,40 Say "Pre‡o de venda......:" 
+   @ 14,40 Say "Preï¿½o de venda......:" 
    @ 15,40 Say "Percentual Desconto.:" 
    @ 16,40 Say "Preco Final.........:" 
    SetColor( cCor ) 
 Return( .T. ) 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ MPRMostra 
-³ Finalidade  ³ Exibir os dados dos produtos 
-³ Parametros  ³ Nenhum 
-³ Retorno     ³ Nenhum 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 04/Dezembro/1995 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ MPRMostra 
+ï¿½ Finalidade  ï¿½ Exibir os dados dos produtos 
+ï¿½ Parametros  ï¿½ Nenhum 
+ï¿½ Retorno     ï¿½ Nenhum 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 04/Dezembro/1995 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function MPRMostra() 
    Local cCor:= SetColor() 
@@ -964,14 +964,14 @@ return(.t.)
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ PesquisaDBF 
-³ Finalidade  ³ Browse de produtos para altera‡„o ou exclus„o. 
-³ Parametros  ³ nModo=> Modo: 1=> Altera‡„o / 2=> Exclus„o 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 04/Dezembro/1995 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ PesquisaDBF 
+ï¿½ Finalidade  ï¿½ Browse de produtos para alteraï¿½ï¿½o ou exclusï¿½o. 
+ï¿½ Parametros  ï¿½ nModo=> Modo: 1=> Alteraï¿½ï¿½o / 2=> Exclusï¿½o 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 04/Dezembro/1995 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function PesquisaDBF( nModo ) 
    Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1064,14 +1064,14 @@ endif
 retu .T. 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ MPRAltera 
-³ Finalidade  ³ Alterar o cadastro de materia-prima 
-³ Parametros  ³ Nenhum 
-³ Retorno     ³ Nenhum 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 05/Dezembro/1995 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ MPRAltera 
+ï¿½ Finalidade  ï¿½ Alterar o cadastro de materia-prima 
+ï¿½ Parametros  ï¿½ Nenhum 
+ï¿½ Retorno     ï¿½ Nenhum 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 05/Dezembro/1995 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function MPRAltera(cIndicex,oTb) 
    Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1114,7 +1114,7 @@ Function MPRAltera(cIndicex,oTb)
    SetCursor( 1 ) 
    SetColor( _COR_GET_EDICAO ) 
  
-   IF MPR->( NetRLock() ) 
+   IF MPR->( netrlock() ) 
       /* Limpa codigo de fabrica da base p/ fazer a consistencia via BuscaCodFab */ 
       Replace MPR->CODFAB With Space( 13 ) 
    ELSE 
@@ -1137,29 +1137,29 @@ Function MPRAltera(cIndicex,oTb)
    ENDDO
  
    @ 02,50 Say "Classe/Giro:" Get cClasse Valid cClasse $ " ABCD" when mensagem( "Digite a classe do produto quanto ao giro [ A / B / C / D ]" ) 
-   @ 03,03 Say "C¢digo de F brica...:" get cCODFAB Valid BuscaCodFab( @cCodFab, GetList )  when mensagem("Digite o C¢digo de F brica do produto.") 
-   @ 04,03 say "Descri‡„o do produto:" get cDESCRI                                         when mensagem("Digite a Descri‡„o do produto.") 
+   @ 03,03 Say "Cï¿½digo de Fï¿½brica...:" get cCODFAB Valid BuscaCodFab( @cCodFab, GetList )  when mensagem("Digite o Cï¿½digo de Fï¿½brica do produto.") 
+   @ 04,03 say "Descriï¿½ï¿½o do produto:" get cDESCRI                                         when mensagem("Digite a Descriï¿½ï¿½o do produto.") 
    @ 05,03 say "Origem/Fabricante...:" get cORIGEM pict "@!" valid oseleciona(@cORIGEM)    when mensagem("Digite a abreveatura da origem ou [999] p/ ver na lista.") 
    @ 06,03 say "Unidade de Medida...:" get cUNIDAD                                         when mensagem("Digite a unidade de medida do produto.") 
-   @ 07,03 say "Medida Unit ria.....:" get nQTDPES pict "@E 99,999.9999"                  when mensagem("Digite o peso, tamanho ou quantidade de pecas do produto.") 
+   @ 07,03 say "Medida Unitï¿½ria.....:" get nQTDPES pict "@E 99,999.9999"                  when mensagem("Digite o peso, tamanho ou quantidade de pecas do produto.") 
       @ 07,40 Get cSegura Pict "!" Valid ( cSegura=="*" .OR. cSegura == " " ) When; 
         Mensagem( "Digite [*] para que o sistema aceite somente quantidades validas" ) 
-   @ 08,03 say "Medida M¡nima.......:" Get nQTDMIN Pict "@E 99,999.9999" 
-   @ 09,03 say "Estoque m¡nimo......:" get nESTMIN pict "@E 99,999.999"                    when mensagem("Digite a quantidade permitida para estoque minimo.") 
-   @ 10,03 say "Estoque m ximo......:" get nESTMAX pict "@E 99,999.999"                    when mensagem("Digite a quantidade valida para estoque maximo.") 
-   @ 11,03 Say "Peso L¡quido...(Kg).:" Get nPesoLi Pict "@E 99,999.999" When Mensagem( "Digite o peso L¡quido." ) 
+   @ 08,03 say "Medida Mï¿½nima.......:" Get nQTDMIN Pict "@E 99,999.9999" 
+   @ 09,03 say "Estoque mï¿½nimo......:" get nESTMIN pict "@E 99,999.999"                    when mensagem("Digite a quantidade permitida para estoque minimo.") 
+   @ 10,03 say "Estoque mï¿½ximo......:" get nESTMAX pict "@E 99,999.999"                    when mensagem("Digite a quantidade valida para estoque maximo.") 
+   @ 11,03 Say "Peso Lï¿½quido...(Kg).:" Get nPesoLi Pict "@E 99,999.999" When Mensagem( "Digite o peso Lï¿½quido." ) 
    @ 12,03 Say "Peso Bruto.....(Kg).:" Get nPesoBr Pict "@E 99,999.999" Valid nPesoBr >= nPesoLi When Mensagem( "Digite o peso bruto." ) 
-   @ 13,03 say "Situa‡„o Tribut ria.:" Get nSITT01 pict "9" valid classtrib(@nSITT01,1)    when mensagem("Digite o codigo tributavel do produto p/ ICMs.") 
+   @ 13,03 say "Situaï¿½ï¿½o Tributï¿½ria.:" Get nSITT01 pict "9" valid classtrib(@nSITT01,1)    when mensagem("Digite o codigo tributavel do produto p/ ICMs.") 
       @ 13,28 Get nSITT02 pict "99" valid classtrib( @nSITT02, 2 )    when mensagem("Digite o codigo de tributacao do IPI.") 
-   @ 14,03 say "Classifica‡„o fiscal:" get nCLAFIS pict "999" valid verclasse(@nCLAFIS)    when mensagem("Digite o codigo de classificacao fiscal do produto.") 
+   @ 14,03 say "Classificaï¿½ï¿½o fiscal:" get nCLAFIS pict "999" valid verclasse(@nCLAFIS)    when mensagem("Digite o codigo de classificacao fiscal do produto.") 
    @ 15,03 say "% IPI (Venda/Compra):" get nIPI___ pict "999.99"                           when mensagem("Digite o percentual p/ calculo do IPI.")
    @ 15,33 Say "" Get nIpiCmp Pict "@E 999.99" when mensagem( "IPI na compra de mercadorias." )
-   @ 16,03 say "% p/ c lculo do ICMs:" get nICM___ pict "999.99"                           when mensagem("Digite o percentual p/ calculo do ICMs.") 
+   @ 16,03 say "% p/ cï¿½lculo do ICMs:" get nICM___ pict "999.99"                           when mensagem("Digite o percentual p/ calculo do ICMs.") 
    @ 17,03 say "Fornecedor..........:" get nCODFOR pict "999999" valid forseleciona(@nCODFOR) when mensagem("Digite o codigo do fornecedor.") 
  
      @ 11,45 say "De Compra....:" Get nPrecoCompra Pict "@E 999,999,999.999" Valid iif(nPrecoCompra=0,.t.,PrecoFinal( @nPrecoCompra, @nPercPv, @nPrecov, 2, GetList )) 
-     @ 12,45 say "% Marg.Lucro.:      " Get nPERCPV pict "@E 9,999.999" Valid iif(nPrecoCompra=0,.t.,PrecoFinal( @nPrecoCompra, @nPercPv, @nPrecov, 1, GetList )) when mensagem("Digite o percentual p/ venda sobre o Pre‡o de compra.") 
-     @ 13,45 say "Venda Padrao.:" get nPRECOV pict "@E 999,999,999.999" Valid iif(nPrecoCompra=0,.t.,PrecoFinal( @nPrecoCompra, @nPercPv, @nPrecov, 3, GetList )) when mensagem("Digite o Pre‡o de venda do produto.") 
+     @ 12,45 say "% Marg.Lucro.:      " Get nPERCPV pict "@E 9,999.999" Valid iif(nPrecoCompra=0,.t.,PrecoFinal( @nPrecoCompra, @nPercPv, @nPrecov, 1, GetList )) when mensagem("Digite o percentual p/ venda sobre o Preï¿½o de compra.") 
+     @ 13,45 say "Venda Padrao.:" get nPRECOV pict "@E 999,999,999.999" Valid iif(nPrecoCompra=0,.t.,PrecoFinal( @nPrecoCompra, @nPercPv, @nPrecov, 3, GetList )) when mensagem("Digite o Preï¿½o de venda do produto.") 
      @ 14,45 SAY "% Desconto...:      " Get nPercDC Pict "@e 9,999.999" Valid f_calprefim(nPercDC,nPrecov,@nprecod,.t.) when Mensagem("Digite o percentual de desconto.") 
      @ 15,45 SAY "Preco Final..:" get nPrecoD Pict "@e 999,999,999.999" Valid f_calprefim(@nPercDC,nPrecov,Nprecod,.f.) 
  
@@ -1177,7 +1177,7 @@ Function MPRAltera(cIndicex,oTb)
  
    /* Restaura codigo de fabrica p/ base de dados */ 
    MPR->( DBGoTo( nReg ) ) 
-   IF MPR->( NetRlock() ) 
+   IF MPR->( netrlock() ) 
       Replace MPR->CODFAB With cCodFabRes 
    ENDIF 
  
@@ -1245,7 +1245,7 @@ Function MPRAltera(cIndicex,oTb)
            mensagem("Limpando os dados inutilizaveis, aguarde...",1) 
            dbselectar(_COD_MPRIMA) 
            mensagem("Gravando arquivo de precos, aguarde...") 
-           If PXF->( NetRLock(5) ) 
+           If PXF->( netrlock(5) ) 
               IF PXF->CPROD_ <> cCodigo 
                  PXF->( DBAppend() ) 
               ENDIF 
@@ -1275,7 +1275,7 @@ Local nArea:= Select()
    TAX->( DBSetOrder( 2 ) ) 
    IF TAX->( DBSeek( cCodigo ) ) 
       WHILE cCodigo==TAX->CODPRO 
-          IF TAX->( NetRLock() ) 
+          IF TAX->( netrlock() ) 
              Replace TAX->CODFAB With cCodFab,; 
                      TAX->DESCRI With cDescri 
           ENDIF 
@@ -1337,8 +1337,8 @@ stat func pesquisa(oPOBJ)
           cCOD:=alltrim(cCOD) 
           cCOD:=strtran(cCOD,"9"," ") 
           vpbox(11,25,13,48,"",COR[20],.T.,.F.,COR[19]) 
-          @ 12,26 say "C¢digo " get cCOD pict "@R "+cxMASCACOD when; 
-            mensagem("Digite o c¢digo para pesquisa.") 
+          @ 12,26 say "Cï¿½digo " get cCOD pict "@R "+cxMASCACOD when; 
+            mensagem("Digite o cï¿½digo para pesquisa.") 
           read 
           mensagem("Executando a pesquisa pelo codigo, aguarde...") 
           cINDICE:=substr(cCOD,_PIGRUPO,_QTGRUPO)+; 
@@ -1689,14 +1689,14 @@ func mprexclusao
 return nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ICMReducao 
-³ Finalidade  ³ Pegar o percentual de reducao na base de calculo do icms. 
-³ Parametros  ³ nCodigoTabelaB 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 08/Janeiro/1996 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ICMReducao 
+ï¿½ Finalidade  ï¿½ Pegar o percentual de reducao na base de calculo do icms. 
+ï¿½ Parametros  ï¿½ nCodigoTabelaB 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 08/Janeiro/1996 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION ICMReducao( nCodigoTabelaB ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1738,7 +1738,7 @@ FUNCTION ICMReducao( nCodigoTabelaB )
   ENDDO 
   IF cTabRed==Space( 2 ) 
      @ 09,36 Say "   NENHUMA ALIQUOTA SELECIONADA          " Color "14/" + CorFundoAtual() 
-     @ 10,36 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+     @ 10,36 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
      IF Inkey(0)==K_ENTER 
         ScreenRest( cTela ) 
         SetColor( cCor ) 
@@ -1749,7 +1749,7 @@ FUNCTION ICMReducao( nCodigoTabelaB )
      ENDIF 
   ENDIF 
   @ 09,36 Say    "                                         " Color "14/" + CorFundoAtual() 
-  @ 10,36 Say    "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+  @ 10,36 Say    "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
  
   WHILE .T. 
       oTB:ColorRect({oTB:ROWPOS,1,oTB:ROWPOS,1},{2,1}) 
@@ -1808,14 +1808,14 @@ FUNCTION ICMReducao( nCodigoTabelaB )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ NFObservacao 
-³ Finalidade  ³ Pegar a observacao p/ nota fiscal 
-³ Parametros  ³ nCodigoObservacao 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 08/Janeiro/1996 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ NFObservacao 
+ï¿½ Finalidade  ï¿½ Pegar a observacao p/ nota fiscal 
+ï¿½ Parametros  ï¿½ nCodigoObservacao 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 08/Janeiro/1996 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION NFObservacao( nTabObs ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1909,7 +1909,7 @@ DBSelectAr( _COD_MPRIMA )
 Set Relation To ORIGEM Into ORG, TABRED Into RED 
  
 /* Apresentacao em tela */ 
-//ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 /* 
 VPBox( 0, 0, 18, 79, " VERIFICACAO DE PRODUTOS ", _COR_GET_BOX ) 
 VPBox( 18, 0, 22, 79, , _COR_BROW_BOX, .F., .F. ) 
@@ -1925,7 +1925,7 @@ whil .t.
 */ 
 //VPBox( 2, 2, 17, 77, " VERIFICACAO DE PRODUTOS ", _COR_GET_BOX ) 
 VPBox( 0, 0, 18, 79, " VERIFICACAO DE PRODUTOS ", _COR_GET_BOX, .F. ) 
-//ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
    SetColor( _COR_GET_BOX ) 
    @ 01, 02 Say DESCRI 
    @ 02, 02 Say CODFAB 
@@ -1980,7 +1980,7 @@ VPBox( 0, 0, 18, 79, " VERIFICACAO DE PRODUTOS ", _COR_GET_BOX, .F. )
            nCOD:=0 
            Keyboard chr(nTecla) 
            vpbox(11,25,13,48,"",COR[20],.T.,.F.,COR[19]) 
-           @ 12,26 say "C¢digo " get nCOD pict "999999" when Mensagem( "Digite o c¢digo para pesquisa.") 
+           @ 12,26 say "Cï¿½digo " get nCOD pict "999999" when Mensagem( "Digite o cï¿½digo para pesquisa.") 
            read 
            Mensagem( "Executando a pesquisa pelo Codigo, aguarde...") 
            dbsetorder(1) 
@@ -2031,27 +2031,27 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
 Local nLinha:= 2 
 VPBox( 02, 02, 20, 78, "Dados Cadastrais do Produto", "15/05" ) 
 SetColor( "15/05" ) 
-@ ++nLinha, 03 Say "C¢digo..............: [" + Tran( Codigo, "999-9999" ) + "]" 
-@ ++nLinha, 03 Say "C¢digo de F brica...: [" + CODFAB + "]" 
-@ ++nLinha, 03 Say "Descri‡„o...........: [" + DESCRI + "]" 
+@ ++nLinha, 03 Say "Cï¿½digo..............: [" + Tran( Codigo, "999-9999" ) + "]" 
+@ ++nLinha, 03 Say "Cï¿½digo de Fï¿½brica...: [" + CODFAB + "]" 
+@ ++nLinha, 03 Say "Descriï¿½ï¿½o...........: [" + DESCRI + "]" 
 @ ++nLinha, 03 Say "Origem/Fabricante...: [" + ORIGEM + "]-[" + ORG->DESCRI + "]" 
 @ ++nLinha, 03 Say "Unidade de Medida...: [" + UNIDAD + "]" 
-@ ++nLinha, 03 Say "Medida Unit ria.....: [" + Tran( QTDPES,"@E 999,999.9999" ) + "]" 
-@ ++nLinha, 03 Say "Medida M¡nima.......: [" + Tran( QTDMIN,"@E 999,999.9999" ) + "]" 
-@ ++nLinha, 03 Say "Situa‡„o Tribut ria.: [" + Tran( SITT01, "@E 9" ) + "]" 
+@ ++nLinha, 03 Say "Medida Unitï¿½ria.....: [" + Tran( QTDPES,"@E 999,999.9999" ) + "]" 
+@ ++nLinha, 03 Say "Medida Mï¿½nima.......: [" + Tran( QTDMIN,"@E 999,999.9999" ) + "]" 
+@ ++nLinha, 03 Say "Situaï¿½ï¿½o Tributï¿½ria.: [" + Tran( SITT01, "@E 9" ) + "]" 
 @ nLinha,   28 Say "[" + Tran( SITT02, "@E 99" ) + "]" 
-@ ++nLinha, 03 Say "Classifica‡„o fiscal: [" + StrZero( CLAFIS, 3, 0 ) + "]" 
-@ ++nLinha, 03 Say "Estoque m¡nimo......: [" + Tran( EstMin, "@E 99,999.999" ) + "]" 
-@ ++nLinha, 03 Say "Estoque m ximo......: [" + Tran( EstMax, "@E 99,999.999" ) + "]" 
+@ ++nLinha, 03 Say "Classificaï¿½ï¿½o fiscal: [" + StrZero( CLAFIS, 3, 0 ) + "]" 
+@ ++nLinha, 03 Say "Estoque mï¿½nimo......: [" + Tran( EstMin, "@E 99,999.999" ) + "]" 
+@ ++nLinha, 03 Say "Estoque mï¿½ximo......: [" + Tran( EstMax, "@E 99,999.999" ) + "]" 
 @ ++nLinha, 03 Say "% IPI (Venda/Compra): [" + Tran( IPI___, "@E 999.99" ) + "] [" + Tran( IPICMP, "@E 999.99" ) + "]" 
-@ ++nLinha, 03 Say "% p/ c lculo do ICMs: [" + Tran( ICM___, "999.99" ) + "]" 
+@ ++nLinha, 03 Say "% p/ cï¿½lculo do ICMs: [" + Tran( ICM___, "999.99" ) + "]" 
 @ ++nLinha, 03 Say "Fornecedor..........: [" + StrZero( CodFor, 6, 0 ) + "]" 
-@ ++nLinha, 03 Say "% s/ pre‡o Compra...: [" + Tran( PERCPV, "@E 9,999.999" ) + "]" 
-@ ++nLinha, 03 Say "Pre‡o de Compra.....: [" + Tran( 0, "@E 999,999,999.999" ) + "]" 
+@ ++nLinha, 03 Say "% s/ preï¿½o Compra...: [" + Tran( PERCPV, "@E 9,999.999" ) + "]" 
+@ ++nLinha, 03 Say "Preï¿½o de Compra.....: [" + Tran( 0, "@E 999,999,999.999" ) + "]" 
 nLinha:= 12 
-@ ++nLinha, 38 Say "Peso L¡quido...(Kg).: [" + Tran( PesoLi, "@E 999,999.9999" ) + "]" 
+@ ++nLinha, 38 Say "Peso Lï¿½quido...(Kg).: [" + Tran( PesoLi, "@E 999,999.9999" ) + "]" 
 @ ++nLinha, 38 Say "Peso Bruto.....(Kg).: [" + Tran( PesoBr, "@E 999,999.9999" ) + "]" 
-@ ++nLinha, 38 Say "Pre‡o de venda......: [" + Tran( PRECOV, "@E 999,999,999.999" ) + "]" 
+@ ++nLinha, 38 Say "Preï¿½o de venda......: [" + Tran( PRECOV, "@E 999,999,999.999" ) + "]" 
 @ ++nLinha, 38 Say "Percentual Desconto.: [" + Tran( PERCDC, "@e 9,999.999" ) + "]" 
 InKey(0) 
  
@@ -2059,20 +2059,20 @@ VPBox( 02, 02, 20, 78, " Informacoes Complementares ", "15/05" )
 SetColor( "15/05" ) 
 @ 03,05 Say "Cod.fab: [" + CODFAB + "]" 
 @ 04,05 Say "Produto: [" + DESCRI + "]" 
-@ 05,05 Say "ÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Detalhamento ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂ" 
-@ 06,05 Say "³ " + DETAL1                                                    +"   ³" 
-@ 07,05 Say "³ " + DETAL2                                                    +"   ³" 
-@ 08,05 Say "³ " + DETAL3                                                    +"   ³" 
-@ 09,05 Say "ÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Reducao da Base p/ ICMs ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁ" 
+@ 05,05 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Detalhamento ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+@ 06,05 Say "ï¿½ " + DETAL1                                                    +"   ï¿½" 
+@ 07,05 Say "ï¿½ " + DETAL2                                                    +"   ï¿½" 
+@ 08,05 Say "ï¿½ " + DETAL3                                                    +"   ï¿½" 
+@ 09,05 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Reducao da Base p/ ICMs ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
 @ 10,05 Say "Tabela interna de Reducao.: [" + TABRED + "]-[" + RED->DESCRI + "]" 
 @ 11,05 Say "Percentual................: [" + Tran( PERRED, "@E 99.9999" ) + "] %" 
 @ 12,05 Say "Observacao na Nota Fiscal.: [" + RED->OBSERV + "]" 
-@ 13,05 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Situacao em Estoque ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+@ 13,05 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Situacao em Estoque ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
 @ 14,05 say "Saldo Atual...............: [" + Tran( MPR->SALDO_, "@E 9,999,999.9999" ) + "]" 
 @ 15,05 Say "Reservado.................: [" + Tran( MPR->RESERV, "@E 9,999,999.9999" ) + "]" 
 @ 16,05 Say "Ordens de Compra..........: [" + Tran( MPR->OCOMP_, "@E 9,999,999.9999" ) + "]" 
-@ 17,05 Say "Saldo Dispon¡vel p/ venda.: [" + Tran( MPR->SALDO_ - ( MPR->RESERV + MPR->OCOMP_ ), "@E 9,999,999.9999" ) + "]" 
-@ 18,05 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+@ 17,05 Say "Saldo Disponï¿½vel p/ venda.: [" + Tran( MPR->SALDO_ - ( MPR->RESERV + MPR->OCOMP_ ), "@E 9,999,999.9999" ) + "]" 
+@ 18,05 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
 SetColor( "14/05" ) 
 @ 06,07 Say DETAL1 
 @ 07,07 Say DETAL2 
@@ -2083,26 +2083,26 @@ VPBox( 01, 01, 24, 72, " Informacoes de Compra " )
 IF !Empty( MPR->INDICE ) 
    SetColor( "15/05" ) 
    Scroll( 04, 51, 06, 70 ) 
-   @ 04,51 Say "µºººººººººººººººººº¶" 
-   @ 05,51 Say "¼ Saldo: " + Tran( Saldo_, "@E 99,999.999" ) + "½" 
-   @ 06,51 Say "¸»»»»»»»»»»»»»»»»»»¹" 
+   @ 04,51 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+   @ 05,51 Say "ï¿½ Saldo: " + Tran( Saldo_, "@E 99,999.999" ) + "ï¿½" 
+   @ 06,51 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
    SetColor( "15/00" ) 
    @ 03,02 Say " Custo Medio do Produto (s/ICMs)     " + Tran( nCustoMedio:= CustoMedio( INDICE ) - IcmMedio( INDICE ),   "@E 999,999.99" ) 
    @ 05,02 Say " Valor Medio de ICMs                 " + Tran( nIcmMedio:=   IcmMedio( INDICE ),     "@E 999,999.99" ) 
    @ 07,02 Say " Custo de Reposicao (C.Medio+ICMs)   " + Tran( nIcmMedio +   nCustoMedio,            "@E 999,999.99" ) 
    @ 09,02 Say " Ultimo Preco Compra Item            " + Tran( UltimoPreco( INDICE ),                "@E 999,999.99" ) 
-   @ 11,02 Say " % s/ Pre‡o de Custo (Margem Lucro)  " + Tran( PercPv, "@E 9,999.99" ) + " %" 
-   @ 13,02 Say " Pre‡o de Venda (Sugestivo)          " + Tran( ( ( ( nIcmMedio + nCustoMedio ) * PercPv ) / 100 ) + nIcmMedio + nCustoMedio, "@E 999,999.99" ) 
+   @ 11,02 Say " % s/ Preï¿½o de Custo (Margem Lucro)  " + Tran( PercPv, "@E 9,999.99" ) + " %" 
+   @ 13,02 Say " Preï¿½o de Venda (Sugestivo)          " + Tran( ( ( ( nIcmMedio + nCustoMedio ) * PercPv ) / 100 ) + nIcmMedio + nCustoMedio, "@E 999,999.99" ) 
    SetColor( "14/05" ) 
-   @ 15,02 Say "ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿" 
-   @ 16,02 Say "³ Qtd Pe‡as em O.C.Pendentes        ³ " + Tran( OrdensPendentes( INDICE ),          "@R 99999999" ) + " ³                     ³" 
-   @ 17,02 Say "ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ´" 
-   @ 18,02 Say "³ Data        ³          ³          ³          ³          ³          ³" 
-   @ 19,02 Say "ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄ´" 
-   @ 20,02 Say "³ Quantidade  ³          ³          ³          ³          ³          ³" 
-   @ 21,02 Say "ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄ´" 
-   @ 22,02 Say "³ O. Compra   ³          ³          ³          ³          ³          ³" 
-   @ 23,02 Say "ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÙ" 
+   @ 15,02 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿" 
+   @ 16,02 Say "ï¿½ Qtd Peï¿½as em O.C.Pendentes        ï¿½ " + Tran( OrdensPendentes( INDICE ),          "@R 99999999" ) + " ï¿½                     ï¿½" 
+   @ 17,02 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´" 
+   @ 18,02 Say "ï¿½ Data        ï¿½          ï¿½          ï¿½          ï¿½          ï¿½          ï¿½" 
+   @ 19,02 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´" 
+   @ 20,02 Say "ï¿½ Quantidade  ï¿½          ï¿½          ï¿½          ï¿½          ï¿½          ï¿½" 
+   @ 21,02 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´" 
+   @ 22,02 Say "ï¿½ O. Compra   ï¿½          ï¿½          ï¿½          ï¿½          ï¿½          ï¿½" 
+   @ 23,02 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
    DBSelectAr( _COD_OC_AUXILIA ) 
    DBSetOrder( 2 ) 
    DBSeek( MPR->INDICE ) 
@@ -2179,7 +2179,7 @@ Function InfoPorClasse()
  
    VPBox( 09, 07, 18, 76, , _COR_BROW_BOX, .F., .F. ) 
    SetColor( _COR_BROWSE ) 
-   @ 10,08 Say "           Codigo            SALDO   ÚÄÄÄÄÄÄÄÄ QUANTIDADE ÄÄÄÄÄÄÄÄÄ¿" 
+   @ 10,08 Say "           Codigo            SALDO   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ QUANTIDADE ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿" 
    @ 11,08 Say "Tamanhos   Barra Interno     ATUAL   Embalagem     Minima     Maxima" 
    Mensagem( "[ENTER]Altera [G]Grava [ESC]Cancela" ) 
    Ajuda( "[" + _SETAS + "][PgUp][PgDn]Move [ESC]Finaliza" ) 
@@ -2242,7 +2242,7 @@ Function InfoPorClasse()
                   IF !( DBSeek( MPR->INDICE + Str( MPR->PCPCLA, 3, 0 ) + Str( aTabela[ nCt ][ 1 ], 2, 0 ) + " 0" ) ) 
                      DBAppend() 
                   ENDIF 
-                  IF NetRLock() 
+                  IF netrlock() 
                      Repl CODIGO With aTabela[ nCt ][ 2 ],; 
                           CODPRO With MPR->INDICE,; 
                           PCPCLA With MPR->PCPCLA,; 

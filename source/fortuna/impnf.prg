@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#Include "VPF.CH" 
-#Include "Formatos.Ch" 
+#include "vpf.ch" 
+#include "formatos.ch" 
  
 /* 
 *      Funcao - IMPRIMENF 
@@ -265,7 +265,7 @@ Func imprimeOC(cORDCMP,dDATAEM,cLOCALC,cLOCALE,nTAXAF_,nTFRETE,;
  
 Local nOrdem:= IndexOrd(), nArea:= Select() 
  
-If !Confirma( 0, 0, "Confirma a Impress„o desta Ordem de Compra?" ) 
+If !Confirma( 0, 0, "Confirma a Impressï¿½o desta Ordem de Compra?" ) 
    Return Nil 
 EndIf 
  
@@ -284,76 +284,76 @@ SelecaoImpressora( .F. )
 set device to print 
  
 @ Prow(),00 Say Condensado( .T. ) 
-@ Prow(),00 say   "Ú"+repl("Ä",47)+"¿ Ú"+repl("Ä",85)+"¿" 
-@ Prow()+1,00 say "³ " 
+@ Prow(),00 say   "ï¿½"+repl("ï¿½",47)+"ï¿½ ï¿½"+repl("ï¿½",85)+"ï¿½" 
+@ Prow()+1,00 say "ï¿½ " 
 for nCT:=1 to 3 
     @ prow(),2 say unzipchr(DESCRI) 
 next 
-@ Prow(),pcol() Say " ³ ³" 
+@ Prow(),pcol() Say " ï¿½ ï¿½" 
 @ Prow(),pcol() Say Expandido(.T.)+" ORDEM DE COMPRA "+Expandido(.F.) 
 @ Prow(),pcol() Say Condensado(.T.) 
-@ Prow(),pcol() + 10 Say " ³ N: "+cORDCMP 
-@ Prow(),pcol() Say "      ³ " 
+@ Prow(),pcol() + 10 Say " ï¿½ N: "+cORDCMP 
+@ Prow(),pcol() Say "      ï¿½ " 
 @ Prow(),pcol() Say dtoc(dDATAEM) 
-@ Prow(),pcol() + 14 Say "³" 
-@ Prow()+1,00 Say "³ "+unzipchr(LINE01)+" ³ À"+repl("Ä",85)+"*" 
-@ Prow()+1,00 Say "³ "+unzipchr(LINE02)+" ³ ÚÄInformacoesÄ" + Repl("Ä",72)          +"¿" 
-@ Prow()+1,00 Say "³ "+unzipchr(LINE03)+" ³ ³ Local de cobranca   "+cLOCALC+spac(14)+"³" 
-@ Prow()+1,00 Say "³ "+unzipchr(LINE04)+" ³ ³ Local de Entrega    "+cLOCALE+spac(14)+"³" 
-@ Prow()+1,00 Say "À"+repl("Ä",47)+      "Ù ³ Taxa financeira     "+tran(nTAXAF_,"@E 999,999,999,999.99")+spac(46)+"³" 
-@ Prow()+1,00 Say "ÚÄFORNECEDORÄ"+repl("Ä",35)+"¿ ³ Tipo de frete       "+if(nTFRETE=1,"<CIF> FOB","CIF <FOB>")+spac(55)+"³" 
-@ Prow()+1,00 Say "³ "+cDESFOR+" ³ ³ Reajuste            "+cREAJUS+spac(31)+"³" 
-@ Prow()+1,00 Say "³ "+cENDERE+spac(10)+" ³ ³"+repl("Ä",85)+"³" 
-@ Prow()+1,00 Say "³ "+cCIDADE+" - "+cESTADO+spac(10)+" ³ ³ Rep: "+cREPDES+ "Cont: "+SUBSTR( cREPCON, 1, 25 )+ "Fone: "+cREPFON+" ³" 
-@ Prow()+1,00 Say "³ FAX: "+tran(cFAX___,"@R (9999)-999.99.99")+"  FONE:"+tran(cFONE__,"@R (9999)-999.99.99")+spac(01)+" ³ ³ Transportadora      " + Left( cDesTra, 20 ) + Space( 44 ) + "³" 
-@ Prow()+1,00 Say "³ Contato:" + cContat + Spac( 7 ) + " ³ ³ Fone                " + Tran( cFonTra, "@R (999)-999.99.99" ) + Spac( 49 ) + "³" 
-@ Prow()+1,00 Say "À" + Repl( "Ä", 47 ) + "Ù À" + Repl( "Ä", 85 ) + "Ù" 
+@ Prow(),pcol() + 14 Say "ï¿½" 
+@ Prow()+1,00 Say "ï¿½ "+unzipchr(LINE01)+" ï¿½ ï¿½"+repl("ï¿½",85)+"*" 
+@ Prow()+1,00 Say "ï¿½ "+unzipchr(LINE02)+" ï¿½ ï¿½ï¿½Informacoesï¿½" + Repl("ï¿½",72)          +"ï¿½" 
+@ Prow()+1,00 Say "ï¿½ "+unzipchr(LINE03)+" ï¿½ ï¿½ Local de cobranca   "+cLOCALC+spac(14)+"ï¿½" 
+@ Prow()+1,00 Say "ï¿½ "+unzipchr(LINE04)+" ï¿½ ï¿½ Local de Entrega    "+cLOCALE+spac(14)+"ï¿½" 
+@ Prow()+1,00 Say "ï¿½"+repl("ï¿½",47)+      "ï¿½ ï¿½ Taxa financeira     "+tran(nTAXAF_,"@E 999,999,999,999.99")+spac(46)+"ï¿½" 
+@ Prow()+1,00 Say "ï¿½ï¿½FORNECEDORï¿½"+repl("ï¿½",35)+"ï¿½ ï¿½ Tipo de frete       "+if(nTFRETE=1,"<CIF> FOB","CIF <FOB>")+spac(55)+"ï¿½" 
+@ Prow()+1,00 Say "ï¿½ "+cDESFOR+" ï¿½ ï¿½ Reajuste            "+cREAJUS+spac(31)+"ï¿½" 
+@ Prow()+1,00 Say "ï¿½ "+cENDERE+spac(10)+" ï¿½ ï¿½"+repl("ï¿½",85)+"ï¿½" 
+@ Prow()+1,00 Say "ï¿½ "+cCIDADE+" - "+cESTADO+spac(10)+" ï¿½ ï¿½ Rep: "+cREPDES+ "Cont: "+SUBSTR( cREPCON, 1, 25 )+ "Fone: "+cREPFON+" ï¿½" 
+@ Prow()+1,00 Say "ï¿½ FAX: "+tran(cFAX___,"@R (9999)-999.99.99")+"  FONE:"+tran(cFONE__,"@R (9999)-999.99.99")+spac(01)+" ï¿½ ï¿½ Transportadora      " + Left( cDesTra, 20 ) + Space( 44 ) + "ï¿½" 
+@ Prow()+1,00 Say "ï¿½ Contato:" + cContat + Spac( 7 ) + " ï¿½ ï¿½ Fone                " + Tran( cFonTra, "@R (999)-999.99.99" ) + Spac( 49 ) + "ï¿½" 
+@ Prow()+1,00 Say "ï¿½" + Repl( "ï¿½", 47 ) + "ï¿½ ï¿½" + Repl( "ï¿½", 85 ) + "ï¿½" 
 @ Prow()+1,00 Say Negrito(.T.) + "Solicitamos o fornecimento do material abaixo relacionado:" + Negrito( .F. ) 
 @ Prow(),00   Say Condensado(.T.) 
-@ Prow()+1,00 say "ÚÄRgÍ*ÍCodigoÍ*ÍDescricaoÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ"+; 
-                  "*ÍUnÍ*ÍQuantidadeÍ*ÍValorÍUnitarioÍ*ÍValorÍTotalÍ"+; 
-                  "*ICM*Í%IPIÍ*ÍValorÍIPIÍ*ÍEntregaÄÄ¿" 
+@ Prow()+1,00 say "ï¿½ï¿½Rgï¿½*ï¿½Codigoï¿½*ï¿½Descricaoï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+; 
+                  "*ï¿½Unï¿½*ï¿½Quantidadeï¿½*ï¿½Valorï¿½Unitarioï¿½*ï¿½Valorï¿½Totalï¿½"+; 
+                  "*ICM*ï¿½%IPIï¿½*ï¿½Valorï¿½IPIï¿½*ï¿½Entregaï¿½Ä¿" 
 nCT:=0 
 for nCT:=1 to 25 
     if nCT<=len(aPRODUTOS) 
        If SubStr(aPRODUTOS[nCT][1],1,7)<>"0000000" .AND. aPRODUTOS[nCT][2]<>spac(36) 
-          @ prow()+1,00 say "³ "+strzero(nCT,2,0)+" ³ "+SubStr( aPRODUTOS[nCT][1], 4, 4 )+spac(2)+" ³ "+LEFT( aPRODUTOS[nCT][2], 36 ) +; 
-                           " ³ "+aPRODUTOS[nCT][3]+" ³ "+tran(aPRODUTOS[nCT][6],"@E 999999.999")+; 
-                           " ³ "+tran(aPRODUTOS[nCT][4],"@E 9999999999.999")+; 
-                           " ³ "+tran(aPRODUTOS[nCT][7],"@E 9999999.999")+; 
-                           " ³ "+strzero(aPRODUTOS[nCT][5],1,0)+" ³ "+strzero(aPRODUTOS[nCT][8],5,2)+; 
-                            "³ "+tran(aPRODUTOS[nCT][9],"@E 999999.99")+" ³ "+; 
-                     if(dDATAEM=aPRODUTOS[nCT][10],"IMEDIATA",dtoc(aPRODUTOS[nCT][10]))+" ³" 
+          @ prow()+1,00 say "ï¿½ "+strzero(nCT,2,0)+" ï¿½ "+SubStr( aPRODUTOS[nCT][1], 4, 4 )+spac(2)+" ï¿½ "+LEFT( aPRODUTOS[nCT][2], 36 ) +; 
+                           " ï¿½ "+aPRODUTOS[nCT][3]+" ï¿½ "+tran(aPRODUTOS[nCT][6],"@E 999999.999")+; 
+                           " ï¿½ "+tran(aPRODUTOS[nCT][4],"@E 9999999999.999")+; 
+                           " ï¿½ "+tran(aPRODUTOS[nCT][7],"@E 9999999.999")+; 
+                           " ï¿½ "+strzero(aPRODUTOS[nCT][5],1,0)+" ï¿½ "+strzero(aPRODUTOS[nCT][8],5,2)+; 
+                            "ï¿½ "+tran(aPRODUTOS[nCT][9],"@E 999999.99")+" ï¿½ "+; 
+                     if(dDATAEM=aPRODUTOS[nCT][10],"IMEDIATA",dtoc(aPRODUTOS[nCT][10]))+" ï¿½" 
        else 
-          @ prow()+1,00 say "³ "+strzero(nCT,2,0)+" ³ "+spac(6)+" ³ "+spac(36)+" ³ "+spac(2)+" ³ "+spac(10)+; 
-            " ³ "+spac(14)+" ³ "+spac(11)+" ³ "+spac(1)+" ³ "+spac(4)+; 
-            " ³ "+spac(9)+" ³ "+spac(8)+ " ³" 
+          @ prow()+1,00 say "ï¿½ "+strzero(nCT,2,0)+" ï¿½ "+spac(6)+" ï¿½ "+spac(36)+" ï¿½ "+spac(2)+" ï¿½ "+spac(10)+; 
+            " ï¿½ "+spac(14)+" ï¿½ "+spac(11)+" ï¿½ "+spac(1)+" ï¿½ "+spac(4)+; 
+            " ï¿½ "+spac(9)+" ï¿½ "+spac(8)+ " ï¿½" 
        endif 
     else 
-       @ prow()+1,00 say "³ "+strzero(nCT,2,0)+" ³ "+spac(6)+" ³ "+spac(36)+" ³ "+spac(2)+" ³ "+spac(10)+; 
-         " ³ "+spac(14)+" ³ "+spac(11)+" ³ "+spac(1)+" ³ "+spac(4)+; 
-         " ³ "+spac(9)+" ³ "+spac(8)+ " ³" 
+       @ prow()+1,00 say "ï¿½ "+strzero(nCT,2,0)+" ï¿½ "+spac(6)+" ï¿½ "+spac(36)+" ï¿½ "+spac(2)+" ï¿½ "+spac(10)+; 
+         " ï¿½ "+spac(14)+" ï¿½ "+spac(11)+" ï¿½ "+spac(1)+" ï¿½ "+spac(4)+; 
+         " ï¿½ "+spac(9)+" ï¿½ "+spac(8)+ " ï¿½" 
     endif 
 next 
-@ prow()+1,00 say "ÃÄÍÍÍÍÍÍÍÍÄÂÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÙ" 
-@ prow()+1,00 say "³   ICMs   ³"+spac(57)+"  ³ ³ Sub-Total    ³"+tran(nSUBTOT,"@E 999999999.99")+" ³ ÚÄCondicoesÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿" 
+@ prow()+1,00 say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+@ prow()+1,00 say "ï¿½   ICMs   ï¿½"+spac(57)+"  ï¿½ ï¿½ Sub-Total    ï¿½"+tran(nSUBTOT,"@E 999999999.99")+" ï¿½ ï¿½ï¿½Condicoesï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿" 
 @ prow(),00 say   "             1 => "+strtran(cOBICM1,"#VICM",str(nPERICM,5,2)) 
-@ prow()+1,00 say "³          ³"+spac(57)+"  ³ ³ DESCONTO     ³"+tran(0,"@E 999999999.99")+" ³ ³                               ³" 
+@ prow()+1,00 say "ï¿½          ï¿½"+spac(57)+"  ï¿½ ï¿½ DESCONTO     ï¿½"+tran(0,"@E 999999999.99")+" ï¿½ ï¿½                               ï¿½" 
 @ prow(),00 say   "             2 => "+strtran(cOBICM2,"#VICM",str(nPERICM,5,2)) 
-@ prow()+1,00 Say "ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ³ IPI          ³"+tran(nTOTIPI,"@E 999999999.99")+" ³ ³                               ³" 
-@ prow()+1,00 Say "ÚÄÄÄOBSÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ ³ Frete        ³"+tran(nFRETE_,"@E 999999999.99")+" ³ ³ "+spac(7)+cCONDIC+spac(7)+" ³" 
-@ prow()+1,00 Say "³"+cOBSER1+"³ ³--------------³-------------³ ³                               ³" 
-@ prow()+1,00 Say "³"+cOBSER2+"³ ³ Total        ³"+tran(nTOTALG,"@E 999999999.99")+" ³ ³                               ³" 
-@ prow()+1,00 Say "³"+cOBSER3+"³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´" 
-@ prow()+1,00 Say "³"+cOBSER4+"³"+spac(64)+"³" 
+@ prow()+1,00 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ IPI          ï¿½"+tran(nTOTIPI,"@E 999999999.99")+" ï¿½ ï¿½                               ï¿½" 
+@ prow()+1,00 Say "ï¿½ï¿½ï¿½ï¿½OBSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ ï¿½ Frete        ï¿½"+tran(nFRETE_,"@E 999999999.99")+" ï¿½ ï¿½ "+spac(7)+cCONDIC+spac(7)+" ï¿½" 
+@ prow()+1,00 Say "ï¿½"+cOBSER1+"ï¿½ ï¿½--------------ï¿½-------------ï¿½ ï¿½                               ï¿½" 
+@ prow()+1,00 Say "ï¿½"+cOBSER2+"ï¿½ ï¿½ Total        ï¿½"+tran(nTOTALG,"@E 999999999.99")+" ï¿½ ï¿½                               ï¿½" 
+@ prow()+1,00 Say "ï¿½"+cOBSER3+"ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´" 
+@ prow()+1,00 Say "ï¿½"+cOBSER4+"ï¿½"+spac(64)+"ï¿½" 
 @ prow(),  00 Say " "+spac(70)+"  "+"Porto Alegre, "+alltrim(str(day(dDATAEM),2,0))+" de "+mes(month(dDATAEM))+" de "+strzero(year(dDATAEM),4,0)+" " 
-@ prow()+1,00 Say "Ã"+repl("Ä",70)+"Á"+repl("Ä",64)+"´" 
-@ prow()+1,00 Say "³    COMPRADOR:                           RESP.P/EMISSAO:              " + Spac( 64 ) + " ³" 
-@ prow()+1,00 Say "³"+spac(135)+"³" 
-@ prow()+1,00 Say "³    ____________________________          ____________________________ " + Space( 64 ) + "³" 
-@ prow()+1,00 Say "³    "+cCOMPRA+"          " + Left( cResp__, 45 ) + Space( 48 ) + "³" 
-@ prow()+1,00 Say "³"+spac(135)+"³" 
-@ prow()+1,00 Say "À"+repl("Ä",135)+"Ù" 
+@ prow()+1,00 Say "ï¿½"+repl("ï¿½",70)+"ï¿½"+repl("ï¿½",64)+"ï¿½" 
+@ prow()+1,00 Say "ï¿½    COMPRADOR:                           RESP.P/EMISSAO:              " + Spac( 64 ) + " ï¿½" 
+@ prow()+1,00 Say "ï¿½"+spac(135)+"ï¿½" 
+@ prow()+1,00 Say "ï¿½    ____________________________          ____________________________ " + Space( 64 ) + "ï¿½" 
+@ prow()+1,00 Say "ï¿½    "+cCOMPRA+"          " + Left( cResp__, 45 ) + Space( 48 ) + "ï¿½" 
+@ prow()+1,00 Say "ï¿½"+spac(135)+"ï¿½" 
+@ prow()+1,00 Say "ï¿½"+repl("ï¿½",135)+"ï¿½" 
 @ prow()+1,00 Say cNOTA__ 
 @ prow()+1,00 Say Condensado( .F. ) 
  

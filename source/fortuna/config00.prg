@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 #ifdef HARBOUR
 function config00()
@@ -32,8 +32,8 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
 SetColor( COR[20] ) 
 // ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
 UserScreen() 
-vpbox(01,01,15,77,"Configura‡Æo do Papel de Parede",COR[20],.T.,.T.,COR[19]) 
-vpbox(16,01,21,77,"Exibi‡Æo",COR[20],.T.,.T.,COR[19]) 
+vpbox(01,01,15,77,"Configuraï¿½ï¿½o do Papel de Parede",COR[20],.T.,.T.,COR[19]) 
+vpbox(16,01,21,77,"Exibiï¿½ï¿½o",COR[20],.T.,.T.,COR[19]) 
 oTAB:=tbrowsenew(02,02,14,76) 
 oTAB:addcolumn(tbcolumnnew(,{|| PAD( aMatriz[nROW][1], 24 )+" "+PAD( aMatriz[nROW][2],60 )})) 
 oTAB:AUTOLITE:=.f. 

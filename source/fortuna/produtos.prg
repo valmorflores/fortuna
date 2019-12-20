@@ -1,5 +1,5 @@
 // ## CL2HB.EXE - Converted
-#Include "VPF.Ch" 
+#Include "vpf.ch" 
  
 /* 
 * 
@@ -53,14 +53,14 @@ return(.T.)
  
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё VPSet 
-Ё Finalidade  Ё 
-Ё Parametros  Ё 
-Ё Retorno     Ё 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 08/Dezembro/1995 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ VPSet 
+О©╫ Finalidade  О©╫ 
+О©╫ Parametros  О©╫ 
+О©╫ Retorno     О©╫ 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 08/Dezembro/1995 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Function VPSet( nCodigo, Set ) 
 Static VPSet 

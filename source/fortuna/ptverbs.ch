@@ -1,0 +1,1 @@
+#define PT_GOING ">"

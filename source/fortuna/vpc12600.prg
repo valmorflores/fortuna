@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#Include "INKEY.CH" 
-#Include "VPF.CH" 
+#Include "inkey.ch" 
+#Include "vpf.ch" 
  
 /* 
 * Modulo      - VPC12600 
@@ -39,7 +39,7 @@ WHILE .T.
                      "                                    ",; 
                      " macoes necessarias ao uso do mesmo ",; 
                      "                                    ",; 
-                     " Aguarde at‚ que esta operacao seja ",; 
+                     " Aguarde atï¿½ que esta operacao seja ",; 
                      "                                    ",; 
                      " finalizada e logo abra  o  sistema ",; 
                      "                                    ",; 
@@ -82,15 +82,15 @@ Local bInfo:= {|| .T. }
  
    dDataBase:= CTOD( "01/" + StrZero( MONTH( DATE() ), 2, 0 ) + "/" + Right( StrZero( YEAR( DATE() ), 4, 0 ), 2 ) ) 
  
-   @ 02,02 Say "Cotacoes ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" Color "15/" + CorFundoAtual() 
+   @ 02,02 Say "Cotacoes ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" Color "15/" + CorFundoAtual() 
    @ 03,02 Say "Eliminar Cotacoes anteriores a " Get dDataBase 
    @ 04,02 Say "Eliminar Cotacoes [1]Faturados [2]Nao Faturados [ ]Todos?" Get cNaoFaturado Valid cNaoFaturado $ "12 " 
  
-   @ 06,02 Say "Movimentacoes Por Operador Em Treinamento ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" Color "15/" + CorFundoAtual() 
+   @ 06,02 Say "Movimentacoes Por Operador Em Treinamento ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" Color "15/" + CorFundoAtual() 
    @ 07,02 Say "Eliminar Registros de Treinamento?" Get cOperadorElimina Pict "!" Valid cOperadorElimina $ "SN" 
    @ 08,02 Say "               Codigo do Operador?" Get nCodOperador Pict "999" 
  
-   @ 10,02 Say "Movimentacoes Por Produto Que Estao em Desuso (Fora de linha)ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" Color "15/" + CorFundoAtual() 
+   @ 10,02 Say "Movimentacoes Por Produto Que Estao em Desuso (Fora de linha)ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" Color "15/" + CorFundoAtual() 
    @ 11,02 Say "Eliminar Registros de Algum Produto Especifico?" Get cProdutoElimina 
    @ 12,02 Say "             Codigo do Produto:"      Get cCodProduto Pict "@R 999-9999" 
  
@@ -209,11 +209,11 @@ Static Function JanelaAuxiliar()
 Local cCor:= SetColor() 
    VPBox( 16, 00, 22, 79, " ATENCAO ", _COR_GET_BOX, .F., .F. ) 
    SetColor( _COR_GET_EDICAO ) 
-   @ 17,01 Say "° A eliminacao de qualquer informacao  deve  ser  gerada  somente  com  este °" 
-   @ 18,01 Say "° este terminal acessando informacoes do Sistema.                            °" 
-   @ 19,01 Say "° Certifique-se de que os demais usuarios estejam desconectados.             °" 
-   @ 20,01 Say "° Perda de Informacoes pelo uso indevido deste modulo nao serao de responsa- °" Color "14/" + CorFundoAtual() 
-   @ 21,01 Say "° bilidade da FORTUNA Automacao Comercial.                   C U I D A D O ! °" Color "14/" + CorFundoAtual() 
+   @ 17,01 Say "ï¿½ A eliminacao de qualquer informacao  deve  ser  gerada  somente  com  este ï¿½" 
+   @ 18,01 Say "ï¿½ este terminal acessando informacoes do Sistema.                            ï¿½" 
+   @ 19,01 Say "ï¿½ Certifique-se de que os demais usuarios estejam desconectados.             ï¿½" 
+   @ 20,01 Say "ï¿½ Perda de Informacoes pelo uso indevido deste modulo nao serao de responsa- ï¿½" Color "14/" + CorFundoAtual() 
+   @ 21,01 Say "ï¿½ bilidade da FORTUNA Automacao Comercial.                   C U I D A D O ! ï¿½" Color "14/" + CorFundoAtual() 
    Ajuda( "Em caso de duvidas na utilizacao deste modulo contacte o suporte tecnico." ) 
    SetColor( cCor ) 
    return Nil 
@@ -234,12 +234,12 @@ Local bPagarInfo:= {|| .T. }, bReceberInfo:= {|| .T. }
  
    dDataBase:= CTOD( "01/" + StrZero( MONTH( DATE() ), 2, 0 ) + "/" + Right( StrZero( YEAR( DATE() ), 4, 0 ), 2 ) ) 
  
-   @ 02,02 Say "Contas a Pagar ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" Color "15/" + CorFundoAtual() 
+   @ 02,02 Say "Contas a Pagar ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" Color "15/" + CorFundoAtual() 
    @ 03,02 Say "Eliminar titulos anteriores a " Get dDtPagar 
    @ 04,02 Say "Eliminar titulos [1]Quitados [2]Pendentes [ ]Todos?" Get cPagSituacao Valid cPagSituacao $ "12 " 
  
  
-   @ 06,02 Say "Contas a Receber ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" Color "15/" + CorFundoAtual() 
+   @ 06,02 Say "Contas a Receber ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" Color "15/" + CorFundoAtual() 
    @ 07,02 Say "Eliminar titulos anteriores a " Get dDtReceber 
    @ 08,02 Say "Eliminar titulos [1]Quitados [2]Pendentes [ ]Todos?" Get cRecSituacao Valid cRecSituacao $ "12 " 
    @ 09,02 Say "Eliminar Registros de Algum Cliente Especifico?" Get cClienteElimina 

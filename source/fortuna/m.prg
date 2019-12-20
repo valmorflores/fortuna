@@ -1,26 +1,26 @@
 // ## CL2HB.EXE - Converted
  
-#Include "INKEY.CH" 
-#Include "VPF.CH" 
+#Include "inkey.ch" 
+#Include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Composicao 
-³ Finalidade  ³ Tela de Composicao de Produtos 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Composicao 
+ï¿½ Finalidade  ï¿½ Tela de Composicao de Produtos 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function Composicao() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
       cTela:= ScreenSave( 0, 0, 24, 79 ) 
 Local oTb,nClasse,nTamCod,nCorCod,cTemCor,nTamQua,cArq 
  
-//fDepur( "FOR_DEP.TXT", REPL( "Ä", 60 ), .T. ) 
+//fDepur( "FOR_DEP.TXT", REPL( "ï¿½", 60 ), .T. ) 
 //fDepur( "FOR_DEP.TXT", "OK 5 EAN->SALDO_ = [" + STR( EAN->SALDO_, 6, 3 ) + "]" ) 
-//fDepur( "FOR_DEP.TXT", "OK M.PRG" + REPL( "Ä ", 30 ) ) 
+//fDepur( "FOR_DEP.TXT", "OK M.PRG" + REPL( "ï¿½ ", 30 ) ) 
  
 /* origem */ 
 DBSelectAr( _COD_ORIGEM ) 
@@ -112,7 +112,7 @@ whil .t.
               DBSelectAr( _COD_ASSEMBLER ) 
               DBSeek( cCodigo ) 
               WHILE CODPRD == cCodigo 
-                  IF NetRLock() 
+                  IF netrlock() 
                      Dele 
                   ENDIF 
                   DBSkip() 
@@ -135,14 +135,14 @@ ScreenRest( cTela )
 Return( .T. ) 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ MontInclusao 
-³ Finalidade  ³ Montagem de Produto 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ Abril-98 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ MontInclusao 
+ï¿½ Finalidade  ï¿½ Montagem de Produto 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ Abril-98 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function MontInclusao( oOldTb ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(), cTela:= ScreenSave( 0, 0, 24, 79 ) 
@@ -155,30 +155,30 @@ aProRel:= 0
 aProRel:= {} 
 SetBlink( .F. ) 
 SetColor( _COR_BROW_TITULO ) 
-@ 00,00 SAY "ÒÓ                     FICHA DE COMPOSICAO DE PRODUTOS                         " 
+@ 00,00 SAY "ï¿½ï¿½                     FICHA DE COMPOSICAO DE PRODUTOS                         " 
 SetColor( _COR_BROW_BOX ) 
-@ 01,00 Say "µºººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººº¶" 
-@ 02,00 Say "¼ Produto Final                                                                ½" 
-@ 03,00 Say "¼                                                                              ½" 
-@ 04,00 Say "¼                                                                              ½" 
-@ 05,00 Say "¸»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»¹" 
-@ 06,00 Say "¼Mat‚ria-Prima Dispon¡vel                ½ Fechamento de Custo e Preco Final   ½" 
-@ 07,00 Say "µºººººººººººººººººººººººººººººººººººººººº¶ºººººººººººººººº¶ºººººº¶ººººººººººººº¶" 
-@ 08,00 Say "¼                                        ½ Preco de Custo ½      ½             ½" 
-@ 09,00 Say "¼                                        ½ Margem de Lucro½      ½             ½" 
-@ 10,00 Say "¼                                        ½ Mao-de-Obra    ½      ½             ½" 
-@ 11,00 Say "¼                                        ½ Valor Total    ½      ½             ½" 
-@ 12,00 Say "¼                                        ½ Valor Usuario  ½      ½             ½" 
-@ 13,00 Say "¼                                        ½ Valor de Venda ½      ½             ½" 
-@ 14,00 Say "¸»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»¹»»»»»»»»»»»»»»»»¹»»»»»»¹»»»»»»»»»»»»»¹" 
-@ 15,00 Say "¼Mat‚ria-Prima Selecionada               ½ Un½ Quant. ½ Custo    ½ Total       ½" 
-@ 16,00 Say "µºººººººººººººººººººººººººººººººººººººººº¶ººº¶ºººººººº¶ºººººººººº¶ººººººººººººº¶" 
-@ 17,00 Say "¼                                        ½   ½        ½          ½             ½" 
-@ 18,00 Say "¼                                        ½   ½        ½          ½             ½" 
-@ 19,00 Say "¼                                        ½   ½        ½          ½             ½" 
-@ 20,00 Say "¼                                        ½   ½        ½          ½             ½" 
-@ 21,00 Say "¼                                        ½   ½        ½          ½             ½" 
-@ 22,00 Say "¸»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»¹»»»¹»»»»»»»»¹»»»»»»»»»»¹»»»»»»»»»»»»»¹" 
+@ 01,00 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+@ 02,00 Say "ï¿½ Produto Final                                                                ï¿½" 
+@ 03,00 Say "ï¿½                                                                              ï¿½" 
+@ 04,00 Say "ï¿½                                                                              ï¿½" 
+@ 05,00 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+@ 06,00 Say "ï¿½Matï¿½ria-Prima Disponï¿½vel                ï¿½ Fechamento de Custo e Preco Final   ï¿½" 
+@ 07,00 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+@ 08,00 Say "ï¿½                                        ï¿½ Preco de Custo ï¿½      ï¿½             ï¿½" 
+@ 09,00 Say "ï¿½                                        ï¿½ Margem de Lucroï¿½      ï¿½             ï¿½" 
+@ 10,00 Say "ï¿½                                        ï¿½ Mao-de-Obra    ï¿½      ï¿½             ï¿½" 
+@ 11,00 Say "ï¿½                                        ï¿½ Valor Total    ï¿½      ï¿½             ï¿½" 
+@ 12,00 Say "ï¿½                                        ï¿½ Valor Usuario  ï¿½      ï¿½             ï¿½" 
+@ 13,00 Say "ï¿½                                        ï¿½ Valor de Venda ï¿½      ï¿½             ï¿½" 
+@ 14,00 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+@ 15,00 Say "ï¿½Matï¿½ria-Prima Selecionada               ï¿½ Unï¿½ Quant. ï¿½ Custo    ï¿½ Total       ï¿½" 
+@ 16,00 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+@ 17,00 Say "ï¿½                                        ï¿½   ï¿½        ï¿½          ï¿½             ï¿½" 
+@ 18,00 Say "ï¿½                                        ï¿½   ï¿½        ï¿½          ï¿½             ï¿½" 
+@ 19,00 Say "ï¿½                                        ï¿½   ï¿½        ï¿½          ï¿½             ï¿½" 
+@ 20,00 Say "ï¿½                                        ï¿½   ï¿½        ï¿½          ï¿½             ï¿½" 
+@ 21,00 Say "ï¿½                                        ï¿½   ï¿½        ï¿½          ï¿½             ï¿½" 
+@ 22,00 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
 @ 24,00 say space( 0 ) 
 cCodFabrica:= Space( 13 ) 
 cDescricao:= Space( 40 ) 
@@ -213,9 +213,9 @@ aSelecionados:= { { Space( 13 ), Space( 40 ), Space( 2 ), 0, 0, 0, 0, SPACE( 12 
                   { Space( 13 ), Space( 40 ), Space( 2 ), 0, 0, 0, 0, SPACE( 12 ), 0, 0, 0, 0 },; 
                   { Space( 13 ), Space( 40 ), Space( 2 ), 0, 0, 0, 0, SPACE( 12 ), 0, 0, 0, 0 } } 
  
-aMenuOpcao:= { { "¼Mat‚ria-Prima dispon¡vel                ½", 06,00 },; 
-               { "¼Mat‚ria-Prima Selecionada               ½ Un½ Quant. ½ Custo    ½ Total       ½", 15,00 },; 
-               { " Fechamento de Custo e Preco Final   ½",  06,42 } } 
+aMenuOpcao:= { { "ï¿½Matï¿½ria-Prima disponï¿½vel                ï¿½", 06,00 },; 
+               { "ï¿½Matï¿½ria-Prima Selecionada               ï¿½ Unï¿½ Quant. ï¿½ Custo    ï¿½ Total       ï¿½", 15,00 },; 
+               { " Fechamento de Custo e Preco Final   ï¿½",  06,42 } } 
  
 /* Display( Ajuda ) */ 
 Mensagem( "[TAB]Janela [F2]Codigo [F3]CdFab [F4]Descricao [A..Z]Pesquisar [G]Gravar" ) 
@@ -225,10 +225,10 @@ SetColor( _COR_BROWSE )
 DBSelectAr( _COD_MPRIMA ) 
 oTb2:= TBrowseNew( 17, 01, 21, 78 ) 
 oTb2:addcolumn( tbcolumnnew( ,{|| aSelecionados[nRow][1] + " " +; 
-                                LEFT( aSelecionados[nRow][2], 26 ) + "½ " +; 
-                                aSelecionados[nRow][3] + "½" +; 
-                          Tran( aSelecionados[nRow][4], "@E 9,999.99" ) + "½" +; 
-                          Tran( aSelecionados[nRow][5], "@E 9,999.9999" ) + "½" +; 
+                                LEFT( aSelecionados[nRow][2], 26 ) + "ï¿½ " +; 
+                                aSelecionados[nRow][3] + "ï¿½" +; 
+                          Tran( aSelecionados[nRow][4], "@E 9,999.99" ) + "ï¿½" +; 
+                          Tran( aSelecionados[nRow][5], "@E 9,999.9999" ) + "ï¿½" +; 
                           Tran( aSelecionados[nRow][6], "@E 9999,999.9999" ) } ) ) 
 oTb2:AUTOLITE:=.f. 
 oTb2:dehilite() 
@@ -237,8 +237,8 @@ oTb2:GoBottomBlock:= {|| nRow:= Len( aSelecionados ) }
 oTb2:SkipBlock:= {|x| SkipperArr( x, aSelecionados, @nRow ) } 
  
 oTb3:= TBrowseNew( 08, 43, 13, 78 ) 
-oTb3:addcolumn( tbcolumnnew( ,{|| aCustos[nRow1][1] + "½" +; 
-                          Tran( aCustos[nRow1][2], "@E 999.99" ) + "½" +; 
+oTb3:addcolumn( tbcolumnnew( ,{|| aCustos[nRow1][1] + "ï¿½" +; 
+                          Tran( aCustos[nRow1][2], "@E 999.99" ) + "ï¿½" +; 
                           Tran( aCustos[nRow1][3], "@E 9999,999.9999" ) } ) ) 
 oTb3:AUTOLITE:=.f. 
 oTb3:dehilite() 
@@ -539,7 +539,7 @@ whil .t.
                             {|x| x[1] == PAD( CODFAB, 13 ) .AND.; 
                                  x[2] == DESCRI } ) ) > 0 .OR. nOpcao == 2 
                  /* Se estiver na janela de selecionados a posicao 
-                    sera == nRow, pois ‚ o registro que esta sendo editado */ 
+                    sera == nRow, pois ï¿½ o registro que esta sendo editado */ 
                  IF nOpcao == 2 
                     nPosicao:= nRow 
                  ENDIF 
@@ -594,7 +594,7 @@ whil .t.
               @ 12,11 Say "Custo Unitario...:" Get nCustoUnitario Pict "@E 999,999.9999" 
               @ 13,11 Say "Quantidade.......:" Get nQuantidade    Pict "@E 999,999.9999" ; 
                  WHEN nClasse == 0 
-              @ 14,11 Say REPL( "Ä", 64 ) 
+              @ 14,11 Say REPL( "ï¿½", 64 ) 
               @ 15,11 Say "Classe ..........: [" + cClasse  + "]" 
               @ 16,11 Say "Cor .............: [" + cCorDes  + "]" 
               @ 17,11 Say "Tamanho .........: [" + cTamanho + "]" 
@@ -693,14 +693,14 @@ ENDDO
 Return( .T. ) 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ MontAlteracao 
-³ Finalidade  ³ Alteracao da Montagem de Produto 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ Abril-98 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ MontAlteracao 
+ï¿½ Finalidade  ï¿½ Alteracao da Montagem de Produto 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ Abril-98 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function MontAlteracao( oOldTb ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(), cTela:= ScreenSave( 0, 0, 24, 79 ) 
@@ -725,7 +725,7 @@ IF !DBSeek( MPR->INDICE )
       SetColor( cCor ) 
       Return( .T. ) 
    ELSE 
-      IF MPR->( NetRLock() ) 
+      IF MPR->( netrlock() ) 
          Replace MPR->MPRIMA With "N" 
          DBAppend() 
          Replace CODPRD With MPR->INDICE 
@@ -737,31 +737,31 @@ ENDIF
  
 SetBlink( .F. ) 
 SetColor( _COR_BROW_TITULO ) 
-@ 00,00 SAY "ÒÓ                     FICHA DE COMPOSICAO DE PRODUTOS                         " 
+@ 00,00 SAY "ï¿½ï¿½                     FICHA DE COMPOSICAO DE PRODUTOS                         " 
 SetColor( _COR_BROW_BOX ) 
-@ 01,00 Say "µºººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººº¶" 
-@ 02,00 Say "¼ Produto Final                                                                ½" 
-@ 03,00 Say "¼                                                                              ½" 
-@ 04,00 Say "¼                                                                              ½" 
-@ 05,00 Say "¸»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»¹" 
+@ 01,00 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+@ 02,00 Say "ï¿½ Produto Final                                                                ï¿½" 
+@ 03,00 Say "ï¿½                                                                              ï¿½" 
+@ 04,00 Say "ï¿½                                                                              ï¿½" 
+@ 05,00 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
 @ 02,20 Say "Codigo: " + Tran( MPR->INDICE, "@R 999-9999" ) 
-@ 06,00 Say "¼Mat‚ria-Prima Dispon¡vel                ½ Fechamento de Custo e Preco Final   ½" 
-@ 07,00 Say "µºººººººººººººººººººººººººººººººººººººººº¶ºººººººººººººººº¶ºººººº¶ººººººººººººº¶" 
-@ 08,00 Say "¼                                        ½ Preco de Custo ½      ½             ½" 
-@ 09,00 Say "¼                                        ½ Margem de Lucro½      ½             ½" 
-@ 10,00 Say "¼                                        ½ Mao-de-Obra    ½      ½             ½" 
-@ 11,00 Say "¼                                        ½ Valor Total    ½      ½             ½" 
-@ 12,00 Say "¼                                        ½ Valor Usuario  ½      ½             ½" 
-@ 13,00 Say "¼                                        ½ Valor de Venda ½      ½             ½" 
-@ 14,00 Say "¸»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»¹»»»»»»»»»»»»»»»»¹»»»»»»¹»»»»»»»»»»»»»¹" 
-@ 15,00 Say "¼Mat‚ria-Prima Selecionada               ½ Un½ Quant. ½ Custo    ½ Total       ½" 
-@ 16,00 Say "µºººººººººººººººººººººººººººººººººººººººº¶ººº¶ºººººººº¶ºººººººººº¶ººººººººººººº¶" 
-@ 17,00 Say "¼                                        ½   ½        ½          ½             ½" 
-@ 18,00 Say "¼                                        ½   ½        ½          ½             ½" 
-@ 19,00 Say "¼                                        ½   ½        ½          ½             ½" 
-@ 20,00 Say "¼                                        ½   ½        ½          ½             ½" 
-@ 21,00 Say "¼                                        ½   ½        ½          ½             ½" 
-@ 22,00 Say "¸»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»¹»»»¹»»»»»»»»¹»»»»»»»»»»¹»»»»»»»»»»»»»¹" 
+@ 06,00 Say "ï¿½Matï¿½ria-Prima Disponï¿½vel                ï¿½ Fechamento de Custo e Preco Final   ï¿½" 
+@ 07,00 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+@ 08,00 Say "ï¿½                                        ï¿½ Preco de Custo ï¿½      ï¿½             ï¿½" 
+@ 09,00 Say "ï¿½                                        ï¿½ Margem de Lucroï¿½      ï¿½             ï¿½" 
+@ 10,00 Say "ï¿½                                        ï¿½ Mao-de-Obra    ï¿½      ï¿½             ï¿½" 
+@ 11,00 Say "ï¿½                                        ï¿½ Valor Total    ï¿½      ï¿½             ï¿½" 
+@ 12,00 Say "ï¿½                                        ï¿½ Valor Usuario  ï¿½      ï¿½             ï¿½" 
+@ 13,00 Say "ï¿½                                        ï¿½ Valor de Venda ï¿½      ï¿½             ï¿½" 
+@ 14,00 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+@ 15,00 Say "ï¿½Matï¿½ria-Prima Selecionada               ï¿½ Unï¿½ Quant. ï¿½ Custo    ï¿½ Total       ï¿½" 
+@ 16,00 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+@ 17,00 Say "ï¿½                                        ï¿½   ï¿½        ï¿½          ï¿½             ï¿½" 
+@ 18,00 Say "ï¿½                                        ï¿½   ï¿½        ï¿½          ï¿½             ï¿½" 
+@ 19,00 Say "ï¿½                                        ï¿½   ï¿½        ï¿½          ï¿½             ï¿½" 
+@ 20,00 Say "ï¿½                                        ï¿½   ï¿½        ï¿½          ï¿½             ï¿½" 
+@ 21,00 Say "ï¿½                                        ï¿½   ï¿½        ï¿½          ï¿½             ï¿½" 
+@ 22,00 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
 SetColor( _COR_BROW_BOX ) 
 @ 24,00 say space( 0 ) 
 nRegistro:= MPR->( recno() ) 
@@ -817,9 +817,9 @@ aCustos[ 6 ][ 3 ]:= MPR->PRECOV
 //aCustos[ 6 ][ 3 ]:= IF ( lMudaPV, aCustos[ 4 ][ 3 ], aCustos[ 5 ][ 3 ] ) 
 /* FIM DO CALCULO DE CUSTOS / MARGEM / M.OBRA */ 
  
-aMenuOpcao:= { { "¼Mat‚ria-Prima dispon¡vel                ½", 06,00 },; 
-               { "¼Mat‚ria-Prima Selecionada               ½ Un½ Quant. ½ Custo    ½ Total       ½", 15,00 },; 
-               { " Fechamento de Custo e Preco Final   ½",  06,42 } } 
+aMenuOpcao:= { { "ï¿½Matï¿½ria-Prima disponï¿½vel                ï¿½", 06,00 },; 
+               { "ï¿½Matï¿½ria-Prima Selecionada               ï¿½ Unï¿½ Quant. ï¿½ Custo    ï¿½ Total       ï¿½", 15,00 },; 
+               { " Fechamento de Custo e Preco Final   ï¿½",  06,42 } } 
  
 /* Display( Ajuda ) */ 
 Mensagem( "[TAB]Janela [F2]Codigo [F3]CdFab [F4]Descricao [A..Z]Pesquisar [G]Gravar" ) 
@@ -832,10 +832,10 @@ SetColor( _COR_BROWSE )
 DBSelectAr( _COD_MPRIMA ) 
 oTb2:= TBrowseNew( 17, 01, 21, 78 ) 
 oTb2:addcolumn( tbcolumnnew( ,{|| aSelecionados[nRow][1] + " " +; 
-                                LEFT( aSelecionados[nRow][2], 26 ) + "½ " +; 
-                                aSelecionados[nRow][3] + "½" +; 
-                          Tran( aSelecionados[nRow][4], "@E 9,999.99" ) + "½" +; 
-                          Tran( aSelecionados[nRow][5], "@E 9,999.9999" ) + "½" +; 
+                                LEFT( aSelecionados[nRow][2], 26 ) + "ï¿½ " +; 
+                                aSelecionados[nRow][3] + "ï¿½" +; 
+                          Tran( aSelecionados[nRow][4], "@E 9,999.99" ) + "ï¿½" +; 
+                          Tran( aSelecionados[nRow][5], "@E 9,999.9999" ) + "ï¿½" +; 
                           Tran( aSelecionados[nRow][6], "@E 9999,999.9999" ) } ) ) 
 oTb2:AUTOLITE:=.f. 
 oTb2:dehilite() 
@@ -844,8 +844,8 @@ oTb2:GoBottomBlock:= {|| nRow:= Len( aSelecionados ) }
 oTb2:SkipBlock:= {|x| SkipperArr( x, aSelecionados, @nRow ) } 
  
 oTb3:= TBrowseNew( 08, 43, 13, 78 ) 
-oTb3:addcolumn( tbcolumnnew( ,{|| aCustos[nRow1][1] + "½" +; 
-                          Tran( aCustos[nRow1][2], "@E 999.99" ) + "½" +; 
+oTb3:addcolumn( tbcolumnnew( ,{|| aCustos[nRow1][1] + "ï¿½" +; 
+                          Tran( aCustos[nRow1][2], "@E 999.99" ) + "ï¿½" +; 
                           Tran( aCustos[nRow1][3], "@E 9999,999.9999" ) } ) ) 
 oTb3:AUTOLITE:=.f. 
 oTb3:dehilite() 
@@ -947,7 +947,7 @@ whil .t.
             DBSelectAr( _COD_MPRIMA ) 
             DBSetOrder( 1 ) 
             //DBGoTo( nRegistro ) 
-            IF NetRLock() 
+            IF netrlock() 
                Repl INDICE With cCodigo,; 
                     CODIGO With cCodigo,; 
                     CODRED With SUBSTR( cCodigo, 4 ),; 
@@ -978,7 +978,7 @@ whil .t.
             dbSelectAr( _COD_ASSEMBLER ) 
             IF dbSeek( MPR->INDICE ) 
                WHILE MPR->INDICE == CODPRD 
-                  IF NetRLock() 
+                  IF netrlock() 
                      Mensagem( "Excluindo " + Alltrim( CODPRD ) + ", aguarde..." ) 
                      Dele 
                   Endif 
@@ -989,7 +989,7 @@ whil .t.
                 IF !Empty( aSelecionados[ nCt ][ 1 ] ) .OR.; 
                    !Empty( aSelecionados[ nCt ][ 2 ] ) 
                    DBAppend() 
-                   IF NetRLock() 
+                   IF netrlock() 
                       Replace CODPRD With cCodigo,; 
                               CODMPR With aSelecionados[ nCt ][  8 ],; 
                               QUANT_ With aSelecionados[ nCt ][  4 ],; 
@@ -1009,7 +1009,7 @@ whil .t.
             dbSelectAr( _COD_PRECOXFORN ) 
             dbSetOrder( 1 ) 
             IF DBSeek( cCodigo ) 
-               IF NetRLock() 
+               IF netrlock() 
                   Replace CPROD_ With cCodigo,; 
                           CODFOR With 0,; 
                           VALOR_ With nPrecov 
@@ -1172,7 +1172,7 @@ whil .t.
                             {|x| x[1] == PAD( CODFAB, 13 ) .AND.; 
                                  x[2] == DESCRI } ) ) > 0 .OR. nOpcao == 2 
                  /* Se estiver na janela de selecionados a posicao 
-                    sera == nRow, pois ‚ o registro que esta sendo editado */ 
+                    sera == nRow, pois ï¿½ o registro que esta sendo editado */ 
                  IF nOpcao == 2 
                     nPosicao:= nRow 
                  ENDIF 
@@ -1226,7 +1226,7 @@ whil .t.
               @ 12,11 Say "Custo Unitario...:" Get nCustoUnitario Pict "@E 999,999.9999" 
               @ 13,11 Say "Quantidade.......:" Get nQuantidade    Pict "@E 999,999.9999" ; 
                  WHEN nClasse == 0 
-              @ 14,11 Say REPL( "Ä", 64 ) 
+              @ 14,11 Say REPL( "ï¿½", 64 ) 
               @ 15,11 Say "Classe ..........: [" + cClasse  + "]" 
               @ 16,11 Say "Cor .............: [" + cCorDes  + "]" 
               @ 17,11 Say "Tamanho .........: [" + cTamanho + "]" 
@@ -1324,14 +1324,14 @@ WHILE !oOldTb:Stabilize()
 ENDDO 
 Return( .T. ) 
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ MenuSelect 
-³ Finalidade  ³ Apresentar a opcao selecionada no menu 
-³ Parametros  ³ nOpcao - aMenuOpcao 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ Abril/98 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ MenuSelect 
+ï¿½ Finalidade  ï¿½ Apresentar a opcao selecionada no menu 
+ï¿½ Parametros  ï¿½ nOpcao - aMenuOpcao 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ Abril/98 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function MenuSelect( nOpcao, aMenuOpcao ) 
 SetColor( _COR_GET_BOX ) 
@@ -1343,14 +1343,14 @@ Return( .T. )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Movimento 
-³ Finalidade  ³ Referente movimento de produtos 
-³ Parametros  ³ Tecla/Opcao/oTb 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ Abr-98 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Movimento 
+ï¿½ Finalidade  ï¿½ Referente movimento de produtos 
+ï¿½ Parametros  ï¿½ Tecla/Opcao/oTb 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ Abr-98 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function Movimento( nTecla, nOpcao, oTb ) 
    do case 
@@ -1369,14 +1369,14 @@ Function Movimento( nTecla, nOpcao, oTb )
    oTb:stabilize() 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ MoedaProduto 
-³ Finalidade  ³ Gravar a Moeda do Produto 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ MoedaProduto 
+ï¿½ Finalidade  ï¿½ Gravar a Moeda do Produto 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION MoedaProduto() 
 Local cTela:= ScreenSave( 0, 0, 24, 79 ), cCor:= SetColor(),; 
@@ -1390,7 +1390,7 @@ VPBox( 15, 20, 19, 65, " Moeda ", _COR_GET_BOX )
 @ 18, 43 Say "[" + Tran( PRECOV, "@E 999,999,999.99" ) + "]" 
 READ 
 /* Gravacao */ 
-IF NetRLock() 
+IF netrlock() 
    Replace MOEDA_ With cMoeda 
 ENDIF 
 ScreenRest( cTela ) 
@@ -1399,14 +1399,14 @@ SetCursor( nCursor )
 Return( .T. ) 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Grupo 
-³ Finalidade  ³ Pesquisar um grupo especifico. 
-³ Parametros  ³ cGrupo_ => Codigo do grupo 
-³ Retorno     ³ cCodigo => Codigo do produto a ser retornado. 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 04/Dezembro/1995 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Grupo 
+ï¿½ Finalidade  ï¿½ Pesquisar um grupo especifico. 
+ï¿½ Parametros  ï¿½ cGrupo_ => Codigo do grupo 
+ï¿½ Retorno     ï¿½ cCodigo => Codigo do produto a ser retornado. 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 04/Dezembro/1995 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function Grupo( cGrupo_, cCodigo ) 
    Local nArea:= Select(), nOrdem:= IndexOrd() 
@@ -1456,14 +1456,14 @@ Static Function Grupo( cGrupo_, cCodigo )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Codigo 
-³ Finalidade  ³ Pesquisar a existencia de um codigo igual ao digitado 
-³ Parametros  ³ cCodigo=> Codigo digitado pelo usu rio 
-³ Retorno     ³ 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 04/Dezembro/1995 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Codigo 
+ï¿½ Finalidade  ï¿½ Pesquisar a existencia de um codigo igual ao digitado 
+ï¿½ Parametros  ï¿½ cCodigo=> Codigo digitado pelo usuï¿½rio 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 04/Dezembro/1995 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function Codigo( cCodigo, GetList ) 
    Local cGrupo_:= GetList[ 1 ]:VarGet() 
@@ -1473,7 +1473,7 @@ Static Function Codigo( cCodigo, GetList )
    DBSetOrder( 1 ) 
    If DBSeek( PAD( cGrupo_ + cCodigo, 12 ) ) 
       Ajuda( "[Enter]Continua" ) 
-      Aviso( "C¢digo j  existente neste grupo...", 24 / 2 ) 
+      Aviso( "Cï¿½digo jï¿½ existente neste grupo...", 24 / 2 ) 
       Mensagem( "Pressione [ENTER]Novo ou [TAB]Ignorar..." ) 
       nTecla:= Inkey( 0 ) 
       IF nTecla==K_TAB 
@@ -1493,7 +1493,7 @@ Static Function Codigo( cCodigo, GetList )
    DBSetOrder( nOrdem ) 
    Return( .T. ) 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Func fSelecTamCor( nClasse, nTamCod, nCorCod, nTamQua, cArq, nQuantidade, ; 
         cTemCor, aCorTamQua ) 
@@ -1572,7 +1572,7 @@ Static Function Codigo( cCodigo, GetList )
  
    Return( .T. ) 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Func fTamCor( aTamanhos, nTamCod, nCorCod, nTamQua, nQuantidade, ; 
                  nClasse, cTemCor, cArq, aCorTamQua ) 
@@ -1584,7 +1584,7 @@ Static Function Codigo( cCodigo, GetList )
  
       SetCursor( 1 ) 
  
-// Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä 
+// ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ 
  
       IF ( nCorCod <> 0 .OR. cTemCor == "S" ) 
  
@@ -1611,7 +1611,7 @@ Static Function Codigo( cCodigo, GetList )
  
       ENDIF 
  
-// Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä 
+// ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ 
  
       IF ( nClasse <> 0 .OR. nTamCod <> 0 ) 
  
@@ -1630,7 +1630,7 @@ Static Function Codigo( cCodigo, GetList )
  
       ENDIF 
  
-// Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä 
+// ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ 
  
       IF ( nCorCod <> 0 .OR. cTemCor == "S" ) 
           cQuadro:= "COR" 
@@ -1855,7 +1855,7 @@ Static Function Codigo( cCodigo, GetList )
  
    Return( .T. ) 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Func fTamRec( aTamanhos, nTamLin, nTecla, lCorTopo, nTamCod, nCorCod, ; 
                  nTamQua, nQuantidade, cArq ) 
@@ -1912,7 +1912,7 @@ Static Function Codigo( cCodigo, GetList )
  
    Return( .T. ) 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Func fKeyboard( nTecla ) 
  
@@ -1923,7 +1923,7 @@ Static Function Codigo( cCodigo, GetList )
  
    Return( .T. ) 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Func fAcessaTamCor( nClasse, nTamCod, nCorCod, cClasse, cTamanho, cCorDes ) 
  
@@ -1965,7 +1965,7 @@ Static Function Codigo( cCodigo, GetList )
  
    Return( .T. ) 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Function fVerClasse( nClaMPR ) 
  
@@ -1976,14 +1976,14 @@ Static Function Codigo( cCodigo, GetList )
  
       IF ( nCla <> nClaAnt ) 
          nClaMPR:= nCla 
-         IF NetRlock() 
+         IF netrlock() 
             MPR->PCPCLA:= nCla 
          ENDIF 
       ENDIF 
  
    Return( .T. ) 
  
-// þþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþ 
-// þþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþ 
-// þþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  

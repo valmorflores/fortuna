@@ -1,4 +1,4 @@
-#Include "C:\CLIP52\INCLUDE\INKEY.CH"
+#Include "C:\CLIP52\INCLUDE\inkey.ch"
 
 #DEFINE GV_BLOCKSIZE      50000
 

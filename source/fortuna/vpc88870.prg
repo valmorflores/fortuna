@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ vpc888700 
-³ Finalidade  ³ Relacionar pedidos pendentes 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ vpc888700 
+ï¿½ Finalidade  ï¿½ Relacionar pedidos pendentes 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */
 #ifdef HARBOUR
 function vpc88870()
@@ -324,7 +324,7 @@ While .T.
                               IF RES->( DBSeek( Str( nRotaAtual, 3, 0 ) + PAD( PXP->DESCRI, 45 ) ) ) 
                               ELSE 
                                  RES->( DBAppend() ) 
-                                 RES->( NetRLock() ) 
+                                 RES->( netrlock() ) 
                                  Replace RES->PEDIDO With PED->CODIGO,; 
                                          RES->DESCRI With PED->DESCRI,; 
                                          RES->ROTA__ With nRotaAtual 
@@ -393,12 +393,12 @@ While .T.
                                     nRotaAtual:= PED->TRANSP 
                                  ENDIF 
                                  IF RES->( DBSeek( Str( nRotaAtual, 3, 0 ) + PAD( PXP->DESCRI, 45 ) ) ) 
-                                    IF RES->( NetRLock() ) 
+                                    IF RES->( netrlock() ) 
                                        Replace RES->QUANT_ With RES->QUANT_ + PXP->QUANT_ 
                                     ENDIF 
                                  ELSE 
                                     RES->( DBAppend() ) 
-                                    RES->( NetRLock() ) 
+                                    RES->( netrlock() ) 
                                     Replace RES->PEDIDO With PXP->CODIGO,; 
                                             RES->CODPRO With StrZero( PXP->CODPRO, 7, 0 ) + Space( 5 ),; 
                                             RES->DESPRO With PXP->DESCRI,; 
@@ -418,7 +418,7 @@ While .T.
                      //IF nRota == 999 
                      //   DBGoTop() 
                      //   WHILE !EOF() 
-                     //       IF NetRLock() 
+                     //       IF netrlock() 
                      //          Replace ROTA__ With 999 
                      //       ENDIF 
                      //       DBSkip() 
@@ -427,7 +427,7 @@ While .T.
                      Set Relation To CODPRO Into MPR 
                      DBGoTop() 
                      WHILE !EOF() 
-                        IF NetRlock() 
+                        IF netrlock() 
                            nCoef:=  QUANT_ / MPR->QTDPES 
                            nQuantInteira:= Int( nCoef ) 
                            nDifer:= QUANT_ - ( INT( nCoef ) * MPR->QTDPES ) 
@@ -465,7 +465,7 @@ While .T.
                         IF !Empty( CODPED ) 
                            Relatorio( "PEDIDOS.REP" ) 
                         ELSE 
-                           Aviso( "Este relatorio nÆo poder  ser emitido, pois nao foi gravado!" ) 
+                           Aviso( "Este relatorio nï¿½o poderï¿½ ser emitido, pois nao foi gravado!" ) 
                            Pausa() 
                         ENDIF 
                      ENDIF 

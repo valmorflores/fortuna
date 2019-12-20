@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VPC88800 
-³ Finalidade  ³ Edicao de  Pedido em Formato CPD 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VPC88800 
+ï¿½ Finalidade  ï¿½ Edicao de  Pedido em Formato CPD 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */
 #ifdef HARBOUR
 function vpc88800()
@@ -322,11 +322,11 @@ Local nPedido:= 0, nCodCli:= 0, nPrazo:= 0, nEmitDest:= 1,;
                  SetCursor(1) 
                  Keyboard Chr( K_ENTER ) + Chr( K_ENTER ) 
                  @ 10,12 Say "Produto....: [" + aProdutos[ nRow ][ 2 ] + "]" 
-                 @ 11,12 Say "Descri‡„o..: [" + LEFT( aProdutos[ nRow ][ 3 ], 40 ) + "]" 
+                 @ 11,12 Say "Descriï¿½ï¿½o..: [" + LEFT( aProdutos[ nRow ][ 3 ], 40 ) + "]" 
                  @ 12,12 Say "Fabricante.:" Get cOrigem Pict "XXXXXXXXXXXXXX" when Mensagem( "Digite a origem do produto." ) 
-                 @ 13,12 Say "Pre‡o......:" Get nPrecoInicial Pict "@E 999,999,999.999" When MudaPreco() .AND. Mensagem( "Digite o preco de venda para o produto." ) 
+                 @ 13,12 Say "Preï¿½o......:" Get nPrecoInicial Pict "@E 999,999,999.999" When MudaPreco() .AND. Mensagem( "Digite o preco de venda para o produto." ) 
                  @ 14,12 Say "% Desconto.:" Get nPerDesconto  Pict "@E 999.99"          Valid CalculaDesconto( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal ) 
-                 @ 15,12 Say "Pre‡o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999"  Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal ) 
+                 @ 15,12 Say "Preï¿½o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999"  Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal ) 
                  VPBox( 18, 10, 20, 70,, _COR_GET_BOX, .T., .F., _COR_GET_TITULO ) 
                  @ 19,12 Say "Quantidade.:" Get nQuantidade   Pict "@E 999,999.999" Valid TestaQuantidade( nQuantidade ) 
                  Read 
@@ -373,7 +373,7 @@ VPBox( 0, 0, 22, 79, "Cotacao", _COR_BROW_BOX , .F., .F., _COR_BROW_TITULO, .F. 
 @ 1, 1 Say "Pedido.....: " 
 @ 2, 1 Say "Codigo.....: " + StrZero( CLI->Codigo, 4, 0 ) 
 @ 3, 1 Say "Cliente....: " + Cli->Descri 
-@ 4, 1 Say "Endere‡o...: " + Cli->Endere 
+@ 4, 1 Say "Endereï¿½o...: " + Cli->Endere 
 @ 5, 1 Say "Cidade.....: " + Cli->Cidade 
 @ 6, 1 Say "Contato....: " + Cli->Compra 
 @ 7, 1 Say "Fone/Fax...: " + Cli->Fone1_ + " / " + Cli->Fax___ 
@@ -383,7 +383,7 @@ Scroll( 9, 0, 9, 79 )
 @ 09, 01 Say "Produto" 
 @ 09, 33 Say "Un" 
 @ 09, 37 Say "Quantidade" 
-@ 09, 53 Say "Preco Unit rio" 
+@ 09, 53 Say "Preco Unitï¿½rio" 
 @ 09, 68 Say "%IPI" 
 DispEnd() 
 CalculoGeral( aProdutos ) 
@@ -398,7 +398,7 @@ return(if(nTecla=27,.f.,.t.))
  
 /* 
 * Modulo      - CalculoGeral 
-* Finalidade  - Apresentar no rodap‚ o calculo total do pedido 
+* Finalidade  - Apresentar no rodapï¿½ o calculo total do pedido 
 * Programador - Valmor Pereira Flores 
 * Data        - 26/Outubro/1995 
 * Atualizacao - 
@@ -425,14 +425,14 @@ Return Nil
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VerGrupo 
-³ Finalidade  ³ Pesquisar um grupo especifico. 
-³ Parametros  ³ cGrupo_ => Codigo do grupo 
-³ Retorno     ³ cCodigo => Codigo do produto a ser retornado. 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 04/Dezembro/1995 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VerGrupo 
+ï¿½ Finalidade  ï¿½ Pesquisar um grupo especifico. 
+ï¿½ Parametros  ï¿½ cGrupo_ => Codigo do grupo 
+ï¿½ Retorno     ï¿½ cCodigo => Codigo do produto a ser retornado. 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 04/Dezembro/1995 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function VerGrupo( cGrupo_, cCodigo ) 
    Local nArea:= Select(), nOrdem:= IndexOrd() 
@@ -453,14 +453,14 @@ Static Function VerGrupo( cGrupo_, cCodigo )
    Return(.T.) 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ BuscaProduto 
-³ Finalidade  ³ Busca Produt/Precos na tabela 
-³ Parametros  ³ nCodPro, nPreco, nPreco1, nPreco2 
-³ Retorno     ³ .T./.F. 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ BuscaProduto 
+ï¿½ Finalidade  ï¿½ Busca Produt/Precos na tabela 
+ï¿½ Parametros  ï¿½ nCodPro, nPreco, nPreco1, nPreco2 
+ï¿½ Retorno     ï¿½ .T./.F. 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function BuscaProduto( nCodPro, nPreco, nPreco1, nPreco2 ) 
 Local nRow:= ROW(), nCol:= COL(), cProduto:= PAD( StrZero( nCodPro, 7, 0 ), 12 ) 
@@ -536,15 +536,15 @@ ENDIF
 Return .T. 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ PRAZO 
-³ Finalidade  ³ Busca o prazo conforme a tabela de condicoes que esta 
-³             ³ referenciada na tabela de operacoes 
-³ Parametros  ³ nPrazo 
-³ Retorno     ³ .T. 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ PRAZO 
+ï¿½ Finalidade  ï¿½ Busca o prazo conforme a tabela de condicoes que esta 
+ï¿½             ï¿½ referenciada na tabela de operacoes 
+ï¿½ Parametros  ï¿½ nPrazo 
+ï¿½ Retorno     ï¿½ .T. 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function Prazo( nPrazo ) 
 CND->( DBSetOrder( 1 ) ) 
@@ -554,14 +554,14 @@ ENDIF
 Return .T. 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VerPrazo 
-³ Finalidade  ³ Fazer uma verificacao no prazo digitado 
-³ Parametros  ³ nPrazo = Prazo Digitado 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VerPrazo 
+ï¿½ Finalidade  ï¿½ Fazer uma verificacao no prazo digitado 
+ï¿½ Parametros  ï¿½ nPrazo = Prazo Digitado 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function VerPrazo( nPrazo ) 
 CND->( DBSetOrder( 1 ) ) 
@@ -578,14 +578,14 @@ ENDIF
 Return .T. 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ PedidoExiste 
-³ Finalidade  ³ Verifica a existencia do pedido 
-³ Parametros  ³ nPedido 
-³ Retorno     ³ 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ PedidoExiste 
+ï¿½ Finalidade  ï¿½ Verifica a existencia do pedido 
+ï¿½ Parametros  ï¿½ nPedido 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function PedidoExiste( nPedido ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -612,14 +612,14 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VerCodigo 
-³ Finalidade  ³ Pesquisar a existencia de um codigo igual ao digitado 
-³ Parametros  ³ cCodigo=> Codigo digitado pelo usu rio 
-³ Retorno     ³ 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 04/Dezembro/1995 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VerCodigo 
+ï¿½ Finalidade  ï¿½ Pesquisar a existencia de um codigo igual ao digitado 
+ï¿½ Parametros  ï¿½ cCodigo=> Codigo digitado pelo usuï¿½rio 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 04/Dezembro/1995 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function VerCodigo( cCodigo, GetList ) 
    LOCAL cGrupo_:= GetList[ 1 ]:VarGet() 
@@ -644,7 +644,7 @@ Static Function VerCodigo( cCodigo, GetList )
    DBSetOrder( 1 ) 
    If !DBSeek( cGrupo_ + cCodigo + Space( 5 ) ) 
       Ajuda("[Enter]Continua") 
-      Aviso( "C¢digo n„o existente neste grupo...", 24 / 2 ) 
+      Aviso( "Cï¿½digo nï¿½o existente neste grupo...", 24 / 2 ) 
       Mensagem( "Pressione [Enter] para ver lista..." ) 
       Pausa() 
       VisualProdutos( cGrupo_ + cCodigo ) 
@@ -704,14 +704,14 @@ Function TestaQuantidade( nQuantidade )
  Return .T. 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ TESTAPRECO 
-³ Finalidade  ³ Testa se o preco corresponde ao necessario 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ TESTAPRECO 
+ï¿½ Finalidade  ï¿½ Testa se o preco corresponde ao necessario 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function TestaPreco( nPreco ) 
  Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -720,7 +720,7 @@ Function TestaPreco( nPreco )
     Tone( 680, 2 ) 
     Return .F. 
  ELSEIF nPreco > 3 * ( PrecoConvertido() ) .OR. nPreco * 3 < PrecoConvertido() 
-    Aviso( "Preco ‚ maior ou menor que permitido." ) 
+    Aviso( "Preco ï¿½ maior ou menor que permitido." ) 
     Mensagem( "Pressione [ENTER] para manter ou [ESC] para redigitar." ) 
     Tone( 220, 2 ) 
     IF Inkey(0)==K_ESC 

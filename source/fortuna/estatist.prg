@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#Include "VPF.Ch" 
-#Include "Inkey.Ch" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
  
 FUNCTION PEstatistica() 
 LOCAL cTELA:=zoom(13,24,19,52), cCOR:=setcolor(), nOPCAO:=0 
@@ -11,13 +11,13 @@ WHILE .T.
         "Total de Notas Fiscais.",,,COR[6],.T.)) 
  
    aadd(MENULIST,menunew(15,25," 2 Clientes (Individual)  ",2,COR[11],; 
-        "Estat¡sticas de clientes.",,,COR[6],.T.)) 
+        "Estatï¿½sticas de clientes.",,,COR[6],.T.)) 
  
    aadd(MENULIST,MenuNew(16,25," 3 Clientes (Multiplos)   ",2,COR[11],; 
-        "Estat¡sticas de clientes <Multiplos>.",,,COR[6],.T.)) 
+        "Estatï¿½sticas de clientes <Multiplos>.",,,COR[6],.T.)) 
 
    aadd(MENULIST,MenuNew(17,25," 4 Atualizar Estatisticas ",2,COR[11],; 
-        "Atualizar as estat¡sticas dos clientes.",,,COR[6],.T.)) 
+        "Atualizar as estatï¿½sticas dos clientes.",,,COR[6],.T.)) 
 
    aadd(MENULIST,menunew(18,25," 0 Retorna                ",2,COR[11],;
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
@@ -43,7 +43,7 @@ LOCAL lFlag:= .F.
 LOCAL nNulas:= 0, nTotalNf:= 0, nVlrNota:= 0, nVlrIcm:= 0, nVlrIPI:= 0 
 LOCAL nProcessadas:= 0 
  
-    VPBox( 04, 20, 07, 71, "Per¡odo", _COR_GET_BOX ) 
+    VPBox( 04, 20, 07, 71, "Perï¿½odo", _COR_GET_BOX ) 
     SetColor( _COR_GET_EDICAO ) 
     @ 05,21 Say "Inicial...:" Get dDataIni 
     @ 06,21 Say "Final.....:" Get dDataFim 
@@ -80,17 +80,17 @@ LOCAL nProcessadas:= 0
        DBSkip() 
     ENDDO 
     VPBox( 08, 20, 20, 71, "Totais em notas de Venda e Outras Saidas", _COR_GET_BOX ) 
-    @ 09,21 Say "Valor Nota          ³ " + Tran( nTotalNf, "@E 999,999,999.99" ) 
-    @ 10,21 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
-    @ 11,21 Say "Valor Total         ³ " + Tran( nVlrNota, "@E 999,999,999.99" ) 
-    @ 12,21 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
-    @ 13,21 Say "Valor Icm           ³ " + Tran( nVlrIcm, "@E 999,999,999.99" ) 
-    @ 14,21 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
-    @ 15,21 Say "Valor IPI           ³ " + Tran( nVlrIpi, "@E 999,999,999.99" ) 
-    @ 16,21 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
-    @ 17,21 Say "Notas Fiscais Nulas ³ " + StrZero( nNulas, 4 ) 
-    @ 18,21 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
-    @ 19,21 Say "Processadas         ³ " + StrZero( nProcessadas, 4 ) 
+    @ 09,21 Say "Valor Nota          ï¿½ " + Tran( nTotalNf, "@E 999,999,999.99" ) 
+    @ 10,21 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+    @ 11,21 Say "Valor Total         ï¿½ " + Tran( nVlrNota, "@E 999,999,999.99" ) 
+    @ 12,21 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+    @ 13,21 Say "Valor Icm           ï¿½ " + Tran( nVlrIcm, "@E 999,999,999.99" ) 
+    @ 14,21 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+    @ 15,21 Say "Valor IPI           ï¿½ " + Tran( nVlrIpi, "@E 999,999,999.99" ) 
+    @ 16,21 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+    @ 17,21 Say "Notas Fiscais Nulas ï¿½ " + StrZero( nNulas, 4 ) 
+    @ 18,21 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+    @ 19,21 Say "Processadas         ï¿½ " + StrZero( nProcessadas, 4 ) 
     Mensagem( "Pressione ENTER para retornar..." ) 
     Ajuda( "[ENTER]Retorna" ) 
     Pausa() 
@@ -226,7 +226,7 @@ return(.T.)
 ** 
 ** 
 ** 
-**         ESTA FUNCAO  CHAMADA PELA PESTATISTICA() 
+**         ESTA FUNCAO ï¿½ CHAMADA PELA PESTATISTICA() 
 ** 
 ** 
 ** 
@@ -319,7 +319,7 @@ Whil ! Eof()
  
     If CLIENT=CLI->CODIGO 
  
-       /* Verifica se esta ‚ a maior nota */ 
+       /* Verifica se esta ï¿½ a maior nota */ 
        If VlrNot > nMaiorV 
           SetColor( "R+/" + CorFundoAtual() ) 
           nMaiorV:= VlrTot 
@@ -339,23 +339,23 @@ EndDo
  
 VPTerm( .F. ) 
 DispBegin() 
-VPBox( 05, 13, 20, 75, "Dados estat¡sticos do cliente", _COR_GET_BOX, .T., .T., _COR_GET_TITULO ) 
+VPBox( 05, 13, 20, 75, "Dados estatï¿½sticos do cliente", _COR_GET_BOX, .T., .T., _COR_GET_TITULO ) 
 SetColor( _COR_GET_EDICAO ) 
 @ 06, 14 Say "Qtd.Dupl.Pendentes (-45 dias): "+StrZero(CLI->PEND__ , 5, 0 ) 
 @ 07, 14 Say "Qtd.Dupl.Pendentes (+45 dias): "+StrZero(CLI->INAD__,5,0) 
 @ 08, 14 Say "Qtd.Dupl.Quitadas no vencto..: "+StrZero(CLI->QUIT__,5,0) 
 @ 09, 14 Say "Qtd.Dupl.Pagas com atraso....: "+StrZero(CLI->ATRA__,5,0) 
-@ 10, 14 Say Repl( "Ä", 61 ) 
+@ 10, 14 Say Repl( "ï¿½", 61 ) 
 @ 11, 14 Say "Data da Ultima Compra........: "+dtoc(dULTIMA) 
 @ 12, 14 Say "Numero da Nota Fiscal........: "+StrZero(nULTNF_,6,0) 
 @ 13, 14 Say "Valor da Ultima compra.......: "+Tran(nULTVLR,"@E ***,***,***.**") 
 @ 14, 14 Say "Data da maior compra.........: "+dTOc(dDATAMV) 
 @ 15, 14 Say "Valor da maior compra........: "+Tran(nMAIORV,"@E ***,***,***.**") 
-@ 16, 14 Say Repl( "Ä", 61 ) 
+@ 16, 14 Say Repl( "ï¿½", 61 ) 
 @ 17, 14 Say "Situacao atual...............: " 
 DO CASE 
    CASE ( CLI->INAD__ + CLI->PEND__ + CLI->ATRA__ ) > CLI->QUIT__ 
-        Devout( "P‚ssima        " ) 
+        Devout( "Pï¿½ssima        " ) 
    CASE ( CLI->INAD__ ) > CLI->QUIT__ 
         Devout( "Ruim           " ) 
    CASE ( CLI->PEND__ ) > 0 
@@ -366,7 +366,7 @@ DO CASE
         Devout( "Otima          " ) 
    CASE ( CLI->QUIT__ ) > ( 5 * CLI->INAD__ ) .OR.; 
         ( CLI->PEND__ + CLI->ATRA__ ) > ( CLI->QUIT__ / 3 ) 
-        Devout( "Razo vel       " ) 
+        Devout( "Razoï¿½vel       " ) 
    OTHERWISE 
         Devout( "Analisar" ) 
 ENDCASE 
@@ -381,7 +381,7 @@ VPBox( 08, 16, 16, 65, " OBSERVACOES ", _COR_GET_BOX, .T., .T., _COR_GET_TITULO 
 @ 11,18 Say CLI->OBSER3 
 @ 12,18 Say CLI->OBSER4 
 @ 13,18 Say CLI->OBSER5 
-@ 14,17 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+@ 14,17 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
 @ 15,17 Say "Data de Informacao: " + DTOC( CLI->DATINF ) 
 Mensagem( "Pressione [ENTER] para retornar..." ) 
 Pausa() 
@@ -412,14 +412,14 @@ Return(.T.)
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ 
-³ Finalidade  ³ Pesquisa Multipla / Clientes 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ 
+ï¿½ Finalidade  ï¿½ Pesquisa Multipla / Clientes 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function PEstat3() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 

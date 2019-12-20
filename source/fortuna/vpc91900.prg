@@ -1,15 +1,15 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VPC91320 
-³ Finalidade  ³ Movimento de transferencia 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VPC91320 
+ï¿½ Finalidade  ï¿½ Movimento de transferencia 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */
 #ifdef HARBOUR
 function vpc91900()
@@ -42,7 +42,7 @@ SetColor( "07/00" )
 @ 14, 02 Say " Saldo.............." 
 @ 15, 02 Say " Valor Origem  (Sai)" 
 @ 16, 02 Say " Valor Destino (Ent)" 
-@ 17, 02 Say " ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ " 
+@ 17, 02 Say " ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " 
 @ 18, 02 Say " Historico          " 
 SetColor( "15/01" ) 
 @ 19, 05 Say Space( 30 ) 
@@ -83,7 +83,7 @@ WHILE .T.
       SetColor( "07/00" ) 
       @ 15, 02 Say " Valor Origem  (Sai)                 " 
       @ 16, 02 Say " Valor Destino (Ent)                 " 
-      @ 17, 02 Say " ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ                  " 
+      @ 17, 02 Say " ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½                  " 
       @ 18, 02 Say " Historico                           " 
       SetColor( "15/01" ) 
       @ 19, 05 Say Space( 30 ) 
@@ -219,7 +219,7 @@ WHILE .T.
           ELSEIF cTipo == "T" 
              DBSelectAr( _COD_BANCO ) 
           ENDIF 
-          IF NetRlock() 
+          IF netrlock() 
              Replace SALDO_ With nCredit - nDebito 
           ENDIF 
           IF cTipo == "R" 
@@ -532,14 +532,14 @@ return nil
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VISUALLANCAMENTO 
-³ Finalidade  ³ Visualizar lancamentos efetuados 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VISUALLANCAMENTO 
+ï¿½ Finalidade  ï¿½ Visualizar lancamentos efetuados 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function VisualLancamento( aLancamentos, nSenha )
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -555,7 +555,7 @@ EndIf
   ENDIF 
   SetColor( _COR_GET_EDICAO ) 
   VPBox( 05, 03, 18, 75, " LANCAMENTOS EFETUADOS ", _COR_GET_BOX ) 
-  @ 15, 04 Say "Ä Observacoes ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+  @ 15, 04 Say "ï¿½ Observacoes ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
   oTab:= TBrowseNew( 06, 04, 14, 74 ) 
   oTAB:addcolumn(tbcolumnnew(  "Data          Conta                                Saidas     Entradas ",; 
                                {|| DTOC( aLancamentos[nROW][1] )+ " " +; 
@@ -628,14 +628,14 @@ Return Nil
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VISUALDIARIO 
-³ Finalidade  ³ Visualizar lancamentos efetuados 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VISUALDIARIO 
+ï¿½ Finalidade  ï¿½ Visualizar lancamentos efetuados 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function VisualDiario( cTipo ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -670,7 +670,7 @@ Local nDebito:= 0, nCredit:= 0
   lDelimiters:= Set( _SET_DELIMITERS, .F. ) 
   SetColor( _COR_GET_EDICAO ) 
   VPBox( 05, 03, 18, 75, " LANCAMENTOS EFETUADOS ", _COR_GET_BOX ) 
-  @ 15, 04 Say "Ä Observacoes ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ TOTAIS ÄÄÄÄÄÄÄ" 
+  @ 15, 04 Say "ï¿½ Observacoes ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ TOTAIS ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
   @ 16, 49 Say Tran( nDebito, "@E 9,999,999.99" ) + " " + Tran( nCredit, "@E 9,999,999.99" ) 
   @ 17, 49 Say " Saldo Atual " + Tran( nCredit - nDebito, "@E 9,999,999.99" ) 
   oTab:= TBrowseDB( 06, 04, 14, 74 ) 
@@ -734,14 +734,14 @@ Return Nil
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ BUSCADUPLICATAS 
-³ Finalidade  ³ Buscar duplicatas 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 02/Setembro/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ BUSCADUPLICATAS 
+ï¿½ Finalidade  ï¿½ Buscar duplicatas 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 02/Setembro/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function BuscaDuplicatas( aDuplicatas, cHistorico ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -776,7 +776,7 @@ WHILE .T.
       case nTecla==K_ENTER 
            cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
            IF !EMPTY( DTQT__ ) 
-              Aviso( "Duplicata j  esta quitada!" ) 
+              Aviso( "Duplicata jï¿½ esta quitada!" ) 
               Pausa() 
            ELSE 
               VPBox( 05, 05, 14, 40, "Pagamento", _COR_GET_BOX ) 
@@ -804,7 +804,7 @@ WHILE .T.
               READ 
               IF !LastKey()==K_ESC 
                  lSaida:= .F. 
-                 IF NetRLock() 
+                 IF netrlock() 
                     Replace VLR___ With nValor 
                     Replace CHEQ__ With cCheque,; 
                             DTQT__ With dData,; 
@@ -843,14 +843,14 @@ ScreenRest( cTela )
 Return nValorTotal 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ BUSCAPAGAR 
-³ Finalidade  ³ Buscar duplicatas 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 02/Setembro/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ BUSCAPAGAR 
+ï¿½ Finalidade  ï¿½ Buscar duplicatas 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 02/Setembro/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function BuscaPagar( nVlrDisponivel, cHistorico ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -888,7 +888,7 @@ WHILE .T.
            IF !EMPTY( DATAPG ) 
               //nValorTotal + VALOR_ > nVlrDisponivel 
               cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-              Aviso( "Conta j  esta quitada!" ) 
+              Aviso( "Conta jï¿½ esta quitada!" ) 
               Pausa() 
               Screenrest( cTelaRes ) 
            ELSE 
@@ -905,13 +905,13 @@ WHILE .T.
               @ 06,06 Say "Data Pagamento:" Get dData 
               @ 07,06 Say "Cheque........:" Get cCheque 
               @ 08,06 Say "Valor Pago....:" Get nValor Pict "@E 9 999 999.99" 
-              @ 09,06 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄDiferencaÄÄÄÄÄÄÄÄÄÄÄ-" 
+              @ 09,06 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Diferencaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-" 
               @ 10,06 Say "Valor.........:" Get nResiduo Pict "@E 9 999 999.99" When PegaDif( VALOR_, nValor, @nResiduo ) 
               @ 11,06 Say "Vencimento....:" Get dVencimento 
               @ 12,06 Say "Banco.........:" Get nBanco Pict "999" Valid PesqBco( @nBanco ) 
               @ 13,06 Say "Cheque........:" Get cCheque2 
               READ 
-              IF NetRLock() 
+              IF netrlock() 
                  Replace CHEQUE With cCheque,; 
                          DATAPG With dData,; 
                          QUITAD With "S" 
@@ -922,7 +922,7 @@ WHILE .T.
                  cObserv:= "PARCELA COMPLEMENTAR (DIF)" 
                  nCodigo:= CODIGO 
                  DBAppend() 
-                 IF NetRLock() 
+                 IF netrlock() 
                     Replace NFISC_ With nCodNf_,; 
                             CODFOR With nCodFor,; 
                             VALOR_ With nResiduo,; 
@@ -965,14 +965,14 @@ nResiduo:= nValorPago - nValor
 Return .T. 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ LancaConta 
-³ Finalidade  ³ Fazer Lancamentos Contabeis 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ LancaConta 
+ï¿½ Finalidade  ï¿½ Fazer Lancamentos Contabeis 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function LancaMovimento( dDataLan, nConta, cDescricao, cTipo, ; 
                      cHis1, cHis2, nVlrDeb, nVlrCred ) 
@@ -997,14 +997,14 @@ ScreenRest( cTela )
 Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ LancaSaldos 
-³ Finalidade  ³ Fazer Lancamentos nas Respectivas Contas 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ LancaSaldos 
+ï¿½ Finalidade  ï¿½ Fazer Lancamentos nas Respectivas Contas 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function LancaSaldos( nConta, cDescricao, cTipo, nVlrDeb, nVlrCred ) 
 Local nArea:= Select(), nOrdem:= IndexOrd() 
@@ -1022,7 +1022,7 @@ Local nArea:= Select(), nOrdem:= IndexOrd()
    nOrd:= IndexOrd() 
    DBSetOrder( 1 ) 
    IF DBSeek( nConta ) 
-      IF NetRLock() 
+      IF netrlock() 
          Replace SALDO_ With SALDO_ + nVlrCred 
          Replace SALDO_ With SALDO_ - nVlrDeb 
       ENDIF 
@@ -1285,7 +1285,7 @@ Local nCursor:= SetCursor()
 
 DBSelectAr( _COD_MOVIMENTO )
 Go nReg
-If NetRLock( 5 )
+If netrlock( 5 )
    SetCursor( 1 )
    @ nLinha, 04 Get dData Color "W/B"
    Read

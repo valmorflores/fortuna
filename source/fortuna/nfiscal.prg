@@ -12,10 +12,10 @@
 * Data        - 10/Outubro/1994 
 * Atualizacao - 
 */ 
-#include "FORMATOS.CH" 
-#include "VPF.CH" 
-#include "INKEY.CH" 
-#include "BOX.CH" 
+#include "formatos.ch" 
+#include "vpf.ch" 
+#include "inkey.ch" 
+#include "box.ch" 
 #Include "NF.CH" 
 
 #ifdef HARBOUR
@@ -123,7 +123,7 @@ Function NFInc( cCodigoPedido, lNotaManual )
         lAutoPreenche:= .T. 
         lNotaManual:= .F. 
         //lOk:= .F. 
-     ELSEIF Upper( Left( cCodigoPedido, 1 ) ) == "E" ///////// BAIXA DE PEDIDO (AUTOMµTICA) 
+     ELSEIF Upper( Left( cCodigoPedido, 1 ) ) == "E" ///////// BAIXA DE PEDIDO (AUTOMï¿½TICA) 
         cCodigoPedido:= SubStr( cCodigoPedido, 2, Len( cCodigoPedido ) ) 
         lAutoPreenche:= .T. 
         lNotaManual:= .F. 
@@ -158,7 +158,7 @@ Function NFInc( cCodigoPedido, lNotaManual )
         DBSelectAr( 123 ) 
         DBCloseArea() 
         DBSelectAr( _COD_NFISCAL ) 
-        Aviso( "Falha na ultima nota gravada! Nota Fiscal N§" + ALLTRIM( Str( NF_->NUMERO, 9, 0 ) ) + " - Informacoes Incompletas.", .T. ) 
+        Aviso( "Falha na ultima nota gravada! Nota Fiscal Nï¿½" + ALLTRIM( Str( NF_->NUMERO, 9, 0 ) ) + " - Informacoes Incompletas.", .T. ) 
         ScreenRest( cTela ) 
         Return Nil 
      ENDIF 
@@ -234,7 +234,7 @@ Function NFInc( cCodigoPedido, lNotaManual )
               CHR( K_DOWN ) + CHR( K_DOWN ) + CHR( K_DOWN ) + CHR( K_DOWN ) + ; 
               CHR( K_ENTER ) + Repl( CHR( K_PGDN ), 10 ) + Chr( K_ENTER ) 
      ELSEIF lSemCabecalho 
-        // lSemCabecalho=.T. significa que ‚ uma baixa de pedido 
+        // lSemCabecalho=.T. significa que ï¿½ uma baixa de pedido 
         nOpcao:= Len( aOpcoes )-1 
  
         Keyboard Chr( K_ENTER ) 
@@ -346,8 +346,8 @@ Function NFInc( cCodigoPedido, lNotaManual )
              lEditar:= .T. 
              IF !( cPedido == SPACE( 25 ) ) 
                 VPBoxSombra( 02, 31, 06, 77,, "15/04", "00/01" ) 
-                @ 03,33 SAY "Este dado j  foi informado caso vocˆ  altere" 
-                @ 04,33 SAY "esta informa‡„o os dados da N. Fiscal  ser„o" 
+                @ 03,33 SAY "Este dado jï¿½ foi informado caso vocï¿½  altere" 
+                @ 04,33 SAY "esta informaï¿½ï¿½o os dados da N. Fiscal  serï¿½o" 
                 @ 05,33 SAY "Duplicados.                                 " 
                 INKEY(0) 
                 EXIT 
@@ -361,7 +361,7 @@ Function NFInc( cCodigoPedido, lNotaManual )
              IF lEditar 
  
                 @ 03,33 Say "Pedido(s):" Get cPedido VALID ; 
-                   SelPedido( aNFiscal, @cPedido, aOpcoes ) When Mensagem( "Digite o N§ dos pedidos de um mesmo cliente [ENTER]Busca." ) 
+                   SelPedido( aNFiscal, @cPedido, aOpcoes ) When Mensagem( "Digite o Nï¿½ dos pedidos de um mesmo cliente [ENTER]Busca." ) 
                 READ 
  
  
@@ -393,7 +393,7 @@ Function NFInc( cCodigoPedido, lNotaManual )
  
                    IF !lAutoPreenche 
                       /* Verifica se data da ultima nota de 
-                         venda p/ cliente ‚ maior que <n> dias */ 
+                         venda p/ cliente ï¿½ maior que <n> dias */ 
                       IF SWSet( _NFA_DIAS ) > 0 
                          DPA->( DBSetOrder( 5 ) ) 
                          IF DPA->( DBSeek( CLI->CODIGO ) ) 
@@ -484,9 +484,9 @@ Function NFInc( cCodigoPedido, lNotaManual )
              ENDIF 
  
         CASE nOpcao==10 
-             IF aOpcoes[ LEN( aOpcoes ) ][ 1 ]=="  ÀÄImpressao do Romaneio  " 
+             IF aOpcoes[ LEN( aOpcoes ) ][ 1 ]=="  ï¿½ï¿½Impressao do Romaneio  " 
                 cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-                Aviso( " Nota Fiscal j  esta gravada! " ) 
+                Aviso( " Nota Fiscal jï¿½ esta gravada! " ) 
                 mensagem( "Pressione [ENTER] para continuar..." ) 
                 Pausa() 
                 ScreenRest( cTelaRes ) 
@@ -501,20 +501,20 @@ Function NFInc( cCodigoPedido, lNotaManual )
                    nNumero:= Val( cNumero ) 
                 ENDIF 
                 IF Gravacao( aNFiscal, nNumero ) 
-                   AAdd( aOpcoes, { "  ÃÄImpressao da N. Fiscal ", 14 } ) 
-                   AAdd( aOpcoes, { "  ÃÄImpressao do Bloqueto  ", 15 } ) 
-                   AAdd( aOpcoes, { "  ÀÄImpressao do Romaneio  ", 16 } ) 
+                   AAdd( aOpcoes, { "  ï¿½ï¿½Impressao da N. Fiscal ", 14 } ) 
+                   AAdd( aOpcoes, { "  ï¿½ï¿½Impressao do Bloqueto  ", 15 } ) 
+                   AAdd( aOpcoes, { "  ï¿½ï¿½Impressao do Romaneio  ", 16 } ) 
                    lRefaz:= .T. 
                    oTab:Down() 
                 ENDIF 
  
-                // Deleta cabe‡alho da nota fiscal =============================== 
+                // Deleta cabeï¿½alho da nota fiscal =============================== 
                 IF lSemCabecalho 
                    PNF->( DBSetOrder( 5 ) ) 
                    PNF->( DBSeek( nNumero ) ) 
                    WHILE PNF->CODNF_ = nNumero 
                        Mensagem( "Eliminando cabecalho da nota " + StrZero( nNumero, 9, 0 ) ) 
-                       IF PNF->( NetRLock() ) 
+                       IF PNF->( netrlock() ) 
                           PNF->( DBDelete() ) 
                        ENDIF 
                        PNF->( DBSkip() ) 
@@ -524,7 +524,7 @@ Function NFInc( cCodigoPedido, lNotaManual )
                    ENDDO 
                    NF_->( DBSetOrder( 1 ) ) 
                    IF NF_->( DBSeek( nNumero ) ) 
-                      IF NF_->( NetRLock() ) 
+                      IF NF_->( netrlock() ) 
                          nf_->( DBDelete() ) 
                       ENDIF 
                    ENDIF 
@@ -661,7 +661,7 @@ FOR nCt:= 1 To Len( aNFiscal[ P_PRODUTOS ] )
             /***------------------------------------------------------------------*** 
             *                                                                       * 
             *                                                                       * 
-            *      CALCULO DE PRODUTOS COM SUBSTITUICAO TRIBUTµRIA CST=60/70/10     * 
+            *      CALCULO DE PRODUTOS COM SUBSTITUICAO TRIBUTï¿½RIA CST=60/70/10     * 
             *      Valmor Flores                                                    * 
             *                                                                       * 
             *-----------------------------------------------------------------------*/ 
@@ -775,7 +775,7 @@ FOR nCt:= 1 To Len( aNFiscal[ P_PRODUTOS ] )
                /***------------------------------------------------------------------*** 
                *                                                                       * 
                *                                                                       * 
-               *      CALCULO DE PRODUTOS COM SUBSTITUICAO TRIBUTµRIA CST=60/70/10     * 
+               *      CALCULO DE PRODUTOS COM SUBSTITUICAO TRIBUTï¿½RIA CST=60/70/10     * 
                *      Valmor Flores                                                    * 
                *                                                                       * 
                *-----------------------------------------------------------------------*/ 
@@ -838,8 +838,8 @@ FOR nCt:= 1 To Len( aNFiscal[ P_PRODUTOS ] )
  
  
  
-    // Extrai da nICMSubBase o ICMs j  efetuado nos casos de 
-    // Substituicao Tributaria, pois para efeito do c lculo final da substituicao 
+    // Extrai da nICMSubBase o ICMs jï¿½ efetuado nos casos de 
+    // Substituicao Tributaria, pois para efeito do cï¿½lculo final da substituicao 
     // deve-se exibir o liquido 
     IF cTabelaB $ "60-70-10" .AND. aNFiscal[ P_CLIENTE ][ CLI_CONSIND ] <> "C" 
        nICMSubBase:= ( nICMSubBase - aNFiscal[ P_PRODUTOS ][ nCt ][ PRO_BASEICM ] ) 
@@ -863,7 +863,7 @@ FOR nCt:= 1 To Len( aNFiscal[ P_PRODUTOS ] )
     nTotalNf+=  aNFiscal[ P_PRODUTOS ][ nCt ][ PRO_PRECOTOTAL ] 
     nTotalIpi+= aNFiscal[ P_PRODUTOS ][ nCt ][ PRO_VALORIPI ] 
  
-    /* Se for consumo (Base para ICMs) ser  sobre o ( TOTAL + IPI ) */ 
+    /* Se for consumo (Base para ICMs) serï¿½ sobre o ( TOTAL + IPI ) */ 
     IF aNFiscal[ P_CLIENTE ][ CLI_CONSIND ] == "C" 
        nBaseIcm:= ( aNFiscal[ P_PRODUTOS ][ nCt ][ PRO_BASEICM ] +; 
                     aNFiscal[ P_PRODUTOS ][ nCt ][ PRO_VALORIPI ] ) 
@@ -924,7 +924,7 @@ aNFiscal[ P_IMPOSTOS ][ IMP_VLRISSQN ]:= ( aNFiscal[ P_IMPOSTOS ][ IMP_VALORSERV
 aNFiscal[ P_IMPOSTOS ][ IMP_PERCOFIN ]:= nPercCOFIN
 aNFiscal[ P_IMPOSTOS ][ IMP_VLRCOFIN ]:= ( aNFiscal[ P_IMPOSTOS ][ IMP_VALORSERVICOS ] * aNFiscal[ P_IMPOSTOS ][ IMP_PERCOFIN ] ) / 100
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ AQUI 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ AQUI 
 aNFiscal[ P_IMPOSTOS ][ IMP_PERIRRF ]:= nPercIrrf 
 aNFiscal[ P_IMPOSTOS ][ IMP_VLRIRRF ]:= ; 
    ( aNFiscal[ P_IMPOSTOS ][ IMP_VALORSERVICOS ]  * ; 
@@ -937,7 +937,7 @@ ELSE
 ENDIF 
  
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
 aNFiscal[ P_IMPOSTOS ][ IMP_VALORBASEICM ]:= nBaseIcmTotal +; 
                 aNFiscal[ P_DIVERSOS ][ DIV_VALORFRETE ] +; 
@@ -955,7 +955,7 @@ ELSE
 ENDIF 
  
  
-// Substituicao Tribut ria 
+// Substituicao Tributï¿½ria 
 aNfiscal[ P_IMPOSTOS ][ IMP_ICMSUBBASE ]:= nICMSubDemo 
  
 //aNfiscal[ P_IMPOSTOS ][ IMP_ICMSUBVALOR ]:= ( nICMSubBase * ( nIcmPerSub / 100 ) ) 
@@ -1094,7 +1094,7 @@ Function SelPedido( aNFiscal, cPedido, aOpcoes )
              IF !DBSeek( StrZero( Val( cCodigo ), 8, 0 ) ) 
                 IF Val( cCodigo ) <> 0 
                    cTelaReserva:= ScreenSave( 0, 0, 24, 79 ) 
-                   Aviso( "Nao consta o pedido n§ " + cCodigo + " na lista de dispon¡veis...", 12 ) 
+                   Aviso( "Nao consta o pedido nï¿½ " + cCodigo + " na lista de disponï¿½veis...", 12 ) 
                    Mensagem( "Pressione ENTER para continuar...", 1 ) 
                    Pausa() 
                    PedidoAceito( .F. ) 
@@ -1346,7 +1346,7 @@ Function SelPedido( aNFiscal, cPedido, aOpcoes )
  
                               /***------------------------------------------------------------------*** 
                               *                                                                       * 
-                              *      CALCULO DE PRODUTOS COM SUBSTITUICAO TRIBUTµRIA CST=60/70/10     * 
+                              *      CALCULO DE PRODUTOS COM SUBSTITUICAO TRIBUTï¿½RIA CST=60/70/10     * 
                               *      Valmor Flores                                                    * 
                               *                                                                       * 
                               *-----------------------------------------------------------------------*/ 
@@ -1602,7 +1602,7 @@ return(.T.)
 ************************************************************************ 
 Static Function teclainativa() 
 if lastkey()=K_PGUP .OR. lastkey()=K_PGDN 
-   Mensagem("ATENCAO! Nao ‚ poss¡vel finalizar a ent. dados c/ [PgDn/PgUp].",1) 
+   Mensagem("ATENCAO! Nao ï¿½ possï¿½vel finalizar a ent. dados c/ [PgDn/PgUp].",1) 
    Pausa() 
    return(.T.) 
 endif 
@@ -1663,7 +1663,7 @@ do case
            SetColor( _COR_ALERTA_LETRA ) 
            @ 10,11 Say "Base de Calculo ICMs.:" + Tran( nPBaIcm, "@E 999,999,999.99" ) 
            @ 11,11 Say "Percentual de Reducao:" Get nPerRed Pict "@E 999.99" 
-           @ 12,11 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+           @ 12,11 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
            Read 
            nVlrRed:= ( nPBaIcm * nPerRed ) / 100 
            @ 13,11 Say "Valor Base de Calculo:" + Tran( nPBaIcm:= nVltPro - nVlrRed, "@E 999,999,999.99" ) 
@@ -1704,19 +1704,19 @@ FUNCTION DisplayDados( aNFiscal, nRow )
           @ 03,33 Say "Pedido(s): " + aNFiscal[ P_PEDIDOS ] 
      CASE nRow==2 
           VPBoxSombra( 02, 31, 14, 77, , "15/01", "00/01" ) 
-          @ 03,33 Say "C¢digo...: " + StrZero( aNFiscal[ P_CLIENTE ][ CLI_CODIGO ], 6, 0 ) 
+          @ 03,33 Say "Cï¿½digo...: " + StrZero( aNFiscal[ P_CLIENTE ][ CLI_CODIGO ], 6, 0 ) 
           @ 04,33 Say "Nome.....: " + Left( aNFiscal[ P_CLIENTE ][ CLI_DESCRICAO ], 33 ) 
           @ 05,33 Say "CGC/CPF..: " + ; 
                        IF( EMPTY( aNFiscal[ P_CLIENTE ][ CLI_CGC ] ),; 
                             Tran( aNFiscal[ P_CLIENTE ][ CLI_CPF ], "@R 999.999.999-99" ),; 
                             Tran( aNFiscal[ P_CLIENTE ][ CLI_CGC ], "@R 99.999.999/9999-99" ) ) 
-          @ 06,33 Say "Inscri‡„o: " + aNFiscal[ P_CLIENTE ][ CLI_INSCRICAO ] 
-          @ 07,33 Say "Endere‡o.: " + Left( aNFiscal[ P_CLIENTE ][ CLI_ENDERECO ], 33 ) 
+          @ 06,33 Say "Inscriï¿½ï¿½o: " + aNFiscal[ P_CLIENTE ][ CLI_INSCRICAO ] 
+          @ 07,33 Say "Endereï¿½o.: " + Left( aNFiscal[ P_CLIENTE ][ CLI_ENDERECO ], 33 ) 
           @ 08,33 Say "Bairro...: " + aNFiscal[ P_CLIENTE ][ CLI_BAIRRO ] 
           @ 09,33 Say "Cidade...: " + aNFiscal[ P_CLIENTE ][ CLI_CIDADE ] 
           @ 10,33 Say "Estado...: " + aNFIscal[ P_CLIENTE ][ CLI_ESTADO ] 
           @ 11,33 Say "CEP......: " + Tran( aNFiscal[ P_CLIENTE ][ CLI_CEP ], "@R 99999-999" ) 
-          @ 12,33 Say "Cobran‡a.: " + aNFiscal[ P_CLIENTE ][ CLI_COBRANCA ] 
+          @ 12,33 Say "Cobranï¿½a.: " + aNFiscal[ P_CLIENTE ][ CLI_COBRANCA ] 
           @ 13,33 Say "Cons/Ind.: " + UPPER( aNFiscal[ P_CLIENTE ][ CLI_CONSIND ] ) 
      CASE nRow==3 
           nArea:= DBSelectAr() 
@@ -1728,7 +1728,7 @@ FUNCTION DisplayDados( aNFiscal, nRow )
           ENDIF 
           DBSelectAr( nArea ) 
           VPBoxSombra( 02, 31, 08, 77, , "15/01", "00/01" ) 
-          @ 03,33 Say "Raz„o....: " + aNFiscal[ P_CABECALHO ][ CAB_ENTRADASAIDA ] 
+          @ 03,33 Say "Razï¿½o....: " + aNFiscal[ P_CABECALHO ][ CAB_ENTRADASAIDA ] 
           @ 04,33 Say "NF Numero: " + StrZero( aNFiscal[ P_CABECALHO ][ CAB_NOTAFISCAL ], 9, 0 ) 
           @ 05,33 Say "Nat.Oper.: " + Tran( aNFiscal[ P_CABECALHO ][ CAB_NATOPERACAO ][ NAT_CODIGO ], "@E 9.999" ) +; 
                                             " - " + Left( aNFiscal[ P_CABECALHO ][ CAB_NATOPERACAO ][ NAT_DESCRICAO ], 25 ) 
@@ -1739,8 +1739,8 @@ FUNCTION DisplayDados( aNFiscal, nRow )
           @ 03,33 Say "Codigo...: " + StrZero( aNFIscal[ P_TRANSPORTE ][ TRA_CODIGO ], 3, 0 ) 
           @ 04,33 Say "Nome.....: " + Left( aNFiscal[ P_TRANSPORTE ][ TRA_DESCRICAO ], 33 ) 
           @ 05,33 Say "CGC......: " + TRAN( aNFiscal[ P_TRANSPORTE ][ TRA_CGC ], "@R 99.999.999/9999-99" ) 
-          @ 06,33 Say "Inscri‡„o: " + aNFiscal[ P_TRANSPORTE ][ TRA_INSCRICAO ] 
-          @ 07,33 Say "Endere‡o.: " + Left( aNFiscal[ P_TRANSPORTE ][ TRA_ENDERECO ], 33 ) 
+          @ 06,33 Say "Inscriï¿½ï¿½o: " + aNFiscal[ P_TRANSPORTE ][ TRA_INSCRICAO ] 
+          @ 07,33 Say "Endereï¿½o.: " + Left( aNFiscal[ P_TRANSPORTE ][ TRA_ENDERECO ], 33 ) 
           @ 08,33 Say "Bairro...: " + aNFiscal[ P_TRANSPORTE ][ TRA_BAIRRO ] 
           @ 09,33 Say "Cidade...: " + aNFiscal[ P_TRANSPORTE ][ TRA_CIDADE ] 
           @ 10,33 Say "Estado...: " + aNFIscal[ P_TRANSPORTE ][ TRA_ESTADO ] 
@@ -1760,11 +1760,11 @@ FUNCTION DisplayDados( aNFiscal, nRow )
           @ 12,33 Say "% IPI....: " + TRAN( aNFiscal[ P_PRODUTOS ][ 1 ][ PRO_PERCENTUALIPI ], "@E 99.99" ) 
           @ 13,33 Say "Valor IPI: " + TRAN( aNFiscal[ P_PRODUTOS ][ 1 ][ PRO_VALORIPI ], "@E 999,999,999.99" ) 
           @ 13,61 Say "% Red: " + TRAN( aNFiscal[ P_PRODUTOS ][ 1 ][ PRO_PERREDUCAO ], "@E 99.9999" ) 
-          @ 14,33 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ BROWSE ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
-          @ 15,33 Say "Codigo   Descri‡ao                         " 
+          @ 14,33 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ BROWSE ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+          @ 15,33 Say "Codigo   Descriï¿½ao                         " 
           nFinal:= IF( Len( aNFiscal[ P_PRODUTOS ] ) > 4, 4, Len( aNFiscal[ P_PRODUTOS ] ) ) 
           FOR nCt:= 1 TO nFinal 
-              @ 15 + nCt, 33 Say IF( aNFiscal[ P_PRODUTOS ][ nCt ][ PRO_QUANTIDADE ]==0, " ", "û" ) 
+              @ 15 + nCt, 33 Say IF( aNFiscal[ P_PRODUTOS ][ nCt ][ PRO_QUANTIDADE ]==0, " ", "ï¿½" ) 
               @ 15 + nCt, 34 Say Tran( StrZero( aNFiscal[ P_PRODUTOS ][ nCt ][ PRO_CODIGO ], 7, 0 ), "@R XXX-XXXX" ) 
               @ 15 + nCt, 43 Say Left( aNFiscal[ P_PRODUTOS ][ nCt ][ PRO_DESCRICAO ], 34 ) 
           NEXT 
@@ -1776,7 +1776,7 @@ FUNCTION DisplayDados( aNFiscal, nRow )
              @ 05,33 Say "Preco......: " + Tran( aNFiscal[ P_SERVICOS ][ 1 ][ SER_UNITARIO ], "@E 999,999,999.99" ) 
              @ 06,33 Say "Quantidade.: " + Tran( aNFiscal[ P_SERVICOS ][ 1 ][ SER_QUANTIDADE ], "@E 999,999.99" ) 
              @ 07,33 Say "Valor Total: " + Tran( aNFiscal[ P_SERVICOS ][ 1 ][ SER_TOTAL ], "@E 999,999,999.99" ) 
-             @ 08,33 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Browse Servicos ÄÄÄÄÄÄÄÄÄÄÄÄ" 
+             @ 08,33 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Browse Servicos ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
              @ 09,33 Say "Codigo   Descricao                         " 
              nFinal:= IF( Len( aNFiscal[ P_SERVICOS ] ) > 8, 4, Len( aNFiscal[ P_SERVICOS ] ) ) 
              FOR nCt:= 1 TO nFinal 
@@ -1786,19 +1786,19 @@ FUNCTION DisplayDados( aNFiscal, nRow )
           ENDIF 
      CASE nRow==6 
           VPBoxSombra( 02, 31, 16, 77, ,"15/01", "00/01" ) 
-          @ 03,32 Say "C lculo Geral de Comiss”es" 
-          @ 04,32 Say "ÚÄÄÄÄÄÄÄÄÄÄÄÄ¿ÚÄÄÄÄÂÄÄÄÄÄÄÄÄÄÂÄÄÄÄÂÄÄÄÄÄÄÄÄÄ¿" 
-          @ 05,32 Say "³ Vendedor.. ³³0000³ INTERNO ³0000³ EXTERNO ³" 
-          @ 06,32 Say "ÃÄÄÄÄÄÄÄÄÄÄÄÄ´ÃÄÄÄÄÁÄÄÄÄÄÄÄÄÄÅÄÄÄÄÁÄÄÄÄÄÄÄÄÄ´" 
-          @ 07,32 Say "³ Nome       ³³              ³              ³" 
-          @ 08,32 Say "ÃÄÄÄÄÄÄÄÄÄÄÄÄ´ÃÄÄÄÄÂÄÄÄÄÄÄÄÄÄÅÄÄÄÄÂÄÄÄÄÄÄÄÄÄ´" 
-          @ 09,32 Say "³ A Vista... ³³    ³         ³    ³         ³" 
-          @ 10,32 Say "³ A Prazo... ³³    ³         ³    ³         ³" 
-          @ 11,32 Say "³ Recebidas. ³³    ³         ³    ³         ³" 
-          @ 12,32 Say "³ Tot.Venda. ³³    ³         ³    ³         ³" 
-          @ 13,32 Say "ÃÄÄÄÄÄÄÄÄÄÄÄÄ´ÃÄÄÄÄÁÄÄÄÄÄÄÄÄÄÅÄÄÄÄÁÄÄÄÄÄÄÄÄÄ´" 
-          @ 14,32 Say "³ TOTAL      ³³              ³              ³" 
-          @ 15,32 Say "ÀÄÄÄÄÄÄÄÄÄÄÄÄÙÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ" 
+          @ 03,32 Say "Cï¿½lculo Geral de Comissï¿½es" 
+          @ 04,32 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿" 
+          @ 05,32 Say "ï¿½ Vendedor.. ï¿½ï¿½0000ï¿½ INTERNO ï¿½0000ï¿½ EXTERNO ï¿½" 
+          @ 06,32 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´" 
+          @ 07,32 Say "ï¿½ Nome       ï¿½ï¿½              ï¿½              ï¿½" 
+          @ 08,32 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´" 
+          @ 09,32 Say "ï¿½ A Vista... ï¿½ï¿½    ï¿½         ï¿½    ï¿½         ï¿½" 
+          @ 10,32 Say "ï¿½ A Prazo... ï¿½ï¿½    ï¿½         ï¿½    ï¿½         ï¿½" 
+          @ 11,32 Say "ï¿½ Recebidas. ï¿½ï¿½    ï¿½         ï¿½    ï¿½         ï¿½" 
+          @ 12,32 Say "ï¿½ Tot.Venda. ï¿½ï¿½    ï¿½         ï¿½    ï¿½         ï¿½" 
+          @ 13,32 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´" 
+          @ 14,32 Say "ï¿½ TOTAL      ï¿½ï¿½              ï¿½              ï¿½" 
+          @ 15,32 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
           @ 05,47 Say StrZero( aNFiscal[ P_COMISSOES ][ COM_INTERNO ][ INT_CODIGO ], 4, 0 ) 
           @ 05,62 Say StrZero( aNFiscal[ P_COMISSOES ][ COM_EXTERNO ][ EXT_CODIGO ], 4, 0 ) 
           @ 07,48 Say aNFiscal[ P_COMISSOES ][ COM_INTERNO ][ INT_DESCRICAO ] 
@@ -1859,12 +1859,12 @@ FUNCTION DisplayDados( aNFiscal, nRow )
           @ 10,33 Say "Data Saida..: " + DTOC( aNFiscal[ P_DIVERSOS ][ DIV_DATASAIDA ] ) 
           @ 11,33 Say "Hora Saida..: " + Tran( aNFiscal[ P_DIVERSOS ][ DIV_HORASAIDA ], "@R 99:99" ) + "hs." 
           @ 12,33 Say "Placa.......: " + aNFiscal[ P_DIVERSOS ][ DIV_PLACA ] 
-          @ 13,32 Say "µººººººººººººººººººººººººººººººººººººººººººº¶" 
-          @ 14,32 Say "¼                                           ½" 
-          @ 15,32 Say "¼                                           ½" 
-          @ 16,32 Say "¼                                           ½" 
-          @ 17,32 Say "¼                                           ½" 
-          @ 18,32 Say "¸»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»¹" 
+          @ 13,32 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+          @ 14,32 Say "ï¿½                                           ï¿½" 
+          @ 15,32 Say "ï¿½                                           ï¿½" 
+          @ 16,32 Say "ï¿½                                           ï¿½" 
+          @ 17,32 Say "ï¿½                                           ï¿½" 
+          @ 18,32 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
           @ 14,33 Say Left( aNFiscal[ P_DIVERSOS ][ DIV_OBSERVACOES ][ OBS_LINHA1 ], 43 ) 
           @ 15,33 Say Left( aNFiscal[ P_DIVERSOS ][ DIV_OBSERVACOES ][ OBS_LINHA2 ], 43 ) 
           @ 16,33 Say Left( aNFiscal[ P_DIVERSOS ][ DIV_OBSERVACOES ][ OBS_LINHA3 ], 43 ) 
@@ -1888,11 +1888,11 @@ FUNCTION DisplayDados( aNFiscal, nRow )
                 ENDIF 
                 nSoma:= nSoma + aNFiscal[ P_FATURA ][ nCt ][ FAT_VALOR ] 
              NEXT 
-             @ ++nLin, 34 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+             @ ++nLin, 34 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
              @ ++nLin, 38 Say "Total da Fatura: " + Tran( nSoma, "@E 999,999,999.99" ) 
-             @ ++nLin, 38 Say "ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿" 
-             @ ++nLin, 38 Say "³°°°°°°°°°°°°°°° FIM °°°°°°°°°°°°°°°°°³" 
-             @ ++nLin, 38 Say "ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ" 
+             @ ++nLin, 38 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿" 
+             @ ++nLin, 38 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ FIM ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+             @ ++nLin, 38 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
           ENDIF 
   ENDCASE 
   DispEnd() 
@@ -1951,9 +1951,9 @@ FUNCTION DisplayDados( aNFiscal, nRow )
           VPBoxSombra( 02, 31, 08, 77, , "15/01", "00/01" ) 
           cEntSai:= LEFT( aNFiscal[ P_CABECALHO ][ CAB_ENTRADASAIDA ], 1 ) 
           IF lNotaManual 
-             @ 03,nColuna Say "Raz„o....:" Get cEntSai 
+             @ 03,nColuna Say "Razï¿½o....:" Get cEntSai 
           ELSE 
-             @ 03,nColuna Say "Raz„o....: " + aNFiscal[ P_CABECALHO ][ CAB_ENTRADASAIDA ] 
+             @ 03,nColuna Say "Razï¿½o....: " + aNFiscal[ P_CABECALHO ][ CAB_ENTRADASAIDA ] 
           ENDIF 
           @ 04,nColuna Say "NF Numero: " + StrZero( aNFiscal[ P_CABECALHO ][ CAB_NOTAFISCAL ], 9, 0 ) 
           @ 05,nColuna Say "Nat.Oper.:" Get aNFiscal[ P_CABECALHO ][ CAB_NATOPERACAO ][ NAT_CODIGO ] Pict "@R 9.999" 
@@ -1976,9 +1976,9 @@ FUNCTION DisplayDados( aNFiscal, nRow )
           VPBoxSombra( 02, 31, 14, 77, , "15/01", "00/01" ) 
           nCodCli:= aNFiscal[ P_CLIENTE ][ CLI_CODIGO ] 
           IF lNotaManual 
-              @ 03,nColuna Say "C¢digo...:" Get nCodCli Pict "@R 999999" Valid BuscaCodCliente( @nCodCli, aNFiscal, lNotaManual, GetList ) 
+              @ 03,nColuna Say "Cï¿½digo...:" Get nCodCli Pict "@R 999999" Valid BuscaCodCliente( @nCodCli, aNFiscal, lNotaManual, GetList ) 
           ELSE 
-              @ 03,nColuna Say "C¢digo...: " + StrZero( aNFiscal[ P_CLIENTE ][ CLI_CODIGO ], 6, 0 ) 
+              @ 03,nColuna Say "Cï¿½digo...: " + StrZero( aNFiscal[ P_CLIENTE ][ CLI_CODIGO ], 6, 0 ) 
           ENDIF 
           @ 04,nColuna Say "Nome.....:" Get aNFiscal[ P_CLIENTE ][ CLI_DESCRICAO ] Pict "@S33" 
           IF EMPTY( aNFiscal[ P_CLIENTE ][ CLI_CGC ] ) .AND. !EMPTY( aNFiscal[ P_CLIENTE ][ CLI_CPF ] ) 
@@ -1988,13 +1988,13 @@ FUNCTION DisplayDados( aNFiscal, nRow )
              @ 05,nColuna Say "CGC......:" Get aNFiscal[ P_CLIENTE ][ CLI_CGC ] ; 
                Pict "@R 99.999.999/9999-99" 
           ENDIF 
-          @ 06,nColuna Say "Inscri‡„o:" Get aNFiscal[ P_CLIENTE ][ CLI_INSCRICAO ] 
-          @ 07,nColuna Say "Endere‡o.:" Get aNFiscal[ P_CLIENTE ][ CLI_ENDERECO ] Pict "@S33" 
+          @ 06,nColuna Say "Inscriï¿½ï¿½o:" Get aNFiscal[ P_CLIENTE ][ CLI_INSCRICAO ] 
+          @ 07,nColuna Say "Endereï¿½o.:" Get aNFiscal[ P_CLIENTE ][ CLI_ENDERECO ] Pict "@S33" 
           @ 08,nColuna Say "Bairro...:" Get aNFiscal[ P_CLIENTE ][ CLI_BAIRRO ] 
           @ 09,nColuna Say "Cidade...:" Get aNFiscal[ P_CLIENTE ][ CLI_CIDADE ] 
           @ 10,nColuna Say "Estado...:" Get aNFIscal[ P_CLIENTE ][ CLI_ESTADO ] 
           @ 11,nColuna Say "CEP......:" Get aNFiscal[ P_CLIENTE ][ CLI_CEP ] Pict "@R 99999-999" 
-          @ 12,nColuna Say "Cobran‡a.:" Get aNFiscal[ P_CLIENTE ][ CLI_COBRANCA ] 
+          @ 12,nColuna Say "Cobranï¿½a.:" Get aNFiscal[ P_CLIENTE ][ CLI_COBRANCA ] 
           @ 13,nColuna Say "Cons/Ind.:" Get aNFiscal[ P_CLIENTE ][ CLI_CONSIND ] Pict "!" 
           READ 
           IF UpDated() .AND. !lNotaManual 
@@ -2006,8 +2006,8 @@ FUNCTION DisplayDados( aNFiscal, nRow )
           @ 03,nColuna Say "Codigo...:" Get nCodTra Pict "999" Valid BuscaCodTransportadora( @nCodTra, aNFiscal, GetList ) 
           @ 04,nColuna Say "Nome.....:" Get aNFiscal[ P_TRANSPORTE ][ TRA_DESCRICAO ] Pict "@S33" 
           @ 05,nColuna Say "CGC......:" Get aNFiscal[ P_TRANSPORTE ][ TRA_CGC ] Pict "@R 99.999.999/9999-99" 
-          @ 06,nColuna Say "Inscri‡„o:" Get aNFiscal[ P_TRANSPORTE ][ TRA_INSCRICAO ] 
-          @ 07,nColuna Say "Endere‡o.:" Get aNFiscal[ P_TRANSPORTE ][ TRA_ENDERECO ] Pict "@S33" 
+          @ 06,nColuna Say "Inscriï¿½ï¿½o:" Get aNFiscal[ P_TRANSPORTE ][ TRA_INSCRICAO ] 
+          @ 07,nColuna Say "Endereï¿½o.:" Get aNFiscal[ P_TRANSPORTE ][ TRA_ENDERECO ] Pict "@S33" 
           @ 08,nColuna Say "Bairro...:" Get aNFiscal[ P_TRANSPORTE ][ TRA_BAIRRO ] 
           @ 09,nColuna Say "Cidade...:" Get aNFiscal[ P_TRANSPORTE ][ TRA_CIDADE ] 
           @ 10,nColuna Say "Estado...:" Get aNFIscal[ P_TRANSPORTE ][ TRA_ESTADO ] 
@@ -2023,7 +2023,7 @@ FUNCTION DisplayDados( aNFiscal, nRow )
           nTecla:= 0 
           VPBoxSombra( 02, 31, 20, 77, , "15/01", "00/01" ) 
           oTAB:=tbrowsenew(16,nColuna,19,76) 
-          oTAB:addcolumn(tbcolumnnew(,{|| IF( aNFiscal[ P_PRODUTOS ][ nRow ][ PRO_QUANTIDADE ]==0, " ", "û" ) + ; 
+          oTAB:addcolumn(tbcolumnnew(,{|| IF( aNFiscal[ P_PRODUTOS ][ nRow ][ PRO_QUANTIDADE ]==0, " ", "ï¿½" ) + ; 
                                Tran( StrZero( aNFiscal[ P_PRODUTOS ][ nRow ][ PRO_CODIGO ], 7, 0 ), "@R XXX-XXXX" ) + ; 
                                         " " + aNFiscal[ P_PRODUTOS ][ nRow ][ PRO_DESCRICAO ] } ) ) 
           oTAB:AUTOLITE:=.f. 
@@ -2071,8 +2071,8 @@ wait aNFiscal[ P_PRODUTOS ][ nRow ][ PRO_MVAVALOR ] // erro
               @ 12,61 Say "(%) >"  + Tran( aNFiscal[ P_PRODUTOS ][ nRow ][ PRO_MVAPERCENTUAL ], "@E 99,999.99" ) 
  
               @ 13,61 Say "% Red: " + TRAN( aNFiscal[ P_PRODUTOS ][ nRow ][ PRO_PERREDUCAO ], "@E 99.9999" ) 
-              @ 14,nColuna Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ BROWSE ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
-              @ 15,nColuna Say "Codigo   Descri‡ao                         " 
+              @ 14,nColuna Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ BROWSE ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+              @ 15,nColuna Say "Codigo   Descriï¿½ao                         " 
               nTecla:= Inkey(0) 
               IF nTecla==K_ESC 
                  nOpcao:= 0 
@@ -2185,7 +2185,7 @@ wait aNFiscal[ P_PRODUTOS ][ nRow ][ PRO_MVAVALOR ] // erro
           Mensagem( "[INS]Novo [ENTER]Altera" ) 
           VPBoxSombra( 02, 31, 20, 77, , "15/01", "00/01" ) 
           oTAB:=tbrowsenew( 10, nColuna, 19, 76 ) 
-          oTAB:addcolumn(tbcolumnnew(,{|| IF( aNFiscal[ P_SERVICOS ][ nRow ][ SER_QUANTIDADE ]==0, " ", "û" ) + ; 
+          oTAB:addcolumn(tbcolumnnew(,{|| IF( aNFiscal[ P_SERVICOS ][ nRow ][ SER_QUANTIDADE ]==0, " ", "ï¿½" ) + ; 
                                Tran( StrZero( aNFiscal[ P_SERVICOS ][ nRow ][ SER_CODIGO ], 7, 0 ), "@R XXX-XXXX" ) + ; 
                                         " " + aNFiscal[ P_SERVICOS ][ nRow ][ SER_DESCRICAO ] } ) ) 
           oTAB:AUTOLITE:=.f. 
@@ -2203,8 +2203,8 @@ wait aNFiscal[ P_PRODUTOS ][ nRow ][ PRO_MVAVALOR ] // erro
               @ 05,nColuna Say "Preco Un.: " + TRAN( aNFiscal[ P_SERVICOS ][ nRow ][ SER_UNITARIO ], "@E 999,999.999" ) 
               @ 06,nColuna Say "Quantia..: " + TRAN( aNFiscal[ P_SERVICOS ][ nRow ][ SER_QUANTIDADE ], "@E 999,999.99" ) 
               @ 07,nColuna Say "Total....: " + TRAN( aNFiscal[ P_SERVICOS ][ nRow ][ SER_TOTAL ], "@E 999,999,999.999" ) 
-              @ 08,nColuna Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ BROWSE ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
-              @ 09,nColuna Say "Codigo   Descri‡ao                         " 
+              @ 08,nColuna Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ BROWSE ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+              @ 09,nColuna Say "Codigo   Descriï¿½ao                         " 
               nTecla:= Inkey(0) 
               IF nTecla==K_ESC 
                  nOpcao:= 0 
@@ -2331,12 +2331,12 @@ wait aNFiscal[ P_PRODUTOS ][ nRow ][ PRO_MVAVALOR ] // erro
           @ 10,nColuna Say "Data Saida..:" Get aNFiscal[ P_DIVERSOS ][ DIV_DATASAIDA ] 
           @ 11,nColuna Say "Hora Saida..:" Get aNFiscal[ P_DIVERSOS ][ DIV_HORASAIDA ] Pict "@R 99:99" 
           @ 12,nColuna Say "Placa.......:" Get aNFiscal[ P_DIVERSOS ][ DIV_PLACA ] Pict "@!" 
-          @ 13,nColuna-1 Say "µººººººººººººººººººººººººººººººººººººººººººº¶" 
-          @ 14,nColuna-1 Say "¼                                           ½" 
-          @ 15,nColuna-1 Say "¼                                           ½" 
-          @ 16,nColuna-1 Say "¼                                           ½" 
-          @ 17,nColuna-1 Say "¼                                           ½" 
-          @ 18,nColuna-1 Say "¸»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»¹" 
+          @ 13,nColuna-1 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+          @ 14,nColuna-1 Say "ï¿½                                           ï¿½" 
+          @ 15,nColuna-1 Say "ï¿½                                           ï¿½" 
+          @ 16,nColuna-1 Say "ï¿½                                           ï¿½" 
+          @ 17,nColuna-1 Say "ï¿½                                           ï¿½" 
+          @ 18,nColuna-1 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
           #ifndef CONECSUL 
              @ 14,nColuna Get aNFiscal[ P_DIVERSOS ][ DIV_OBSERVACOES ][ OBS_LINHA1 ] Pict "@S43" 
              @ 15,nColuna Get aNFiscal[ P_DIVERSOS ][ DIV_OBSERVACOES ][ OBS_LINHA2 ] Pict "@S43" 
@@ -2427,7 +2427,7 @@ wait aNFiscal[ P_PRODUTOS ][ nRow ][ PRO_MVAVALOR ] // erro
                IF !Empty( aNFiscal[ P_FATURA ][ nCont ][ FAT_PAGAMENTO ] ) .AND. LastKey() <> K_ESC 
                   cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
                   VPBOX( nLin, 50, nLin + 3, 75 ) 
-                  @ nLin+1, 51 Say "Pagamento em cheque n§:" 
+                  @ nLin+1, 51 Say "Pagamento em cheque nï¿½:" 
                   @ nLin+2, 60 Get aNFiscal[ P_FATURA ][ nCont ][ FAT_CHEQUE ] 
                   READ 
                   ScreenRest( cTelaRes ) 
@@ -2580,14 +2580,14 @@ RETURN .T.
  
  
   /***** 
-  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-  ³ Funcao      ³ GRAVACAO 
-  ³ Finalidade  ³ Verificar integridade de dados e efetuar a gravacao dos mesmos 
-  ³ Parametros  ³ Nil 
-  ³ Retorno     ³ Nil 
-  ³ Programador ³ Valmor Pereira Flores 
-  ³ Data        ³ 12/06/97 
-  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+  ï¿½ Funcao      ï¿½ GRAVACAO 
+  ï¿½ Finalidade  ï¿½ Verificar integridade de dados e efetuar a gravacao dos mesmos 
+  ï¿½ Parametros  ï¿½ Nil 
+  ï¿½ Retorno     ï¿½ Nil 
+  ï¿½ Programador ï¿½ Valmor Pereira Flores 
+  ï¿½ Data        ï¿½ 12/06/97 
+  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
   */ 
   Static Function Gravacao( aNFiscal, nNumero, lEspecial ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -2614,19 +2614,19 @@ RETURN .T.
   VPBox( nLin, nCol, nLin+15, nCol + 47, "TESTE PRE-GRAVACAO", _COR_BROW_BOX ) 
   SetColor( _COR_BROW_BOX ) 
   ++nLin 
-  @ nLin+01, nCol+1 Say "Ú Testes de dados ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿Ú Sit Ä¿" 
-  @ nLin+02, nCol+1 Say "³                                   ³³   0% ³" 
-  @ nLin+03, nCol+1 Say "³  [ ] Integridade de Cadastros     ³³  10% ³" 
-  @ nLin+04, nCol+1 Say "³  [ ] Verificacao de CGC / CPF     ³³  20% ³" 
-  @ nLin+05, nCol+1 Say "³  [ ] Integridade de Calculos      ³³  30% ³" 
-  @ nLin+06, nCol+1 Say "³  [ ] Integridade de Pedidos       ³³  40% ³" 
-  @ nLin+07, nCol+1 Say "³  [ ] Diferencas entre arquivos    ³³  50% ³" 
-  @ nLin+08, nCol+1 Say "³  [ ] Baixa de Estoque             ³³  60% ³" 
-  @ nLin+09, nCol+1 Say "³                                   ³³  70% ³" 
-  @ nLin+10, nCol+1 Say "ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´³  80% ³" 
-  @ nLin+11, nCol+1 Say "³  Numero da Nota fiscal:           ³³  90% ³" 
-  @ nLin+12, nCol+1 Say "³  Data de Emissao......:           ³³ 100% ³" 
-  @ nLin+13, nCol+1 Say "ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙÀÄÄÄÄÄÄÙ" 
+  @ nLin+01, nCol+1 Say "ï¿½ Testes de dados ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ Sit Ä¿" 
+  @ nLin+02, nCol+1 Say "ï¿½                                   ï¿½ï¿½   0% ï¿½" 
+  @ nLin+03, nCol+1 Say "ï¿½  [ ] Integridade de Cadastros     ï¿½ï¿½  10% ï¿½" 
+  @ nLin+04, nCol+1 Say "ï¿½  [ ] Verificacao de CGC / CPF     ï¿½ï¿½  20% ï¿½" 
+  @ nLin+05, nCol+1 Say "ï¿½  [ ] Integridade de Calculos      ï¿½ï¿½  30% ï¿½" 
+  @ nLin+06, nCol+1 Say "ï¿½  [ ] Integridade de Pedidos       ï¿½ï¿½  40% ï¿½" 
+  @ nLin+07, nCol+1 Say "ï¿½  [ ] Diferencas entre arquivos    ï¿½ï¿½  50% ï¿½" 
+  @ nLin+08, nCol+1 Say "ï¿½  [ ] Baixa de Estoque             ï¿½ï¿½  60% ï¿½" 
+  @ nLin+09, nCol+1 Say "ï¿½                                   ï¿½ï¿½  70% ï¿½" 
+  @ nLin+10, nCol+1 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½  80% ï¿½" 
+  @ nLin+11, nCol+1 Say "ï¿½  Numero da Nota fiscal:           ï¿½ï¿½  90% ï¿½" 
+  @ nLin+12, nCol+1 Say "ï¿½  Data de Emissao......:           ï¿½ï¿½ 100% ï¿½" 
+  @ nLin+13, nCol+1 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
  
   Mensagem( "Dados Cadastrais: CLIENTES ******************" ) 
   /* CADASTRO DE CLIENTES */ 
@@ -2707,7 +2707,7 @@ RETURN .T.
                  lErro6:= .T. 
               ENDIF 
            ELSE 
-              AAdd( aNFiscal[ P_TESTE ][ TES_ERROS ], "(Alerta) Este produto esta sem preco e qtd e nÆo vai movimentar o estoque: " ) 
+              AAdd( aNFiscal[ P_TESTE ][ TES_ERROS ], "(Alerta) Este produto esta sem preco e qtd e nï¿½o vai movimentar o estoque: " ) 
               AAdd( aNFiscal[ P_TESTE ][ TES_ERROS ],  aNFiscal[ P_PRODUTOS ][ nCt ][ PRO_DESCRICAO ] ) 
               lErro6:= .T. 
            ENDIF 
@@ -2807,7 +2807,7 @@ RETURN .T.
  
   IF nOpcao == 1 
      Gravando( "GRAVANDO! Aguarde..." ) 
-     Gravando( "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" ) 
+     Gravando( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" ) 
      For nCt:= 2 To Len( aNFiscal ) 
          For nCt2:= 1 To Len( aNFiscal[ nCt ] ) 
              Gravando( aNFiscal[ nCt ][ nCt2 ] ) 
@@ -2825,7 +2825,7 @@ RETURN .T.
      /* Grava Informacao no cadastro de Pedido */ 
      DBSelectAr( _COD_PEDIDO ) 
      IF !EOF() 
-        IF NetRLock() 
+        IF netrlock() 
            Replace CODNF_ With nNumero 
         ENDIF 
      ENDIF 
@@ -2838,7 +2838,7 @@ RETURN .T.
            !Empty( DET->DETAL2 ) .or.; 
            !Empty( DET->DETAL3 ) 
            D_N->( DBAppend() ) 
-           if D_N->( NetRlock() ) 
+           if D_N->( netrlock() ) 
               Replace D_N->CODNF_ with nNumero,; 
                       D_N->ORDEM_ With DET->ORDEM_,; 
                       D_N->INDICE With DET->INDICE,; 
@@ -3054,7 +3054,7 @@ RETURN .T.
                     Gravando( "         " + aNFiscal[ P_PRODUTOS ][ nCt ][ PRO_DESCRICAO ] ) 
                  ENDIF 
               ELSE 
-                 Gravando( "(Alerta) Este produto esta sem preco e qtd e nÆo vai movimentar o estoque: " ) 
+                 Gravando( "(Alerta) Este produto esta sem preco e qtd e nï¿½o vai movimentar o estoque: " ) 
                  Gravando( aNFiscal[ P_PRODUTOS ][ nCt ][ PRO_DESCRICAO ] ) 
               ENDIF 
               DBSelectAr( _COD_PRODNF ) 
@@ -3096,7 +3096,7 @@ RETURN .T.
         Gravando( "Controle: " + aNFiscal[ P_PRODUTOS ][ nCt ][ PRO_DESCRICAO ] ) 
         IF aNFiscal[ P_PRODUTOS ][ nCt ][ PRO_QUANTIDADE ] > 0 
            DBAppend() 
-           IF NetRLock() 
+           IF netrlock() 
               Repl CODNF_ With aNFiscal[ P_CABECALHO ][ CAB_NOTAFISCAL ],; 
                    CODIGO With StrZero( aNFiscal[ P_NUMERO ][ NUM_PEDIDO ], 8, 0 ),; 
                    CODCLI With aNFiscal[ P_CLIENTE ][ CLI_CODIGO ],; 
@@ -3119,7 +3119,7 @@ RETURN .T.
      NEXT 
      DBSelectAr( _COD_PEDIDO ) 
      IF !EOF() 
-        IF NetRLock() 
+        IF netrlock() 
            Replace CODNF_ With nNumero 
         ENDIF 
      ENDIF 
@@ -3162,7 +3162,7 @@ RETURN .T.
         nCodigo:= CODIGO 
         FOR nCt:= 1 TO Len( aNFiscal[ P_FATURA ] ) 
             DBAppend() 
-            IF NetRLock() 
+            IF netrlock() 
                Repl CODIGO With ++nCodigo,; 
                     TABOPE With aNFiscal[ P_DIVERSOS ][ DIV_TABOPERACAO ],; 
                     DOC___ With StrZero( aNFiscal[ P_CABECALHO ][ CAB_NOTAFISCAL ], 09, 00 ),; 
@@ -3198,7 +3198,7 @@ RETURN .T.
             DBSelectAr( _COD_DUPAUX ) 
             IF USED() 
                DBAppend() 
-               IF NetRLock() 
+               IF netrlock() 
                   Repl CODNF_ With aNFiscal[ P_CABECALHO ][ CAB_NOTAFISCAL ],; 
                        CDESCR With aNFiscal[ P_CLIENTE ][ CLI_DESCRICAO ],; 
                        CLIENT With aNFiscal[ P_CLIENTE ][ CLI_CODIGO ],; 
@@ -3227,7 +3227,7 @@ RETURN .T.
      ENDIF 
  
      DBSelectAr( _COD_NFISCAL ) 
-     IF NetRLock() 
+     IF netrlock() 
         Replace NVEZES With nVezes 
         Replace TIPONF With aNFiscal[ P_CABECALHO ][ CAB_ENTRADASAIDA ] 
      ENDIF 
@@ -3570,7 +3570,7 @@ Function AddObservacao( aNFiscal, cObservacao )
 Local nObs:= 1 
     /* ARMAZENAMENTO DE OBSERVACOES DIVERSAS */ 
     FOR nObs:= 1 TO Len( aNFiscal[ P_DIVERSOS ][ DIV_OBSERVACOES ] ) 
-        /* Verifica se j  esta gravada a observacao */ 
+        /* Verifica se jï¿½ esta gravada a observacao */ 
         IF ALLTRIM( aNFiscal[ P_DIVERSOS ][ DIV_OBSERVACOES ][ nObs ] ) == ALLTRIM( cObservacao  ) 
            EXIT 
         /* Verifica se tem um espaco em branco para a observacao */ 

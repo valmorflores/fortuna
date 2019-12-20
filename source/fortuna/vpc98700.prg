@@ -6,9 +6,9 @@
 ** Data        - 29/Maio/1995 
 ** Atualizacao - 
 */ 
-#include "VPF.CH" 
-#include "INKEY.CH" 
-#include "FORMATOS.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
+#include "formatos.ch" 
 
 #ifdef HARBOUR
 function vpc98700()
@@ -49,14 +49,14 @@ Function ProdDif()
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ PRODFOR 
-³ Finalidade  ³ Visalizacao e alteracao de Precos por Fornecedor <Manual> 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 22/Outubro/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ PRODFOR 
+ï¿½ Finalidade  ï¿½ Visalizacao e alteracao de Precos por Fornecedor <Manual> 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 22/Outubro/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function ProdFor() 
   Local cTela:= ScreenSave( 0, 0, 24, 79 ), cCor:= SetColor(),; 
@@ -119,7 +119,7 @@ Static Function ProdFor()
          if MPR->SALDO_< MPR->ESTMIN 
             @ 20,02 Say "Produto: "+MPR->CODFAB + "  <" + MPR->DESCRI + ">" 
             @ 21,02 say "                                      " 
-            @ 21,02 say "Prod. abaixo do estoque m¡nimo: " + alltrim(str(MPR->SALDO_,5,0)) 
+            @ 21,02 say "Prod. abaixo do estoque mï¿½nimo: " + alltrim(str(MPR->SALDO_,5,0)) 
          else 
             @ 20,02 Say "Produto: "+MPR->CODFAB + "  <" + MPR->DESCRI + ">" 
             @ 21,02 say "                                        " 
@@ -148,7 +148,7 @@ Static Function ProdFor()
                  SetColor( _COR_GET_EDICAO ) 
                  @ 11, 36 Say "Preco Venda:" Get nPrecoVenda Pict "@E 999,999,999.999" 
                  READ 
-                 IF NetRLock() 
+                 IF netrlock() 
                     Replace PRECOV With nPrecoVenda, DATA__ With Date() 
                  ENDIF 
                  DBUnlockAll() 
@@ -290,7 +290,7 @@ SetColor( _COR_GET_EDICAO )
   Mensagem("Digite o percentual de reajuste.") 
 @ LIN+3,COL+1 Say "Tipo...........:" get nTipo PICT "9" VALID nTipo>=1 .AND. nTipo<=2 When ; 
   Mensagem("Atualizacao do PRECO DE VENDA com base no preco: [1]De Compra / [2]Atual") 
-@ LIN+4,COL+1 Say Repl("Í",37) 
+@ LIN+4,COL+1 Say Repl("ï¿½",37) 
 @ LIN+5,COL+1 Say "Registro.......: 0000" 
 @ LIN+6,COL+1 Say "Codigo Produto.: 000.000-0" 
 @ LIN+7,COL+1 Say "Preco Anterior.:" 
@@ -318,7 +318,7 @@ AVISO("Aguarde...",24-5)
       nPreco:= IF( nTipo==1, PXF->VALOR_, MPR->PRECOV ) 
       nPreco:= nPreco + ( ( nPreco * nPERCEN ) / 100 ) 
       @ LIN+8,COL+17 Say Tran( nPreco, "@E ***,***,***,***.***" ) 
-      IF MPR->( NetRLock() ) 
+      IF MPR->( netrlock() ) 
          REPL MPR->PRECOV with nPreco 
       ENDIF 
       DBUnlock() 

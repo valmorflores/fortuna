@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#include "Inkey.ch" 
-#include "VPF.ch" 
+#include "inkey.ch" 
+#include "vpf.ch" 
  
 #Define _MAX_HORIZONTAL   160 
 #Define _MAX_VERTICAL     200 
@@ -36,7 +36,7 @@ Local aFluxo[ _MAX_VERTICAL ][ _MAX_HORIZONTAL ]
   VPBox( 0, 0, 24, 79, "FLUXO", _COR_BROW_BOX ) 
   SetColor( _COR_BROWSE ) 
  
-  @ 02,02 SAY    "Menu de Opcoes ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+  @ 02,02 SAY    "Menu de Opcoes ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
   @ 03,02 PROMPT "1-> CONTAS A PAGAR                        " 
   @ 04,02 PROMPT "2-> CONTAS A RECEBER                      " 
   Menu to nPagarReceber 
@@ -44,7 +44,7 @@ Local aFluxo[ _MAX_VERTICAL ][ _MAX_HORIZONTAL ]
   Scroll( 1, 1, 10, 78 ) 
  
 //  @ 00,00 SAY PAD( _VER + " - PROGRAMA DE FLUXO DE CONTAS A PAGAR ", 80 ) COLOR "15/02" 
-  @ 02,02 SAY    "Menu de Opcoes ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+  @ 02,02 SAY    "Menu de Opcoes ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
   @ 03,02 PROMPT "1-> Contas quitadas por data de quitacao  " 
   @ 04,02 PROMPT "2-> Contas pendentes por vencimento       " 
   @ 05,02 PROMPT "3-> Geral por data de emissao             " 
@@ -68,7 +68,7 @@ Local aFluxo[ _MAX_VERTICAL ][ _MAX_HORIZONTAL ]
               ENDIF 
               OPE->( DBSkip() ) 
           ENDDO 
-          @ 02,02 Say   "Operacao ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+          @ 02,02 Say   "Operacao ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
           Scroll( 03, 01, 12, 78 ) 
           FOR i:= 1 TO Len( aOperacoes ) 
               @ ROW()+1,02 PROMPT aOperacoes[ i ][ 1 ] + " - " + aOperacoes[ i ][ 2 ] 
@@ -135,7 +135,7 @@ Local aFluxo[ _MAX_VERTICAL ][ _MAX_HORIZONTAL ]
                                  CONTA_ With PAG->CODFOR,; 
                                  VALOR_ With VALOR_ + nValor 
                       ENDIF 
-                  CASE nOpcao==3   /// POR EMISSAO, INDEPENDENTE DE QUITA€ÇO 
+                  CASE nOpcao==3   /// POR EMISSAO, INDEPENDENTE DE QUITAï¿½ï¿½O 
                       @ 07,01 SAY PAG->( EMISS_ ) 
                       IF PAG->EMISS_ <> CTOD( "" ) .AND.; 
                           ( nOperacao==999 .OR. PAG->TABOPE == nOperacao ) 
@@ -151,7 +151,7 @@ Local aFluxo[ _MAX_VERTICAL ][ _MAX_HORIZONTAL ]
                                  CONTA_ With PAG->CODFOR,; 
                                  VALOR_ With VALOR_ + nValor 
                       ENDIF 
-                  CASE nOpcao==4   /// POR VENCIMENTO, INDEPENDENTE DE QUITA€ÇO 
+                  CASE nOpcao==4   /// POR VENCIMENTO, INDEPENDENTE DE QUITAï¿½ï¿½O 
                       @ 07,01 SAY PAG->( VENCIM ) 
                       IF PAG->VENCIM <> CTOD( "" ) .AND.; 
                           ( nOperacao==999 .OR. PAG->TABOPE == nOperacao ) 
@@ -225,7 +225,7 @@ Local aFluxo[ _MAX_VERTICAL ][ _MAX_HORIZONTAL ]
                                  CONTA_ With DPA->CLIENT,; 
                                  VALOR_ With VALOR_ + nValor 
                       ENDIF 
-                  CASE nOpcao==3   /// POR EMISSAO, INDEPENDENTE DE QUITA€ÇO 
+                  CASE nOpcao==3   /// POR EMISSAO, INDEPENDENTE DE QUITAï¿½ï¿½O 
                       @ 07,01 SAY DPA->( DATAEM ) 
                       IF DPA->DATAEM <> CTOD( "" ) .AND. DPA->NFNULA==" " 
  
@@ -522,9 +522,9 @@ oTb:AddColumn( tbcolumnnew( aTitulo[ 079 ], {|| Tran( aFluxo[ nRow ][ 79 ], cMas
 oTb:AddColumn( tbcolumnnew( aTitulo[ 080 ], {|| Tran( aFluxo[ nRow ][ 80 ], cMascara ) })) 
 oTb:AddColumn( tbcolumnnew( "TOTAL",        {|| Tran( aFluxo[ nRow ][ _MAX_HORIZONTAL ], "@E 999,999,999.99" )  })) 
 oTb:ColorSpec:= SetColor() + ",15/06,14/03,00/03,15/01" 
-oTB:ColSep:= "³" 
-//oTB:HeadSep:= "°" 
-oTB:footSep:= "°" 
+oTB:ColSep:= "ï¿½" 
+//oTB:HeadSep:= "ï¿½" 
+oTB:footSep:= "ï¿½" 
 oTb:Freeze:= 2 
 oTb:AUTOLITE:=.f. 
 oTb:GOTOPBLOCK:={|| nRow:= 1 } 

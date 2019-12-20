@@ -6,8 +6,8 @@
 * Data        - 10/Outubro/1994 
 * Atualizacao - 10/Abril/1995 
 */ 
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
 
 #ifdef HARBOUR
 function vpc50000()
@@ -61,10 +61,10 @@ whil .t.
         "Atualizacao manual de preco por fornecedor.",,,; 
         COR[6],.T.)) 
    aadd(MENULIST,menunew(13,25," 2 Percentual   ",2,COR[11],; 
-        "Atualiza‡„o autom tica de pre‡o por fornecedor.",,,; 
+        "Atualizaï¿½ï¿½o automï¿½tica de preï¿½o por fornecedor.",,,; 
         COR[6],.T.))
    aadd(MENULIST,menunew(14,25," 3 Especial     ",2,COR[11],; 
-        "Atualiza‡„o autom tica de pre‡o por fornecedor.",,,; 
+        "Atualizaï¿½ï¿½o automï¿½tica de preï¿½o por fornecedor.",,,; 
         COR[6],.T.)) 
    aadd(MENULIST,menunew(15,25," 0 Retorna      ",2,COR[11],; 
         "Retorna ao menu anterior.",,,; 
@@ -328,7 +328,7 @@ stat func Produtos()
          @ 24-4,02 Say "Produto: "+MPR->DESCRI 
          if MPR->SALDO_< MPR->ESTMIN 
             @ 24-3,42 say "                                   " 
-            @ 24-3,42 say "Prod. abaixo do estoque m¡nimo: " + alltrim(str(MPR->SALDO_,5,0)) 
+            @ 24-3,42 say "Prod. abaixo do estoque mï¿½nimo: " + alltrim(str(MPR->SALDO_,5,0)) 
          else 
             @ 24-3,42 say "                                   " 
             @ 24-3,42 say "Saldo do produto: "+alltrim(str(MPR->SALDO_,5,0)) 
@@ -424,7 +424,7 @@ stat func Produtos()
                  IF !DBSeek( MPr->Indice ) 
                     DBAppend() 
                  ENDIF 
-                 IF NetRLock(5) 
+                 IF netrlock(5) 
                     repl CPROD_ with cINDICE,; 
                          CODFOR with nCODFOR,; 
                          PVELHO With VALOR_,; 
@@ -559,7 +559,7 @@ VPBOX(03,35,13,73,"Atualizacao de Precos")
 @ 06,36 Say "Alterar preco de venda c/base" 
 @ 07,36 Say "na margem dos produtos?" Get cAlteraVenda Pict "!" valid cAlteraVenda $ "SN" 
  
-@ 08,36 Say Repl("Í",37) 
+@ 08,36 Say Repl("ï¿½",37) 
 @ 09,36 Say "Registro.......: 0000" 
 @ 10,36 Say "Codigo Produto.: 000.000-0" 
 @ 11,36 Say "Preco Anterior.:" 
@@ -580,12 +580,12 @@ EndIf
       @ 10,53 Say Tran(CPROD_,"@R XXX.XXX-X") 
       @ 11,53 Say Tran(VALOR_,"@E ***,***,***,***.***") 
       @ 12,53 Say Tran(VALOR_+((VALOR_*nPERCEN)/100),"@E ***,***,***,***.***") 
-      IF NetRLOCK() 
+      IF netrlock() 
          REPL PVELHO WITH VALOR_,; 
               VALOR_ with VALOR_+((VALOR_*nPERCEN)/100) 
          IF cAlteraVenda=="S" 
             IF MPR->( DBSeek( pad( PXF->CPROD_, 12 ) ) ) 
-               IF MPR->( NetRLock() ) 
+               IF MPR->( netrlock() ) 
                   Replace MPR->PRECOV With PXF->VALOR_ + ((PXF->VALOR_*MPR->PERCPV)/100) 
                ENDIF 
             ENDIF 
@@ -714,7 +714,7 @@ Local nPreco_, nCodFor, nTabela, dDataBase:= ctod("  /  /  ")
      inkey(0)
 
      Scroll( 1, 1, 04, 78, 0 )
-     @ 03,03 Say "Cotacao baseada em produtos com saldo em estoque abaixo do m¡nimo."
+     @ 03,03 Say "Cotacao baseada em produtos com saldo em estoque abaixo do mï¿½nimo."
 
      bBlock:= {|| STRZERO( CODFOR, 6, 0 ) + " " + LEFT( INDICE, 7 ) + " " + LEFT( DESCRI, 40 ) + Tran( QUANT_, "@eZ 9,999.999" ) + " " + Tran( PRECO_, "@eZ 999,999.999" ) + " " }
      Tecla := NIL 
@@ -745,7 +745,7 @@ Local nFator:= 0
       DBSelectAr( _COD_MPRIMA )
       WHILE !MPR->( EOF() )
            IF BuscaPrecoCompra()
-              IF PXF->( NETRLOCK( 5 ) )
+              IF PXF->( netrlock( 5 ) )
                  nPrecoFicticio:= ( 1 + ( 1 * ( MPR->PERCPV / 100 ) ) )
                  nFator:= ( 1 / nPrecoFicticio ) * 100
                  nPreco:= ( MPR->PRECOV * ( nFator / 100 ) )

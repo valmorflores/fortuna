@@ -6,10 +6,10 @@
 ** Atualizacao - 
 ** Programador - Valmor Pereira Flores 
 */ 
-#include "VPF.CH" 
-#Include "BOX.CH" 
-#Include "INKEY.CH" 
-#Include "FORMATOS.CH"
+#include "vpf.ch" 
+#Include "box.ch" 
+#Include "inkey.ch" 
+#Include "formatos.ch"
 
 #ifdef HARBOUR
 function vpc59999()
@@ -183,7 +183,7 @@ whil lastkey()<>K_ESC
       @ 05,12 Say "Item..........: [" + StrZero( nCt, 3, 0 ) + "]" 
       @ 06,12 Say "Produto.......:" Get cGrupo_ Pict "999" Valid VerGrupo( cGrupo_, @cCodigo ) 
       @ 06,33 Say "-" 
-      @ 06,34 Get cCodigo Pict "9999" Valid VerCodigo( cCodigo, GetList ) when mensagem("Digite o c¢digo do produto.") 
+      @ 06,34 Get cCodigo Pict "9999" Valid VerCodigo( cCodigo, GetList ) when mensagem("Digite o cï¿½digo do produto.") 
       @ 07,12 Say "Descricao.....:" Get aProd[nCT][2]  Pict "@S35" 
       @ 08,12 Say "Unidade.......:" Get aProd[nCT][3] 
       @ 09,12 Say "C. Fiscal.....:" Get nClassif  Pict "999" Valid VerClasse( @nClassif ) 
@@ -819,7 +819,7 @@ Loca cTELA:=screensave(00,00,24,79),;
         nCODPRO=val(CODRED) 
         @ 24-3,12 say spac(44) 
         if SALDO_ < ESTMIN 
-           @ 24-3,12 say "Produto abaixo do estoque m¡nimo: " + alltrim(str(SALDO_,5,0)) 
+           @ 24-3,12 say "Produto abaixo do estoque mï¿½nimo: " + alltrim(str(SALDO_,5,0)) 
         else 
            @ 24-3,12 say "Saldo do produto: "+alltrim(str(SALDO_,5,0)) 
         endif 
@@ -877,14 +877,14 @@ return(.T.)
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ CALCULOS 
-³ Finalidade  ³ Calcular ICMs e total de cada item na ordem de compra. 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 05/Junho/1995 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ CALCULOS 
+ï¿½ Finalidade  ï¿½ Calcular ICMs e total de cada item na ordem de compra. 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 05/Junho/1995 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function Calculos( oGET, Lista, nLocalGet ) 
    Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -893,7 +893,7 @@ Static Function Calculos( oGET, Lista, nLocalGet )
          nPos:=ASCAN( Lista, {|oGET_| oGET_:COL=oGET:COL .AND. oGET_:ROW=oGET:ROW } ) 
    Loca nPerRed, nVlrRed, nBaseIcm, nTabelaB:= 0 
  
-   /* C lculos Normais */ 
+   /* Cï¿½lculos Normais */ 
    DO CASE 
       CASE nLocalGet=1 
            Lista[nPos+1]:VarPut( VAL( oGET:BUFFER ) * Lista[nPos-1]:VarGet() ) 
@@ -903,19 +903,19 @@ Static Function Calculos( oGET, Lista, nLocalGet )
            Lista[nPos+1]:VarPut( ( VAL( oGET:BUFFER ) * Lista[nPos-3]:VarGet() ) / 100 ) 
    ENDCASE 
  
-   /*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ FORMAS DE CALCULO CFE ACIMA ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
-   1§ Opcao => [Valor Total] = [Valor unitario] * [Quantidade] 
-   2§ Opcao => [Valor IPI] = ( [Percentual de IPI] * [Valor Total] ) / 100 
-   3§ Opcao => [Valor ICMs] = ( [Valor Total] * [Percentual de ICMs] ) / 100 
-   ÚÄDisplay de Gets ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-   ³ Quantidade....:                                                         ³ 
-   ³ Valor Unitario: { |oGet| Calculos( oGet, GetList, 1 ) }                 ³ 
-   ³ Valor Total...:                                                         ³ 
-   ³ % IPI.........: { |oGet| Calculos( oGet, GetList, 2 ) }                 ³ 
-   ³ Valor IPI.....:                                                         ³ 
-   ³ % ICMs........: { |oGet| Calculos( oGet, GetList, 3 ) }                 ³ 
-   ³ Valor ICMs....:                                                         ³ 
-   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+   /*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ FORMAS DE CALCULO CFE ACIMA ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+   1ï¿½ Opcao => [Valor Total] = [Valor unitario] * [Quantidade] 
+   2ï¿½ Opcao => [Valor IPI] = ( [Percentual de IPI] * [Valor Total] ) / 100 
+   3ï¿½ Opcao => [Valor ICMs] = ( [Valor Total] * [Percentual de ICMs] ) / 100 
+   ï¿½ï¿½Display de Gets ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+   ï¿½ Quantidade....:                                                         ï¿½ 
+   ï¿½ Valor Unitario: { |oGet| Calculos( oGet, GetList, 1 ) }                 ï¿½ 
+   ï¿½ Valor Total...:                                                         ï¿½ 
+   ï¿½ % IPI.........: { |oGet| Calculos( oGet, GetList, 2 ) }                 ï¿½ 
+   ï¿½ Valor IPI.....:                                                         ï¿½ 
+   ï¿½ % ICMs........: { |oGet| Calculos( oGet, GetList, 3 ) }                 ï¿½ 
+   ï¿½ Valor ICMs....:                                                         ï¿½ 
+   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
    */ 
  
    IF nLocalGet==3 
@@ -929,7 +929,7 @@ Static Function Calculos( oGET, Lista, nLocalGet )
               SetColor( _COR_ALERTA_LETRA ) 
               @ 10,11 Say "Base de Calculo ICMs.:" + Tran( nBaseIcm, "@E 999,999,999.99" ) 
               @ 11,11 Say "Percentual de Reducao:" Get nPerRed Pict "@E 999.999" 
-              @ 12,11 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+              @ 12,11 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
               Read 
               nVlrRed:= ( nBaseIcm * nPerRed ) / 100 
               @ 13,11 Say "Valor Base de Calculo:" + Tran( nBaseIcm:= nTotal - nVlrRed, "@E 999,999,999.99" ) 
@@ -1033,7 +1033,7 @@ loca nCODIGO:=0,;
      @ 08,02 say "Cidade.............: "+CIDADE+"-"+ESTADO                    Color "15/" + CorFundoAtual() 
      @ 09,02 say "Fone/Fax...........: "+tran(FONE__,"@R (9999)-999.99.99")+" / "+; 
                                          tran(FAX___,"@R (9999)-999.99.99")   Color "10/" + CorFundoAtual() 
-     @ 10,02 say repl("Í",76)                                                 Color "15/" + CorFundoAtual() 
+     @ 10,02 say repl("ï¿½",76)                                                 Color "15/" + CorFundoAtual() 
      @ 11,02 say "Sub-Total..........: "+tran(SUBTOT,"@E ***,***,***.**")     Color "10/" + CorFundoAtual() 
      @ 12,02 say "Vlr. Frete.........: "+tran(VLRFRE,"@E ***,***,***.**")     Color "15/" + CorFundoAtual() 
      @ 13,02 say "Valor IPI..........: "+tran(VLRIPI,"@E ***,***,***.**")     Color "10/" + CorFundoAtual() 
@@ -1093,25 +1093,25 @@ loca nCODIGO:=0,;
  
                       @ 04,04 say "Codigo de lancamento:" 
                       @ 04,40 Say "Operacao:" get nOperacao Pict "999" Valid BuscaOperacao( @nOperacao ) 
-                      @ 05,04 say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+                      @ 05,04 say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
                       @ 06,04 say "Nota Fiscal:" get cNFISC_ 
                       @ 07,04 say "Emissao....:" get dEMISS_ 
                       @ 08,04 say "Entrada....:" get dENTRA_ 
                       @ 05,04 say "Codigo Reg.: "+StrZero(++nCODLAN,4,0) 
-                      @ 06,31 say "³Total:" get nVALOR_ pict "@E 999,999,999.99" 
-                      @ 07,31 say "³ICMs.:" get nVLRICM pict "@E 999,999,999.99" 
-                      @ 08,31 say "³IPI..:" get nVLRIPI pict "@E 999,999,999.99" 
+                      @ 06,31 say "ï¿½Total:" get nVALOR_ pict "@E 999,999,999.99" 
+                      @ 07,31 say "ï¿½ICMs.:" get nVLRICM pict "@E 999,999,999.99" 
+                      @ 08,31 say "ï¿½IPI..:" get nVLRIPI pict "@E 999,999,999.99" 
                       @ 06,54 Say "Vlr. Frete:" Get nVlrFre Pict "@E 999,999.99" 
-                      @ 07,54 Say "N§ Conhec.:" Get cConFre 
+                      @ 07,54 Say "Nï¿½ Conhec.:" Get cConFre 
                       @ 08,54 Say "Vencimento:" Get dVenFre 
-                      @ 09,04 say "ÄÄÂÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
-                      @ 10,04 say "Dp³Duplicata ³Valor        ³Bco³Vencim. ³Dat.Pgto³Cheque  ³Observacoes  " 
-                      @ 11,04 say "01³          ³             ³   ³        ³        ³        ³             " 
-                      @ 12,04 say "02³          ³             ³   ³        ³        ³        ³             " 
-                      @ 13,04 say "03³          ³             ³   ³        ³        ³        ³             " 
-                      @ 14,04 say "04³          ³             ³   ³        ³        ³        ³             " 
-                      @ 15,04 say "ÄÄÁÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
-                      @ 16,04 say "Total        ³             ³" 
+                      @ 09,04 say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+                      @ 10,04 say "Dpï¿½Duplicata ï¿½Valor        ï¿½Bcoï¿½Vencim. ï¿½Dat.Pgtoï¿½Cheque  ï¿½Observacoes  " 
+                      @ 11,04 say "01ï¿½          ï¿½             ï¿½   ï¿½        ï¿½        ï¿½        ï¿½             " 
+                      @ 12,04 say "02ï¿½          ï¿½             ï¿½   ï¿½        ï¿½        ï¿½        ï¿½             " 
+                      @ 13,04 say "03ï¿½          ï¿½             ï¿½   ï¿½        ï¿½        ï¿½        ï¿½             " 
+                      @ 14,04 say "04ï¿½          ï¿½             ï¿½   ï¿½        ï¿½        ï¿½        ï¿½             " 
+                      @ 15,04 say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
+                      @ 16,04 say "Total        ï¿½             ï¿½" 
                       nLIN:=10 
                       nCT:=0 
  
@@ -1139,7 +1139,7 @@ loca nCODIGO:=0,;
                       next 
                       read 
  
-                      // Lan‡a Cabecalho da Nota Fiscal - Se for o caso 
+                      // Lanï¿½a Cabecalho da Nota Fiscal - Se for o caso 
                       IF LastKey() <> K_ESC 
                          IF !EMPTY( cNFisc_ ) 
                             EST->( DBAppend() ) 
@@ -1242,7 +1242,7 @@ loca nCODIGO:=0,;
                             For nCT:=1 to Len(aAPAGAR) Step +4 
                                 cCAMPO:=StrZero(++nCT2,2,0) 
                                 If nCT2<=20 
-                                   If NetRlock(5) 
+                                   If netrlock(5) 
                                       EVAL( FIELDBLOCK( "NFIS"+StrZero(nCT,2,0) ), aAPAGAR[nCT][13] ) 
                                    Endif 
                                    DBUnlockAll() 
@@ -1307,15 +1307,15 @@ loca nCODIGO:=0,;
   return nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ ************************************************************* 
-³ Funcao      ³ ProdBaixa() 
-³ Finalidade  ³ Baixa de produtos no estoque. 
-³ Parametros  ³ oTab=> Objeto Browse 
-³             ³ CodOrdem=> Codigo indicador da ordem 
-³ Retorno     ³ NIL 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 25/Setembro/1995 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ************************************************************* 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ ************************************************************* 
+ï¿½ Funcao      ï¿½ ProdBaixa() 
+ï¿½ Finalidade  ï¿½ Baixa de produtos no estoque. 
+ï¿½ Parametros  ï¿½ oTab=> Objeto Browse 
+ï¿½             ï¿½ CodOrdem=> Codigo indicador da ordem 
+ï¿½ Retorno     ï¿½ NIL 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 25/Setembro/1995 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ************************************************************* 
 */ 
 Static Function ProdBaixa( oTB, CODORDEM, nNota, nOperacao ) 
   //* Define variaveis locais *// 
@@ -1368,7 +1368,7 @@ Static Function ProdBaixa( oTB, CODORDEM, nNota, nOperacao )
   //* Elabora o TBROWSE para apresentar os produtos pendentes *// 
   oTAB:=tbrowsedb(02,02,14,38) 
   oTAB:addcolumn(tbcolumnnew(,{|| OK____+; 
-                          strzero(ITEM__,3,0)+"Í"+; 
+                          strzero(ITEM__,3,0)+"ï¿½"+; 
                           alltrim(CODPRO)+" - "+; 
                            substr(DESPRO,1,13)+spac(19) })) 
   oTAB:AUTOLITE:=.F. 
@@ -1572,7 +1572,7 @@ loca nCODIGO:=0, nCODFOR:=0, oTAB, oTB, TECLA,;
      @ 08,02 say "Cidade.............: "+CIDADE+"-"+ESTADO            Color "15/" + CorFundoAtual() 
      @ 09,02 say "Fone/Fax...........: "+tran(FONE__,"@R (9999)-999.99.99")+" / "+; 
                                          tran(FAX___,"@R (9999)-999.99.99")  Color "10/" + CorFundoAtual() 
-     @ 10,02 say repl("Í",76)                  Color "15/" + CorFundoAtual() 
+     @ 10,02 say repl("ï¿½",76)                  Color "15/" + CorFundoAtual() 
      @ 11,02 say "Sub-Total..........: "+tran(SUBTOT,"@E ***,***,***.**") Color "10/" + CorFundoAtual() 
      @ 12,02 say "Vlr. Frete.........: "+tran(VLRFRE,"@E ***,***,***.**") Color "15/" + CorFundoAtual() 
      @ 13,02 say "Valor IPI..........: "+tran(VLRIPI,"@E ***,***,***.**") Color "10/" + CorFundoAtual() 
@@ -1724,10 +1724,10 @@ loca nCODIGO:=0, nCODFOR:=0, oTAB, oTB, TECLA,;
                    SET(_SET_DELIMITERS,.F.) 
                    VPBox( 01, 04, 04, 79, " DESCRICAO DO ITEM ", COR[21] ) 
                    VpBox( 05, 04, nLIN+2, 79, "ITENS", COR[21] ) 
-                   @ 06,05 Say "Cod.     ³Produto     ³Un³Valor Unitar³ Quantidade "+; 
-                                                   "³ Vlr. Total ³  Data  " 
-                   @ 07,05 Say "ÍÍÍÍÍÍÍÍÍ³ÍÍÍÍÍÍÍÍÍÍÍÍ³ÍÍ³ÍÍÍÍÍÍÍÍÍÍÍÍ³ÍÍÍÍÍÍÍÍÍÍÍÍ"+; 
-                                                   "³ÍÍÍÍÍÍÍÍÍÍÍÍ³ÍÍÍÍÍÍÍÍÍ" 
+                   @ 06,05 Say "Cod.     ï¿½Produto     ï¿½Unï¿½Valor Unitarï¿½ Quantidade "+; 
+                                                   "ï¿½ Vlr. Total ï¿½  Data  " 
+                   @ 07,05 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í³ï¿½Í³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+; 
+                                                   "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
  
                    Mensagem( "[INS]Inserir [DEL]Excluir [ENTER]Alterar" ) 
                    oTB:=tbrowsenew(08,05,nLIN+1,78) 
@@ -1738,7 +1738,7 @@ loca nCODIGO:=0, nCODFOR:=0, oTAB, oTB, TECLA,;
                    oTB:addcolumn( tbcolumnnew(, {|| Tran( aPRODUTOS[nROW][6],"@E 9999999.9999" ) } ) ) 
                    oTB:addcolumn( tbcolumnnew(, {|| Tran( aPRODUTOS[nROW][7],"@E 9999999.9999" ) } ) ) 
                    oTB:addcolumn( tbcolumnnew(, {|| aPRODUTOS[nROW][10] } ) ) 
-                   oTB:COLSEP:="³" 
+                   oTB:COLSEP:="ï¿½" 
                    oTB:AUTOLITE:=.f. 
                    oTB:GOTOPBLOCK :={|| nROW:=1} 
                    oTB:GOBOTTOMBLOCK:={|| nROW:=len(aPRODUTOS)} 
@@ -1900,7 +1900,7 @@ loca nCODIGO:=0, nCODFOR:=0, oTAB, oTB, TECLA,;
  
                       DBGOTOP() 
                       WHILE !EOF() 
-                         IF NetRLock() 
+                         IF netrlock() 
                             Dele 
                          ELSE 
                             AVISO( ">>> ALTERACAO NAO FOI EFETUADA CORRETAMENTE <<<", 12 ) 
@@ -2035,7 +2035,7 @@ Loca nCODIGO:=00000, nCODFOR:=0, oTB, oTAB,;
      @ 08,02 say "Cidade.............: "+CIDADE+"-"+ESTADO                   Color "15/" + CorFundoAtual() 
      @ 09,02 say "Fone/Fax...........: "+tran(FONE__,"@R (9999)-999.99.99")+" / "+; 
                                          tran(FAX___,"@R (9999)-999.99.99")  Color "10/" + CorFundoAtual() 
-     @ 10,02 say repl("Í",76)                                                Color "15/" + CorFundoAtual() 
+     @ 10,02 say repl("ï¿½",76)                                                Color "15/" + CorFundoAtual() 
      @ 11,02 say "Sub-Total..........: "+tran(SUBTOT,"@E ***,***,***.**")    Color "10/" + CorFundoAtual() 
      @ 12,02 say "Vlr. Frete.........: "+tran(VLRFRE,"@E ***,***,***.**")    Color "15/" + CorFundoAtual() 
      @ 13,02 say "Valor IPI..........: "+tran(VLRIPI,"@E ***,***,***.**")    Color "10/" + CorFundoAtual() 
@@ -2163,17 +2163,17 @@ Loca nCODIGO:=00000, nCODFOR:=0, oTB, oTAB,;
                 ENDIF 
                 SetColor( _COR_BROWSE ) 
                 setcursor(0) 
-                @ 03,05 Say "Cod.    ³Produto     ³Un³Valor Unitar³ Quantidade "+; 
-                                                "³ Vlr. Total ³  Data  " 
-                @ 04,05 Say "ÍÍÍÍÍÍÍÍ³ÍÍÍÍÍÍÍÍÍÍÍÍ³ÍÍ³ÍÍÍÍÍÍÍÍÍÍÍÍ³ÍÍÍÍÍÍÍÍÍÍÍÍ"+; 
-                                                "³ÍÍÍÍÍÍÍÍÍÍÍÍ³ÍÍÍÍÍÍÍÍ" 
+                @ 03,05 Say "Cod.    ï¿½Produto     ï¿½Unï¿½Valor Unitarï¿½ Quantidade "+; 
+                                                "ï¿½ Vlr. Total ï¿½  Data  " 
+                @ 04,05 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í³ï¿½Í³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+; 
+                                                "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
                 oTB:=tbrowsenew(05,05,nLIN-1,77) 
                 oTB:addcolumn(tbcolumnnew(,{|| Tran( aPRODUTOS[nROW][1], "@R 999-9999" ) +; 
-                    "³"+Substr(aPRODUTOS[nROW][2],1,12)+"³"+aPRODUTOS[nROW][3]+; 
-                    "³"+Tran(aPRODUTOS[nROW][4],"@E 9999999.9999")+""+; 
-                    "³"+Tran(aPRODUTOS[nROW][6],"@E 9999999.9999")+""+; 
-                    "³"+Tran(aPRODUTOS[nROW][7],"@E 9999999.9999")+""+; 
-                    "³"+Dtoc(aPRODUTOS[nROW][10])+" " })) 
+                    "ï¿½"+Substr(aPRODUTOS[nROW][2],1,12)+"ï¿½"+aPRODUTOS[nROW][3]+; 
+                    "ï¿½"+Tran(aPRODUTOS[nROW][4],"@E 9999999.9999")+""+; 
+                    "ï¿½"+Tran(aPRODUTOS[nROW][6],"@E 9999999.9999")+""+; 
+                    "ï¿½"+Tran(aPRODUTOS[nROW][7],"@E 9999999.9999")+""+; 
+                    "ï¿½"+Dtoc(aPRODUTOS[nROW][10])+" " })) 
                 oTB:AUTOLITE:=.f. 
                 oTB:GOTOPBLOCK :={|| nROW:=1} 
                 oTB:GOBOTTOMBLOCK:={|| nROW:=len(aPRODUTOS)} 
@@ -2341,7 +2341,7 @@ stat func xprodbaixa(oTB,CODORDEM)
              mensagem("Dando baixa no arquivo de estoque, aguarde....",1) 
              If dDATAMV<>ctod("  /  /  ") 
                 DbAppend() 
-                If NetRlock(5) 
+                If netrlock(5) 
                    Repl ENTSAI With "+",; 
                         QUANT_ With nQUANT_,; 
                         DOC___ With CODORDEM,; 
@@ -2356,7 +2356,7 @@ stat func xprodbaixa(oTB,CODORDEM)
              dbselectar(_COD_MPRIMA) 
              dbsetorder(3) 
              If DbSeek(cCODPRO) 
-                If NetRlock(5) 
+                If netrlock(5) 
                    Repl SALDO_ with SALDO_+nQUANT_ 
                 Endif 
              Else 
@@ -2460,7 +2460,7 @@ priv nROW:=1
      @ 08,02 say "Cidade.............: "+CIDADE+"-"+ESTADO                  Color "15/" + CorFundoAtual() 
      @ 09,02 say "Fone/Fax...........: "+tran(FONE__,"@R (9999)-999.99.99")+" / "+; 
                                          tran(FAX___,"@R (9999)-999.99.99") Color "15/" + CorFundoAtual() 
-     @ 10,02 say repl("Í",76)                                               Color "10/" + CorFundoAtual() 
+     @ 10,02 say repl("ï¿½",76)                                               Color "10/" + CorFundoAtual() 
      @ 11,02 say "Sub-Total..........: "+tran(SUBTOT,"@E ***,***,***.**")   Color "15/" + CorFundoAtual() 
      @ 12,02 say "Vlr. Frete.........: "+tran(VLRFRE,"@E ***,***,***.**")   Color "10/" + CorFundoAtual() 
      @ 13,02 say "Valor IPI..........: "+tran(VLRIPI,"@E ***,***,***.**")   Color "15/" + CorFundoAtual() 
@@ -2629,14 +2629,14 @@ Endif
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VerGrupo 
-³ Finalidade  ³ Pesquisar um grupo especifico. 
-³ Parametros  ³ cGrupo_ => Codigo do grupo 
-³ Retorno     ³ cCodigo => Codigo do produto a ser retornado. 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 04/Dezembro/1995 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VerGrupo 
+ï¿½ Finalidade  ï¿½ Pesquisar um grupo especifico. 
+ï¿½ Parametros  ï¿½ cGrupo_ => Codigo do grupo 
+ï¿½ Retorno     ï¿½ cCodigo => Codigo do produto a ser retornado. 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 04/Dezembro/1995 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function VerGrupo( cGrupo_, cCodigo ) 
    Local nArea:= Select(), nOrdem:= IndexOrd() 
@@ -2659,14 +2659,14 @@ Static Function VerGrupo( cGrupo_, cCodigo )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VerCodigo 
-³ Finalidade  ³ Pesquisar a existencia de um codigo igual ao digitado 
-³ Parametros  ³ cCodigo=> Codigo digitado pelo usu rio 
-³ Retorno     ³ 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 04/Dezembro/1995 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VerCodigo 
+ï¿½ Finalidade  ï¿½ Pesquisar a existencia de um codigo igual ao digitado 
+ï¿½ Parametros  ï¿½ cCodigo=> Codigo digitado pelo usuï¿½rio 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 04/Dezembro/1995 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function VerCodigo( cCodigo, GetList ) 
    LOCAL cGrupo_:= GetList[ 1 ]:VarGet() 
@@ -2687,7 +2687,7 @@ Static Function VerCodigo( cCodigo, GetList )
    DBSetOrder( 1 ) 
    If !DBSeek( cGrupo_ + cCodigo + Space( 5 ) ) 
       Ajuda("[Enter]Continua") 
-      Aviso( "C¢digo n„o existente neste grupo...", 24 / 2 ) 
+      Aviso( "Cï¿½digo nï¿½o existente neste grupo...", 24 / 2 ) 
       Mensagem( "Pressione [Enter] para ver lista..." ) 
       Pausa() 
       VisualProdutos( cGrupo_ + cCodigo ) 

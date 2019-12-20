@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VPC41234 
-³ Finalidade  ³ Outros Complemento a Clientes 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VPC41234 
+ï¿½ Finalidade  ï¿½ Outros Complemento a Clientes 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */
 
 #ifdef HARBOUR
@@ -77,7 +77,7 @@ Loca dDatInf
       IF CLF->( CODIGO ) <> CLI->CODIGO
          CLF->( DBSeek( CLI->CODIGO ) ) 
          //IF !CLF->DESCRI==CLI->DESCRI 
-         //   IF CLF->( NetRLock() ) .AND. !CLI->( EOF() ) 
+         //   IF CLF->( netrlock() ) .AND. !CLI->( EOF() ) 
          //      Replace CLF->DESCRI With CLI->DESCRI 
          //   ENDIF 
          //ENDIF 
@@ -157,7 +157,7 @@ Loca dDatInf
               IF CLF->( EOF() ) 
                  CLF->( DBAppend() ) 
               ENDIF 
-              IF CLF->( NetRLock() ) 
+              IF CLF->( netrlock() ) 
                  Replace CLF->CODIGO With CLI->CODIGO,; 
                          CLF->DESCRI With CLI->DESCRI 
                  cInfo01:= CLF->INFO01 
@@ -313,9 +313,9 @@ Loca dDatInf
                             CLF->COMP15 With cComp15,; 
                             CLF->SUBC15 With cSubC15 
 
-                    // Se ultimos campos forem preenchidos e  nÆo existia
-                    // uma segunda p gina o sistema automaticamente cria a
-                    // mesma para a inser‡Æo de novos dados
+                    // Se ultimos campos forem preenchidos e  nï¿½o existia
+                    // uma segunda pï¿½gina o sistema automaticamente cria a
+                    // mesma para a inserï¿½ï¿½o de novos dados
                     IF !lPosterior .AND. ALLTRIM( CLF->INFO15 ) <> ""
                        nCodigo:= CLF->CODIGO
                        CLF->( DBAppend() )

@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#include "INKEY.CH" 
-#Include "VPF.CH" 
+#include "inkey.ch" 
+#Include "vpf.ch" 
  
 /* 
 *      Funcao - VPC910000 
@@ -322,10 +322,10 @@ WHILE !LastKey() == K_ESC
     SetCursor( 1 ) 
     @ 07,06 Say "Data...........:" Get dDataMv 
     @ 08,06 Say "Caixa Operador.:" Get nVendedor Pict "@E  999" 
-    @ 09,06 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+    @ 09,06 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
     @ 10,06 Say "Razao....(+/-).:" Get cRazao Pict "!" Valid cRazao $ "+-" 
     @ 11,06 Say "Motivo.........:" Get nMotivo Pict "99" Valid Motivo( @nMotivo ) 
-    @ 12,06 Say "Hist¢rico......:" Get cHistorico Pict "@!" 
+    @ 12,06 Say "Histï¿½rico......:" Get cHistorico Pict "@!" 
     @ 13,06 Say "Valor..........:" Get nValor Pict "@E 999,999,999.99" Valid IF( cRazao == "-", nValor <= VAL( TRAN( nSenha, "999999999.99" ) ), .T. ) 
     @ 14,06 Say "Data/Hora......: [" + DTOC( Date() ) + " / " + Time() + "]" 
     Read 
@@ -342,7 +342,7 @@ WHILE !LastKey() == K_ESC
              DBGoTop() 
              nTotal:= 0 
              WHILE !EOF() 
-                 IF NetRLock() 
+                 IF netrlock() 
                     IF ENTSAI=="+" 
                        nTotal:= nTotal + VALOR_ 
                     ELSE 
@@ -364,7 +364,7 @@ WHILE !LastKey() == K_ESC
              endif 
              DBSelectAr( _COD_CAIXAAUX ) 
              DBAppend() 
-             IF NetRLock() 
+             IF netrlock() 
                 Replace ENTSAI With cRazao,; 
                         VENDE_ With nVendedor,; 
                         HISTOR With cHistorico,; 
@@ -424,7 +424,7 @@ Local nArea:= Select(), nOrdem:= IndexOrd()
    DBSelectAr( _COD_CAIXA ) 
    TrocaCaixa() 
    dbappend() 
-   IF NetRLock() 
+   IF netrlock() 
       Replace ENTSAI With cRazao,; 
               VENDE_ With nVendedor,; 
               HISTOR With cHistorico,; 
@@ -439,14 +439,14 @@ Local nArea:= Select(), nOrdem:= IndexOrd()
    ENDIF 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ DispMotivo 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ Valmor 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ DispMotivo 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ Valmor 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function DispMotivo( nMotivo ) 
 DO CASE 
@@ -476,14 +476,14 @@ ENDCASE
 Return cMotivo 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Motivo 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Motivo 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function Motivo( nMotivo ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -505,27 +505,27 @@ ScreenRest( cTela )
 Return .T. 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ TROCACAIXA 
-³ Finalidade  ³ Trocar o caixa operador 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ TROCACAIXA 
+ï¿½ Finalidade  ï¿½ Trocar o caixa operador 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function TrocaCaixa() 
    DBSelectAr( _COD_CAIXA ) 
    DBGoBottom() 
    IF !CDUSER == nGCodUser 
        DBAppend() 
-       IF NetRLock() 
+       IF netrlock() 
           Replace DATAMV With Date(),; 
                   ENTSAI With " ",; 
-                  HISTOR With "ÄTrocaÄdeÄCaixaÄÄÄÄÄÄOPERADOR:" + StrZero( nGCodUser, 3, 0 ),; 
+                  HISTOR With "ï¿½Trocaï¿½deï¿½Caixaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½OPERADOR:" + StrZero( nGCodUser, 3, 0 ),; 
                   VALOR_ With 0,; 
                   CDUSER With nGCodUser,; 
-                  HORAMV With "²±°°°°°°" 
+                  HORAMV With "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
        ENDIF 
    ENDIF 
  

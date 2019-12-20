@@ -1,15 +1,15 @@
 // ## CL2HB.EXE - Converted
-   #Include "VPF.CH"
-   #Include "INKEY.CH" 
+   #Include "vpf.ch"
+   #Include "inkey.ch" 
    /***** 
-   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-   ³ Funcao      ³ CONFIG 
-   ³ Finalidade  ³ Configuracao de Diretorios 
-   ³ Parametros  ³ Nil 
-   ³ Retorno     ³ Nil 
-   ³ Programador ³ Valmor Pereira Flores 
-   ³ Data        ³ 23/02/1999 
-   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+   ï¿½ Funcao      ï¿½ CONFIG 
+   ï¿½ Finalidade  ï¿½ Configuracao de Diretorios 
+   ï¿½ Parametros  ï¿½ Nil 
+   ï¿½ Retorno     ï¿½ Nil 
+   ï¿½ Programador ï¿½ Valmor Pereira Flores 
+   ï¿½ Data        ï¿½ 23/02/1999 
+   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
    */ 
 #ifdef HARBOUR
 function config()
@@ -49,19 +49,19 @@ function config()
  
       // VALMOR: 22/04/2003 - Preenche a informacao de diretorio 
       // padrao com as informacoes de GDir. Sempre que for passado 0 como 
-      // parametro a fun‡Æo SetDiretorioPadrao faz isso. 
+      // parametro a funï¿½ï¿½o SetDiretorioPadrao faz isso. 
       SetDiretorioPadrao( 0 ) 
  
       Return Nil 
    ENDIF 
-   vpbox(0, 0, 24 - 2, 79, " Configuracao de Diret¢rios ", _COR_GET_BOX ) 
+   vpbox(0, 0, 24 - 2, 79, " Configuracao de Diretï¿½rios ", _COR_GET_BOX ) 
    sele 124 
 // ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
    use vpceicfg.dat 
    xdiretorio:= unzipchr(gdir__) 
    set scoreboard (.F.) 
    setcolor( _COR_GET_EDICAO ) 
-   mensagem("Digite o nome do diret¢rio de trabalho...") 
+   mensagem("Digite o nome do diretï¿½rio de trabalho...") 
    desligamouse() 
    IF AT( _PATH_SEPARATOR - "0", xDiretorio ) > 0 
       cEmpresa:= ALLTRIM( SubStr( xDiretorio, AT( _PATH_SEPARATOR - "0", xDiretorio ) + 2 ) ) 

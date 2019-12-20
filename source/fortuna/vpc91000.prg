@@ -85,7 +85,7 @@ return nil
   ScreenRest( cTela ) 
   Return Nil 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Function fCtrlBanc() 
  
@@ -95,28 +95,28 @@ return nil
       vpbox(06,30,20,60) 
       whil .t. 
          mensagem("") 
-         aadd(MENULIST,menunew(07,31," 1 Sele‡„o das Duplicatas   ",2,COR[11],; 
-              "Sele‡„o das duplicatas para remessa.",,,COR[6],.T.)) 
-         aadd(MENULIST,menunew(08,31," 2 Consulta …s Selecionadas ",2,COR[11],; 
-              "Visualiza‡„o das duplicatas selecionadas.",,,COR[6],.T.)) 
+         aadd(MENULIST,menunew(07,31," 1 Seleï¿½ï¿½o das Duplicatas   ",2,COR[11],; 
+              "Seleï¿½ï¿½o das duplicatas para remessa.",,,COR[6],.T.)) 
+         aadd(MENULIST,menunew(08,31," 2 Consulta ï¿½s Selecionadas ",2,COR[11],; 
+              "Visualizaï¿½ï¿½o das duplicatas selecionadas.",,,COR[6],.T.)) 
          aadd(MENULIST,menunew(09,31," 3 Consulta Todas           ",2,COR[11],; 
               "Visualizacao de todos os lancamentos gerados ate hoje.",,,COR[6],.T.)) 
          aadd(MENULIST,menunew(10,31," 4 Desfazer/Recuperar       ",2,COR[11],; 
               "Desfazer Arquivo de Remessa Gerado.",,,COR[6],.T.)) 
-         aadd(MENULIST,menunew(11,31," 5 Gera‡„o Arquivo Remessa  ",2,COR[11],; 
-              "Grava‡„o do arquivo para a remessa ao banco.",,,COR[6],.T.)) 
-         aadd(MENULIST,menunew(12,31," 6 Importa‡„o do Retorno    ",2,COR[11],; 
-              "Atualiza‡„o das informa‡”es do sistema com base no arquivo de retorno.",,,COR[6],.T.)) 
+         aadd(MENULIST,menunew(11,31," 5 Geraï¿½ï¿½o Arquivo Remessa  ",2,COR[11],; 
+              "Gravaï¿½ï¿½o do arquivo para a remessa ao banco.",,,COR[6],.T.)) 
+         aadd(MENULIST,menunew(12,31," 6 Importaï¿½ï¿½o do Retorno    ",2,COR[11],; 
+              "Atualizaï¿½ï¿½o das informaï¿½ï¿½es do sistema com base no arquivo de retorno.",,,COR[6],.T.)) 
          aadd(MENULIST,menunew(13,31," 7 Pesquisas                ",2,COR[11],; 
               "Pesquisas baseadas em remessas e retornos.",,,COR[6],.T.)) 
-         @ 14, 31 SAY REPL( "Ä", 29 ) 
+         @ 14, 31 SAY REPL( "ï¿½", 29 ) 
          aadd(MENULIST,menunew(15,31," 8 Arquivos Remetidos       ",2,COR[11],; 
-              "Visualiza‡„o dos arquivos remetidos ao banco.",,,COR[6],.T.)) 
+              "Visualizaï¿½ï¿½o dos arquivos remetidos ao banco.",,,COR[6],.T.)) 
          aadd(MENULIST,menunew(16,31," 9 Arquivos Retornados      ",2,COR[11],; 
-              "Visualiza‡„o dos arquivos retornados do banco.",,,COR[6],.T.)) 
-         @ 17, 31 SAY REPL( "Ä", 29 ) 
+              "Visualizaï¿½ï¿½o dos arquivos retornados do banco.",,,COR[6],.T.)) 
+         @ 17, 31 SAY REPL( "ï¿½", 29 ) 
          aadd(MENULIST,menunew(18,31," A Bloqueados p/ Selecao    ",2,COR[11],; 
-              "Visualiza‡„o dos arquivos retornados do banco.",,,COR[6],.T.)) 
+              "Visualizaï¿½ï¿½o dos arquivos retornados do banco.",,,COR[6],.T.)) 
          aadd(MENULIST,menunew(19,31," 0 Retorna                  ",2,COR[11],; 
               "Retorna ao menu anterior.",,,COR[6],.T.)) 
          menumodal(MENULIST,@nOPCAO); MENULIST:={} 
@@ -149,7 +149,7 @@ return nil
       whil .t. 
          mensagem("") 
          aadd(MENULIST,menunew(13,44," 1 BANRISUL   - DEBITO EM CONTA",2,COR[11],; 
-              "Sele‡„o das duplicatas para remessa / Debito em Conta.",,,COR[6],.T.)) 
+              "Seleï¿½ï¿½o das duplicatas para remessa / Debito em Conta.",,,COR[6],.T.)) 
          aadd(MENULIST,menunew(14,44," 2 BANRISUL   - COBRANCA       ",2,COR[11],; 
               "Arquivo de Simples remessa",,,COR[6],.T.)) 
          aadd(MENULIST,menunew(15,44," 3 REAL       - COBRANCA       ",2,COR[11],; 

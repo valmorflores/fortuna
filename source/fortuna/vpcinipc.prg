@@ -1,17 +1,17 @@
 // ## CL2HB.EXE - Converted
-#Include "FORMATOS.CH" 
-#Include "INKEY.CH" 
-#Include "VPF.CH" 
+#Include "formatos.ch" 
+#Include "inkey.ch" 
+#Include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VPCINIPC.PRG 
-³ Finalidade  ³ PCP INICIO DE PRODUCAO 
-³ Parametros  ³ Nil 
-³ Retorno     ³ 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VPCINIPC.PRG 
+ï¿½ Finalidade  ï¿½ PCP INICIO DE PRODUCAO 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
    Func PCPIniPro() 
  
@@ -43,27 +43,27 @@
  
       DBLeOrdem() 
       oTb:=TBrowseDB( 15, 01, 21, 78 ) 
-      oTb:AddColumn( tbcolumnnew( "C¢digo Descri‡„o" + ; 
-         "                                    Situa‡„o           In¡cio",; 
+      oTb:AddColumn( tbcolumnnew( "Cï¿½digo Descriï¿½ï¿½o" + ; 
+         "                                    Situaï¿½ï¿½o           Inï¿½cio",; 
          {|| STR( PCM->CODIGO, 6 ) + " " + LEFT( PCM->DESCRI, 44 ) + " " + ; 
             fVerifSitProd( PCM->SITPER ) + " " + STR( PCM->SITPER, 3) + "% " + ; 
             DTOC( PCM->DATINI ) + SPACE( 65 ) } ) ) 
       oTb:AutoLite:=.f. 
       oTb:dehilite() 
  
-     // ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+     // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
       xTela:= ScreenSave( 0, 0, 24, 79 ) 
  
       SetColor( _COR_BROWSE ) 
-      VPBox( 05, 04, 12, 75," Informa‡”es Adicionais ", _COR_BROW_BOX, .F., .F., ,.F. ) 
+      VPBox( 05, 04, 12, 75," Informaï¿½ï¿½es Adicionais ", _COR_BROW_BOX, .F., .F., ,.F. ) 
  
       fProRel( @nCodigo, @aProRel, @nRowProRel, @nTamCod ) 
  
       oTb2:=TBrowseNew( 06, 05, 11, 74 ) 
  
       oTb2:AddColumn( tbcolumnnew( ; 
-                      "Produto  C¢d.F brica   Descri‡„o do Produto" + ; 
+                      "Produto  Cï¿½d.Fï¿½brica   Descriï¿½ï¿½o do Produto" + ; 
                       "                        Sel", ; 
                       {|| ; 
                      LEFT( aProRel [nRowProRel, 1], 3 )    + "-" + ; 
@@ -81,15 +81,15 @@
  
       ScreenRest( xTela ) 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
       IF( nQuadro = 0 ) 
-         Mensagem( "[INS]Inc [ENTER]Alt [DEL]Exc [CRTL+ENTER]Itens [TAB]Impress„o [ESC]Sair" ) 
+         Mensagem( "[INS]Inc [ENTER]Alt [DEL]Exc [CRTL+ENTER]Itens [TAB]Impressï¿½o [ESC]Sair" ) 
       ELSE 
-         Mensagem( "[INS]Inclus„o [ENTER]Quantidade [CRTL+ENTER]Produ‡„o [ESC]Sair" ) 
+         Mensagem( "[INS]Inclusï¿½o [ENTER]Quantidade [CRTL+ENTER]Produï¿½ï¿½o [ESC]Sair" ) 
       ENDIF 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
       WHILE .T. 
  
@@ -103,16 +103,16 @@
          IF nQuadro == 0 
             // Display das informacoes // 
             SetColor( _COR_GET_EDICAO ) 
-            @ 02, 03 Say "C¢digo da Produ‡„o .. [      ]" 
-            @ 03, 03 Say "Descri‡„o ........... [" + SPACE( _ESP_DESCRICAO ) + "]" 
-            @ 04, 03 Say "Situa‡„o ............ [   %] [                    ]" 
+            @ 02, 03 Say "Cï¿½digo da Produï¿½ï¿½o .. [      ]" 
+            @ 03, 03 Say "Descriï¿½ï¿½o ........... [" + SPACE( _ESP_DESCRICAO ) + "]" 
+            @ 04, 03 Say "Situaï¿½ï¿½o ............ [   %] [                    ]" 
             @ 05, 03 Say "Data Inicial ........ [  /  /  ]" 
             @ 06, 03 Say "Data Final .......... [  /  /  ]" 
             @ 07, 03 Say "Emitente ............ [                    ]" 
             @ 08, 03 Say "Encarregado ......... [                    ]" 
-            @ 09, 03 Say "Observa‡”es ......... [                                        ] ..." 
-            @ 10, 03 Say REPL( "Ä", 74 ) 
-            @ 11, 03 Say "N£mero do Pedido .... [        ]" 
+            @ 09, 03 Say "Observaï¿½ï¿½es ......... [                                        ] ..." 
+            @ 10, 03 Say REPL( "ï¿½", 74 ) 
+            @ 11, 03 Say "Nï¿½mero do Pedido .... [        ]" 
             @ 12, 03 Say "Cliente ............. [      ] [                                        ]" 
  
             @ 02, 26 Say STR( PCM->CODIGO ) 
@@ -176,7 +176,7 @@
                ELSE 
                   IF !EMPTY( PCM->CODPED ) 
                      yTela:= ScreenSave( 0, 0, 24, 79 ) 
-                     Aviso( "Todos os ¡tens do Pedido s„o inclusos autom ticamente !", 12 ) 
+                     Aviso( "Todos os ï¿½tens do Pedido sï¿½o inclusos automï¿½ticamente !", 12 ) 
                      Pausa() 
                      ScreenRest( yTela ) 
                   ELSE 
@@ -205,7 +205,7 @@
             CASE nTecla==K_TAB 
                IF( nQuadro == 0 ) 
                   IF Confirma( 00, 00,; 
-                     "Confirma a impress„o desta Produ‡„o?",; 
+                     "Confirma a impressï¿½o desta Produï¿½ï¿½o?",; 
                      "Digite [S] para confirmar ou [N] p/ cancelar.", "N" ) 
                      Relatorio( "ORDEMPRO.REP" ) 
                   ENDIF 
@@ -214,13 +214,13 @@
                IF nQuadro == 0 
                   nQuadro:= 1 
                   xTela:= ScreenSave( 0, 0, 24, 79 ) 
-                  VPBox( 05, 04, 12, 75," Itens da Produ‡„o ", _COR_BROW_BOX, .F., .F., ,.F. ) 
+                  VPBox( 05, 04, 12, 75," Itens da Produï¿½ï¿½o ", _COR_BROW_BOX, .F., .F., ,.F. ) 
                   fProRel( @nCodigo, @aProRel, @nRowProRel, @nTamCod, @oTb2 ) 
                   oTb2:colorrect( { oTb2:ROWPOS, 1, oTb2:ROWPOS, 3 }, { 2, 1 } ) 
                   oTb2:RefreshAll() 
                   WHILE !oTb2:Stabilize() 
                   ENDDO 
-                  Mensagem( "[INS]Inclus„o [ENTER]Quantidade [CRTL+ENTER]Produ‡„o [ESC]Sair" ) 
+                  Mensagem( "[INS]Inclusï¿½o [ENTER]Quantidade [CRTL+ENTER]Produï¿½ï¿½o [ESC]Sair" ) 
                   oTb:RefreshAll() 
                   WHILE !oTb:Stabilize() 
                   ENDDO 
@@ -238,7 +238,7 @@
                      aProRel:= {} 
                   ENDIF 
                ELSE 
-                  IF Confirma( 00, 00, "Confirma a exclus„o deste ¡tem?",; 
+                  IF Confirma( 00, 00, "Confirma a exclusï¿½o deste ï¿½tem?",; 
                         "Digite [S] para confirmar ou [N] p/ cancelar.", "S" ) 
                      Adel( aProRel, nRowProRel ) 
                      IF( Len( aProRel ) <= 0 ) 
@@ -275,7 +275,7 @@
  
    Return Nil 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Func PCPMovInc( oTb, nCorCod, nTamCod, aProRel, nRowProRel, oTb2, nCodigo ) 
  
@@ -311,27 +311,27 @@
          // Display das informacoes // 
          SetColor( _COR_GET_EDICAO ) 
  
-         @ 02, 03 Say "C¢digo da Produ‡„o .." Get nCodigo Pict "999999" ; 
-            When MENSAGEM( "Digite o C¢digo da Produ‡„o" ) ; 
+         @ 02, 03 Say "Cï¿½digo da Produï¿½ï¿½o .." Get nCodigo Pict "999999" ; 
+            When MENSAGEM( "Digite o Cï¿½digo da Produï¿½ï¿½o" ) ; 
             VALID LASTKEY() = K_ESC .OR. fPCPVerPrc( nCodigo, @oTb, GetList ) 
  
-         @ 03, 03 Say "Descri‡„o ..........." Get cDescri ; 
-            When MENSAGEM( "Digite a Descri‡„o da Produ‡„o" ) ; 
+         @ 03, 03 Say "Descriï¿½ï¿½o ..........." Get cDescri ; 
+            When MENSAGEM( "Digite a Descriï¿½ï¿½o da Produï¿½ï¿½o" ) ; 
             VALID !LASTKEY() == K_ESC .AND. !LASTKEY() == K_UP .AND. ; 
                !EMPTY( cDescri ) 
  
-         @ 04, 03 Say "Situa‡„o ............" Get nSitPer Pict "999%"     ; 
-            When MENSAGEM( "Digite o percentual da situa‡„o da Produ‡„o" ) 
+         @ 04, 03 Say "Situaï¿½ï¿½o ............" Get nSitPer Pict "999%"     ; 
+            When MENSAGEM( "Digite o percentual da situaï¿½ï¿½o da Produï¿½ï¿½o" ) 
          @ 05, 03 Say "Data Inicial ........" Get dDatini Pict "99/99/99" ; 
-            When MENSAGEM( "Digite a data de in¡cio da Produ‡„o" ) 
+            When MENSAGEM( "Digite a data de inï¿½cio da Produï¿½ï¿½o" ) 
          @ 06, 03 Say "Data Final .........." Get dDatfin Pict "99/99/99" ; 
-            When MENSAGEM( "Digite a data final da Produ‡„o" ) 
+            When MENSAGEM( "Digite a data final da Produï¿½ï¿½o" ) 
          @ 07, 03 Say "Emitente ............" Get cEmiten                 ; 
-            When MENSAGEM( "Digite o nome do emitente da Produ‡„o" ) 
+            When MENSAGEM( "Digite o nome do emitente da Produï¿½ï¿½o" ) 
          @ 08, 03 Say "Encarregado ........." Get cEncarr                 ; 
-            When MENSAGEM( "Digite o nome do encarregado da Produ‡„o" ) 
-         @ 09, 03 Say "Observa‡”es ........." Get cObserv Pict "@S40"     ; 
-            When MENSAGEM( "Digite as observa‡”es sobre a Produ‡„o" ) 
+            When MENSAGEM( "Digite o nome do encarregado da Produï¿½ï¿½o" ) 
+         @ 09, 03 Say "Observaï¿½ï¿½es ........." Get cObserv Pict "@S40"     ; 
+            When MENSAGEM( "Digite as observaï¿½ï¿½es sobre a Produï¿½ï¿½o" ) 
  
          SetCursor( 1 ) 
          READ 
@@ -349,7 +349,7 @@
  
             // Gravacao de dados // 
             PCM->( DBAppend() ) 
-            IF NetRLock() 
+            IF netrlock() 
                PCM->CODIGO := nCodigo 
                PCM->DESCRI := cDescri 
                PCM->SITPER := nSitPer 
@@ -384,7 +384,7 @@
  
    Return Nil 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Func PCPMovAlt( oTb, nCorCod, nTamCod, aProRel, nRowProRel, oTb2, nCodigo ) 
  
@@ -415,23 +415,23 @@
          // Display das informacoes // 
          SetColor( _COR_GET_EDICAO ) 
  
-         @ 03, 03 Say "Descri‡„o ..........." Get cDescri ; 
-            When MENSAGEM( "Digite a Descri‡„o da Produ‡„o" ) ; 
+         @ 03, 03 Say "Descriï¿½ï¿½o ..........." Get cDescri ; 
+            When MENSAGEM( "Digite a Descriï¿½ï¿½o da Produï¿½ï¿½o" ) ; 
             VALID !LASTKEY() == K_ESC .AND. !LASTKEY() == K_UP .AND. ; 
                !EMPTY( cDescri ) 
  
-         @ 04, 03 Say "Situa‡„o ............" Get nSitPer Pict "999%"     ; 
-            When MENSAGEM( "Digite o percentual da situa‡„o da Produ‡„o" ) 
+         @ 04, 03 Say "Situaï¿½ï¿½o ............" Get nSitPer Pict "999%"     ; 
+            When MENSAGEM( "Digite o percentual da situaï¿½ï¿½o da Produï¿½ï¿½o" ) 
          @ 05, 03 Say "Data Inicial ........" Get dDatini Pict "99/99/99" ; 
-            When MENSAGEM( "Digite a data de in¡cio da Produ‡„o" ) 
+            When MENSAGEM( "Digite a data de inï¿½cio da Produï¿½ï¿½o" ) 
          @ 06, 03 Say "Data Final .........." Get dDatfin Pict "99/99/99" ; 
-            When MENSAGEM( "Digite a data final da Produ‡„o" ) 
+            When MENSAGEM( "Digite a data final da Produï¿½ï¿½o" ) 
          @ 07, 03 Say "Emitente ............" Get cEmiten                 ; 
-            When MENSAGEM( "Digite o nome do emitente da Produ‡„o" ) 
+            When MENSAGEM( "Digite o nome do emitente da Produï¿½ï¿½o" ) 
          @ 08, 03 Say "Encarregado ........." Get cEncarr                 ; 
-            When MENSAGEM( "Digite o nome do encarregado da Produ‡„o" ) 
-         @ 09, 03 Say "Observa‡”es ........." Get cObserv Pict "@S40"     ; 
-            When MENSAGEM( "Digite as observa‡”es sobre a Produ‡„o" ) 
+            When MENSAGEM( "Digite o nome do encarregado da Produï¿½ï¿½o" ) 
+         @ 09, 03 Say "Observaï¿½ï¿½es ........." Get cObserv Pict "@S40"     ; 
+            When MENSAGEM( "Digite as observaï¿½ï¿½es sobre a Produï¿½ï¿½o" ) 
  
          SetCursor( 1 ) 
          READ 
@@ -440,7 +440,7 @@
          IF ! LastKey() == K_ESC 
  
             // Gravacao de dados // 
-            IF NetRLock() 
+            IF netrlock() 
                PCM->CODIGO := nCodigo 
                PCM->DESCRI := cDescri 
                PCM->SITPER := nSitPer 
@@ -475,7 +475,7 @@
  
    Return Nil 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Func fPCPVerPrc( nCodigo, Otb, GetList  ) 
  
@@ -487,7 +487,7 @@
       PCM->( DBSetOrder( 1 ) ) 
  
       IF PCM->( DBSeek( nCodigo ) ) 
-         Aviso( "Produ‡„o j  existente !", 12 ) 
+         Aviso( "Produï¿½ï¿½o jï¿½ existente !", 12 ) 
          Pausa() 
          lRet:= .F. 
       ENDIF 
@@ -505,7 +505,7 @@
  
    Return( lRet ) 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Func fPCPVerPed( nCodigo, cCodPed, cDescri, nCodCli, cDesCli, ; 
                     GetList ) 
@@ -521,7 +521,7 @@
       SetColor( _COR_BROWSE ) 
       VPBox( 14, 00, 22, 79,"CADASTRO DE PEDIDOS", _COR_BROW_BOX, .F., .F. ) 
  
-      Mensagem( "[ENTER]Selecionar [ESC]Mat‚rias-Primas" ) 
+      Mensagem( "[ENTER]Selecionar [ESC]Matï¿½rias-Primas" ) 
       Ajuda( "["+_SETAS+"][PgUp][PgDn]Move" ) 
  
       oTb:=TBrowseDB( 15, 01, 21, 78 ) 
@@ -594,7 +594,7 @@
  
    Return( lRet ) 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Func fPCPVerPro( nCodigo, cDescri, GetList, aProRel, nRowProRel, nTamCod, oTb2 ) 
  
@@ -602,7 +602,7 @@
             cTela:= ScreenSave( 0, 0, 24, 79 ) 
       Local nArea:= Select(), nOrdem:= IndexOrd(), oTb, nTecla, lRet:= .F. 
  
-      VPBox( 05, 04, 12, 75," Itens da Produ‡„o ", _COR_BROW_BOX, .F., .F., ,.F. ) 
+      VPBox( 05, 04, 12, 75," Itens da Produï¿½ï¿½o ", _COR_BROW_BOX, .F., .F., ,.F. ) 
       fProRel( @nCodigo, @aProRel, @nRowProRel, @nTamCod, @oTb2 ) 
       oTb2:RefreshAll() 
       WHILE !oTb2:Stabilize() 
@@ -615,7 +615,7 @@
       SetColor( _COR_BROWSE ) 
       VPBox( 14, 00, 22, 79,"CADASTRO DE PRODUTOS", _COR_BROW_BOX, .F., .F. ) 
  
-      Mensagem( "[ENTER]Selecionar [TAB/ESC]Itens da Produ‡„o" ) 
+      Mensagem( "[ENTER]Selecionar [TAB/ESC]Itens da Produï¿½ï¿½o" ) 
       Ajuda( "["+_SETAS+"][PgUp][PgDn]Move" ) 
  
       oTb:=TBrowseDB( 15, 01, 21, 78 ) 
@@ -669,7 +669,7 @@
 //                PCPIniTam( @aProRel, @nRowProRel, nCodigo, 0, @nTamCod, "INI" ) 
                ENDIF 
  
-               IF( PCL->( NetRLock() ) ) 
+               IF( PCL->( netrlock() ) ) 
                   PCL->( DBAppend() ) 
                   PCL->CODIGO:= nCodigo 
                   PCL->CODPRO:= LEFT( MPR->INDICE, 7 ) 
@@ -713,7 +713,7 @@
  
    Return( lRet ) 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Func fProRel( nCodigo, aProRel, nRowProRel, nTamCod ) 
  
@@ -762,7 +762,7 @@
  
    Return( lTem ) 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Func fIncProPed( nCodigo, cCodPed, cDescri, GetList ) 
  
@@ -788,7 +788,7 @@
                   ENDIF 
                ENDIF 
  
-               IF( PCL->( NetRLock() ) ) 
+               IF( PCL->( netrlock() ) ) 
                   PCL->( DBAppend() ) 
                   PCL->CODIGO:= nCodigo 
                   PCL->CODPRO:= LEFT( cCodPro, 7 ) 
@@ -811,7 +811,7 @@
  
    Return( lTem ) 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Func fRecQua( aProRel, nProLin, nCodigo, nCorCod, nTamCod ) 
  
@@ -845,7 +845,7 @@
  
    Return( .T. ) 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Func fGraPCL( nCodigo, aProRel, nProLin, nQua ) 
  
@@ -860,7 +860,7 @@
           PCL->CODPRO:= aProRel [nProLin, 1] 
       ENDIF 
  
-      IF( PCL->( NetRLock() ) ) 
+      IF( PCL->( netrlock() ) ) 
  
          PCL->CODCOR:= nCodCor 
          PCL->QUAT00:= aProRel [nProLin, 7] 
@@ -881,7 +881,7 @@
 */ 
    Return( .T. ) 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Func fRecQuaMPR( nQua ) 
  
@@ -912,7 +912,7 @@
  
    Return( lRet ) 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Func XProRel( nCodigo ) 
    Local cCor 
@@ -921,7 +921,7 @@
        Scroll( 06, 06, 11, 67 ) 
  
        SetColor( _COR_BROW_LETRA ) 
-       @ 06, 05 SAY "Produto  C¢d.F brica   Descri‡„o do Produto" + ; 
+       @ 06, 05 SAY "Produto  Cï¿½d.Fï¿½brica   Descriï¿½ï¿½o do Produto" + ; 
                     "                        Sel" 
        nLin:= 6 
        IF PCL->( DBSeek( nCodigo ) ) 
@@ -940,7 +940,7 @@
  
    Return( Nil ) 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Func fVerifSitProd( nSit ) 
  
@@ -955,7 +955,7 @@
  
    Return( cRet ) 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Func fExcItensProd( cProdut, nCodigo ) 
  

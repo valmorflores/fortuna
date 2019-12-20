@@ -4,15 +4,15 @@
 #Include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ SelecaoClientes() 
-³ Finalidade  ³ Relacao de Clientes 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ Fevereiro/1995 
-³ Atualizacao ³ Agosto/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ SelecaoClientes() 
+ï¿½ Finalidade  ï¿½ Relacao de Clientes 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ Fevereiro/1995 
+ï¿½ Atualizacao ï¿½ Agosto/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 #ifdef HARBOUR
 function vpc92200()
@@ -52,8 +52,8 @@ function vpc92200()
   SWDispStatus( .T. ) 
   cArquivo:= RepCliExportar 
   cArquivo:= PAD( cArquivo, 30 ) 
-  @ 05, 10 Say "Do C¢digo.....................:" Get nClien1    Pict "999999" 
-  @ 05, 51 Say "At‚:" Get nClien2 Pict "999999" 
+  @ 05, 10 Say "Do Cï¿½digo.....................:" Get nClien1    Pict "999999" 
+  @ 05, 51 Say "Atï¿½:" Get nClien2 Pict "999999" 
   @ 06, 10 Say "Tipo [C]Cons/[I]Ind/[ ]Todos..:" Get cConInd    Pict "!" Valid cConInd $ "CI " 
   @ 07, 10 Say "Cliente [S]Sim [N]Nao [ ]Todos:" Get cCliente   Pict "!" Valid cCliente $ "SN " 
   @ 08, 10 Say "Vendedor......................:" Get nVendedor  Pict "9999" 
@@ -67,7 +67,7 @@ function vpc92200()
   @ 14, 10 Say "Com atraso (em dias) de.......:" Get nAtraso Pict "9999" 
   @ 15, 10 Say "Com vencimento entre..........:" Get dVenIni 
   @ 15, 53 Say "e..:" Get dVenFim 
-  @ 16, 10 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+  @ 16, 10 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
   @ 17, 10 Say "Arquivo de Relatorio (.REP)...:" Get cArquivo 
   READ 
  
@@ -118,10 +118,10 @@ function vpc92200()
      WHILE DPA->CLIENT==CLI->CODIGO 
         IF EMPTY( DPA->DTQT__ ) .AND. DPA->VENC__ >= dVenIni .AND. DPA->VENC__ <= dVenFim .AND. DPA->NFNULA==" " 
            IF DATE() - DPA->VENC__ >= nAtraso 
-              /* Se nÆo foi a primeira vez que passou 
-                 ou se atraso atual ‚ maior que o gravado */ 
+              /* Se nï¿½o foi a primeira vez que passou 
+                 ou se atraso atual ï¿½ maior que o gravado */ 
               IF ( DATE()-DPA->VENC__ >= ATRA_D ) .OR. SELECT=="Nao" 
-                 IF NetRlock() 
+                 IF netrlock() 
                     Replace ATRA_D With DATE() - DPA->VENC__,; 
                             SELECT With IF( CCR->SPCEST >= nRegSpc1 .AND. CCR->SPCEST <= nRegSpc2, "Sim", "Nao" ) 
                  ENDIF 
@@ -278,7 +278,7 @@ function vpc92200()
                     oTb:nRight:= oTb:nRight + 1 
                     SetColor( _COR_GET_EDICAO ) 
                     Scroll( 01, nCt-1, 22, 78, , -1 ) 
-                    @ 22, nCt-1 Say "»" Color _COR_GET_BOX 
+                    @ 22, nCt-1 Say "ï¿½" Color _COR_GET_BOX 
                     //oTb:RefreshAll() 
                     //WHILE !oTb:Stabilize() 
                     //ENDDO 
@@ -296,7 +296,7 @@ function vpc92200()
          case nTecla == K_F4; DBMudaOrdem( 4, oTb ) 
          case nTecla == K_F5; DBMudaOrdem( 6, oTb ) 
          case nTecla == K_SPACE 
-              IF NetRLock() 
+              IF netrlock() 
                  Replace SELECT With IF( SELECT=="Nao","Sim","Nao") 
               ENDIF 
          case nTecla == K_TAB 
@@ -306,13 +306,13 @@ function vpc92200()
                  IF SELECT=="Sim" 
                     DBSelectAr( _COD_CREDIARIO ) 
                     Mensagem( "buscando informacoes de crediario, aguarde..." ) 
-                    IF NetRLock() .AND. !EOF() 
+                    IF netrlock() .AND. !EOF() 
                        IF CCR->SPCEST < 5 
                           Replace CCR->SPCEST With CCR->SPCEST + 1 
                        ENDIF 
                     ELSE 
                        cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-                       Mensagem( "O cliente nÆo possui ficha de crediario!" ) 
+                       Mensagem( "O cliente nï¿½o possui ficha de crediario!" ) 
                        Pausa() 
                        ScreenRest( cTelaRes ) 
                     ENDIF 
@@ -355,19 +355,19 @@ function vpc92200()
   Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ SPCInfo 
-³ Finalidade  ³ Retornar informacoes de SPC 
-³ Parametros  ³ nCodigo-Codigo de Informacao 
-³ Retorno     ³ cDescricao 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ SPCInfo 
+ï¿½ Finalidade  ï¿½ Retornar informacoes de SPC 
+ï¿½ Parametros  ï¿½ nCodigo-Codigo de Informacao 
+ï¿½ Retorno     ï¿½ cDescricao 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function SPCInfo( nCodigo ) 
 IF CCR->( EOF() ) 
    cDescri:= " SEM CREDIARIO  " 
-   IF Select=="Sim" .AND. NetRLock() 
+   IF Select=="Sim" .AND. netrlock() 
       Replace SELECT With "Nao" 
    ENDIF 
 ELSE 
@@ -376,16 +376,16 @@ ELSE
       CASE nCodigo==0 
            cDescri:= " Sem Cartas     " 
       CASE nCodigo==1 
-           cDescri:= " 1§ Aviso       " 
+           cDescri:= " 1ï¿½ Aviso       " 
       CASE nCodigo==2 
-           cDescri:= " 2§ Aviso       " 
+           cDescri:= " 2ï¿½ Aviso       " 
       CASE nCodigo==3 
-           cDescri:= " 3§ Aviso       " 
+           cDescri:= " 3ï¿½ Aviso       " 
       CASE nCodigo==4 
            cDescri:= " SPC            " 
       CASE nCodigo>=5 
            cDescri:= " Bloqueado      " 
-           IF Select=="Sim" .AND. NetRLock() 
+           IF Select=="Sim" .AND. netrlock() 
               Repl SELECT With "Nao" 
            ENDIF 
    ENDCASE 

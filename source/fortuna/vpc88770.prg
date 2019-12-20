@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
 
 #ifdef HARBOUR
 function vpc88770()
@@ -20,7 +20,7 @@ Local oTb
  
    SetColor( _COR_BROWSE ) 
    @ 01,02 Say "Lancamento manualmente de Informacoes a titulo de cotacao." Color "08/" + CorFundoAtual() 
-   @ 02,01 Say Repl( "º", 78 ) Color "00/" + CorFundoAtual() 
+   @ 02,01 Say Repl( "ï¿½", 78 ) Color "00/" + CorFundoAtual() 
  
    @ 04,02 Say "Nome....:" 
    @ 05,02 Say "Endereco:" 
@@ -68,7 +68,7 @@ Local oTb
          IF !Empty( CodPed ) 
             DevOut( "Pedido..: " + CodPed ) 
             SetColor( "14/01" ) 
-            @ 03, 55 Say " N§ Cotacao  " + Codigo 
+            @ 03, 55 Say " Nï¿½ Cotacao  " + Codigo 
          ELSE 
             DevOut( "Cotacao.: " + Codigo ) 
             SetColor( _COR_BROW_LETRA ) 
@@ -191,7 +191,7 @@ Function IncluiCotacao( oTbA )
  
    SetColor( _COR_GET_EDICAO ) 
    Mensagem( "Digite as Informacoes do Cliente." ) 
-   @ 01,03 Say "Cotacao N§.: [" + StrZero( nCodigo, 6, 0 ) + "]" 
+   @ 01,03 Say "Cotacao Nï¿½.: [" + StrZero( nCodigo, 6, 0 ) + "]" 
    @ 02,03 Say "Emissao....:" Get dData__ 
    @ 04,03 Say "Cliente....:" Get cDescri 
    @ 05,03 Say "Endereco...:" Get cEndere 
@@ -283,12 +283,12 @@ Function IncluiCotacao( oTbA )
               nPrecoFinal:=   0 
               SetCursor(1) 
               @ 11,12 Say "Codigo.....: [INDEFINIDO]" 
-              @ 12,12 Say "Descri‡ao..:" Get cDescricao 
+              @ 12,12 Say "Descriï¿½ao..:" Get cDescricao 
               READ 
               @ 13,12 Say "Quantidade.:" Get nQuantidade   Pict "@E 999,999.999" 
-              @ 14,12 Say "Pre‡o......:" Get nPrecoInicial Pict "@E 999,999,999.999" 
+              @ 14,12 Say "Preï¿½o......:" Get nPrecoInicial Pict "@E 999,999,999.999" 
               @ 15,12 Say "% Desconto.:" Get nPerDesconto  Pict "@E 999.99" Valid CalculaDesconto( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal ) 
-              @ 16,12 Say "Pre‡o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal ) 
+              @ 16,12 Say "Preï¿½o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal ) 
               @ 17,12 Say "% IPI......:" Get nPerIPI Pict "999.99" 
               READ 
               If !LastKey()==K_ESC 
@@ -357,12 +357,12 @@ Function IncluiCotacao( oTbA )
               SetCursor(1) 
               VPBox( 09, 10, 20, 70, "Dados do Produto Selecionado", _COR_GET_BOX, .T., .F., _COR_GET_TITULO ) 
               @ 11,12 Say "Codigo.....: [INDEFINIDO]" 
-              @ 12,12 Say "Descri‡ao..:" Get cDescricao 
+              @ 12,12 Say "Descriï¿½ao..:" Get cDescricao 
               READ 
               @ 13,12 Say "Quantidade.:" Get nQuantidade   Pict "@E 999,999.999" 
-              @ 14,12 Say "Pre‡o......:" Get nPrecoInicial Pict "@E 999,999,999.999" 
+              @ 14,12 Say "Preï¿½o......:" Get nPrecoInicial Pict "@E 999,999,999.999" 
               @ 15,12 Say "% Desconto.:" Get nPerDesconto  Pict "@E 999.99" Valid CalculaDesconto( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal ) 
-              @ 16,12 Say "Pre‡o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal ) 
+              @ 16,12 Say "Preï¿½o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal ) 
               @ 17,12 Say "% IPI......:" Get nPerIPI Pict "999.99" 
               READ 
               If LastKey() <> K_ESC .AND. UpDated() 
@@ -435,17 +435,17 @@ Function IncluiCotacao( oTbA )
    @ 05,06 Say "Codigo da Transportadora..:" Get nCodTra Pict "999" Valid BuscaTransport( @nCodTra ) When Mensagem( "Digite o codigo da transportadora ou [F9] para ver lista." ) 
    @ 06,06 Say "Prazo de Entrega (EM DIAS):" Get cPrazo_ When Mensagem( "Digite o prazo de entrega desta mercadoria." ) 
    @ 07,06 Say "Validade da Proposta......:" Get nValid_ When Mensagem( "Digite o prazo de validade desta proposta em numero de dias." ) 
-   @ 08,06 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+   @ 08,06 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
    @ 09,06 Say "Operacao..................:" Get nTabOpe Pict "999" Valid  BuscaOperacao( @nTabOpe ) 
    @ 10,06 Say "Tabela de Condicoes.......:" Get nTabCnd Pict "9999" Valid BuscaCondicao( @nTabCnd, @cCondi_, nTotal ) 
    @ 11,06 Say "Detalhamento de Condicoes.:" Get cCondi_ 
-   @ 12,06 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+   @ 12,06 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
    @ 13,06 Say "Tipo de Frete.............:" Get cFrete_ valid DisplayFrete( @cFrete_ ) When Mensagem( "Digite o tipo de frete ou [ENTER] para ver opcoes." ) 
    @ 14,06 Say "Vendedor Interno..........:" Get nVenIn1 Pict "@R 999" valid VenSeleciona( @nVenIn1, 1, @cVende1 ) When Mensagem( "Digite o codigo do vendedor interno.") 
    @ 14,40 Get cVende1 Pict "!!!!!!!!!!!!" When Mensagem( "Digite o nome, numero ou sigla do vendedor." ) 
    @ 15,06 Say "Vendedor Externo..........:" Get nVenEx1 Pict "@R 999" Valid VenSeleciona( @nVenEx1, 2, @cVende2 ) When Mensagem( "Digite o codigo do vendedor interno.") 
    @ 15,40 Get cVende2 Pict "!!!!!!!!!!!!" When Mensagem( "Digite o nome, numero ou sigla do vendedor." ) 
-   @ 16,06 Say "ObservacoesÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+   @ 16,06 Say "Observacoesï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
    @ 17,06 Get cObser1 Pict "@S60" When Mensagem( "Digite alguma observacao que se faca necessaria." ) 
    @ 18,06 Get cObser2 Pict "@S60" When Mensagem( "Digite alguma observacao que se faca necessaria." ) 
    READ 
@@ -591,7 +591,7 @@ Function IncluiCotacao( oTbA )
                     TabOpe With nTabOpe,; 
                     VLRFRE With nFrete_ 
  
-            IF NetRLock() 
+            IF netrlock() 
                Repl GARANT With cGarantia,; 
                     MOBRA_ With nMaoObra,; 
                     OPC1__ With nOpc1,; 
@@ -614,7 +614,7 @@ Function IncluiCotacao( oTbA )
          FOR nCt:= 1 TO Len( aPedido ) 
             IF aPedido[ nCt ][ 10 ] == "Sim" 
                DBAppend() 
-               IF NetRLock() 
+               IF netrlock() 
                   Repl Codigo With cCodigo,; 
                        CodPro With 0,; 
                        CodFab With aPedido[ nCt ][ 1 ],; 
@@ -760,7 +760,7 @@ Function AlteraCotacao( oTbA )
    Keyboard Chr( K_ENTER ) 
    SetColor( _COR_GET_EDICAO ) 
    Mensagem( "Digite as Informacoes do Cliente." ) 
-   @ 01,03 Say "Cotacao N§.: [" + StrZero( nCodigo, 8, 0 ) + "]" 
+   @ 01,03 Say "Cotacao Nï¿½.: [" + StrZero( nCodigo, 8, 0 ) + "]" 
    @ 02,03 Say "Emissao....:" Get dData__ 
    @ 04,03 Say "Cliente....:" Get cDescri 
    @ 05,03 Say "Endereco...:" Get cEndere 
@@ -823,12 +823,12 @@ Function AlteraCotacao( oTbA )
               nPrecoFinal:=   0 
               SetCursor(1) 
               @ 11,12 Say "Codigo.....: [INDEFINIDO]" 
-              @ 12,12 Say "Descri‡ao..:" Get cDescricao 
+              @ 12,12 Say "Descriï¿½ao..:" Get cDescricao 
               READ 
               @ 13,12 Say "Quantidade.:" Get nQuantidade   Pict "@E 999,999.999" 
-              @ 14,12 Say "Pre‡o......:" Get nPrecoInicial Pict "@E 999,999,999.999" 
+              @ 14,12 Say "Preï¿½o......:" Get nPrecoInicial Pict "@E 999,999,999.999" 
               @ 15,12 Say "% Desconto.:" Get nPerDesconto  Pict "@E 999.99" Valid CalculaDesconto( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal ) 
-              @ 16,12 Say "Pre‡o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal ) 
+              @ 16,12 Say "Preï¿½o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal ) 
               @ 17,12 Say "% IPI......:" Get nPerIPI Pict "999.99" 
               READ 
               If LastKey() <> K_ESC .AND. UpDated() 
@@ -893,12 +893,12 @@ Function AlteraCotacao( oTbA )
               SetCursor(1) 
               VPBox( 09, 10, 20, 70, "Dados do Produto Selecionado", _COR_GET_BOX, .T., .F., _COR_GET_TITULO ) 
               @ 11,12 Say "Codigo.....: [INDEFINIDO]" 
-              @ 12,12 Say "Descri‡ao..:" Get cDescricao 
+              @ 12,12 Say "Descriï¿½ao..:" Get cDescricao 
               READ 
               @ 13,12 Say "Quantidade.:" Get nQuantidade   Pict "@E 999,999.999" 
-              @ 14,12 Say "Pre‡o......:" Get nPrecoInicial Pict "@E 999,999,999.999" 
+              @ 14,12 Say "Preï¿½o......:" Get nPrecoInicial Pict "@E 999,999,999.999" 
               @ 15,12 Say "% Desconto.:" Get nPerDesconto  Pict "@E 999.99" Valid CalculaDesconto( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal ) 
-              @ 16,12 Say "Pre‡o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal ) 
+              @ 16,12 Say "Preï¿½o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal ) 
               @ 17,12 Say "% IPI......:" Get nPerIPI Pict "999.99" 
               READ 
               If !( LastKey()==K_ESC ) 
@@ -964,17 +964,17 @@ Function AlteraCotacao( oTbA )
    @ 05,06 Say "Codigo da Transportadora..:" Get nCodTra Pict "999" Valid BuscaTransport( @nCodTra ) When Mensagem( "Digite o codigo da transportadora ou [F9] para ver lista." ) 
    @ 06,06 Say "Prazo de Entrega (EM DIAS):" Get cPrazo_ When Mensagem( "Digite o prazo de entrega desta mercadoria." ) 
    @ 07,06 Say "Validade da Proposta......:" Get nValid_ When Mensagem( "Digite o prazo de validade desta proposta em numero de dias." ) 
-   @ 08,06 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+   @ 08,06 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
    @ 09,06 Say "Operacao..................:" Get nTabOpe Pict "999" Valid  BuscaOperacao( @nTabOpe ) 
    @ 10,06 Say "Tabela de Condicoes.......:" Get nTabCnd Pict "9999" Valid BuscaCondicao( @nTabCnd, @cCondi_, nTotal ) 
    @ 11,06 Say "Detalhamento de Condicoes.:" Get cCondi_ 
-   @ 12,06 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+   @ 12,06 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
    @ 13,06 Say "Tipo de Frete.............:" Get cFrete_ valid DisplayFrete( @cFrete_ ) When Mensagem( "Digite o tipo de frete ou [ENTER] para ver opcoes." ) 
    @ 14,06 Say "Vendedor Interno..........:" Get nVenIn1 Pict "@R 999" valid VenSeleciona( @nVenIn1, 1, @cVende1 ) When Mensagem( "Digite o codigo do vendedor interno.") 
    @ 14,40 Get cVende1 Pict "!!!!!!!!!!!!" When Mensagem( "Digite o nome, numero ou sigla do vendedor." ) 
    @ 15,06 Say "Vendedor Externo..........:" Get nVenEx1 Pict "@R 999" Valid VenSeleciona( @nVenEx1, 2, @cVende2 ) When Mensagem( "Digite o codigo do vendedor interno.") 
    @ 15,40 Get cVende2 Pict "!!!!!!!!!!!!" When Mensagem( "Digite o nome, numero ou sigla do vendedor." ) 
-   @ 16,06 Say "ObservacoesÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+   @ 16,06 Say "Observacoesï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
    @ 17,06 Get cObser1 Pict "@S60" When Mensagem( "Digite alguma observacao que se faca necessaria." ) 
    @ 18,06 Get cObser2 Pict "@S60" When Mensagem( "Digite alguma observacao que se faca necessaria." ) 
    Read 
@@ -1029,7 +1029,7 @@ Function AlteraCotacao( oTbA )
          NEXT 
  
          /* grava as informacoes do pedido */ 
-         IF NetRLock() 
+         IF netrlock() 
             Replace CodCli With 0,; 
                     Descri With cDescri,; 
                     Endere With cEndere,; 
@@ -1058,7 +1058,7 @@ Function AlteraCotacao( oTbA )
                     TabOpe With nTabOpe,; 
                     VLRFRE With nFrete_ 
  
-            IF NetRLock() 
+            IF netrlock() 
                Repl GARANT With cGarantia,; 
                     MOBRA_ With nMaoObra,; 
                     OPC1__ With nOpc1,; 
@@ -1082,7 +1082,7 @@ Function AlteraCotacao( oTbA )
          DBSetOrder( 1 ) 
          DBSeek( PED->CODIGO ) 
          WHILE PXP->CODIGO==PED->CODIGO .AND. !PXP->( EOF() ) 
-             IF NetRLock() 
+             IF netrlock() 
                 DBDelete() 
              ENDIF 
              DBSkip() 
@@ -1092,7 +1092,7 @@ Function AlteraCotacao( oTbA )
          FOR nCt:= 1 TO Len( aPedido ) 
             IF aPedido[ nCt ][ 10 ]=="Sim" 
                DBAppend() 
-               IF NetRlock() 
+               IF netrlock() 
                   Repl CODIGO With cCodigo,; 
                        CODPRO With 0,; 
                        CODFAB With aPedido[ nCt ][ 1 ],; 

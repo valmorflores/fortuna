@@ -1,8 +1,8 @@
 // ## CL2HB.EXE - Converted
  
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
-#Include "FORMATOS.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
+#Include "formatos.ch" 
  
 /* Definicao de parcelamento */ 
 #Define   FAT_PARCELA        1 
@@ -17,14 +17,14 @@
 #Define   FAT_NUMERO        10 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ MULTIROTA 
-³ Finalidade  ³ Multi-processamento por rota de entrega/transportadora 
-³ Parametros  ³ Nil 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ MULTIROTA 
+ï¿½ Finalidade  ï¿½ Multi-processamento por rota de entrega/transportadora 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function MultiRota() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -92,7 +92,7 @@ Local nRota:= 0, nCodCliente
         // Verifica se alguma Empresa esta selecionada 
         IF AT( "0", GDir ) <= 0 
            Keyboard Chr( K_RIGHT ) 
-           IF SWAlerta( "<< Empresa padrao est  selecionada >>; O que voce deseja fazer?", { "Continuar", "Cancelar" } )==2 
+           IF SWAlerta( "<< Empresa padrao estï¿½ selecionada >>; O que voce deseja fazer?", { "Continuar", "Cancelar" } )==2 
               ScreenRest( cTela ) 
               SetColor( cCor ) 
               SetCursor( nCursor ) 
@@ -101,12 +101,12 @@ Local nRota:= 0, nCodCliente
         ENDIF 
  
         // Inicio da gravacao 
-        GravaUsuario(   "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" + Chr( 13 ) + Chr( 10 ) + ; 
+        GravaUsuario(   "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + Chr( 13 ) + Chr( 10 ) + ; 
                         " Multi-processamento em: " + DTOC( DATE() ) + Chr( 13 ) + Chr( 10 ) +; 
                         " Diretorio (GDir): " + GDir + Chr( 13 ) + Chr( 10 ) +; 
                         " Rota: " + Str( nRota ) + Chr( 13 ) + Chr( 10 ) +; 
                         " Usuario: " + StrZero( nGCodUser, 3, 0 ) + Chr( 13 ) + Chr( 10 ) +; 
-                        " N§ Nota Fiscal Inicial: " + StrZero( nNotaFiscal, 9, 0 ) + Chr( 13 ) + Chr( 10 ) ) 
+                        " Nï¿½ Nota Fiscal Inicial: " + StrZero( nNotaFiscal, 9, 0 ) + Chr( 13 ) + Chr( 10 ) ) 
  
         WHILE !EOF() 
  
@@ -211,7 +211,7 @@ Local nRota:= 0, nCodCliente
                   nValorTotal+= aProdutos[ nCt ][ 5 ] 
                   nValorIpi+=   aProdutos[ nCt ][ 10 ] 
  
-                  /* Verifica se ‚ consumo ou industria */ 
+                  /* Verifica se ï¿½ consumo ou industria */ 
                   IF !cConsumoIndustria == "C" 
                       nBaseProIcm:= aProdutos[ nCt ][ 5 ] + aProdutos[ nCt ][ 10 ] 
                   ELSE 
@@ -282,7 +282,7 @@ Local nRota:= 0, nCodCliente
                           Pad( PED->OC__05, 10 ) +; 
                           Pad( PED->OC__06, 10 ) 
  
-              IF NetRLock() 
+              IF netrlock() 
                  Replace NUMERO With nNumero,; 
                          CLIENT With PED->CODCLI,; 
                          CDESCR With PED->DESCRI,; 
@@ -340,7 +340,7 @@ Local nRota:= 0, nCodCliente
                      #ifdef CONECSUL 
                          cDescricao:= ( LEFT( aProdutos[ nCt ][ 15 ], 12 ) + " - " + aProdutos[ nCt ][ 2 ] ) 
                      #endif 
-                     IF NetRLock() 
+                     IF netrlock() 
                         Replace CODNF_ With nNumero,; 
                                 CODRED With StrZero( aProdutos[ nCt ][ 1 ], 7, 0 ),; 
                                 CODIGO With StrZero( aProdutos[ nCt ][ 1 ], 7, 0 ),; 
@@ -455,7 +455,7 @@ Local nRota:= 0, nCodCliente
                     FOR nCt:= 1 TO Len( aParcelas ) 
                         DBSelectAr( _COD_DUPAUX ) 
                         DBAppend() 
-                        IF NetRLock() 
+                        IF netrlock() 
                            Replace CODNF_ With nNumero,; 
                                    CDESCR With PED->DESCRI,; 
                                    VENC__ With aParcelas[ nCont ][ FAT_VENCIMENTO ],; 
@@ -496,7 +496,7 @@ Local nRota:= 0, nCodCliente
  
            @ 21,40 Say "Gravando Informacoes Pedido...      " 
            IF lGravada 
-              IF NetRLock() 
+              IF netrlock() 
                  Replace DATANF With dDataEm,; 
                          CODNF_ With nNumero 
               ENDIF 
@@ -513,9 +513,9 @@ Local nRota:= 0, nCodCliente
         ENDDO 
  
         // Termino da gravacao 
-        GravaUsuario(   "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" + Chr( 13 ) + Chr( 10 ) + ; 
+        GravaUsuario(   "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + Chr( 13 ) + Chr( 10 ) + ; 
                         " Multi-processamento em: " + DTOC( DATE() ) + Chr( 13 ) + Chr( 10 ) +; 
-                        " N§ Nota Fiscal Final..: " + StrZero( nNumero, 9, 0 ) + Chr( 13 ) + Chr( 10 ) ) 
+                        " Nï¿½ Nota Fiscal Final..: " + StrZero( nNumero, 9, 0 ) + Chr( 13 ) + Chr( 10 ) ) 
  
         IF File( "ERRO.TXT" ) 
            //aErro:= DIRECTORY( "ERRO.TXT" ) 
@@ -554,15 +554,15 @@ Local nRota:= 0, nCodCliente
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ PRECOAVISTA 
-³ Finalidade  ³ Busca o preco a Vista de um determinado produto conforme a 
-³             ³ operacao utilizada 
-³ Parametros  ³ nTabOpe, cProduto 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ PRECOAVISTA 
+ï¿½ Finalidade  ï¿½ Busca o preco a Vista de um determinado produto conforme a 
+ï¿½             ï¿½ operacao utilizada 
+ï¿½ Parametros  ï¿½ nTabOpe, cProduto 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function PrecoAVista( nTabOpe, cProduto ) 
 Local nMargem:= 0, nOrdem:= MPR->( IndexOrd() ) 
@@ -584,14 +584,14 @@ Return PrecoCnd( 1, PrecoCompra( PAD( cProduto, 12 ) ), nMargem )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ LIMPASELECAO 
-³ Finalidade  ³ Limpa Selecao das Notas Fiscais 
-³ Parametros  ³ NIL 
-³ Retorno     ³ NIL 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ LIMPASELECAO 
+ï¿½ Finalidade  ï¿½ Limpa Selecao das Notas Fiscais 
+ï¿½ Parametros  ï¿½ NIL 
+ï¿½ Retorno     ï¿½ NIL 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function LimpaSelecao() 
  Local nArea:= Select(), nOrdem:= IndexOrd() 
@@ -600,7 +600,7 @@ Function LimpaSelecao()
  WHILE DBSeek( "Sim" ) .AND. !Inkey()==K_ESC .AND.; 
                              !LastKey()==K_ESC .AND.; 
                              !NextKey()==K_ESC 
-    IF NetRLock() 
+    IF netrlock() 
        Replace SELECT With "   " 
     ENDIF 
  ENDDO 

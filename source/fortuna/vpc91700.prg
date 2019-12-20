@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#include "INKEY.CH" 
-#Include "VPF.CH" 
+#include "inkey.ch" 
+#Include "vpf.ch" 
 /* 
 *      Funcao - VPC910000 
 *  Finalidade - Movimentar Caixa 

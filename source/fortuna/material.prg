@@ -1,5 +1,5 @@
 // ## CL2HB.EXE - Converted
-#Include "VPF.Ch" 
+#Include "vpf.ch" 
  
 #Define STR            Upper( AllTrim( aEstrutura[ nCt ] ) ) 
 #Define STRNORMAL      aEstrutura[ nCt ] 

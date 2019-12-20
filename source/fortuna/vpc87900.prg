@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
 /* 
 **      Modulo - VPC87900 
 **  Finalidade - Cadastro DE contas (Inc/Alt/Excl) 
@@ -94,7 +94,7 @@ Whil LastKey()<>K_ESC
    Read 
    If Lastkey()<>K_ESC 
       DBAppend() 
-      If NetRlock() 
+      If netrlock() 
          Repl CODIGO With nCodigo,; 
               DESCRI With cDescri,; 
               AGENC_ With nAgenc_,; 
@@ -138,7 +138,7 @@ VPBox(02,15,10,74,"Conta Corrente")
     Mensagem( "Digite a data de abertura da conta." ) 
  Read 
  If Lastkey()<>K_ESC 
-    If NetRlock() 
+    If netrlock() 
        Repl CODIGO With nCodigo,; 
             DESCRI With cDescri,; 
             AGENC_ With nAgenc_,; 
@@ -239,15 +239,15 @@ Return( ( LASTKEY()==13 ) )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ BuscaAgencia 
-³ Finalidade  ³ Apresentar um display com informacoes da agencia bancaria 
-³             ³ utilizada pelo cliente. 
-³ Parametros  ³ nAgenc_ = Numero da Agencia Bancaria no Sistema 
-³ Retorno     ³ .T./.F. 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 24/08/98 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ BuscaAgencia 
+ï¿½ Finalidade  ï¿½ Apresentar um display com informacoes da agencia bancaria 
+ï¿½             ï¿½ utilizada pelo cliente. 
+ï¿½ Parametros  ï¿½ nAgenc_ = Numero da Agencia Bancaria no Sistema 
+ï¿½ Retorno     ï¿½ .T./.F. 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 24/08/98 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function BuscaAgencia( nAgenc_ ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 

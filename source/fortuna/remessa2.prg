@@ -1,7 +1,7 @@
 // ## CL2HB.EXE - Converted
 #include "Common.Ch" 
-#include "Inkey.Ch" 
-#Include "VPF.Ch" 
+#include "inkey.ch" 
+#Include "vpf.ch" 
  
 /* 
 * Funcao      - REMESSA 
@@ -54,7 +54,7 @@ Local cCodCed:="065018154085", cTipCar:="3", cTipoDoc:="06",;
   EndIf 
  
   /* 
-  * Geracao de um arquivo £nico de dup. com um 
+  * Geracao de um arquivo ï¿½nico de dup. com um 
   * registro por cada duplicata. 
   */ 
   Mensagem("Transferindo dados entre arquivos, aguarde...",1) 
@@ -64,7 +64,7 @@ Local cCodCed:="065018154085", cTipCar:="3", cTipoDoc:="06",;
      FErase( "ARECIND2.TMP" ) 
   EndIf 
  
-  /* Estrutura para cria‡„o do arquivo £nico. */ 
+  /* Estrutura para criaï¿½ï¿½o do arquivo ï¿½nico. */ 
   aStruct:= { { "NomCed", "C", 35, 00 },; 
               { "CodCed", "C", 12, 00 },; 
               { "TipCar", "C", 01, 00 },; 
@@ -92,10 +92,10 @@ Local cCodCed:="065018154085", cTipCar:="3", cTipoDoc:="06",;
               { "CodNf_", "N", 10, 00 },; 
               { "Select", "C", 03, 00 } } 
  
-  /* Criacao do arquivo tempor rio */ 
+  /* Criacao do arquivo temporï¿½rio */ 
   DBCreate( "ARECEBER.TMP", aStruct ) 
  
-  /* Area tempor ria de trabalho */ 
+  /* Area temporï¿½ria de trabalho */ 
   DBSelectar( 50 ) 
 // ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
   Use ARECEBER.TMP Alias TMP Shared 
@@ -386,7 +386,7 @@ Local cCodCed:="065018154085", cTipCar:="3", cTipoDoc:="06",;
               use BDLMOVI alias MOVIMENTO Exclusiv 
               Flock() 
               If NetErr() 
-                 Aviso("N„o foi poss¡vel bloquear o arquivo...") 
+                 Aviso("Nï¿½o foi possï¿½vel bloquear o arquivo...") 
                  Pausa() 
                  ScreenRest( cTela ) 
                  SetCursor( nCursor ) 
@@ -512,13 +512,13 @@ Local cCodCed:="065018154085", cTipCar:="3", cTipoDoc:="06",;
  
               enddo 
  
-              /* Somat¢rio */ 
+              /* Somatï¿½rio */ 
               select 4 
 // ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
               use BDLTRAI alias TRAILER Exclusiv 
               FLock() 
               If NetErr() 
-                 Aviso("N„o foi poss¡vel bloquear o arquivo...") 
+                 Aviso("Nï¿½o foi possï¿½vel bloquear o arquivo...") 
                  Pausa() 
                  ScreenRest( cTela ) 
                  SetCursor( nCursor ) 

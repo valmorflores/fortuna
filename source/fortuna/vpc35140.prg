@@ -7,8 +7,8 @@
 * Data        - 10/Outubro/1994 
 * Atualizacao - 
 */ 
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
  
 #ifdef HARBOUR
 function vpc35140()
@@ -143,8 +143,8 @@ Local cRomane, nNotaSaida, dDataEntrada, dDataSaida
 			case nTecla==K_F2 		  ;dbmudaordem( 1, otb ) 
 			case nTecla==K_F3 		  ;dbmudaordem( 2, otb ) 
          case nTecla==K_DEL 
-              IF Confirma( 0, 0, "Deseja excluir este registro (N§ de serie)?", "", "S" ) 
-                 IF NetRLock() 
+              IF Confirma( 0, 0, "Deseja excluir este registro (Nï¿½ de serie)?", "", "S" ) 
+                 IF netrlock() 
                     DBDelete() 
                  ENDIF 
               ENDIF 
@@ -173,7 +173,7 @@ Local cRomane, nNotaSaida, dDataEntrada, dDataSaida
                  IF LastKey() <> K_ESC 
                     DBSelectAr( _COD_ROMANEIO ) 
                     DBGoTo( nReg ) 
-                    IF NetRLock() 
+                    IF netrlock() 
                        Replace ROMANE With cRomane,; 
                                CODNF_ With nNotasaida,; 
                                DATSAI With dDataSaida,; 
@@ -278,14 +278,14 @@ Local cProduto:= "0000000"
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ 
-³ Finalidade  ³ FAZER APRESENTACAO DO fornecedor PARA A ROTINA NFBUSCA 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ 
+ï¿½ Finalidade  ï¿½ FAZER APRESENTACAO DO fornecedor PARA A ROTINA NFBUSCA 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
   Static Function Buscafornecedor( nCodigo, nCod ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 

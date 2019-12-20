@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function InsertMensagem() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -41,7 +41,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
                nFim:= nCt - 1 
                aMatrizSecunadria[ nPosicaoDoTitulo ][ 3 ]:= nInicio 
                aMatrizSecundaria[ nPosicaoDoTitulo ][ 4 ]:= nFim 
-               /* da 2§ em diante */ 
+               /* da 2ï¿½ em diante */ 
                nPosicaoDoTitulo:= nCt 
                nInicio:= nCt 
             ELSE 

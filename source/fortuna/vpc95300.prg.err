@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#Include "VPF.CH"
-#Include "INKEY.CH"
+#Include "vpf.ch"
+#Include "inkey.ch"
 
 
 /*****
@@ -116,7 +116,7 @@ Local nRepresentatividade:= 0
       @ 08,02 Say "Valor ICMs.....:" Get nVlrIcm  Pict "@E 999,999,999.99"
       @ 09,02 Say "Valor IPI......:" Get nVlrIpi  Pict "@E 999,999,999.99"
       @ 10,02 Say "Data Entrada...:" Get dDataMv
-      @ 11,02 Say "N§Parcelas.....:" Get nParcelas Pict "99" Valid FormaPgto( dDataNota, @nParcelas, @aCondicoes, nTotalP )
+      @ 11,02 Say "Nï¿½Parcelas.....:" Get nParcelas Pict "99" Valid FormaPgto( dDataNota, @nParcelas, @aCondicoes, nTotalP )
       // Coluna 2
       @ 06,42 Say "Vlr.Frete...:" Get nVlrFre Pict "@E 999,999,999.99"
       @ 07,42 Say "Vlr.Desconto:" Get nVlrDes Pict "@E 999,999,999.99"
@@ -149,7 +149,7 @@ Local nRepresentatividade:= 0
       if aProdutos[ 1 ][ 1 ] == 0
          if Len( aProdutos ) > 1
             cTelaRes:= ScreenSave( 0, 0, 24, 79 )
-            Aviso( "Refazer a Selecao - 1§ Item em branco." )
+            Aviso( "Refazer a Selecao - 1ï¿½ Item em branco." )
             Pausa()
             ScreenRest( cTelaRes )
             Loop
@@ -272,7 +272,7 @@ Local nRepresentatividade:= 0
                     nVlrPis:= ( nValorItem - nDescontoItem ) * ( SWSet( _GER_CUSTOS_PIS ) / 100 )
 
                     // Expurgo de cofins desde 01/02/2004
-                    // para empresas de Lucro Real sujeito ao regime nÆo cumulativo
+                    // para empresas de Lucro Real sujeito ao regime nï¿½o cumulativo
                     IF dDataNota >= CTOD( "01/02/2004" )
                        nVlrCofins:= ( nValorItem - nDescontoItem ) * ( SWSet( _GER_CUSTOS_COFINS ) / 100 )
                     ELSE
@@ -419,7 +419,7 @@ Local nRepresentatividade:= 0
                       cProduto:= PAD( StrZero( aProdAnterior[ nCt ][ 1 ], 7 ), 12 )
                       MPR->( DBSetOrder( 1 ) )
                       IF MPR->( DBSeek( cProduto ) )
-                         IF MPR->( NetRLock() )
+                         IF MPR->( netrlock() )
                             Mensagem( "Movimentando o Produto: " + cProduto + " " + StrZero( aProdAnterior[ nCt ][ 7 ], 10, 0 ) )
                             Replace MPR->SALDO_ With MPR->SALDO_ - aProdAnterior[ nCt ][ 7 ]
                          ENDIF
@@ -473,7 +473,7 @@ Local nRepresentatividade:= 0
                         ELSE
                            nIcm:= nPerIcm
                         ENDIF
-                        IF MPR->( NetRLock() )
+                        IF MPR->( netrlock() )
                            IF aProdutos[ nCt ][ 18 ]=="Sim"
                               Replace MPR->SALDO_ With MPR->SALDO_ + aProdutos[ nCt ][ 7 ]
                            ENDIF
@@ -532,7 +532,7 @@ Local nRepresentatividade:= 0
                     /* LANCAMENTO DE CONTAS A PAGAR */
                     WHILE PAG->CODFOR==nCodigo .AND. !( PAG->( EOF() ) )
                        IF Alltrim( PAG->DOC___ ) == Alltrim( Str( nNotaF ) )
-                          IF PAG->( NetRLock() )
+                          IF PAG->( netrlock() )
                              PAG->( DBDelete() )
                           ENDIF
                        ENDIF
@@ -590,11 +590,11 @@ Local nRepresentatividade:= 0
                  SetCursor(1)
                  Keyboard Chr( K_ENTER ) + Chr( K_ENTER )
                  @ 10,12 Say "Produto....: [" + aProdutos[ nRow ][ 2 ] + "]"
-                 @ 11,12 Say "Descri‡„o..: [" + LEFT( aProdutos[ nRow ][ 3 ], 40 ) + "]"
+                 @ 11,12 Say "Descriï¿½ï¿½o..: [" + LEFT( aProdutos[ nRow ][ 3 ], 40 ) + "]"
                  @ 12,12 Say "Fabricante.:" Get cOrigem Pict "XXXXXXXXXXXXXX" when Mensagem( "Digite a origem do produto." )
-                 @ 13,12 Say "Pre‡o......:" Get nPrecoInicial Pict "@E 999,999,999.999" When MudaPreco() .AND. Mensagem( "Digite o preco de venda para o produto." )
+                 @ 13,12 Say "Preï¿½o......:" Get nPrecoInicial Pict "@E 999,999,999.999" When MudaPreco() .AND. Mensagem( "Digite o preco de venda para o produto." )
                  @ 14,12 Say "% Desconto.:" Get nPerDesconto  Pict "@E 999.99"          Valid CalculaDesconto( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
-                 @ 15,12 Say "Pre‡o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999"  Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
+                 @ 15,12 Say "Preï¿½o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999"  Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
                  VPBox( 16, 10, 18, 70,, _COR_GET_BOX, .F., .F., _COR_GET_TITULO )
                  @ 17,12 Say "Quantidade.:" Get nQuantidade   Pict "@E 999,999.999" Valid TestaQuantidade( nQuantidade )
                  Read
@@ -671,7 +671,7 @@ Local nTotal, nTotalProdutos:= 0
       nTotalProdutos:= nTotalProdutos + ( aProdutos[ i ][ 06 ] * aProdutos[ nRow ][ 07 ] )
   next
   @ 20,02 Say "Total (soma dos produtos): " + Tran( nTotalProdutos, "@E 999,999,999.99" )
-  @ 21,02 Say "Total a custo m‚dio......: " + Tran( nTotal, "@E 999,999,999.99" )
+  @ 21,02 Say "Total a custo mï¿½dio......: " + Tran( nTotal, "@E 999,999,999.99" )
 
 
   oTb:= TBrowseNew( 01, 01, 17, 78 )
@@ -784,7 +784,7 @@ Local nCt, nTecla, oTb, nRow:= 1, nConfere
              IF !(nConfere==nTotal)
                 cTelaRes:= ScreenSave( 0, 0, 24, 79 )
                 Aviso( "Total da Nota nao confere c/ digitado. " + Alltrim( Tran( nConfere - nTotal, "@E 9,999,999.99" ) ) )
-                Ajuda( "Total:" + Tran( nTotal, "@E 999,999,999.99" ) + " ÄÄÄÄÄ Soma das Parcelas: " + Tran( nConfere, "@E 999,999,999.99" ) )
+                Ajuda( "Total:" + Tran( nTotal, "@E 999,999,999.99" ) + " ï¿½ï¿½ï¿½ï¿½ï¿½ Soma das Parcelas: " + Tran( nConfere, "@E 999,999,999.99" ) )
                 Mensagem( "Pressione [TAB] p/ aceitar ou qualquer tecla p/ continuar." )
                 IF Inkey(0)==K_TAB
                    ScreenRest( cTela )
@@ -818,7 +818,7 @@ Local nCt, nTecla, oTb, nRow:= 1, nConfere
                 IF !nConfere==nTotal
                    cTelaRes:= ScreenSave( 0, 0, 24, 79 )
                    Aviso( "Total da Nota nao confere c/ digitado. " + Alltrim( Tran( nConfere - nTotal, "@E 9,999,999.99" ) ) )
-                   Ajuda( "Total:" + Tran( nTotal, "@E 999,999,999.99" ) + " ÄÄÄÄÄ Soma das Parcelas: " + Tran( nConfere, "@E 999,999,999.99" ) )
+                   Ajuda( "Total:" + Tran( nTotal, "@E 999,999,999.99" ) + " ï¿½ï¿½ï¿½ï¿½ï¿½ Soma das Parcelas: " + Tran( nConfere, "@E 999,999,999.99" ) )
                    Mensagem( "Pressione [TAB] p/ aceitar ou qualquer tecla p/ continuar." )
                    IF Inkey(0)==K_TAB
                       ScreenRest( cTela )
@@ -872,7 +872,7 @@ VPBox( 0, 0, 22, 79, "Cotacao", _COR_BROW_BOX , .F., .F., _COR_BROW_TITULO, .F. 
 @ 1, 1 Say "Pedido.....: "
 @ 2, 1 Say "Codigo.....: " + StrZero( CLI->Codigo, 4, 0 )
 @ 3, 1 Say "Cliente....: " + Cli->Descri
-@ 4, 1 Say "Endere‡o...: " + Cli->Endere
+@ 4, 1 Say "Endereï¿½o...: " + Cli->Endere
 @ 5, 1 Say "Cidade.....: " + Cli->Cidade
 @ 6, 1 Say "Contato....: " + Cli->Compra
 @ 7, 1 Say "Fone/Fax...: " + Cli->Fone1_ + " / " + Cli->Fax___
@@ -882,7 +882,7 @@ Scroll( 9, 0, 9, 79 )
 @ 09, 01 Say "Produto"
 @ 09, 33 Say "Un"
 @ 09, 37 Say "Quantidade"
-@ 09, 53 Say "Preco Unit rio"
+@ 09, 53 Say "Preco Unitï¿½rio"
 @ 09, 68 Say "%IPI"
 DispEnd()
 //CalculoGeral( aProdutos )
@@ -897,7 +897,7 @@ return(if(nTecla=27,.f.,.t.))
 
 /*-------------------------------------------------------
 * Modulo      - CalculoGeral
-* Finalidade  - Apresentar no rodap‚ o calculo total do pedido
+* Finalidade  - Apresentar no rodapï¿½ o calculo total do pedido
 * Programador - Valmor Pereira Flores
 * Data        - 26/Outubro/1995
 * Atualizacao -
@@ -1211,7 +1211,7 @@ Local nEscolha:= 1
           IF PAG->( DBSeek( PAD( Alltrim( Str( nNotaF, 10, 0 ) ), 10 ) ) )
              WHILE Alltrim( PAG->DOC___ ) == Alltrim( Str( nNotaF, 15, 0 ) )
                 IF nCodigo == PAG->CODFOR
-                   IF PAG->( NetRLock() )
+                   IF PAG->( netrlock() )
                       PAG->( DBDelete() )
                    ENDIF
                 ENDIF
@@ -1228,19 +1228,19 @@ Local nEscolha:= 1
            CODIGO == nCodigo .AND. nTabOpe == CODMV_
            IF ANULAR==" " .AND. Alltrim( CPROD_ ) == "***<NOTA>***"
               /* Limpa cabecalho da nota fiscal */
-              IF NetRLock()
+              IF netrlock()
                  DBDelete()
               ENDIF
 
            ELSEIF ANULAR==" " .AND. VAL( CPROD_ ) > 0
               /* Limpa Produtos da Nota Fiscal, tirando saldos ao estoque */
-              IF NetRLock()
+              IF netrlock()
                  MPR->( DBSetOrder( 1 ) )
                  MPR->( DBSeek( EST->CPROD_ ) )
-                 IF MPR->( NetRLock() )
+                 IF MPR->( netrlock() )
                     Replace MPR->SALDO_ With MPR->SALDO_ - QUANT_
                  ENDIF
-                 IF NetRLock()
+                 IF netrlock()
                     DBDelete()
                  ENDIF
               ENDIF
@@ -1351,7 +1351,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
 
  Funcao      - VerCodigo
  Finalidade  - Pesquisar a existencia de um codigo igual ao digitado
- Parametros  - cCodigo=> Codigo digitado pelo usu rio
+ Parametros  - cCodigo=> Codigo digitado pelo usuï¿½rio
  Retorno     -
  Programador - Valmor Pereira Flores
  Data        - 04/Dezembro/1995
@@ -1380,7 +1380,7 @@ Static Function VerCodigo( cCodigo, GetList )
    DBSetOrder( 1 )
    If !DBSeek( cGrupo_ + cCodigo + Space( 5 ) )
       Ajuda("[Enter]Continua")
-      Aviso( "C¢digo n„o existente neste grupo...", 24 / 2 )
+      Aviso( "Cï¿½digo nï¿½o existente neste grupo...", 24 / 2 )
       Mensagem( "Pressione [Enter] para ver lista..." )
       Pausa()
       VisualProdutos( cGrupo_ + cCodigo )
@@ -1405,8 +1405,8 @@ Static Function VerCodigo( cCodigo, GetList )
 /*
 
   Funcao     - MudaPreco
-  Finalidade - Verificar se ‚ permitida a mudanca de precos e fazer o campo pular
-               caso nÆo seja poss¡vel.
+  Finalidade - Verificar se ï¿½ permitida a mudanca de precos e fazer o campo pular
+               caso nï¿½o seja possï¿½vel.
   Parametros -
   Retorno    -
   Autor      - Valmor Pereira Flores
@@ -1535,7 +1535,7 @@ Local nOpcao:= 0
                 endif
                 pxf->( dbskip() )
            enddo
-           // se næo encontrou o fornecedor, cria o mesmo
+           // se nï¿½o encontrou o fornecedor, cria o mesmo
            // com o preco == 0
            if !lok
               pxf->( dbappend() )
@@ -1610,7 +1610,7 @@ Local nOpcao:= 0
                           endif
                           mpr->( dbunlock() )
                        else
-                          swalerta( "O preco de venda nao sofreu mudanca porque ;o fornecedor padrao informado neste produto ‚ outro.", { " ok " } )
+                          swalerta( "O preco de venda nao sofreu mudanca porque ;o fornecedor padrao informado neste produto ï¿½ outro.", { " ok " } )
                        endif
                        exit
                     endif

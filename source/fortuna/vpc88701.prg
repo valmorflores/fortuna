@@ -1,12 +1,12 @@
 // ## CL2HB.EXE - Converted
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
  
  
 /* 
 Funcao     - PEDIDOBAIXADO 
 Finalidade - Retornar .T. se pedido esta baixado e .F. se 
-             pedido nÆo esta baixado. 
+             pedido nï¿½o esta baixado. 
 Data 
 */ 
 Function PedidoBaixado() 
@@ -37,7 +37,7 @@ local lDesfez:= .T.
    EST->( DBSetOrder( 1 ) ) 
    lDesfez:= .T. 
    IF PedidoBaixado() 
-      Aviso( "Pedido j  esta processado. Desfazendo, aguarde..." ) 
+      Aviso( "Pedido jï¿½ esta processado. Desfazendo, aguarde..." ) 
       lDesfez:= PedidoDesfazProcessamento() 
    ENDIF 
    DBSelectAr( "PED" ) 
@@ -60,7 +60,7 @@ local lDesfez:= .T.
           //ENDIF 
       ELSE 
           cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-          Aviso( "Pedido nÆo foi gravado, impossivel processar informacoes." ) 
+          Aviso( "Pedido nï¿½o foi gravado, impossivel processar informacoes." ) 
           Pausa() 
           ScreenRest( cTelaRes ) 
       ENDIF 

@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
 
 /* 
 **      Modulo - VPC880000 
@@ -85,14 +85,14 @@ return nil
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IncluiServico 
-³ Finalidade  ³ Inclusao de servicos 
-³ Parametros  ³ oObj 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IncluiServico 
+ï¿½ Finalidade  ï¿½ Inclusao de servicos 
+ï¿½ Parametros  ï¿½ oObj 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 stat func incluiServico(oOBJ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -114,8 +114,8 @@ DBGoBottom()
    @ 04,03 Say "Custo de execucao:" Get nCusExe Pict "@E 999,999,999.99" when; 
      Mensagem( "Digite o valor do custo para a execucao deste servico." ) 
    @ 05,03 Say "Valor Padrao.....:" Get nValorP Pict "@E 999,999,999.99" when; 
-     Mensagem( "Digite um valor padrao para este hist¢rico." ) 
-   @ 06,03 Say Repl( "Ä", 73 ) 
+     Mensagem( "Digite um valor padrao para este histï¿½rico." ) 
+   @ 06,03 Say Repl( "ï¿½", 73 ) 
    @ 06,04 Say " Ajuste de Saldos " 
    @ 07,03 Say "Receitas Anter...:" Get nSaldoA Pict "@E 999,999,999.99" when; 
      Mensagem( "Digite o valor dos recebimentos anteriores a traves deste servico." ) 
@@ -140,7 +140,7 @@ DBGoBottom()
    DBSelectAr( _COD_SERVICO ) 
    If Lastkey()<>K_ESC 
       DBAppend() 
-      If NetRlock() 
+      If netrlock() 
          Repl Codigo With cCodigo,; 
               SubCta with cSubCta,; 
               Descri With cDescri,; 
@@ -154,7 +154,7 @@ DBGoBottom()
       If Val( Right( cCodigo, 4 ) ) > 0 
          DBSelectAr( _COD_MPRIMA ) 
          DBAppend() 
-         If NetRlock() 
+         If netrlock() 
             Repl Codigo With cCodigo,; 
                  Indice With cCodigo,; 
                  Descri With LTrim( cDescri ),; 
@@ -173,14 +173,14 @@ EndDo
 Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ AlteraServico 
-³ Finalidade  ³ Inclusao de servicos 
-³ Parametros  ³ oObj 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ AlteraServico 
+ï¿½ Finalidade  ï¿½ Inclusao de servicos 
+ï¿½ Parametros  ï¿½ oObj 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 stat func AlteraServico(oOBJ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -202,8 +202,8 @@ Local cSubCta:= SubCta, cDescri,;
    @ 04,03 Say "Custo de execucao:" Get nCusExe Pict "@E 999,999,999.99" when; 
      Mensagem( "Digite o valor do custo para a execucao deste servico." ) 
    @ 05,03 Say "Valor Padrao.....:" Get nValorP Pict "@E 999,999,999.99" when; 
-     Mensagem( "Digite um valor padrao para este hist¢rico." ) 
-   @ 06,03 Say Repl( "Ä", 73 ) 
+     Mensagem( "Digite um valor padrao para este histï¿½rico." ) 
+   @ 06,03 Say Repl( "ï¿½", 73 ) 
    @ 06,04 Say " Ajuste de Saldos " 
    @ 07,03 Say "Receitas Anter...:" Get nSaldoA Pict "@E 999,999,999.99" when; 
      Mensagem( "Digite o valor dos recebimentos anteriores a traves deste servico." ) 
@@ -227,7 +227,7 @@ Local cSubCta:= SubCta, cDescri,;
    cDescri:= Space( 2 * nEspaco ) + cDescri 
    DBSelectAr( _COD_SERVICO ) 
    If Lastkey()<>K_ESC 
-      If NetRlock() 
+      If netrlock() 
          Repl Codigo With cCodigo,; 
               SubCta with cSubCta,; 
               CusExe With nCusExe,; 
@@ -241,7 +241,7 @@ Local cSubCta:= SubCta, cDescri,;
       IF Val( Right( cCodigo, 4 ) ) > 0 
          DBSelectAr( _COD_MPRIMA ) 
          IF DBSeek( cCodigo + Space( 5 ) ) 
-            If NetRlock() 
+            If netrlock() 
                Repl Codigo With cCodigo,; 
                     Indice With cCodigo,; 
                     Descri With LTrim( cDescri ),; 
@@ -274,7 +274,7 @@ Local cSubCta:= SubCta, cDescri:= PADL( LTrim( Descri ), 33 ),;
    @ 03,03 Say "Descricao........: [" + cDescri + "]" 
    @ 04,03 Say "Custo de execucao: [" + Tran( nCusExe, "@E 999,999,999.99" ) + "]" 
    @ 05,03 Say "Valor Padrao.....: [" + Tran( nValorP, "@E 999,999,999.99" ) + "]" 
-   @ 06,03 Say Repl( "Ä", 73 ) 
+   @ 06,03 Say Repl( "ï¿½", 73 ) 
    @ 06,04 Say " Ajuste de Saldos " 
    @ 07,03 Say "Receitas Anter...: [" + Tran( nSaldoA, "@E 999,999,999.99" ) + "]" 
    @ 08,03 Say "Custos...........: [" + Tran( nDebito, "@E 999,999,999.99" ) + "]" 

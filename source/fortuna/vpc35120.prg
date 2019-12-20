@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VPC351200 
-³ Finalidade  ³ Relacao de Produtos 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VPC351200 
+ï¿½ Finalidade  ï¿½ Relacao de Produtos 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 #ifdef HARBOUR
 function vpc35120()
@@ -36,7 +36,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
    oTab:=tbrowsedb( 01, 01, 18, 78 ) 
    oTab:addcolumn(tbcolumnnew( "   Indice   Descricao                               Un     Saldo     Preco Org",; 
    {|| if( aviso_ > 0, StrZero( AVISO_, 2, 0 ), "  " ) + " " + PAD( ALLTRIM( INDICE ), 7 ) + " " + PAD( Alltrim( CODFAB  ) + " " + DESCRI, 40 ) + " " + UNIDAD + " " + Tran( SALDO_, "@E 9,999.999" ) + " " + Tran( PRECOV, "@E 99,999.99" ) + " " + ORIGEM + Space( 10 ) })) 
-   oTab:HeadSep:= "º" 
+   oTab:HeadSep:= "ï¿½" 
    oTab:AUTOLITE:=.F. 
    oTab:dehilite() 
    ORG->( DBSetOrder( 3 ) ) 
@@ -90,8 +90,8 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
                  oTab:nBottom:= 14 
               ELSE 
                  FOR nCt:= 15 TO 19 Step +1 
-                     @ nCt-1,00 Say "¼" Color  _COR_BROW_BOX 
-                     @ nCt-1,79 Say "½" Color  _COR_BROW_BOX 
+                     @ nCt-1,00 Say "ï¿½" Color  _COR_BROW_BOX 
+                     @ nCt-1,79 Say "ï¿½" Color  _COR_BROW_BOX 
                      VPBox( nCt, 00, 22, 79, , "15/03", .f., .f. ) 
                      FOR x:= 1 TO 5000 
                          ++x 

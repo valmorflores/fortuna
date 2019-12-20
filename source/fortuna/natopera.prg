@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
 /* 
 **      Modulo - VPC875000 
 **  Finalidade - Tabela de N. Operacao (Inc/Alt/Excl) 
@@ -93,11 +93,11 @@ Whil LastKey()<>K_ESC
    @ 06,16 Say "Descricao....:" Get cDESCRI When; 
      Mensagem("Digite a descricao.") 
    @ 07,16 Say "Entrada/Saida:" Get cEntSai Pict "!" Valid cEntSai $ "ES" When; 
-     Mensagem( "Digite [E] para Entrada ou [S] para sa¡da..." ) 
+     Mensagem( "Digite [E] para Entrada ou [S] para saï¿½da..." ) 
    Read 
    If Lastkey()<>K_ESC 
       DBAppend() 
-      If NetRlock() 
+      If netrlock() 
          Repl CODIGO With nCODIGO,; 
               DESCRI With cDESCRI,; 
               ENTSAI With IF( cEntSai=="E", "ENT", "SAI" ) 
@@ -125,10 +125,10 @@ stat func alteraNatOpera(oOBJ)
    @ 06,16 Say "Descricao....:" Get cDESCRI When; 
      Mensagem("Digite a descricao.") 
    @ 07,16 Say "Entrada/Saida:" Get cEntSai Pict "!" Valid cEntSai $ "ES" When; 
-     Mensagem( "Digite [E] para Entrada ou [S] para sa¡da..." ) 
+     Mensagem( "Digite [E] para Entrada ou [S] para saï¿½da..." ) 
    Read 
    If Lastkey()<>K_ESC 
-      If NetRlock() 
+      If netrlock() 
          Repl CODIGO With nCODIGO,; 
               DESCRI With cDESCRI,; 
               ENTSAI With IF( cENTSAI=="S", "SAI", "ENT" ) 
@@ -225,7 +225,7 @@ Return( ( LASTKEY()==13 ) )
  
 /* 
 * Funcao      - PesqNatOpera 
-* Finalidade  - Ver se j  existe o codigo digitado 
+* Finalidade  - Ver se jï¿½ existe o codigo digitado 
 * Parametro   - Codigo 
 * Retorno     - lFlag=> Verdadeiro se nao existe ; Falso se existe 
 * Programador - Valmor Pereira Flores 
@@ -240,7 +240,7 @@ Static Function PesqNatOpera( nCodigo )
  
      /* Se nao encontrar */ 
      SetCursor( 1 ) 
-     Aviso( "Natureza da Operacao J  cadastrada...", 24 /2 ) 
+     Aviso( "Natureza da Operacao Jï¿½ cadastrada...", 24 /2 ) 
      Mensagem( "Pressione ENTER para retornar a edicao." ) 
      Pausa() 
      lFlag:= .F. 

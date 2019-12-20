@@ -1,17 +1,17 @@
 // ## CL2HB.EXE - Converted
  
-#Include "INKEY.CH" 
-#Include "VPF.CH" 
+#Include "inkey.ch" 
+#Include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ PesqDupPendentes 
-³ Finalidade  ³ Buscar as duplicatas pendentes a mais de <n> dias 
-³ Parametros  ³ nDias 
-³ Retorno     ³ Nil 
-³ Programador ³ VALMOR PEREIRA FLORES 
-³ Data        ³ 19/08/1997 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ PesqDupPendentes 
+ï¿½ Finalidade  ï¿½ Buscar as duplicatas pendentes a mais de <n> dias 
+ï¿½ Parametros  ï¿½ nDias 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ VALMOR PEREIRA FLORES 
+ï¿½ Data        ï¿½ 19/08/1997 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function PesqDupPendentes( nDias ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 

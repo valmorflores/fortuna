@@ -1,8 +1,8 @@
 
 // ## CL2HB.EXE - Converted
 
-#include "VPF.CH"
-#include "INKEY.CH"
+#include "vpf.ch"
+#include "inkey.ch"
 
 /*=============================================================================
 
@@ -34,16 +34,16 @@ Return Nil
 
 
 /*
-*ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-*³      Funcao ³ Cotacoes
-*³  Finalidade ³ Consultar os dados de cotacoes/pedidos que j  foram gravados
-*³ Programador ³ Valmor Pereira Flores
-*³  Parametros ³ Nenhum
-*³     Retorno ³ Nenhum
-*³        Data ³ 03/Maio/1995
-*³ Atualizacao ³ 29/Maio/1995
-*³             ³ Junho/2001
-*ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+*ï¿½      Funcao ï¿½ Cotacoes
+*ï¿½  Finalidade ï¿½ Consultar os dados de cotacoes/pedidos que jï¿½ foram gravados
+*ï¿½ Programador ï¿½ Valmor Pereira Flores
+*ï¿½  Parametros ï¿½ Nenhum
+*ï¿½     Retorno ï¿½ Nenhum
+*ï¿½        Data ï¿½ 03/Maio/1995
+*ï¿½ Atualizacao ï¿½ 29/Maio/1995
+*ï¿½             ï¿½ Junho/2001
+*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Function Cotacoes( nCodCliente )
    Loca cTELA:= ScreenSave( 00, 00, 24, 79 ), nCURSOR:= SetCursor(),;
@@ -196,7 +196,7 @@ Function Cotacoes( nCodCliente )
        IF !Empty( PED->CodPed )
           DevOut( "Pedido..: " + PED->CodPed )
           SetColor( "14/01" )
-          @ 03, 55 Say " N§ Cotacao  " + PED->Codigo
+          @ 03, 55 Say " Nï¿½ Cotacao  " + PED->Codigo
        ELSE
           DevOut( "Cotacao.: " + PED->Codigo )
           SetColor( _COR_BROW_LETRA )
@@ -209,7 +209,7 @@ Function Cotacoes( nCodCliente )
        /* Aguardando uma tecla com atualizacao a cada x segundos para REDE */
        WHILE (( nTecla:= INKEY()) == 0 )
 
-           OL_Yield()
+           //OL_Yield()
 
            nRefreshTimer := IF( nRefreshTimer==Nil, SECONDS(), nRefreshTimer )
            IF (( nRefreshTimer + 5 ) < SECONDS() )    /* 5 = Tempo em segundos */
@@ -241,7 +241,7 @@ Function Cotacoes( nCodCliente )
                If dDataPed = PED->DATA__
                   RestScreen(cTelaData,,,,)
                Else
-                  PED->( NetRlock() )
+                  PED->( netrlock() )
                   PED->( FieldReplace( "DATA__" , dDataPed ) )
                   PED->( DBUnlock() )
                EndIf
@@ -309,7 +309,7 @@ Function Cotacoes( nCodCliente )
                   ENDDO
                ELSE
                   cTelaRes:= ScreenSave( 0, 0, 24, 79 )
-                  Aviso( "Atencao! Pedido nÆo foi Gravado ainda, impossivel gerar nota" )
+                  Aviso( "Atencao! Pedido nï¿½o foi Gravado ainda, impossivel gerar nota" )
                   Pausa()
                   ScreenRest( cTelaRes )
                ENDIF
@@ -349,7 +349,7 @@ Function Cotacoes( nCodCliente )
                        DBSelectAr( _COD_DETALHE )
                        DET->( DBseek( cCodigoDele , .t. ) )
                        WHILE !eof() .and. CODPED = cCodigoDele
-                          if NetRlock()
+                          if netrlock()
                              dele
                              Dbunlock()
                           endif
@@ -369,7 +369,7 @@ Function Cotacoes( nCodCliente )
                                 ControleDeReserva( "-", PAD( StrZero( PXP->CODPRO, 7, 0  ), 12 ), PXP->QUANT_ )
                              ENDIF
                           ENDIF
-                          IF NetRLock()
+                          IF netrlock()
                              DBDelete()
                           ENDIF
                           DBUnlock()
@@ -380,7 +380,7 @@ Function Cotacoes( nCodCliente )
                        DBSelectar( _COD_PEDIDO )
                        DBSetOrder( 1 )
                        IF DBSeek( cCodigoDele )
-                          IF NetRLock()
+                          IF netrlock()
                              DBDelete()
                           ENDIF
                           DBUnlock()
@@ -445,7 +445,7 @@ Function Cotacoes( nCodCliente )
 
           Case nTecla==K_CTRL_LEFT
                /* Gravacao de Informacoes / Tipo */
-               IF NetRLock()
+               IF netrlock()
                   IF TIPO__ $ "  -01-02-03-04-05-06-07"
                      IF VAL( TIPO__ ) > 1
                         Replace TIPO__ With StrZero( VAL( TIPO__ ) - 1, 2, 0 )
@@ -458,7 +458,7 @@ Function Cotacoes( nCodCliente )
 
           Case nTecla==K_SPACE .OR. nTecla==K_CTRL_RIGHT
                /* Gravacao de Informacoes / Tipo */
-               IF NetRLock()
+               IF netrlock()
                   IF TIPO__ $ "  -01-02-03-04-05-06-07"
                      IF VAL( TIPO__ ) < 7
                         Replace TIPO__ With StrZero( VAL( TIPO__ ) + 1, 2, 0 )
@@ -494,7 +494,7 @@ Function Cotacoes( nCodCliente )
                         Relatorio( "EPED0004.REP" )
                      ENDIF
 
-                     IF NetRLock()
+                     IF netrlock()
                         IF IMPRES==" "
                            Replace IMPRES With "S"
                         ENDIF
@@ -584,7 +584,7 @@ EndIf
           ENDIF
       ELSE
           cTelaRes:= ScreenSave( 0, 0, 24, 79 )
-          Aviso( "Atencao! Pedido nÆo foi Gravado ainda, impossivel gerar nota" )
+          Aviso( "Atencao! Pedido nï¿½o foi Gravado ainda, impossivel gerar nota" )
           Pausa()
           ScreenRest( cTelaRes )
       ENDIF
@@ -634,14 +634,14 @@ Loca lQuantidade:= .F.
    /* Coloca em ordem default */
    DBSetOrder( 1 )
 
-   /* Apaga o arquivo de indice provis¢rio */
+   /* Apaga o arquivo de indice provisï¿½rio */
    FErase( "INDICERES.NTX" )
 
    DBSelectar( _COD_PEDPROD )
    DBSetOrder( 1 )
 
 
-   IF Len( aCotacoes ) <= 0 .OR. VAL( PED->CODIGO ) <= 0 .OR. !( PED->( NetRLock() ) )
+   IF Len( aCotacoes ) <= 0 .OR. VAL( PED->CODIGO ) <= 0 .OR. !( PED->( netrlock() ) )
       SWAlerta( "Este pedido/cotacao deve estar; em uso por outro terminal. ;Tente mais tarde.", { "OK" } )
       ScreenRest( cTela )
       DBSelectAr( nArea )
@@ -744,7 +744,7 @@ Loca lQuantidade:= .F.
    @ 1, 1 Say "Pedido.....: " + Ped->Codigo
    @ 2, 1 Say "Codigo.....: " + StrZero( Ped->CodCli, 6, 0 )
    @ 3, 1 Say "Cliente....: " + Ped->Descri
-   @ 4, 1 Say "Endere‡o...: " + Ped->Endere
+   @ 4, 1 Say "Endereï¿½o...: " + Ped->Endere
    @ 5, 1 Say "Cidade.....: " + Ped->Cidade
    @ 6, 1 Say "Contato....: " + Ped->Compra
    @ 7, 1 Say "Fone/Fax...: " + Ped->FonFax
@@ -755,7 +755,7 @@ Loca lQuantidade:= .F.
    @ 09, 01 Say "Produto"
    @ 09, 33 Say "Un"
    @ 09, 37 Say "Quantidade"
-   @ 09, 53 Say "Preco Unit rio"
+   @ 09, 53 Say "Preco Unitï¿½rio"
    @ 09, 68 Say "%IPI"
    DispEnd()
 
@@ -771,17 +771,17 @@ Loca lQuantidade:= .F.
    IF SWSet( _PED_FORMULARIO ) == 2
       oTb:addcolumn(tbcolumnnew(,{|| Left( Tran( aPedido[ nRow ][ 17 ], "@R 999-9999" ) + "-" + ;
                                      aPedido[ nRow ][ 2 ], 30 ) + ;
-                                " ³ " + aPedido[ nRow ][ 7 ] + " ³ " +;
-                                  Tran( aPedido[ nRow ][ 6 ], "@E 9,999,999.99" ) + " ³ " +;
-                                  Tran( aPedido[ nRow ][ 5 ], "@E 9999,999.999" ) + " ³ " +;
-                                  Tran( aPedido[ nRow ][ 8 ], "@E 99.99" )       +  " ³" + aPedido[ nRow ][ 10 ] }))
+                                " ï¿½ " + aPedido[ nRow ][ 7 ] + " ï¿½ " +;
+                                  Tran( aPedido[ nRow ][ 6 ], "@E 9,999,999.99" ) + " ï¿½ " +;
+                                  Tran( aPedido[ nRow ][ 5 ], "@E 9999,999.999" ) + " ï¿½ " +;
+                                  Tran( aPedido[ nRow ][ 8 ], "@E 99.99" )       +  " ï¿½" + aPedido[ nRow ][ 10 ] }))
    ELSE
       oTb:addcolumn(tbcolumnnew(,{|| Left( aPedido[ nRow ][ 1 ] + "-" + ;
                                      aPedido[ nRow ][ 2 ], 30 ) + ;
-                                " ³ " + aPedido[ nRow ][ 7 ] + " ³ " +;
-                                  Tran( aPedido[ nRow ][ 6 ], "@E 9,999,999.99" ) + " ³ " +;
-                                  Tran( aPedido[ nRow ][ 5 ], "@E 9999,999.999" ) + " ³ " +;
-                                  Tran( aPedido[ nRow ][ 8 ], "@E 99.99" )       +  " ³" + aPedido[ nRow ][ 10 ] }))
+                                " ï¿½ " + aPedido[ nRow ][ 7 ] + " ï¿½ " +;
+                                  Tran( aPedido[ nRow ][ 6 ], "@E 9,999,999.99" ) + " ï¿½ " +;
+                                  Tran( aPedido[ nRow ][ 5 ], "@E 9999,999.999" ) + " ï¿½ " +;
+                                  Tran( aPedido[ nRow ][ 8 ], "@E 99.99" )       +  " ï¿½" + aPedido[ nRow ][ 10 ] }))
    ENDIF
    oTb:AUTOLITE:=.f.
    oTb:GOTOPBLOCK :={|| nRow:= 1}
@@ -848,7 +848,7 @@ Loca lQuantidade:= .F.
               SetCursor( nCursorRes )
               ScreenRest( cTelaRes )
               SetColor( cCorRes )
-              IF NetRLock()
+              IF netrlock()
                  Replace FRETE_ With cFrete,;
                          GARANT With cGarantia,;
                          MOBRA_ With nMaoObra,;
@@ -904,7 +904,7 @@ Loca lQuantidade:= .F.
               @ 09,06 Say "Prazo de Entrega (EM DIAS):" Get cPrazo_ When Mensagem( "Digite o prazo de entrega desta mercadoria." )
               @ 10,06 Say "Validade da Proposta......:" Get nValid_ When Mensagem( "Digite o prazo de validade desta proposta em numero de dias." )
               @ 11,06 Say "Tabela de Condicoes.......:" Get nTabCnd Pict "999" when mensagem( "Tabela de condicoes de pagamento." ) Valid BuscaCondicao( @nTabCnd, @cCondi_, nVlrTot )
-              @ 12,06 Say " ÀÄDetalhamento Condicoes.:" Get cCondi_ When Mensagem( "Digite as condicoes de pagamento Ex. [30/60/90/120   ]." )
+              @ 12,06 Say " ï¿½ï¿½Detalhamento Condicoes.:" Get cCondi_ When Mensagem( "Digite as condicoes de pagamento Ex. [30/60/90/120   ]." )
               @ 13,06 Say "Tipo de Frete.............:" Get cFrete_ valid DisplayFrete( @cFrete_ ) When Mensagem( "Digite o tipo de frete ou [ENTER] para ver opcoes." )
               @ 14,06 Say "Vendedor Interno..........:" Get nVenIn1 Pict "@R 999" valid VenSeleciona( @nVenIn1, 1, @cVende1 ) When Mensagem( "Digite o codigo do vendedor interno.")
               @ 14,40 Get cVende1 Pict "!!!!!!!!!!!!" When Mensagem( "Digite o nome, numero ou sigla do vendedor." )
@@ -923,7 +923,7 @@ Loca lQuantidade:= .F.
               SetCursor( nCursorRes )
               ScreenRest( cTelaRes )
               SetColor( cCorRes )
-              IF NetRLock()
+              IF netrlock()
                  Replace Compra With cCompra,;
                          Transp With nCodTra,;
                          PerDes With nPerDes,;
@@ -1065,7 +1065,7 @@ Loca lQuantidade:= .F.
               ScreenRest( cTelaRes )
               SetColor( cCorRes )
               DBSelectAr( _COD_PEDIDO )
-              IF NetRLock()
+              IF netrlock()
                  Replace OC__01 With cOC__01,;
                          QTD_01 With nQTD_01,;
                          ENT_01 With cENT_01,;
@@ -1145,7 +1145,7 @@ Loca lQuantidade:= .F.
 
                  FOR nCt:= 1 To Len( aCotacoes )
                      If DBSeek( aCotacoes[ nCt ][ 1 ] )
-                        IF NetRlock()
+                        IF netrlock()
                            Replace Situa_ With "PED",;
                                    Select With "Nao",;
                                    CodPed with cCodPed,;
@@ -1153,7 +1153,7 @@ Loca lQuantidade:= .F.
                         EndIf
                         DBUnLock()
                      Else
-                        Aviso( "Cotacao n§ " + aCotacoes[ nCt ][ 1 ] + " nao foi encontrada...", 24 / 2 )
+                        Aviso( "Cotacao nï¿½ " + aCotacoes[ nCt ][ 1 ] + " nao foi encontrada...", 24 / 2 )
                         Pausa()
                      EndIf
                  NEXT
@@ -1165,7 +1165,7 @@ Loca lQuantidade:= .F.
                  nCt:= 0
                  If DBSeek( cCodCot )
                     WHILE left( cCodCot, 8 ) == Left( PxP->Codigo, 8 )
-                        IF NetRLock()
+                        IF netrlock()
                            Replace CodPed With cCodPed
                         ENDIF
                         IF ( nPosicao:= AScan( aPedido, {|x| Alltrim( x[1] ) == Alltrim( PXP->CODFAB ) .AND.;
@@ -1175,7 +1175,7 @@ Loca lQuantidade:= .F.
                               DBSelectAr( _COD_DETALHE )
                               DET->( DBSETorder( 1 ) )
                               IF DBseek( PED->CODIGO + pad(strzero(PXP->CODPRO,7),12) + str(nPosicao,3))
-                                 if Netrlock()
+                                 if netrlock()
                                     dele
                                     Dbunlock()
                                  endif
@@ -1184,7 +1184,7 @@ Loca lQuantidade:= .F.
                               DET->( DBseek( PED->CODIGO , .t.) )
                               nProdatu := 1
                               While !eof() .and. CODPED = PED->CODIGO
-                                 if NetRlock()
+                                 if netrlock()
                                     repl ORDEM_ with nProdatu
                                     Dbunlock()
                                  endif
@@ -1193,11 +1193,11 @@ Loca lQuantidade:= .F.
                               enddo
                               DET->( DBSETorder( 1 ) )
                               DBSelectar( _COD_PEDPROD )
-                              IF NetRLock()
+                              IF netrlock()
                                  Dele
                               ENDIF
                            ELSE
-                              IF NetRlock()
+                              IF netrlock()
                                  Replace QUANT_ With aPedido[ nPosicao ][ 6 ],;
                                          VLRINI With aPedido[ nPosicao ][ 3 ],;
                                          PERDES With aPedido[ nPosicao ][ 4 ],;
@@ -1230,11 +1230,11 @@ Loca lQuantidade:= .F.
               ELSE
 
                  //                                                     //
-                 //    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ    //
+                 //    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½    //
                  //     Esta opcao faz a regravacao das informacoes     //
                  //     sobre um pedido que ja exista, nao  criando     //
                  //     um novo codigo para isto, conforme abaixo.      //
-                 //    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ    //
+                 //    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½    //
                  //                                                     //
 
                  Aviso( "Esta cotacao ja esta gravada como pedido.", 24 / 2 )
@@ -1262,14 +1262,14 @@ Loca lQuantidade:= .F.
 
                  For nCt:= 1 To Len( aCotacoes )
                      If DBSeek( aCotacoes[ nCt ][ 1 ] )
-                        IF NetRlock()
+                        IF netrlock()
                            Replace Situa_ With "PED",;
                                    Select With "Nao",;
                                    VlrTot With nVlrTot
                         EndIf
                         DBUnLock()
                      Else
-                        Aviso( "Cotacao n§ " + aCotacoes[ nCt ][ 1 ] + " nao foi encontrada...", 24 / 2 )
+                        Aviso( "Cotacao nï¿½ " + aCotacoes[ nCt ][ 1 ] + " nao foi encontrada...", 24 / 2 )
                         Pausa()
                      EndIf
                  Next
@@ -1282,7 +1282,7 @@ Loca lQuantidade:= .F.
                  nCt:= 0
                  If DBSeek( cCodCot )
                     WHILE left( cCodCot, 8 ) == Left( PxP->Codigo, 8 )
-                        IF NetRLock()
+                        IF netrlock()
                            IF ( nPosicao:= AScan( aPedido, {|x| Alltrim( x[1] ) == Alltrim( PXP->CODFAB ) .AND.;
                                                                 Alltrim( x[2] ) == Alltrim( PXP->DESCRI ) .AND.;
                                                                 x[12] == Recno() } ) ) > 0
@@ -1290,7 +1290,7 @@ Loca lQuantidade:= .F.
                                  DBSelectAr( _COD_DETALHE )
                                  DET->( DBSETorder( 1 ) )
                                  IF DBseek( PED->CODIGO + pad(strzero(PXP->CODPRO,7),12) + str(nPosicao,3))
-                                    if Netrlock()
+                                    if netrlock()
                                        dele
                                        Dbunlock()
                                     endif
@@ -1299,7 +1299,7 @@ Loca lQuantidade:= .F.
                                  DET->( DBseek( PED->CODIGO , .t.) )
                                  nProdatu := 1
                                  While !eof() .and. CODPED = PED->CODIGO
-                                    if NetRlock()
+                                    if netrlock()
                                        repl ORDEM_ with nProdatu
                                        Dbunlock()
                                     endif
@@ -1308,11 +1308,11 @@ Loca lQuantidade:= .F.
                                  enddo
                                  DET->( DBSETorder( 1 ) )
                                  DBSelectar( _COD_PEDPROD )
-                                 IF NetRLock()
+                                 IF netrlock()
                                     Dele
                                  ENDIF
                               ELSE
-                                 IF NetRlock()
+                                 IF netrlock()
                                     Replace QUANT_ With aPedido[ nPosicao ][ 6 ],;
                                             VLRINI With aPedido[ nPosicao ][ 3 ],;
                                             PERDES With aPedido[ nPosicao ][ 4 ],;
@@ -1355,7 +1355,7 @@ Loca lQuantidade:= .F.
                     WHILE !oTb:Stabilize()
                     ENDDO
                  ELSEIF PED->CODNF_ < 900000000
-                    //SWAlerta( "Nota fiscal ja processada. Se houver troca de mercadoria; Ou qualquer outro tipo de entrada ou sa¡da para movimentar estoque; deve ser feito um lancamento manual ou um novo pedido,; porque estas moficacoes nÆo terao efeito sobre os lancamentos; que ja estao realizados.", { "OK" } )
+                    //SWAlerta( "Nota fiscal ja processada. Se houver troca de mercadoria; Ou qualquer outro tipo de entrada ou saï¿½da para movimentar estoque; deve ser feito um lancamento manual ou um novo pedido,; porque estas moficacoes nï¿½o terao efeito sobre os lancamentos; que ja estao realizados.", { "OK" } )
                  ENDIF
               ENDIF
               EXIT
@@ -1388,7 +1388,7 @@ Loca lQuantidade:= .F.
               IF SWSet( _PED_FORMULARIO ) == 2
                  @ 11,12 Say "Produto....:" Get cGrupo_ Pict "999" Valid VerGrupo( cGrupo_, @cCodigo )
                  @ 11,30 Say "-"
-                 @ 11,31 Get cCodigo Pict "9999" Valid VerCodigo( cCodigo, GetList ) when mensagem("Digite o c¢digo do produto.")
+                 @ 11,31 Get cCodigo Pict "9999" Valid VerCodigo( cCodigo, GetList ) when mensagem("Digite o cï¿½digo do produto.")
                  READ
                  IF MPR->PRECOV > 0 .AND.;
                     CND->CODIGO > 0 .AND.;
@@ -1401,22 +1401,22 @@ Loca lQuantidade:= .F.
                     INKEY( 0 )
                  ENDIF
                  nPercIPI:= MPR->IPI___
-                 @ 12,12 Say "Descri‡„o..: [" + Left( MPR->DESCRI, 30 ) + "]"
+                 @ 12,12 Say "Descriï¿½ï¿½o..: [" + Left( MPR->DESCRI, 30 ) + "]"
                  @ 13,12 Say "Quantidade.:" Get nQuantidade   Pict "@E 999,999.999"
-                 @ 14,12 Say "Pre‡o......:" Get nPrecoInicial Pict "@E 999,999,999.999"
+                 @ 14,12 Say "Preï¿½o......:" Get nPrecoInicial Pict "@E 999,999,999.999"
                  @ 15,12 Say "% Desconto.:" Get nPerDesconto  Pict "@E 999.99" Valid CalculaDesconto( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
-                 @ 16,12 Say "Pre‡o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
+                 @ 16,12 Say "Preï¿½o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
                  IF SWSet( _PED_DTENTREGA )
                     @ 17,12 Say "Entrega....:" Get dDtentre      pict "@!"
                  ENDIF
               ELSE
                  @ 11,12 Say "Produto....:" Get cGrupo_ Pict "999" Valid VerGrupo( cGrupo_, @cCodigo )
                  @ 11,30 Say "-"
-                 @ 11,31 Get cCodigo Pict "9999" Valid VerCodigo( cCodigo, GetList ) when mensagem("Digite o c¢digo do produto.")
-                 @ 12,12 Say "Descri‡„o..: [" + Space( 40 ) + "]"
-                 @ 13,12 Say "Pre‡o......:" Get nPrecoInicial Pict "@E 999,999,999.999"
+                 @ 11,31 Get cCodigo Pict "9999" Valid VerCodigo( cCodigo, GetList ) when mensagem("Digite o cï¿½digo do produto.")
+                 @ 12,12 Say "Descriï¿½ï¿½o..: [" + Space( 40 ) + "]"
+                 @ 13,12 Say "Preï¿½o......:" Get nPrecoInicial Pict "@E 999,999,999.999"
                  @ 14,12 Say "% Desconto.:" Get nPerDesconto  Pict "@E 999.99" Valid CalculaDesconto( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
-                 @ 15,12 Say "Pre‡o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
+                 @ 15,12 Say "Preï¿½o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
                  IF SWSet( _PED_DTENTREGA )
                     @ 16,12 Say "Entrega....:" Get dDtentre      pict "@!"
                  ENDIF
@@ -1486,7 +1486,7 @@ Loca lQuantidade:= .F.
                  aPedido[ nRow ][ 24 ]:= dDtentre
                  DBSelectAr( _COD_PEDPROD )
                  DBAppend()
-                 IF NetRLock()
+                 IF netrlock()
                     Replace CODIGO With PED->CODIGO,;
                             CODPRO With VAL( cGrupo_ + cCodigo ),;
                             CODFAB With aPedido[ nRow ][ 1 ],;
@@ -1566,23 +1566,23 @@ Loca lQuantidade:= .F.
               IF SWSet( _PED_FORMULARIO ) == 2
                  VPBox( 09, 10, 18, 70, "Dados do Produto Selecionado", _COR_GET_BOX, .T., .F., _COR_GET_TITULO )
                  @ 10,12 Say "Produto....: [" + aPedido[ nRow ][ 1 ] + "]"
-                 @ 11,12 Say "Descri‡„o..: [" + Left( aPedido[ nRow ][ 2 ], 26 ) + "]"
+                 @ 11,12 Say "Descriï¿½ï¿½o..: [" + Left( aPedido[ nRow ][ 2 ], 26 ) + "]"
                  @ 12,12 Say "Fabricante.: [" + cOrigem + "]"
                  @ 13,12 Say "Quantidade.:" Get nQuantidade   Pict "@E 999,999.999"
-                 @ 14,12 Say "Pre‡o......:" Get nPrecoInicial Pict "@E 999,999,999.999"     When MudaPreco()
+                 @ 14,12 Say "Preï¿½o......:" Get nPrecoInicial Pict "@E 999,999,999.999"     When MudaPreco()
                  @ 15,12 Say "% Desconto.:" Get nPerDesconto  Pict "@E 999.99"             Valid CalculaDesconto( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
-                 @ 16,12 Say "Pre‡o Venda:" Get nPrecoFinal   Pict "@E 999,999,999.999"    Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
+                 @ 16,12 Say "Preï¿½o Venda:" Get nPrecoFinal   Pict "@E 999,999,999.999"    Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
                  IF SWSet( _PED_DTENTREGA )
                     @ 17,12 Say "Entrega....:" Get dDtentre      pict "@!"
                  ENDIF
               ELSEIF SWSet( _PED_FORMULARIO ) == 3
                  VPBox( 09, 10, 20, 70, "Dados do Produto Selecionado", _COR_GET_BOX, .T., .F., _COR_GET_TITULO )
                  @ 10,12 Say "Produto....: [" + aPedido[ nRow ][ 1 ] + "]"
-                 @ 11,12 Say "Descri‡„o..:" Get cDescri Pict "@S36"
+                 @ 11,12 Say "Descriï¿½ï¿½o..:" Get cDescri Pict "@S36"
                  @ 12,12 Say "Fabricante.:" Get cOrigem when CodFabrica()
-                 @ 13,12 Say "Pre‡o......:" Get nPrecoInicial Pict "@E 999,999,999.999"     When MudaPreco()
+                 @ 13,12 Say "Preï¿½o......:" Get nPrecoInicial Pict "@E 999,999,999.999"     When MudaPreco()
                  @ 14,12 Say "% Desconto.:" Get nPerDesconto  Pict "@E 999.99"             Valid CalculaDesconto( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
-                 @ 15,12 Say "Pre‡o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999"    Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
+                 @ 15,12 Say "Preï¿½o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999"    Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
                  @ 16,12 Say "Perc. IPI..:" Get nPerIpi       Pict "@E 999.99"
                  @ 17,12 Say "Unidade....:" Get cUnidad
                  VPBox( 18, 10, 20, 70,, _COR_GET_BOX, .T., .F., _COR_GET_TITULO )
@@ -1590,11 +1590,11 @@ Loca lQuantidade:= .F.
               ELSE
                  VPBox( 09, 10, 21, 70, "Dados do Produto Selecionado", _COR_GET_BOX, .T., .F., _COR_GET_TITULO )
                  @ 10,12 Say "Produto....: [" + aPedido[ nRow ][ 1 ] + "]"
-                 @ 11,12 Say "Descri‡„o..:" Get cDescri Pict "@S36"
+                 @ 11,12 Say "Descriï¿½ï¿½o..:" Get cDescri Pict "@S36"
                  @ 12,12 Say "Fabricante.:" Get cOrigem when CodFabrica()
-                 @ 13,12 Say "Pre‡o......:" Get nPrecoInicial Pict "@E 999,999,999.999" When MudaPreco()
+                 @ 13,12 Say "Preï¿½o......:" Get nPrecoInicial Pict "@E 999,999,999.999" When MudaPreco()
                  @ 14,12 Say "% Desconto.:" Get nPerDesconto  Pict "@E 999.99" Valid CalculaDesconto( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
-                 @ 15,12 Say "Pre‡o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
+                 @ 15,12 Say "Preï¿½o Final:" Get nPrecoFinal   Pict "@E 999,999,999.999" Valid VerifPerDesc( GetList, @nPrecoInicial, @nPerDesconto, @nPrecoFinal )
                  @ 16,12 Say "Perc. IPI..:" Get nPerIpi       Pict "@E 999.99"
                  @ 17,12 Say "Unidade....:" Get cUnidad
                  IF SWSet( _PED_DTENTREGA )
@@ -1658,7 +1658,7 @@ Loca lQuantidade:= .F.
 
               DBSelectar( _COD_PEDIDO )
               cCodCot:= Codigo
-              IF NetRLock()
+              IF netrlock()
                  Replace VlrTot With nValorTotal
               ENDIF
               DBUnlock()
@@ -1668,7 +1668,7 @@ Loca lQuantidade:= .F.
               If DBSeek( cCodCot )
                  While left( cCodCot, 8 ) == Left( PxP->Codigo, 8 )
                      IF ( nPosicao:= AScan( aPedido, {|x| x[12] == Recno() } ) ) > 0
-                        IF NetRLock()
+                        IF netrlock()
                            Repl CODFAB With aPedido[ nPosicao ][ 1 ],;
                                 DESCRI With aPedido[ nPosicao ][ 2 ],;
                                 VLRUNI With aPedido[ nPosicao ][ 5 ],;
@@ -1688,7 +1688,7 @@ Loca lQuantidade:= .F.
                                    !EMPTY( aPedido[nPosicao,22] ) .or. ;
                                    !EMPTY( aPedido[nPosicao,23] )) .and. DET->( eof() )
                                    DET->( DBAppend() )
-                                   IF DET->( NetRLock() )
+                                   IF DET->( netrlock() )
                                       Replace DET->INDICE With pad(strzero(PXP->CODPRO,7),12) ,;
                                               DET->ORDEM_ With nPosicao                       ,;
                                               DET->CODPED With PED->CODIGO
@@ -1696,7 +1696,7 @@ Loca lQuantidade:= .F.
                                    ENDIF
                                endif
 
-                               if DET->( Netrlock() )
+                               if DET->( netrlock() )
                                   repl DET->DETAL1 with aPedido[nPosicao,21]
                                   repl DET->DETAL2 with aPedido[nPosicao,22]
                                   repl DET->DETAL3 with aPedido[nPosicao,23]
@@ -1738,7 +1738,7 @@ Loca lQuantidade:= .F.
         ENDIF
    NEXT
    DBSelectAr( _COD_PEDIDO )
-   IF NetRlock()
+   IF netrlock()
       Replace VlrTot With nVlrTot
    EndIf
    DBUnLock()
@@ -1757,7 +1757,7 @@ Loca lQuantidade:= .F.
 
 /*
 * Modulo      - CalculoGeral
-* Finalidade  - Apresentar no rodap‚ o calculo total do pedido
+* Finalidade  - Apresentar no rodapï¿½ o calculo total do pedido
 * Programador - Valmor Pereira Flores
 * Data        - 26/Outubro/1995
 * Atualizacao -
@@ -1793,14 +1793,14 @@ Return ( nTotal + ( nAcrescimo - nDesconto ) )
 
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ VerGrupo
-³ Finalidade  ³ Pesquisar um grupo especifico.
-³ Parametros  ³ cGrupo_ => Codigo do grupo
-³ Retorno     ³ cCodigo => Codigo do produto a ser retornado.
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³ 04/Dezembro/1995
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ VerGrupo
+ï¿½ Finalidade  ï¿½ Pesquisar um grupo especifico.
+ï¿½ Parametros  ï¿½ cGrupo_ => Codigo do grupo
+ï¿½ Retorno     ï¿½ cCodigo => Codigo do produto a ser retornado.
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½ 04/Dezembro/1995
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Static Function VerGrupo( cGrupo_, cCodigo )
    Local nArea:= Select(), nOrdem:= IndexOrd()
@@ -1822,14 +1822,14 @@ Static Function VerGrupo( cGrupo_, cCodigo )
 
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ VerCodigo
-³ Finalidade  ³ Pesquisar a existencia de um codigo igual ao digitado
-³ Parametros  ³ cCodigo=> Codigo digitado pelo usu rio
-³ Retorno     ³
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³ 04/Dezembro/1995
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ VerCodigo
+ï¿½ Finalidade  ï¿½ Pesquisar a existencia de um codigo igual ao digitado
+ï¿½ Parametros  ï¿½ cCodigo=> Codigo digitado pelo usuï¿½rio
+ï¿½ Retorno     ï¿½
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½ 04/Dezembro/1995
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Static Function VerCodigo( cCodigo, GetList )
    LOCAL cGrupo_:= GetList[ 1 ]:VarGet()
@@ -1852,7 +1852,7 @@ Static Function VerCodigo( cCodigo, GetList )
    DBSetOrder( 1 )
    If !DBSeek( cGrupo_ + cCodigo + Space( 5 ) )
       Ajuda("[Enter]Continua")
-      Aviso( "C¢digo n„o existente neste grupo...", 24 / 2 )
+      Aviso( "Cï¿½digo nï¿½o existente neste grupo...", 24 / 2 )
       Mensagem( "Pressione [Enter] para ver lista..." )
       Pausa()
       VisualProdutos( cGrupo_ + cCodigo )
@@ -2009,7 +2009,7 @@ LOCAL lAtualizarPedido:= .F.
 
       IF LastKey() <> K_ESC
          Aviso( "Atualizando cadastro de clientes no pedido..." )
-         IF PED->( NetRLock() )
+         IF PED->( netrlock() )
 
             // Fone/Fax foi adicionado nesta lista no dia 18/09/2003
             // por Valmor Flores

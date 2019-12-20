@@ -7,8 +7,8 @@
 * Data        - 27/Marco/1995
 * Atualizacao -
 */
-#Include "VPF.CH"
-#Include "INKEY.CH"
+#Include "vpf.ch"
+#Include "inkey.ch"
 
 #ifdef HARBOUR
 function vpc69999()
@@ -143,7 +143,7 @@ Local cTela:= ScreenSave( 0, 0, 24, 79 ),;
             @ prow()+1,00 say subst(INDICE,1,7)+" "+DESCRI+" "+str(SALDO_,10,3)+" Lancamentos: "+str(nSaldoAtu,10,3)
             Set( 20, "SCREEN" )
          ENDIF
-         IF NetRLock()
+         IF netrlock()
             repl SALDO_ with nSaldoAtu
          ENDIF
          DBUnlock()
@@ -184,7 +184,7 @@ Local cTela:= ScreenSave( 0, 0, 24, 79 ),;
          MPR->( DBSetOrder( 1 ) )
          WHILE !EOF()
             IF MPR->( DBSeek( ES->INDICE ) )
-               IF MPR->( NetRLock() )
+               IF MPR->( netrlock() )
                   Scroll( 02, 02, 22, 78, 1 )
                   IF MPR->( SALDO_ ) <> ES->SATQTD
                      @ 22,02 Say MPR->DESCRI  + "  100% Ajustado...     "
@@ -212,14 +212,14 @@ Local cTela:= ScreenSave( 0, 0, 24, 79 ),;
 
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ CustoMedio
-³ Finalidade  ³ CUSTO MEDIO PADRAO CONTABIL
-³ Parametros  ³ Nil
-³ Retorno     ³ Nil
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ CustoMedio
+ï¿½ Finalidade  ï¿½ CUSTO MEDIO PADRAO CONTABIL
+ï¿½ Parametros  ï¿½ Nil
+ï¿½ Retorno     ï¿½ Nil
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Function CustoMedio()
 Local cCor:= SetColor(), nCursor:= SetCursor(),;
@@ -251,7 +251,7 @@ Local dDataIni:= CTOD( "01/" + StrZero( MONTH( DATE() ), 2, 0 ) + "/" + Right( S
               { "SD_VLR","N",16,02 },;        && Saidas  No Dia     - Valores
               { "SD_QTD","N",16,02 },;        && Saidas  No Dia     - Quantidade
               { "ED_VLR","N",16,02 },;        && Entrada No Dia     - Valores
-              { "ED_QTD","N",16,02 },;        && Entrada No Dia     Ä Quantidades
+              { "ED_QTD","N",16,02 },;        && Entrada No Dia     ï¿½ Quantidades
               { "OS_VLR","N",16,02 },;        && Outras Saidas      - Valores
               { "OS_QTD","N",16,02 },;        && Outras Saidas      - Quantidade
               { "ENT___","N",16,02 },;        && ENTRADAS
@@ -352,7 +352,7 @@ Local dDataIni:= CTOD( "01/" + StrZero( MONTH( DATE() ), 2, 0 ) + "/" + Right( S
           IF !( ES->( DBSeek( ANT->INDICE ) ) )
              ES->( DBAppend() )
           ENDIF
-          IF ES->( NetRLock() )
+          IF ES->( netrlock() )
              Replace ES->INDICE With ANT->INDICE,;
                      ES->DESCRI With ANT->DESCRI,;
                      ES->CUSANT With ANT->CUSMED,;
@@ -389,7 +389,7 @@ Local dDataIni:= CTOD( "01/" + StrZero( MONTH( DATE() ), 2, 0 ) + "/" + Right( S
       DBGoTop()
       WHILE !EOF()
          IF EMPTY( DATANF )
-            IF NetRlock()
+            IF netrlock()
                Replace DATANF With DATAMV
             ENDIF
          ENDIF
@@ -406,7 +406,7 @@ Local dDataIni:= CTOD( "01/" + StrZero( MONTH( DATE() ), 2, 0 ) + "/" + Right( S
       WHILE !EST->( EOF() )
          IF EST->VALOR_ <= 0 .AND. EST->ENTSAI=="+"
             PXF->( DBSeek( EST->CPROD_ ) )
-            IF EST->( NetRLock() )
+            IF EST->( netrlock() )
                Replace EST->VALOR_ With EST->QUANT_ * PXF->VALOR_,;
                        EST->STATUS With Space( 2 )
             ENDIF
@@ -427,7 +427,7 @@ Local dDataIni:= CTOD( "01/" + StrZero( MONTH( DATE() ), 2, 0 ) + "/" + Right( S
 //      WHILE !BOF()
 //          /* Cancelamento de item na venda s/ anulacao do cupom     ( F10 no Cupom )      */
 //          IF RIGHT( ALLTRIM( DOC___ ), 1 )=="C" .AND. ENTSAI=="-"
-//             IF NetRLock()
+//             IF netrlock()
 //                Replace STATUS With "00"
 //             ENDIF
 //          /* Cancelamento do item por meio de uma entrada           ( CTRL_F10 no Cupom ) */
@@ -436,7 +436,7 @@ Local dDataIni:= CTOD( "01/" + StrZero( MONTH( DATE() ), 2, 0 ) + "/" + Right( S
 //           Informacao( "Cancelamento do Cupom [ " + SubStr( EST->DOC___, 5, 9 ) + " ] " )
 //          ENDIF
 //
-//          IF NetRLock()
+//          IF netrlock()
 //             Replace STATUS With "  "
 //          ENDIF
 //          DBSkip( -1 )
@@ -530,7 +530,7 @@ Local dDataIni:= CTOD( "01/" + StrZero( MONTH( DATE() ), 2, 0 ) + "/" + Right( S
                      nEntradas:= nEntradas + QUANT_
                      IF !( ALLTRIM( EST->DOC___ )=="***<AJUSTE>***" )
                         // Se custo estiver preenchido usa o mesmo,
-                        // pois, ‚ a melhor alternativa do ponto de
+                        // pois, ï¿½ a melhor alternativa do ponto de
                         // vista contabil
                         IF EST->CUSTO_ > 0
                            nValorEntrada:= nValorEntrada + ( EST->CUSTO_ * EST->QUANT_ )
@@ -557,16 +557,16 @@ Local dDataIni:= CTOD( "01/" + StrZero( MONTH( DATE() ), 2, 0 ) + "/" + Right( S
 ///******************* VALMOR ***************************************
 
 
-                  // At‚ o dia 02/06/2004 esta linha estava ativa, mas, foi substituida pelas
+                  // Atï¿½ o dia 02/06/2004 esta linha estava ativa, mas, foi substituida pelas
                   // linhas seguintes: Valmor
                   // nSaldoVlr:=   nSaldoVlr + ( EST->VALOR_ )
 
 
                   // Utiliza custo
                   IF EST->CUSTO_ > 0
-                     // Formato cont bil.
-                     // Baseia-se no custo que ‚ formado na inser‡Æo de nota de entrada
-                     // conforme altera‡äes realizadas em 02/06/2004 com implementa‡Æo de F10
+                     // Formato contï¿½bil.
+                     // Baseia-se no custo que ï¿½ formado na inserï¿½ï¿½o de nota de entrada
+                     // conforme alteraï¿½ï¿½es realizadas em 02/06/2004 com implementaï¿½ï¿½o de F10
                      // na rotina de registro de notas de entrada
                      // Implementado em 02/06/2004: Valmor Pereira Flores
                      nSaldoVlr:=   nSaldoVlr + ( EST->CUSTO_ * EST->QUANT_ )
@@ -634,7 +634,7 @@ Local dDataIni:= CTOD( "01/" + StrZero( MONTH( DATE() ), 2, 0 ) + "/" + Right( S
             /* Busca ultimo produto processado */
             MPR->( DBSeek( PAD( cProduto, 12 ) ) )
             nCustoMedio:= ( ES->SDOVLR + ( nValorEntrada - nValorSaida ) ) / ( ( nEntradas - nSaidas ) + ES->SDOQTD )
-            IF MPR->( NetRLock() )
+            IF MPR->( netrlock() )
                IF !ES->( DBSeek( MPR->INDICE ) )
                   ES->( DBAppend() )
                ENDIF
@@ -645,7 +645,7 @@ Local dDataIni:= CTOD( "01/" + StrZero( MONTH( DATE() ), 2, 0 ) + "/" + Right( S
                //Replace MPR->SALDO_ With nEntradas
                Replace MPR->DATA__ With dDataFim
                Replace MPR->ENTVLR With nValorEntrada
-               IF ES->( NetRLock() )
+               IF ES->( netrlock() )
                   Replace ES->INDICE With MPR->INDICE,;
                           ES->DESCRI With MPR->DESCRI,;
                           ES->CUSMED With nCustoMedio,;
@@ -709,7 +709,7 @@ Local dDataIni:= CTOD( "01/" + StrZero( MONTH( DATE() ), 2, 0 ) + "/" + Right( S
       Informacao( "Verificando saldos em Valor x Quantidades...." )
       ES->( DBGoTop() )
       WHILE !ES->( EOF() )
-         IF ES->( NetRLock() )
+         IF ES->( netrlock() )
             IF ES->CUSMED==0
                Replace ES->CUSMED With ES->CUSANT
             ENDIF
@@ -723,7 +723,7 @@ Local dDataIni:= CTOD( "01/" + StrZero( MONTH( DATE() ), 2, 0 ) + "/" + Right( S
 
       ES->( DBGOTOP() )
       WHILE !ES->( EOF() )
-          IF ES->( NetRLock() )
+          IF ES->( netrlock() )
              IF ES->CUSMED==0
                 Replace ES->CUSMED With ES->CUSANT
              ENDIF
@@ -769,7 +769,7 @@ Local  nReg:= EST->( RECNO() )
    IF EST->( DBSeek( cCupom ) )
       WHILE ALLTRIM( SubStr( EST->DOC___, 5, 9 ) ) == ALLTRIM( cCupom )
          IF ALLTRIM( CPROD_ )==ALLTRIM( cProduto )
-            IF EST->( NetRlock() )
+            IF EST->( netrlock() )
                Replace EST->STATUS With cStatus
             ENDIF
          ENDIF
@@ -787,14 +787,14 @@ Static Function GravaLog( cMsg )
  Return Nil
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ visualCustos
-³ Finalidade  ³ Visualizacao dos Custos / Informacoes de Estoque
-³ Parametros  ³ Nil
-³ Retorno     ³ Nil
-³ Programador ³ Valmor P.Flores
-³ Data        ³
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ visualCustos
+ï¿½ Finalidade  ï¿½ Visualizacao dos Custos / Informacoes de Estoque
+ï¿½ Parametros  ï¿½ Nil
+ï¿½ Retorno     ï¿½ Nil
+ï¿½ Programador ï¿½ Valmor P.Flores
+ï¿½ Data        ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Static Function VisualCustos()
 Local cCor:= SetColor(), nCursor:= SetCursor(),;
@@ -927,7 +927,7 @@ Local nRow:= 1, TECLA
               @ 15,07 Say " SALDO FINAL MES                   " Get nSaldoAV Pict "@E 9999,999.99 "
               READ
               ScreenRest( cTelaRes )
-              IF NetRLock()
+              IF netrlock()
                  Replace ES->SATQTD With nSaldoAQ,;
                          ES->SATVLR With nSaldoAV,;
                          ES->CUSANT With nCusAnt,;
@@ -1076,7 +1076,7 @@ While .T.
    Mensagem( "Calculando Saldos, aguarde..." )
    WHILE !EOF()
       IF !( ANULAR=="*" )
-         IF NetRLock()
+         IF netrlock()
             nSaldo:= nSaldo + IF( ENTSAI=="+", QUANT_, QUANT_ * (-1) )
             Replace SALDO_ With nSaldo
          ENDIF
@@ -1104,7 +1104,7 @@ While .T.
       Enddo
       SetColor( _COR_GET_EDICAO )
       @ 01,02 Say "Produto...: [" + cDescricao + "]"
-      @ 02,01 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"
+      @ 02,01 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
       @ 03,02 Say "Codificao.: [" + Tran( Left( CProd_, 7 ), "@R 999-9999" ) + "]     Codigo de Fabrica: [" + cCodFab + "]"
       @ 04,02 Say "Fabricante: [" + cCodOrigem + "]-[" + cOrigem + "]"
       OPE->( dbSeek( EST->CODMV_ ) )
@@ -1115,7 +1115,7 @@ While .T.
          CLI->( DBseek( EST->CODIGO ) )
          @ 05,02 Say "Cliente...: [" + StrZero( CODIGO, 6, 0 ) + "]-[" + CLI->DESCRI + "]"
       ENDIF
-      @ 06,01 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"
+      @ 06,01 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
       @ 07,02 Say "Saldo.....: [" + Tran( nSaldo, "@E 999,999.9999" ) + "]"
       @ 08,02 Say "Preco.....: [" + Tran( nPrecoVenda, "@E 999,999.9999" ) + "]"
       @ 09,02 Say "Preco Nota: [" + Tran( VALOR_/QUANT_, "@E 999,999.9999" ) + "]"
@@ -1237,7 +1237,7 @@ While .T.
       @ 02,02 Say "Telefone...: [" + cFone1 + "][" + cFone2 + "][" + cFone3 + "]"
       @ 03,02 Say "Comprador..: [" + cComprador + "]"
       @ 04,02 Say "Responsavel: [" + cResponsavel + "]"
-      @ 05,02 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"
+      @ 05,02 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
       @ 06,02 Say "Produto....: [" + MPR->DESCRI + " " + MPR->UNIDAD + "]"
       @ 07,02 Say "Cod.Fabrica: [" + MPR->CODFAB + "]"
       @ 08,02 Say "Fabricante.: [" + MPR->ORIGEM + "]"
@@ -1351,7 +1351,7 @@ While .T.
       @ 02,02 Say "Telefone...: [" + cFone1 + "]"
       @ 03,02 Say "Vendador...: [" + cVendador + "]"
       @ 04,02 Say "Responsavel: [" + cResponsavel + "]"
-      @ 05,02 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"
+      @ 05,02 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
       @ 06,02 Say "Produto....: [" + MPR->DESCRI + " " + MPR->UNIDAD + "]"
       @ 07,02 Say "Cod.Fabrica: [" + MPR->CODFAB + "]"
       @ 08,02 Say "Fabricante.: [" + MPR->ORIGEM + "]"
@@ -1463,7 +1463,7 @@ WHILE LastKey() <> K_ESC
      @ 02,24 Get cCodigo Pict "9999" Valid VerCodigo( cCodigo, GetList, ;
         @nClasse, @cTemCor, @nTamCod, @nCorCod, @nTamQua, @nQuantidade, ;
         @cClasse, @cTamanho, @cCorDes, @nQUANT_, @aCorTamQua, @nVlrUni ) ;
-        when mensagem("Digite o c¢digo do produto.")
+        when mensagem("Digite o cï¿½digo do produto.")
 
 
 //   @ 03,03 Say "Classe ......: [" + cClasse  + "]"
@@ -1472,7 +1472,7 @@ WHILE LastKey() <> K_ESC
 
      @ 03,03 Say "Descricao ...: [" + SPACE ( 55 ) + "]"
      @ 04,03 Say "Classe ......: [" + cClasse  + "]"
-     @ 05,03 Say REPL( "Ä", 74 )
+     @ 05,03 Say REPL( "ï¿½", 74 )
 
      @ 06,03 Say "Cod.Movimento:" Get nMovEst Pict "@R 99" ;
         Valid VerTabOperacoes( @nMovEst, @nNatOpe, @cEntSai, @cCliFor, ;
@@ -1544,14 +1544,14 @@ ENDIF
 Return .T.
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ vertabOperacoes
-³ Finalidade  ³ Busca tabela de operacoes
-³ Parametros  ³
-³ Retorno     ³
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ vertabOperacoes
+ï¿½ Finalidade  ï¿½ Busca tabela de operacoes
+ï¿½ Parametros  ï¿½
+ï¿½ Retorno     ï¿½
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Static Function VerTabOperacoes( nMovEst, nNatOpe, cEntSai, cCliFor, ;
                                  nClasse, cTemCor, nTamCod, nCorCod, cTipoMovimento )
@@ -1648,11 +1648,11 @@ EndIf
            Case nTECLA==K_CTRL_PGUP  ;oTBROWSE:GoTop()
            Case nTECLA==K_CTRL_PGDN  ;oTBROWSE:GoBottom()
            Case Chr( nTecla ) == "*"
-                IF NetRLock() .AND. ANULAR == " "
+                IF netrlock() .AND. ANULAR == " "
                    Replace ANULAR With "*"
                    MPR->( DBSetOrder( 1 ) )
                    MPR->( DBSeek( EST->CPROD_ ) )
-                   IF MPR->( NetRLock() )
+                   IF MPR->( netrlock() )
                       IF EST->ENTSAI == "+"
                          Replace MPR->SALDO_ With MPR->SALDO_ - EST->QUANT_,;
                                  MPR->SDOVLR With MPR->SDOVLR - EST->CUSMED,;
@@ -1750,7 +1750,7 @@ EndIf
                 dData:=       DATAMV
                 Keyboard Chr( K_RIGHT )
                 IF SWAlerta( "<< EXCLUSAO MULTIPLA >>;Deseja excluir registros semelhantes?", {"Confirma","Cancela"} )==1
-                   IF SWAlerta( "<< EXCLUSAO MULTIPLA >>;Voce est  certo desta operacao?", {"Confirma","Cancela"} )==1
+                   IF SWAlerta( "<< EXCLUSAO MULTIPLA >>;Voce estï¿½ certo desta operacao?", {"Confirma","Cancela"} )==1
                       nOrdemRes:= IndexOrd()
                       DBSetOrder( 2 )
                       DBSeek( dData, .T. )
@@ -1766,14 +1766,14 @@ EndIf
                               nFornecedor == CODIGO .AND.;
                               cDocumento == DOC___ .AND.;
                               dData == DATAMV
-                              IF NetRLock()
+                              IF netrlock()
                                  IF ENTSAI="+"
                                     TiraDoEstoque( EST->CPROD_, QUANT_ )
                                  ELSE
                                     PoeNoEstoque( EST->CPROD_, QUANT_ )
                                  ENDIF
                               ENDIF
-                              IF NetRLock()
+                              IF netrlock()
                                  DBDelete()
                               ENDIF
                               oTBrowse:RefreshAll()
@@ -1792,7 +1792,7 @@ EndIf
 
            Case nTecla==K_DEL
                 IF SWAlerta( "<< EXCLUSAO >>;Deseja excluir este registro?", {"Confirma","Cancela"} )==1
-                   IF NetRLock()
+                   IF netrlock()
                       nOperacao:=   CODMV_
                       nFornecedor:= CODIGO
                       cDocumento:=  DOC___
@@ -1932,14 +1932,14 @@ Stat Func SeleFornecedor(nCODIGO)
 
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ VerGrupo
-³ Finalidade  ³ Pesquisar um grupo especifico.
-³ Parametros  ³ cGrupo_ => Codigo do grupo
-³ Retorno     ³ cCodigo => Codigo do produto a ser retornado.
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³ 04/Dezembro/1995
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ VerGrupo
+ï¿½ Finalidade  ï¿½ Pesquisar um grupo especifico.
+ï¿½ Parametros  ï¿½ cGrupo_ => Codigo do grupo
+ï¿½ Retorno     ï¿½ cCodigo => Codigo do produto a ser retornado.
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½ 04/Dezembro/1995
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Static Function VerGrupo( cGrupo_, cCodigo )
 
@@ -1976,14 +1976,14 @@ Static Function VerGrupo( cGrupo_, cCodigo )
 Return(.T.)
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ VerCodigo
-³ Finalidade  ³ Pesquisar a existencia de um codigo igual ao digitado
-³ Parametros  ³ cCodigo=> Codigo digitado pelo usu rio
-³ Retorno     ³
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³ 04/Dezembro/1995
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ VerCodigo
+ï¿½ Finalidade  ï¿½ Pesquisar a existencia de um codigo igual ao digitado
+ï¿½ Parametros  ï¿½ cCodigo=> Codigo digitado pelo usuï¿½rio
+ï¿½ Retorno     ï¿½
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½ 04/Dezembro/1995
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Static Function VerCodigo( cCodigo, GetList, nClasse, cTemCor, nTamCod, ;
                            nCorCod, nTamQua, nQuantidade, cClasse, cTamanho, ;
@@ -2000,7 +2000,7 @@ Static Function VerCodigo( cCodigo, GetList, nClasse, cTemCor, nTamCod, ;
    DBSetOrder( 1 )
    If !DBSeek( cGrupo_ + cCodigo + Space( 5 ) )
       Ajuda("[Enter]Continua")
-      Aviso( "C¢digo n„o existente neste grupo...", 24 / 2 )
+      Aviso( "Cï¿½digo nï¿½o existente neste grupo...", 24 / 2 )
       Mensagem( "Pressione qualquer tecla para ver lista..." )
       VisualProdutos( cGrupo_ + cCodigo )
       SetColor( cCor )
@@ -2026,7 +2026,7 @@ Static Function VerCodigo( cCodigo, GetList, nClasse, cTemCor, nTamCod, ;
 
      @ 03,03 Say "Descricao ...: [" + SPACE ( 55 ) + "]"
      @ 04,03 Say "Classe ......: [" + cClasse  + "]"
-     @ 05,03 Say REPL( "Ä", 74 )
+     @ 05,03 Say REPL( "ï¿½", 74 )
 
    PXF->( DBSetOrder( 1 ) )
    IF PXF->( DBSeek( MPR->INDICE ) )
@@ -2054,14 +2054,14 @@ Return( .T. )
 
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ Pesquisa
-³ Finalidade  ³ Pesquisar o codigo do produto no banco de dados.
-³ Parametros  ³ cCodigo => Codigo do Produto
-³ Retorno     ³ .F.>Nao encontrou / .T.>Encontrou
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³ 29/Novembro/1995
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ Pesquisa
+ï¿½ Finalidade  ï¿½ Pesquisar o codigo do produto no banco de dados.
+ï¿½ Parametros  ï¿½ cCodigo => Codigo do Produto
+ï¿½ Retorno     ï¿½ .F.>Nao encontrou / .T.>Encontrou
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½ 29/Novembro/1995
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Static Function Pesquisa( cCodigo )
 LOCAL nArea:= Select(), nOrdem:= IndexOrd(), lResultado
@@ -2075,15 +2075,15 @@ LOCAL nArea:= Select(), nOrdem:= IndexOrd(), lResultado
    Return( lResultado )
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ DISPLAYESTOQUE
-³ Finalidade  ³ Apresentar os dados do registro setado no momento
-³ Parametros  ³ lTela=> Se for para exibir (.T.)Tela (.F.)Dados
-³ Retorno     ³ Nil
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³ 20/Janeiro/1996
-³ Atualizacao ³ 21/Janeiro/1996
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ DISPLAYESTOQUE
+ï¿½ Finalidade  ï¿½ Apresentar os dados do registro setado no momento
+ï¿½ Parametros  ï¿½ lTela=> Se for para exibir (.T.)Tela (.F.)Dados
+ï¿½ Retorno     ï¿½ Nil
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½ 20/Janeiro/1996
+ï¿½ Atualizacao ï¿½ 21/Janeiro/1996
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 FUNCTION DisplayEstoque( lTela )
    LOCAL cCor:= SetColor()
@@ -2129,23 +2129,23 @@ FUNCTION DisplayEstoque( lTela )
       CLI->( DBSeek( nCodigo ) )
       FOR->( DBSeek( nCodigo ) )
       @ 06,31 Say IF( OPE->CLIFOR=="C", CLI->DESCRI, FOR->DESCRI )
-      @ 09,55 Say "ÚÄCalculo de ImpostosÄ¿"
-      @ 10,55 Say "³ ICMs - " + Tran( VLRICM, "@E 9,999,999.99" ) + " ³"
-      @ 11,55 Say "³ IPI  - " + Tran( VLRIPI, "@E 9,999,999.99" ) + " ³"
-      @ 12,55 Say "ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ"
+      @ 09,55 Say "ï¿½ï¿½Calculo de ImpostosÄ¿"
+      @ 10,55 Say "ï¿½ ICMs - " + Tran( VLRICM, "@E 9,999,999.99" ) + " ï¿½"
+      @ 11,55 Say "ï¿½ IPI  - " + Tran( VLRIPI, "@E 9,999,999.99" ) + " ï¿½"
+      @ 12,55 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
    ENDIF
    SetColor( cCor )
    Return (.T.)
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ ESTOQUEV7
-³ Finalidade  ³ Pesquisa de movimentos de saida diversos
-³ Parametros  ³ Nil
-³ Retorno     ³ Nil
-³ Programador ³ Valmor P.Flores
-³ Data        ³
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ ESTOQUEV7
+ï¿½ Finalidade  ï¿½ Pesquisa de movimentos de saida diversos
+ï¿½ Parametros  ï¿½ Nil
+ï¿½ Retorno     ï¿½ Nil
+ï¿½ Programador ï¿½ Valmor P.Flores
+ï¿½ Data        ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Function EstoqueV7()
 Local cCor:= SetColor(), nCursor:= SetCursor(),;
@@ -2201,12 +2201,12 @@ Local nCliente:= nFornecedor:= 999999
            Case nTecla==K_F3; DBMudaOrdem( 2, oTbrowse )
            Case nTecla==K_F4; DBMudaOrdem( 3, oTbrowse )
            Case nTecla==K_SPACE
-                IF NetRLock()
+                IF netrlock()
                    Replace SELECT With IF( SELECT=="Sim", "Nao", "Sim" )
                 ENDIF
            Case nTecla==K_DEL
                 IF SWAlerta( "<< EXCLUSAO >>;Deseja excluir este registro?", {"Confirma","Cancela"} )==1
-                   IF NetRLock()
+                   IF netrlock()
                       DBDelete()
                    ENDIF
                 ENDIF
@@ -2239,14 +2239,14 @@ Local nCliente:= nFornecedor:= 999999
 
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ ESTOQUEV6
-³ Finalidade  ³ Visualizacao do LOG do Ultimo Estoque Calculado
-³ Parametros  ³ Nil
-³ Retorno     ³ Nil
-³ Programador ³ Valmor P.Flores
-³ Data        ³
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ ESTOQUEV6
+ï¿½ Finalidade  ï¿½ Visualizacao do LOG do Ultimo Estoque Calculado
+ï¿½ Parametros  ï¿½ Nil
+ï¿½ Retorno     ï¿½ Nil
+ï¿½ Programador ï¿½ Valmor P.Flores
+ï¿½ Data        ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Function EstoqueV6()
 Local cCor:= SetColor(), nCursor:= SetCursor(),;
@@ -2423,10 +2423,10 @@ Local nRow:= 1, TECLA
    @ 01,01 Say "       E N T R A D A S         S A I D A S            S A L D O          CUSTO" Color "00/03"
    @ 02,01 Say "DIA QUANTIDADE      VALOR QUANTIDADE      VALOR QUANTIDADE      VALOR    MEDIO" Color "00/03"
 
-   @ 03,01 Say "Saldo Inicial ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ " + ;
+   @ 03,01 Say "Saldo Inicial ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + ;
                               Tran( nSaldoIQ, "@E 99,999.999" ) + " " + ;
                               Tran( nSaldoIV, "@E 999,999.99" ) + Tran( nCusAnt, "@E 9,999.999" ) Color "15/" + CorFundoAtual()
-   @ 22,01 Say "Saldo Atual ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ " + ;
+   @ 22,01 Say "Saldo Atual ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + ;
                               Tran( nSaldoAQ, "@E 99,999.999" ) + " " + ;
                               Tran( nSaldoAV, "@E 999,999.99" ) + Tran( nCusMed, "@E 9,999.999" ) Color "15/" + CorFundoAtual()
    @ 23,30 Say "[G]=Grafico de Movimentacoes [R]=Resumo"
@@ -2660,7 +2660,7 @@ Static Function ViewGrafico()
              IF aQtd[ nCt ][ nPos ] == 0
              ELSEIF aQtd[ nCt ][ nPos ] > 0
                 IF ( ( aQtd[ nCt ][ nPos ] / nValor ) * 100 ) >= ( nPosLi * nPercLinha )
-                   @ nLinha, nColuna Say "°±" Color StrZero( nCt, 2, 0 ) + "/00"
+                   @ nLinha, nColuna Say "ï¿½ï¿½" Color StrZero( nCt, 2, 0 ) + "/00"
                 ELSE
                    IF nLinha = 20
                       @ nLinha, nColuna Say "--" Color StrZero( nCt, 2, 0 ) + "/" + CorFundoAtual()
@@ -2689,7 +2689,7 @@ Static Function ViewGrafico()
              IF aQtd[ nCt ][ nPos ] == 0
              ELSEIF aQtd[ nCt ][ nPos ] < 0
                 IF ( ( ABS( aQtd[ nCt ][ nPos ] ) / nValor ) * 100 ) >= ( nPosLi * nPercLinha )
-                   @ nLinha, nColuna Say "°±" Color StrZero( nCt, 2, 0 ) + "/00"
+                   @ nLinha, nColuna Say "ï¿½ï¿½" Color StrZero( nCt, 2, 0 ) + "/00"
                 ELSE
                    IF nLinha = 12
                       @ nLinha, nColuna Say "--" Color StrZero( nCt, 2, 0 ) + "/" + CorFundoAtual()

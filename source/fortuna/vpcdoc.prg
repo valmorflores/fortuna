@@ -1,18 +1,18 @@
 // ## CL2HB.EXE - Converted
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VPCDOC 
-³ Finalidade  ³ Impressao de DOCs Bancarios 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ Nil 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VPCDOC 
+ï¿½ Finalidade  ï¿½ Impressao de DOCs Bancarios 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ Nil 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
  
-#include "INKEY.CH" 
-#include "VPF.CH" 
+#include "inkey.ch" 
+#include "vpf.ch" 
 
 
 #ifdef HARBOUR
@@ -35,7 +35,7 @@ Local cBanco:= "01"
    @ 04,30 Say "Formato do Bloqueto.:" Get cBanco Pict "XX" Valid BuscaFormato( @cBanco, @cArquivoInst, GetList ) 
    @ 05,30 say "Quantidade de copias:" get nQuant pict "99" 
    @ 06,30 say "Data de emissao.....:" get dData 
-   @ 07,30 say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+   @ 07,30 say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
    @ 08,30 Say "Porta Impressao.....:" Get cDevice 
    @ 09,30 Say "Arquivo Report......:" Get cArquivoInst 
    read 
@@ -99,14 +99,14 @@ Local cBanco:= "01"
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ BuscaFormato 
-³ Finalidade  ³ Exibicao e retorno dos formatos de Bloquetos Bancarios 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 17/Setembro/1999 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ BuscaFormato 
+ï¿½ Finalidade  ï¿½ Exibicao e retorno dos formatos de Bloquetos Bancarios 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 17/Setembro/1999 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function BuscaFormato( cFormato, cArquivoInst, GetList ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 

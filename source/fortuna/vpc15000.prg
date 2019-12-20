@@ -1,7 +1,7 @@
 // ## CL2HB.EXE - Converted
 #Define QUANT_FILE    26 
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
  
 /* 
  Programa    - VPC15000.prg 
@@ -41,7 +41,7 @@ vpobsbox(.T.,10,23," Sobre: Reindexacao ",;
                 " arquivos do sistema.                           ",; 
                 " Caso haja uma falha em qualquer modulo do sis- ",; 
                 " tema, como, aparecimento de codigos  repitidos ",; 
-                " e anormalidades vocˆ dever  execut -lo.        ",; 
+                " e anormalidades vocï¿½ deverï¿½ executï¿½-lo.        ",; 
                 "                                                ",; 
                 "                                                "}) 
  
@@ -62,7 +62,7 @@ mensagem("Excluindo os arquivos de indices invalidos, aguarde...",1)
 dbunlockall() 
 DBCloseAll() 
  
-/* Abre empresa na area tempor ria 124 */ 
+/* Abre empresa na area temporï¿½ria 124 */ 
 DBSelectAr( 124 ) 
 cDirEmp:= SWSet( _SYS_DIRREPORT ) + "\EMPRESAS.DBF" 
 // ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
@@ -92,7 +92,7 @@ WHILE !EMP->( EOF() )
        ELSE 
           GDir:= Alltrim( GDir ) + "\0" + StrZero( nEmpresa, 3 ) 
        ENDIF 
-       // Se a empresa ‚ 0 nÆo deve ter \0000 no diretorio 
+       // Se a empresa ï¿½ 0 nï¿½o deve ter \0000 no diretorio 
        IF nEmpresa==0 
           IF AT( "\0000", GDir ) > 0 
              GDir:= StrTran( GDir, "\0000", "" ) 
@@ -137,8 +137,8 @@ WHILE !EMP->( EOF() )
            GRP->( DBSeek( nFiles ) ) 
            cArquivo:= AllTrim( GRP->ARQUIVO ) 
            cModulo:=  AllTrim( GRP->GRUPO   ) 
-           // Filtra arquivos de empresas que sÆo genericos 
-           // para que nÆo execute reindex duas vezes nos arquivos. 
+           // Filtra arquivos de empresas que sï¿½o genericos 
+           // para que nï¿½o execute reindex duas vezes nos arquivos. 
            IF ( nEmpresa == 0 ) .OR.; 
               ( GRP->GENERICO == "N" .AND. nEmpresa <> 0 ) 
               IF nFiles <> 21  .AND. nFiles <> 22 .AND.; 
@@ -201,7 +201,7 @@ LOCAL cArquivo:= IF( LEN( Arquivo ) > 43, "..." + Right( ARQUIVO, 30 ), ARQUIVO 
    DBSelectAr( COD ) 
    // VALMOR: Guarda o GDir numa variavel interna para restaurar em seguida 
    GDirRes:= GDir 
-   // VALMOR: Esta linha For‡a o posicionamento no diretorio do arquivo atual 
+   // VALMOR: Esta linha Forï¿½a o posicionamento no diretorio do arquivo atual 
    SetDiretorioPadrao( COD ) 
   //// VALMOR: Fim do reposicionamento, embora continue reposicionado 
  
@@ -217,12 +217,12 @@ LOCAL cArquivo:= IF( LEN( Arquivo ) > 43, "..." + Right( ARQUIVO, 30 ), ARQUIVO 
       FechaArquivos() 
    endif 
  
-   // Reposiciona o GDir Na marra, pois na biblioteca VPBIBAUX ‚ usado SET INDEX 
+   // Reposiciona o GDir Na marra, pois na biblioteca VPBIBAUX ï¿½ usado SET INDEX 
    // o que faz com que seja incocada a funcao SetDirPadrao que salva novamente o 
    // Gdir na sua variavel interna. Esta funcao abaixo elimina este salvamento 
    // para que o reposicionamento seja restaurado corretamente. 
    // NAO REMOVA AS DUAS LINHAS A SEGUIR. 
-   // ELAS SÇO FUNDAMENTAIS PARA O BOM FUNCIONAMENTO DA REINDEXACAO 
+   // ELAS Sï¿½O FUNDAMENTAIS PARA O BOM FUNCIONAMENTO DA REINDEXACAO 
    // Por VALMOR em 23/04/2003 
    GDir:= GDirRes 
    SetDiretorioPadrao( 0 ) 
@@ -245,8 +245,8 @@ if nVLR<=1/reccount()*100
    @ 10,39 say space(35) 
 endif 
 nVlr:= INT( nVlr / 3 ) 
-@ 10,39 say "Û" + Repl( "°", nVlr ) Color "15/" + CorFundoAtual() 
-@ ROW(), COL() Say Repl( "Û", 35 - nVlr ) Color "14/" + CorFundoAtual() 
+@ 10,39 say "ï¿½" + Repl( "ï¿½", nVlr ) Color "15/" + CorFundoAtual() 
+@ ROW(), COL() Say Repl( "ï¿½", 35 - nVlr ) Color "14/" + CorFundoAtual() 
 setcolor(cCOR) 
 return(.t.) 
  

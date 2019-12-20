@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
  
 #ifdef HARBOUR
 function sistfile()
@@ -8,14 +8,14 @@ function sistfile()
 
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ SISTFILE 
-³ Finalidade  ³ Definicao do Sistema de Arquivos - Generico / Por Empresa 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ SISTFILE 
+ï¿½ Finalidade  ï¿½ Definicao do Sistema de Arquivos - Generico / Por Empresa 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
       cTela:= ScreenSave( 0, 0, 24, 79 ) 
@@ -80,7 +80,7 @@ Local nTela:= 1
               @ 13,13 Say "Modo Abertura: " Get nModo 
               @ 15,13 Say "Criar........: " Get cCriar 
               READ 
-              IF NetRLock() 
+              IF netrlock() 
                  Replace CRIAR With ( cCriar=="S" ),; 
                          MODO  With nModo,; 
                          GRUPO With cGrupo,; 
@@ -93,14 +93,14 @@ Local nTela:= 1
               WHILE !oTb:Stabilize() 
               ENDDO 
          case nTecla==K_SPACE 
-              IF NetRLock() 
+              IF netrlock() 
                  nReg:= RECNO() 
                  cFile:= ARQUIVO 
                  cSimNao:= IF( GENERICO=="S", "N", "S" ) 
                  DBGoTop() 
                  WHILE !EOF() 
                      IF ARQUIVO==cFile 
-                        IF NetRlock() 
+                        IF netrlock() 
                            Replace GENERICO With cSimNao 
                         ENDIF 
                      ENDIF 

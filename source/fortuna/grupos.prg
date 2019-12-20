@@ -3,14 +3,14 @@
 #Include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ABREGRUPO 
-³ Finalidade  ³ Abrir arquivos em grupo 
-³ Parametros  ³ Nome do grupo 
-³ Retorno     ³ Se conseguiu 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 20/Janeiro/1996 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ABREGRUPO 
+ï¿½ Finalidade  ï¿½ Abrir arquivos em grupo 
+ï¿½ Parametros  ï¿½ Nome do grupo 
+ï¿½ Retorno     ï¿½ Se conseguiu 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 20/Janeiro/1996 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function AbreGrupo( cGrupo ) 
    LOCAL GetList:= {} 
@@ -22,8 +22,8 @@ Function AbreGrupo( cGrupo )
  
    cFalta := "# fortuna automacao comercial - Ocorrencias na Abertura/Conversao do FORTURNA" + _CRLF  
    cFalta += _CRLF 
-   cFalta += ". Situa‡„o   Arquivo (" + DTOC (DATE ()) + " - " + TIME () + " h)" + _CRLF 
-   cFalta += "  ÄÄÄÄÄÄÄÄÄÄ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" + _CRLF 
+   cFalta += ". Situaï¿½ï¿½o   Arquivo (" + DTOC (DATE ()) + " - " + TIME () + " h)" + _CRLF 
+   cFalta += "  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + _CRLF 
    cGrupo:= PAD( cGrupo, 20 ) 
    IF UseDBFGrupo() 
       GRP->( DBSetOrder( 1 ) ) 
@@ -61,7 +61,7 @@ Function AbreGrupo( cGrupo )
                IF GRP->Criar 
                   CreateVPB( GRP->Area ) 
                ELSE 
-                  Aviso( "Arquivo " + cGRPArquivo + " nÆo foi encontrado...", 24 / 2 ) 
+                  Aviso( "Arquivo " + cGRPArquivo + " nï¿½o foi encontrado...", 24 / 2 ) 
                   Pausa() 
                   lAbriu:= .F. 
                   EXIT 
@@ -112,7 +112,7 @@ Function AbreGrupo( cGrupo )
          ENDDO 
          GDir:= GDirRes 
       ELSE 
-         Aviso( "Grupo de arquivos " + trim( cGrupo ) + " nÆo foi localizado." ) 
+         Aviso( "Grupo de arquivos " + trim( cGrupo ) + " nï¿½o foi localizado." ) 
          Pausa() 
          lAbriu:= .F. 
       ENDIF 
@@ -207,15 +207,15 @@ Function FechaGrupo( cGrupo )
    Return .T. 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ UseDbfGrupo 
-³ Finalidade  ³ Abrir arquivo que contem informacoes sobre grupo de DBF's 
-³             ³ utilizados pelo sistema 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Se Utilizado (.T.) 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 07/Janeiro/1996 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ UseDbfGrupo 
+ï¿½ Finalidade  ï¿½ Abrir arquivo que contem informacoes sobre grupo de DBF's 
+ï¿½             ï¿½ utilizados pelo sistema 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Se Utilizado (.T.) 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 07/Janeiro/1996 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function UseDBFGrupo() 
   Private DirGrupo:= Alltrim( SWSet( _SYS_DIRREPORT ) ) + _PATH_SEPARATOR 
@@ -236,15 +236,15 @@ Function UseDBFGrupo()
   Return( Used() ) 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ CriaDbfGrupo 
-³ Finalidade  ³ 
-³             ³ 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 07/Janeiro/1996 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ CriaDbfGrupo 
+ï¿½ Finalidade  ï¿½ 
+ï¿½             ï¿½ 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 07/Janeiro/1996 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function CriaDBFGrupo() 
   LOCAL aStruct:= { { "Grupo",     "C", 20, 00 },; 

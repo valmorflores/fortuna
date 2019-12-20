@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ MOEDAS 
-³ Finalidade  ³ Cadastramento de Moedas 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ MOEDAS 
+ï¿½ Finalidade  ï¿½ Cadastramento de Moedas 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */
 #ifdef HARBOUR
 function vpc35800
@@ -101,14 +101,14 @@ Local nLin:= 1
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ EditaVariacao 
-³ Finalidade  ³ Alterar a variacao cambial 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ EditaVariacao 
+ï¿½ Finalidade  ï¿½ Alterar a variacao cambial 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function EditaVariacao( oTab ) 
    Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -160,14 +160,14 @@ Function EditaVariacao( oTab )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IncluiVariacao 
-³ Finalidade  ³ Inclusao de uma nova variacao na base de dados 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IncluiVariacao 
+ï¿½ Finalidade  ï¿½ Inclusao de uma nova variacao na base de dados 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function IncluiVariacao( oTab ) 
    Local cCor:= SetColor( cCor ), cTela:= ScreenSave( 0, 0, 24, 79 ) 
@@ -186,7 +186,7 @@ Function IncluiVariacao( oTab )
               INDICE With nIndice 
    ENDIF 
    DBGoBottom() 
-   IF MOE->( NetRLock() ) 
+   IF MOE->( netrlock() ) 
       Replace MOE->INDICE With VAR->INDICE 
    ENDIF 
    Set( _SET_DELIMITERS, .T. ) 
@@ -201,14 +201,14 @@ Function IncluiVariacao( oTab )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ AlteraVariacao 
-³ Finalidade  ³ Alteracao da variacao 
-³ Parametros  ³ oTab 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ AlteraVariacao 
+ï¿½ Finalidade  ï¿½ Alteracao da variacao 
+ï¿½ Parametros  ï¿½ oTab 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function AlteraVariacao( oTab ) 
    Local cCor:= SetColor( cCor ), cTela:= ScreenSave( 0, 0, 24, 79 ) 
@@ -221,12 +221,12 @@ Function AlteraVariacao( oTab )
    @ Row(),60 Get nIndice Pict "@E 9,999,999.9999" 
    READ 
    IF !LastKey() == K_ESC 
-      IF NetRlock() 
+      IF netrlock() 
          Repl DATA__ With dData,; 
               INDICE With nIndice 
       ENDIF 
    ENDIF 
-   IF MOE->( NetRLock() ) 
+   IF MOE->( netrlock() ) 
       Replace MOE->INDICE With VAR->INDICE 
    ENDIF 
    Set( _SET_DELIMITERS, .T. ) 

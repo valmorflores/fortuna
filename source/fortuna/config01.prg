@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё 
-Ё Finalidade  Ё 
-Ё Parametros  Ё 
-Ё Retorno     Ё 
-Ё Programador Ё 
-Ё Data        Ё 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ 
+О©╫ Finalidade  О©╫ 
+О©╫ Parametros  О©╫ 
+О©╫ Retorno     О©╫ 
+О©╫ Programador О©╫ 
+О©╫ Data        О©╫ 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 #ifdef HARBOUR
 function config01()

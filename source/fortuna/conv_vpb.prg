@@ -1,19 +1,19 @@
 // ## CL2HB.EXE - Converted
 #include "Dbstruct.ch" 
-#include "VPF.CH" 
+#include "vpf.ch" 
 /* 
    Programador - Valmor P.Flores 
  
-   Basicamente esta fun‡„o faz ... 
+   Basicamente esta funï¿½ï¿½o faz ... 
  
       SETORES_.VPB ---> SETORES_.nnn 
       SETORES_.NOV <--- NOVA ESTRUTURA 
       SETORES_.NOV <--- SETORES_.nnn 
       SETORES_.NOV ---> SETORES_.VPB 
  
-      Obs. Esta rotina ‚ necess ria, ao inv‚s da outra, para o fato de o 
-           usu rio entrar diversas vezes no sistema quando houver um poss¡vel 
-           erro na convers„o, n„o perder os dados originais do cliente ! 
+      Obs. Esta rotina ï¿½ necessï¿½ria, ao invï¿½s da outra, para o fato de o 
+           usuï¿½rio entrar diversas vezes no sistema quando houver um possï¿½vel 
+           erro na conversï¿½o, nï¿½o perder os dados originais do cliente ! 
 */ 
    Function fConv_VPB (cArq, cFalta, aArqNom) 
  
@@ -96,7 +96,7 @@
             VPBox( 01, 18, 20, 59, "ATUALIZACAO DO SISTEMA" ,"15/09" ) 
             VPObsBox( .T., 3, 20, ,; 
                                { "                                    ",; 
-                                 " Vocˆ est  rodando uma vers„o  mais ",; 
+                                 " Vocï¿½ estï¿½ rodando uma versï¿½o  mais ",; 
                                  "                                    ",; 
                                  " atual do sistema, portanto, alguns ",; 
                                  "                                    ",; 

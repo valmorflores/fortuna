@@ -3,10 +3,11 @@
 #Define BOX_DUPLO      ( CHR(176) + CHR(176) + CHR(176) + CHR(176) + ; 
                          CHR(176) + CHR(176) + CHR(176) + CHR(176) ) 
  
-#include "VPF.CH" 
-#include "INKEY.CH" 
-#include "PTFUNCS.CH" 
-#include "PTVERBS.CH" 
+#include "vpf.ch"
+#include "inkey.ch"
+#include "formatos.ch"
+#include "box.ch"
+                         
 /* 
 * 
 *      Modulo - VPC14330 
@@ -312,8 +313,8 @@ next
 nPOSICAO:=nPPOSICAO 
  
 //* APONTADOR DA OPCAO *// 
-@ nLIN1+nCURSOR,nCOL1 say if(cAPONTA1<>NIL,cAPONTA1,"Û") Color cCorApontador 
-@ nLIN1+nCURSOR,nCOL2 say if(cAPONTA2<>NIL,cAPONTA2,"Û") Color cCorApontador 
+@ nLIN1+nCURSOR,nCOL1 say if(cAPONTA1<>NIL,cAPONTA1,"ï¿½") Color cCorApontador 
+@ nLIN1+nCURSOR,nCOL2 say if(cAPONTA2<>NIL,cAPONTA2,"ï¿½") Color cCorApontador 
  
 whil nTECLA<>K_ESC 
  
@@ -354,8 +355,8 @@ whil nTECLA<>K_ESC
            elseif nCURSOR<nTLIN 
               @ nLIN1+nCURSOR,nCOL1 say " " Color cCorApontador 
               @ nLIN1+nCURSOR,nCOL2 say " " Color cCorApontador 
-              @ nLIN1+(++nCURSOR),nCOL1 say if(cAPONTA1<>NIL,cAPONTA1,"Û") Color cCorApontador 
-              @ nLIN1+nCURSOR,nCOL2 say if(cAPONTA2<>NIL,cAPONTA2,"Û")     Color cCorApontador 
+              @ nLIN1+(++nCURSOR),nCOL1 say if(cAPONTA1<>NIL,cAPONTA1,"ï¿½") Color cCorApontador 
+              @ nLIN1+nCURSOR,nCOL2 say if(cAPONTA2<>NIL,cAPONTA2,"ï¿½")     Color cCorApontador 
            endif 
       case nTECLA=K_UP .AND. nPOSICAO>1        //* SETA PARA CIMA *// 
            --nPOSICAO 
@@ -372,8 +373,8 @@ whil nTECLA<>K_ESC
               //* MUDAR PARA COR DO APONTADOR *// 
               @ nLIN1+nCURSOR,nCOL1 say " " Color cCorApontador 
               @ nLIN1+nCURSOR,nCOL2 say " " Color cCorApontador 
-              @ nLIN1+(--nCURSOR),nCOL1 say if(cAPONTA1<>NIL,cAPONTA1,"Û") Color cCorApontador 
-              @ nLIN1+nCURSOR,nCOL2 say if(cAPONTA2<>NIL,cAPONTA2,"Û")     Color cCorApontador 
+              @ nLIN1+(--nCURSOR),nCOL1 say if(cAPONTA1<>NIL,cAPONTA1,"ï¿½") Color cCorApontador 
+              @ nLIN1+nCURSOR,nCOL2 say if(cAPONTA2<>NIL,cAPONTA2,"ï¿½")     Color cCorApontador 
            endif 
       case nTECLA==K_PGDN                      //* PAGE DOWN *// 
            if nPOSICAO+nTLIN<=nTAM_ 
@@ -382,8 +383,8 @@ whil nTECLA<>K_ESC
               //* MUDAR PARA COR DO APONTADOR *// 
               @ nLIN1+nCURSOR,nCOL1 say " " Color cCorApontador 
               @ nLIN1+nCURSOR,nCOL2 say " " Color cCorApontador 
-              @ nLIN1,nCOL1 say if(cAPONTA1<>NIL,cAPONTA1,"Û") Color cCorApontador 
-              @ nLIN1,nCOL2 say if(cAPONTA2<>NIL,cAPONTA2,"Û") Color cCorApontador 
+              @ nLIN1,nCOL1 say if(cAPONTA1<>NIL,cAPONTA1,"ï¿½") Color cCorApontador 
+              @ nLIN1,nCOL2 say if(cAPONTA2<>NIL,cAPONTA2,"ï¿½") Color cCorApontador 
               nPOSICAO:=nTAM_ 
               nCURSOR:=0 
            endif 
@@ -406,8 +407,8 @@ whil nTECLA<>K_ESC
               //* MUDAR PARA COR DO APONTADOR *// 
               @ nLIN1+nCURSOR,nCOL1 say " " Color cCorApontador 
               @ nLIN1+nCURSOR,nCOL2 say " " Color cCorApontador 
-              @ nLIN1,nCOL1 say if(cAPONTA1<>NIL,cAPONTA1,"Û") Color cCorApontador 
-              @ nLIN1,nCOL2 say if(cAPONTA2<>NIL,cAPONTA2,"Û") Color cCorApontador 
+              @ nLIN1,nCOL1 say if(cAPONTA1<>NIL,cAPONTA1,"ï¿½") Color cCorApontador 
+              @ nLIN1,nCOL2 say if(cAPONTA2<>NIL,cAPONTA2,"ï¿½") Color cCorApontador 
               nPOSICAO:=1 
               nCURSOR:=0 
            endif 

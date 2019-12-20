@@ -8,8 +8,8 @@
 * Data        - 13/Setembro/1994 
 * 
 */ 
-#include "VPF.CH" 
-#include "INKEY.CH"
+#include "vpf.ch" 
+#include "inkey.ch"
 
 #ifdef HARBOUR
 function vpc14320()

@@ -1,17 +1,17 @@
 // ## CL2HB.EXE - Converted
-#Include "INKEY.CH" 
-#include "VPF.CH" 
+#Include "inkey.ch" 
+#include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ fSelecDup() 
-³ Finalidade  ³ Selecao Duplicatas 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores + Airan 
-³ Data        ³ Tue 24/08/99 - 11:49:30 h 
-³ Atualizacao ³ 11/99 - Valmor 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ fSelecDup() 
+ï¿½ Finalidade  ï¿½ Selecao Duplicatas 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores + Airan 
+ï¿½ Data        ï¿½ Tue 24/08/99 - 11:49:30 h 
+ï¿½ Atualizacao ï¿½ 11/99 - Valmor 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
       Function fSelecDup() 
  
@@ -54,10 +54,10 @@
          DBSelectAr( _COD_DUPAUX ) 
  
          SetColor( _COR_BROWSE ) 
-         Ajuda( "["+_SETAS+"]Edi‡„o dos Campos   [Esc]Sair" ) 
+         Ajuda( "["+_SETAS+"]Ediï¿½ï¿½o dos Campos   [Esc]Sair" ) 
  
          SetColor( _COR_GET_EDICAO ) 
-         VPBox ( 04, 05, 21, 74, " GERA€ŽO DE DUPLICATAS PARA REMESSA ", _COR_GET_EDICAO ) 
+         VPBox ( 04, 05, 21, 74, " GERAï¿½ï¿½O DE DUPLICATAS PARA REMESSA ", _COR_GET_EDICAO ) 
          Scroll( 06, 06, 20, 73 ) 
          Set( _SET_DELIMITERS, .T. ) 
  
@@ -66,17 +66,17 @@
          @ 07, 07 Say "Banco ................................: De [   ]      a [   ]     " 
          @ 08, 07 Say "Cliente ..............................: De [      ]   a [      ]  " 
          @ 09, 07 Say "Vencimento ...........................: De [        ] a [        ]" 
-         @ 10, 07 Say "Emiss„o ..............................: De [        ] a [         " 
-         @ 11, 07 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+         @ 10, 07 Say "Emissï¿½o ..............................: De [        ] a [         " 
+         @ 11, 07 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
          @ 12, 07 Say "Remessa para Debito/Cadastramento ....: [ ]" 
          @ 13, 07 Say "Conta corrente p/recebimento .........: [   ]" 
-         @ 14, 07 Say "Montante m ximo a ser remetido .......: [              ]" 
-         @ 15, 07 Say "Valor m ximo para parcela ............: [              ]" 
-         @ 16, 07 Say "Percentual de divis„o do valor .......: [    ]" 
-         @ 17, 07 Say "Sele‡„o especial .....................: [ ]" 
+         @ 14, 07 Say "Montante mï¿½ximo a ser remetido .......: [              ]" 
+         @ 15, 07 Say "Valor mï¿½ximo para parcela ............: [              ]" 
+         @ 16, 07 Say "Percentual de divisï¿½o do valor .......: [    ]" 
+         @ 17, 07 Say "Seleï¿½ï¿½o especial .....................: [ ]" 
          @ 18, 07 Say "Nova data de vencimento ..............: [        ]" 
          @ 19, 07 Say "Multa sobre o atraso p/sem fundos ....: [    ]" 
-         @ 20, 07 Say "Corr. monet ria mensal p/atrasados ...: [    ]" 
+         @ 20, 07 Say "Corr. monetï¿½ria mensal p/atrasados ...: [    ]" 
  
          nLanc1:= 0 
          nLanc2:= 99999999 
@@ -86,38 +86,38 @@
          @ 05, 63 Get nLanc2 Pict "99999999" When; 
             Mensagem( "Digite o codigo de lancamento final." ) 
          @ 06, 50 Get nDuplic1  Pict "999999"  ; 
-				When Mensagem( " Digite o n£mero da duplicata inicial " ) 
+				When Mensagem( " Digite o nï¿½mero da duplicata inicial " ) 
            @ 06, 63 Get nDuplic2  Pict "999999"  ; 
-              When Mensagem( " Digite o n£mero da duplicata final " ) 
+              When Mensagem( " Digite o nï¿½mero da duplicata final " ) 
          @ 07, 50 Get nBanco1   Pict "999"     ; 
-				When Mensagem( " Digite o c¢digo do banco inicial " ) 
+				When Mensagem( " Digite o cï¿½digo do banco inicial " ) 
            @ 07, 63 Get nBanco2   Pict "999"     ; 
-              When Mensagem( " Digite o c¢digo do banco final " ) 
+              When Mensagem( " Digite o cï¿½digo do banco final " ) 
          @ 08, 50 Get nClient1  Pict "999999"  ; 
-				When Mensagem( " Digite o c¢digo do cliente inicial " ) 
+				When Mensagem( " Digite o cï¿½digo do cliente inicial " ) 
            @ 08, 63 Get nClient2  Pict "999999"  ; 
-              When Mensagem( " Digite o c¢digo do cliente final " ) 
+              When Mensagem( " Digite o cï¿½digo do cliente final " ) 
          @ 09, 50 Get dVenc1                   ; 
 				When Mensagem( " Digite a data de vencimento inicial " ) 
            @ 09, 63 Get dVenc2                   ; 
               When Mensagem( " Digite a data de vencimento final " ) 
          @ 10, 50 Get dEmiss1                  ; 
-				When Mensagem( " Digite a data de emiss„o inicial " ) 
+				When Mensagem( " Digite a data de emissï¿½o inicial " ) 
            @ 10, 63 Get dEmiss2                  ; 
-              When Mensagem( " Digite a data de emiss„o final " ) 
+              When Mensagem( " Digite a data de emissï¿½o final " ) 
          @ 12, 47 Get cCodReg   Pict "!" Valid LastKey() == K_UP .OR. ; 
             IF( !LastKey() == K_UP, fCodReg( @cCodReg ), .T. ) ; 
             When Mensagem( " Digite D=Debito, I=Inclusao Cad. E=Exclusao Cad." ) 
          @ 13, 47 Get nConta_   Pict "999" Valid PesqCtaCorrente( @nConta_ ) ; 
             .OR. LastKey() == K_UP ; 
-            When Mensagem( " Digite o c¢digo da conta corrente " ) 
+            When Mensagem( " Digite o cï¿½digo da conta corrente " ) 
          @ 14, 47 Get nValorL   Pict "@R 999,999,999.99" ; 
-				When Mensagem( " Digite o valor m ximo a ser enviado ao banco " ) 
+				When Mensagem( " Digite o valor mï¿½ximo a ser enviado ao banco " ) 
          @ 15, 47 Get nValPar   Pict "@R 999,999,999.99" ; 
-				When Mensagem( " Digite o valor m ximo da parcela dividida " ) 
+				When Mensagem( " Digite o valor mï¿½ximo da parcela dividida " ) 
          @ 16, 47 Get nPerc     Pict "@R 999.99%" Valid( nPerc <= 100 ) ; 
             .OR. LastKey() == K_UP ; 
-            When Mensagem( " Digite o percentual de divis„o do valor " ) 
+            When Mensagem( " Digite o percentual de divisï¿½o do valor " ) 
          @ 17, 47 Get cSelEsp   Pict "!" Valid LastKey() == K_UP .OR. ; 
             IF( !LastKey() == K_UP, fSelEsp( @cSelEsp ), .T. ) ; 
             When Mensagem( " Digite S=Sem Fundos, C=Com Fundos ou T=Todas" ) 
@@ -128,7 +128,7 @@
             When Mensagem( " Digite o percentual da multa sobre o valor " ) 
          @ 20, 47 Get nCorMon   Pict "@R 999.99%" Valid( nCorMon <= 100 ) ; 
             .OR. LastKey() == K_UP ; 
-            When Mensagem( " Digite o percentual da corre‡„o monet ria sobre o valor " ) 
+            When Mensagem( " Digite o percentual da correï¿½ï¿½o monetï¿½ria sobre o valor " ) 
  
          SetCursor( 1 ) 
          READ 
@@ -143,11 +143,11 @@
            PesqCtaCorrente( @nConta_ ) 
         ENDIF 
         IF cSelEsp=="S" .AND. EMPTY( dDatVen ) 
-           IF SWAlerta( "Atencao! Para Geracao de Informacoes ;de duplicatas com retorno bancario; Sem Fundo, ‚ importante que se informe ;uma nova data de vencimento", { "Cancela", "Gerar"} ) == 1 
+           IF SWAlerta( "Atencao! Para Geracao de Informacoes ;de duplicatas com retorno bancario; Sem Fundo, ï¿½ importante que se informe ;uma nova data de vencimento", { "Cancela", "Gerar"} ) == 1 
               Loop 
            ENDIF 
         ENDIF 
-        IF Confirma( 00,00, "Confirma a gera‡„o das duplicatas?", , "S" ) 
+        IF Confirma( 00,00, "Confirma a geraï¿½ï¿½o das duplicatas?", , "S" ) 
  
            DO CASE 
               CASE cCodReg=="D" 
@@ -335,7 +335,7 @@
                                    ENDIF 
  
                                    IF nOpcaoData == 0 .OR. ( nOpcaoData <> 0 .AND. lGerar ) 
-                                      IF CTB->( NetRLock() ) 
+                                      IF CTB->( netrlock() ) 
                                          IF CTB->SITRET=="01" //.OR. CTB->SITRET=="NV" 
                                             Replace CTB->SITRET With "NV",; 
                                                     CTB->SELEC_ With "Nao" 
@@ -349,7 +349,7 @@
                                          ENDIF 
                                          dV:= CTB->DATVEN 
                                          nRegistro:= CTB->( RECNO() ) 
-                                         /* Verifica se j  nao existe uma duplicata selecionada e enviada sem retorno */ 
+                                         /* Verifica se jï¿½ nao existe uma duplicata selecionada e enviada sem retorno */ 
                                          WHILE CTB->CODIGO==IF( DPA->TIPO__ =="02", StrZero( DPA->CODIGO, 10, 0 ), StrZero( DPA->CODNF_, 9, 0 ) + DPA->LETRA_ ) .AND. !CTB->( EOF() ) 
                                              IF CTB->SITRET=="  " 
                                                 lGerar:= .F. 
@@ -488,7 +488,7 @@
                              nSoma+= nValorParc 
                           ENDIF 
                        NEXT 
-                       IF DPA->( NetRLock() ) 
+                       IF DPA->( netrlock() ) 
                           DPA->SITU__:= "*" 
                        ENDIF 
                     ENDIF 
@@ -529,7 +529,7 @@
               Pausa() 
               ScreenRest( cVpcCtrlb ) 
 *              Aviso( "Foram geradas " + Alltrim( Str( nReg, 6 ) ) + " duplicatas !" ) 
-*              DiarioComunicacao( "°°°°±±±±±±²²²²²²²²²²///////COBRANCA BANCARIA///////ÛÛÛ", "Fim da Selecao de Duplicatas" ) 
+*              DiarioComunicacao( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½///////COBRANCA BANCARIA///////ï¿½ï¿½ï¿½", "Fim da Selecao de Duplicatas" ) 
  
                EXIT 
  
@@ -553,7 +553,7 @@
  
  
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
    Function fSelEsp( cSelEsp ) 
  
 		Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -568,7 +568,7 @@
       vpbox(16,56,20,70, , _COR_BROW_BOX, .F., .F. ) 
  
 		mensagem("") 
-      @ 17,50 Say " ÄÄÄÄ" Color _COR_GET_BOX 
+      @ 17,50 Say " ï¿½ï¿½ï¿½ï¿½" Color _COR_GET_BOX 
  
 		SetColor ( _COR_BROWSE ) 
       @ 17,57 Prompt " Com Fundos  " 
@@ -766,7 +766,7 @@
             @ 10,02 Say "Dias p/Protesto......:" Get nDiasProtesto  Pict "99" when Instrucao( "6" ) 
             @ 11,02 Say "Taxa de Multa........:" Get nTxMulta       Pict "99.99" 
  
-            @ 18,02 Say "Arquivo de Remessa ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+            @ 18,02 Say "Arquivo de Remessa ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
             @ 19,01 Get cArqRemessa        when Instrucao( "Nome do arquivo" ) 
          ENDIF 
          if QualBanco = 237 
@@ -784,11 +784,11 @@
 //            @ 08,02 Say "Instrucao............:" Get cInstr1            When Instrucao( "4" ) 
 //            @ 08,29 Get cInstr2 
 //            @ 09,02 Say "Dias p/Multa Apos Ven:" Get nDiasMulta Pict "99" when Instrucao( "5" ) 
-            @ 06,02 Say "N§ Sequencial Envio..:" Get nGerArqBAn     Pict "9999999" 
+            @ 06,02 Say "Nï¿½ Sequencial Envio..:" Get nGerArqBAn     Pict "9999999" 
             @ 10,02 Say "Dias p/Protesto......:" Get nDiasProtesto  Pict "99" when Instrucao( "6" ) 
             @ 11,02 Say "Taxa de Multa........:" Get nTxMulta       Pict "99.99" 
  
-            @ 18,02 Say "Arquivo de Remessa ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+            @ 18,02 Say "Arquivo de Remessa ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
             @ 19,01 Get cArqRemessa        when Instrucao( "Nome do arquivo" ) 
          ENDIF 
  
@@ -803,7 +803,7 @@
             @ 05,02 Say "Aceite...............:" Get cAceite            When Instrucao( "0" ) 
             @ 07,02 Say "Tipo de Ocorrencia...:" Get cTipoOcorrencia    When Instrucao( "3" ) 
             @ 10,02 Say "Dias p/Protesto......:" Get nDiasProtesto  Pict "99" when Instrucao( "6" ) 
-            @ 18,02 Say "Arquivo de Remessa ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+            @ 18,02 Say "Arquivo de Remessa ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
             @ 19,01 Get cArqRemessa        when Instrucao( "Nome do arquivo" ) 
          ENDIF 
  
@@ -817,7 +817,7 @@
             @ 03,02 Say "Especie do Titulo....:" Get cTipoDocumento  pict "99" When Instrucao( "7" ) 
             @ 04,02 Say "Codigo da Ocorrencia.:" Get cTipoOcorrencia pict "99" When Instrucao( "8" ) 
             @ 05,02 Say "Dias p/Protesto......:" Get nDiasProtesto   Pict "99" when Instrucao( "9" ) 
-            @ 18,02 Say "Arquivo de Remessa ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+            @ 18,02 Say "Arquivo de Remessa ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
             @ 19,01 Get cArqRemessa        when Instrucao( "Nome do arquivo" ) 
          ENDIF 
          if QualBanco = 409 
@@ -830,8 +830,8 @@
  *           @ 03,02 Say "Especie do Titulo....:" Get cTipoDocumento  pict "99" When Instrucao( "7" ) 
  *           @ 04,02 Say "Codigo da Ocorrencia.:" Get cTipoOcorrencia pict "99" When Instrucao( "8" ) 
             @ 02,02 Say "Dias para Protesto....:" Get nDiasProtesto   Pict "99" when Instrucao( "9" ) 
-            @ 04,02 Say "N§ Sequencial de Envio:" Get nGerArqBAn      Pict "999" 
-            @ 18,02 Say "Arquivo de Remessa ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+            @ 04,02 Say "Nï¿½ Sequencial de Envio:" Get nGerArqBAn      Pict "999" 
+            @ 18,02 Say "Arquivo de Remessa ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
             @ 19,01 Get cArqRemessa        when Instrucao( "Nome do arquivo" ) 
          ENDIF 
  
@@ -845,8 +845,8 @@
             @ 03,02 Say "Especie do Titulo....:" Get cTipoDocumento  pict "99" When Instrucao( "7" ) 
             @ 04,02 Say "Codigo da Ocorrencia.:" Get cTipoOcorrencia pict "99" When Instrucao( "8" ) 
             @ 05,02 Say "Dias para Protesto....:" Get nDiasProtesto   Pict "99" when Instrucao( "9" )
-            // @ 04,02 Say "N§ Sequencial de Envio:" Get nGerArqBAn      Pict "999" 
-            @ 18,02 Say "Arquivo de Remessa ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+            // @ 04,02 Say "Nï¿½ Sequencial de Envio:" Get nGerArqBAn      Pict "999" 
+            @ 18,02 Say "Arquivo de Remessa ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
             @ 19,01 Get cArqRemessa        when Instrucao( "Nome do arquivo" ) 
          ENDIF 
  
@@ -861,11 +861,11 @@
             VPBox( 00, 00, 22, 79, "COBRANCA SIMPLES - SANTANDER", _COR_GET_EDICAO )
             @ 04,02 Say "Taxa de Juros (MES)..:" Get nJuros Pict "@E 9,999.99" 
             @ 05,02 Say "Aceite...............:" Get cAceite            When Instrucao( "0" ) 
-            @ 06,02 Say "N§ Sequencial Envio..:" Get nGerArqBAn     Pict "9999999"
+            @ 06,02 Say "Nï¿½ Sequencial Envio..:" Get nGerArqBAn     Pict "9999999"
             @ 07,02 Say "Tipo de Ocorrencia...:" Get cTipoOcorrencia    When Instrucao( "3" ) 
             @ 10,02 Say "Dias p/Protesto......:" Get nDiasProtesto  Pict "99" when Instrucao( "6" ) 
             @ 12,02 Say "Instrucao............:" Get cgInstru
-            @ 18,02 Say "Arquivo de Remessa ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+            @ 18,02 Say "Arquivo de Remessa ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
             @ 19,01 Get cArqRemessa     //   when Instrucao( "Nome do arquivo" )
          ENDIF 
  
@@ -965,7 +965,7 @@
    Return Nil 
  
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Function fConsSelec( nTipo ) 
  
@@ -1010,17 +1010,17 @@
  
       oTb:=TBrowseDB( 16, 01, 21, 78 ) 
       oTb:AddColumn( tbcolumnnew( "Identificao do Cliente   Vencimento" + ; 
-			"        D‚bito Situa‡„o da Cobran‡a Vai Foi",; 
+			"        Dï¿½bito Situaï¿½ï¿½o da Cobranï¿½a Vai Foi",; 
 			{|| Left( CTB->IDECLI, 25 ) + " " + DtoC( CTB->DATVEN ) + " " + ; 
 				 Tran ( CTB->VALDEB, "@E 999,999,999.99" ) + " " + ; 
 				 Left( CTB->SITUAC, 20 ) + " " + Left( CTB->SELEC_, 03 ) + " " + ; 
 				 IF( CTB->JAENVI == "Sim", Left( CTB->JAENVI, 03 ), ; 
 					  Space( 3 ) ) + " " + SPACE( 65 ) } ) ) 
-      oTb:HeadSep:= "Ä" 
+      oTb:HeadSep:= "ï¿½" 
 		oTb:AutoLite:=.f. 
 		oTb:dehilite() 
  
-		Mensagem( "[ESPACO][ENTER]Vai(Sim/Nao) [DEL]Exc [TAB]Impress„o [ESC]Sair" ) 
+		Mensagem( "[ESPACO][ENTER]Vai(Sim/Nao) [DEL]Exc [TAB]Impressï¿½o [ESC]Sair" ) 
  
       WHILE .T. 
  
@@ -1045,13 +1045,13 @@
                cTmp1 := "               " 
                cTmp2 := "               " 
          ENDCASE 
-         @ 02, 02 Say "Identifi‡„o do Cliente...: [" + Left( CTB->IDECLI, 25 ) + "]" 
+         @ 02, 02 Say "Identifiï¿½ï¿½o do Cliente...: [" + Left( CTB->IDECLI, 25 ) + "]" 
          @ 03, 02 Say "Nome.....................: [" + Left( CTB->NOMCON, 45 ) + "]" 
          @ 04, 02 Say "Conta Corrente...........: [" + Str ( CTB->CONTAC, 10 ) + "]" 
-         @ 05, 02 Say "Data da Op‡„o............: [" + DtoC( CTB->DATOPC )     + "]" 
+         @ 05, 02 Say "Data da Opï¿½ï¿½o............: [" + DtoC( CTB->DATOPC )     + "]" 
          @ 06, 02 Say "Nome do Banco............: [" + Left( CTB->NOMBAN, 20 ) + "]" 
          @ 07, 02 Say "Data do Vencimento.......: [" + DtoC( CTB->DATVEN )     + "]" 
-         @ 08, 02 Say "Valor do D‚bito..........: [" + Str ( CTB->VALDEB, 15, 2 ) + "]" 
+         @ 08, 02 Say "Valor do Dï¿½bito..........: [" + Str ( CTB->VALDEB, 15, 2 ) + "]" 
          @ 09, 02 Say "Valor Original Corrigido.: [" + Str ( CTB->VALORI, 15, 2 ) + "]" 
          @ 13, 02 Say "Tipo de Remessa..........: [" + cTmp1 + "] [" + cTmp2 + "]" 
          IF !EMPTY( CTB->SITRET ) 
@@ -1060,8 +1060,8 @@
          ELSE 
             Scroll( 08, 53, 09, 78 ) 
          ENDIF 
-         @ 10, 02 Say REPL( "Ä", 76 ) 
-         @ 11, 02 Say "Situa‡„o da Cobran‡a.....: [" + Left( CTB->SITUAC, 45 ) + "]" 
+         @ 10, 02 Say REPL( "ï¿½", 76 ) 
+         @ 11, 02 Say "Situaï¿½ï¿½o da Cobranï¿½a.....: [" + Left( CTB->SITUAC, 45 ) + "]" 
          @ 12, 02 Say "Situacao do Debito.......: [" 
          cStatus:= "" 
          cCorStatus:= "07" 
@@ -1119,12 +1119,12 @@
                   Aviso( "Este debito ja foi efetuado." ) 
                   Pausa() 
                   ScreenRest( cTelaRes ) 
-               ELSEIF CTB->( NetRLock () ) 
+               ELSEIF CTB->( netrlock () ) 
 						CTB->SELEC_:= IIF( CTB->SELEC_ == "Nao", "Sim", "Nao" ) 
 					ENDIF 
 				CASE nTecla==K_TAB 
 					IF Confirma( 00, 00,; 
-						"Confirma a impress„o desta Duplicata?",; 
+						"Confirma a impressï¿½o desta Duplicata?",; 
 						"Digite [S] para confirmar ou [N] p/ cancelar.", "N" ) 
 						 Relatorio( "CTRLBANC.REP" ) 
 					ENDIF 
@@ -1148,7 +1148,7 @@
                            endif 
                         ENDDO 
                      ENDIF 
-                     IF DPA->( NetRLock() ) 
+                     IF DPA->( netrlock() ) 
                         Replace DPA->SITU__ With " " 
                      ENDIF 
                   ENDIF 
@@ -1160,7 +1160,7 @@
                      DBGoTop() 
                      WHILE !EOF() 
                         IF CTB->SELEC_=="Sim" 
-                           IF NetRLock() 
+                           IF netrlock() 
                               IF CTB->SEQDUP == "#" 
                                  DPA->( DBSetOrder( 3 ) ) 
                               ELSE 
@@ -1177,7 +1177,7 @@
                                        endif 
                                     ENDDO 
                                  ENDIF 
-                                 IF DPA->( NetRLock() ) 
+                                 IF DPA->( netrlock() ) 
                                     Replace DPA->SITU__ With " " 
                                  ENDIF 
                               ENDIF 
@@ -1234,7 +1234,7 @@
  
 	Return Nil 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
 Function fImportRet() 
  
@@ -1366,7 +1366,7 @@ Function fImportRet()
       endif 
       DPA->(DBseek(val(subst(cDocumento,1,9)))) 
       CLI->(DBseek(DPA->CLIENT)) 
-      if NetRLock() 
+      if netrlock() 
          repl DOCUM_ with cDocumento 
          repl CLIENT with subst(CLI->DESCRI,1,15) 
          repl VALDEB with DPA->VLR___ 
@@ -1396,11 +1396,11 @@ Function fImportRet()
                       {|| SELECT+ " "+DOCUM_+" "+CLIENT+" "+transf(VALPGO,"@e 99999.99")+" "+ ; 
                           dtoc(DTPGTO)+" "+subst(DESRET,1,25) })) 
    *   SIM 123456789. 123456789.12345 12378.99 12/12/12 123456789.12345679.12345 
-   oTb:HeadSep:= "Ä" 
+   oTb:HeadSep:= "ï¿½" 
    oTb:AutoLite:=.f. 
    oTb:dehilite() 
  
-   Mensagem( "[TAB]Impress„o [G]Importa‡„o [ESC]Sair" ) 
+   Mensagem( "[TAB]Impressï¿½o [G]Importaï¿½ï¿½o [ESC]Sair" ) 
  
    CTT->( DBGoTop() ) 
  
@@ -1427,7 +1427,7 @@ Function fImportRet()
          CASE nTecla==K_CTRL_PGUP ; oTb:gotop() 
          CASE nTecla==K_CTRL_PGDN ; oTb:gobottom() 
          CASE nTecla==K_TAB 
-             IF Confirma( 00, 00,"Confirma a impress„o deste Retorno?",; 
+             IF Confirma( 00, 00,"Confirma a impressï¿½o deste Retorno?",; 
                                  "Digite [S] para confirmar ou [N] p/ cancelar.", "N" ) 
                 Relatorio( "CTRLRETO.REP" ) 
              ENDIF 
@@ -1458,7 +1458,7 @@ Begin Sequence
    DBGoTop() 
    WHILE .NOT. EOF() 
       if CTB->( DBSeek( CTT->DOCUM_ ) ) 
-         IF CTB->( NetRlock() ) 
+         IF CTB->( netrlock() ) 
             replace CTB->SITUAC with CTT->DESRET 
             replace CTB->SELEC_ with "Nao" 
          ENDIF 
@@ -1480,7 +1480,7 @@ Begin Sequence
                DPA->( DbSkip() ) 
             ENDDO 
          ENDIF 
-         IF DPA->( NetRlock() ) 
+         IF DPA->( netrlock() ) 
             repl DPA->SITUAC with CTT->DESRET 
             IF CTT->SELECT == "Sim" 
                if EMPTY( DPA->DTQT__ ) 
@@ -1499,14 +1499,14 @@ End Sequence
 retu .T. 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ PesquisaReceber 
-³ Finalidade  ³ Busca situacao de Contas a Receber cfe. Arquivos Remetidos/Retornos 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ PesquisaReceber 
+ï¿½ Finalidade  ï¿½ Busca situacao de Contas a Receber cfe. Arquivos Remetidos/Retornos 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function PesquisaReceber() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1542,14 +1542,14 @@ Local nOpcao:= 0
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ RECEBER 
-³ Finalidade  ³ Consulta de Contas a Receber 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 15/09/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ RECEBER 
+ï¿½ Finalidade  ï¿½ Consulta de Contas a Receber 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 15/09/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function Receber() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1716,14 +1716,14 @@ ScreenRest( cTela )
 Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ RECEBERRETORNO 
-³ Finalidade  ³ Consulta de Contas a Receber Por Retorno 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 15/09/1999 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ RECEBERRETORNO 
+ï¿½ Finalidade  ï¿½ Consulta de Contas a Receber Por Retorno 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 15/09/1999 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Static Function ReceberRetorno() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1905,14 +1905,14 @@ Return Nil
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ REGCLIENTE 
-³ Finalidade  ³ Consulta de Contas a Receber x Cliente 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 15/09/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ REGCLIENTE 
+ï¿½ Finalidade  ï¿½ Consulta de Contas a Receber x Cliente 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 15/09/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function RegCliente( nTipo ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -2178,11 +2178,11 @@ Local dDataVen1, dDataVen2, nConta1, nConta2,;
      SetColor( _COR_GET_EDICAO ) 
      @ 02,02 Say "Aviso!" 
      @ 03,02 Say "As duplicatas em  contas  a  receber  que  satisfizerem  as condicoes abaixo" Color "07/" + CorFundoAtual() 
-     @ 04,02 Say "relacionadas nÆo serÆo  selecionadas,  sendo  que  voce dever  ter  o m ximo" Color "07/" + CorFundoAtual() 
+     @ 04,02 Say "relacionadas nï¿½o serï¿½o  selecionadas,  sendo  que  voce deverï¿½ ter  o mï¿½ximo" Color "07/" + CorFundoAtual() 
      @ 05,02 Say "de atencao e conviccao das que deseja realmente bloquear."                    Color "07/" + CorFundoAtual() 
-     @ 06,02 Say "O Filtro abaixo ‚ por tempo indeterminado, enquanto existir,  o Fortuna fara" Color "07/" + CorFundoAtual() 
+     @ 06,02 Say "O Filtro abaixo ï¿½ por tempo indeterminado, enquanto existir,  o Fortuna fara" Color "07/" + CorFundoAtual() 
      @ 07,02 Say "utilizacao no momento da Selecao.                                 "           Color "07/" + CorFundoAtual() 
-     @ 08,01 Say Repl( "º", 78 ) Color "00/" + CorFundoAtual() 
+     @ 08,01 Say Repl( "ï¿½", 78 ) Color "00/" + CorFundoAtual() 
      @ 09,02 Say "Da Conta............:" Get nConta1 Pict "999" 
      @ 09,42 Say "Ate:" Get nConta2 Pict "999" 
      @ 10,02 Say "Com Vencimento Entre:" Get dDataVen1 
@@ -2331,7 +2331,7 @@ Static Function Instrucao( cCodigo, nBanco )
          @ 09,42 Say "05 - CANCELAMENTO DE ABATIMENTO  " 
          @ 10,42 Say "06 - ALTERACAO DE VENCIMENTO     " 
          @ 11,42 Say "07 - ALTERACAO DE USO EMP        " 
-         @ 12,42 Say "08 - ALTERACAO DE SEU N§         " 
+         @ 12,42 Say "08 - ALTERACAO DE SEU Nï¿½         " 
          @ 13,42 Say "09 - PROTESTAR AGORA             " 
          @ 14,42 Say "10 - SUSTAR PROTESTO             " 
          @ 15,42 Say "11 - NAO PROTESTAR               " 
@@ -2348,7 +2348,7 @@ Static Function Instrucao( cCodigo, nBanco )
  
 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Function fArqRemet( cRemRet ) 
  
@@ -2399,7 +2399,7 @@ Static Function Instrucao( cCodigo, nBanco )
 			Next 
  
 			/* Ajuste de mensagens */ 
-			Mensagem("[ENTER]Visualiza‡„o [ESC]Sair") 
+			Mensagem("[ENTER]Visualizaï¿½ï¿½o [ESC]Sair") 
 			Ajuda("["+_SETAS+"][PgUp][PgDn]Move") 
  
 			SetColor( _COR_BROWSE ) 
@@ -2417,12 +2417,12 @@ Static Function Instrucao( cCodigo, nBanco )
             Tran( aFiles[ nRow ][ 7 ], "@E 99999,999,999.99" ) + SPACE( 20 ) } )) 
  
 			/* Movimentacao no browse */ 
-			oTb:HeadSep:= "Ä" 
+			oTb:HeadSep:= "ï¿½" 
 			oTb:GoTopBlock:= {|| nRow:= 1 } 
 			oTb:GoBottomBlock:= {|| nRow:= Len( aFiles ) } 
 			oTb:SkipBlock:= {|x| SkipperArr( x, aFiles, @nRow ) } 
  
-         /*ÄÄÄÄ Variaveis do objeto browse ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Informacoes Diversas ÄÄÄÄ*/ 
+         /*ï¿½ï¿½ï¿½ï¿½ Variaveis do objeto browse ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Informacoes Diversas ï¿½ï¿½ï¿½ï¿½*/ 
 			oTb:AutoLite:=.F. 
 			oTb:dehilite() 				 /* Nao	- Sim */ 
 			oTb:ColorSpec:= SetColor() + ",10/02,14/09" 
@@ -2463,7 +2463,7 @@ Static Function Instrucao( cCodigo, nBanco )
                CASE nTecla==K_CTRL_TAB 
                     cTelaAnt:= ScreenSave(  0, 0, 24, 79 ) 
                     IF cRemRet=="EXC" 
-                       IF SWAlerta( "Deseja remarcar os registros; caso nÆo estejam fazendo; parte da relacao de enviados", { "Confirma", "Cancela" } )==1 
+                       IF SWAlerta( "Deseja remarcar os registros; caso nï¿½o estejam fazendo; parte da relacao de enviados", { "Confirma", "Cancela" } )==1 
                           aRegistros:= "" 
                           aRegistros:= {} 
                           cFile:= Gdir + "\" + aFiles[ nRow ][ 1 ] 
@@ -2494,10 +2494,10 @@ Static Function Instrucao( cCodigo, nBanco )
                                                       CTB->VALDEB == VAL( SubStr( aRegistros[ nCt ], 53, 15 ) ) / 100 .AND.; 
                                                       CTB->CONTAC == VAL( SubStr( aRegistros[ nCt ], 31, 10 ) ) 
                                              lGravado:= .T. 
-                                             IF CTB->( NetRLock() ) 
+                                             IF CTB->( netrlock() ) 
                                                 IF !Alltrim( CTB->SITUAC )=="RECUPERADO" 
                                                     IF DPA->( DBSeek( VAL( SUBSTR( CTB->IDECLI, 2, 10 ) ) ) ) 
-                                                       IF DPA->( NetRLock() ) 
+                                                       IF DPA->( netrlock() ) 
                                                           Replace DPA->SITU__ With "*" 
                                                        ENDIF 
                                                     ENDIF 
@@ -2576,7 +2576,7 @@ Static Function Instrucao( cCodigo, nBanco )
                                        ScreenRest( cTelaRes ) 
                                     ENDIF 
                                  ENDIF 
-                                 IF DPA->( NetRLock() ) 
+                                 IF DPA->( netrlock() ) 
                                     Replace DPA->SITU__ With "*" 
                                  ENDIF 
                               ENDIF 
@@ -2598,7 +2598,7 @@ Static Function Instrucao( cCodigo, nBanco )
                        IF CTB->CODIGO==cUltimo .AND.; 
                           CTB->DATVEN==dVencimUlt .AND.; 
                           CTB->VALDEB==nValorUlt 
-                          IF CTB->( NetRLock() ) 
+                          IF CTB->( netrlock() ) 
                              ++nIgnorados 
                              Replace CTB->SITUAC With "<<EXCLUIR>>" 
                           ENDIF 
@@ -2616,7 +2616,7 @@ Static Function Instrucao( cCodigo, nBanco )
                        CTB->( DBGoTop() ) 
                        WHILE !CTB->( EOF() ) 
                           IF Alltrim( CTB->SITUAC )=="<<EXCLUIR>>" 
-                             IF CTB->( NetRLock() ) 
+                             IF CTB->( netrlock() ) 
                                 CTB->( DBDelete() ) 
                              ENDIF 
                           ENDIF 
@@ -2692,16 +2692,16 @@ Static Function Instrucao( cCodigo, nBanco )
                                                DAY( CTB->DATVEN ) == VAL( SubStr( aRegistros[ nCt ], 51, 02 ) )  .AND.; 
                                                     CTB->VALDEB == VAL( SubStr( aRegistros[ nCt ], 53, 15 ) ) / 100 .AND.; 
                                                     CTB->CONTAC == VAL( SubStr( aRegistros[ nCt ], 31, 10 ) ) 
-                                             IF CTB->( NetRLock() ) 
+                                             IF CTB->( netrlock() ) 
                                                 IF !Alltrim( CTB->SITUAC )=="<<EXCLUIR ITEM>>" 
                                                     Replace CTB->SITUAC With "<<EXCLUIR ITEM>>" 
                                                     IF DPA->( DBSeek( VAL( SUBSTR( CTB->IDECLI, 2, 10 ) ) ) ) 
-                                                       IF DPA->( NetRLock() ) 
+                                                       IF DPA->( netrlock() ) 
                                                           Replace DPA->SITU__ With " " 
                                                        ENDIF 
                                                     ELSE 
                                                        cTelaR1:= ScreenSave( 0, 0, 24, 79 ) 
-                                                       Aviso( "Registro " + SubStr( CTB->IDECLI, 2, 10 ) + " nÆo localizado..." ) 
+                                                       Aviso( "Registro " + SubStr( CTB->IDECLI, 2, 10 ) + " nï¿½o localizado..." ) 
                                                        Pausa() 
                                                        ScreenRest( cTelaR1 ) 
                                                     ENDIF 
@@ -2711,7 +2711,7 @@ Static Function Instrucao( cCodigo, nBanco )
                                              ENDIF 
                                           ELSE 
                                              cTelaR1:= ScreenSave( 0, 0, 24, 79 ) 
-                                             Aviso( "Registro " + SubStr( aRegistros[ nCt ], 2, 10 ) + " nÆo localizado..." ) 
+                                             Aviso( "Registro " + SubStr( aRegistros[ nCt ], 2, 10 ) + " nï¿½o localizado..." ) 
                                              Pausa() 
                                              ScreenRest( cTelaR1 ) 
                                           ENDIF 
@@ -2728,7 +2728,7 @@ Static Function Instrucao( cCodigo, nBanco )
                           CTB->( DBGoTop() ) 
                           WHILE !CTB->( EOF() ) 
                               IF Alltrim( CTB->SITUAC )=="<<EXCLUIR ITEM>>" 
-                                 IF CTB->( NetRLock() ) 
+                                 IF CTB->( netrlock() ) 
                                     CTB->( DBDelete() ) 
                                  ENDIF 
                               ENDIF 
@@ -2776,7 +2776,7 @@ Static Function Instrucao( cCodigo, nBanco )
 	Return cFile 
  
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Function fGeracLay() 
  
@@ -2835,7 +2835,7 @@ Static Function Instrucao( cCodigo, nBanco )
          nQuaRegs := 0 
          nValTot  := 0 
  
-         // Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä 
+         // ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ 
          // --- Registro "A" - HEADER 
  
          cLinha := "A" 
@@ -2940,7 +2940,7 @@ Static Function Instrucao( cCodigo, nBanco )
                nQuaRegs ++ 
                nValTot+= CTB->VALDEB 
  
-               IF CTB->( NetRLock () ) 
+               IF CTB->( netrlock () ) 
                   CTB->JAENVI:= "Sim" 
                   CTB->SELEC_:= "Nao" 
                ENDIF 
@@ -2951,7 +2951,7 @@ Static Function Instrucao( cCodigo, nBanco )
  
          END 
  
-         // Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä 
+         // ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ 
  
          // --- Registro "Z" - TRAILLER 
  
@@ -2974,7 +2974,7 @@ Static Function Instrucao( cCodigo, nBanco )
             Return Nil 
          ENDIF 
  
-         // Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä 
+         // ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ 
  
          FCLOSE( nHandle ) 
  
@@ -3004,7 +3004,7 @@ Static Function Instrucao( cCodigo, nBanco )
  
 	Return Nil 
  
-// ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Function fCodReg( cCodReg ) 
  
@@ -3019,12 +3019,12 @@ Static Function Instrucao( cCodigo, nBanco )
       vpbox(11,56,15,72, , _COR_BROW_BOX, .F., .F. ) 
  
 		mensagem("") 
-      @ 12,50 Say " ÄÄÄÄ" Color _COR_GET_BOX 
+      @ 12,50 Say " ï¿½ï¿½ï¿½ï¿½" Color _COR_GET_BOX 
  
       SetColor ( _COR_BROWSE ) 
-      @ 12,57 Prompt " D‚bito Conta  " 
-      @ 13,57 Prompt " Inclus„o Cad. " 
-      @ 14,57 Prompt " Exclus„o Cad. " 
+      @ 12,57 Prompt " Dï¿½bito Conta  " 
+      @ 13,57 Prompt " Inclusï¿½o Cad. " 
+      @ 14,57 Prompt " Exclusï¿½o Cad. " 
  
 		menu to nOpcao 
  

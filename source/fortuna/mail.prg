@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#Include "INKEY.CH" 
-#Include "VPF.CH" 
+#Include "inkey.ch" 
+#Include "vpf.ch" 
 
 #ifdef HARBOUR
 function mail()
@@ -144,7 +144,7 @@ Local nRefreshTimer:= SECONDS()
                         nao interessada em rever a mensagem */ 
                      IF DATA__ == aEnviada[ nRow1 ][ 1 ] .AND.; 
                         ARQUIV == aEnviada[ nRow1 ][ 4 ] 
-                        IF NetRLock() 
+                        IF netrlock() 
                            Replace ORIGEM With "*" 
                         ENDIF 
                      ENDIF 
@@ -156,7 +156,7 @@ Local nRefreshTimer:= SECONDS()
                      /* Caso seja pressionado DEL na recebida, marca o destino */ 
                      IF DATA__ == aRecebida[ nRow2 ][ 1 ] .AND.; 
                         ARQUIV == aRecebida[ nRow2 ][ 4 ] 
-                        IF NetRLock() 
+                        IF netrlock() 
                            Replace DESTIN With "*" 
                         ENDIF 
                      ENDIF 
@@ -207,7 +207,7 @@ Local nRefreshTimer:= SECONDS()
                MEMOWRIT( cArquivo, cTexto ) 
                DBSelectAr( 123 ) 
                DBAppend() 
-               IF NetRlock() 
+               IF netrlock() 
                   Repl DATA__ With DATE(),; 
                        HORA__ With TIME(),; 
                        TITULO With cTitulo,; 
@@ -227,7 +227,7 @@ Local nRefreshTimer:= SECONDS()
                WHILE !oTb2:Stabilize() 
                ENDDO 
  
-               /* Sai ap¢s gravar a mensagem */ 
+               /* Sai apï¿½s gravar a mensagem */ 
                EXIT 
  
           CASE nTecla==K_DEL 
@@ -266,7 +266,7 @@ Local nRefreshTimer:= SECONDS()
                            WHILE !EOF() 
                               IF DATA__ == aRecebida[ nRow2 ][ 1 ] .AND.; 
                                  ARQUIV == aRecebida[ nRow2 ][ 4 ] 
-                                 IF NetRLock() 
+                                 IF netrlock() 
                                     Replace OK____ With "*" 
                                  ENDIF 
                                  aRecebida[ nRow2 ][ 6 ]:= "*" 

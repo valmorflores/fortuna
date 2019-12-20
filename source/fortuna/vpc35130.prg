@@ -1,17 +1,17 @@
 // ## CL2HB.EXE - Converted
  
 /* 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³  Modulo      ³ VPC35130 
-³  Descricao   ³ Menu de Consultas a convenios 
-³  Programador ³ Valmor Pereira Flores 
-³  Data        ³ 
-³  Cliente     ³ FARMACUSTO = Convenio 
-³  Atualizacao ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½  Modulo      ï¿½ VPC35130 
+ï¿½  Descricao   ï¿½ Menu de Consultas a convenios 
+ï¿½  Programador ï¿½ Valmor Pereira Flores 
+ï¿½  Data        ï¿½ 
+ï¿½  Cliente     ï¿½ FARMACUSTO = Convenio 
+ï¿½  Atualizacao ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
 
 #ifdef HARBOUR
 function vpc35130()
@@ -178,7 +178,7 @@ Priv cCadFuncionario, cCadCargos, cCadDependente
                  nCodigo:= StrTran( nCodigo, "-", "" ) 
                  nCodigo:= VAL( nCodigo ) 
                  ERRO->( DBAppend() ) 
-                 IF ERRO->( NetRLock() ) 
+                 IF ERRO->( netrlock() ) 
                     Replace ERRO->OBSERVACOES With cObservacoes 
                     Replace ERRO->CODIGO      With nCodigo 
                  ENDIF 
@@ -385,7 +385,7 @@ Local aStrCargos:=      {{ "CODIGO",     "N", 005, 000 },;
                  DBGoTop() 
                  WHILE !TMP->( EOF() ) 
                      CARGO->( DBAppend() ) 
-                     IF CARGO->( NetRLock() ) 
+                     IF CARGO->( netrlock() ) 
                         Replace CARGO->CODIGO     With VAL( LEFT( TMP->ORIGEM, 05 ) ),; 
                                 CARGO->DESCRICAO  With    SUBSTR( TMP->ORIGEM, 06, 30 ),; 
                                 CARGO->BRANCO     With    SUBSTR( TMP->ORIGEM, 31, 355 ),; 
@@ -421,7 +421,7 @@ Local aStrCargos:=      {{ "CODIGO",     "N", 005, 000 },;
               DBGoTop() 
               WHILE !TMP->( EOF() ) 
                   FC->( DBAppend() ) 
-                  IF FC->( NetRLock() ) 
+                  IF FC->( netrlock() ) 
                      Repl FC->NOME         With SubStr( TMP->ORIGEM, 001, 040 ),; 
                           FC->ENDERECO     With SubStr( TMP->ORIGEM, 041, 040 ),; 
                           FC->BAIRRO       With SubStr( TMP->ORIGEM, 081, 020 ),; 
@@ -474,7 +474,7 @@ Local aStrCargos:=      {{ "CODIGO",     "N", 005, 000 },;
            DBGoTop() 
            WHILE ! FC->( EOF() ) 
  
-                /**************°°°° 1a.FASE DA CONFERENCIA °°°°*************/ 
+                /**************ï¿½ï¿½ï¿½ï¿½ 1a.FASE DA CONFERENCIA ï¿½ï¿½ï¿½ï¿½*************/ 
                 ///// Critica da Funcao/Cargo - Verifica se e' codificada //// 
                 cFuncao:= FC->FUNCAO 
                 IF !lCargoNaoExiste           // Verifica se arquivo de cargo esta disponivel 
@@ -532,7 +532,7 @@ Local aStrCargos:=      {{ "CODIGO",     "N", 005, 000 },;
                    NEXT 
                 ENDIF 
  
-                /***********°°°° 2a.FASE DA CONFERENCIA °°°°************/ 
+                /***********ï¿½ï¿½ï¿½ï¿½ 2a.FASE DA CONFERENCIA ï¿½ï¿½ï¿½ï¿½************/ 
  
                 CLI->( DBSeek( FC->SEUCODIGO ) ) 
  
@@ -549,13 +549,13 @@ Local aStrCargos:=      {{ "CODIGO",     "N", 005, 000 },;
  
                 /* Armazena os retornos, caso existam */ 
                 IF VAL( cRetorno ) <> 0 
-                   IF FC->( NetRlock() ) 
+                   IF FC->( netrlock() ) 
                       Replace FC->BRANCO With cRetorno 
                       // Space( LEN( FC->BRANCO ) - LEN( cRetorno ) ) + cRetorno 
                    ENDIF 
                    cRetorno:= "" 
                 ELSE 
-                   IF FC->( NetRlock() ) 
+                   IF FC->( netrlock() ) 
                       Replace FC->BRANCO With Space( len( FC->BRANCO ) ) 
                    ENDIF 
                 ENDIF 
@@ -702,7 +702,7 @@ Local aStr:= {}
   nSoma:= 0 
   WHILE ! BOF() 
       IF TIPO__=="1" 
-         IF NetRlock() 
+         IF netrlock() 
             IF nSoma > 0 
                Replace VALOR_ With nSoma 
             ELSE 
@@ -759,7 +759,7 @@ Local cArquivoRep
    Mensagem( "Relatorios: [TAB]Extrato [CTRL+TAB]Arquivo" ) 
  
    oTAB:=tbrowseDB(04,02,16,77) 
-   oTAB:addcolumn(tbcolumnnew(,{|| CODIGO + " " + IIF( TIPO__=="1", DESCRI + "ÄÄÄÄ>" + Tran( VALOR_, "@E 999,999.99" ), IF( TIPO__=="2", "  * Cupom *" + StrZero( CUPOM_, 8, 0 ) + " " + DTOC( DATA__ ), "     " + PRODUT + Tran( VALOR_, "@E 999,999.999" ) ) )+ SPACE( 60 ) })) 
+   oTAB:addcolumn(tbcolumnnew(,{|| CODIGO + " " + IIF( TIPO__=="1", DESCRI + "ï¿½ï¿½ï¿½ï¿½>" + Tran( VALOR_, "@E 999,999.99" ), IF( TIPO__=="2", "  * Cupom *" + StrZero( CUPOM_, 8, 0 ) + " " + DTOC( DATA__ ), "     " + PRODUT + Tran( VALOR_, "@E 999,999.999" ) ) )+ SPACE( 60 ) })) 
    oTAB:AUTOLITE:=.f. 
    oTAB:dehilite() 
    WHILE .t. 

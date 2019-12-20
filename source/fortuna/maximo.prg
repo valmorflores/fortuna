@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#include "INKEY.CH" 
-#Include "VPF.CH" 
+#include "inkey.ch" 
+#Include "vpf.ch" 
 
 #ifdef HARBOUR
 function maximo()
@@ -20,28 +20,28 @@ Return Nil
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ StartEdicao 
-³ Finalidade  ³ Inicializa a variavel para a edicao 
-³ Parametros  ³ cArquivo = Texto 
-³ Retorno     ³ aArquivo = Array 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ StartEdicao 
+ï¿½ Finalidade  ï¿½ Inicializa a variavel para a edicao 
+ï¿½ Parametros  ï¿½ cArquivo = Texto 
+ï¿½ Retorno     ï¿½ aArquivo = Array 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function StartEdicao( cArquivo ) 
 Local aArquivo:= IOFillText( cArquivo ) 
 Return aArquivo 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION Edit( aArquivo, nLin1, nCol1, nLin2, nCol2, cNomeFile ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -65,11 +65,11 @@ FOR nLin:= 1 TO Len( aArquivo )
     IF ( AT( "(", aArquivo[ nLin ] ) > 0 .OR.; 
          AT( "/*", aArquivo[ nLin ] ) > 0 .OR.; 
          AT( ":=", aArquivo[ nLin ] ) > 0 ) .AND.; 
-           !AT( "¯", aArquivo[ nLin ] ) > 0 
+           !AT( "ï¿½", aArquivo[ nLin ] ) > 0 
          /* Texto que nao devera ser alterado, ou marcado */ 
-         aTexto[ nPos ][ 160 ]:= "°" 
+         aTexto[ nPos ][ 160 ]:= "ï¿½" 
          IF AT( "/*", aArquivo[ nLin ] ) > 0 
-            aTexto[ nPos ][ 160 ]:= "Û"   /* COR AMARELA */ 
+            aTexto[ nPos ][ 160 ]:= "ï¿½"   /* COR AMARELA */ 
          ENDIF 
     ENDIF 
 NEXT 
@@ -81,7 +81,7 @@ NEXT
   VPBox( nLin1, nCol1, nLin2, nCol2, "SISTEMA GERADOR DE RELATORIOS - EDICAO", _COR_BROW_BOX ) 
   @ nLin2-1,nLin1+1 Say Left( cNomeFile, ( nCol2 - nCol1 ) - 2 ) 
   SetColor( "15/" + SubStr( SetColor(), At( "/", SetColor() ) + 1, 2 ) ) 
-  @ nLin2-2,nLin1+1 Say Left( "ºººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººººº", ( nCol2 - nCol1 ) - 2 ) 
+  @ nLin2-2,nLin1+1 Say Left( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", ( nCol2 - nCol1 ) - 2 ) 
   SetColor( "04/15" ) 
   @ nLin2-2,nCol2-30 Say " Soft&Ware Edit System Report " 
   SetColor( COR[8] ) 
@@ -275,11 +275,11 @@ NEXT
           CASE nTecla == K_PGDN 
                SWPgDn( aBrowse, @x ) 
  
-          CASE Upper( Chr( nTecla ) ) $ "+><®¯0123456789!@#$%^&*()_+|\=-0`~/.,M:?;'ABCDEFGHIJKLMNOPQRSTUVXYZW{}[] ‚ /*-+" .or.;  
+          CASE Upper( Chr( nTecla ) ) $ "+><ï¿½ï¿½0123456789!@#$%^&*()_+|\=-0`~/.,M:?;'ABCDEFGHIJKLMNOPQRSTUVXYZW{}[] ï¿½ï¿½ï¿½/*-+" .or.;  
                Chr( nTecla ) == '"' 
  
-               IF aT[ x ][ ColPos( aBrowse ) ] $ "®¯" .OR.; 
-                  aT[ x ][ 160 ] == "°" .OR.; 
+               IF aT[ x ][ ColPos( aBrowse ) ] $ "ï¿½ï¿½" .OR.; 
+                  aT[ x ][ 160 ] == "ï¿½" .OR.; 
                   aT[ x ][ 1 ] == ":" 
                ELSE 
                   cTecla:= Chr( nTecla ) 
@@ -368,7 +368,7 @@ NEXT
                DisplayCurrent( aBrowse ) 
  
        ENDCASE 
-       IF aT[ x ][ ColPos( aBrowse ) ] $ "®" .OR.; 
+       IF aT[ x ][ ColPos( aBrowse ) ] $ "ï¿½" .OR.; 
           aT[ x ][ 1 ] == ":" .OR.; 
           aT[ x ][ 1 ] + aT[ x ][ 2 ] == "/*" 
  
@@ -385,7 +385,7 @@ NEXT
              nPos:= ColPos( aBrowse ) 
           ENDIF 
           cString:= "" 
-          WHILE ! aT[ x ][ nPos ] == "¯" 
+          WHILE ! aT[ x ][ nPos ] == "ï¿½" 
              cString:= cString + aT[ x ][ nPos ] 
              ++nPos 
              IF nPos > Len( aT[ x ] ) 
@@ -393,7 +393,7 @@ NEXT
                 EXIT 
              ENDIF 
           ENDDO 
-          cString:= cString + "¯" 
+          cString:= cString + "ï¿½" 
           @ ( nRowRes:= Row() ), ( nColRes:= Col()-1 ) Say Left( cString, ColFim( aBrowse ) - nColRes + 1 ) 
           SetColor( "15/01" ) 
           Inkey(0) 
@@ -436,9 +436,9 @@ nRow:= LinhaScroll()
 nIniColuna:= ColunaScroll() 
 FOR nCt2:= 1 TO aBrowse[3] 
    If nRow <= aBrowse[10] 
-      IF Eval( aBrowse[ 7 ][ 160 ] ) == "°" 
+      IF Eval( aBrowse[ 7 ][ 160 ] ) == "ï¿½" 
          SetColor( "11/01" ) 
-      ELSEIF Eval( aBrowse[ 7 ][ 160 ] ) == "Û" 
+      ELSEIF Eval( aBrowse[ 7 ][ 160 ] ) == "ï¿½" 
          SetColor( "14/01" ) 
       ELSE 
          SetColor( "15/01" ) 
@@ -471,9 +471,9 @@ DispBegin()
 nRow:= LinhaScroll() 
 FOR nCt2:= 1 TO aBrowse[3] 
    If nRow <= aBrowse[10] 
-      IF Eval( aBrowse[ 7 ][ 160 ] ) == "°" 
+      IF Eval( aBrowse[ 7 ][ 160 ] ) == "ï¿½" 
          SetColor( "11/01" ) 
-      ELSEIF Eval( aBrowse[ 7 ][ 160 ] ) == "Û" 
+      ELSEIF Eval( aBrowse[ 7 ][ 160 ] ) == "ï¿½" 
          SetColor( "14/01" ) 
       ELSE 
          SetColor( "15/01" ) 
@@ -503,9 +503,9 @@ Scroll( nLin, aBrowse[2], nLin, aBrowse[4] )
 //nRow:= LinhaScroll() 
 nIniColuna:= ColunaScroll() 
    If nRow <= aBrowse[10] 
-      IF Eval( aBrowse[ 7 ][ 160 ] ) == "°" 
+      IF Eval( aBrowse[ 7 ][ 160 ] ) == "ï¿½" 
          SetColor( "11/01" ) 
-      ELSEIF Eval( aBrowse[ 7 ][ 160 ] ) == "Û" 
+      ELSEIF Eval( aBrowse[ 7 ][ 160 ] ) == "ï¿½" 
          SetColor( "14/01" ) 
       ELSE 
          SetColor( "15/01" ) 
@@ -565,9 +565,9 @@ Local cCor:= SetColor()
 Local x 
   IF aBrowse[9] + ColunaScroll() <= Len( aBrowse[7] ) 
      x:= Eval( aBrowse[7][ aBrowse[9] + ColunaScroll() ] ) 
-     IF Eval( aBrowse[ 7 ][ 160 ] ) == "°" 
+     IF Eval( aBrowse[ 7 ][ 160 ] ) == "ï¿½" 
         SetColor( "11/01" ) 
-     ELSEIF Eval( aBrowse[ 7 ][ 160 ] ) == "Û" 
+     ELSEIF Eval( aBrowse[ 7 ][ 160 ] ) == "ï¿½" 
          SetColor( "14/01" ) 
      ELSE 
         SetColor( "15/01" ) 
@@ -812,26 +812,26 @@ Local cFile:= ""
    @ 08,26 Say PAD( " ", 45 ) 
    @ 09,26 Say PAD( " ", 45 ) 
  
-   aVariaveis:= { { " Cliente - Nome                                          ", [®(CLI->DESCRI)¯] },; 
-                  { " Cliente - Endereco                                      ", [®(CLI->ENDERE)¯] },; 
-                  { " Cliente - Bairro                                        ", [®(CLI->BAIRRO)¯] },; 
-                  { " Cliente - Cep                                           ", [®Tran(CLI->CODCEP,"@R 99.999-999")¯] },; 
-                  { " Cliente - Estado                                        ", [®(CLI->ESTADO)¯] },; 
-                  { " Cliente - Data Nascimento                               ", [®DTOC(CLI->NASCIM)¯] },; 
-                  { " Cliente - Fone                                          ", [®Tran( CLI->FONE__, "@R 9999-9999.9999")¯] },; 
-                  { " Cliente - Filiacao Partidaria                           ", [®ALLTRIM( CLI->PARTID )¯] },; 
-                  { " ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ ", [] },; 
-                  { " Nome do Candidato                                       ", [®Alltrim( _EMP )¯] },; 
-                  { " Data Atual                                              ", [®DTOC( DATE() )¯] },; 
-                  { " Hora Atual                                              ", [®TIME()¯] },; 
-                  { " ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ ", [Soft&Ware Informatica] },; 
+   aVariaveis:= { { " Cliente - Nome                                          ", [ï¿½(CLI->DESCRI)ï¿½] },; 
+                  { " Cliente - Endereco                                      ", [ï¿½(CLI->ENDERE)ï¿½] },; 
+                  { " Cliente - Bairro                                        ", [ï¿½(CLI->BAIRRO)ï¿½] },; 
+                  { " Cliente - Cep                                           ", [ï¿½Tran(CLI->CODCEP,"@R 99.999-999")ï¿½] },; 
+                  { " Cliente - Estado                                        ", [ï¿½(CLI->ESTADO)ï¿½] },; 
+                  { " Cliente - Data Nascimento                               ", [ï¿½DTOC(CLI->NASCIM)ï¿½] },; 
+                  { " Cliente - Fone                                          ", [ï¿½Tran( CLI->FONE__, "@R 9999-9999.9999")ï¿½] },; 
+                  { " Cliente - Filiacao Partidaria                           ", [ï¿½ALLTRIM( CLI->PARTID )ï¿½] },; 
+                  { " ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ", [] },; 
+                  { " Nome do Candidato                                       ", [ï¿½Alltrim( _EMP )ï¿½] },; 
+                  { " Data Atual                                              ", [ï¿½DTOC( DATE() )ï¿½] },; 
+                  { " Hora Atual                                              ", [ï¿½TIME()ï¿½] },; 
+                  { " ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ", [Soft&Ware Informatica] },; 
                   { " #VARIAVEL - Nom                                         ", [Nom:= CLI->DESCRI] },; 
                   { " #VARIAVEL - End                                         ", [End:= CLI->ENDERE] },; 
                   { " #VARIAVEL - Bai                                         ", [Bai:= CLI->BAIRRO] },; 
                   { " #VARIAVEL - Cid                                         ", [Cid:= CLI->CIDADE] },; 
                   { " #VARIAVEL - UF                                          ", [UF:=  CLI->ESTADO] },; 
                   { " #VARIAVEL - Cep                                         ", [Cep:= Tran( CLI->CODCEP, "@R 99.999-999" )] },; 
-                  { " ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ ", [] },; 
+                  { " ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ", [] },; 
                   { " #COMANDO  - Linha Salto Automatico                      ", [LinhaOn()] },; 
                   { " #COMANDO  - Linha Desliga Salto                         ", [LinhaOff()] },; 
                   { " #COMANDO  - Pagina Salto                                ", [__Eject()] },; 
@@ -843,7 +843,7 @@ Local cFile:= ""
                   { " #COMANDO  - Proximo Registro                            ", [DBSkip()] },; 
                   { " #COMANDO  - VaiPara Condicional                         ", [VaiPara( .T., break1, break2 )] },; 
                   { " #COMANDO  - VaiPara()                                   ", [VaiPara( break )] },; 
-                  { " ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ ", [] },; 
+                  { " ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ", [] },; 
                   { " #BREAK    - Iniciar                                     ", [:Iniciar] },; 
                   { " #BREAK    - Cabecalho                                   ", [:Cabecalho] },; 
                   { " #BREAK    - Relatorio                                   ", [:Relatorio] },; 
@@ -945,14 +945,14 @@ Local cFile:= ""
    VPBox( 05, 13, 21, 72, " MOLDURAS DISPONIVEIS ", _COR_GET_BOX ) 
  
    SetColor( _COR_GET_BOX ) 
-   @ 07,15 Say " ÚÄÄÄÄ¿   +----+    ÛßßßßÛ " 
-   @ 08,15 Say " ³    ³   |    |    Û    Û " 
-   @ 09,15 Say " ÀÄÄÄÄÙ   +----+    ÛÜÜÜÜÛ " 
+   @ 07,15 Say " ï¿½ï¿½ï¿½ï¿½Ä¿   +----+    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " 
+   @ 08,15 Say " ï¿½    ï¿½   |    |    ï¿½    ï¿½ " 
+   @ 09,15 Say " ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½   +----+    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " 
  
    SetColor( _COR_BROWSE ) 
  
    aMolduras:= { { " Simples             " },; 
-                  { " Relatorios R pidos  " },; 
+                  { " Relatorios Rï¿½pidos  " },; 
                   { " Dupla-Densidade     " } } 
  
    if len(aMolduras) > 0 
@@ -1012,7 +1012,7 @@ Local cFile:= ""
  
             CASE nTecla==K_ENTER 
  
-                 aTabChar:= { "Ú", "Ä", "¿", "³", "³", "À", "Ä", "Ù" } 
+                 aTabChar:= { "ï¿½", "ï¿½", "ï¿½", "ï¿½", "ï¿½", "ï¿½", "ï¿½", "ï¿½" } 
  
                  SetColor( cCor ) 
                  ScreenRest( cTela ) 
@@ -1107,7 +1107,7 @@ Local cFile:= ""
  
    SetColor( _COR_GET_BOX ) 
    @ 07,15 Say "Arquivo..:" 
-   @ 08,15 Say "Diret¢rio:" 
+   @ 08,15 Say "Diretï¿½rio:" 
    @ 09,15 Say "Formato..:" 
  
  
@@ -1218,7 +1218,7 @@ FUNCTION SalvarArquivo( aTexto, cArquivo )
    VPBox( 10, 21, 19, 56, " Salvar Arquivo ", _COR_GET_BOX ) 
    SetColor( _COR_GET_BOX ) 
    @ 12,22 Say PADC( Alltrim( "O arquivo " + cArquivo ), 34 ) 
-   @ 13,22 Say PADC( "ainda nÆo foi salvo.",             34 ) 
+   @ 13,22 Say PADC( "ainda nï¿½o foi salvo.",             34 ) 
    SetColor( _COR_BROW_BOX ) 
    SetColor( "00/03,15/00" ) 
    @ 15,22 Prompt "              Salvar              " 
@@ -1293,7 +1293,7 @@ Local cTela:= ScreenSave( 0, 0, 24, 79 )
    Set( 24, "PREVISAO.TMP" ) 
    Set( 20, "PRINT" ) 
    FOR nLin:= 1 TO Len( aTexto ) 
-       IF !( aTexto[ nLin ][ 160 ] $ "°Û" ) .AND.; 
+       IF !( aTexto[ nLin ][ 160 ] $ "ï¿½ï¿½" ) .AND.; 
           !( aTexto[ nLin ][ 1 ]==":" ) .AND.; 
           !( aTexto[ nLin ][ 1 ]=="$" ) .AND.; 
           !( aTexto[ nLin ][ 1 ]=="*" ) 
@@ -1318,7 +1318,7 @@ Local cTela:= ScreenSave( 0, 0, 24, 79 )
    Set( 24, "COMANDOS.TMP" ) 
    Set( 20, "PRINT" ) 
    FOR nLin:= 1 TO Len( aTexto ) 
-       IF ( aTexto[ nLin ][ 160 ] $ "°Û" ) .OR.; 
+       IF ( aTexto[ nLin ][ 160 ] $ "ï¿½ï¿½" ) .OR.; 
           ( aTexto[ nLin ][ 1 ]==":" ) .OR.; 
           ( aTexto[ nLin ][ 1 ]=="$" ) .AND.; 
           !( aTexto[ nLin ][ 1 ]=="*" ) 

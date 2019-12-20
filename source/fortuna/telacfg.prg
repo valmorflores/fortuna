@@ -1,7 +1,7 @@
 // ## CL2HB.EXE - Converted
  
-#include "VPF.CH" 
-#Include "INKEY.CH" 
+#include "vpf.ch" 
+#Include "inkey.ch" 
  
 /* 
 Programador - Valmor P. Flores 
@@ -53,7 +53,7 @@ Local oTab
    @ 12,59 Say "["+_SETAS+"]  Movimenta" 
    @ 13,59 Say "[ESC]   Finaliza  " 
  
-   @ 14,59 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+   @ 14,59 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
    @ 15,59 Say "As cores armazena-" Color "07/00" 
    @ 16,59 Say "das na  biblioteca" Color "07/00" 
    @ 17,59 Say "ficarao  disponi- " Color "07/00" 
@@ -89,7 +89,7 @@ Local oTab
          Case nTecla==K_HOME .OR. nTecla==K_CTRL_PGUP ;oTab:gotop() 
          Case nTecla==K_END  .OR. nTecla==K_CTRL_PGDN ;oTab:gobottom() 
          CASE nTecla==K_DEL 
-              IF CCC->( NetRLock() ) 
+              IF CCC->( netrlock() ) 
                  CCC->( DBDelete() ) 
                  oTab:refreshAll() 
                  WHILE !oTab:Stabilize() 
@@ -116,7 +116,7 @@ Local oTab
               FOR nCt:= 1 TO Len( Cor ) 
                   cCorSalva:= cCorSalva + TranByte( Cor[ nCt ] ) 
               NEXT 
-              IF NetRLock() 
+              IF netrlock() 
                  Replace CORESV With cCorSalva 
               ENDIF 
               XCONFIG:= .T. 
@@ -194,8 +194,8 @@ Local aOpcoes:= { { " Tela Principal  ", 1 },;
       cCorRes:= SetColor( "07/00" ) 
       IF lDesativado 
          Scroll( 09, 59, 20, 78 ) 
-         @ 09,59 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" Color "08/00" 
-         @ 17,59 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" Color "08/00" 
+         @ 09,59 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" Color "08/00" 
+         @ 17,59 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" Color "08/00" 
          FOR nCt:= 1 TO Len( aSubOpcoes ) 
              IF aSubOpcoes[ nCt ][ 1 ]==aOpcoes[ nRow ][ 2 ] 
                 FOR nPos:= 2 TO Len( aSubOpcoes[ nCt ] ) 
@@ -312,7 +312,7 @@ Local aOpcoes:= { { " Tela Principal  ", 1 },;
          @ nLinha+nOpcaoLCor,nColuna+16  Say "" Color "15/01" 
          @ nLinha+16,nColuna+nOpcaoCCor Say  "" Color "15/01" 
  
-         @ nLinha+18,nColuna Say "< °°±±²²Û²²±±°° >" Color ; 
+         @ nLinha+18,nColuna Say "< ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û²ï¿½ï¿½ï¿½ï¿½ï¿½ >" Color ; 
                         StrZero( nOpcaoLCor, 2, 0 ) + "/" + ; 
                         StrZero( nOpcaoCCor, 2, 0 ) 
  
@@ -373,7 +373,7 @@ Local aOpcoes:= { { " Tela Principal  ", 1 },;
       FOR nCt:= 1 TO Len( Cor ) 
           cCorSalva:= cCorSalva + TranByte( Cor[ nCt ] ) 
       NEXT 
-      IF NetRLock() 
+      IF netrlock() 
          Replace CORESV With cCorSalva 
       ENDIF 
       XCONFIG:= .T. 
@@ -397,7 +397,7 @@ Local aOpcoes:= { { " Tela Principal  ", 1 },;
       FOR nCt:= 1 TO Len( Cor ) 
           cCorSalva:= cCorSalva + TranByte( Cor[ nCt ] ) 
       NEXT 
-      IF CCC->( NetRLock() ) 
+      IF CCC->( netrlock() ) 
          Replace CCC->DESCRI With cDescri,; 
                  CCC->COR___ With cCorSalva 
       ENDIF 

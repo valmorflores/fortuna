@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
  
 /* 
 **      Modulo - VPC875000 
@@ -90,7 +90,7 @@ Whil LastKey()<>K_ESC
    Read 
    If Lastkey()<>K_ESC 
       DBAppend() 
-      If NetRlock() 
+      If netrlock() 
          Repl CODIGO With nCODIGO,; 
               DESCRI With cDESCRI 
       Endif 
@@ -124,7 +124,7 @@ SetCursor( 1 )
   MENSAGEM("Digite a descricao da ATIVIDADE.") 
 Read 
 If Lastkey()<>K_ESC 
-   If NetRlock() 
+   If netrlock() 
       Repl CODIGO With nCODIGO,; 
            DESCRI With cDESCRI 
    Endif 

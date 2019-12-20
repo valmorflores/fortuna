@@ -1,17 +1,17 @@
 // ## CL2HB.EXE - Converted
-#include "SENHA.CH" 
-#include "INKEY.CH" 
-#include "VPF.CH" 
+#include "senha.ch" 
+#include "inkey.ch" 
+#include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ DisplayUsuarios 
-³ Finalidade  ³ Apresentacao da Lista de Usuarios 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 25/Agosto/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ DisplayUsuarios 
+ï¿½ Finalidade  ï¿½ Apresentacao da Lista de Usuarios 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 25/Agosto/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Func DisplayUsuarios() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -54,7 +54,7 @@ priv WSENHAG:="", WCOD:="*", WDESCRI:=spac(T_DESCR), WOP:=0, MENULIST:={}
      dDATA__:= DATA__ 
      cSenha_:= TranSenha( WSENHAG, dtos( DATA__ ) ) 
      cDescri:= UnZipChr( DESCRI ) 
-     VPBox( 01, 01, 21, 78, "Usu rios Autorizados", _COR_BROW_BOX,.t.,.t.) 
+     VPBox( 01, 01, 21, 78, "Usuï¿½rios Autorizados", _COR_BROW_BOX,.t.,.t.) 
      Mensagem("[INS]Inclui [ENTER]AlteraSenha [DEL]Exclui [F10]Poderes [ESC]Sai") 
      Ajuda( "[" + _SETAS + "]Movimenta [ESC]Sair" ) 
      SetColor( _COR_BROWSE ) 
@@ -89,7 +89,7 @@ priv WSENHAG:="", WCOD:="*", WDESCRI:=spac(T_DESCR), WOP:=0, MENULIST:={}
                 SWSet( _SYS_CONFIGSENHAS, .T. ) 
                 SetConfig() 
                 ConfiguraSenhas() 
-                _EMP:= "CONFIGURACAO DE PODERES UTILIZANDO GRUPO N§ " + StrZero( nCodUser, 3, 0 ) 
+                _EMP:= "CONFIGURACAO DE PODERES UTILIZANDO GRUPO Nï¿½ " + StrZero( nCodUser, 3, 0 ) 
                 ScreenBack:= " Configuracao    Soft&Ware " 
                 SWSet( _GER_BARRAROLAGEM, .F. ) 
                 VPTela() 
@@ -105,7 +105,7 @@ priv WSENHAG:="", WCOD:="*", WDESCRI:=spac(T_DESCR), WOP:=0, MENULIST:={}
                  cCorRes:= SetColor() 
                  IF VAL( aSenhas[ nRow ][ 1 ] ) == 999 
                     VPObsBox(.t.,15,40,"ATENCAO",{ PADC( "Desculpe " + Alltrim( Left( wUsuario, At( " ", wUsuario ) ) ) + ", mas esta" , 35 ),; 
-                                    PADC( "senha ‚ de uso restrito ao fabri-", 35 ),; 
+                                    PADC( "senha ï¿½ de uso restrito ao fabri-", 35 ),; 
                                     PADC( "cante deste produto.", 35 ) }) 
                     Pausa() 
                  ELSEIF aSenhas[ nRow ][ 1 ] == "DEL" 
@@ -116,7 +116,7 @@ priv WSENHAG:="", WCOD:="*", WDESCRI:=spac(T_DESCR), WOP:=0, MENULIST:={}
                  ELSEIF aSenhas[ nRow ][ 1 ] == "000" 
                     VPObsBox(.t.,16,40,"ATENCAO",{ PADC( "Desculpe " + Alltrim( Left( wUsuario, At( " ", wUsuario ) ) ) + ", mas esta" , 35 ),; 
                                     PADC( "senha nao podera ser excluida,", 35 ),; 
-                                    PADC( "pois ‚ seu acesso ao sistema.", 35 ) }) 
+                                    PADC( "pois ï¿½ seu acesso ao sistema.", 35 ) }) 
                     Pausa() 
  
                  ELSE 
@@ -151,7 +151,7 @@ priv WSENHAG:="", WCOD:="*", WDESCRI:=spac(T_DESCR), WOP:=0, MENULIST:={}
                     Pausa() 
                  ELSEIF VAL( aSenhas[ nRow ][ 1 ] ) == 999 
                     VPObsBox(.t.,16,40,"ATENCAO",{ PADC( "Desculpe " + Alltrim( Left( wUsuario, At( " ", wUsuario ) ) ) + ", mas esta" , 35 ),; 
-                                    PADC( "senha ‚ de uso restrito ao fabri-", 35 ),; 
+                                    PADC( "senha ï¿½ de uso restrito ao fabri-", 35 ),; 
                                     PADC( "cante deste produto", 35 ) }) 
                     Pausa() 
                  ELSE 
@@ -188,7 +188,7 @@ priv WSENHAG:="", WCOD:="*", WDESCRI:=spac(T_DESCR), WOP:=0, MENULIST:={}
                                               cGrupo_,; 
                                               Space( 20 ),; 
                                               dData__ } 
-                          IF NetRLock() 
+                          IF netrlock() 
                              nPos:= nRow 
                              Replace DESCRI With ZipChr( aSenhas[ nPos ][ 2 ] ),; 
                                      AHNES_ With TranSenha( wSenhaG, DTOS( aSenhas[ nPos ][ 6 ] ) ),; 
@@ -268,7 +268,7 @@ priv WSENHAG:="", WCOD:="*", WDESCRI:=spac(T_DESCR), WOP:=0, MENULIST:={}
      ENDDO 
   ELSE 
      /* Cadastro do usuario principal */ 
-     VPBox( 01, 01, 21, 78, "Usu rio Principal", _COR_BROW_BOX,.t.,.t.) 
+     VPBox( 01, 01, 21, 78, "Usuï¿½rio Principal", _COR_BROW_BOX,.t.,.t.) 
      @ 02, 02 Say "Senha Principal..: ["+repl("*",T_SENHA)+"]" 
        Mensagem( "Digite a senha do Administrador.") 
      WSENHAG:="" 
@@ -322,21 +322,21 @@ priv WSENHAG:="", WCOD:="*", WDESCRI:=spac(T_DESCR), WOP:=0, MENULIST:={}
   Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ 
-³ Finalidade  ³ 
-³ Parametros  ³ 
-³ Retorno     ³ 
-³ Programador ³ 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ 
+ï¿½ Finalidade  ï¿½ 
+ï¿½ Parametros  ï¿½ 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function VerCodSenha( nCodigo ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
         cTela:= ScreenSave( 0, 0, 24, 79 ) 
  
   IF DBSeek( nCodigo ) 
-     Aviso( "Codigo j  utilizado.", 12 ) 
+     Aviso( "Codigo jï¿½ utilizado.", 12 ) 
      Pausa() 
      DBSeek( 999 ) 
      DBSkip( -1 ) 
@@ -355,14 +355,14 @@ Function VerCodSenha( nCodigo )
  
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ UseSenha() 
-³ Finalidade  ³ Abrir/Criar arquivo de Senhas 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ UseSenha() 
+ï¿½ Finalidade  ï¿½ Abrir/Criar arquivo de Senhas 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function UseSenha() 
 Local aStrut 

@@ -8,7 +8,7 @@
 * Atualizacao - 
 */ 
 #Include "vpf.ch" 
-#Include "INKEY.CH" 
+#Include "inkey.ch" 
 
 #ifdef HARBOUR
 function vpcprodu()
@@ -23,7 +23,7 @@ Whil .t.
         "Trafego de materia prima entre setores.",,,COR[6],.T.)) 
    Aadd(MENULIST,MenuNew(13,15," 2 Producao          ",2,COR[11],; 
         "Selecao dos itens para inicio da producao.",,,COR[6],.T.)) 
-   @ 14,15 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" Color COR[11] 
+   @ 14,15 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" Color COR[11] 
    Aadd(MENULIST,MenuNew(15,15," 3 Movimentacao      ",2,COR[11],; 
         "Trafego de materia prima entre setores.",,,COR[6],.T.)) 
    Aadd(MENULIST,MenuNew(16,15," 4 Pesquisas         ",2,COR[11],; 
@@ -90,7 +90,7 @@ Local cTela:= ScreenSave( 0, 0, 24, 79 ), cCor:= SetColor(),;
      Mensagem("") 
      Aadd(MENULIST,MenuNew(17,35," 1 Inicio de Producao ",2,COR[11],; 
           "Ordem de Producao de um produto composto cadastrado.",,,COR[6],.T.)) 
-     Aadd(MENULIST,MenuNew(18,35," 2 NÆo Vinculada      ",2,COR[11],; 
+     Aadd(MENULIST,MenuNew(18,35," 2 Nï¿½o Vinculada      ",2,COR[11],; 
           "Ordem avulsa, chamado tecnico ou ficha de atendimento.",,,COR[6],.T.)) 
      Aadd(MENULIST,MenuNew(19,35," 0 Retorna            ",2,COR[11],; 
           "Retorna ao menu anterior.",,,COR[6],.T.)) 

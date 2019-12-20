@@ -9,8 +9,8 @@
 ** Data        - 
 ** Atualizacao - 
 */ 
-#INCLUDE 'VPF.CH' 
-#INCLUDE 'INKEY.CH' 
+#INCLUDE 'vpf.ch' 
+#INCLUDE 'inkey.ch' 
 FUNCTION ImpOrdemCompra() 
 //* Variaveis com informacoes do modulo anterior *// 
 LOCAL cTELA:= ScreenSave( 00, 00, 24, 79 ),; 
@@ -65,13 +65,13 @@ UserModulo( 'Impressao de Ordens de Compra pendentes' )
 //* Solicitacao dos dados *// 
 SET( _SET_DELIMITERS, .F. ) 
 VpBox( 13, 35, 16, 55, "Pendentes:" ) 
-@ 14, 36 PROMPT " 1> At‚ "+DTOC( DATE() )+"   " 
-@ 15, 36 PROMPT " 2> Proje‡„o       " 
+@ 14, 36 PROMPT " 1> Atï¿½ "+DTOC( DATE() )+"   " 
+@ 15, 36 PROMPT " 2> Projeï¿½ï¿½o       " 
 MENU TO nOPCAO 
 DO CASE 
    CASE nOPCAO == 1 
         VpBox( 15, 30, 19, 63, 'Fornecedor' ) 
-        @ 16, 32 SAY 'O.C. pendentes at‚ '+DTOC( DATE() ) 
+        @ 16, 32 SAY 'O.C. pendentes atï¿½ '+DTOC( DATE() ) 
         @ 17, 32 GET cDESFOR WHEN; 
         Mensagem( 'Digite o nome do fornecedor.' ) 
         READ 
@@ -176,8 +176,8 @@ ENDIF
 VPBOX( 0, 0, 03, 79, "ORDENS DE COMPRA PENDENTES", COR[20], .T., .T., COR[19] ) 
 //* Box Central *// 
 VPBox( 04, 00, 17, 79,; 
-     IF( nOPCAO == 1, "Situacao at‚ "+DTOC( DATE() ),; 
-                      "Projecao at‚ "+DTOC( dDATA ) ),; 
+     IF( nOPCAO == 1, "Situacao atï¿½ "+DTOC( DATE() ),; 
+                      "Projecao atï¿½ "+DTOC( dDATA ) ),; 
                       COR[20], .T., .T., COR[19] ) 
 //* Box Inferior *// 
 VPBOX( 18, 00, 22, 79, , COR[20], .F., .F., COR[19], .F. ) 

@@ -4,12 +4,12 @@
 REQUEST DBFCDX
 REQUEST DBFNTX
 
-*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*
+*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*
 * FORTUNA
 * SISTEMA DE CONTROLE DE ESTOQUE
 * Programador - Valmor Pereira Flores
 * 10/Outubro/1994
-*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*
+*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*
 
 *
 * Modulo      - VPC00000
@@ -39,13 +39,13 @@ IF ( nGCodUser == 0 .OR. nGCodUser == 999 ) .AND. cUserCode == Nil
        @ 06,09 Say Alltrim( _EMP )
        @ 07,09 Say _SIS
        @ 10,10 Prompt " Acessar Sistema              "
-       @ 11,10 SAY    "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"
+       @ 11,10 SAY    "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
        @ 12,10 Prompt " Configuracao de Poderes      "
-       @ 13,10 SAY    "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"
+       @ 13,10 SAY    "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
        @ 14,10 Prompt " Usuarios                     "
-       @ 15,10 SAY    "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"
+       @ 15,10 SAY    "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
        @ 16,10 Prompt " Gerador de Relatorios        "
-       @ 17,10 SAY    "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"
+       @ 17,10 SAY    "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
        @ 18,10 Prompt " Finalizar Sistema            "
        Menu To nOpcao
        DO CASE
@@ -54,7 +54,7 @@ IF ( nGCodUser == 0 .OR. nGCodUser == 999 ) .AND. cUserCode == Nil
                SWSet( _SYS_CONFIGSENHAS, .T. )
                SetConfig()
                ConfiguraSenhas()
-               _EMP:= "CONFIGURACAO DE PODERES UTILIZANDO GRUPO N§ " + StrZero( nCodUser, 3, 0 )
+               _EMP:= "CONFIGURACAO DE PODERES UTILIZANDO GRUPO Nï¿½ " + StrZero( nCodUser, 3, 0 )
                ScreenBack:= " Configuracao    Soft&Ware "
                SWSet( _GER_BARRAROLAGEM, .F. )
                VPTela()
@@ -273,7 +273,7 @@ whil .t.
 enddo
 /* mouseCHide()    */
 /* TrocaFonte(.F.) */
-Guardiao( "<FIM> Finalizacao do sistema ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" )
+Guardiao( "<FIM> Finalizacao do sistema ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" )
 fim()
 
 /*
@@ -329,14 +329,14 @@ return nil
 
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ TABELAS
-³ Finalidade  ³ menu de acesso ao cadastro de tabelas
-³ Parametros  ³ nil
-³ Retorno     ³ nil
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³ 14/Fevereiro/1998
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ TABELAS
+ï¿½ Finalidade  ï¿½ menu de acesso ao cadastro de tabelas
+ï¿½ Parametros  ï¿½ nil
+ï¿½ Retorno     ï¿½ nil
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½ 14/Fevereiro/1998
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 FUNCTION Tabelas()
 Local cCor:= SetColor(), nCursor:= SetCursor(),;
@@ -361,16 +361,16 @@ WHILE .T.
     AAdd( MENULIST, MenuNew( 05, 31, " 3 Atividades         ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de atividades." , , , COR[6], .T. ) )
     AAdd( MENULIST, MenuNew( 06, 31, " 4 Nat. de Operacao   ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de natureza de operacao." , , , COR[6], .T. ) )
     AAdd( MENULIST, MenuNew( 07, 31, " 5 Estados            ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de estados." , , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 08, 31, " 6 Hist¢ricos (Cobr)  ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de hist¢ricos." , , , COR[6], .T. ) )
+    AAdd( MENULIST, MenuNew( 08, 31, " 6 Histï¿½ricos (Cobr)  ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de histï¿½ricos." , , , COR[6], .T. ) )
     AAdd( MENULIST, MenuNew( 09, 31, " 7 Precos             ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de tabelas de precos.", , , COR[6], .T. ) )
     AAdd( MENULIST, MenuNew( 10, 31, " 8 Comissoes (%)      ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de tabelas de % de comissoes.", , , COR[6], .T. ) )
     AAdd( MENULIST, MenuNew( 11, 31, " 9 Formas de Pagamento", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de tabela de forma de Pagamento.", , , COR[6], .T. ) )
     AAdd( MENULIST, MenuNew( 12, 31, " A Operacoes          ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de tabela de Operacoes com Estoque.", , , COR[6], .T. ) )
     AAdd( MENULIST, MenuNew( 13, 31, " B Observacoes (NF)   ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de tabela de observacoes na nota fiscal.", , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 14, 31, " C Setores            ", 2, COR[11],"Inclus„o, Altera‡„o, Verifica‡„o e Exclus„o de tabela de Setores da Empresa.", , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 15, 31, " D Classes            ", 2, COR[11],"Inclus„o, Altera‡„o, Verifica‡„o e Exclus„o de tabela de Classes.", , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 16, 31, " E Cores              ", 2, COR[11],"Inclus„o, Altera‡„o, Verifica‡„o e Exclus„o de tabela de Cores.", , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 17, 31, " F Garantia/Validade  ", 2, COR[11],"Inclus„o, Altera‡„o, Verifica‡„o e Exclus„o de tabela de Garantia/Validade Produto.", , , COR[6], .T. ) )
+    AAdd( MENULIST, MenuNew( 14, 31, " C Setores            ", 2, COR[11],"Inclusï¿½o, Alteraï¿½ï¿½o, Verificaï¿½ï¿½o e Exclusï¿½o de tabela de Setores da Empresa.", , , COR[6], .T. ) )
+    AAdd( MENULIST, MenuNew( 15, 31, " D Classes            ", 2, COR[11],"Inclusï¿½o, Alteraï¿½ï¿½o, Verificaï¿½ï¿½o e Exclusï¿½o de tabela de Classes.", , , COR[6], .T. ) )
+    AAdd( MENULIST, MenuNew( 16, 31, " E Cores              ", 2, COR[11],"Inclusï¿½o, Alteraï¿½ï¿½o, Verificaï¿½ï¿½o e Exclusï¿½o de tabela de Cores.", , , COR[6], .T. ) )
+    AAdd( MENULIST, MenuNew( 17, 31, " F Garantia/Validade  ", 2, COR[11],"Inclusï¿½o, Alteraï¿½ï¿½o, Verificaï¿½ï¿½o e Exclusï¿½o de tabela de Garantia/Validade Produto.", , , COR[6], .T. ) )
     AAdd( MENULIST, MenuNew( 18, 31, " H Mais Tabelas...    ", 2, COR[11],"Menu com mais tabelas.", , , COR[6], .T. ) )
     AAdd( MENULIST, MenuNew( 19, 31, " 0 Retorna            ", 2, COR[11],"Retorna ao menu anterior." , , , COR[6], .T. ) )
 
@@ -421,8 +421,8 @@ VPBox( 15, 44, 21, 68 )
 WHILE .T.
 
     /* Preparacao do Menu */
-    AAdd( MENULIST, MenuNew( 16, 45, " 1 Moedas             ", 2, COR[11],"Inclus„o, Altera‡„o, Verifica‡„o e Exclus„o de tabela de Moedas.", , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 17, 45, " 2 Variacao Cambial   ", 2, COR[11],"Inclus„o, Altera‡„o, Verifica‡„o e Exclus„o de tabela de Variacoes.", , , COR[6], .T. ) )
+    AAdd( MENULIST, MenuNew( 16, 45, " 1 Moedas             ", 2, COR[11],"Inclusï¿½o, Alteraï¿½ï¿½o, Verificaï¿½ï¿½o e Exclusï¿½o de tabela de Moedas.", , , COR[6], .T. ) )
+    AAdd( MENULIST, MenuNew( 17, 45, " 2 Variacao Cambial   ", 2, COR[11],"Inclusï¿½o, Alteraï¿½ï¿½o, Verificaï¿½ï¿½o e Exclusï¿½o de tabela de Variacoes.", , , COR[6], .T. ) )
     AAdd( MENULIST, MenuNew( 18, 45, " 3 Criterio/Clientes  ", 2, COR[11],"Estabelece criterios p/ selecao de clientes.", , , COR[6], .T. ) )
     AAdd( MENULIST, MenuNew( 19, 45, " 4 Tipo de Contato    ", 2, COR[11],"Tipo de Contato com clientes.", , , COR[6], .T. ) )
     AAdd( MENULIST, MenuNew( 20, 45, " 0 Retorna            ", 2, COR[11],"Retorna ao menu anterior." , , , COR[6], .T. ) )
@@ -446,14 +446,14 @@ Return Nil
 
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ MENUPRECOS
-³ Finalidade  ³ menu de acesso ao cadastro de precos
-³ Parametros  ³ nil
-³ Retorno     ³ nil
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³ 14/Fevereiro/1998
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ MENUPRECOS
+ï¿½ Finalidade  ï¿½ menu de acesso ao cadastro de precos
+ï¿½ Parametros  ï¿½ nil
+ï¿½ Retorno     ï¿½ nil
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½ 14/Fevereiro/1998
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 FUNCTION MenuPrecos()
 Local cCor:= SetColor(), nCursor:= SetCursor(),;
@@ -466,10 +466,10 @@ VPBox( 13, 44, 20, 68 )
 WHILE .T.
 
     /* Preparacao do Menu */
-    AAdd( MENULIST, MenuNew( 14, 45, " 1 Tab. Padrao        ", 2, COR[11],"Tabela de Precos de venda PadrÆo..."     ,,, COR[6], .T. ) )
+    AAdd( MENULIST, MenuNew( 14, 45, " 1 Tab. Padrao        ", 2, COR[11],"Tabela de Precos de venda Padrï¿½o..."     ,,, COR[6], .T. ) )
     AAdd( MENULIST, MenuNew( 15, 45, " 2 Tab. Diferenciadas ", 2, COR[11],"Tabela de Precos de venda diferenciado."     ,,, COR[6], .T. ) )
     AAdd( MENULIST, MenuNew( 16, 45, " 3 Produto x Tabela   ", 2, COR[11],"Lista de Produtos e Margem conforme tabela."     ,,, COR[6], .T. ) )
-    @ 17,45 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"
+    @ 17,45 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
     AAdd( MENULIST, MenuNew( 18, 45, " 4 Copia Tabela       ", 2, COR[11],"Faz um copia da tabela de precos."     ,,, COR[6], .T. ) )
     AAdd( MENULIST, MenuNew( 19, 45, " 0 Retorna            ", 2, COR[11],"Retorna ao menu anterior." , , , COR[6], .T. ) )
     MenuModal(MenuList,@nOpcao); MenuList:= {}
@@ -491,14 +491,14 @@ Return Nil
 
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ MENUCOMISSOES
-³ Finalidade  ³ menu de acesso ao cadastro de COMISSOES
-³ Parametros  ³ nil
-³ Retorno     ³ nil
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³ 14/Fevereiro/1998
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ MENUCOMISSOES
+ï¿½ Finalidade  ï¿½ menu de acesso ao cadastro de COMISSOES
+ï¿½ Parametros  ï¿½ nil
+ï¿½ Retorno     ï¿½ nil
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½ 14/Fevereiro/1998
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 FUNCTION MenuComissoes()
 Local cCor:= SetColor(), nCursor:= SetCursor(),;

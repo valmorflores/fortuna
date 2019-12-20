@@ -6,9 +6,9 @@
 * Data        - 20/Outubro/1994 
 * Atualizacao - 
 */ 
-#include "VPF.CH" 
-#include "INKEY.CH" 
-#include "PTFUNCS.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
+#include "ptfuncs.ch" 
 
 #ifdef HARBOUR
 function vpc31000()
@@ -116,7 +116,7 @@ dbgotop()
      mensagem("Digite a cidade.") 
    @ 06,49 say "-" get cESTADO pict "@XX" valid veruf(@cESTADO) when; 
      mensagem("Digite o estado.") 
-   @ 07,03 Say "Pa¡s.......:" get cPais  pict "@X" 
+   @ 07,03 Say "Paï¿½s.......:" get cPais  pict "@X" 
    @ 08,03 Say "E-Mail.....:" get cEmail pict "@X" 
    @ 09,03 say "Cep........:" get cCODCEP pict "@R 99.999-999" valid pesqcep(cCODCEP) when; 
      mensagem("Digite o cep.") 
@@ -278,7 +278,7 @@ Local cCor:= setcolor( _COR_GET_LETRA )
 @ 05,03 say "Bairro.....: ["+space(20)+"]" 
 @ 06,03 say "Cidade.....: ["+space(30)+"]" 
 @ 06,49 say "- [  ]" 
-@ 07,03 Say "Pa¡s.......: ["+space(20)+"]" 
+@ 07,03 Say "Paï¿½s.......: ["+space(20)+"]" 
 @ 08,03 Say "E-Mail.....: ["+space(55)+"]" 
 @ 09,03 say "Cep........: [  .   -   ]" 
 @ 09,44 say "Telefone(s): [ ] [XXXX-XXXX.XXXX]" 
@@ -359,7 +359,7 @@ SetCursor( 1 )
   mensagem("Digite a cidade.") 
 @ 06,49 say "-" get cESTADO pict "@XX" valid veruf(@cESTADO) when; 
   mensagem("Digite o estado.") 
-@ 07,03 Say "Pa¡s.......:" get cPais  pict "@X" 
+@ 07,03 Say "Paï¿½s.......:" get cPais  pict "@X" 
 @ 08,03 Say "E-Mail.....:" get cEmail pict "@X" 
 @ 09,03 say "Cep........:" get cCODCEP pict "@R 99.999-999" valid pesqcep(cCODCEP) when; 
   mensagem("Digite o cep.") 

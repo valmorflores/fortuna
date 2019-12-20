@@ -1,16 +1,16 @@
 // ## CL2HB.EXE - Converted
-#Include "INKEY.CH" 
-#Include "VPF.CH" 
+#Include "inkey.ch" 
+#Include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ VPC88200.PRG 
-³ Finalidade  ³ Inclusao / Alteracao / Exclusao de tabela de CLASSES 
-³ Parametros  ³ Nil 
-³ Retorno     ³ 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ VPC88200.PRG 
+ï¿½ Finalidade  ï¿½ Inclusao / Alteracao / Exclusao de tabela de CLASSES 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 #ifdef HARBOUR
 function vpc88200()
@@ -25,7 +25,7 @@ function vpc88200()
 // ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
    UserScreen() 
    VPBox( 00, 00, 14, 79,"TABELA DE CLASSES", _COR_GET_BOX, .F., .F. ) 
-   VPBox( 15, 00, 22, 79," Display de Informa‡”es ", _COR_BROW_BOX, .F., .F., ,.F. ) 
+   VPBox( 15, 00, 22, 79," Display de Informaï¿½ï¿½es ", _COR_BROW_BOX, .F., .F., ,.F. ) 
  
    /* Ajuste de mensagens */ 
    Mensagem("[INS]Incluir [ENTER]Alterar [DEL]Excluir ou [ESC]Finalizar") 
@@ -49,13 +49,13 @@ function vpc88200()
  
       /* Display das informacoes */ 
       SetColor( _COR_GET_EDICAO ) 
-      @ 02, 03 Say "C¢digo ...... [" + STR( CODIGO, 3 ) + "]" 
-      @ 03, 03 Say "Descri‡„o ... [" + DESCRI + "]" 
+      @ 02, 03 Say "Cï¿½digo ...... [" + STR( CODIGO, 3 ) + "]" 
+      @ 03, 03 Say "Descriï¿½ï¿½o ... [" + DESCRI + "]" 
  
       VPBox( 05, 06, 13, 73," Tamanhos ", _COR_GET_BOX, .F., .F., ,.F. ) 
       SetColor( _COR_GET_EDICAO ) 
       @ 06,  9 SAY "Cd   Tamanho    Cd   Tamanho    Cd   Tamanho    Cd   Tamanho" 
-      @ 07,  9 SAY "ÄÄ   ÄÄÄÄÄÄÄÄÄÄ ÄÄ   ÄÄÄÄÄÄÄÄÄÄ ÄÄ   ÄÄÄÄÄÄÄÄÄÄ ÄÄ   ÄÄÄÄÄÄÄÄÄÄ" 
+      @ 07,  9 SAY "ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
  
       x:= 0 
       FOR K = 1 TO 4 
@@ -98,14 +98,14 @@ function vpc88200()
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ClaIncluir 
-³ Finalidade  ³ Incluir itens na tabela de percentuais de CLASSES 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 05/Fevereiro/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ClaIncluir 
+ï¿½ Finalidade  ï¿½ Incluir itens na tabela de percentuais de CLASSES 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 05/Fevereiro/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 FUNCTION ClaIncluir( oTb ) 
  
@@ -131,15 +131,15 @@ FUNCTION ClaIncluir( oTb )
       dbGoTop() 
       KeyBoard( CHR (K_ENTER) ) 
  
-      @ 02, 03 Say "C¢digo ......" Get nCodigo Pict "999" When; 
-        MENSAGEM("Digite o C¢digo da CLASSES") VALID !DBSeek( nCodigo ) 
-      @ 03, 03 Say "Descri‡„o ..." Get cDescri  When; 
-        MENSAGEM("Digite a Descri‡„o da CLASSES") 
+      @ 02, 03 Say "Cï¿½digo ......" Get nCodigo Pict "999" When; 
+        MENSAGEM("Digite o Cï¿½digo da CLASSES") VALID !DBSeek( nCodigo ) 
+      @ 03, 03 Say "Descriï¿½ï¿½o ..." Get cDescri  When; 
+        MENSAGEM("Digite a Descriï¿½ï¿½o da CLASSES") 
  
       VPBox( 05, 06, 13, 73," Tamanhos ", _COR_GET_BOX, .F., .F., ,.F. ) 
       SetColor( _COR_GET_EDICAO ) 
       @ 06,  9 SAY "Cd   Tamanho    Cd   Tamanho    Cd   Tamanho    Cd   Tamanho" 
-      @ 07,  9 SAY "ÄÄ   ÄÄÄÄÄÄÄÄÄÄ ÄÄ   ÄÄÄÄÄÄÄÄÄÄ ÄÄ   ÄÄÄÄÄÄÄÄÄÄ ÄÄ   ÄÄÄÄÄÄÄÄÄÄ" 
+      @ 07,  9 SAY "ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
  
       SET DELIMITERS OFF 
       x:= 0 
@@ -158,17 +158,17 @@ FUNCTION ClaIncluir( oTb )
       IF DBSeek( nCodigo ) 
  
          cTelaRes:= ScreenSave( 0, 0, 24, 79 ) 
-         Aviso( "Aten‡„o ! O C¢digo da CLASSES j  est  cadastrado !", 12 ) 
+         Aviso( "Atenï¿½ï¿½o ! O Cï¿½digo da CLASSES jï¿½ estï¿½ cadastrado !", 12 ) 
          Pausa() 
          ScreenRest( cTelaRes ) 
  
       ELSEIF ! LastKey() == K_ESC 
  
           /* Gravacao de dados */ 
-          IF Confirma( 0, 0, "Confirma ?", "Confirma a grava‡„o dos dados [S/N]?", "S" ) 
+          IF Confirma( 0, 0, "Confirma ?", "Confirma a gravaï¿½ï¿½o dos dados [S/N]?", "S" ) 
  
              DBAppend() 
-             IF NetRLock() 
+             IF netrlock() 
                   Repl CODIGO With nCodigo,; 
                        DESCRI With cDESCRI,; 
                        CODAUX With nCodAux 
@@ -198,14 +198,14 @@ FUNCTION ClaIncluir( oTb )
    Return Nil 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ ClaAlterar 
-³ Finalidade  ³ Alterar itens na tabela de percentuais de CLASSES 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 05/Fevereiro/1998 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ ClaAlterar 
+ï¿½ Finalidade  ï¿½ Alterar itens na tabela de percentuais de CLASSES 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 05/Fevereiro/1998 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
    FUNCTION ClaAlterar( oTb ) 
  
@@ -225,13 +225,13 @@ FUNCTION ClaIncluir( oTb )
       /* Display das informacoes */ 
       SetColor( _COR_GET_EDICAO ) 
  
-      @ 03, 03 Say "Descri‡„o ..." Get cDescri  When; 
-        MENSAGEM("Digite a Descri‡„o da CLASSES") 
+      @ 03, 03 Say "Descriï¿½ï¿½o ..." Get cDescri  When; 
+        MENSAGEM("Digite a Descriï¿½ï¿½o da CLASSES") 
  
       VPBox( 05, 06, 13, 73," Tamanhos ", _COR_GET_BOX, .F., .F., ,.F. ) 
       SetColor( _COR_GET_EDICAO ) 
       @ 06,  9 SAY "Cd   Tamanho    Cd   Tamanho    Cd   Tamanho    Cd   Tamanho" 
-      @ 07,  9 SAY "ÄÄ   ÄÄÄÄÄÄÄÄÄÄ ÄÄ   ÄÄÄÄÄÄÄÄÄÄ ÄÄ   ÄÄÄÄÄÄÄÄÄÄ ÄÄ   ÄÄÄÄÄÄÄÄÄÄ" 
+      @ 07,  9 SAY "ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
  
       SET DELIMITERS OFF 
       x:= 0 
@@ -250,9 +250,9 @@ FUNCTION ClaIncluir( oTb )
       IF DBSeek( nCodigo ) .AND. ! LastKey() == K_ESC 
  
              /* Gravacao de dados */ 
-             IF Confirma( 0, 0, "Confirma ?", "Confirma a grava‡„o dos dados [S/N]?", "S" ) 
+             IF Confirma( 0, 0, "Confirma ?", "Confirma a gravaï¿½ï¿½o dos dados [S/N]?", "S" ) 
  
-                IF NetRLock() 
+                IF netrlock() 
                   Repl CODIGO With nCodigo,; 
                        DESCRI With cDESCRI,; 
                        CODAUX With nCodAux 
@@ -277,7 +277,7 @@ FUNCTION ClaIncluir( oTb )
  
    Return Nil 
  
-//ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Function ExiClasse( nCla ) 
  
@@ -296,8 +296,8 @@ FUNCTION ClaIncluir( oTb )
       VPBox( 03, 03, 15, 76,"TABELA DE CLASSES", _COR_BROWSE ) 
  
       SetColor( _COR_BROWSE ) 
-      @ 04, 04 SAY "C¢d Descri‡„o                               Tamanhos" 
-      @ 05, 04 SAY REPL ("Ä", 3) + " " + REPL ("Ä", 39) + " " + REPL ("Ä", 28) 
+      @ 04, 04 SAY "Cï¿½d Descriï¿½ï¿½o                               Tamanhos" 
+      @ 05, 04 SAY REPL ("ï¿½", 3) + " " + REPL ("ï¿½", 39) + " " + REPL ("ï¿½", 28) 
  
       /* Ajuste de mensagens */ 
       Mensagem("[ENTER]Selecionar [0]Zerar Classe [ESC]Finalizar") 
@@ -368,7 +368,7 @@ FUNCTION ClaIncluir( oTb )
  
    Return Nil 
  
-//ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
  
    Function ExiTamanhos( nCla, nTam ) 
  
@@ -385,12 +385,12 @@ FUNCTION ClaIncluir( oTb )
  
       /* Ajuste da tela */ 
       VPBox( 05, 06, 13, 73," Tamanhos ", _COR_GET_BOX, .F., .F., ,.F. ) 
-      VPBox( 15, 35, 18, 45," C¢digo ", _COR_GET_BOX, .F., .F., ,.F. ) 
+      VPBox( 15, 35, 18, 45," Cï¿½digo ", _COR_GET_BOX, .F., .F., ,.F. ) 
  
       VPBox( 05, 06, 13, 73," Tamanhos ", _COR_GET_BOX, .F., .F., ,.F. ) 
       SetColor( _COR_GET_EDICAO ) 
       @ 06,  9 SAY "Cd   Tamanho    Cd   Tamanho    Cd   Tamanho    Cd   Tamanho" 
-      @ 07,  9 SAY "ÄÄ   ÄÄÄÄÄÄÄÄÄÄ ÄÄ   ÄÄÄÄÄÄÄÄÄÄ ÄÄ   ÄÄÄÄÄÄÄÄÄÄ ÄÄ   ÄÄÄÄÄÄÄÄÄÄ" 
+      @ 07,  9 SAY "ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
  
       SetColor( _COR_GET_EDICAO ) 
       aTam:= {} 
@@ -409,7 +409,7 @@ FUNCTION ClaIncluir( oTb )
       NEXT K 
  
       /* Ajuste de mensagens */ 
-      Mensagem("Digite o c¢digo do tamanho") 
+      Mensagem("Digite o cï¿½digo do tamanho") 
       Ajuda("["+_SETAS+"][PgUp][PgDn]Move[ESC]Finalizar") 
  
       SET DELIMITERS OFF 
@@ -445,9 +445,9 @@ FUNCTION ClaIncluir( oTb )
    Return nTam 
  
 /* 
-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 
-  C¢digo ...... [999] 
-  Descri‡„o ... [XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX] 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+  Cï¿½digo ...... [999] 
+  Descriï¿½ï¿½o ... [XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX] 
  
   Tamanhos .... : 
  
@@ -480,7 +480,7 @@ FUNCTION ClaIncluir( oTb )
  
         1-XXXXXXXXXX  6-XXXXXXXXXX 11-XXXXXXXXXX 16-XXXXXXXXXX 
      Cd   Tamanho    Cd   Tamanho    Cd   Tamanho    Cd   Tamanho 
-     ÄÄ   ÄÄÄÄÄÄÄÄÄÄ ÄÄ   ÄÄÄÄÄÄÄÄÄÄ ÄÄ   ÄÄÄÄÄÄÄÄÄÄ ÄÄ   ÄÄÄÄÄÄÄÄÄÄ 
+     ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
       1- XXXXXXXXXX  6- XXXXXXXXXX 11- XXXXXXXXXX 16- XXXXXXXXXX 
       1- XXXXXXXXXX  6- XXXXXXXXXX 11- XXXXXXXXXX 16- XXXXXXXXXX 
  

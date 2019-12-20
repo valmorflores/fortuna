@@ -6,8 +6,8 @@
 * Data        - 10/Outubro/1994 
 * Atualizacao - 
 */ 
-#include "VPF.CH" 
-#include "INKEY.CH"
+#include "vpf.ch" 
+#include "inkey.ch"
 
 #ifdef HARBOUR
 function vpc66000()
@@ -20,7 +20,7 @@ loca nOPCAO:=0
 VPBox( 06, 34, 20, 76 )
 whil .t. 
    mensagem("") 
-   AAdd(MENULIST,menunew( 07, 35, " 1 Pre┤os Por Produto x Cliente         ", 2, COR[11], "",,,COR[6],.T.)) 
+   AAdd(MENULIST,menunew( 07, 35, " 1 PreО©╫os Por Produto x Cliente         ", 2, COR[11], "",,,COR[6],.T.)) 
    AAdd(MENULIST,menunew( 08, 35, " 2 Vendas Por Produto                   ", 2, COR[11], "",,,COR[6],.T.)) 
    AAdd(MENULIST,menunew( 09, 35, " 3 Notas Por Cliente                    ", 2, COR[11], "",,,COR[6],.T.)) 
    AAdd(MENULIST,menunew( 10, 35, " 4 Quantidade de Vendas de Cada Produto ", 2, COR[11], "",,,COR[6],.T.)) 
@@ -67,14 +67,14 @@ ScreenRest( cTela )
 Return Nil 
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё 
-Ё Finalidade  Ё 
-Ё Parametros  Ё 
-Ё Retorno     Ё 
-Ё Programador Ё 
-Ё Data        Ё 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ 
+О©╫ Finalidade  О©╫ 
+О©╫ Parametros  О©╫ 
+О©╫ Retorno     О©╫ 
+О©╫ Programador О©╫ 
+О©╫ Data        О©╫ 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 FUNCTION ProdxCupom() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -92,11 +92,11 @@ Local nLinha:= 8
  
    VPBox( 01, 0, 22, 79 ) 
  
-   @ 02,02 Say "здддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©" 
-   @ 03,02 Say "Ё Periodo: [dd/mm/aa] Ate [dd/mm/aa]                                       Ё" 
-   @ 04,02 Say "цддддддддддддддддддддддддбддддддддддддддддддддддддддддддддддддддддддддддддд╢" 
-   @ 05,02 Say "Ё Produto: [000]-[0000]  Ё                                                 Ё" 
-   @ 06,02 Say "юддддддддддддддддддддддддаддддддддддддддддддддддддддддддддддддддддддддддддды" 
+   @ 02,02 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©" 
+   @ 03,02 Say "О©╫ Periodo: [dd/mm/aa] Ate [dd/mm/aa]                                       О©╫" 
+   @ 04,02 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢" 
+   @ 05,02 Say "О©╫ Produto: [000]-[0000]  О©╫                                                 О©╫" 
+   @ 06,02 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
  
    WHILE LastKey() <> K_ESC 
  
@@ -115,7 +115,7 @@ Local nLinha:= 8
                Mensagem( "Digite o grupo do produto." ) 
  
       @ 05,19 Get cCodigo Pict "9999" Valid VerCodigo2( @cCodigo, GetList ) When; 
-               Mensagem("Digite o c╒digo do produto.") 
+               Mensagem("Digite o cО©╫digo do produto.") 
       READ 
  
       IF LastKey() == K_ESC 
@@ -139,7 +139,7 @@ Local nLinha:= 8
       nPrecoMedio:= 0 
       DBSeek( cGrupo_ + cCodigo + Spac( 5 ) ) 
       WHILE Alltrim( CodRed ) == Alltrim( cGrupo_ + cCodigo ) 
-           Mensagem( "Verificando Cupom Fiscal n╖ " + StrZero( CODNF_, 6, 0 ) + ", aguarde..." ) 
+           Mensagem( "Verificando Cupom Fiscal nО©╫ " + StrZero( CODNF_, 6, 0 ) + ", aguarde..." ) 
            IF CUP->DataEm >= dPerIni .AND. CUP->DataEm <= dPerFim .AND. CUP->NFNULA==" " 
               nSomaTotal+= ( PRECOV * QUANT_ ) 
               nSomaQuant+= QUANT_ 
@@ -157,17 +157,17 @@ Local nLinha:= 8
          DO CASE 
             CASE nOpcao == 1 
                  nLinha:= 8 
-                 @ 07, 02 Say "зDataддддбN.FiscбClienteддддддддддддддддддддддддддбддбQuantidadбValorдддддд©" 
+                 @ 07, 02 Say "О©╫DataО©╫О©╫О©╫О©╫О©╫N.FiscО©╫ClienteО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫QuantidadО©╫ValorО©╫О©╫О©╫О©╫О©╫д©" 
                  FOR nCt:= 1 TO Len( aMatriz ) 
-                     @ nLinha, 02 Say "Ё" + DTOC( aMatriz[ nCt ][ 1 ] ) + "Ё" +; 
-                                    StrZero( aMatriz[ nCt ][ 2 ], 6, 0 ) + "Ё" + ; 
-                                    Left( aMatriz[ nCt ][ 3 ], 33 ) + "Ё" +; 
-                                    aMatriz[ nCt ][ 6 ] + "Ё" +; 
-                                    Tran( aMatriz[ nCt ][ 4 ], "@E 9,999.999" ) + "Ё" + ; 
-                                    Tran( aMatriz[ nCt ][ 5 ], "@E 999,999.999" ) + "Ё" 
+                     @ nLinha, 02 Say "О©╫" + DTOC( aMatriz[ nCt ][ 1 ] ) + "О©╫" +; 
+                                    StrZero( aMatriz[ nCt ][ 2 ], 6, 0 ) + "О©╫" + ; 
+                                    Left( aMatriz[ nCt ][ 3 ], 33 ) + "О©╫" +; 
+                                    aMatriz[ nCt ][ 6 ] + "О©╫" +; 
+                                    Tran( aMatriz[ nCt ][ 4 ], "@E 9,999.999" ) + "О©╫" + ; 
+                                    Tran( aMatriz[ nCt ][ 5 ], "@E 999,999.999" ) + "О©╫" 
                     ++nLinha 
                     IF nLinha > 20 
-                       @ nLinha,02 Say "юддддддддаддддддадддддддддддддддддддддддддддддддддаддадддддддддаддддддддддды" 
+                       @ nLinha,02 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
                        cCorRes:= SetColor() 
                        SetColor( "15/05" ) 
                        @ nLinha, 03 Say " PRECO MEDIO DO PRODUTO: " + Tran( nPrecoMedio, "@E 9,999.999" ) + "           TOTAIS: " + Tran( nSomaQuant, "99999.999" )+" "+Tran( nSomaTotal, "@E 999,999.999" ) 
@@ -187,7 +187,7 @@ Local nLinha:= 8
                        Scroll( 08, 02, 21, 78 ) 
                        nLinha:= 8 
                     ENDIF 
-                    @ nLinha, 02 Say "юддддддддаддддддадддддддддддддддддддддддддддддддддаддадддддддддаддддддддддды" 
+                    @ nLinha, 02 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
                  NEXT 
              CASE nOpcao == 2 
                   aProd:= aMatriz 
@@ -214,7 +214,7 @@ Local nLinha:= 8
       ENDIF 
  
       IF lLoop 
-         /* Isto far═ com que o passe pelo campo de codigo e chame a funcao 
+         /* Isto farО©╫ com que o passe pelo campo de codigo e chame a funcao 
             de abertura de lista OK!, quando voltar p/ cima, na parte da 
             edicao */ 
          Scroll( 07, 02, 21, 78 ) 
@@ -240,14 +240,14 @@ Local nLinha:= 8
  
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё NFBusca 
-Ё Finalidade  Ё Fazer a busca das informacoes no banco de dados da Nota Fiscal 
-Ё Parametros  Ё nCodigo == Tipo de informacao cfe. menu 
-Ё Retorno     Ё Nil 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 06/Novembro/1996 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ NFBusca 
+О©╫ Finalidade  О©╫ Fazer a busca das informacoes no banco de dados da Nota Fiscal 
+О©╫ Parametros  О©╫ nCodigo == Tipo de informacao cfe. menu 
+О©╫ Retorno     О©╫ Nil 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 06/Novembro/1996 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 FUNCTION NFBusca( nCodigo ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -267,11 +267,11 @@ DO CASE
    CASE nCodigo==1 
    VPBox( 01, 0, 22, 79 ) 
  
-   @ 02,02 Say "зддддддддддддддддддддддддбддддддддддддддддддддддддддддддддддддддддддддддддд©" 
-   @ 03,02 Say "Ё Cliente: [000000]      Ё                                                 Ё" 
-   @ 04,02 Say "цддддддддддддддддддддддддеддддддддддддддддддддддддддддддддддддддддддддддддд╢" 
-   @ 05,02 Say "Ё Produto: [000]-[0000]  Ё                                                 Ё" 
-   @ 06,02 Say "юддддддддддддддддддддддддаддддддддддддддддддддддддддддддддддддддддддддддддды" 
+   @ 02,02 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©" 
+   @ 03,02 Say "О©╫ Cliente: [000000]      О©╫                                                 О©╫" 
+   @ 04,02 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢" 
+   @ 05,02 Say "О©╫ Produto: [000]-[0000]  О©╫                                                 О©╫" 
+   @ 06,02 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
  
    WHILE LastKey() <> K_ESC 
  
@@ -282,13 +282,13 @@ DO CASE
       lLoop:= .F. 
  
       @ 03,13 Get nCodCli Pict "999999" Valid BuscaCliente( @nCodCli, 1 ) When; 
-               Mensagem( "Digite o c╒digo do cliente.") 
+               Mensagem( "Digite o cО©╫digo do cliente.") 
  
       @ 05,13 Get cGrupo_ Pict "999" Valid VerGrupo( cGrupo_, @cCodigo ) When; 
                Mensagem( "Digite o grupo do produto." ) 
  
       @ 05,19 Get cCodigo Pict "9999" Valid VerCodigo( @cCodigo, GetList ) When; 
-               Mensagem("Digite o c╒digo do produto.") 
+               Mensagem("Digite o cО©╫digo do produto.") 
  
       READ 
  
@@ -310,7 +310,7 @@ DO CASE
  
       DBSeek( cGrupo_ + cCodigo + Spac( 5 ) ) 
       WHILE Alltrim( CodRed ) == Alltrim( cGrupo_ + cCodigo ) 
-           Mensagem( "Buscando Nota Fiscal n╖ " + StrZero( CODNF_, 6, 0 ) + ", aguarde..." ) 
+           Mensagem( "Buscando Nota Fiscal nО©╫ " + StrZero( CODNF_, 6, 0 ) + ", aguarde..." ) 
            IF NF_->Client == nCodCli 
               AAdd( aMatriz, { CODNF_, UNIDAD, QUANT_, PRECOV, PRECOT, DATA__ } ) 
            ENDIF 
@@ -324,16 +324,16 @@ DO CASE
          DO CASE 
             CASE nOpcao == 1 
                 nLinha:= 8 
-                @ 07, 02 Say "зN.FiscбUnбQuantidadeдбValorддддддддддбDataдддд©здддддддддддддддддддддддддд©" 
+                @ 07, 02 Say "О©╫N.FiscО©╫UnО©╫QuantidadeО©╫О©╫ValorО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫DataО©╫О©╫О©╫д©О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©" 
                 FOR nCt:= 1 TO Len( aMatriz ) 
-                    @ nLinha, 02 Say "Ё" + StrZero( aMatriz[ nCt ][ 1 ], 6, 0 ) + "Ё" + ; 
-                              aMatriz[ nCt ][ 2 ] + "Ё" +; 
-                              Tran( aMatriz[ nCt ][ 3 ], "@E 999,999.999" ) + "Ё" + ; 
-                              Tran( aMatriz[ nCt ][ 4 ], "@E 999,999,999.999" ) + "Ё" +; 
-                              Dtoc( aMatriz[ nCt ][ 6 ] ) + "Ё" 
+                    @ nLinha, 02 Say "О©╫" + StrZero( aMatriz[ nCt ][ 1 ], 6, 0 ) + "О©╫" + ; 
+                              aMatriz[ nCt ][ 2 ] + "О©╫" +; 
+                              Tran( aMatriz[ nCt ][ 3 ], "@E 999,999.999" ) + "О©╫" + ; 
+                              Tran( aMatriz[ nCt ][ 4 ], "@E 999,999,999.999" ) + "О©╫" +; 
+                              Dtoc( aMatriz[ nCt ][ 6 ] ) + "О©╫" 
                     ++nLinha 
                     IF nLinha > 20 
-                       @ nLinha,02 Say "юддддддаддадддддддддддадддддддддддддддадддддддды" 
+                       @ nLinha,02 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
                        SetColor( "W+/R" ) 
                        @ nLinha,55 Say " [Enter]Continuar... " 
                        SetColor( cCorRes ) 
@@ -361,18 +361,18 @@ DO CASE
                        @ 12,51 Say "Dt. Ult.Ven: " + DTOC( aMatriz[ nUltima ][ 6 ] ) 
                        @ 14,51 Say "Ultima Nota: " + StrZero( aMatriz[ nUltima ][ 1 ], 6, 0 ) 
                        @ 16,51 Say "Perc.IPI...: " + Tran( MPR->IPI___, "@E 999.99" ) + "%" 
-                       @ 18,51 Say "Pre┤o Tab..: " + Tran( MPR->PRECOV, "@E 999,999.99" ) + " " + MPR->UNIDAD 
+                       @ 18,51 Say "PreО©╫o Tab..: " + Tran( MPR->PRECOV, "@E 999,999.99" ) + " " + MPR->UNIDAD 
                        @ 20,51 Say "Estoque....: " + Tran( MPR->SALDO_, "@E 999,999.99" ) 
                     ENDIF 
                     SetColor( "15/" + CorFundoAtual() ) 
-                    @ 09,51 Say "дддддддддддддддддддддддддд" 
-                    @ 11,51 Say "дддддддддддддддддддддддддд" 
-                    @ 13,51 Say "дддддддддддддддддддддддддд" 
-                    @ 15,51 Say "дддддддддддддддддддддддддд" 
-                    @ 17,51 Say "дддддддддддддддддддддддддд" 
-                    @ 19,51 Say "дддддддддддддддддддддддддд" 
+                    @ 09,51 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
+                    @ 11,51 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
+                    @ 13,51 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
+                    @ 15,51 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
+                    @ 17,51 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
+                    @ 19,51 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
                     SetColor( cCorRes ) 
-                    @ nLinha, 02 Say "юддддддаддадддддддддддадддддддддддддддадддддддды" 
+                    @ nLinha, 02 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
                 NEXT 
             CASE nOpcao == 2 
                 aProd:= aMatriz 
@@ -394,7 +394,7 @@ DO CASE
       ENDIF 
  
       IF lLoop 
-         /* Isto far═ com que o passe pelo campo de codigo e chame a funcao 
+         /* Isto farО©╫ com que o passe pelo campo de codigo e chame a funcao 
             de abertura de lista OK!, quando voltar p/ cima, na parte da 
             edicao */ 
          Scroll( 07, 02, 21, 78 ) 
@@ -416,14 +416,14 @@ Return Nil
  
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё 
-Ё Finalidade  Ё 
-Ё Parametros  Ё 
-Ё Retorno     Ё 
-Ё Programador Ё 
-Ё Data        Ё 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ 
+О©╫ Finalidade  О©╫ 
+О©╫ Parametros  О©╫ 
+О©╫ Retorno     О©╫ 
+О©╫ Programador О©╫ 
+О©╫ Data        О©╫ 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 FUNCTION NFProdPer() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -446,11 +446,11 @@ Local nLinha:= 8, cTpvenda:= "V", Getlist:= {}
 *   WHILE LastKey() <> K_ESC 
    WHILE .T. 
       VPBox( 01, 0, 22, 79 ) 
-      @ 02,02 Say "здддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©" 
-      @ 03,02 Say "Ё Periodo: [dd/mm/aa] Ate [dd/mm/aa]  (V)endas (O)utras (T)odas: [ ]       Ё" 
-      @ 04,02 Say "цддддддддддддддддддддддддбддддддддддддддддддддддддддддддддддддддддддддддддд╢" 
-      @ 05,02 Say "Ё Produto: [000]-[0000]  Ё                                                 Ё" 
-      @ 06,02 Say "юддддддддддддддддддддддддаддддддддддддддддддддддддддддддддддддддддддддддддды" 
+      @ 02,02 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©" 
+      @ 03,02 Say "О©╫ Periodo: [dd/mm/aa] Ate [dd/mm/aa]  (V)endas (O)utras (T)odas: [ ]       О©╫" 
+      @ 04,02 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢" 
+      @ 05,02 Say "О©╫ Produto: [000]-[0000]  О©╫                                                 О©╫" 
+      @ 06,02 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
  
       DBSelectAr( _COD_MPRIMA ) 
       ASize( aMatriz, 1 ) 
@@ -467,7 +467,7 @@ Local nLinha:= 8, cTpvenda:= "V", Getlist:= {}
                Mensagem( "Digite o grupo do produto." ) 
  
       @ 05,19 Get cCodigo Pict "9999" Valid VerCodigo2( @cCodigo, GetList ) When; 
-               Mensagem("Digite o c╒digo do produto.") 
+               Mensagem("Digite o cО©╫digo do produto.") 
  
       @ 03,67 GeT cTpvenda pict "@!" valid cTpvenda $ "VOT" When ; 
                Mensagem( "Digite o tipo de venda para a consulta." ) 
@@ -506,7 +506,7 @@ Local nLinha:= 8, cTpvenda:= "V", Getlist:= {}
       nPrecoMedio:= 0 
       DBSeek( cGrupo_ + cCodigo + Spac( 5 ) ) 
       WHILE Alltrim( CodRed ) == Alltrim( cGrupo_ + cCodigo ) 
-           Mensagem( "Verificando Nota Fiscal N╖ " + StrZero( CODNF_, 6, 0 ) + ", aguarde..." ) 
+           Mensagem( "Verificando Nota Fiscal NО©╫ " + StrZero( CODNF_, 6, 0 ) + ", aguarde..." ) 
            IF NF_->DataEm >= dPerIni .AND. NF_->DataEm <= dPerFim .AND. NF_->NFNULA==" " 
               IF (cTpvenda == "V" .and. ( ( NF_->NATOPE >= 5.120 .AND. NF_->NATOPE <= 5.129 ) .OR. ( NF_->NATOPE >= 6.120 .AND. NF_->NATOPE <= 6.129 ) ) ).or. ;
                  (cTpvenda == "V" .and. ( ( NF_->NATOPE >= 5.101 .AND. NF_->NATOPE <= 5.109 ) .OR. ( NF_->NATOPE >= 6.101 .AND. NF_->NATOPE <= 6.109 ) ) ).or. ; 
@@ -516,7 +516,7 @@ Local nLinha:= 8, cTpvenda:= "V", Getlist:= {}
                  nSomaTotal+= ( PRECOV * QUANT_ ) 
                  nSomaQuant+= QUANT_ 
                  RES->( DBAppend() ) 
-                 RES->( NetRLock() ) 
+                 RES->( netrlock() ) 
                  replace RES->DATAEM with NF_->DATAEM, ; 
                          RES->CODNF_ with CODNF_ ,; 
                          RES->CDESCR with NF_->CDESCR, ; 
@@ -556,17 +556,17 @@ Local nLinha:= 8, cTpvenda:= "V", Getlist:= {}
  
 /* 
                  nLinha:= 8 
-                 @ 07, 02 Say "зDataддддбN.FiscбClienteддддддддддддддддддддддддддбддбQuantidadбValorдддддд©" 
+                 @ 07, 02 Say "О©╫DataО©╫О©╫О©╫О©╫О©╫N.FiscО©╫ClienteО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫QuantidadО©╫ValorО©╫О©╫О©╫О©╫О©╫д©" 
                  FOR nCt:= 1 TO Len( aMatriz ) 
-                     @ nLinha, 02 Say "Ё" + DTOC( aMatriz[ nCt ][ 1 ] ) + "Ё" +; 
-                                    StrZero( aMatriz[ nCt ][ 2 ], 6, 0 ) + "Ё" + ; 
-                                    Left( aMatriz[ nCt ][ 3 ], 33 ) + "Ё" +; 
-                                    aMatriz[ nCt ][ 6 ] + "Ё" +; 
-                                    Tran( aMatriz[ nCt ][ 4 ], "@E 9,999.999" ) + "Ё" + ; 
-                                    Tran( aMatriz[ nCt ][ 5 ], "@E 999,999.999" ) + "Ё" 
+                     @ nLinha, 02 Say "О©╫" + DTOC( aMatriz[ nCt ][ 1 ] ) + "О©╫" +; 
+                                    StrZero( aMatriz[ nCt ][ 2 ], 6, 0 ) + "О©╫" + ; 
+                                    Left( aMatriz[ nCt ][ 3 ], 33 ) + "О©╫" +; 
+                                    aMatriz[ nCt ][ 6 ] + "О©╫" +; 
+                                    Tran( aMatriz[ nCt ][ 4 ], "@E 9,999.999" ) + "О©╫" + ; 
+                                    Tran( aMatriz[ nCt ][ 5 ], "@E 999,999.999" ) + "О©╫" 
                     ++nLinha 
                     IF nLinha > 20 
-                       @ nLinha,02 Say "юддддддддаддддддадддддддддддддддддддддддддддддддддаддадддддддддаддддддддддды" 
+                       @ nLinha,02 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
                        cCorRes:= SetColor() 
                        SetColor( "15/05" ) 
                        @ nLinha, 03 Say " PRECO MEDIO DO PRODUTO: " + Tran( nPrecoMedio, "@E 9,999.999" ) + "           TOTAIS: " + Tran( nSomaQuant, "99999.999" )+" "+Tran( nSomaTotal, "@E 999,999.999" ) 
@@ -586,7 +586,7 @@ Local nLinha:= 8, cTpvenda:= "V", Getlist:= {}
                        Scroll( 08, 02, 21, 78 ) 
                        nLinha:= 8 
                     ENDIF 
-                    @ nLinha, 02 Say "юддддддддаддддддадддддддддддддддддддддддддддддддддаддадддддддддаддддддддддды" 
+                    @ nLinha, 02 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
                  NEXT 
 */ 
              CASE nOpcao == 2 
@@ -614,7 +614,7 @@ Local nLinha:= 8, cTpvenda:= "V", Getlist:= {}
          ENDCASE 
       ENDIF 
       IF lLoop 
-         Isto far═ com que o passe pelo campo de codigo e chame a funcao 
+         Isto farО©╫ com que o passe pelo campo de codigo e chame a funcao 
             de abertura de lista OK!, quando voltar p/ cima, na parte da 
             edicao 
          Scroll( 07, 02, 21, 78 ) 
@@ -636,18 +636,18 @@ Local nLinha:= 8, cTpvenda:= "V", Getlist:= {}
  
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё NFPeriodo 
-Ё Finalidade  Ё Notas Fiscais Emitidas no periodo 
-Ё Retorno     Ё Nil 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 12/Junho/1997 
-Ё Modificacao Ё 22 de Julho de 1999 - Atualizacao permitindo que as notas fiscais 
-Ё             Ё                       sejm exibidas c/ codigo 5.12..5.129 ou 6.12..6.129 
-Ё             Ё 
-Ё             Ё 
-Ё             Ё 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ NFPeriodo 
+О©╫ Finalidade  О©╫ Notas Fiscais Emitidas no periodo 
+О©╫ Retorno     О©╫ Nil 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 12/Junho/1997 
+О©╫ Modificacao О©╫ 22 de Julho de 1999 - Atualizacao permitindo que as notas fiscais 
+О©╫             О©╫                       sejm exibidas c/ codigo 5.12..5.129 ou 6.12..6.129 
+О©╫             О©╫ 
+О©╫             О©╫ 
+О©╫             О©╫ 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 FUNCTION NFPeriodo() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -687,16 +687,16 @@ WHILE .T.
       nCol:= 11 
       VPBox( nLin, nCol, nLin + 13, nCol + 64, "Relacao de Notas Fiscais Emitidas", _COR_GET_BOX ) 
       SetColor( _COR_GET_EDICAO ) 
-      @ nLin+02, nCol + 2 Say "здддддддддддддддддддддддддддддддд© з Ordem дддддддддддддддд©" 
-      @ nLin+03, nCol + 2 Say "Ё        Periodo de Emissao      Ё Ё 1-Numero Nota Fiscal  Ё" 
-      @ nLin+04, nCol + 2 Say "цдддддддддддддддддддддддддддддддд╢ Ё 2-Nome do Cliente     Ё" 
-      @ nLin+05, nCol + 2 Say "Ё De: [DD/MM/AA] At┌: [DD/MM/AA] Ё Ё 3-Data de Emissao     Ё" 
-      @ nLin+06, nCol + 2 Say "юдддддддддддддддддддддддддддддддды юддддддддддддддддддддддды" 
-      @ nLin+07, nCol + 2 Say "здддддддддддддддддддддддддддддддд© з Saida дддддддддддддддд©" 
-      @ nLin+08, nCol + 2 Say "Ё      Periodo dentro do Mes     Ё Ё                       Ё" 
-      @ nLin+09, nCol + 2 Say "цдддддддддддддддддддддддддддддддд╢ Ё  Monitor  Impressora  Ё" 
-      @ nLin+10, nCol + 2 Say "Ё       Do Dia: [01] a [31]      Ё Ё                       Ё" 
-      @ nLin+11, nCol + 2 Say "юдддддддддддддддддддддддддддддддды юддддддддддддддддддддддды" 
+      @ nLin+02, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© О©╫ Ordem О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©" 
+      @ nLin+03, nCol + 2 Say "О©╫        Periodo de Emissao      О©╫ О©╫ 1-Numero Nota Fiscal  О©╫" 
+      @ nLin+04, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢ О©╫ 2-Nome do Cliente     О©╫" 
+      @ nLin+05, nCol + 2 Say "О©╫ De: [DD/MM/AA] AtО©╫: [DD/MM/AA] О©╫ О©╫ 3-Data de Emissao     О©╫" 
+      @ nLin+06, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
+      @ nLin+07, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© О©╫ Saida О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©" 
+      @ nLin+08, nCol + 2 Say "О©╫      Periodo dentro do Mes     О©╫ О©╫                       О©╫" 
+      @ nLin+09, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢ О©╫  Monitor  Impressora  О©╫" 
+      @ nLin+10, nCol + 2 Say "О©╫       Do Dia: [01] a [31]      О©╫ О©╫                       О©╫" 
+      @ nLin+11, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
  
       @ nLin + 05, nCol + 08 Get dIniEmissao 
       @ nLin + 05, nCol + 24 Get dFimEmissao 
@@ -779,7 +779,7 @@ WHILE .T.
       IF nDevice == 1 
          vpbox( 00, 00, 22, 79, "NOTAS FISCAIS", _COR_BROW_BOX, .T., .T., _COR_BROW_TITULO ) 
          SetColor( _COR_BROWSE ) 
-         @ 19,01 Say Repl( "д", 78 ) 
+         @ 19,01 Say Repl( "О©╫", 78 ) 
          @ 20,03 Say "Total de ICMs...:" + TRAN( nSoma3, "@R 999,999,999.99" ) 
          @ 21,03 Say "Total de IPI....:" + TRAN( nSoma4, "@R 999,999,999.99" ) 
          @ 20,43 Say "Total Nota......:" + TRAN( nSoma1, "@R 999,999,999.99" ) 
@@ -950,16 +950,16 @@ Priv nVenda:= 0
       nCol:= 11 
       VPBox( nLin, nCol, nLin + 13, nCol + 64, "LUCRATIVIDADE POR PERIODO", _COR_GET_BOX ) 
       SetColor( _COR_GET_EDICAO ) 
-      @ nLin+02, nCol + 2 Say "здддддддддддддддддддддддддддддддд© з Ordem дддддддддддддддд©" 
-      @ nLin+03, nCol + 2 Say "Ё        Periodo de Emissao      Ё Ё 1-Numero Nota Fiscal  Ё" 
-      @ nLin+04, nCol + 2 Say "цдддддддддддддддддддддддддддддддд╢ Ё 2-Nome do Cliente     Ё" 
-      @ nLin+05, nCol + 2 Say "Ё De: [DD/MM/AA] At┌: [DD/MM/AA] Ё Ё 3-Data de Emissao     Ё" 
-      @ nLin+06, nCol + 2 Say "юдддддддддддддддддддддддддддддддды юддддддддддддддддддддддды" 
-      @ nLin+07, nCol + 2 Say "здддддддддддддддддддддддддддддддд© з Saida дддддддддддддддд©" 
-      @ nLin+08, nCol + 2 Say "Ё     Periodo dentro do mes      Ё Ё                       Ё" 
-      @ nLin+09, nCol + 2 Say "цдддддддддддддддддддддддддддддддд╢ Ё        MONITOR        Ё" 
-      @ nLin+10, nCol + 2 Say "Ё       Do Dia [00] a [00]       Ё Ё                       Ё" 
-      @ nLin+11, nCol + 2 Say "юдддддддддддддддддддддддддддддддды юддддддддддддддддддддддды" 
+      @ nLin+02, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© О©╫ Ordem О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©" 
+      @ nLin+03, nCol + 2 Say "О©╫        Periodo de Emissao      О©╫ О©╫ 1-Numero Nota Fiscal  О©╫" 
+      @ nLin+04, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢ О©╫ 2-Nome do Cliente     О©╫" 
+      @ nLin+05, nCol + 2 Say "О©╫ De: [DD/MM/AA] AtО©╫: [DD/MM/AA] О©╫ О©╫ 3-Data de Emissao     О©╫" 
+      @ nLin+06, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
+      @ nLin+07, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© О©╫ Saida О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©" 
+      @ nLin+08, nCol + 2 Say "О©╫     Periodo dentro do mes      О©╫ О©╫                       О©╫" 
+      @ nLin+09, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢ О©╫        MONITOR        О©╫" 
+      @ nLin+10, nCol + 2 Say "О©╫       Do Dia [00] a [00]       О©╫ О©╫                       О©╫" 
+      @ nLin+11, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
  
       @ nLin + 05, nCol + 08 Get dIniEmissao 
       @ nLin + 05, nCol + 24 Get dFimEmissao 
@@ -1067,7 +1067,7 @@ Priv nVenda:= 0
                          ELSE 
                             nPrecoCompra:= PXF->VALOR_ 
                          ENDIF 
-                         IF TMP->( NetRLock() ) 
+                         IF TMP->( netrlock() ) 
                             Replace TMP->INDICE  With PNF->CODIGO,; 
                                     TMP->DESCRI  With PNF->DESCRI,; 
                                     TMP->UNIDAD  With PNF->UNIDAD,; 
@@ -1098,7 +1098,7 @@ Priv nVenda:= 0
             Mensagem( "" ) 
  
             /* RESUMO DE OPERACOES */ 
-            @ 16,01 Say "ддд RESUMO дд" + Repl( "д", 65 ) 
+            @ 16,01 Say "О©╫О©╫О©╫ RESUMO О©╫О©╫" + Repl( "О©╫", 65 ) 
  
             /* TOTAL */ 
             @ 17,01 Say "Vendas a preco de Compra:" + Tran( nCompra, "@E 999,999,999.99" ) 
@@ -1107,9 +1107,9 @@ Priv nVenda:= 0
             @ 20,01 Say "VENDAS A PRECO REAL.....:" + Tran( nVenda,  "@E 999,999,999.99" ) 
  
             @ 17,41 Say "Lucro Bruto (R$)........:" + Tran( nVenda - nCompra,  "@E 999,999.99" ) 
-            @ 18,41 Say "зддддддддддддддддддддддд©" 
-            @ 19,41 Say "Ё LUCRATIVIDADE LIQUIDA Ё" + Tran( ( ( nVenda - nCompra ) / nVenda ) * 100,  "@E 99999.99" ) + "%" 
-            @ 20,41 Say "юддддддддддддддддддддддды" 
+            @ 18,41 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©" 
+            @ 19,41 Say "О©╫ LUCRATIVIDADE LIQUIDA О©╫" + Tran( ( ( nVenda - nCompra ) / nVenda ) * 100,  "@E 99999.99" ) + "%" 
+            @ 20,41 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
  
             SetColor( _COR_GET_EDICAO ) 
             oTAB:=tbrowseDB( 01, 01, 14, 78) 
@@ -1177,14 +1177,14 @@ Priv nVenda:= 0
  
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё LUCRATIVIDADE 
-Ё Finalidade  Ё Relacao de Lucrativiade 
-Ё Retorno     Ё 
-Ё Programador Ё 
-Ё Data        Ё 
-Ё Modificacao Ё 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ LUCRATIVIDADE 
+О©╫ Finalidade  О©╫ Relacao de Lucrativiade 
+О©╫ Retorno     О©╫ 
+О©╫ Programador О©╫ 
+О©╫ Data        О©╫ 
+О©╫ Modificacao О©╫ 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Function Lucratividade() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1235,16 +1235,16 @@ Priv nVenda:= 0
       nCol:= 11 
       VPBox( nLin, nCol, nLin + 13, nCol + 64, "LUCRATIVIDADE POR PERIODO", _COR_GET_BOX ) 
       SetColor( _COR_GET_EDICAO ) 
-      @ nLin+02, nCol + 2 Say "здддддддддддддддддддддддддддддддд© з Ordem дддддддддддддддд©" 
-      @ nLin+03, nCol + 2 Say "Ё        Periodo de Emissao      Ё Ё 1-Numero Cupom Fiscal Ё" 
-      @ nLin+04, nCol + 2 Say "цдддддддддддддддддддддддддддддддд╢ Ё 2-Nome do Cliente     Ё" 
-      @ nLin+05, nCol + 2 Say "Ё De: [DD/MM/AA] At┌: [DD/MM/AA] Ё Ё 3-Data de Emissao     Ё" 
-      @ nLin+06, nCol + 2 Say "юдддддддддддддддддддддддддддддддды юддддддддддддддддддддддды" 
-      @ nLin+07, nCol + 2 Say "здддддддддддддддддддддддддддддддд© з Saida дддддддддддддддд©" 
-      @ nLin+08, nCol + 2 Say "Ё     Periodo dentro do mes      Ё Ё                       Ё" 
-      @ nLin+09, nCol + 2 Say "цдддддддддддддддддддддддддддддддд╢ Ё        MONITOR        Ё" 
-      @ nLin+10, nCol + 2 Say "Ё       Do Dia [00] a [00]       Ё Ё                       Ё" 
-      @ nLin+11, nCol + 2 Say "юдддддддддддддддддддддддддддддддды юддддддддддддддддддддддды" 
+      @ nLin+02, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© О©╫ Ordem О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©" 
+      @ nLin+03, nCol + 2 Say "О©╫        Periodo de Emissao      О©╫ О©╫ 1-Numero Cupom Fiscal О©╫" 
+      @ nLin+04, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢ О©╫ 2-Nome do Cliente     О©╫" 
+      @ nLin+05, nCol + 2 Say "О©╫ De: [DD/MM/AA] AtО©╫: [DD/MM/AA] О©╫ О©╫ 3-Data de Emissao     О©╫" 
+      @ nLin+06, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
+      @ nLin+07, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© О©╫ Saida О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©" 
+      @ nLin+08, nCol + 2 Say "О©╫     Periodo dentro do mes      О©╫ О©╫                       О©╫" 
+      @ nLin+09, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢ О©╫        MONITOR        О©╫" 
+      @ nLin+10, nCol + 2 Say "О©╫       Do Dia [00] a [00]       О©╫ О©╫                       О©╫" 
+      @ nLin+11, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
  
       @ nLin + 05, nCol + 08 Get dIniEmissao 
       @ nLin + 05, nCol + 24 Get dFimEmissao 
@@ -1320,8 +1320,8 @@ Priv nVenda:= 0
                    WHILE CAU->CODNF_ == CUP->NUMERO 
                       // 
                       // BUG FIX: 06/06/2002: IF MPR->( DBSeek( CAU->CODIGO ) ) 
-                      // Correcao para evitar que pegue ║tens de outro periodo, 
-                      // pelo fato de ter o mesmo nёmero de Pedido. 
+                      // Correcao para evitar que pegue О©╫tens de outro periodo, 
+                      // pelo fato de ter o mesmo nО©╫mero de Pedido. 
                       // 
                       IF MPR->( DBSeek( CAU->CODIGO ) ) .AND. CAU->DATA__ == CUP->DATAEM 
                          PXF->( DBSeek( CAU->CODIGO ) ) 
@@ -1370,7 +1370,7 @@ Priv nVenda:= 0
                          // ENDIF 
  
  
-                         IF TMP->( NetRLock() ) 
+                         IF TMP->( netrlock() ) 
                             Replace TMP->INDICE  With CAU->CODIGO,; 
                                     TMP->DESCRI  With CAU->DESCRI,; 
                                     TMP->UNIDAD  With CAU->UNIDAD,; 
@@ -1401,7 +1401,7 @@ Priv nVenda:= 0
             Mensagem( "" ) 
  
             /* RESUMO DE OPERACOES */ 
-            @ 16,01 Say "ддд RESUMO дд" + Repl( "д", 65 ) 
+            @ 16,01 Say "О©╫О©╫О©╫ RESUMO О©╫О©╫" + Repl( "О©╫", 65 ) 
  
             /* TOTAL */ 
             @ 17,01 Say "Vendas a preco de Compra:" + Tran( nCompra, "@E 999,999,999.99" ) 
@@ -1410,9 +1410,9 @@ Priv nVenda:= 0
             @ 20,01 Say "VENDAS A PRECO REAL.....:" + Tran( nVenda,  "@E 999,999,999.99" ) 
  
             @ 17,41 Say "Lucro Bruto (R$)........:" + Tran( nVenda - nCompra,  "@E 999,999.99" ) 
-            @ 18,41 Say "зддддддддддддддддддддддд©" 
-            @ 19,41 Say "Ё LUCRATIVIDADE LIQUIDA Ё" + Tran( ( ( nVenda - nCompra ) / nVenda ) * 100,  "@E 99999.99" ) + "%" 
-            @ 20,41 Say "юддддддддддддддддддддддды" 
+            @ 18,41 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©" 
+            @ 19,41 Say "О©╫ LUCRATIVIDADE LIQUIDA О©╫" + Tran( ( ( nVenda - nCompra ) / nVenda ) * 100,  "@E 99999.99" ) + "%" 
+            @ 20,41 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
  
             SetColor( _COR_GET_EDICAO ) 
             oTAB:=tbrowseDB( 01, 01, 14, 78) 
@@ -1481,13 +1481,13 @@ Priv nVenda:= 0
  
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё CFPeriodo 
-Ё Finalidade  Ё CUPONS FISCAIS Emitidos no periodo 
-Ё Retorno     Ё Nil 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 12/Junho/1997 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ CFPeriodo 
+О©╫ Finalidade  О©╫ CUPONS FISCAIS Emitidos no periodo 
+О©╫ Retorno     О©╫ Nil 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 12/Junho/1997 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 FUNCTION cfPeriodo() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1516,16 +1516,16 @@ Local cArquivo:= "NFPESQ00.NTX"
       nCol:= 11 
       VPBox( nLin, nCol, nLin + 13, nCol + 64, "RELACAO DE CUPONS FISCAIS EMITIDOS", _COR_GET_BOX ) 
       SetColor( _COR_GET_EDICAO ) 
-      @ nLin+02, nCol + 2 Say "здддддддддддддддддддддддддддддддд© з Ordem дддддддддддддддд©" 
-      @ nLin+03, nCol + 2 Say "Ё        Periodo de Emissao      Ё Ё 1-Numero Cupom Fiscal Ё" 
-      @ nLin+04, nCol + 2 Say "цдддддддддддддддддддддддддддддддд╢ Ё 2-Nome do Cliente     Ё" 
-      @ nLin+05, nCol + 2 Say "Ё De: [DD/MM/AA] At┌: [DD/MM/AA] Ё Ё 3-Data de Emissao     Ё" 
-      @ nLin+06, nCol + 2 Say "юдддддддддддддддддддддддддддддддды юддддддддддддддддддддддды" 
-      @ nLin+07, nCol + 2 Say "здддддддддддддддддддддддддддддддд© з Saida дддддддддддддддд©" 
-      @ nLin+08, nCol + 2 Say "Ё     Periodo dentro do mes      Ё Ё                       Ё" 
-      @ nLin+09, nCol + 2 Say "цдддддддддддддддддддддддддддддддд╢ Ё  Monitor  Impressora  Ё" 
-      @ nLin+10, nCol + 2 Say "Ё       Do Dia [00] a [00]       Ё Ё                       Ё" 
-      @ nLin+11, nCol + 2 Say "юдддддддддддддддддддддддддддддддды юддддддддддддддддддддддды" 
+      @ nLin+02, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© О©╫ Ordem О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©" 
+      @ nLin+03, nCol + 2 Say "О©╫        Periodo de Emissao      О©╫ О©╫ 1-Numero Cupom Fiscal О©╫" 
+      @ nLin+04, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢ О©╫ 2-Nome do Cliente     О©╫" 
+      @ nLin+05, nCol + 2 Say "О©╫ De: [DD/MM/AA] AtО©╫: [DD/MM/AA] О©╫ О©╫ 3-Data de Emissao     О©╫" 
+      @ nLin+06, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
+      @ nLin+07, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© О©╫ Saida О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©" 
+      @ nLin+08, nCol + 2 Say "О©╫     Periodo dentro do mes      О©╫ О©╫                       О©╫" 
+      @ nLin+09, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢ О©╫  Monitor  Impressora  О©╫" 
+      @ nLin+10, nCol + 2 Say "О©╫       Do Dia [00] a [00]       О©╫ О©╫                       О©╫" 
+      @ nLin+11, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
  
       @ nLin + 05, nCol + 08 Get dIniEmissao 
       @ nLin + 05, nCol + 24 Get dFimEmissao 
@@ -1597,7 +1597,7 @@ Local cArquivo:= "NFPESQ00.NTX"
             IF nDevice == 1 
                vpbox( 00, 00, 22, 79, "CUPONS FISCAIS", _COR_BROW_BOX, .T., .T., _COR_BROW_TITULO ) 
                SetColor( _COR_BROWSE ) 
-               @ 19,01 Say Repl( "д", 78 ) 
+               @ 19,01 Say Repl( "О©╫", 78 ) 
                @ 20,03 Say "Total de ICMs...:" + TRAN( nSoma3, "@R 999,999,999.99" ) 
                @ 21,03 Say "Total de IPI....:" + TRAN( nSoma4, "@R 999,999,999.99" ) 
                @ 20,43 Say "Total Cupom.....:" + TRAN( nSoma1, "@R 999,999,999.99" ) 
@@ -1729,13 +1729,13 @@ Local cArquivo:= "NFPESQ00.NTX"
  
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё NFCliente 
-Ё Finalidade  Ё Notas Fiscais Emitidas Por cliente 
-Ё Retorno     Ё Nil 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 12/Junho/1997 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ NFCliente 
+О©╫ Finalidade  О©╫ Notas Fiscais Emitidas Por cliente 
+О©╫ Retorno     О©╫ Nil 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 12/Junho/1997 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 FUNCTION NFCliente() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1755,16 +1755,16 @@ ENDIF
 nLin:= 08 
 nCol:= 11 
 VPBox( nLin, nCol, nLin + 13, nCol + 64, "Relacao de Notas Fiscais Emitidos Por Cliente" ) 
-@ nLin+02, nCol + 2 Say "здддддддддддддддддддддддддддддддд© з Tipo das Notas ддддддд©" 
-@ nLin+03, nCol + 2 Say "Ё        Periodo de Emissao      Ё Ё (V)enda               Ё" 
-@ nLin+04, nCol + 2 Say "цдддддддддддддддддддддддддддддддд╢ Ё (O)utras              Ё" 
-@ nLin+05, nCol + 2 Say "Ё De: [DD/MM/AA] At┌: [DD/MM/AA] Ё Ё (T)odas     [ ]       Ё" 
-@ nLin+06, nCol + 2 Say "юдддддддддддддддддддддддддддддддды юддддддддддддддддддддддды" 
-@ nLin+07, nCol + 2 Say "здддддддддддддддддддддддддддддддд© з Tipo do Relatorio дддд©" 
-@ nLin+08, nCol + 2 Say "Ё       Codigo do Cliente        Ё Ё                       Ё" 
-@ nLin+09, nCol + 2 Say "цдддддддддддддддддддддддддддддддд╢ Ё (D)etalhado           Ё" 
-@ nLin+10, nCol + 2 Say "Ё           [9999999]            Ё Ё (R)esumido  [ ]       Ё" 
-@ nLin+11, nCol + 2 Say "юдддддддддддддддддддддддддддддддды юддддддддддддддддддддддды" 
+@ nLin+02, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© О©╫ Tipo das Notas О©╫О©╫О©╫О©╫О©╫О©╫д©" 
+@ nLin+03, nCol + 2 Say "О©╫        Periodo de Emissao      О©╫ О©╫ (V)enda               О©╫" 
+@ nLin+04, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢ О©╫ (O)utras              О©╫" 
+@ nLin+05, nCol + 2 Say "О©╫ De: [DD/MM/AA] AtО©╫: [DD/MM/AA] О©╫ О©╫ (T)odas     [ ]       О©╫" 
+@ nLin+06, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
+@ nLin+07, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© О©╫ Tipo do Relatorio О©╫О©╫О©╫д©" 
+@ nLin+08, nCol + 2 Say "О©╫       Codigo do Cliente        О©╫ О©╫                       О©╫" 
+@ nLin+09, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢ О©╫ (D)etalhado           О©╫" 
+@ nLin+10, nCol + 2 Say "О©╫           [9999999]            О©╫ О©╫ (R)esumido  [ ]       О©╫" 
+@ nLin+11, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
 DBSelectAr( _COD_CLIENTE ) 
 DBSetOrder( 1 ) 
 dIniEmissao:= Date() 
@@ -1920,13 +1920,13 @@ ScreenRest( cTela )
 Return Nil 
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё CFCliente 
-Ё Finalidade  Ё Cupons Fiscais Emitidas Por cliente 
-Ё Retorno     Ё Nil 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 12/Junho/1997 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ CFCliente 
+О©╫ Finalidade  О©╫ Cupons Fiscais Emitidas Por cliente 
+О©╫ Retorno     О©╫ Nil 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 12/Junho/1997 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 FUNCTION CFCliente() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -1940,16 +1940,16 @@ userscreen()
 nLin:= 08 
 nCol:= 11 
 VPBox( nLin, nCol, nLin + 13, nCol + 64, "Relacao de Cupons Fiscais Emitidas Por Cliente" ) 
-@ nLin+02, nCol + 2 Say "здддддддддддддддддддддддддддддддд© з Ordem дддддддддддддддд©" 
-@ nLin+03, nCol + 2 Say "Ё        Periodo de Emissao      Ё Ё                       Ё" 
-@ nLin+04, nCol + 2 Say "цдддддддддддддддддддддддддддддддд╢ Ё     Nome do Cliente   Ё" 
-@ nLin+05, nCol + 2 Say "Ё De: [DD/MM/AA] At┌: [DD/MM/AA] Ё Ё                       Ё" 
-@ nLin+06, nCol + 2 Say "юдддддддддддддддддддддддддддддддды юддддддддддддддддддддддды" 
-@ nLin+07, nCol + 2 Say "здддддддддддддддддддддддддддддддд© з Saida дддддддддддддддд©" 
-@ nLin+08, nCol + 2 Say "Ё       Codigo do Cliente        Ё Ё                       Ё" 
-@ nLin+09, nCol + 2 Say "цдддддддддддддддддддддддддддддддд╢ Ё  Monitor  Impressora  Ё" 
-@ nLin+10, nCol + 2 Say "Ё  [12345678]  At┌:  [12345678]  Ё Ё                       Ё" 
-@ nLin+11, nCol + 2 Say "юдддддддддддддддддддддддддддддддды юддддддддддддддддддддддды" 
+@ nLin+02, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© О©╫ Ordem О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©" 
+@ nLin+03, nCol + 2 Say "О©╫        Periodo de Emissao      О©╫ О©╫                       О©╫" 
+@ nLin+04, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢ О©╫     Nome do Cliente   О©╫" 
+@ nLin+05, nCol + 2 Say "О©╫ De: [DD/MM/AA] AtО©╫: [DD/MM/AA] О©╫ О©╫                       О©╫" 
+@ nLin+06, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
+@ nLin+07, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© О©╫ Saida О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©" 
+@ nLin+08, nCol + 2 Say "О©╫       Codigo do Cliente        О©╫ О©╫                       О©╫" 
+@ nLin+09, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢ О©╫  Monitor  Impressora  О©╫" 
+@ nLin+10, nCol + 2 Say "О©╫  [12345678]  AtО©╫:  [12345678]  О©╫ О©╫                       О©╫" 
+@ nLin+11, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
 @ nLin + 05, nCol + 08 Get dIniEmissao14 
 @ nLin + 05, nCol + 24 Get dFimEmissao 
 DBSelectAr( _COD_CLIENTE ) 
@@ -1982,11 +1982,11 @@ WHILE LastKey() <> K_ESC
           ENDIF 
       ENDDO 
       IF nDevice == 1 
-         AAdd( aMatriz, { 0, "ддддддддддддддддддддддддддддддддддддддд", "ддддддддд", 0, 0, 0, 0 } ) 
+         AAdd( aMatriz, { 0, "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫", "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫", 0, 0, 0, 0 } ) 
          AAdd( aMatriz, { 0, "TOTAL GERAL                            ", DATE(), nSoma1, nSoma2, 0, 0 } ) 
          vpbox(0,0,22,79,"CUPONS FISCAIS",COR[20],.T.,.T.,COR[19]) 
-         @ 01,01 Say "Per║odo de: " + DTOC( dIniEmissao ) + " At┌ " + DTOC( dFimEmissao ) 
-         @ 01,55 Say "Cliente n╖ " + StrZero( nIniNF, 6, 0 ) 
+         @ 01,01 Say "PerО©╫odo de: " + DTOC( dIniEmissao ) + " AtО©╫ " + DTOC( dFimEmissao ) 
+         @ 01,55 Say "Cliente nО©╫ " + StrZero( nIniNF, 6, 0 ) 
          SetColor( "W+/BG" ) 
          @ 02,01 Say "N.Fiscal Cliente                        Dt.Emis.     Valor NF      Vlr.Total  " 
          SetColor( "W+/N" ) 
@@ -2129,13 +2129,13 @@ Return Nil
  
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё NFPRODUTOS 
-Ё Finalidade  Ё Notas Fiscais Emitidas Por cliente 
-Ё Retorno     Ё Nil 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 12/Junho/1997 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ NFPRODUTOS 
+О©╫ Finalidade  О©╫ Notas Fiscais Emitidas Por cliente 
+О©╫ Retorno     О©╫ Nil 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 12/Junho/1997 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Static Function NFProdutos() 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -2190,16 +2190,16 @@ Local aMatriz:= {}, aMatrizLimpa:= {},;
       nLin:= 08 
       nCol:= 11 
       VPBox( nLin, nCol, nLin + 13, nCol + 64, "Relacao de Vendas de Produtos" ) 
-      @ nLin+02, nCol + 2 Say "зд Utilizacao ддддддддддддддддддддддддддддддддддддддддддддд©" 
-      @ nLin+03, nCol + 2 Say "Ё  Esta rotina emite uma listagem de todos os  produtos  e Ё" 
-      @ nLin+04, nCol + 2 Say "Ё  as respectivas saidas de cada um deles, fazendo um com- Ё" 
-      @ nLin+05, nCol + 2 Say "Ё  parativo entre os mesmos.                               Ё" 
-      @ nLin+06, nCol + 2 Say "юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддды" 
-      @ nLin+07, nCol + 2 Say "здддддддддддддддддддддддддддддддд© з Saida дддддддддддддддд©" 
-      @ nLin+08, nCol + 2 Say "Ё      Periodo de Emissao        Ё Ё                       Ё" 
-      @ nLin+09, nCol + 2 Say "цдддддддддддддддддддддддддддддддд╢ Ё        Monitor        Ё" 
-      @ nLin+10, nCol + 2 Say "Ё De: [DD/MM/AA] At┌: [DD/MM/AA] Ё Ё                       Ё" 
-      @ nLin+11, nCol + 2 Say "юдддддддддддддддддддддддддддддддды юддддддддддддддддддддддды" 
+      @ nLin+02, nCol + 2 Say "О©╫О©╫ Utilizacao О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©" 
+      @ nLin+03, nCol + 2 Say "О©╫  Esta rotina emite uma listagem de todos os  produtos  e О©╫" 
+      @ nLin+04, nCol + 2 Say "О©╫  as respectivas saidas de cada um deles, fazendo um com- О©╫" 
+      @ nLin+05, nCol + 2 Say "О©╫  parativo entre os mesmos.                               О©╫" 
+      @ nLin+06, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
+      @ nLin+07, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© О©╫ Saida О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©" 
+      @ nLin+08, nCol + 2 Say "О©╫      Periodo de Emissao        О©╫ О©╫                       О©╫" 
+      @ nLin+09, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢ О©╫        Monitor        О©╫" 
+      @ nLin+10, nCol + 2 Say "О©╫ De: [DD/MM/AA] AtО©╫: [DD/MM/AA] О©╫ О©╫                       О©╫" 
+      @ nLin+11, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
  
       @ nLin + 10, nCol + 08 Get dIniEmissao 
       @ nLin + 10, nCol + 24 Get dFimEmissao 
@@ -2325,10 +2325,10 @@ Local aMatriz:= {}, aMatrizLimpa:= {},;
          @ nLin, 01 Say IF( ALLTRIM( CODIGO ) == "0000000", "<< NAO CODIFICADOS >>", Left( DESCRI, 25 ) ) 
          SetColor( StrZero( ++nCor, 2, 0 ) ) 
          nPosicoes:= nCalculo / 2 
-         @ nLin, 28 Say Repl( "ш", nPosicoes * nMulti ) 
+         @ nLin, 28 Say Repl( "О©╫", nPosicoes * nMulti ) 
          SetColor( "N/" + cCorFundo ) 
-         @ nLin+1, 29 Say Repl( "ъ", nPosicoes * nMulti ) 
-         @ nLin, 28 + nPosicoes * nMulti Say "э" 
+         @ nLin+1, 29 Say Repl( "О©╫", nPosicoes * nMulti ) 
+         @ nLin, 28 + nPosicoes * nMulti Say "О©╫" 
          DBSkip() 
  
       ENDDO 
@@ -2400,14 +2400,14 @@ Local aMatriz:= {}, aMatrizLimpa:= {},;
       Return Nil 
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё VerGrupo 
-Ё Finalidade  Ё Pesquisar um grupo especifico. 
-Ё Parametros  Ё cGrupo_ => Codigo do grupo 
-Ё Retorno     Ё cCodigo => Codigo do produto a ser retornado. 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 04/Dezembro/1995 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ VerGrupo 
+О©╫ Finalidade  О©╫ Pesquisar um grupo especifico. 
+О©╫ Parametros  О©╫ cGrupo_ => Codigo do grupo 
+О©╫ Retorno     О©╫ cCodigo => Codigo do produto a ser retornado. 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 04/Dezembro/1995 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Static Function VerGrupo( cGrupo_, cCodigo ) 
    Local nArea:= Select(), nOrdem:= IndexOrd() 
@@ -2428,14 +2428,14 @@ Static Function VerGrupo( cGrupo_, cCodigo )
    Return(.T.) 
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё VerCodigo 
-Ё Finalidade  Ё Pesquisar a existencia de um codigo igual ao digitado 
-Ё Parametros  Ё cCodigo=> Codigo digitado pelo usu═rio 
-Ё Retorno     Ё 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 04/Dezembro/1995 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ VerCodigo 
+О©╫ Finalidade  О©╫ Pesquisar a existencia de um codigo igual ao digitado 
+О©╫ Parametros  О©╫ cCodigo=> Codigo digitado pelo usuО©╫rio 
+О©╫ Retorno     О©╫ 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 04/Dezembro/1995 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Static Function VerCodigo( cCodigo, GetList ) 
    LOCAL cGrupo_:= GetList[ 2 ]:VarGet() 
@@ -2458,7 +2458,7 @@ Static Function VerCodigo( cCodigo, GetList )
    DBSetOrder( 1 ) 
    If !DBSeek( cGrupo_ + cCodigo + Space( 5 ) ) 
       Ajuda("[Enter]Continua") 
-      Aviso( "C╒digo n└o existente neste grupo...", 24 / 2 ) 
+      Aviso( "CО©╫digo nО©╫o existente neste grupo...", 24 / 2 ) 
       Mensagem( "Aguarde a montagem da lista..." ) 
       VisualProdutos( cGrupo_ + cCodigo ) 
       SetColor( cCor ) 
@@ -2483,14 +2483,14 @@ Static Function VerCodigo( cCodigo, GetList )
    Return( .T. ) 
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё VerGrupo2 
-Ё Finalidade  Ё Pesquisar um grupo especifico. 
-Ё Parametros  Ё cGrupo_ => Codigo do grupo 
-Ё Retorno     Ё cCodigo => Codigo do produto a ser retornado. 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 04/Dezembro/1995 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ VerGrupo2 
+О©╫ Finalidade  О©╫ Pesquisar um grupo especifico. 
+О©╫ Parametros  О©╫ cGrupo_ => Codigo do grupo 
+О©╫ Retorno     О©╫ cCodigo => Codigo do produto a ser retornado. 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 04/Dezembro/1995 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Static Function VerGrupo2( cGrupo_, cCodigo ) 
    Local nArea:= Select(), nOrdem:= IndexOrd() 
@@ -2511,14 +2511,14 @@ Static Function VerGrupo2( cGrupo_, cCodigo )
    Return(.T.) 
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё VerCodigo2 
-Ё Finalidade  Ё Pesquisar a existencia de um codigo igual ao digitado 
-Ё Parametros  Ё cCodigo=> Codigo digitado pelo usu═rio 
-Ё Retorno     Ё 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 04/Dezembro/1995 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ VerCodigo2 
+О©╫ Finalidade  О©╫ Pesquisar a existencia de um codigo igual ao digitado 
+О©╫ Parametros  О©╫ cCodigo=> Codigo digitado pelo usuО©╫rio 
+О©╫ Retorno     О©╫ 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 04/Dezembro/1995 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Static Function VerCodigo2( cCodigo, GetList ) 
    LOCAL cGrupo_:= GetList[ 3 ]:VarGet() 
@@ -2541,7 +2541,7 @@ Static Function VerCodigo2( cCodigo, GetList )
    DBSetOrder( 1 ) 
    If !DBSeek( cGrupo_ + cCodigo + Space( 5 ) ) 
       Ajuda("[Enter]Continua") 
-      Aviso( "C╒digo n└o existente neste grupo...", 24 / 2 ) 
+      Aviso( "CО©╫digo nО©╫o existente neste grupo...", 24 / 2 ) 
       Mensagem( "Aguarde a montagem da lista..." ) 
       VisualProdutos( cGrupo_ + cCodigo ) 
       SetColor( cCor ) 
@@ -2567,14 +2567,14 @@ Static Function VerCodigo2( cCodigo, GetList )
  
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё 
-Ё Finalidade  Ё FAZER APRESENTACAO DO CLIENTE PARA A ROTINA NFBUSCA 
-Ё Parametros  Ё 
-Ё Retorno     Ё 
-Ё Programador Ё 
-Ё Data        Ё 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ 
+О©╫ Finalidade  О©╫ FAZER APRESENTACAO DO CLIENTE PARA A ROTINA NFBUSCA 
+О©╫ Parametros  О©╫ 
+О©╫ Retorno     О©╫ 
+О©╫ Programador О©╫ 
+О©╫ Data        О©╫ 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
   Static Function BuscaCliente( nCodigo, nCod ) 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -2592,13 +2592,13 @@ Static Function VerCodigo2( cCodigo, GetList )
 
 
 /*****
-зддддддддддддд© 
-Ё Funcao      Ё VendEstoq
-Ё Finalidade  Ё Levantamento de Vendas X Estoque
-Ё Retorno     Ё Nil
-Ё Programador Ё Gelson Oliveira
-Ё Data        Ё 18/Out/2004
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ VendEstoq
+О©╫ Finalidade  О©╫ Levantamento de Vendas X Estoque
+О©╫ Retorno     О©╫ Nil
+О©╫ Programador О©╫ Gelson Oliveira
+О©╫ Data        О©╫ 18/Out/2004
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 FUNCTION VendEstoq()
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -2625,16 +2625,16 @@ ENDIF
 nLin:= 08 
 nCol:= 11 
 VPBox( nLin, nCol, nLin + 13, nCol + 64, ".........????????" )
-@ nLin+02, nCol + 2 Say "здддддддддддддддддддддддддддддддд© зддддддддддддддддддддддд©"
-@ nLin+03, nCol + 2 Say "Ё        Periodo de Emissao      Ё Ё                       Ё"
-@ nLin+04, nCol + 2 Say "цдддддддддддддддддддддддддддддддд╢ цддддддддддддддддддддддд╢"
-@ nLin+05, nCol + 2 Say "Ё De: [DD/MM/AA] At┌: [DD/MM/AA] Ё Ё                       Ё"
-@ nLin+06, nCol + 2 Say "юдддддддддддддддддддддддддддддддды юддддддддддддддддддддддды" 
-@ nLin+07, nCol + 2 Say "здддддддддддддддддддддддддддддддд© зддддддддддддддддддддддд©"
-@ nLin+08, nCol + 2 Say "Ё Grupo..:  de [000]  ate [000]  Ё Ё                       Ё"
-@ nLin+09, nCol + 2 Say "цдддддддддддддддддддддддддддддддд╢ цддддддддддддддддддддддд╢"
-@ nLin+10, nCol + 2 Say "Ё Fabricante:  [   ]             Ё Ё                       Ё"
-@ nLin+11, nCol + 2 Say "юдддддддддддддддддддддддддддддддды юддддддддддддддддддддддды" 
+@ nLin+02, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©"
+@ nLin+03, nCol + 2 Say "О©╫        Periodo de Emissao      О©╫ О©╫                       О©╫"
+@ nLin+04, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢"
+@ nLin+05, nCol + 2 Say "О©╫ De: [DD/MM/AA] AtО©╫: [DD/MM/AA] О©╫ О©╫                       О©╫"
+@ nLin+06, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
+@ nLin+07, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©"
+@ nLin+08, nCol + 2 Say "О©╫ Grupo..:  de [000]  ate [000]  О©╫ О©╫                       О©╫"
+@ nLin+09, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢"
+@ nLin+10, nCol + 2 Say "О©╫ Fabricante:  [   ]             О©╫ О©╫                       О©╫"
+@ nLin+11, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
 // ???? DBSelectAr( _COD_CLIENTE )
 // ???? DBSetOrder( 1 )
 @ nLin + 05, nCol + 08 Get dIniEmissao
@@ -2763,16 +2763,16 @@ Local nUltimo:= 0
       nLin:= 08
       nCol:= 11 
       VPBox( nLin, nCol, nLin + 13, nCol + 64, "Relacao de Vendas ( Preco Medio x Cupom )" ) 
-      @ nLin+02, nCol + 2 Say "зд Utilizacao ддддддддддддддддддддддддддддддддддддддддддддд©" 
-      @ nLin+03, nCol + 2 Say "Ё  Esta rotina emite uma listagem de todos os  produtos  e Ё" 
-      @ nLin+04, nCol + 2 Say "Ё  as respectivas saidas de cada um deles, fazendo um com- Ё" 
-      @ nLin+05, nCol + 2 Say "Ё  parativo de preco medio de venda entre os mesmos.       Ё" 
-      @ nLin+06, nCol + 2 Say "юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддды" 
-      @ nLin+07, nCol + 2 Say "здддддддддддддддддддддддддддддддд© з Saida дддддддддддддддд©" 
-      @ nLin+08, nCol + 2 Say "Ё      Periodo de Emissao        Ё Ё                       Ё" 
-      @ nLin+09, nCol + 2 Say "цдддддддддддддддддддддддддддддддд╢ Ё        Monitor        Ё" 
-      @ nLin+10, nCol + 2 Say "Ё De: [DD/MM/AA] At┌: [DD/MM/AA] Ё Ё                       Ё" 
-      @ nLin+11, nCol + 2 Say "юдддддддддддддддддддддддддддддддды юддддддддддддддддддддддды" 
+      @ nLin+02, nCol + 2 Say "О©╫О©╫ Utilizacao О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©" 
+      @ nLin+03, nCol + 2 Say "О©╫  Esta rotina emite uma listagem de todos os  produtos  e О©╫" 
+      @ nLin+04, nCol + 2 Say "О©╫  as respectivas saidas de cada um deles, fazendo um com- О©╫" 
+      @ nLin+05, nCol + 2 Say "О©╫  parativo de preco medio de venda entre os mesmos.       О©╫" 
+      @ nLin+06, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
+      @ nLin+07, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© О©╫ Saida О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©" 
+      @ nLin+08, nCol + 2 Say "О©╫      Periodo de Emissao        О©╫ О©╫                       О©╫" 
+      @ nLin+09, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢ О©╫        Monitor        О©╫" 
+      @ nLin+10, nCol + 2 Say "О©╫ De: [DD/MM/AA] AtО©╫: [DD/MM/AA] О©╫ О©╫                       О©╫" 
+      @ nLin+11, nCol + 2 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
  
       @ nLin + 10, nCol + 08 Get dIniEmissao 
       @ nLin + 10, nCol + 24 Get dFimEmissao 
@@ -2813,10 +2813,10 @@ Local nUltimo:= 0
       CUP->( DBGoTop() )
       WHILE !CUP->( EOF() )
 
-          // A cada 17 ║tens exibir uma mensagem
+          // A cada 17 О©╫tens exibir uma mensagem
           IF ++nUltimo >= 17
              nUltimo:= 0
-             Mensagem( "Processando cupom n╖ " + TRIM( STR( CUP->NUMERO ) ) )
+             Mensagem( "Processando cupom nО©╫ " + TRIM( STR( CUP->NUMERO ) ) )
           ENDIF
 
           IF DPA->( DBSeek( CUP->NUMERO ) ) .AND.;

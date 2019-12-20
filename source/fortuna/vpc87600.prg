@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
 /* 
 **      Modulo - VPC875000 
 **  Finalidade - TABELA DE ESTADOS (Inc/Alt/Excl) 
@@ -96,7 +96,7 @@ Whil LastKey()<>K_ESC
    Read 
    If Lastkey()<>K_ESC 
       DBAppend() 
-      If NetRlock() 
+      If netrlock() 
          Repl ESTADO With cESTADO,; 
               DESCRI With cDESCRI 
       Endif 
@@ -122,18 +122,18 @@ VPBOX( 02, 15, 12, 64, "Tabela de Estados / ICMs", COR[20] )
 @ 03,16 Say "Estado...: [" + cESTADO + "]" 
 @ 04,16 Say "Descricao:" Get cDESCRI Pict "@S25" When; 
   MENSAGEM("Digite a descricao da ATIVIDADE.") 
-@ 05,16 Say "зддддддддддддддддддддддддддддддддд©" 
-@ 06,16 Say "Ё           Tabela ICMs           Ё" 
-@ 07,16 Say "цддддддддддддддддбдддддддддддддддд╢" 
-@ 08,16 Say "Ё Consumo        Ё    [00.00] %   Ё" 
-@ 09,16 Say "цддддддддддддддддедддддддддддддддд╢" 
-@ 10,16 Say "Ё Industria      Ё    [00.00] %   Ё" 
-@ 11,16 Say "юддддддддддддддддадддддддддддддддды" 
+@ 05,16 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©" 
+@ 06,16 Say "О©╫           Tabela ICMs           О©╫" 
+@ 07,16 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢" 
+@ 08,16 Say "О©╫ Consumo        О©╫    [00.00] %   О©╫" 
+@ 09,16 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢" 
+@ 10,16 Say "О©╫ Industria      О©╫    [00.00] %   О©╫" 
+@ 11,16 Say "О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" 
 @ 08,38 Get nPerCon Pict "@E 99.99" 
 @ 10,38 Get nPerInd Pict "@E 99.99" 
 Read 
 If Lastkey()<>K_ESC 
-   If NetRlock() 
+   If netrlock() 
       Repl ESTADO With cESTADO,; 
            DESCRI With cDESCRI,; 
            PERCON With nPerCon,; 

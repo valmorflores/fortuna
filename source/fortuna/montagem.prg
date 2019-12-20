@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#Include "Inkey.Ch" 
-#Include "VPF.Ch" 
+#Include "inkey.ch" 
+#Include "vpf.ch" 
  
 #ifdef HARBOUR
 function montagem()
@@ -109,7 +109,7 @@ function montagem()
    For nCt:= 1 To Len( aImpressao ) 
        cCodres:= Alltrim( aImpressao[ nCt ] ) 
        IF DBSeek( SubStr( cCodRes, 2, 3 ) + SubStr( cCodRes, 6, 4 ) ) 
-          aImpressao[ nCt ]:= RTrim( aImpressao[ nCt ] ) + " -¯ "+ DESCRI 
+          aImpressao[ nCt ]:= RTrim( aImpressao[ nCt ] ) + " -ï¿½ "+ DESCRI 
        ENDIF 
    Next 
    DBSelectArea( _COD_ASSEMBLER ) 

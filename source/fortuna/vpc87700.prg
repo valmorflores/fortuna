@@ -1,9 +1,9 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
 /* 
 **      Modulo - VPC875000 
-**  Finalidade - TABELA DE Hist¢ricos (Inc/Alt/Excl) 
+**  Finalidade - TABELA DE Histï¿½ricos (Inc/Alt/Excl) 
 ** Programador - Valmor Pereira Flores 
 **        Data - 14/Janeiro/1995 
 ** Atualizacao - 
@@ -20,7 +20,7 @@ if !fdbusevpb(_COD_HISTORICO,2)
 endif 
 dbgotop() 
 SetCursor(1) 
-VPBOX(04,29,16,76," Tabela de Hist¢ricos ",COR[20],.T.,.T.) 
+VPBOX(04,29,16,76," Tabela de Histï¿½ricos ",COR[20],.T.,.T.) 
 setcolor(COR[21]+","+COR[22]+",,,"+COR[17]) 
 MENSAGEM("[INS]Inclui [ENTER]Altera [DEL]Exclui e [Nome]Pesquisa") 
 ajuda("["+_SETAS+"][PgUp][PgDn]Movimenta") 
@@ -92,11 +92,11 @@ Whil LastKey()<>K_ESC
    @ 04,16 Say "Descricao...:" Get cDESCRI When; 
      MENSAGEM("Digite a descricao do Historico.") 
    @ 05,16 Say "Valor Padrao:" Get nValorP Pict "@E 999,999,999.99" when; 
-     Mensagem( "Digite um valor padrao para este hist¢rico." ) 
+     Mensagem( "Digite um valor padrao para este histï¿½rico." ) 
    Read 
    If Lastkey()<>K_ESC 
       DBAppend() 
-      If NetRlock() 
+      If netrlock() 
          Repl CODIGO With nCODIGO,; 
               DESCRI With cDESCRI,; 
               VALORP With nValorP 
@@ -124,10 +124,10 @@ VPBOX( 02, 15, 06, 74,"Historico")
 @ 04,16 Say "Descricao...:" Get cDESCRI When; 
   MENSAGEM("Digite a descricao do Historico.") 
 @ 05,16 Say "Valor Padrao:" Get nValorP Pict "@E 999,999,999.99" when; 
-  Mensagem( "Digite um valor padrao para este hist¢rico." ) 
+  Mensagem( "Digite um valor padrao para este histï¿½rico." ) 
 Read 
 If Lastkey()<>K_ESC 
-   If NetRlock() 
+   If netrlock() 
       Repl CODIGO With nCODIGO 
       Repl DESCRI With cDESCRI 
       Repl VALORP With nValorP 
@@ -170,7 +170,7 @@ IF DBSEEK(nCodigo)
 ENDIF 
 DBGOTOP() 
 SetCursor(1) 
-VPBOX(04,29,12,76," Tabela de Hist¢ricos ",COR[20],.T.,.T.) 
+VPBOX(04,29,12,76," Tabela de Histï¿½ricos ",COR[20],.T.,.T.) 
 setcolor(COR[21]+","+COR[22]+",,,"+COR[17]) 
 Mensagem("Pressione [Enter] para selecionar n/ tabela.") 
 Ajuda("[A a Z]Pesquisa ["+_SETAS+"][PgUp][PgDn]Move") 

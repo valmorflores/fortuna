@@ -1,6 +1,6 @@
 // ## CL2HB.EXE - Converted
-#include "VPF.CH" 
-#include "INKEY.CH" 
+#include "vpf.ch" 
+#include "inkey.ch" 
 /* 
 **      Modulo - VPC91320 
 **  Finalidade - Inclusao, Alteracao e Exclusao de ICM 
@@ -98,7 +98,7 @@ Whil LastKey()<>K_ESC
    Read 
    If Lastkey()<>K_ESC 
       DBAppend() 
-      If NetRlock() 
+      If netrlock() 
          Repl CODIGO With cCODIGO,; 
               DESCRI With cDESCRI,; 
               OBSERV With cOBSERV 
@@ -134,7 +134,7 @@ SetColor( _COR_GET_EDICAO )
   MENSAGEM("Digite a descricao do ICM.") 
 Read 
 If Lastkey()<>K_ESC 
-   If NetRlock() 
+   If netrlock() 
       Repl CODIGO With cCODIGO,; 
            DESCRI With cDESCRI,; 
            OBSERV With cOBSERV 

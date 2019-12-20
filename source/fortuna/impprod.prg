@@ -1,4 +1,4 @@
-#include "VPF.CH"
+#include "vpf.ch"
 
 
 #ifdef HARBOUR

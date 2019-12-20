@@ -4,14 +4,14 @@
  
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё TABELA DIFERENCIADA / PRECOSxTABELA 
-Ё Finalidade  Ё Precos x Tabela Diferenciada 
-Ё Parametros  Ё Nil 
-Ё Retorno     Ё Nil 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 10/09/1998 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ TABELA DIFERENCIADA / PRECOSxTABELA 
+О©╫ Finalidade  О©╫ Precos x Tabela Diferenciada 
+О©╫ Parametros  О©╫ Nil 
+О©╫ Retorno     О©╫ Nil 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 10/09/1998 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */
 #ifdef HARBOUR
 function vpc35500()
@@ -89,14 +89,14 @@ Local lFlag:= .F.
  
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё TABELASPRODUTO 
-Ё Finalidade  Ё Apresentacao de tabela de Precos cfe. produtos 
-Ё Parametros  Ё Nil 
-Ё Retorno     Ё Nil 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ TABELASPRODUTO 
+О©╫ Finalidade  О©╫ Apresentacao de tabela de Precos cfe. produtos 
+О©╫ Parametros  О©╫ Nil 
+О©╫ Retorno     О©╫ Nil 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Function TabelasProduto() 
 Local nArea:= Select() 
@@ -162,7 +162,7 @@ Local aTabelas:= {}
                    nPrecoV:= PRECOV 
                    nMargem:= aTabelas[ nCt ][ 6 ] 
                    Margem( nPrecoC, nMargem, @nPrecoV ) 
-                   IF NetRLock() 
+                   IF netrlock() 
                       Replace MARGEM With aTabelas[ nCt ][ 6 ],; 
                               PRECOV With nPrecoV 
                    ENDIF 

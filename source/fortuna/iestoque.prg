@@ -3,19 +3,19 @@
 #include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ IMPESTOQUE 
-³ Finalidade  ³ Impressao de relatorios referentes a movimento de estoque 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ Agosto/1998 
-³             ³ 23/Junho/1999 ----------------------------------------------- 
-³             ³ Opcao 6=Vendas  Entender Cupom como Produto Vendido, atraves 
-³             ³                 do codigo CF: no inicio do campo DOC___ 
-³             ³ 
-³             ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ IMPESTOQUE 
+ï¿½ Finalidade  ï¿½ Impressao de relatorios referentes a movimento de estoque 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ Agosto/1998 
+ï¿½             ï¿½ 23/Junho/1999 ----------------------------------------------- 
+ï¿½             ï¿½ Opcao 6=Vendas  Entender Cupom como Produto Vendido, atraves 
+ï¿½             ï¿½                 do codigo CF: no inicio do campo DOC___ 
+ï¿½             ï¿½ 
+ï¿½             ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function ImpEstoque() 
   Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -126,7 +126,7 @@ Function ImpEstoque()
             @ 05, 10 Say "Do Codigo.................:" Get cCodPro1 Pict "@R 999-9999" 
             @ 05, 53 Say "Ate:" Get cCodPro2 Pict "@R 999-9999" 
             @ 06, 10 Say "No Periodo de:" Get dData1 
-            @ 06, 36 Say "At‚:" Get dData2 
+            @ 06, 36 Say "Atï¿½:" Get dData2 
             @ 07, 10 Say "Fabricante de:" Get cFab1 Pict "!!!" 
             @ 07, 34 Say "Ate:"           Get cFab2 Pict "!!!" 
             IF aOpcao[ 2 ] == 7 
@@ -138,7 +138,7 @@ Function ImpEstoque()
             ENDIF 
          endif 
          READ 
-         @ 14, 10 Say "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ" 
+         @ 14, 10 Say "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" 
  
          READ 
  
@@ -157,7 +157,7 @@ Function ImpEstoque()
   ENDDO 
  
   SWGravar( 30000 ) 
-  /* Se estiver dispon¡vel para a tela */ 
+  /* Se estiver disponï¿½vel para a tela */ 
   IF aOpcao[ 5 ] == 2 
      Set( 24, "TELA0000.TMP" ) 
   ELSEIF aOpcao[ 5 ] == 3 
@@ -223,7 +223,7 @@ Function ImpEstoque()
              VAL( EST->CPROD_ ) <= VAL( cCodPro2 ) ) .AND. EST->ANULAR==" " 
            IF !RES->( DBSeek( EST->CPROD_ ) ) 
                DBAppend() 
-               IF NetRLock() 
+               IF netrlock() 
                   Repl RES->CODPRO With EST->CPROD_,; 
                        RES->DESCRI With MPR->DESCRI,; 
                        RES->UNIDAD With MPR->UNIDAD,; 
@@ -232,7 +232,7 @@ Function ImpEstoque()
                ENDIF 
             ENDIF 
             IF EST->DATAMV < dData1 
-               IF NetRLock() 
+               IF netrlock() 
                   IF EST->ENTSAI == "+" 
                      Replace RES->SALDOI With RES->SALDOI + EST->QUANT_ 
                   ELSE 
@@ -240,7 +240,7 @@ Function ImpEstoque()
                   ENDIF 
                ENDIF 
             ELSEIF EST->DATAMV >= dData1 .AND. EST->DATAMV <= dData2 
-               IF NetRLock() 
+               IF netrlock() 
                   IF EST->ENTSAI=="-" 
                      IF EST->DATAMV == dData2 
                         Replace RES->SAIDIA With RES->SAIDIA + EST->QUANT_ 
@@ -260,7 +260,7 @@ Function ImpEstoque()
                   ENDIF 
                ENDIF 
             ENDIF 
-            IF NetRLock() 
+            IF netrlock() 
                Replace RES->SALDOA With RES->SALDOI + RES->ENTPER - RES->SAIPER 
                Replace RES->VALOR_ With RES->CUSTO_ * RES->SALDOA 
             ENDIF 
@@ -347,7 +347,7 @@ Function ImpEstoque()
                ES->SDOVLR ) <> 0 
            IF !RES->( DBSeek( ES->INDICE ) ) 
                RES->( DBAppend() ) 
-               IF NetRLock() 
+               IF netrlock() 
                   Repl RES->CODPRO With ES->INDICE,; 
                        RES->DESCRI With MPR->DESCRI,; 
                        RES->UNIDAD With MPR->UNIDAD,; 
@@ -371,7 +371,7 @@ Function ImpEstoque()
                             RES->ENTDIA With ES->ED_VLR 
                     ENDIF 
             ENDIF 
-            IF RES->( NetRLock() ) 
+            IF RES->( netrlock() ) 
                Replace RES->VALOR_ With RES->SALDOA 
                Replace RES->LUCRO_ With ( RES->VENPER - RES->SAIPER ) 
                //- RES->OUTPER 
@@ -412,7 +412,7 @@ Function ImpEstoque()
      Index On CODPRO To INDICA.Ntx 
  
      @ 08, 10 Say "Do Vendedor:" get nVen1 Pict "999" 
-     @ 08, 45 Say "At‚:" Get nVen2 Pict "999" 
+     @ 08, 45 Say "Atï¿½:" Get nVen2 Pict "999" 
      READ 
  
      DBSelectAr( _COD_MPRIMA ) 
@@ -434,7 +434,7 @@ Function ImpEstoque()
             ELSEIF nVen1 + nVen2 == 0 .AND. !( NF_->VENIN_ + NF_->VENEX_ == 0 ) 
                nVendedor:= -1 
             ELSE 
-               /* Busca um vendedor pr¢ximo ao requesito */ 
+               /* Busca um vendedor prï¿½ximo ao requesito */ 
                IF NF_->VENIN_ >= nVen1 .AND. NF_->VENIN_ <= nVen2 
                   nVendedor:= NF_->VENIN_ 
                ELSE 
@@ -446,7 +446,7 @@ Function ImpEstoque()
          ENDIF 
          IF !RES->( DBSeek( EST->CPROD_ ) ) 
             DBAppend() 
-            IF NetRLock() 
+            IF netrlock() 
                Replace CODPRO With EST->CPROD_,; 
                        DESCRI With MPR->DESCRI,; 
                        UNIDAD With MPR->UNIDAD,; 
@@ -464,11 +464,11 @@ Function ImpEstoque()
                   ( !( EST->NATOPE >= 6.101 .AND. EST->NATOPE <= 6.1019 ) ) .AND.; 
                   ( !( EST->NATOPE >= 5.101 .AND. EST->NATOPE <= 5.1019 ) ) .AND.; 
                    EST->ANULAR==" " .AND. EST->ENTSAI=="-" ) .AND. !LEFT( EST->DOC___, 3 )=="CF:" 
-             IF RES->( NetRlock() ) 
+             IF RES->( netrlock() ) 
                 Replace RES->OUTRAS With RES->OUTRAS + EST->QUANT_ 
              ENDIF 
          ENDIF 
-         IF RES->( NetRlock() ) 
+         IF RES->( netrlock() ) 
          ENDIF 
          IF ( VAL( EST->CPROD_ ) >= VAL( cCodPro1 ) .AND.; 
               VAL( EST->CPROD_ ) <= VAL( cCodPro2 ) ) .AND.; 
@@ -483,7 +483,7 @@ Function ImpEstoque()
                   ENDIF 
                   Replace QTDNUL With QTDNUL + EST->QUANT_,; 
                           VLRNUL With VLRNUL + EST->VLRSAI 
-               /* Verifica se ‚ uma entrada */ 
+               /* Verifica se ï¿½ uma entrada */ 
                ELSEIF EST->ENTSAI=="+" .AND. ( LEFT( EST->DOC___, 3 ) == "CF:" .OR.; 
                                                    ( EST->NATOPE>=5.300 .AND. EST->NATOPE<=5.329 ) .OR.; 
                                                    ( EST->NATOPE>=6.300 .AND. EST->NATOPE<=6.329 ) ) .AND.; 
@@ -495,7 +495,7 @@ Function ImpEstoque()
                              VLRPER With VLRPER - EST->VLRSAI,; 
                              VLRDIA With VLRDIA - IF( EST->DATAMV==dData2, EST->VLRSAI, 0 ) 
                   ENDIF 
-               /* Verifica se ‚ uma saida */ 
+               /* Verifica se ï¿½ uma saida */ 
                ELSEIF EST->ENTSAI=="-" .AND. EST->ANULAR==" " 
                   Replace QTDDIA With QTDDIA + IF( EST->DATAMV==dData2, EST->QUANT_, 0 ),; 
                           QTDPER With QTDPER + EST->QUANT_,; 
@@ -667,7 +667,7 @@ Function ImpEstoque()
   /* Emissao do relatorio */ 
   Relatorio( AllTrim( cArquivo ) ) 
  
-  /* Se estiver dispon¡vel para a tela */ 
+  /* Se estiver disponï¿½vel para a tela */ 
   IF aOpcao[ 5 ] == 2 
      ViewFile( "TELA0000.TMP" ) 
   ENDIF 

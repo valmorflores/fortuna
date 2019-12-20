@@ -2,21 +2,21 @@
 #Include "vpf.ch" 
  
 /***** 
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ 
-³ Funcao      ³ Autentica 
-³ Finalidade  ³ Autenticacao de documentos 
-³ Parametros  ³ Nil 
-³ Retorno     ³ Nil 
-³ Programador ³ Valmor Pereira Flores 
-³ Data        ³ 
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ 
+ï¿½ Funcao      ï¿½ Autentica 
+ï¿½ Finalidade  ï¿½ Autenticacao de documentos 
+ï¿½ Parametros  ï¿½ Nil 
+ï¿½ Retorno     ï¿½ Nil 
+ï¿½ Programador ï¿½ Valmor Pereira Flores 
+ï¿½ Data        ï¿½ 
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 */ 
 Function Autentica( nValor, nJuros ) 
 Loca cTela 
 Loca cComando 
 IF !FILE( SWSet( _PDV_DIRETORIO ) + "\PDV.INI" ) 
    cTela:= ScreenSave( 0, 0, 24, 79 ) 
-   Aviso( "Arquivo PDV.INI nÆo foi localizado no diretorio." ) 
+   Aviso( "Arquivo PDV.INI nï¿½o foi localizado no diretorio." ) 
    Pausa() 
    ScreenRest( cTela ) 
 ELSE 

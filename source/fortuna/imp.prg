@@ -1,39 +1,39 @@
 // ## CL2HB.EXE - Converted
-#Include "VPF.CH" 
-#Include "INKEY.CH" 
+#Include "vpf.ch" 
+#Include "inkey.ch" 
 /* layOut da pagina de Configuracao da impressora 
  
- здддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд© 
- Ё Impressora                                                             Ё 
- Ё Driver                                                                 Ё 
- цдFontesдддддддддддддддддддддддддддддддбддддддддддддддддддддддддддддддддд╢ 
- Ё Compactado 1  [XXXXXXXXXXXXXXXXXXXX] Ё 6 L.P.Polegada  [XXXXXXXXXXXXX] Ё 
- Ё Compactado 2  [XXXXXXXXXXXXXXXXXXXX] Ё 8 L.P.Polegada  [XXXXXXXXXXXXX] Ё 
- Ё Compactado 3  [XXXXXXXXXXXXXXXXXXXX] Ё Comprimento Pag [XXXXXXXXXXXXX] Ё 
- Ё Compactado 4  [XXXXXXXXXXXXXXXXXXXX] Ё PCOMPR          [XXXXXXXXXXXXX] Ё 
- Ё Compactado 5  [XXXXXXXXXXXXXXXXXXXX] Ё LCOMPR          [XXXXXXXXXXXXX] Ё 
- Ё Expandido On  [XXXXXXXXXXXXXXXXXXXX] Ё Porta           [XXXX]          Ё 
- Ё Expandido Off [XXXXXXXXXXXXXXXXXXXX] цддддддддддддддддддддддддддддддддд╢ 
- Ё Negrito       [XXXXXXXXXXXXXXXXXXXX] Ё                                 Ё 
- Ё Normal        [XXXXXXXXXXXXXXXXXXXX] цдFormato Papelддддддддддддддддддд╢ 
- Ё Carta On      [XXXXXXXXXXXXXXXXXXXX] Ё Retrato  [XXXXXXXXXXXXXXXXXXXX] Ё 
- Ё Carta Off     [XXXXXXXXXXXXXXXXXXXX] Ё Paisagem [XXXXXXXXXXXXXXXXXXXX] Ё 
- цддддддддддддддддддддддддддддддддддддддаддддддддддддддддддддддддддддддддд╢ 
- Ё                                                                        Ё 
- Ё                                                                        Ё 
- Ё                                                                        Ё 
- Ё                                                                        Ё 
- юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды 
+ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+ О©╫ Impressora                                                             О©╫ 
+ О©╫ Driver                                                                 О©╫ 
+ О©╫О©╫FontesО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢ 
+ О©╫ Compactado 1  [XXXXXXXXXXXXXXXXXXXX] О©╫ 6 L.P.Polegada  [XXXXXXXXXXXXX] О©╫ 
+ О©╫ Compactado 2  [XXXXXXXXXXXXXXXXXXXX] О©╫ 8 L.P.Polegada  [XXXXXXXXXXXXX] О©╫ 
+ О©╫ Compactado 3  [XXXXXXXXXXXXXXXXXXXX] О©╫ Comprimento Pag [XXXXXXXXXXXXX] О©╫ 
+ О©╫ Compactado 4  [XXXXXXXXXXXXXXXXXXXX] О©╫ PCOMPR          [XXXXXXXXXXXXX] О©╫ 
+ О©╫ Compactado 5  [XXXXXXXXXXXXXXXXXXXX] О©╫ LCOMPR          [XXXXXXXXXXXXX] О©╫ 
+ О©╫ Expandido On  [XXXXXXXXXXXXXXXXXXXX] О©╫ Porta           [XXXX]          О©╫ 
+ О©╫ Expandido Off [XXXXXXXXXXXXXXXXXXXX] О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢ 
+ О©╫ Negrito       [XXXXXXXXXXXXXXXXXXXX] О©╫                                 О©╫ 
+ О©╫ Normal        [XXXXXXXXXXXXXXXXXXXX] О©╫О©╫Formato PapelО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢ 
+ О©╫ Carta On      [XXXXXXXXXXXXXXXXXXXX] О©╫ Retrato  [XXXXXXXXXXXXXXXXXXXX] О©╫ 
+ О©╫ Carta Off     [XXXXXXXXXXXXXXXXXXXX] О©╫ Paisagem [XXXXXXXXXXXXXXXXXXXX] О©╫ 
+ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╢ 
+ О©╫                                                                        О©╫ 
+ О©╫                                                                        О©╫ 
+ О©╫                                                                        О©╫ 
+ О©╫                                                                        О©╫ 
+ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё IMPCFG 
-Ё Finalidade  Ё Configuracao da Impressora 
-Ё Parametros  Ё Nil 
-Ё Retorno     Ё Nil 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ IMPCFG 
+О©╫ Finalidade  О©╫ Configuracao da Impressora 
+О©╫ Parametros  О©╫ Nil 
+О©╫ Retorno     О©╫ Nil 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Function ImpCfg() 
  
@@ -43,7 +43,7 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
 // ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
 UserScreen() 
 VPBox( 01, 02, 21, 76, " CONFIGURACAO DE IMPRESSORAS " ) 
-VPBox( 17, 02, 21, 76, " Impressoras Dispon║veis ", , , , ) 
+VPBox( 17, 02, 21, 76, " Impressoras DisponО©╫veis ", , , , ) 
 VPBox( 04, 02, 16, 40, , ,.F.,.F. ) 
 VPBox( 04, 41, 12, 76, , ,.F.,.F. ) 
 Sele 124 
@@ -99,14 +99,14 @@ screenrest(cTELA)
 return nil 
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё DISPLAYINFO 
-Ё Finalidade  Ё Apresenta informacoes das impressoras 
-Ё Parametros  Ё Nil 
-Ё Retorno     Ё Nil 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 15/08/98 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ DISPLAYINFO 
+О©╫ Finalidade  О©╫ Apresenta informacoes das impressoras 
+О©╫ Parametros  О©╫ Nil 
+О©╫ Retorno     О©╫ Nil 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 15/08/98 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Static Function DisplayInfo() 
 @ 02,03 Say "Impressora: " + NOME 
@@ -134,14 +134,14 @@ Return Nil
  
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё AlteraImpressora 
-Ё Finalidade  Ё Inclusao de uma impressora 
-Ё Parametros  Ё oTb=Tbrowse principal 
-Ё Retorno     Ё Nil 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 15/08/98 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ AlteraImpressora 
+О©╫ Finalidade  О©╫ Inclusao de uma impressora 
+О©╫ Parametros  О©╫ oTb=Tbrowse principal 
+О©╫ Retorno     О©╫ Nil 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 15/08/98 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Static Function AlteraImpressora( oTb ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -180,7 +180,7 @@ Local cNome:= NOME, cDriver:= DRIVER,;
    @ 15,42 Say "Porta           " Get cPorta 
    READ 
    Set( _SET_DELIMITERS, .T. ) 
-   IF NetRLock() 
+   IF netrlock() 
       Replace NOME With cNome,; 
               DRIVER With cDriver,; 
               COMP0   With cComp0,; 
@@ -212,14 +212,14 @@ Local cNome:= NOME, cDriver:= DRIVER,;
  
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё IncluiImpressora 
-Ё Finalidade  Ё Inclusao de uma impressora 
-Ё Parametros  Ё oTb=Tbrowse principal 
-Ё Retorno     Ё Nil 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 15/08/98 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ IncluiImpressora 
+О©╫ Finalidade  О©╫ Inclusao de uma impressora 
+О©╫ Parametros  О©╫ oTb=Tbrowse principal 
+О©╫ Retorno     О©╫ Nil 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 15/08/98 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Static Function IncluiImpressora( oTb ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -263,7 +263,7 @@ Local cNome:= Space( Len( NOME ) ), cDriver:= Space( Len( DRIVER ) ),;
    READ 
    Set( _SET_DELIMITERS, .T. ) 
    DBAppend() 
-   IF NetRLock() 
+   IF netrlock() 
       Replace NOME With cNome,; 
               DRIVER With cDriver,; 
               COMP0   With cComp0,; 
@@ -298,14 +298,14 @@ Local cNome:= Space( Len( NOME ) ), cDriver:= Space( Len( DRIVER ) ),;
  
  
 /***** 
-зддддддддддддд© 
-Ё Funcao      Ё SELECAOIMPRESSORA 
-Ё Finalidade  Ё Seleciona a impressora 
-Ё Parametros  Ё lAutomatica = (.T./.F.) Selecao autom═tica da impressora? 
-Ё Retorno     Ё 
-Ё Programador Ё Valmor Pereira Flores 
-Ё Data        Ё 07/Agosto/1998 
-юддддддддддддды 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д© 
+О©╫ Funcao      О©╫ SELECAOIMPRESSORA 
+О©╫ Finalidade  О©╫ Seleciona a impressora 
+О©╫ Parametros  О©╫ lAutomatica = (.T./.F.) Selecao automО©╫tica da impressora? 
+О©╫ Retorno     О©╫ 
+О©╫ Programador О©╫ Valmor Pereira Flores 
+О©╫ Data        О©╫ 07/Agosto/1998 
+О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
 */ 
 Function SelecaoImpressora( lAutomatica ) 
 Local cCor:= SetColor(), nCursor:= SetCursor(),; 
@@ -349,7 +349,7 @@ ELSE
        DBSkip() 
        IF EOF() 
           DBGoTop() 
-          IF NetRLock() 
+          IF netrlock() 
              Replace Select With "*" 
           ENDIF 
           Exit 
@@ -383,7 +383,7 @@ ELSE
               DBGOTOP() 
               WHILE !EOF() 
                  IF Select == "*" .OR. Alltrim( PORTA )=="<PADRAO>" 
-                    IF NetRLock() 
+                    IF netrlock() 
                        Replace Select With " ",; 
                                Porta  With Space( Len( PORTA ) ) 
                     ENDIF 
@@ -391,7 +391,7 @@ ELSE
                  DBSkip() 
               ENDDO 
               DBGoTo( nRegistro ) 
-              IF NetRLock() 
+              IF netrlock() 
                  Replace SELECT With "*",; 
                          PORTA  With "<PADRAO>" 
               ENDIF 
