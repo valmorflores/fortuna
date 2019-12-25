@@ -18,21 +18,21 @@ loca cTELA:=zoom(14,14,20,38), cCOR:=setcolor(), nOPCAO:=0
 vpbox(14,14,20,38) 
 whil .t. 
    mensagem("") 
-   aadd(MENULIST,menunew(15,15," 1 Ordem Compra       ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(15,15," 1 Ordem Compra       ",2,COR[11],; 
         "Inclusao, alteracao, verificacao e exclusao de Ordens de compra.",,,; 
         COR[6],.T.)) 
-   aadd(MENULIST,menunew(16,15," 2 Preco Compra       ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(16,15," 2 Preco Compra       ",2,COR[11],; 
         "Inclusao, alteracao, verificacao e exclusao de precos de compra.",,,; 
         COR[6],.T.)) 
-   aadd(MENULIST,menunew(17,15," 3 Nota Fiscal        ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(17,15," 3 Nota Fiscal        ",2,COR[11],; 
         "Inclusao, alteracao, verificacao e exclusao de Notas de Entrada/Compra.",,,; 
         COR[6],.T.))
-   aadd(MENULIST,menunew(18,15," 4 Cotacao de Precos  ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(18,15," 4 Cotacao de Precos  ",2,COR[11],; 
         "Cotacao de precos de compra x fornecedor com base nas tabelas de precos.",,,; 
         COR[6],.T.)) 
-   aadd(MENULIST,menunew(19,15," 0 Retorna            ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(19,15," 0 Retorna            ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    do case 
       case nOPCAO=0 .or. nOPCAO=5; exit 
       case nOPCAO=1; do VPC51999 
@@ -57,19 +57,19 @@ loca cTELA:=screensave(00,00,24,79), cCOR:=setcolor(),;
 vpbox(11,24,16,42) 
 whil .t. 
    mensagem("") 
-   aadd(MENULIST,menunew(12,25," 1 Manual       ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(12,25," 1 Manual       ",2,COR[11],; 
         "Atualizacao manual de preco por fornecedor.",,,; 
         COR[6],.T.)) 
-   aadd(MENULIST,menunew(13,25," 2 Percentual   ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(13,25," 2 Percentual   ",2,COR[11],; 
         "Atualiza��o autom�tica de pre�o por fornecedor.",,,; 
         COR[6],.T.))
-   aadd(MENULIST,menunew(14,25," 3 Especial     ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(14,25," 3 Especial     ",2,COR[11],; 
         "Atualiza��o autom�tica de pre�o por fornecedor.",,,; 
         COR[6],.T.)) 
-   aadd(MENULIST,menunew(15,25," 0 Retorna      ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(15,25," 0 Retorna      ",2,COR[11],; 
         "Retorna ao menu anterior.",,,; 
         COR[6],.T.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    if nOPCAO=0 .OR. nOPCAO=4 ;exit ;endif 
    cTELA1:=screensave(00,00,24,79) 
    do case 

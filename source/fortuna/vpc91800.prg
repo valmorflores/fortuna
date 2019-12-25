@@ -24,23 +24,23 @@ Local nOpcao:= 0
   VPBox( 12, 35, 21, 68 ) 
   WHILE .T. 
       mensagem("") 
-      AAdd( MENULIST,menunew(13,36," 1 Pagar & Receber             ", 2, COR[11],; 
+      AAdd( MENULIST,swmenunew(13,36," 1 Pagar & Receber             ", 2, COR[11],; 
            "Verificacao Sintetica de Contas a Pagar x Contas a Receber.",,, COR[6],.T.)) 
-      AAdd( MENULIST,menuNew(14,36," 2 Receber por Cliente         ", 2, COR[11],; 
+      AAdd( MENULIST,swmenunew(14,36," 2 Receber por Cliente         ", 2, COR[11],; 
            "Consulta Por Cliente.",,,COR[6],.T.)) 
-      AAdd( MENULIST,menunew(15,36," 3 Receber por Vencimento      ", 2, COR[11],; 
+      AAdd( MENULIST,swmenunew(15,36," 3 Receber por Vencimento      ", 2, COR[11],; 
            "Consulta Por Vencimento.",,,COR[6],.T.)) 
-      AAdd( MENULIST,menunew(16,36," 4 Receber + Acrescimos        ", 2, COR[11],; 
+      AAdd( MENULIST,swmenunew(16,36," 4 Receber + Acrescimos        ", 2, COR[11],; 
            "Verificacao Sintetica de Contas a Receber + Acrescimos.",,, COR[6],.T.)) 
-      AAdd( MENULIST,menunew(17,36," 5 Receber + Acr. Por Cliente  ", 2, COR[11],; 
+      AAdd( MENULIST,swmenunew(17,36," 5 Receber + Acr. Por Cliente  ", 2, COR[11],; 
            "Verificacao Sintetica de Contas a Receber + Acrescimos Por Cliente.",,, COR[6],.T.)) 
-      AAdd( MENULIST,menunew(18,36," 6 Pagar por Fornecedor        ", 2, COR[11],; 
+      AAdd( MENULIST,swmenunew(18,36," 6 Pagar por Fornecedor        ", 2, COR[11],; 
            "Consulta Por Fornecedor.",,,COR[6],.T.)) 
-      AAdd( MENULIST,menunew(19,36," 7 Pagar por Vencimento        ", 2, COR[11],; 
+      AAdd( MENULIST,swmenunew(19,36," 7 Pagar por Vencimento        ", 2, COR[11],; 
            "Consulta Por Vencimento.",,,COR[6],.T.)) 
-      AAdd( MENULIST,menunew(20,36," 0 Retorna                     ", 2, COR[11],; 
+      AAdd( MENULIST,swmenunew(20,36," 0 Retorna                     ", 2, COR[11],; 
            "Retorna ao menu anterior.",,,COR[6],.T.)) 
-      menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+      swMenu(MENULIST,@nOPCAO); MENULIST:={} 
       do case 
          case nOPCAO=0 .or. nOPCAO=8; exit 
          case nOPCAO=1 

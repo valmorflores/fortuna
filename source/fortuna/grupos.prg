@@ -19,7 +19,7 @@ Function AbreGrupo( cGrupo )
    LOCAL lAbriu:= .T., nArea:= 0 
    LOCAL GDirRes:= GDir, cFalta, aArqNom := {} 
  
- 
+   FDBUseVPB( _COD_CLIENTE, 2 )
    cFalta := "# fortuna automacao comercial - Ocorrencias na Abertura/Conversao do FORTURNA" + _CRLF  
    cFalta += _CRLF 
    cFalta += ". Situa��o   Arquivo (" + DTOC (DATE ()) + " - " + TIME () + " h)" + _CRLF 
@@ -112,7 +112,7 @@ Function AbreGrupo( cGrupo )
          ENDDO 
          GDir:= GDirRes 
       ELSE 
-         Aviso( "Grupo de arquivos " + trim( cGrupo ) + " n�o foi localizado." ) 
+         Aviso( "Grupo de arquivos " + trim( cGrupo ) + " nao foi localizado." ) 
          Pausa() 
          lAbriu:= .F. 
       ENDIF 
@@ -316,3 +316,8 @@ Function RestDiretorioPadrao()
    Return Nil 
  
  
+Function AbreTabela( _cod, _file, _alias )
+   
+   DBSelectAr( _cod )
+   fdbusevpb( _cod, 2 )
+   //USE &_file ALIAS &_alias

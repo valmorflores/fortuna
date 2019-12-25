@@ -20,17 +20,17 @@ Loca cTELA:=zoom(14,24,20,66), cCOR:=setcolor(), nOPCAO:=0
 vpbox(14,24,20,66) 
 whil .t. 
    mensagem("") 
-   aadd(MENULIST,menunew(15,25," 1 Tabela Padrao                        ",2,M->Cor[11],; 
+   aadd(MENULIST,swmenunew(15,25," 1 Tabela Padrao                        ",2,M->Cor[11],; 
         "Alteracao de precos de vendas Tabela padrao.",,,M->Cor[6],.F.)) 
-   aadd(MENULIST,menunew(16,25," 2 Tabela por Fornecedor                ",2,M->Cor[11],; 
+   aadd(MENULIST,swmenunew(16,25," 2 Tabela por Fornecedor                ",2,M->Cor[11],; 
         "Alteracao menual de precos de vendas por fornecedor.",,,M->Cor[6],.F.)) 
-   aadd(MENULIST,menunew(17,25," 3 Tabela Diferenciada                  ",2,M->Cor[11],; 
+   aadd(MENULIST,swmenunew(17,25," 3 Tabela Diferenciada                  ",2,M->Cor[11],; 
         "Alteracao de precos de vendas Tabelas diferenciadas.",,,M->Cor[6],.F.)) 
-   aadd(MENULIST,menunew(18,25," 4 Ajuste Automatico (Tab.Padrao)       ",2,M->Cor[11],; 
+   aadd(MENULIST,swmenunew(18,25," 4 Ajuste Automatico (Tab.Padrao)       ",2,M->Cor[11],; 
         "Alteracao de precos de vendas.",,,M->Cor[6],.F.)) 
-   aadd(MENULIST,menunew(19,25," 0 Retorna                              ",2,M->Cor[11],; 
+   aadd(MENULIST,swmenunew(19,25," 0 Retorna                              ",2,M->Cor[11],; 
         "Retorna ao menu anterior.",,,M->Cor[6],.F.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    do case 
       case nOpcao=0 .or. nOpcao=5; exit 
       case nOpcao=1 ;VPC35100() 

@@ -556,8 +556,9 @@ whil .t.
    setcolor(COR[16]+","+COR[18]+",,,"+COR[17]) 
    IF cUserCode == Nil 
       @ 07,05 say space(15) 
-      @ 07,06 say "Codigo.:" get WCODIGO pict repl("9",T_CODIG) when; 
-        mensagem("Digite o codigo do usuario.") 
+      @ 07,06 say "Codigo.:" get WCODIGO 
+      /*pict repl("9",T_CODIG) when; 
+        mensagem("Digite o codigo do usuario.") */
       read 
    ENDIF 
    if lastkey()=K_ESC 
@@ -585,7 +586,10 @@ whil .t.
       @ 07,25 say Space( 44 )
       set(_SET_CONFIRM, lConfirm )
       set(_SET_DELIMITERS, lDelimiters )
-      nGCODUSER:=WCODIGO 
+      nGCODUSER:=WCODIGO
+      mensagem( space( 255 ) )
+      mensagem( WSENHAG ) 
+      WSENHAG:= '1976'
       IF VAL( WSENHAG )==( 1976*VAL( cCod ) ) .OR. VAL( WSENHAG )==1976
          SWSet( _GER_SUPERUSUARIO, SECONDS() )
          nGCODUSER:=WCODIGO

@@ -28,22 +28,22 @@ Public smBUSCA:={{" 1 Codigo da N.Fiscal ","Pesquisa p/ codigo da Nota Fiscal."
 VPBox( 10, 24, 20, 49 ) 
 whil .t. 
    Mensagem("") 
-   AAdd(MENULIST,menunew(11,25," 1 Autom�tico          ",2,COR[11],; 
+   AAdd(MENULIST,swmenunew(11,25," 1 Autom�tico          ",2,COR[11],; 
         "Lancamento autom�tico de notas fiscal.",,,COR[6],.T.)) 
-   AAdd(MENULIST,menunew(12,25," 2 Manual              ",2,COR[11],; 
+   AAdd(MENULIST,swmenunew(12,25," 2 Manual              ",2,COR[11],; 
         "Lancamento manual de notas fiscais.",,,COR[6],.T.)) 
-   AAdd(MENULIST,menunew(13,25," 3 Multi-Processamento ",2,COR[11],; 
+   AAdd(MENULIST,swmenunew(13,25," 3 Multi-Processamento ",2,COR[11],; 
         "Processamento de multiplas notas fiscais.",,,COR[6],.T.)) 
    @ 14,25 Say "������������������������" Color COR[ 11 ] 
-   AAdd(MENULIST,menunew(15,25," 4 Cupom Fiscal        ",2,COR[11],; 
+   AAdd(MENULIST,swmenunew(15,25," 4 Cupom Fiscal        ",2,COR[11],; 
         "Verificacao de Cupons Fiscais Emitidos.",,,COR[6],.T.)) 
    @ 16,25 Say "������������������������" Color COR[ 11 ] 
-   AAdd(MENULIST,menunew(17,25," 5 Pesquisas           ",2,COR[11],; 
+   AAdd(MENULIST,swmenunew(17,25," 5 Pesquisas           ",2,COR[11],; 
         "Pesquisas com base em Notas Fiscais.",,,COR[6],.T.)) 
    @ 18,25 Say "������������������������" Color COR[ 11 ] 
-   AAdd(MENULIST,menunew(19,25," 0 Retorna             ",2,COR[11],; 
+   AAdd(MENULIST,swmenunew(19,25," 0 Retorna             ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    do case 
       case nOPCAO=0 .or. nOPCAO=6; exit 
       case nOpcao==1; NFISCAL() 

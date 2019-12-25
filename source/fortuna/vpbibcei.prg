@@ -1807,13 +1807,13 @@ nNumero:= IF( nNumero==Nil, 0, nNumero+1 )
 lIndexForce:= IF( lIndexForce == Nil, .F., lIndexForce )
 IF nNumero==0
    cCorRes:= SetColor( "15/01" )
-   Scroll( 24, 15, 24, 79 )
+   //Scroll( 24, 15, 24, 79 )
    SetColor( cCorRes )
 ELSEIF nNumero >= 65
    nNumero:= -1
 ELSE
-   @ 24,00 Say "���������������" Color "15/01"
-   @ 24,15 Say Repl( "�", nNumero ) + "  " + Repl( "�", 63 - nNumero ) Color "07/03"
+   //@ 24,00 Say "���������������" Color "15/01"
+   //@ 24,15 Say Repl( "�", nNumero ) + "  " + Repl( "�", 63 - nNumero ) Color "07/03"
 ENDIF
 /* Seleciona Area que foi passada como parametro */
 DBSelectAr( nDBF )

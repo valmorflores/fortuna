@@ -28,17 +28,17 @@ Public smBUSCA:={{" 1 Codigo do vendedor ","Pesquisa pelo codigo do vendedor."}
 vpbox(06,24,12,41) 
 whil .t. 
    mensagem("") 
-   aadd(MENULIST,menunew(07,25," 1 Inclusao    ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(07,25," 1 Inclusao    ",2,COR[11],; 
         "Inclusao de vendedores.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(08,25," 2 Alteracao   ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(08,25," 2 Alteracao   ",2,COR[11],; 
         "Alteracao dos dados de vendedores.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(09,25," 3 Verificacao ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(09,25," 3 Verificacao ",2,COR[11],; 
         "Verificacao dos dados cadastrais dos vendedores.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(10,25," 4 Exclusao    ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(10,25," 4 Exclusao    ",2,COR[11],; 
         "Exclusao dos dados dos vendedores.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(11,25," 0 Retorna     ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(11,25," 0 Retorna     ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    do case 
       case nOPCAO=0 .or. nOPCAO=5; exit 
       case nOPCAO=1; VenInclusao() 

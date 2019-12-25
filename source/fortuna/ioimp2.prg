@@ -1,10 +1,10 @@
 // ## CL2HB.EXE - Converted
 #include "vpf.ch"
-#INCLUDE "Common.Ch" 
+ 
 
-#ifdef HARBOUR
+ 
 function ioimp2
-#endif
+
 
 
 LOCAL cArquivo:= SPACE(12) 
@@ -30,19 +30,32 @@ READ
 IF FILE( ALLTRIM( cArquivo ) ) 
    Relatorio( ALLTRIM( cArquivo ) ) 
 ELSE 
-   @ 02,03 SAY "Arquivo nao encontrado neste diret�rio..." 
+   @ 02,03 SAY "Arquivo nao encontrado neste diretório..." 
    INKEY(0) 
 ENDIF 
 SCROLL( 00, 00, 24, 79) 
  
+function DispSelecao( lin, col, aLista, aOpc ) 
+   //06, 09, @aListaOpcoes, @aOpcao )
+   local nOpcao:= 0   
+   @ lin, col say 'Selecione'
+   for i:=1 to len( aLista )
+      @ lin+1, col+1 prompt aLista[i]
+   next
+   menu to nOpcao
+return ( nOpcao > 0 )
  
-STATIC FUNC Relatorio( cFile ) 
-LOCAL cTela:= SAVESCREEN(00,00,24,79) 
+FUNC Relatorio( cFile ) 
+local nLin
+   LOCAL cTela:= SAVESCREEN(00,00,24,79) 
 IF FILE( ALLTRIM( cFile ) ) 
    Impressao( ALLTRIM( cFile ) ) 
 ELSE 
-   DEVPOS( 24/2, 00 ) 
-   DEVOUT( "Arquivo nao encontrado neste diret�rio..." ) 
+   nLin:= maxrow()/2
+   DEVPOS( nLin, 00 ) 
+   DEVOUT( "Arquivo nao encontrado neste diretório..." ) 
+   DEVPOS( nLin+1, 00 ) 
+   DEVOUT( cFile ) 
    INKEY(0) 
 ENDIF 
 RESTSCREEN( 00, 00, 24, 79, cTela ) 
@@ -223,13 +236,13 @@ WHILE .T.
                    /* Pega a String que sera substituida */ 
                    cSTRING:= SUBSTR( cIMPRESSAO, nPosIni, nQtd + 1 ) 
  
-                   cString:= NToC( cString ) 
+                   //cString:= NToC( cString ) 
  
                    /* Pega tamanho da variavel */ 
                    nLocalTam:= LEN( cSTRING ) 
  
                    Variavel:= SUBSTR( cIMPRESSAO, nPosIni + 1, nQtd - 1 ) 
-                   Variavel:= NToC( Variavel ) 
+                   //Variavel:= NToC( Variavel ) 
  
                    /* Pega o valor que contem a variavel */ 
                    IF AT( "(", cSTRING ) > 0 .OR.; 
@@ -239,7 +252,8 @@ WHILE .T.
                       Variavel:= EVAL( FIELDBLOCK( Variavel ) ) 
                    ENDIF 
  
-                   nVarTam:= LEN( NToC( Variavel ) ) 
+                   nVarTam:= LEN( Variavel ) 
+                   //nVarTam:= LEN( NToC( Variavel ) ) 
  
                    IF nLocalTam > nVarTam 
                       nQuantTirar:= nLocalTam 

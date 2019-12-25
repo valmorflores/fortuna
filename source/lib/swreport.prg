@@ -1,18 +1,16 @@
-
-#Include "INKEY.CH"
-#Include "COMMON.CH"
-#Include "FILEIO.CH"
-#Include "VPF.CH"
+#include "fileio.ch"
+#Include "inkey.ch"
+#Include "../fortuna/vpf.ch"
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ Relatorio
-³ Finalidade  ³ Impressao de relatorio
-³ Parametros  ³ cFile=>Nome do Aruivo
-³ Retorno     ³ Nil
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³ Nil
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ Relatorio
+ï¿½ Finalidade  ï¿½ Impressao de relatorio
+ï¿½ Parametros  ï¿½ cFile=>Nome do Aruivo
+ï¿½ Retorno     ï¿½ Nil
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½ Nil
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 FUNCTION Relatorio( cFile, cDiretorio, lLeFormatos, lFormatar )
 LOCAL cTela:= SAVESCREEN(00,00,24,79), lRelatorio:= .T.
@@ -44,6 +42,7 @@ IF AT( "NFISCAL", Upper( cFile ) ) > 0
 ENDIF
 
 IF FILE( ALLTRIM( cDiretorio - _PATH_SEPARATOR - cFile ) )
+   ajuda( 'Relatorio: ' + cDiretorio - _PATH_SEPARATOR - cFile )
    Impressao( ALLTRIM( cDiretorio - _PATH_SEPARATOR - cFile ), lLeFormatos, lFormatar )
    IF LastKey()==K_ESC
       lRelatorio:= .F.
@@ -117,8 +116,8 @@ WHILE .T.
 
       /* Faz substituicao de alguns comandos de RTF */
       FOR nCt:= 1 TO Len( aImpressao )
-         aImpressao[ nCt ]:= StrTran( aImpressao[ nCt ], "\'ab", "®" )
-         aImpressao[ nCt ]:= StrTran( aImpressao[ nCt ], "\'bb", "¯" )
+         aImpressao[ nCt ]:= StrTran( aImpressao[ nCt ], "\'ab", "ï¿½" )
+         aImpressao[ nCt ]:= StrTran( aImpressao[ nCt ], "\'bb", "ï¿½" )
          aImpressao[ nCt ]:= StrTran( aImpressao[ nCt ], "\'rdblquote ", ["] )
          aImpressao[ nCt ]:= StrTran( aImpressao[ nCt ], "\'ldblquote ", ["] )
       NEXT
@@ -298,7 +297,7 @@ WHILE .T.
                  ( ( AT( "(", ALLTRIM( aImpressao[ nCt ] ) ) < AT( " ", ALLTRIM( aImpressao[ nCt ] ) ) ) .OR.;
                      AT( " ", ALLTRIM( aImpressao[ nCt ] ) ) <= 0 ) .AND.;
                  !( AT( "$", aImpressao[ nCt ] ) > 0 ) .AND.;
-                 !( AT( "®", aImpressao[ nCt ] ) > 0 ) .AND.;
+                 !( AT( "ï¿½", aImpressao[ nCt ] ) > 0 ) .AND.;
                  !( Left( AllTrim( aImpressao[ nCt ] ), 1 ) == ":" ) .AND.;
                  !( AT( "/*", aImpressao[ nCt ] ) > 0 .OR. AT( "//", aImpressao[ nCt ] ) > 0 )
 
@@ -323,7 +322,7 @@ WHILE .T.
       //Set( 24, cDevTmp )
 
 
-      /* Verifica se ‚ para armazenar em buffer */
+      /* Verifica se ï¿½ para armazenar em buffer */
       IF !lFormatar == Nil
          /* guarda as definicoes em buffer para uma futura utilizacao */
          SWSet( 10101010, aImpressao )
@@ -392,7 +391,7 @@ WHILE .T.
               LEFT( ALLTRIM( aImpRESSAO[nCt] ), 2 ) == "/*" .OR.;
               LEFT( ALLTRIM( aImpRESSAO[nCt] ), 1 ) == "*"
           nComando:= 2
-       ELSEIF AT( "®", aImpRESSAO[nCT] ) > 0
+       ELSEIF AT( "ï¿½", aImpRESSAO[nCT] ) > 0
           nComando:= 3
        ELSEIF LEFT( ALLTRIM( aImpRESSAO[nCt] ), 1 ) == ":"
           nComando:= 5
@@ -430,11 +429,11 @@ WHILE .T.
 
                cIMPRESSAO:= aImpRESSAO[nCT]
 
-               WHILE AT( "®", cIMPRESSAO ) > 0
+               WHILE AT( "ï¿½", cIMPRESSAO ) > 0
 
                    /* Pega as posicoes */
-                   nPosIni:= AT("®", cIMPRESSAO )
-                   nPosFim:= AT("¯", cIMPRESSAO )
+                   nPosIni:= AT("ï¿½", cIMPRESSAO )
+                   nPosFim:= AT("ï¿½", cIMPRESSAO )
                    nQtd:= nPosFim - nPosIni
 
                    /* Pega a String que sera substituida */
@@ -507,7 +506,7 @@ WHILE .T.
                   ENDIF
               NEXT
 
-              /* Verifica se o primeiro parametro nao ‚ um label */
+              /* Verifica se o primeiro parametro nao ï¿½ um label */
               IF ( nCT2:= ASCAN( aImp, ALLTRIM( VIf[1] ) ) ) > 0
                  IF nCt2 > 1 .AND. nCt2 < LEN( aImpRESSAO )
                     nCt:= nCt2 - 1
@@ -519,7 +518,7 @@ WHILE .T.
                     QUIT
                  ENDIF
 
-              /* Testa a condicao, pois ‚ um jump (pulo) condicional */
+              /* Testa a condicao, pois ï¿½ um jump (pulo) condicional */
               ELSE
                  /* Se for a primeira */
                  IF ( Verificador:= Eval( &("{|| "+VIf[1]+"}") ) )
@@ -622,14 +621,14 @@ ENDDO
 RETURN NIL
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ LimpaBuffer
-³ Finalidade  ³ Limpa o buffer utilizado por impressao
-³ Parametros  ³ Nil
-³ Retorno     ³ Nil
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ LimpaBuffer
+ï¿½ Finalidade  ï¿½ Limpa o buffer utilizado por impressao
+ï¿½ Parametros  ï¿½ Nil
+ï¿½ Retorno     ï¿½ Nil
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 FUNCTION LimpaBuffer()
 SWSet( 10101010, "<AREA RESERVADA> - BUFFER DE FORMATACAO File.REP" )
@@ -638,14 +637,14 @@ SWSet( 30303030, "<AREA RESERVADA> - BUFFER DE FORMATACAO File.REP" )
 Return Nil
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ SetVariavel
-³ Finalidade  ³ Set uma variavel de memoria
-³ Parametros  ³ cNome / cExpressao / VarList
-³ Retorno     ³
-³ Programador ³
-³ Data        ³
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ SetVariavel
+ï¿½ Finalidade  ï¿½ Set uma variavel de memoria
+ï¿½ Parametros  ï¿½ cNome / cExpressao / VarList
+ï¿½ Retorno     ï¿½
+ï¿½ Programador ï¿½
+ï¿½ Data        ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 FUNCTION SetVariavel( cNome, cExpressao, aLista )
 Public c___, a___
@@ -747,7 +746,7 @@ nOpcao := __MenuTo( &( bBlock ), cVariavel )
 &cVariavel:= nOpcao
 return nOpcao
 
-FUNCTION SWMenu( cVariavel, Valor )
+FUNCTION SWMenuSpecial( cVariavel, Valor )
 LOCAL nOpcao:= 0
 Priv bBlock:= "{|_1| if( PCount() == 0, "+cVariavel+", "+cVariavel+" := _1)}"
 nOpcao := __MenuTo( &( bBlock ), cVariavel )
@@ -773,14 +772,14 @@ Return Nil
 
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ IMPRESSORA
-³ Finalidade  ³ Desviar para a impressora conforme lista de impressoras
-³ Parametros  ³ nCodigo
-³ Retorno     ³ Nil
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ IMPRESSORA
+ï¿½ Finalidade  ï¿½ Desviar para a impressora conforme lista de impressoras
+ï¿½ Parametros  ï¿½ nCodigo
+ï¿½ Retorno     ï¿½ Nil
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Static Function Impressora( nCodSWSet )
 Local cCor:= SetColor(), nCursor:= SetCursor(),;
@@ -795,15 +794,15 @@ ScreenRest( cTela )
 Return Nil
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ CONDENSADO/NEGRITO/ITALICO/DRAFT
-³ Finalidade  ³ Retornam uma string de formatacao conforme o fonte, portanto
-³             ³ usar num .REP da seguinte forma: Ex. ®Condensado(.T.)¯
-³ Parametros  ³ lSim-Liga/Desliga Condensado/Negrito/Etc.
-³ Retorno     ³ String
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³ Abril/1998
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ CONDENSADO/NEGRITO/ITALICO/DRAFT
+ï¿½ Finalidade  ï¿½ Retornam uma string de formatacao conforme o fonte, portanto
+ï¿½             ï¿½ usar num .REP da seguinte forma: Ex. ï¿½Condensado(.T.)ï¿½
+ï¿½ Parametros  ï¿½ lSim-Liga/Desliga Condensado/Negrito/Etc.
+ï¿½ Retorno     ï¿½ String
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½ Abril/1998
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Function Condensado( lSim )
 Variavel:= IF( lSim, ALLTRIM( CFGIMP->COMP2 ), ALLTRIM( CFGIMP->COMP0 ) )
@@ -833,14 +832,14 @@ Return EVAL( &( "{|| " + Variavel + "}" ) )
 
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ EXPANDIDO
-³ Finalidade  ³ Habilita o expandido da impressora
-³ Parametros  ³ lSim-Sim/Nao
-³ Retorno     ³ String
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ EXPANDIDO
+ï¿½ Finalidade  ï¿½ Habilita o expandido da impressora
+ï¿½ Parametros  ï¿½ lSim-Sim/Nao
+ï¿½ Retorno     ï¿½ String
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Function Expandido( lSim )
 Variavel:= IF( lSim, ALLTRIM( CFGIMP->EXPL ), ALLTRIM( CFGIMP->EXPD ) )
@@ -852,18 +851,18 @@ Return 64
 Function LandScape()
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ BUSCAFONTE
-³ Finalidade  ³ Conforme o device, busca a impressora e o fonte cfe.
-³             ³ o parametro campo para a mesma e retorna uma string
-³             ³ com a configuracao para a impressora e determinado
-³             ³ fonte cfe. as rotinas de chamada acima, Ngrito(),
-³             ³ Condensado()
-³ Parametros  ³ bCampo-Bloco com o nome do campo a retornar
-³ Retorno     ³ cString-String de formatacao de impressora
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³ Abril/1998
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ BUSCAFONTE
+ï¿½ Finalidade  ï¿½ Conforme o device, busca a impressora e o fonte cfe.
+ï¿½             ï¿½ o parametro campo para a mesma e retorna uma string
+ï¿½             ï¿½ com a configuracao para a impressora e determinado
+ï¿½             ï¿½ fonte cfe. as rotinas de chamada acima, Ngrito(),
+ï¿½             ï¿½ Condensado()
+ï¿½ Parametros  ï¿½ bCampo-Bloco com o nome do campo a retornar
+ï¿½ Retorno     ï¿½ cString-String de formatacao de impressora
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½ Abril/1998
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Function BuscaFonte( bCampo )
 Local cCampo, cString:= ""
@@ -894,16 +893,16 @@ Return cString
 
 
 /*****
-ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-³ Funcao      ³ DISPSELECAO
-³ Finalidade  ³ Apresentar menu de selecao para os relatorios
-³ Parametros  ³ nLinIni, nColIni = Linha e coluna de apresentacao
-³             ³ aListaOpcoes = Lista de Opcoes a serem apresentadas
-³             ³ aOpcao = Lista de Opcoes
-³ Retorno     ³ Nil
-³ Programador ³ Valmor Pereira Flores
-³ Data        ³ 06/08/98
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ Funcao      ï¿½ DISPSELECAO
+ï¿½ Finalidade  ï¿½ Apresentar menu de selecao para os relatorios
+ï¿½ Parametros  ï¿½ nLinIni, nColIni = Linha e coluna de apresentacao
+ï¿½             ï¿½ aListaOpcoes = Lista de Opcoes a serem apresentadas
+ï¿½             ï¿½ aOpcao = Lista de Opcoes
+ï¿½ Retorno     ï¿½ Nil
+ï¿½ Programador ï¿½ Valmor Pereira Flores
+ï¿½ Data        ï¿½ 06/08/98
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 Function DispSelecao( nLinIni, nColIni, aListaOpcoes, aOpcaoOld )
   Local cCor:= SetColor(), nCursor:= SetCursor(),;
@@ -931,7 +930,7 @@ Function DispSelecao( nLinIni, nColIni, aListaOpcoes, aOpcaoOld )
       @ nLin, nCol + Len( aListaOpcoes[ nOpcao ][ 1 ] ) Say Space(1)
       FOR nCt:= 2 To Len( aListaOpcoes[ nOpcao ] )
          if nCt == aOpcao[ nOpcao ]
-            cDestaque:= Repl( "º", Len( aListaOpcoes[ nOpcao ][ nCt ] ) )
+            cDestaque:= Repl( "ï¿½", Len( aListaOpcoes[ nOpcao ][ nCt ] ) )
             SetColor( _COR_ALERTA_LETRA )
          else
             cDestaque:= Repl( " ", Len( aListaOpcoes[ nOpcao ][ nCt ] ) )
@@ -986,7 +985,7 @@ Function DispSelecao( nLinIni, nColIni, aListaOpcoes, aOpcaoOld )
     @ nLin, nCol + Len( aListaOpcoes[ nOpcao ][ 1 ] ) Say Space(1)
     FOR nCt:= 2 To Len( aListaOpcoes[ nOpcao ] )
         if nCt == aOpcao[ nOpcao ]
-           cDestaque:= Repl( "º", Len( aListaOpcoes[ nOpcao ][ nCt ] ) )
+           cDestaque:= Repl( "ï¿½", Len( aListaOpcoes[ nOpcao ][ nCt ] ) )
            SetColor( _COR_ALERTA_LETRA )
            cCorSelecao:= "15/04"
         else
@@ -1055,46 +1054,46 @@ Function DispSelecao( nLinIni, nColIni, aListaOpcoes, aOpcaoOld )
 
 
  /*****
- ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
- ³ Funcao      ³ ArrayAtribui
- ³ Finalidade  ³ Atribuicao em array multi-direcional
- ³ Parametros  ³ aArray-Destino
- ³             ³ nPosicao-Posicao a Atribuir
- ³             ³ aConteudo-Array uni-dimensional a atribuir
- ³ Retorno     ³ Nil
- ³ Programador ³ Valmor Pereira Flores
- ³ Data        ³
- ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ ï¿½ Funcao      ï¿½ ArrayAtribui
+ ï¿½ Finalidade  ï¿½ Atribuicao em array multi-direcional
+ ï¿½ Parametros  ï¿½ aArray-Destino
+ ï¿½             ï¿½ nPosicao-Posicao a Atribuir
+ ï¿½             ï¿½ aConteudo-Array uni-dimensional a atribuir
+ ï¿½ Retorno     ï¿½ Nil
+ ï¿½ Programador ï¿½ Valmor Pereira Flores
+ ï¿½ Data        ï¿½
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  */
  Function ArrayAtribui( aArray, nPosicao, aConteudo )
  aArray[ nPosicao ]:= aConteudo
  Return Nil
 
  /*****
- ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
- ³ Funcao      ³ A2rrayAtribui ( o retorno )
- ³ Finalidade  ³ Atribuicao em array multi-direcional
- ³ Parametros  ³ aArray-Destino
- ³             ³ nPosicao-Posicao a Atribuir
- ³             ³ aConteudo-Array uni-dimensional a atribuir
- ³ Retorno     ³ Nil
- ³ Programador ³ Valmor Pereira Flores
- ³ Data        ³
- ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ ï¿½ Funcao      ï¿½ A2rrayAtribui ( o retorno )
+ ï¿½ Finalidade  ï¿½ Atribuicao em array multi-direcional
+ ï¿½ Parametros  ï¿½ aArray-Destino
+ ï¿½             ï¿½ nPosicao-Posicao a Atribuir
+ ï¿½             ï¿½ aConteudo-Array uni-dimensional a atribuir
+ ï¿½ Retorno     ï¿½ Nil
+ ï¿½ Programador ï¿½ Valmor Pereira Flores
+ ï¿½ Data        ï¿½
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  */
  Function A2rrayAtribui( aArray, nPosicao, nPosCol, XConteudo )
  aArray[ nPosicao,nPosCol ]:= XConteudo
  Return Nil
 
  /*****
- ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
- ³ Funcao      ³ SWDispStatus
- ³ Finalidade  ³ Apresentacao do Status - Sim/Nao
- ³ Parametros  ³ lStatus - Status de Apresentacao
- ³ Retorno     ³ lStatus
- ³ Programador ³ Valmor Pereira Flores
- ³ Data        ³ 07/08/1998
- ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+ ï¿½ Funcao      ï¿½ SWDispStatus
+ ï¿½ Finalidade  ï¿½ Apresentacao do Status - Sim/Nao
+ ï¿½ Parametros  ï¿½ lStatus - Status de Apresentacao
+ ï¿½ Retorno     ï¿½ lStatus
+ ï¿½ Programador ï¿½ Valmor Pereira Flores
+ ï¿½ Data        ï¿½ 07/08/1998
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  */
  Function SWDispStatus( lStatus )
  Static lDispStatus
@@ -1162,7 +1161,7 @@ Function FileLe( cFile )
     ENDIF
  #endif
  cFileCriar:= cDiretorio - "report.t00"
- FOR nCt:= 1 TO 50
+ FOR nCt:= 1 TO 90
     cFileX:=  cDiretorio - "report.t" + StrZero( nCt, 2 )
     IF !File( cFileX )
        cFileCriar:= cFileX
@@ -1170,6 +1169,7 @@ Function FileLe( cFile )
  NEXT
  DBSelectArea( 199 )
  DBCreate( cFileCriar, aStr )
+ mensagem( 'Arquivo: ' + cFileCriar )
  Use &cFileCriar
  cArq:= cFile
  IF File( cArq )
@@ -1295,3 +1295,28 @@ Static Function AdicionarFuncoes
  Return aArray
 
 
+/****************************** 
+* Function Name: IOFillText 
+* Purpose: Preenche um vetor com um texto memo 
+* Parameters: cCAMPO, aTEXTO 
+* Programador:Luciano Rosa 
+* Data: 
+**********/ 
+FUNCTION IOFillText( cCAMPO ) 
+   ** 
+   LOCAL Flag := .t., cTEXTO, aTEXTO := {}, FinalLinha 
+   #define CRLF   CHR(13)+CHR(10) 
+   cTEXTO := cCAMPO 
+   While Flag 
+       FinalLinha := AT( CRLF, cTEXTO ) 
+       AADD( aTEXTO,  SUBSTR( cTEXTO, 1 , FinalLinha-1 ) ) 
+       cTEXTO     := SUBSTR( cTEXTO, FinalLinha+2 ) 
+       IF EMPTY ( cTEXTO ) 
+          Flag := .f. 
+       ENDIF 
+   end 
+   RETURN( aTEXTO ) 
+
+
+   FUNCTION ntoc( cVar )
+   return cVar

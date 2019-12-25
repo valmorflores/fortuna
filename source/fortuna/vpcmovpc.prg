@@ -18,21 +18,21 @@ menu de verificacao
  
       Whil .t. 
          Mensagem("") 
-         Aadd(MENULIST,MenuNew(14,25," 1 Producao           ",2,COR[11],; 
+         Aadd(MENULIST,swmenunew(14,25," 1 Producao           ",2,COR[11],; 
               "Entrada, saida e estorno de lancamentos de produtos em estoque PCP.",,,COR[6],.T.)) 
 /* 
-         Aadd(MENULIST,MenuNew(15,25," 2 Andamento Producao ",2,COR[11],; 
+         Aadd(MENULIST,swmenunew(15,25," 2 Andamento Producao ",2,COR[11],; 
               "Entrada, saida e estorno de lancamentos de produtos em estoque PCP.",,,COR[6],.T.)) 
-         Aadd(MENULIST,MenuNew(16,25," 3 Movimentacao Manual",2,COR[11],; 
+         Aadd(MENULIST,swmenunew(16,25," 3 Movimentacao Manual",2,COR[11],; 
               "Entrada, saida e estorno de lancamentos de produtos em estoque PCP.",,,COR[6],.T.)) 
-         AAdd(MENULIST,MenuNew(17,25," 4 Anular          ",2,COR[11],; 
+         AAdd(MENULIST,swmenunew(17,25," 4 Anular          ",2,COR[11],; 
               "Anular lancamentos em estoque PCP.",,,COR[6],.T.)) 
-         Aadd(MENULIST,MenuNew(18,25," 5 Pesquisas       ",2,COR[11],; 
+         Aadd(MENULIST,swmenunew(18,25," 5 Pesquisas       ",2,COR[11],; 
               "Verificacao dos saldos de produtos e movimento geral p/ produto.",,,COR[6],.T.)) 
 */ 
-         Aadd(MENULIST,MenuNew(15,25," 0 Retorna         ",2,COR[11],; 
+         Aadd(MENULIST,swmenunew(15,25," 0 Retorna         ",2,COR[11],; 
               "Retorna ao menu anterior.",,,COR[6],.T.)) 
-         MenuModal(MENULIST,@nOPCAO); MENULIST:={} 
+         swMenu(MENULIST,@nOPCAO); MENULIST:={} 
          Do Case 
             Case nOPCAO=0 .or. nOPCAO=2; Exit 
             Case nOPCAO=1; PCPIniPro() 
@@ -62,17 +62,17 @@ LOCAL nOPCAO:=0
 VPBox( 14, 34, 20, 63 ) 
 Whil .t. 
    Mensagem("") 
-   Aadd(MENULIST,MenuNew(15,35," 1 Saldos em Estoque       ",2,COR[11],; 
+   Aadd(MENULIST,swmenunew(15,35," 1 Saldos em Estoque       ",2,COR[11],; 
         "Verifica saldo atual dos produtos em estoque PCP.",,,COR[6],.T.)) 
-   Aadd(MENULIST,MenuNew(16,35," 2 Individual              ",2,COR[11],; 
+   Aadd(MENULIST,swmenunew(16,35," 2 Individual              ",2,COR[11],; 
         "Verifica o movimento individual de estoque PCP.",,,COR[6],.T.)) 
-   Aadd(MENULIST,MenuNew(17,35," 3 Movimento Geral         ",2,COR[11],; 
+   Aadd(MENULIST,swmenunew(17,35," 3 Movimento Geral         ",2,COR[11],; 
         "Verifica o movimento geral em estoque PCP.",,,COR[6],.T.)) 
-   AAdd(MENULIST,MenuNew(18,35," 4 Movimento por Setor     ",2,COR[11],; 
+   AAdd(MENULIST,swmenunew(18,35," 4 Movimento por Setor     ",2,COR[11],; 
         "Verifica as entradas por fornecedor.",,,COR[6],.T.)) 
-   Aadd(MENULIST,MenuNew(19,35," 0 Retorna                 ",2,COR[11],; 
+   Aadd(MENULIST,swmenunew(19,35," 0 Retorna                 ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   MenuModal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    Do Case 
       Case nOPCAO=0 .or. nOPCAO=5; Exit 
       Case nOPCAO=1; PCPEstV1() 

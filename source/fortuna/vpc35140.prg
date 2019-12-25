@@ -18,17 +18,17 @@ function vpc35140()
    VPBox( 15, 34, 21, 55 ) 
    whil .t. 
       Mensagem("") 
-      aadd( MENULIST, menunew( 16, 35," 1 Por Nota        ",2,COR[11],; 
+      aadd( MENULIST, swmenunew( 16, 35," 1 Por Nota        ",2,COR[11],; 
             "Lancamentos por Produto.",,,COR[6],.T.)) 
-      aadd( MENULIST, menunew( 17, 35," 2 Por Produto     ",2,COR[11],; 
+      aadd( MENULIST, swmenunew( 17, 35," 2 Por Produto     ",2,COR[11],; 
             "Lancamentos por Produto.",,,COR[6],.T.)) 
-      aadd( MENULIST, menunew( 18, 35," 3 Todas Series    ",2,COR[11],; 
+      aadd( MENULIST, swmenunew( 18, 35," 3 Todas Series    ",2,COR[11],; 
             "Visualizacao de Todas as Series.",,,COR[6],.T.)) 
-      aadd( MENULIST, menunew( 19, 35," 4 Series Vendidas ",2,COR[11],; 
+      aadd( MENULIST, swmenunew( 19, 35," 4 Series Vendidas ",2,COR[11],; 
             "Visualizacao de Series Vendidas.",,,COR[6],.T.)) 
-      aadd( MENULIST, menunew( 20, 35," 0 Retorna         ",2,COR[11],; 
+      aadd( MENULIST, swmenunew( 20, 35," 0 Retorna         ",2,COR[11],; 
             "Retorna ao menu anterior.",,,COR[6],.T.)) 
-      menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+      swMenu(MENULIST,@nOPCAO); MENULIST:={} 
       do case 
          case nOpcao == 0 .OR. nOpcao == 5 
               exit 

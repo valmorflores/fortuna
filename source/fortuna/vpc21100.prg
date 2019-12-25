@@ -26,17 +26,17 @@ Public smBUSCA:={{" 1 Cod. Mat. Prima    ","Pesquisa pelo codigo da materia pri
 vpbox(04,44,10,62) 
 whil .t. 
    mensagem("") 
-   aadd(MENULIST,menunew(05,45," 1 Inclusao     ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(05,45," 1 Inclusao     ",2,COR[11],; 
         "Inclusao de Produtos.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(06,45," 2 Alteracao    ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(06,45," 2 Alteracao    ",2,COR[11],; 
         "Alteracao de produtos.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(07,45," 3 Exclusao     ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(07,45," 3 Exclusao     ",2,COR[11],; 
         "Exclusao de produtos.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(08,45," 4 Verificacao  ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(08,45," 4 Verificacao  ",2,COR[11],; 
         "Verificacao de produtos.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(09,45," 0 Retorna      ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(09,45," 0 Retorna      ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    do case 
       case nOPCAO=0 .or. nOPCAO=5; exit 
       case nOPCAO=1; mprinclusao() 

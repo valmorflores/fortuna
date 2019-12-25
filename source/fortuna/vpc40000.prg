@@ -14,21 +14,30 @@
 function vpc40000()
 #endif
 
-
 loca cTELA:=zoom( 11, 34, 21, 54 ), cCOR:=setcolor(), nOPCAO:=0
+
+DBSelectAr( _COD_CLIENTE) 
+If !Used() 
+   lFlag:=.T. 
+   If !file(_VPB_CLIENTE) 
+      aviso(" Arquivo de Clientes inexistente! ")
+      createvpb( _COD_CLIENTE )
+   end
+end
+AbreTabela( _COD_CLIENTE, _VPB_CLIENTE, 'CLI' )
 vpbox( 11, 34, 21, 54 ) 
 whil .t. 
    Mensagem("") 
-   aadd( MENULIST, menunew( 12,35," 1 Edicao         ", 2, COR[11], "Inclusao de clientes.",,, COR[6],.T.)) 
-                  @ 13,35 Say "�������������������"   Color COR[11] 
-   aadd( MenuList, menunew( 14,35," 2 Pesquisa       ", 2, COR[11], "Pesquisa interativa de clientes.",,, COR[6],.T.)) 
-   aadd( MENULIST, menunew( 15,35," 3 Complementos   ", 2, COR[11], "Informacoes complementares de clientes.",,, COR[6],.T.)) 
-   aadd( MENULIST, menunew( 16,35," 4 Crediario      ", 2, COR[11], "Informacoes complementares de clientes.",,, COR[6],.T.)) 
-   aadd( MENULIST, menunew( 17,35," 5 Informacoes    ", 2, COR[11], "Mais Informacoes complementares de clientes.",,, COR[6],.T.)) 
-   aadd( MENULIST, menunew( 18,35," 6 Agenda         ", 2, COR[11], "Agenda do Cliente.",,, COR[6],.T.))
-   aadd( MENULIST, menunew( 19,35," 7 Etiquetas      ", 2, COR[11], "Emissao de etiquetas para clientes.",,, COR[6],.T.)) 
-   aadd( MENULIST, menunew( 20,35," 0 Retorna        ", 2, COR[11], "Retorna ao menu anterior.",,, COR[6],.T.)) 
-   MenuModal(MENULIST,@nOPCAO); MENULIST:={} 
+   aadd( MENULIST, swmenunew( 12,35," 1 Edicao         ", 2, COR[11], "Inclusao de clientes.",,, COR[6],.T.)) 
+                        @ 13,35 Say "-------------------"   Color COR[11] 
+   aadd( MenuList, swmenunew( 14,35," 2 Pesquisa       ", 2, COR[11], "Pesquisa interativa de clientes.",,, COR[6],.T.)) 
+   aadd( MENULIST, swmenunew( 15,35," 3 Complementos   ", 2, COR[11], "Informacoes complementares de clientes.",,, COR[6],.T.)) 
+   aadd( MENULIST, swmenunew( 16,35," 4 Crediario      ", 2, COR[11], "Informacoes complementares de clientes.",,, COR[6],.T.)) 
+   aadd( MENULIST, swmenunew( 17,35," 5 Informacoes    ", 2, COR[11], "Mais Informacoes complementares de clientes.",,, COR[6],.T.)) 
+   aadd( MENULIST, swmenunew( 18,35," 6 Agenda         ", 2, COR[11], "Agenda do Cliente.",,, COR[6],.T.))
+   aadd( MENULIST, swmenunew( 19,35," 7 Etiquetas      ", 2, COR[11], "Emissao de etiquetas para clientes.",,, COR[6],.T.)) 
+   aadd( MENULIST, swmenunew( 20,35," 0 Retorna        ", 2, COR[11], "Retorna ao menu anterior.",,, COR[6],.T.)) 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    do case 
       case nOPCAO=0 .or. nOPCAO= 8; exit 
       case nOPCAO=1; Clientes() 

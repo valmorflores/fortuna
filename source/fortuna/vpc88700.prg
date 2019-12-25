@@ -64,7 +64,7 @@ Function Cotacoes( nCodCliente )
 
    Local dDataPed:=Date(), cTelaData
 
-   SWSet( 5322, .F. )
+   SWSet( _PED_INFO_EXTRA, .F. )
    SetCursor(0)
 
    /* Aparencia da Tela */
@@ -1430,7 +1430,7 @@ Loca lQuantidade:= .F.
               Read
 
               /* Descricao do produto - codigo fabrica */
-              IF SWSet( 5322 )
+              IF SWSet( _PED_INFO_EXTRA )
                  cCodFab:= Space( 15 )
                  cDescricao:= Space( 40 )
                  cTelaRes:= ScreenSave( 0, 0, 24, 79 )
@@ -1470,7 +1470,7 @@ Loca lQuantidade:= .F.
                  nRow:= Len( aPedido )
                  aPedido[ nRow ][ 1 ]:= MPr->CodFab
                  aPedido[ nRow ][ 2 ]:= MPr->Descri
-                 IF SWSet( 5322 )
+                 IF SWSet( _PED_INFO_EXTRA )
                     aPedido[ nRow ][ 1 ]:= cCodFab
                     aPedido[ nRow ][ 2 ]:= cDescricao
                  ENDIF
@@ -1838,10 +1838,10 @@ Static Function VerCodigo( cCodigo, GetList )
    LOCAL nArea:= Select()
    LOCAL nOrdem:= IndexOrd(), nCt:= 0
 
-   SWSet( 5322, .F. )
+   SWSet( _PED_INFO_EXTRA, .F. )
    If LastKey()==K_UP .OR. LastKey()==K_ESC .OR. ;
       ( cGrupo_ + cCodigo ) == "0000000"
-      SWSet( 5322, .T. )
+      SWSet( _PED_INFO_EXTRA, .T. )
       For nCt:=1 To Len( GetList )
           GetList[ nCt ]:Display()
       Next

@@ -11,19 +11,19 @@ loca cTELA:=zoom(15,24,21,50), cCOR:=setcolor(), nOPCAO:=0
 vpbox(15,24,21,50) 
 whil .t. 
    mensagem("") 
-   aadd(MENULIST,menunew(16,25," 1 Integracao de Contas ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(16,25," 1 Integracao de Contas ",2,COR[11],; 
         "Integracao de contas a pagar x contas a receber.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(17,25," 2 Consulta             ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(17,25," 2 Consulta             ",2,COR[11],; 
         "Consulta ao cadastro de contas a pagar e contas a receber.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(18,25," 3 Transferencias       ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(18,25," 3 Transferencias       ",2,COR[11],; 
         "Transfere valores entre contas.",,,COR[6],.T.)) 
  
-   aadd(MENULIST,menunew(19,25," 4 Fluxo Mensal         ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(19,25," 4 Fluxo Mensal         ",2,COR[11],; 
         "Transfere valores entre contas.",,,COR[6],.T.)) 
  
-   aadd(MENULIST,menunew(20,25," 0 Retorna              ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(20,25," 0 Retorna              ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    do case 
       case nOPCAO=0 .or. nOPCAO=5; exit 
       case nOPCAO=1; integracao() 

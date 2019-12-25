@@ -25,15 +25,15 @@ Public smBUSCA:={{" 1 Cod. Mat. Prima    ","Pesquisa pelo codigo da materia pri
 vpbox(04,44,09,62) 
 whil .t. 
    mensagem("") 
-   aadd(MENULIST,menunew(05,45," 1 Inclusao     ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(05,45," 1 Inclusao     ",2,COR[11],; 
         "Inclusao de Produtos.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(06,45," 2 Alteracao    ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(06,45," 2 Alteracao    ",2,COR[11],; 
         "Alteracao de produtos.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(07,45," 3 Exclusao     ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(07,45," 3 Exclusao     ",2,COR[11],; 
         "Exclusao de produtos.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(08,45," 0 Retorna      ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(08,45," 0 Retorna      ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    do case 
       case nOPCAO=0 .or. nOPCAO=4; exit 
       case nOPCAO=1; mprinclusao() 
@@ -895,13 +895,13 @@ stat func pesquisa(oPOBJ)
   vpbox(12,45,16,69," Pesquisa ",COR[20],.T.,.F.,COR[19]) 
   setcolor(COR[21]+","+COR[22]) 
   aadd(MENULIST,; 
-  menunew(13,46,smBUSCA[1][1],2,COR[19],smBUSCA[1][2],,,COR[6],.T.)) 
+  swmenunew(13,46,smBUSCA[1][1],2,COR[19],smBUSCA[1][2],,,COR[6],.T.)) 
   aadd(MENULIST,; 
-  menunew(14,46,smBUSCA[2][1],2,COR[19],smBUSCA[2][2],,,COR[6],.T.)) 
+  swmenunew(14,46,smBUSCA[2][1],2,COR[19],smBUSCA[2][2],,,COR[6],.T.)) 
   aadd(MENULIST,; 
-  menunew(15,46," 0 Encerramento       ",2,COR[19],; 
+  swmenunew(15,46," 0 Encerramento       ",2,COR[19],; 
      "Executa a finalizacao da rotina de pesquisa.",,,COR[6],.T.)) 
-  menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+  swMenu(MENULIST,@nOPCAO); MENULIST:={} 
   ajuda("["+_SETAS+"]Movimenta [ENTER]Confirma [ESC]Cancela") 
   oPOBJ:gotop() 
   do case 

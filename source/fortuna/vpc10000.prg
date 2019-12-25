@@ -19,25 +19,25 @@ Local cTELA:=zoom( 08, 14, 18, 34 ), cCOR:=setcolor(), nOPCAO:=0
 VPBox( 08, 14, 18, 34 ) 
 WHILE .T. 
    mensagem("") 
-   aadd(MENULIST,menunew(09,15," 1 Senhas         ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(09,15," 1 Senhas         ",2,COR[11],; 
         "Inclusao, alteracao, verificacao e exclusao de senhas/usuarios.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(10,15," 2 Configuracao   ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(10,15," 2 Configuracao   ",2,COR[11],; 
         "Configuracao do ambiente de trabalho, cores, zoom, etc.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(11,15," 3 Reindexacao    ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(11,15," 3 Reindexacao    ",2,COR[11],; 
         "Reorganizacao dos arquivos.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(12,15," 4 Comunicacao    ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(12,15," 4 Comunicacao    ",2,COR[11],; 
         "Remessa de T�tulos ao Banco / Importar Lista de Precos / Exportar Arquivos.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(13,15," 5 Transferencia  ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(13,15," 5 Transferencia  ",2,COR[11],; 
         "Copias de seguranca.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(14,15," 6 Empresa        ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(14,15," 6 Empresa        ",2,COR[11],; 
         "Copias de seguranca.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(15,15," 7 LOG Execucao   ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(15,15," 7 LOG Execucao   ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(16,15," 8 Limpeza Dados  ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(16,15," 8 Limpeza Dados  ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(17,15," 0 Retorna        ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(17,15," 0 Retorna        ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
  
    // Selecoes de menu 
    do case 
@@ -188,19 +188,19 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
 Local nOpcao:= 0 
 whil .t. 
    mensagem("") 
-   aadd(MENULIST,menunew(02,45," 1 Lista de Precos        ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(02,45," 1 Lista de Precos        ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(03,45," 2 Espelho de Nota Fiscal ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(03,45," 2 Espelho de Nota Fiscal ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(04,45," 3 O. Compra - Remessa    ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(04,45," 3 O. Compra - Remessa    ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(05,45," 4 O. Compra - Retorno    ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(05,45," 4 O. Compra - Retorno    ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(06,45," 5 Promocoes              ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(06,45," 5 Promocoes              ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(07,45," 0 Retorna                ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(07,45," 0 Retorna                ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    do case 
       case nOPCAO=0 .or. nOPCAO=6; exit 
       case nOPCAO=1; iPrecoPanarello() 
@@ -229,13 +229,13 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
 Local nOpcao:= 0 
 whil .t. 
    mensagem("") 
-   aadd(MENULIST,menunew(02,45," 1 Lista de Produtos      ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(02,45," 1 Lista de Produtos      ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(03,45," 2 Lista de Fabricantes   ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(03,45," 2 Lista de Fabricantes   ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(04,45," 0 Retorna                ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(04,45," 0 Retorna                ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    do case 
       case nOPCAO=0 .or. nOPCAO=6; exit 
       case nOPCAO=1; iProdBarros() 
@@ -263,13 +263,13 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
 Local nOpcao:= 0 
 whil .t. 
    mensagem("") 
-   aadd(MENULIST,menunew(02,45," 1 Base de dados          ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(02,45," 1 Base de dados          ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(03,45," 2 Formulas               ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(03,45," 2 Formulas               ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(04,45," 0 Retorna                ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(04,45," 0 Retorna                ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    do case 
       case nOPCAO=0 .or. nOPCAO=3; exit 
       case nOPCAO=1; iGlasBase() 
@@ -297,11 +297,11 @@ local ccor:= setcolor(), ncursor:= setcursor(),;
 local nopcao:= 0 
 whil .t. 
    mensagem("") 
-   aadd(menulist,menunew(02,45," 1 produtos/precos        ",2,cor[11],; 
+   aadd(menulist,swmenunew(02,45," 1 produtos/precos        ",2,cor[11],; 
         "",,,cor[6],.t.)) 
-   aadd(menulist,menunew(03,45," 0 retorna                ",2,cor[11],; 
+   aadd(menulist,swmenunew(03,45," 0 retorna                ",2,cor[11],; 
         "retorna ao menu anterior.",,,cor[6],.t.)) 
-   menumodal(menulist,@nopcao); menulist:={} 
+   swMenu(menulist,@nopcao); menulist:={} 
    do case 
       case nopcao=0 .or. nopcao=3; exit 
       case nopcao=1; icglaspro() 
@@ -329,11 +329,11 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
 Local nOpcao:= 0 
 whil .t. 
    mensagem("") 
-   aadd(MENULIST,menunew(02,45," 1 Base de dados / Precos ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(02,45," 1 Base de dados / Precos ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(03,45," 0 Retorna                ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(03,45," 0 Retorna                ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    do case 
       case nOPCAO=0 .or. nOPCAO=2; exit 
       case nOPCAO=1; RennerPreco() 
@@ -359,13 +359,13 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
 Local nOpcao:= 0 
 whil .t. 
    mensagem("") 
-   aadd(MENULIST,menunew(02,45," 1 Lista de Precos        ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(02,45," 1 Lista de Precos        ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(03,45," 2 Base de dados          ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(03,45," 2 Base de dados          ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(04,45," 0 Retorna                ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(04,45," 0 Retorna                ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    do case 
       case nOPCAO=0 .or. nOPCAO=3; exit 
       case nOPCAO=2; iACSBase() 
@@ -393,17 +393,17 @@ Local cCor:= SetColor(), nCursor:= SetCursor(),;
 Local nOpcao:= 0 
 whil .t. 
    mensagem("") 
-   aadd(MENULIST,menunew( 02, 45," 1 Lista de Precos        ",2,COR[11],; 
+   aadd(MENULIST,swmenunew( 02, 45," 1 Lista de Precos        ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew( 03, 45," 2 Lista de Prod. Novos   ",2,COR[11],; 
+   aadd(MENULIST,swmenunew( 03, 45," 2 Lista de Prod. Novos   ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew( 04, 45," 3 Lista de Fabricantes   ",2,COR[11],; 
+   aadd(MENULIST,swmenunew( 04, 45," 3 Lista de Fabricantes   ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew( 05, 45," 4 Executar ABFCONS.EXE   ",2,COR[11],; 
+   aadd(MENULIST,swmenunew( 05, 45," 4 Executar ABFCONS.EXE   ",2,COR[11],; 
         "Executa sistema de consulta abafarma.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew( 06, 45," 0 Retorna                ",2,COR[11],; 
+   aadd(MENULIST,swmenunew( 06, 45," 0 Retorna                ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    do case 
       case nOPCAO=0 .or. nOPCAO=5; exit 
       case nOPCAO=1; iProdPreAbafar() 
@@ -463,31 +463,31 @@ Local nOpcao:= 0
 SWSet( _GER_BARRAROLAGEM, .F. ) 
 whil .t. 
    mensagem("") 
-   aadd(MENULIST,menunew(02,45," 1 Estoque        - Remessa ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(02,45," 1 Estoque        - Remessa ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(03,45," 2 Estoque        - Retorno ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(03,45," 2 Estoque        - Retorno ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(04,45," 3 Duplicatas     - Remessa ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(04,45," 3 Duplicatas     - Remessa ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(05,45," 4 Duplicatas     - Retorno ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(05,45," 4 Duplicatas     - Retorno ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(06,45," 5 Clientes       - Remessa ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(06,45," 5 Clientes       - Remessa ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(07,45," 6 Clientes       - Retorno ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(07,45," 6 Clientes       - Retorno ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(08,45," 7 Produtos       - Remessa ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(08,45," 7 Produtos       - Remessa ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(09,45," 8 Produtos       - Retorno ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(09,45," 8 Produtos       - Retorno ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(10,45," 9 Pedidos        - Remessa ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(10,45," 9 Pedidos        - Remessa ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(11,45," A Pedidos        - Consulta",2,COR[11],; 
+   aadd(MENULIST,swmenunew(11,45," A Pedidos        - Consulta",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(12,45," B Pedidos        - Retorno ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(12,45," B Pedidos        - Retorno ",2,COR[11],; 
         "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(13,45," 0 Retorna                  ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(13,45," 0 Retorna                  ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    do case 
       case nOPCAO=0 .or. nOPCAO=12; exit 
       case nOPCAO=1; iSWEstoque() 

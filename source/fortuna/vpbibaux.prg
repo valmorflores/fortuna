@@ -471,11 +471,11 @@ Mensagem( "")
 ajuda("["+_SETAS+"]Movimenta [ENTER]Executa") 
 vpbox(12,45,16,69," Pesquisa ",COR[20],.T.,.F.,COR[19]) 
 setcolor(COR[21]+","+COR[22]) 
-aadd(MENULIST,menunew(13,46,smBUSCA[1][1],2,COR[19],smBUSCA[1][2],,,COR[6],.T.)) 
-aadd(MENULIST,menunew(14,46,smBUSCA[2][1],2,COR[19],smBUSCA[2][2],,,COR[6],.T.)) 
-aadd(MENULIST,menunew(15,46," 0 Encerramento       ",2,COR[19],; 
+aadd(MENULIST,swmenunew(13,46,smBUSCA[1][1],2,COR[19],smBUSCA[1][2],,,COR[6],.T.)) 
+aadd(MENULIST,swmenunew(14,46,smBUSCA[2][1],2,COR[19],smBUSCA[2][2],,,COR[6],.T.)) 
+aadd(MENULIST,swmenunew(15,46," 0 Encerramento       ",2,COR[19],; 
    "Executa a finalizacao da rotina de pesquisa.",,,COR[6],.T.)) 
-menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+swMenu(MENULIST,@nOPCAO); MENULIST:={} 
 ajuda("["+_SETAS+"]Movimenta [ENTER]Confirma [ESC]Cancela") 
 oPOBJ:gotop() 
 do case 

@@ -11,9 +11,7 @@
    � Data        � 23/02/1999 
    ��������������� 
    */ 
-#ifdef HARBOUR
 function config()
-#endif
 
    Para nEmp
    local Local1:= screensave(0, 0, 24, 79), Local2:= ; 
@@ -23,9 +21,10 @@ function config()
    // da empresa que se esta para a empresa destinada pela variavel nEMP 
    IF !nEmp==Nil 
       nArea:= Select() 
-      Sele 123 
+      DBSelectAr( 123 ) 
 // ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
-      USE vpceicfg.dat 
+      //USE vpceicfg.dat 
+      USE _VPD_CONFIG
       xdiretorio:= unzipchr( GDIR__ ) 
       IF !nEmp==0 
          IF AT( _PATH_SEPARATOR - "0", xDiretorio ) > 0 
@@ -57,7 +56,8 @@ function config()
    vpbox(0, 0, 24 - 2, 79, " Configuracao de Diret�rios ", _COR_GET_BOX ) 
    sele 124 
 // ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
-   use vpceicfg.dat 
+   //use vpceicfg.dat 
+   USE _VPD_CONFIG
    xdiretorio:= unzipchr(gdir__) 
    set scoreboard (.F.) 
    setcolor( _COR_GET_EDICAO ) 
@@ -73,16 +73,24 @@ function config()
    @ 12, 02 Say "Diretorio Report...: [" + PAD( SWSet( _SYS_DIRREPORT ), 30 ) + "]" 
    @ 14, 02 Say "Empresa Selecionada: [" + cEmpresa + "]" 
    DesligaMouse() 
-   READ 
+   READ
+   DBGOTOP() 
+   if eof()
+      APPEND BLANK
+   end
    replace gdir__ with zipchr(xdiretorio) 
    gravaemdisco() 
    DBCloseArea() 
    set color to W/N 
    set color to (Local2) 
    screenrest(Local1) 
-   return Nil 
+
+return Nil 
  
 
+Function GravaEmDisco()
+   COMMIT
+return .t.
 
 // ## CL2HB.EXE - Converted
 /* 
@@ -514,12 +522,20 @@ if ! file(_VPD_CONFIG)
 endif 
 Sele 99 
 // ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
+//mensagem( 'Pegando configurações')
+//pausa()
 Use _VPD_CONFIG Alias CFG Shared 
 _EMP:=" "+alltrim(unzipchr(DESCRI))+" " 
 _END:=unzipchr(LINE01) 
 _END1:=unzipchr(LINE02) 
 SDIR:=alltrim(unzipchr(SDIR__)) 
 GDIR:=alltrim(unzipchr(GDIR__)) 
+//mensagem( 'GDir:' + GDir)
+//pausa()
+if trim( GDir)==''
+   GDir:= 'dados'
+end
+
 CD:=CDRIVE 
 _COMSENHA:=substr(PARASN,1,1) 
 _COMDATA:=substr(PARASN,2,1) 
@@ -529,7 +545,11 @@ _COMZOOM:=substr(PARASN,5,1)
 _MARGEM:=MARGEM 
 COR={} 
 for WCT:=1 to len(CORESV) 
-    aadd( COR,tran( restbyte(substr(CORESV,WCT,2)),"@R XX/XX" ) ) 
+    cCor:= tran( restbyte(substr(CORESV,WCT,2)),"@R XX/XX" )
+    if (trim(cCor)=='00/00')
+        cCor:= '15/01'
+    end
+    aadd( COR, cCor ) 
     ++WCT 
 next 
 DBCloseArea() 

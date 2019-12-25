@@ -20,17 +20,17 @@ Local cTELA:= Zoom( 12, 14, 18, 35 ), cCOR:= SetColor(), nOpcao:= 1
 VpBox(12,14,18,35)
 WHILE .T.
    Mensagem("")
-   Aadd(MENULIST,MenuNew(13,15," 1 Movimentacao    ",2,COR[11],;
+   Aadd(MENULIST,swmenunew(13,15," 1 Movimentacao    ",2,COR[11],;
         "Entrada, saida e estorno de lancamentos de produtos em estoque.",,,COR[6],.T.))
-   AAdd(MENULIST,MenuNew(14,15," 2 Anular          ",2,COR[11],;
+   AAdd(MENULIST,swmenunew(14,15," 2 Anular          ",2,COR[11],;
         "Anular lancamentos em estoque.",,,COR[6],.T.))
-   Aadd(MENULIST,MenuNew(15,15," 3 Pesquisas       ",2,COR[11],;
+   Aadd(MENULIST,swmenunew(15,15," 3 Pesquisas       ",2,COR[11],;
         "Verificacao dos saldos de produtos e movimento geral p/ produto.",,,COR[6],.T.))
-   AAdd(MENULIST,MenuNew(16,15," 4 Custo Medio     ",2,COR[11],;
+   AAdd(MENULIST,swmenunew(16,15," 4 Custo Medio     ",2,COR[11],;
         "Atualizacao dos custos no mov. de estoque.",,,COR[6],.T.))
-   Aadd(MENULIST,MenuNew(17,15," 0 Retorna         ",2,COR[11],;
+   Aadd(MENULIST,swmenunew(17,15," 0 Retorna         ",2,COR[11],;
         "Retorna ao menu anterior.",,,COR[6],.T.))
-   MenuModal(MENULIST,@nOPCAO); MENULIST:={}
+   swMenu(MENULIST,@nOPCAO); MENULIST:={}
    Do Case
       Case nOPCAO=0 .or. nOPCAO=5; Exit
       Case nOPCAO=1; EstoqueInc()
@@ -59,15 +59,15 @@ LOCAL nOpcao:= 0
 VPBox( 14, 24, 19, 53 )
 Whil .t.
    Mensagem("")
-   Aadd(MENULIST,MenuNew(15,25," 1 Atualiza Custo Medio    ",2,COR[11],;
+   Aadd(MENULIST,swmenunew(15,25," 1 Atualiza Custo Medio    ",2,COR[11],;
         "Verifica saldo atual dos produtos em estoque.",,,COR[6],.T.))
-   Aadd(MENULIST,MenuNew(16,25," 2 Visualiza Custo Medio   ",2,COR[11],;
+   Aadd(MENULIST,swmenunew(16,25," 2 Visualiza Custo Medio   ",2,COR[11],;
         "Verifica o movimento individual de estoque.",,,COR[6],.T.))
-   Aadd(MENULIST,MenuNew(17,25," 3 Monta Saldo Informativo ",2,COR[11],;
+   Aadd(MENULIST,swmenunew(17,25," 3 Monta Saldo Informativo ",2,COR[11],;
         "Ajusta saldo informativo com base no ultimo calculo de Custo Medio.",,,COR[6],.T.))
-   Aadd(MENULIST,MenuNew(18,25," 0 Retorna                 ",2,COR[11],;
+   Aadd(MENULIST,swmenunew(18,25," 0 Retorna                 ",2,COR[11],;
         "Retorna ao menu anterior.",,,COR[6],.T.))
-   MenuModal(MENULIST,@nOPCAO); MENULIST:={}
+   swMenu(MENULIST,@nOPCAO); MENULIST:={}
    Do Case
       Case nOPCAO=0 .or. nOPCAO=4; Exit
       Case nOPCAO=1; CustoMedio()
@@ -87,13 +87,13 @@ LOCAL nOpcao:= 0
 VPBox( 17, 40, 21, 68 )
 Whil .t.
    Mensagem("")
-   Aadd(MENULIST,MenuNew(18,41," 1 Baseado em Lancamentos ",2,COR[11],;
+   Aadd(MENULIST,swmenunew(18,41," 1 Baseado em Lancamentos ",2,COR[11],;
         "Monta Saldo atual dos produtos em estoque.",,,COR[6],.T.))
-   Aadd(MENULIST,MenuNew(19,41," 2 Baseado em Custo Medio ",2,COR[11],;
+   Aadd(MENULIST,swmenunew(19,41," 2 Baseado em Custo Medio ",2,COR[11],;
         "Monta Saldo atual dos produtos em estoque.",,,COR[6],.T.))
-   Aadd(MENULIST,MenuNew(20,41," 0 Retorna                ",2,COR[11],;
+   Aadd(MENULIST,swmenunew(20,41," 0 Retorna                ",2,COR[11],;
         "Retorna ao menu anterior.",,,COR[6],.T.))
-   MenuModal(MENULIST,@nOPCAO); MENULIST:={}
+   swMenu(MENULIST,@nOPCAO); MENULIST:={}
    Do Case
       Case nOPCAO=0 .or. nOPCAO=3; Exit
       Case nOPCAO=1; SaldoConfLanc()  //Saldo conforme lancamentos
@@ -964,21 +964,21 @@ LOCAL nOPCAO:=0
 VPBox( 12, 24, 20, 53 )
 Whil .t.
    Mensagem("")
-   Aadd(MENULIST,MenuNew(13,25," 1 Saldos em Estoque       ",2,COR[11],;
+   Aadd(MENULIST,swmenunew(13,25," 1 Saldos em Estoque       ",2,COR[11],;
         "Verifica saldo atual dos produtos em estoque.",,,COR[6],.T.))
-   Aadd(MENULIST,MenuNew(14,25," 2 Individual              ",2,COR[11],;
+   Aadd(MENULIST,swmenunew(14,25," 2 Individual              ",2,COR[11],;
         "Verifica o movimento individual de estoque.",,,COR[6],.T.))
-   Aadd(MENULIST,MenuNew(15,25," 3 Movimento Geral         ",2,COR[11],;
+   Aadd(MENULIST,swmenunew(15,25," 3 Movimento Geral         ",2,COR[11],;
         "Verifica o movimento geral em estoque.",,,COR[6],.T.))
-   AAdd(MENULIST,MenuNew(16,25," 4 Saidas por Cliente      ",2,COR[11],;
+   AAdd(MENULIST,swmenunew(16,25," 4 Saidas por Cliente      ",2,COR[11],;
         "Verifica as saidas por cliente.",,,COR[6],.T.))
-   AAdd(MENULIST,MenuNew(17,25," 5 Entradas por Fornecedor ",2,COR[11],;
+   AAdd(MENULIST,swmenunew(17,25," 5 Entradas por Fornecedor ",2,COR[11],;
         "Verifica as entradas por fornecedor.",,,COR[6],.T.))
-   AAdd(MENULIST,MenuNew(18,25," 6 Detalhamento            ",2,COR[11],;
+   AAdd(MENULIST,swmenunew(18,25," 6 Detalhamento            ",2,COR[11],;
         "Saidas de Estoque Detalhadas.",,,COR[6],.T.))
-   Aadd(MENULIST,MenuNew(19,25," 0 Retorna                 ",2,COR[11],;
+   Aadd(MENULIST,swmenunew(19,25," 0 Retorna                 ",2,COR[11],;
         "Retorna ao menu anterior.",,,COR[6],.T.))
-   MenuModal(MENULIST,@nOPCAO); MENULIST:={}
+   swMenu(MENULIST,@nOPCAO); MENULIST:={}
    Do Case
       Case nOPCAO=0 .or. nOPCAO=7; Exit
       Case nOPCAO=1; EstoqueV1()

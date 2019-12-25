@@ -23,10 +23,9 @@
 #include "inkey.ch" 
 #include "ptfuncs.ch"
 
-
-#ifdef HARBOUR
+ 
 function swa00000()
-#endif
+ 
 
 
 memvar MENULIST 
@@ -216,18 +215,18 @@ WHILE .t.
  
  
    Scroll( 06, 03, 14, 20 ) 
-   aadd( MENULIST, menunew( 06, 03," 1 Windows       ",2,COR[11],; 
+   aadd( MENULIST, swmenunew( 06, 03," 1 Windows       ",2,COR[11],; 
         "",,,COR[6],.F.)) 
-   aadd( MENULIST, menunew( 07, 03," 2 Linux         ",2,COR[11],; 
+   aadd( MENULIST, swmenunew( 07, 03," 2 Linux         ",2,COR[11],; 
         "",,,COR[6],.F.)) 
-   aadd( MENULIST, menunew( 08, 03," 3 Novell 4.10   ",2,COR[11],; 
+   aadd( MENULIST, swmenunew( 08, 03," 3 Novell 4.10   ",2,COR[11],; 
         "",,,COR[6],.F.)) 
-   aadd( MENULIST, menunew( 09, 03," 4 Personalizada ",2,COR[11],; 
+   aadd( MENULIST, swmenunew( 09, 03," 4 Personalizada ",2,COR[11],; 
         "",,,COR[6],.F.)) 
    @ 13,03 Say Repl( "�", 18 ) Color COR[6] 
-   aadd( MENULIST, menunew(14,03," 0 Encerramento  ",2,COR[11],; 
+   aadd( MENULIST, swmenunew(14,03," 0 Encerramento  ",2,COR[11],; 
         "Execucao da finalizacao do programa.",,,COR[6],.F.)) 
-   menumodal(MENULIST,@nTipoAtualizacao ); MENULIST:={} 
+   swMenu(MENULIST,@nTipoAtualizacao ); MENULIST:={} 
  
    DO CASE 
       CASE nTipoAtualizacao==5 .OR. LastKey()==K_ESC .OR. ; 
@@ -286,23 +285,23 @@ WHILE .t.
  
            SetOpcao( MenuList, 0 ) 
            Set( _SET_DELIMITERS, .T. ) 
-           aadd( MENULIST, menunew(06,03," 1 Configuracoes ",2,COR[11],; 
+           aadd( MENULIST, swmenunew(06,03," 1 Configuracoes ",2,COR[11],; 
                 "",,,COR[6],.F.)) 
-           aadd( MENULIST, menunew(07,03," 2 Executar      ",2,COR[11],; 
+           aadd( MENULIST, swmenunew(07,03," 2 Executar      ",2,COR[11],; 
                 "",,,COR[6],.F.)) 
            @ 08,03 Say Repl( "�", 18 ) Color COR[6] 
-           aadd( MENULIST, menunew(09,03," 3 CONFIG.SYS    ",2,COR[11],; 
+           aadd( MENULIST, swmenunew(09,03," 3 CONFIG.SYS    ",2,COR[11],; 
                 "",,,COR[6],.F.)) 
-           aadd( MENULIST, menunew(10,03," 4 AUTOEXEC.BAT  ",2,COR[11],; 
+           aadd( MENULIST, swmenunew(10,03," 4 AUTOEXEC.BAT  ",2,COR[11],; 
                 "",,,COR[6],.F.)) 
-           aadd( MENULIST, menunew(11,03," 5 SWCEI.BAT     ",2,COR[11],; 
+           aadd( MENULIST, swmenunew(11,03," 5 SWCEI.BAT     ",2,COR[11],; 
                 "",,,COR[6],.F.)) 
-           aadd( MENULIST, menunew(12,03," 6 PDV.INI       ",2,COR[11],; 
+           aadd( MENULIST, swmenunew(12,03," 6 PDV.INI       ",2,COR[11],; 
                 "",,,COR[6],.F.)) 
            @ 13,03 Say Repl( "�", 18 ) Color COR[6] 
-           aadd( MENULIST, menunew(14,03," 0 Encerramento  ",2,COR[11],; 
+           aadd( MENULIST, swmenunew(14,03," 0 Encerramento  ",2,COR[11],; 
                 "Execucao da finalizacao do programa.",,,COR[6],.F.)) 
-           menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+           swMenu(MENULIST,@nOPCAO); MENULIST:={} 
            do case 
               case nOPCAO=7 .OR. ( LastKey() == K_ESC .AND. cConfirmaSaida == "SIM" ) 
                    EXIT 

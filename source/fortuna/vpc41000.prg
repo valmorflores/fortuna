@@ -13,7 +13,7 @@
 ���������������
 */
 Function Clientes()
-Local cTELA:=screensave( 0, 0, 24, 79 ), cCOR:=setcolor(),;
+Local cTELA:=screensave( 0, 0, MaxRow(), MaxCol() ), cCOR:=setcolor(),;
    nCURSOR:=setcursor(), oTB, nTecla, lFlag:=.F.,;
    nArea:= Select(), nOrdem:= IndexOrd(),;
    GetList:= {}, nOrd:= IndexOrd(), nReg, nCodigo
@@ -23,14 +23,14 @@ Local nTela:= 1   // Controle da Tela de Edicao Atual
 
    DBSelectAr( _COD_CLIENTE )
    DBLeOrdem()
-   VPBox( 0, 0, 16, 79, " CADASTRO DE CLIENTES ", _COR_GET_BOX )
-   VPBox( 17, 0, 22, 79, , _COR_BROW_BOX )
+   VPBox( 0, 0, 16, MaxCol(), " CADASTRO DE CLIENTES ", _COR_GET_BOX )
+   VPBox( 17, 0, MaxRow()-2, MaxCol(), , _COR_BROW_BOX )
 
    Mensagem( "[INS]Incluir [ENTER]Alterar [DEL]Excluir [TAB]Etiqueta [CTRL+P]Pedido" )
    Ajuda( "[" + Chr( 27 ) + Chr( 26 ) + "]Janelas  [F9]Tela Principal [F8]Informacoes [F11]Tela Resumida [ESC]Sair" )
 
    SetColor( _COR_BROWSE )
-   oTB:= TBrowseDB( 18, 01, 21, 78 )
+   oTB:= TBrowseDB( 18, 01, MaxRow()-3, MaxCol()-1 )
    oTB:AddColumn(tbcolumnnew(,{|| STRZERO( Codigo, 6, 0) + " " +  Descri + IF( !EMPTY( CGCMF_ ), Tran( CGCMF_, "@R 99.999.999/9999-99" ) + IF( !cgcmf( CGCMF_, .T. ), "* ", "  " ), Tran( CPF___, "@R XXX.XXX.XXX-XX" ) + Space( 8 ) ) + Space( 18 ) }))
    oTB:AutoLite:=.F.
    oTB:Dehilite()
@@ -234,15 +234,15 @@ Local nTela:= 1   // Controle da Tela de Edicao Atual
 
    // Linhas corrigidas pelo programa de correcao cl2hb.exe em 19/08/2003
    #ifdef LINUX
-     set index to "&gdir/cliind01.ntx", "&gdir/cliind02.ntx", "&gdir/cliind03.ntx", "&gdir/cliind04.ntx", "&gdir/cliind05.ntx", "&gdir/cliind06.ntx", "&gdir/cliind07.ntx"
+   //  set index to "&gdir/cliind01.ntx", "&gdir/cliind02.ntx", "&gdir/cliind03.ntx", "&gdir/cliind04.ntx", "&gdir/cliind05.ntx", "&gdir/cliind06.ntx", "&gdir/cliind07.ntx"
    #else
-     Set Index To "&GDir\CliInd01.NTX", "&GDir\CliInd02.NTX", "&GDir\CliInd03.NTX", "&GDir\CliInd04.NTX", "&GDir\CliInd05.NTX", "&GDir\CliInd06.NTX", "&GDir\CliInd07.NTX"
+   //  Set Index To "&GDir\CliInd01.NTX", "&GDir\CliInd02.NTX", "&GDir\CliInd03.NTX", "&GDir\CliInd04.NTX", "&GDir\CliInd05.NTX", "&GDir\CliInd06.NTX", "&GDir\CliInd07.NTX"
    #endif
    Return Nil
 
 
 Function CliEdicao( nOperacao, oTab )
-local cTELA:= ScreenSave( 00, 00, 24, 79 ), cCOR:=setcolor(),;
+local cTELA:= ScreenSave( 00, 00, MaxRow(), MaxCol() ), cCOR:=setcolor(),;
       nCURSOR:=setcursor()
 local GetList:= {}
 Local nOrdem:= IndexOrd()
@@ -280,7 +280,6 @@ local cENDERE:=spac(35), cBAIRRO:=spac(25),;
          nRegistro:= RECNO()
       ENDIF
 
-      DBSelectAr( "VEN" )
       DBSelectAr( "CLI" )
       DBSetOrder( 1 )
 

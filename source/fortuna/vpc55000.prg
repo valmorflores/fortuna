@@ -26,12 +26,12 @@ Public smBUSCA:={{" 1 Codigo da N.Fiscal ","Pesquisa p/ codigo da Nota Fiscal."
 vpbox(11,44,17,61) 
 whil .t. 
    mensagem("") 
-   aadd(MENULIST,menunew(12,45," 1 Inclusao    ",2,COR[11], "Lancamento manual de notas fiscal.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(13,45," 2 Alteracao   ",2,COR[11], "Alteracao de notas fiscais.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(14,45," 3 Verificacao ",2,COR[11], "Verificacao do cadastro de notas fiscais.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(15,45," 4 Exclusao    ",2,COR[11], "Exclusao de notas fiscais.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(16,45," 0 Retorna     ",2,COR[11], "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   aadd(MENULIST,swmenunew(12,45," 1 Inclusao    ",2,COR[11], "Lancamento manual de notas fiscal.",,,COR[6],.T.)) 
+   aadd(MENULIST,swmenunew(13,45," 2 Alteracao   ",2,COR[11], "Alteracao de notas fiscais.",,,COR[6],.T.)) 
+   aadd(MENULIST,swmenunew(14,45," 3 Verificacao ",2,COR[11], "Verificacao do cadastro de notas fiscais.",,,COR[6],.T.)) 
+   aadd(MENULIST,swmenunew(15,45," 4 Exclusao    ",2,COR[11], "Exclusao de notas fiscais.",,,COR[6],.T.)) 
+   aadd(MENULIST,swmenunew(16,45," 0 Retorna     ",2,COR[11], "Retorna ao menu anterior.",,,COR[6],.T.)) 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    do case 
       case nOPCAO = 0 .or. nOPCAO=5; exit 
       case nOPCAO = 1; nfinclusao() 

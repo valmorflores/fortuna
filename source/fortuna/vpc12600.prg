@@ -14,14 +14,14 @@ Local cTELA:=zoom( 17, 24, 21, 44 ), cCOR:=setcolor(), nOPCAO:=0
 VPBox( 17, 24, 21, 44 ) 
 WHILE .T. 
    mensagem("") 
-   aadd(MENULIST,menunew(18,25," 1 Cotacoes       ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(18,25," 1 Cotacoes       ",2,COR[11],; 
         "Exclusao de informacoes referentes a cotacoes & movimentos de treinamento.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(19,25," 2 Financeiro     ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(19,25," 2 Financeiro     ",2,COR[11],; 
         "Exclusao de contas de financeiro que tenham sido quitadas.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(20,25,; 
+   aadd(MENULIST,swmenunew(20,25,; 
          IIF( EliminaIndices(), " 0 Fechar Sistema ",; 
                                 " 0 Retornar       " ),2,COR[11],"Retorna ao menu anterior.",,,COR[6],.T.)) 
-   MenuModal( MENULIST, @nOPCAO ); MENULIST:={} 
+   swMenu( MENULIST, @nOPCAO ); MENULIST:={} 
  
    // Selecoes de menu 
    do case 

@@ -45,6 +45,15 @@ Loca WTELA, nOPCAO:=0
 Private WUSUARIO:="Usu�rio"
 Private cUserCode:= ""
 Public _FORTUNA_:= "_VERSAO_"+_VER
+Public MenBarraRolagem:= " �� Soft&Ware Inform�tica �� �������� �� (51)471.6249 9134.6249 9112.8364 �� ������������������" 
+Public cConfirmaSaida:= "SIM" 
+Public DiretorioDeDados:= 'dados'
+PUBLIC COR:={"15/01","15/01","15/01","15/01","15/01","15/01","15/01",;
+           "15/01","15/01","15/01","15/01","15/01","15/01","15/01",;
+           "15/01","15/01","15/01","15/01","15/01","15/01","15/01",;
+           "15/01","15/01","15/01","15/01","15/01","15/01","15/01",;
+           "15/01","15/01","15/01","15/01","15/01","15/01","15/01",;
+           "15/01","15/01","15/01","15/01","15/01","15/01","15/01"}
 
 Private GDir:= "<Indefinido>"
 
@@ -53,12 +62,6 @@ Priv Driver:= ""
 Priv cDirEmp
 priv XCONFIG:=.T.
 priv WPESQSN:=WSIMNAO:="", GDIR2SUB:= "DADOS", _VP2:=.t., WHELP:=.f.
-priv COR:={"15/01","15/01","15/01","15/01","15/01","15/01","15/01",;
-           "15/01","15/01","15/01","15/01","15/01","15/01","15/01",;
-           "15/01","15/01","15/01","15/01","15/01","15/01","15/01",;
-           "15/01","15/01","15/01","15/01","15/01","15/01","15/01",;
-           "15/01","15/01","15/01","15/01","15/01","15/01","15/01",;
-           "15/01","15/01","15/01","15/01","15/01","15/01","15/01"}
 
 Priv _EMP, _END, _END1, _END2, _CD, _COMSENHA, _COMDATA, _COMSOM, _MARGEM
 priv _COMSOMBRA, _COMZOOM, nMAXLIN:=24, nMAXCOL:=79
@@ -66,7 +69,7 @@ priv _VIDEO_LIN:=25, _VIDEO_COL:=80
 priv cPODER, nGCODUSER:= 0, cUserGrupo:= "000", nCodUser:= 0
 priv AbreArquivosInicio:= .T.
 priv ForPagPagamento:= "A"
-
+Public ScreenBack:= 'Sistema'
 Public lERRO:=.F.
 
 
@@ -79,6 +82,7 @@ IF cCodigo <> Nil
 ENDIF
 
 SetCancel( .T. )
+mensagem( 'Iniciando o sistema, aguarde...')
 
 set key K_F1         to SelecaoDevice()
 set key K_F6         to ConversorMoedas()
@@ -107,7 +111,7 @@ ENDIF
 
 SWSet( _SYS_DEBUG, Debug )
 
-GDIR:= "DADOS"
+GDIR:= "dados"
 Cor[14]:= "07/07"          /* Cor de Sombra */
 Cor[16]:= "15/01"          /* Cor de Box para menu's */
 Cor[21]:= "15/01"          /* Cor de Browse */
@@ -122,6 +126,7 @@ SWSet( _PED_DETALHE, .F. )
 SWSet( _PED_CONTROLERESERVA, .F. )
 SWSet( _PDV_CAIXACENTRAL, .T. )
 SWSet( _PED_CONTROLES, .F. )
+SWSet( _SYS_MOUSE, .F. )
 
 /* Parametros de custos contabeis */
 SWSet( _GER_CUSTOS_PIS, 0 )
@@ -201,15 +206,16 @@ IF !File( _CONFIG_INI ) .and. !File( "report/config.ini" )
    Fim()
 ENDIF
 
-Relatorio( "config.ini", "report" )     // {SWSet( _DIR_PRINCIPAL ) )}
+//Relatorio( "config.ini", "report" )     // {SWSet( _DIR_PRINCIPAL ) )}
 
-IF !File( SWSet( _SYS_DIRREPORT ) - _PATH_SEPARATOR - "configur.sys" )
+mensagem( SWSet( _SYS_DIRREPORT ) )
+IF !File( SWSet( _SYS_DIRREPORT ) + _PATH_SEPARATOR + "configur.sys" )
    Mensagem( "Arquivo de configuracoes (configur.sys) nao localizado.")
    Pausa()
    Fim()
 ENDIF
 
-Relatorio( "configur.sys" )
+//Relatorio( "configur.sys" )
 
 /* VERIFICAR A VERSAO ATUAL DO SISTEMA */
 VerVersaoSistema()
@@ -258,9 +264,9 @@ SETBLINK(.F.)
 /* NoCopy() */
 
 WHILE !Diretorio( ALLTRIM( GDir ) )
-   nOpcao:= SWAlerta( "Impossivel acessar informacoes do sistema Fortuna"+;
+   nOpcao:= SWAlerta( "Impossivel acessar informacoes do sistema"+;
            ";Acesso negado ao diretorio " + Alltrim( GDir ) + "...",;
-            { " Finalizar o Programa ", " Alterar Temporariamente " } )
+            { " 1-Finalizar o Programa ", " 2-Alterar Temporariamente " } )
    IF nOpcao==1
       Cls
       Quit
@@ -339,7 +345,7 @@ Debug( "Dados definidos com sucesso em " + GDir )
 
 IF AbreArquivosInicio
    Debug( "Inicio da Abertura de dados..." )
-   Abregrupo( "TODOS_OS_ARQUIVOS" )
+   //Abregrupo( "TODOS_OS_ARQUIVOS" )
 ENDIF
 Inkey( 0.50 )
 

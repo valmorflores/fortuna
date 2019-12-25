@@ -1516,15 +1516,15 @@ Local nOpcao:= 0
   VPBox( 16, 45, 21, 78 ) 
   WHILE .T. 
       mensagem("") 
-      AAdd( MENULIST,menunew(17,46," 1 Registros (Geral)           ", 2, COR[11],; 
+      AAdd( MENULIST,swmenunew(17,46," 1 Registros (Geral)           ", 2, COR[11],; 
            "Verificacao Sintetica de Contas a Receber.",,, COR[6],.T.)) 
-      AAdd( MENULIST,menuNew(18,46," 2 Registros por Cliente       ", 2, COR[11],; 
+      AAdd( MENULIST,swmenunew(18,46," 2 Registros por Cliente       ", 2, COR[11],; 
            "Consulta Por Cliente.",,,COR[6],.T.)) 
-      AAdd( MENULIST,menunew(19,46," 3 Registros por Retorno       ", 2, COR[11],; 
+      AAdd( MENULIST,swmenunew(19,46," 3 Registros por Retorno       ", 2, COR[11],; 
            "Verificacao Sintetica de Contas a Receber.",,, COR[6],.T.)) 
-      AAdd( MENULIST,menunew(20,46," 0 Retorna                     ", 2, COR[11],; 
+      AAdd( MENULIST,swmenunew(20,46," 0 Retorna                     ", 2, COR[11],; 
            "Retorna ao menu anterior.",,,COR[6],.T.)) 
-      menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+      swMenu(MENULIST,@nOPCAO); MENULIST:={} 
       do case 
          case nOPCAO=0 .or. nOPCAO=4; exit 
          case nOPCAO=1 

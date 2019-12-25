@@ -185,7 +185,7 @@ Function SWMenuMake( aMenu, cCor, cCorRealse, lRetorno )
        FOR i:= 1 TO Len( aMenuFormat )
            @ ++nLin, nCol Prompt aMenuFormat[i][1] message aMenuFormat[i][2]
            aadd( MenuList, "" )
-//           aadd( MenuList, menunew( ++nLin, nCol,;
+//           aadd( MenuList, swmenunew( ++nLin, nCol,;
 //                   aMenuFormat[i][1], 2, cCor,;
 //                   aMenuFormat[i][2],,, cCorRealse, .F. ) )
        NEXT
@@ -194,7 +194,7 @@ Function SWMenuMake( aMenu, cCor, cCorRealse, lRetorno )
        @ ++nLin, nCol Prompt "0> Retorna " //aMenuFormat[i][1] message aMenuFormat[i][2]
 
        menu to nOpcao
-//       menumodal( MenuList, @nOPCAO )
+//       swMenu( MenuList, @nOPCAO )
 
        IF nOpcao > 0 .and. nOpcao < Len( MenuList )
           cOpcao:= cOpcao + StrZero( nOpcao, 3, 0 ) + "."

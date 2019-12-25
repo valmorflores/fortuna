@@ -1364,12 +1364,12 @@ Static Function VerCodigo( cCodigo, GetList )
    LOCAL nArea:= Select()
    LOCAL nOrdem:= IndexOrd(), nCt:= 0
 
-   SWSet( 5322, .F. )
+   SWSet( _PED_INFO_EXTRA, .F. )
    If LastKey()==K_UP .OR. LastKey()==K_ESC .OR. ;
       ( cGrupo_ + cCodigo ) == "0000000"
 //      GetList[3]:VarPut( Space( Len( MPr->Descri ) ) )
 //      GetList[4]:VarPut( Space( Len( MPr->Unidad ) ) )
-      SWSet( 5322, .T. )
+      SWSet( _PED_INFO_EXTRA, .T. )
       For nCt:=1 To Len( GetList )
           GetList[ nCt ]:Display()
       Next

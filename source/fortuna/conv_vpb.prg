@@ -1,5 +1,5 @@
 // ## CL2HB.EXE - Converted
-#include "Dbstruct.ch" 
+//#include "Dbstruct.ch" 
 #include "vpf.ch" 
 /* 
    Programador - Valmor P.Flores 

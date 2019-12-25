@@ -18,29 +18,29 @@ loca cTELA:=zoom(05,34,16,54), cCOR:=setcolor(), nOPCAO:=0
 vpbox( 04, 34, 17, 54 ) 
 whil .t. 
    mensagem("") 
-   aadd(MENULIST,menunew(05,35," 1 Materia-Prima  ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(05,35," 1 Materia-Prima  ",2,COR[11],; 
         "Inclusao de materia-prima.",,,COR[6],.F.)) 
-   aadd(MENULIST,menunew(06,35," 2 Composicao     ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(06,35," 2 Composicao     ",2,COR[11],; 
         "Montagem de produtos.",,,COR[6],.F.)) 
-   aadd(MENULIST,menunew(07,35," 3 Servicos       ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(07,35," 3 Servicos       ",2,COR[11],; 
         "Cadastro de servicos.",,,COR[6],.F.)) 
-   aadd(MENULIST,menunew(08,35," 4 Grupos         ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(08,35," 4 Grupos         ",2,COR[11],; 
         "Inclusao, alteracao e exclusao de grupos de classificacao de produtos.",,,COR[6],.F.)) 
-   aadd(MENULIST,menunew(09,35," 5 Similaridade   ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(09,35," 5 Similaridade   ",2,COR[11],; 
         "Similaridade entre produtos.",,,COR[6],.F.)) 
                    @ 10,35 Say "�������������������" 
-   aadd(MENULIST,menunew(11,35," 6 Pesquisas      ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(11,35," 6 Pesquisas      ",2,COR[11],; 
         "Verificacao de produtos, montagem e servicos.",,,COR[6],.F.)) 
                    @ 12,35 Say "�������������������" 
-   aadd(MENULIST,menunew(13,35," 7 Ajustes        ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(13,35," 7 Ajustes        ",2,COR[11],; 
         "Ajuste de saldos em estoque e codigo barras.",,,COR[6],.F.)) 
-   aadd(MENULIST,menunew(14,35," 8 Complemento    ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(14,35," 8 Complemento    ",2,COR[11],; 
         "Alteracao Complementar de Produtos Compostos/Materia-Prima.",,,COR[6],.F.)) 
-   aadd(MENULIST,menunew(15,35," 9 Etiquetas      ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(15,35," 9 Etiquetas      ",2,COR[11],; 
         "Impressao de Etiquetas Com codigo de barras.",,,COR[6],.F.)) 
-   aadd(MENULIST,menunew(16,35," 0 Retorna        ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(16,35," 0 Retorna        ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.F.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    do case 
       case nOPCAO=0 .or. nOPCAO=10; exit 
       case nOPCAO=1 

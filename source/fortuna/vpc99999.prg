@@ -19,37 +19,37 @@ whil .t.
    mensagem("") 
    setcolor(COR[12]) 
    set decimals to 2 
-   aadd( MENULIST,menunew(06,15," 1 Clientes              ",2,COR[11],; 
+   aadd( MENULIST,swmenunew(06,15," 1 Clientes              ",2,COR[11],; 
         "Relacao de clientes, etiquetas, ficha financeira.",,,COR[6],.T.)) 
-   aadd( MENULIST,menunew(07,15," 2 Fornecedores          ",2,COR[11],; 
+   aadd( MENULIST,swmenunew(07,15," 2 Fornecedores          ",2,COR[11],; 
         "Relacao de fornecedores e origens.",,,COR[6],.T.)) 
-   aadd( MENULIST,menunew(08,15," 3 Produtos              ",2,COR[11],; 
+   aadd( MENULIST,swmenunew(08,15," 3 Produtos              ",2,COR[11],; 
         "Relacao de produtos, montagens.",,,COR[6],.T.)) 
-   aadd( MENULIST,menunew(09,15," 4 Lista Precos <Compra> ",2,COR[11],; 
+   aadd( MENULIST,swmenunew(09,15," 4 Lista Precos <Compra> ",2,COR[11],; 
         "Relacao de listas de precos de compra.",,,COR[6],.T.)) 
-   aadd( MENULIST,menunew(10,15," 5 Lista Precos <Venda>  ",2,COR[11],; 
+   aadd( MENULIST,swmenunew(10,15," 5 Lista Precos <Venda>  ",2,COR[11],; 
         "Relacao de listas de precos de venda.",,,COR[6],.T.)) 
-   aadd( MENULIST,menunew(11,15," 6 Estoque               ",2,COR[11],; 
+   aadd( MENULIST,swmenunew(11,15," 6 Estoque               ",2,COR[11],; 
         "Relacao do movimento de estoque.",,,COR[6],.T.)) 
-   aadd( MENULIST,menunew(12,15," 7 Contas a Pagar        ",2,COR[11],; 
+   aadd( MENULIST,swmenunew(12,15," 7 Contas a Pagar        ",2,COR[11],; 
         "Controle de contas a pagar.",,,COR[6],.T.)) 
-   aadd( MENULIST,menunew(13,15," 8 Contas a Receber      ",2,COR[11],; 
+   aadd( MENULIST,swmenunew(13,15," 8 Contas a Receber      ",2,COR[11],; 
         "Controle de contas a receber.",,,COR[6],.T.)) 
-   aadd( MENULIST,menunew(14,15," 9 Fluxo Financeiro      ",2,COR[11],; 
+   aadd( MENULIST,swmenunew(14,15," 9 Fluxo Financeiro      ",2,COR[11],; 
         "Movimento de fluxo financeiro.",,,COR[6],.T.)) 
-   aadd( MENULIST,menunew(15,15," A Resumo de Operacoes   ",2,COR[11],; 
+   aadd( MENULIST,swmenunew(15,15," A Resumo de Operacoes   ",2,COR[11],; 
         "Resumo de operacoes de compra/venda de mercadorias.",,,COR[6],.T.)) 
-   aadd( MENULIST,menunew(16,15," B Entradas & Saidas     ",2,COR[11],; 
+   aadd( MENULIST,swmenunew(16,15," B Entradas & Saidas     ",2,COR[11],; 
         "Relacao de Estatisticas",,,COR[6],.T.)) 
-   aadd( MENULIST,menunew(17,15," C Vendas                ",2,COR[11],; 
+   aadd( MENULIST,swmenunew(17,15," C Vendas                ",2,COR[11],; 
         "Relatorios especificos da empresa.",,,COR[6],.T.)) 
-   aadd( MENULIST,menunew(18,15," D Etiquetas Avulsas     ",2,COR[11],; 
+   aadd( MENULIST,swmenunew(18,15," D Etiquetas Avulsas     ",2,COR[11],; 
         "Cadastro de transportadoras.",,,COR[6],.T.)) 
-   aadd( MENULIST,menunew(19,15," E Outros Cadastros...   ",2,COR[11],; 
+   aadd( MENULIST,swmenunew(19,15," E Outros Cadastros...   ",2,COR[11],; 
         "Mais relatorios de itens referentes a cadastros e tabelas.",,,COR[6],.T.)) 
-   aadd( MENULIST,menunew(20,15," 0 Retorna               ",2,COR[11],; 
+   aadd( MENULIST,swmenunew(20,15," 0 Retorna               ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    Do Case 
       Case nOPCAO=0 .or. nOPCAO=15; exit 
       Case nOPCAO=1  ; IMPClientes() 
@@ -111,47 +111,47 @@ Local nOpcao:= 1
       mensagem("") 
       setcolor(COR[12]) 
       set decimals to 2 
-      aadd( MENULIST,menunew(03,35," 1 Origem/Fabricantes    ",2,COR[11],; 
+      aadd( MENULIST,swmenunew(03,35," 1 Origem/Fabricantes    ",2,COR[11],; 
            "Relacao de Fabricantes.",,,COR[6],.T.)) 
-      aadd( MENULIST,menunew(04,35," 2 Vendedores            ",2,COR[11],; 
+      aadd( MENULIST,swmenunew(04,35," 2 Vendedores            ",2,COR[11],; 
            "Relacao de vendedores cadastrados.",,,COR[6],.T.)) 
-      aadd( MENULIST,menunew(05,35," 3 Classificacao Fiscal  ",2,COR[11],; 
+      aadd( MENULIST,swmenunew(05,35," 3 Classificacao Fiscal  ",2,COR[11],; 
            "Relacao de Classificacao fiscal cadastradas.",,,COR[6],.T.)) 
-      aadd( MENULIST,menunew(06,35," 4 Bancos                ",2,COR[11],; 
+      aadd( MENULIST,swmenunew(06,35," 4 Bancos                ",2,COR[11],; 
            "Relacao de Bancos Disponiveis no Sistema.",,,COR[6],.T.)) 
-      aadd( MENULIST,menunew(07,35," 5 Agencias Bancarias    ",2,COR[11],; 
+      aadd( MENULIST,swmenunew(07,35," 5 Agencias Bancarias    ",2,COR[11],; 
            "Relacao de agencias cadastradas.",,,COR[6],.T.)) 
-      aadd( MENULIST,menunew(08,35," 6 Transportadoras       ",2,COR[11],; 
+      aadd( MENULIST,swmenunew(08,35," 6 Transportadoras       ",2,COR[11],; 
            "Relacao de transportadoras do sistema.",,,COR[6],.T.)) 
-      aadd( MENULIST,menunew(09,35," 7 Fichas de Receita     ",2,COR[11],; 
+      aadd( MENULIST,swmenunew(09,35," 7 Fichas de Receita     ",2,COR[11],; 
            "Relacao de Fichas de receita.",,,COR[6],.T.)) 
-      aadd( MENULIST,menunew(10,35," 8 Fichas de Despesa     ",2,COR[11],; 
+      aadd( MENULIST,swmenunew(10,35," 8 Fichas de Despesa     ",2,COR[11],; 
            "Relacao de Fichas de Despesa.",,,COR[6],.T.)) 
-      aadd( MENULIST,menunew(11,35," 9 ICMs/Reducoes         ",2,COR[11],; 
+      aadd( MENULIST,swmenunew(11,35," 9 ICMs/Reducoes         ",2,COR[11],; 
            "Relacao da Tabela de ICMs e Reducoes.",,,COR[6],.T.)) 
-      aadd( MENULIST,menunew(12,35," A Feriados              ",2,COR[11],; 
+      aadd( MENULIST,swmenunew(12,35," A Feriados              ",2,COR[11],; 
            "Resumo de operacoes de compra/venda de mercadorias.",,,COR[6],.T.)) 
-      aadd( MENULIST,menunew(13,35," B Atividades            ",2,COR[11],; 
+      aadd( MENULIST,swmenunew(13,35," B Atividades            ",2,COR[11],; 
            "Relacao do cadastro de atividades.",,,COR[6],.T.)) 
-      aadd( MENULIST,menunew(14,35," C Natureza de Operacoes ",2,COR[11],; 
+      aadd( MENULIST,swmenunew(14,35," C Natureza de Operacoes ",2,COR[11],; 
            "Relatorios de natureza de operacoes.",,,COR[6],.T.)) 
-      aadd( MENULIST,menunew(15,35," D Estados e ICMs        ",2,COR[11],; 
+      aadd( MENULIST,swmenunew(15,35," D Estados e ICMs        ",2,COR[11],; 
            "Relacao de Estados.",,,COR[6],.T.)) 
-      aadd( MENULIST,menunew(16,35," E Historicos de Cobranca",2,COR[11],; 
+      aadd( MENULIST,swmenunew(16,35," E Historicos de Cobranca",2,COR[11],; 
            "Relacao de Historicos de Cobranca Cadastrados.",,,COR[6],.T.)) 
-      aadd( MENULIST,menunew(17,35," F Precos Diferenciados  ",2,COR[11],; 
+      aadd( MENULIST,swmenunew(17,35," F Precos Diferenciados  ",2,COR[11],; 
            "Relacao do cadastro de atividades.",,,COR[6],.T.)) 
-      aadd( MENULIST,menunew(18,35," G Comissoes % & Formulas",2,COR[11],; 
+      aadd( MENULIST,swmenunew(18,35," G Comissoes % & Formulas",2,COR[11],; 
            "Relacao de Percentuais de Comissao e Formulas de Calculo.",,,COR[6],.T.)) 
-      aadd( MENULIST,menunew(19,35," H Formas de Pagamento   ",2,COR[11],; 
+      aadd( MENULIST,swmenunew(19,35," H Formas de Pagamento   ",2,COR[11],; 
            "Relacao de Formas de Pagamento.",,,COR[6],.T.)) 
-      aadd( MENULIST,menunew(20,35," I Operacoes c/ Estoque  ",2,COR[11],;
+      aadd( MENULIST,swmenunew(20,35," I Operacoes c/ Estoque  ",2,COR[11],;
            "Cadastro de Estados.",,,COR[6],.T.)) 
-      aadd( MENULIST,menunew(21,35," J Produtos por Pedidos  ",2,COR[11],;
+      aadd( MENULIST,swmenunew(21,35," J Produtos por Pedidos  ",2,COR[11],;
            "",,,COR[6],.T.))  // gelson 10/08/2004
-      aadd( MENULIST,menunew(22,35," 0 Retorna               ",2,COR[11],;
+      aadd( MENULIST,swmenunew(22,35," 0 Retorna               ",2,COR[11],;
            "Retorna ao menu anterior.",,,COR[6],.T.)) 
-      menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+      swMenu(MENULIST,@nOPCAO); MENULIST:={} 
       Do Case 
          Case nOPCAO=0 .or. nOPCAO=20; exit
          Case nOPCAO=1  ; IMPOutros( "ORIGEM/FABRICANTES", nOpcao ) 

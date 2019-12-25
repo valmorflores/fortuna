@@ -24,8 +24,6 @@ function vpsenha()
 function veratsenha()
   return nil
 
-function setconfig()
-  return nil
 
 function vpc14100()
   return nil

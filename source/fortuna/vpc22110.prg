@@ -918,13 +918,13 @@ stat func pesquisa(oPOBJ)
   vpbox(12,45,16,69," Pesquisa ",M->Cor[20],.T.,.F.,M->Cor[19]) 
   setcolor(M->Cor[21]+","+M->Cor[22]) 
   aadd(MENULIST,; 
-  menunew(13,46,smBUSCA[1][1],2,M->Cor[19],smBUSCA[1][2],,,M->Cor[6],.T.)) 
+  swmenunew(13,46,smBUSCA[1][1],2,M->Cor[19],smBUSCA[1][2],,,M->Cor[6],.T.)) 
   aadd(MENULIST,; 
-  menunew(14,46,smBUSCA[2][1],2,M->Cor[19],smBUSCA[2][2],,,M->Cor[6],.T.)) 
+  swmenunew(14,46,smBUSCA[2][1],2,M->Cor[19],smBUSCA[2][2],,,M->Cor[6],.T.)) 
   aadd(MENULIST,; 
-  menunew(15,46," 0 Encerramento       ",2,M->Cor[19],; 
+  swmenunew(15,46," 0 Encerramento       ",2,M->Cor[19],; 
      "Executa a finalizacao da rotina de pesquisa.",,,M->Cor[6],.T.)) 
-  menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+  swMenu(MENULIST,@nOPCAO); MENULIST:={} 
   ajuda("["+_SETAS+"]Movimenta [ENTER]Confirma [ESC]Cancela") 
   oPOBJ:gotop() 
   do case 
@@ -1410,12 +1410,12 @@ mensagem("")
 ajuda("["+_SETAS+"]Movimenta [ENTER]Executa") 
 vpbox(12,45,17,69," Pesquisa ",M->Cor[20],.T.,.F.,M->Cor[19]) 
 setcolor(M->Cor[21]+","+M->Cor[22]) 
-aadd(MENULIST,menunew(13,46,cOPCOES[1][1],2,M->Cor[19],cOPCOES[1][2],,,M->Cor[6],.T.)) 
-aadd(MENULIST,menunew(14,46,cOPCOES[2][1],2,M->Cor[19],cOPCOES[2][2],,,M->Cor[6],.T.)) 
-aadd(MENULIST,menunew(15,46,cOPCOES[3][1],2,M->Cor[19],cOPCOES[3][2],,,M->Cor[6],.T.)) 
-aadd(MENULIST,menunew(16,46," 0 Encerramento       ",2,M->Cor[19],; 
+aadd(MENULIST,swmenunew(13,46,cOPCOES[1][1],2,M->Cor[19],cOPCOES[1][2],,,M->Cor[6],.T.)) 
+aadd(MENULIST,swmenunew(14,46,cOPCOES[2][1],2,M->Cor[19],cOPCOES[2][2],,,M->Cor[6],.T.)) 
+aadd(MENULIST,swmenunew(15,46,cOPCOES[3][1],2,M->Cor[19],cOPCOES[3][2],,,M->Cor[6],.T.)) 
+aadd(MENULIST,swmenunew(16,46," 0 Encerramento       ",2,M->Cor[19],; 
    "Executa a finalizacao da rotina de pesquisa.",,,M->Cor[6],.T.)) 
-menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+swMenu(MENULIST,@nOPCAO); MENULIST:={} 
 ajuda("["+_SETAS+"]Movimenta [ENTER]Confirma [ESC]Cancela") 
 oPOBJ:gotop() 
 do case 

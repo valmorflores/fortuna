@@ -474,21 +474,21 @@ whil .t.
 
    SetOpcao( MenuList, 0 )
    Set( _SET_DELIMITERS, .T. ) 
-   aadd( MENULIST, menunew(06,03," 1 Gerar Arquivo       ",2,COR[11],; 
+   aadd( MENULIST, swmenunew(06,03," 1 Gerar Arquivo       ",2,COR[11],; 
         "Gerar arquivo compativel com o sistema SINTEGRA do ICMs.",,,COR[6],.F.)) 
-   aadd( MENULIST, menunew(07,03," 2 Definir Parametros  ",2,COR[11],; 
+   aadd( MENULIST, swmenunew(07,03," 2 Definir Parametros  ",2,COR[11],; 
         "Definir parametros para geracao do arquivo.",,,COR[6],.F.)) 
-   aadd( MENULIST, menunew(08,03," 3 Selecionar Empresa  ",2,COR[11],; 
+   aadd( MENULIST, swmenunew(08,03," 3 Selecionar Empresa  ",2,COR[11],; 
         "Selecionar a base de dados de origem.",,,COR[6],.F.)) 
-   aadd( MENULIST, menunew(09,03," 4 Ler arquivo         ",2,COR[11],;
+   aadd( MENULIST, swmenunew(09,03," 4 Ler arquivo         ",2,COR[11],;
         "Recarregar configuracoes e parametros.",,,COR[6],.F.))
-   aadd( MENULIST, menunew(10,03," 5 Editar Mapa Resumo  ",2,COR[11],;
+   aadd( MENULIST, swmenunew(10,03," 5 Editar Mapa Resumo  ",2,COR[11],;
         "Editar resumo de cupons fiscais.",,,COR[6],.F.))
-   aadd( MENULIST, menunew(11,03," 6 Exportar            ",2,COR[11],;
+   aadd( MENULIST, swmenunew(11,03," 6 Exportar            ",2,COR[11],;
         "Exportar para sistema de livros fiscais",,,COR[6],.F.))
-   aadd( MENULIST, menunew(12,03," 0 Encerramento        ",2,COR[11],;
+   aadd( MENULIST, swmenunew(12,03," 0 Encerramento        ",2,COR[11],;
         "Execucao da finalizacao do programa.",,,COR[6],.F.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    do case 
 
       case nOPCAO=7 .OR. ( LastKey() == K_ESC .AND. cConfirmaSaida == "SIM" )

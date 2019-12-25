@@ -25,21 +25,21 @@ function vpc91400()
   vpbox(09,24,15,47) 
   whil .t. 
      mensagem("") 
-     aadd(MENULIST,menunew(10,25," 1 Verif. Individual ",2,COR[11],; 
+     aadd(MENULIST,swmenunew(10,25," 1 Verif. Individual ",2,COR[11],; 
           "Verificacao individual de comissoes.",,,; 
           COR[6],.T.)) 
-     aadd(MENULIST,menunew(11,25," 2 Verif. Totais     ",2,COR[11],; 
+     aadd(MENULIST,swmenunew(11,25," 2 Verif. Totais     ",2,COR[11],; 
           "Verificacao dos totais de comissoes.",,,; 
           COR[6],.T.)) 
-     aadd(MENULIST,menunew(12,25," 3 Baixa             ",2,COR[11],; 
+     aadd(MENULIST,swmenunew(12,25," 3 Baixa             ",2,COR[11],; 
           "Baixa das comissoes pagas.",,,; 
           COR[6],.T.)) 
-     aadd(MENULIST,menunew(13,25," 4 Calcula           ",2,COR[11],; 
+     aadd(MENULIST,swmenunew(13,25," 4 Calcula           ",2,COR[11],; 
           "Calcula as comissoes pagas.",,,; 
           COR[6],.T.)) 
-     aadd(MENULIST,menunew(14,25," 0 Retorna           ",2,COR[11],; 
+     aadd(MENULIST,swmenunew(14,25," 0 Retorna           ",2,COR[11],; 
           "Retorna ao menu anterior.",,,COR[6],.T.)) 
-     menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+     swMenu(MENULIST,@nOPCAO); MENULIST:={} 
      do case 
         case nOPCAO=5 .OR. lastkey()=K_ESC ; exit 
         case nOpcao==1; VerIndividual() 

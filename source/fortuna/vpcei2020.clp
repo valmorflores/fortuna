@@ -1,5 +1,4 @@
 vpcei            sistema - vpcei 
-funcoes
 vpc00000       principal - menu principal do sistema
 vpc10000     utilitarios - menu
 vpc14100     utilitarios - configuracao de cores
@@ -126,6 +125,36 @@ vpc91350        cadastro - tabela de reducao icms
 vpc91800        consulta - contas a pagar / receber
 vpc91900       transferencia entre contas
 vpc88011
+vpc99999
+
 fluxo
 material
 vpcimppe
+funcoes
+vpbibcei
+vpbibaux
+grupos
+conv_vpb
+../lib/swreport                        //ioimp2
+
+ifornece
+icliente
+iproduto
+iprecov
+iprecoc
+ifluxo
+iresumo
+ientsai
+iestoque
+ipagar
+ireceber
+ivendas
+ioutros
+
+clibarra
+
+solucao
+telacfg
+config
+config00
+pesquisa

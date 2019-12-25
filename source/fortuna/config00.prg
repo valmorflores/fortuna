@@ -12,9 +12,8 @@
 � Data        � 
 ��������������� 
 */ 
-#ifdef HARBOUR
 function config00()
-#endif
+
 
 Local cCor:= SetColor(), nCursor:= SetCursor(),;
       cTela:= ScreenSave( 0, 0, 24, 79 ),; 
@@ -47,7 +46,7 @@ whil .t.
    oTAB:colorrect({oTAB:ROWPOS,1,oTAB:ROWPOS,1},{2,1}) 
    whil nextkey()==0 .and. ! oTAB:stabilize() 
    end 
-   VPFundoFraze( 17, 02, 20, 76, ALLTRIM( aMatriz[nRow][2] ) ) 
+   VPFundoFrase( 17, 02, 20, 76, ALLTRIM( aMatriz[nRow][2] ) ) 
    TECLA:=inkey(0) 
    if TECLA==K_ESC   ;exit   ;endif 
    do case 

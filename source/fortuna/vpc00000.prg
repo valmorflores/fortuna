@@ -39,13 +39,13 @@ IF ( nGCodUser == 0 .OR. nGCodUser == 999 ) .AND. cUserCode == Nil
        @ 06,09 Say Alltrim( _EMP )
        @ 07,09 Say _SIS
        @ 10,10 Prompt " Acessar Sistema              "
-       @ 11,10 SAY    "������������������������������"
+       @ 11,10 SAY    "------------------------------"
        @ 12,10 Prompt " Configuracao de Poderes      "
-       @ 13,10 SAY    "������������������������������"
+       @ 13,10 SAY    "------------------------------"
        @ 14,10 Prompt " Usuarios                     "
-       @ 15,10 SAY    "������������������������������"
+       @ 15,10 SAY    "------------------------------"
        @ 16,10 Prompt " Gerador de Relatorios        "
-       @ 17,10 SAY    "������������������������������"
+       @ 17,10 SAY    "------------------------------"
        @ 18,10 Prompt " Finalizar Sistema            "
        Menu To nOpcao
        DO CASE
@@ -151,32 +151,40 @@ whil .t.
    endif
    nLIN:=0
    mensagem("")
+   // valmor: ajustar cor fundo
+   SetColor('07/00')
+   VPTELA()
    ajuda("["+_SETAS+"]Movimenta [ENTER]Executa")
+   //2020
+   cor[11]:='15/01'
+   cor[12]:='14/01'
+   cor[13]:='01/15'
    SetColor( COR[12] + "," + COR[13] )
-
+   ajuda( 'Cor[11]: ' + cor[11] )
    LiberaMemoria()
    MenuList:= {}
    SetOpcao( MenuList, 0 )
    Set( _SET_DELIMITERS, .T. )
-   aadd( MENULIST, menunew(06,03," 1 Utilitarios   ",2,COR[11],;
+   vpBox( 05, 02, 15, 21, nil, cor[11] )
+   aadd( MENULIST, swmenunew(06,03," 1 Utilitarios   ",2,COR[11],;
         "Organizacao de arquivos e configuracoes gerais do sistema.",,,COR[6],.F.))
-   aadd( MENULIST, menunew(07,03," 2 Cadastro      ",2,COR[11],;
+   aadd( MENULIST, swmenunew(07,03," 2 Cadastro      ",2,COR[11],;
         "Cadastros em geral.",,,COR[6],.F.))
-   aadd( MENULIST, menunew(08,03," 3 Estoque       ",2,COR[11],;
+   aadd( MENULIST, swmenunew(08,03," 3 Estoque       ",2,COR[11],;
         "Controle de estoque.",,,COR[6],.F.))
-   aadd( MENULIST, menunew(09,03," 4 Compras       ",2,COR[11],;
+   aadd( MENULIST, swmenunew(09,03," 4 Compras       ",2,COR[11],;
         "Controle de compras.",,,COR[6],.F.))
-   aadd( MENULIST, menunew(10,03," 5 Vendas        ",2,COR[11],;
+   aadd( MENULIST, swmenunew(10,03," 5 Vendas        ",2,COR[11],;
         "Controle de vendas.",,,COR[6],.F.))
-   aadd( MENULIST, menunew(11,03," 6 Financeiro    ",2,COR[11],;
+   aadd( MENULIST, swmenunew(11,03," 6 Financeiro    ",2,COR[11],;
         "Movimento geral de ctas. a pagar e ctas a receber.",,,COR[6],.F.))
-   aadd( MENULIST, menunew(12,03," 7 Servicos      ",2, COR[11],;
+   aadd( MENULIST, swmenunew(12,03," 7 Servicos      ",2, COR[11],;
         "Emissao de relatorios diversos.",,,COR[6],.F.))
-   aadd( MENULIST, menunew(13,03," 8 Relatorios    ",2,COR[11],;
+   aadd( MENULIST, swmenunew(13,03," 8 Relatorios    ",2,COR[11],;
         "Emissao de relatorios diversos.",,,COR[6],.F.))
-   aadd( MENULIST, menunew(14,03," 0 Encerramento  ",2,COR[11],;
+   aadd( MENULIST, swmenunew(14,03," 0 Encerramento  ",2,COR[11],;
         "Execucao da finalizacao do programa.",,,COR[6],.F.))
-   menumodal(MENULIST,@nOPCAO); MENULIST:={}
+   SWMenu(MENULIST,@nOPCAO); MENULIST:={}
    do case
       case nOPCAO=9 .OR. ( LastKey() == K_ESC .AND. cConfirmaSaida == "SIM" )
            IF cConfirmaSaida == "SIM"
@@ -292,19 +300,19 @@ stat func cadastro()
   whil .t.
     MenuList:= 0
     MenuList:= {}
-    aadd( MENULIST, MenuNew( 08, 15, " 1 Clientes             ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de clientes."            ,,, COR[6], .T. ) )
-    aadd( MENULIST, MenuNew( 09, 15, " 2 Fornecedores         ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de fornecedores."        ,,, COR[6], .T. ) )
-    aadd( MENULIST, MenuNew( 10, 15, " 3 Produtos e Servicos  ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de produtos."            ,,, COR[6], .T. ) )
-    aadd( MENULIST, MenuNew( 11, 15, " 4 Origem / Fabricantes ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de origens."             ,,, COR[6], .T. ) )
-    aadd( MENULIST, MenuNew( 12, 15, " 5 Vendedores           ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de vendedores."          ,,, COR[6], .T. ) )
-    aadd( MENULIST, MenuNew( 13, 15, " 6 Classificacao fiscal ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de classificacao fiscal.",,, COR[6], .T. ) )
-    aadd( MENULIST, MenuNew( 14, 15, " 7 Banco/Agen/Contas    ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de bancos/agencias/contas.",,, COR[6], .T. ) )
-    aadd( MENULIST, MenuNew( 15, 15, " 8 Transportadoras      ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de transportadores."     ,,, COR[6], .T. ) )
-    aadd( MENULIST, MenuNew( 16, 15, " 9 Ficha de Movimentos  ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de contas."              ,,, COR[6], .T. ) )
-    aadd( MENULIST, MenuNew( 17, 15, " A Tabelas              ", 2, COR[11],"Tabelas de ICMs / Estados / Historicos, etc."                        ,,, COR[6], .T. ) )
-    aadd( MENULIST, MenuNew( 18, 15, " 0 Retorna              ", 2, COR[11],"Retorna ao menu anterior.",,,COR[6],.T.))
+    aadd( MENULIST, swmenunew( 08, 15, " 1 Clientes             ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de clientes."            ,,, COR[6], .T. ) )
+    aadd( MENULIST, swmenunew( 09, 15, " 2 Fornecedores         ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de fornecedores."        ,,, COR[6], .T. ) )
+    aadd( MENULIST, swmenunew( 10, 15, " 3 Produtos e Servicos  ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de produtos."            ,,, COR[6], .T. ) )
+    aadd( MENULIST, swmenunew( 11, 15, " 4 Origem / Fabricantes ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de origens."             ,,, COR[6], .T. ) )
+    aadd( MENULIST, swmenunew( 12, 15, " 5 Vendedores           ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de vendedores."          ,,, COR[6], .T. ) )
+    aadd( MENULIST, swmenunew( 13, 15, " 6 Classificacao fiscal ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de classificacao fiscal.",,, COR[6], .T. ) )
+    aadd( MENULIST, swmenunew( 14, 15, " 7 Banco/Agen/Contas    ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de bancos/agencias/contas.",,, COR[6], .T. ) )
+    aadd( MENULIST, swmenunew( 15, 15, " 8 Transportadoras      ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de transportadores."     ,,, COR[6], .T. ) )
+    aadd( MENULIST, swmenunew( 16, 15, " 9 Ficha de Movimentos  ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de contas."              ,,, COR[6], .T. ) )
+    aadd( MENULIST, swmenunew( 17, 15, " A Tabelas              ", 2, COR[11],"Tabelas de ICMs / Estados / Historicos, etc."                        ,,, COR[6], .T. ) )
+    aadd( MENULIST, swmenunew( 18, 15, " 0 Retorna              ", 2, COR[11],"Retorna ao menu anterior.",,,COR[6],.T.))
      mensagem("")
-     menumodal(MENULIST,@nOPCAO); MENULIST:= {}
+     swMenu(MENULIST,@nOPCAO); MENULIST:= {}
      IF nOPCAO=0 .or. nOPCAO=11
         exit
      ENDIF
@@ -356,25 +364,25 @@ VPBox( 02, 30, 20, 54 )
 WHILE .T.
 
     /* Preparacao do Menu */
-    AAdd( MENULIST, MenuNew( 03, 31, " 1 ICMs & Reducoes    ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de tabela de [ICMs/Reducao]..."     ,,, COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 04, 31, " 2 Feriados Nacionais ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de feriados do ano."     ,,, COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 05, 31, " 3 Atividades         ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de atividades." , , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 06, 31, " 4 Nat. de Operacao   ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de natureza de operacao." , , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 07, 31, " 5 Estados            ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de estados." , , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 08, 31, " 6 Hist�ricos (Cobr)  ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de hist�ricos." , , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 09, 31, " 7 Precos             ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de tabelas de precos.", , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 10, 31, " 8 Comissoes (%)      ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de tabelas de % de comissoes.", , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 11, 31, " 9 Formas de Pagamento", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de tabela de forma de Pagamento.", , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 12, 31, " A Operacoes          ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de tabela de Operacoes com Estoque.", , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 13, 31, " B Observacoes (NF)   ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de tabela de observacoes na nota fiscal.", , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 14, 31, " C Setores            ", 2, COR[11],"Inclus�o, Altera��o, Verifica��o e Exclus�o de tabela de Setores da Empresa.", , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 15, 31, " D Classes            ", 2, COR[11],"Inclus�o, Altera��o, Verifica��o e Exclus�o de tabela de Classes.", , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 16, 31, " E Cores              ", 2, COR[11],"Inclus�o, Altera��o, Verifica��o e Exclus�o de tabela de Cores.", , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 17, 31, " F Garantia/Validade  ", 2, COR[11],"Inclus�o, Altera��o, Verifica��o e Exclus�o de tabela de Garantia/Validade Produto.", , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 18, 31, " H Mais Tabelas...    ", 2, COR[11],"Menu com mais tabelas.", , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 19, 31, " 0 Retorna            ", 2, COR[11],"Retorna ao menu anterior." , , , COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 03, 31, " 1 ICMs & Reducoes    ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de tabela de [ICMs/Reducao]..."     ,,, COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 04, 31, " 2 Feriados Nacionais ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de feriados do ano."     ,,, COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 05, 31, " 3 Atividades         ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de atividades." , , , COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 06, 31, " 4 Nat. de Operacao   ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de natureza de operacao." , , , COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 07, 31, " 5 Estados            ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de estados." , , , COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 08, 31, " 6 Hist�ricos (Cobr)  ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de hist�ricos." , , , COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 09, 31, " 7 Precos             ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de tabelas de precos.", , , COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 10, 31, " 8 Comissoes (%)      ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de tabelas de % de comissoes.", , , COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 11, 31, " 9 Formas de Pagamento", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de tabela de forma de Pagamento.", , , COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 12, 31, " A Operacoes          ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de tabela de Operacoes com Estoque.", , , COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 13, 31, " B Observacoes (NF)   ", 2, COR[11],"Inclusao, alteracao, verificacao e exclusao de tabela de observacoes na nota fiscal.", , , COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 14, 31, " C Setores            ", 2, COR[11],"Inclus�o, Altera��o, Verifica��o e Exclus�o de tabela de Setores da Empresa.", , , COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 15, 31, " D Classes            ", 2, COR[11],"Inclus�o, Altera��o, Verifica��o e Exclus�o de tabela de Classes.", , , COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 16, 31, " E Cores              ", 2, COR[11],"Inclus�o, Altera��o, Verifica��o e Exclus�o de tabela de Cores.", , , COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 17, 31, " F Garantia/Validade  ", 2, COR[11],"Inclus�o, Altera��o, Verifica��o e Exclus�o de tabela de Garantia/Validade Produto.", , , COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 18, 31, " H Mais Tabelas...    ", 2, COR[11],"Menu com mais tabelas.", , , COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 19, 31, " 0 Retorna            ", 2, COR[11],"Retorna ao menu anterior." , , , COR[6], .T. ) )
 
-    MenuModal(MenuList,@nOpcao); MenuList:= {}
+    swMenu(MenuList,@nOpcao); MenuList:= {}
 
     /* Teste da opcao selecionada */
     DO CASE
@@ -421,12 +429,12 @@ VPBox( 15, 44, 21, 68 )
 WHILE .T.
 
     /* Preparacao do Menu */
-    AAdd( MENULIST, MenuNew( 16, 45, " 1 Moedas             ", 2, COR[11],"Inclus�o, Altera��o, Verifica��o e Exclus�o de tabela de Moedas.", , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 17, 45, " 2 Variacao Cambial   ", 2, COR[11],"Inclus�o, Altera��o, Verifica��o e Exclus�o de tabela de Variacoes.", , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 18, 45, " 3 Criterio/Clientes  ", 2, COR[11],"Estabelece criterios p/ selecao de clientes.", , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 19, 45, " 4 Tipo de Contato    ", 2, COR[11],"Tipo de Contato com clientes.", , , COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 20, 45, " 0 Retorna            ", 2, COR[11],"Retorna ao menu anterior." , , , COR[6], .T. ) )
-    MenuModal( MenuList, @nOpcao ); MenuList:= {}
+    AAdd( MENULIST, swmenunew( 16, 45, " 1 Moedas             ", 2, COR[11],"Inclus�o, Altera��o, Verifica��o e Exclus�o de tabela de Moedas.", , , COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 17, 45, " 2 Variacao Cambial   ", 2, COR[11],"Inclus�o, Altera��o, Verifica��o e Exclus�o de tabela de Variacoes.", , , COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 18, 45, " 3 Criterio/Clientes  ", 2, COR[11],"Estabelece criterios p/ selecao de clientes.", , , COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 19, 45, " 4 Tipo de Contato    ", 2, COR[11],"Tipo de Contato com clientes.", , , COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 20, 45, " 0 Retorna            ", 2, COR[11],"Retorna ao menu anterior." , , , COR[6], .T. ) )
+    swMenu( MenuList, @nOpcao ); MenuList:= {}
 
     /* Teste da opcao selecionada */
     DO CASE
@@ -466,13 +474,13 @@ VPBox( 13, 44, 20, 68 )
 WHILE .T.
 
     /* Preparacao do Menu */
-    AAdd( MENULIST, MenuNew( 14, 45, " 1 Tab. Padrao        ", 2, COR[11],"Tabela de Precos de venda Padr�o..."     ,,, COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 15, 45, " 2 Tab. Diferenciadas ", 2, COR[11],"Tabela de Precos de venda diferenciado."     ,,, COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 16, 45, " 3 Produto x Tabela   ", 2, COR[11],"Lista de Produtos e Margem conforme tabela."     ,,, COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 14, 45, " 1 Tab. Padrao        ", 2, COR[11],"Tabela de Precos de venda Padr�o..."     ,,, COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 15, 45, " 2 Tab. Diferenciadas ", 2, COR[11],"Tabela de Precos de venda diferenciado."     ,,, COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 16, 45, " 3 Produto x Tabela   ", 2, COR[11],"Lista de Produtos e Margem conforme tabela."     ,,, COR[6], .T. ) )
     @ 17,45 Say "���������������������"
-    AAdd( MENULIST, MenuNew( 18, 45, " 4 Copia Tabela       ", 2, COR[11],"Faz um copia da tabela de precos."     ,,, COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 19, 45, " 0 Retorna            ", 2, COR[11],"Retorna ao menu anterior." , , , COR[6], .T. ) )
-    MenuModal(MenuList,@nOpcao); MenuList:= {}
+    AAdd( MENULIST, swmenunew( 18, 45, " 4 Copia Tabela       ", 2, COR[11],"Faz um copia da tabela de precos."     ,,, COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 19, 45, " 0 Retorna            ", 2, COR[11],"Retorna ao menu anterior." , , , COR[6], .T. ) )
+    swMenu(MenuList,@nOpcao); MenuList:= {}
 
     /* Teste da opcao selecionada */
     DO CASE
@@ -508,10 +516,10 @@ cTela1:= Zoom( 18, 44, 22, 68 )
 VPBox( 18, 44, 22, 68 )
 WHILE .T.
     /* Preparacao do Menu */
-    AAdd( MENULIST, MenuNew( 19, 45, " 1 Percentuais        ", 2, COR[11],"Tabela de Percentuais de Comissoes..."     ,,, COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 20, 45, " 2 Formulas Calculos  ", 2, COR[11],"Tabela de Formulas de Calculos de Comissoes."     ,,, COR[6], .T. ) )
-    AAdd( MENULIST, MenuNew( 21, 45, " 0 Retorna            ", 2, COR[11],"Retorna ao menu anterior." , , , COR[6], .T. ) )
-    MenuModal(MenuList,@nOpcao); MenuList:= {}
+    AAdd( MENULIST, swmenunew( 19, 45, " 1 Percentuais        ", 2, COR[11],"Tabela de Percentuais de Comissoes..."     ,,, COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 20, 45, " 2 Formulas Calculos  ", 2, COR[11],"Tabela de Formulas de Calculos de Comissoes."     ,,, COR[6], .T. ) )
+    AAdd( MENULIST, swmenunew( 21, 45, " 0 Retorna            ", 2, COR[11],"Retorna ao menu anterior." , , , COR[6], .T. ) )
+    swMenu(MenuList,@nOpcao); MenuList:= {}
 
     /* Teste da opcao selecionada */
     DO CASE

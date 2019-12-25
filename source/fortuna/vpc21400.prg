@@ -19,15 +19,15 @@ loca cTELA:=zoom(04,34,10,52), cCOR:=setcolor(), nOPCAO:=0
 vpbox(04,34,10,52,"    Manutencao   ") 
 whil .t. 
    mensagem("") 
-   aadd(MENULIST,menunew(06,35," 1 Configuracao ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(06,35," 1 Configuracao ",2,COR[11],; 
         "Configurar os campos para arquivo de produtos.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(07,35," 2 Critica      ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(07,35," 2 Critica      ",2,COR[11],; 
         "Verificacao de erros no arquivo de produtos.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(08,35," 3 Excluidos    ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(08,35," 3 Excluidos    ",2,COR[11],; 
         "Verificacao dos registros excluidos.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(09,35," 0 Retorna      ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(09,35," 0 Retorna      ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    do case 
       case nOPCAO=0 .or. nOPCAO=4; exit 
       case nOPCAO=1; do VPC21410 

@@ -7,21 +7,21 @@ LOCAL cTELA:=zoom(13,24,19,52), cCOR:=setcolor(), nOPCAO:=0
 VPBOX( 13, 24, 19, 52 ) 
 WHILE .T. 
    Mensagem("") 
-   aadd(MENULIST,menunew(14,25," 1 Total Notas Fiscais    ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(14,25," 1 Total Notas Fiscais    ",2,COR[11],; 
         "Total de Notas Fiscais.",,,COR[6],.T.)) 
  
-   aadd(MENULIST,menunew(15,25," 2 Clientes (Individual)  ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(15,25," 2 Clientes (Individual)  ",2,COR[11],; 
         "Estat�sticas de clientes.",,,COR[6],.T.)) 
  
-   aadd(MENULIST,MenuNew(16,25," 3 Clientes (Multiplos)   ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(16,25," 3 Clientes (Multiplos)   ",2,COR[11],; 
         "Estat�sticas de clientes <Multiplos>.",,,COR[6],.T.)) 
 
-   aadd(MENULIST,MenuNew(17,25," 4 Atualizar Estatisticas ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(17,25," 4 Atualizar Estatisticas ",2,COR[11],; 
         "Atualizar as estat�sticas dos clientes.",,,COR[6],.T.)) 
 
-   aadd(MENULIST,menunew(18,25," 0 Retorna                ",2,COR[11],;
+   aadd(MENULIST,swmenunew(18,25," 0 Retorna                ",2,COR[11],;
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    do case 
       case nOPCAO=0 .or. nOPCAO=5; exit 
       case nOPCAO=1; PEstat1() 

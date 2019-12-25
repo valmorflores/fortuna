@@ -19,18 +19,18 @@ function vpcprodu()
    VpBox(11,14,18,37) 
 Whil .t. 
    Mensagem("") 
-   Aadd(MENULIST,MenuNew(12,15," 1 Ficha Atendimento ",2,COR[11],; 
+   Aadd(MENULIST,swmenunew(12,15," 1 Ficha Atendimento ",2,COR[11],; 
         "Trafego de materia prima entre setores.",,,COR[6],.T.)) 
-   Aadd(MENULIST,MenuNew(13,15," 2 Producao          ",2,COR[11],; 
+   Aadd(MENULIST,swmenunew(13,15," 2 Producao          ",2,COR[11],; 
         "Selecao dos itens para inicio da producao.",,,COR[6],.T.)) 
    @ 14,15 Say "����������������������" Color COR[11] 
-   Aadd(MENULIST,MenuNew(15,15," 3 Movimentacao      ",2,COR[11],; 
+   Aadd(MENULIST,swmenunew(15,15," 3 Movimentacao      ",2,COR[11],; 
         "Trafego de materia prima entre setores.",,,COR[6],.T.)) 
-   Aadd(MENULIST,MenuNew(16,15," 4 Pesquisas         ",2,COR[11],; 
+   Aadd(MENULIST,swmenunew(16,15," 4 Pesquisas         ",2,COR[11],; 
         "Busca informacoes sobre o andamento da producao.",,,COR[6],.T.)) 
-   Aadd(MENULIST,MenuNew(17,15," 0 Retorna           ",2,COR[11],; 
+   Aadd(MENULIST,swmenunew(17,15," 0 Retorna           ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   MenuModal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    Do Case 
       Case nOpcao=0 .or. nOpcao=5; Exit 
       Case nOpcao=1; VPC57400() 
@@ -61,13 +61,13 @@ Local cTela:= ScreenSave( 0, 0, 24, 79 ), cCor:= SetColor(),;
   VPBox( 16, 34, 20, 71 ) 
   WHILE .T. 
      Mensagem("") 
-     Aadd(MENULIST,MenuNew(17,35," 1 Consulta Atend. Periodo/Setor   ",2,COR[11],; 
+     Aadd(MENULIST,swmenunew(17,35," 1 Consulta Atend. Periodo/Setor   ",2,COR[11],; 
           "Relacao de Atendimentos por Setor",,,COR[6],.T.)) 
-     Aadd(MENULIST,MenuNew(18,35," 2 Estatistica Atend Por Situacao  ",2,COR[11],; 
+     Aadd(MENULIST,swmenunew(18,35," 2 Estatistica Atend Por Situacao  ",2,COR[11],; 
           "Estatistica de Atendimento por Situacao.",,,COR[6],.T.)) 
-     Aadd(MENULIST,MenuNew(19,35," 0 Retorna                         ",2,COR[11],; 
+     Aadd(MENULIST,swmenunew(19,35," 0 Retorna                         ",2,COR[11],; 
           "Retorna ao menu anterior.",,,COR[6],.T.)) 
-     MenuModal(MENULIST,@nOPCAO); MENULIST:={} 
+     swMenu(MENULIST,@nOPCAO); MENULIST:={} 
      DO CASE 
         CASE nOPCAO=0 .or. nOPCAO=3; Exit 
         CASE nOpcao=1 ;PesqAtd()   // No Programa VPC57500.PRG 
@@ -88,13 +88,13 @@ Local cTela:= ScreenSave( 0, 0, 24, 79 ), cCor:= SetColor(),;
   VPBox( 16, 34, 20, 58 ) 
   WHILE .T. 
      Mensagem("") 
-     Aadd(MENULIST,MenuNew(17,35," 1 Inicio de Producao ",2,COR[11],; 
+     Aadd(MENULIST,swmenunew(17,35," 1 Inicio de Producao ",2,COR[11],; 
           "Ordem de Producao de um produto composto cadastrado.",,,COR[6],.T.)) 
-     Aadd(MENULIST,MenuNew(18,35," 2 N�o Vinculada      ",2,COR[11],; 
+     Aadd(MENULIST,swmenunew(18,35," 2 N�o Vinculada      ",2,COR[11],; 
           "Ordem avulsa, chamado tecnico ou ficha de atendimento.",,,COR[6],.T.)) 
-     Aadd(MENULIST,MenuNew(19,35," 0 Retorna            ",2,COR[11],; 
+     Aadd(MENULIST,swmenunew(19,35," 0 Retorna            ",2,COR[11],; 
           "Retorna ao menu anterior.",,,COR[6],.T.)) 
-     MenuModal(MENULIST,@nOPCAO); MENULIST:={} 
+     swMenu(MENULIST,@nOPCAO); MENULIST:={} 
      DO CASE 
         CASE nOPCAO=0 .or. nOPCAO=3; Exit 
         CASE nOpcao=1 

@@ -20,20 +20,20 @@ loca nOPCAO:=0
 VPBox( 06, 34, 20, 76 )
 whil .t. 
    mensagem("") 
-   AAdd(MENULIST,menunew( 07, 35, " 1 Pre�os Por Produto x Cliente         ", 2, COR[11], "",,,COR[6],.T.)) 
-   AAdd(MENULIST,menunew( 08, 35, " 2 Vendas Por Produto                   ", 2, COR[11], "",,,COR[6],.T.)) 
-   AAdd(MENULIST,menunew( 09, 35, " 3 Notas Por Cliente                    ", 2, COR[11], "",,,COR[6],.T.)) 
-   AAdd(MENULIST,menunew( 10, 35, " 4 Quantidade de Vendas de Cada Produto ", 2, COR[11], "",,,COR[6],.T.)) 
-   AAdd(MENULIST,menunew( 11, 35, " 5 Notas de Venda Emitidas no Periodo   ", 2, COR[11], "",,,COR[6],.T.)) 
-   AAdd(MENULIST,menunew( 12, 35, " 6 Cupons Fiscais Por Cliente           ", 2, COR[11], "",,,COR[6],.T.)) 
-   AAdd(MENULIST,menunew( 13, 35, " 7 Cupons Fiscais Emitidos Por Periodo  ", 2, COR[11], "",,,COR[6],.T.)) 
-   AAdd(MENULIST,menunew( 14, 35, " 8 Lucratividade (Cupons x Preco Compra)", 2, COR[11], "",,,COR[6],.T.)) 
-   AAdd(MENULIST,menunew( 15, 35, " 9 Produtos x Cupons Fiscais            ", 2, COR[11], "",,,COR[6],.T.)) 
-   AAdd(MENULIST,menunew( 16, 35, " A Lucratividade (Notas x Preco Compra) ", 2, COR[11], "",,,COR[6],.T.)) 
-   AAdd(MENULIST,menunew( 17, 35, " B Preco medio de venda x produtos x cup", 2, COR[11], "",,,COR[6],.T.)) 
-   AAdd(MENULIST,menunew( 18, 35, " C Vendas x Estoque (Cupons Fiscais)    ", 2, COR[11], "",,,COR[6],.T.))
-   AAdd(MENULIST,menunew( 19, 35, " 0 Retorna                              ", 2, COR[11], "Retorna ao menu anterior.",,,COR[6],.T.))
-   MenuModal( MenuList, @nOPCAO ); MenuList:= {} 
+   AAdd(MENULIST,swmenunew( 07, 35, " 1 Pre�os Por Produto x Cliente         ", 2, COR[11], "",,,COR[6],.T.)) 
+   AAdd(MENULIST,swmenunew( 08, 35, " 2 Vendas Por Produto                   ", 2, COR[11], "",,,COR[6],.T.)) 
+   AAdd(MENULIST,swmenunew( 09, 35, " 3 Notas Por Cliente                    ", 2, COR[11], "",,,COR[6],.T.)) 
+   AAdd(MENULIST,swmenunew( 10, 35, " 4 Quantidade de Vendas de Cada Produto ", 2, COR[11], "",,,COR[6],.T.)) 
+   AAdd(MENULIST,swmenunew( 11, 35, " 5 Notas de Venda Emitidas no Periodo   ", 2, COR[11], "",,,COR[6],.T.)) 
+   AAdd(MENULIST,swmenunew( 12, 35, " 6 Cupons Fiscais Por Cliente           ", 2, COR[11], "",,,COR[6],.T.)) 
+   AAdd(MENULIST,swmenunew( 13, 35, " 7 Cupons Fiscais Emitidos Por Periodo  ", 2, COR[11], "",,,COR[6],.T.)) 
+   AAdd(MENULIST,swmenunew( 14, 35, " 8 Lucratividade (Cupons x Preco Compra)", 2, COR[11], "",,,COR[6],.T.)) 
+   AAdd(MENULIST,swmenunew( 15, 35, " 9 Produtos x Cupons Fiscais            ", 2, COR[11], "",,,COR[6],.T.)) 
+   AAdd(MENULIST,swmenunew( 16, 35, " A Lucratividade (Notas x Preco Compra) ", 2, COR[11], "",,,COR[6],.T.)) 
+   AAdd(MENULIST,swmenunew( 17, 35, " B Preco medio de venda x produtos x cup", 2, COR[11], "",,,COR[6],.T.)) 
+   AAdd(MENULIST,swmenunew( 18, 35, " C Vendas x Estoque (Cupons Fiscais)    ", 2, COR[11], "",,,COR[6],.T.))
+   AAdd(MENULIST,swmenunew( 19, 35, " 0 Retorna                              ", 2, COR[11], "Retorna ao menu anterior.",,,COR[6],.T.))
+   swMenu( MenuList, @nOPCAO ); MenuList:= {} 
    do case 
       case nOPCAO=0 .or. nOPCAO=13
            EXIT 

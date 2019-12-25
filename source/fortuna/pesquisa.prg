@@ -480,13 +480,13 @@ Static Function UseDBFInfo()
   DBSelectAr( 80 ) 
   If !Used() 
 // ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
-     USE DBF_INF ALIAS DBF SHARED 
-     If !File( "DBFIndice.Ntx" ) 
+     USE dbf_inf.dbf ALIAS DBF SHARED 
+     If !File( "dbfindice.ntx" ) 
 // ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
-        Index On Arquiv To DBFIndice 
+        Index On Arquiv To dbfindice.ntx 
      Else 
 // ## CL2HB-ERRO - Talvez estas linhas ainda necessitem de correcoes, verifique
-        Set Index To DBFIndice 
+        Set Index To dbfindice.ntx
      EndIf 
   EndIf 
   Return( Used() ) 
@@ -510,8 +510,8 @@ Static Function CriaDBFInfo()
                     { "DATA__", "D", 08, 00 },; 
                     { "HORA__", "C", 06, 00 } } 
  
-  If !File( "DBF_INF.DBF" ) 
-     DBCreate( "DBF_INF.DBF", aStruct ) 
+  If !File( "dbf_inf.dbf" ) 
+     DBCreate( "dbf_inf.dbf", aStruct ) 
   EndIf 
   Return Nil 
  

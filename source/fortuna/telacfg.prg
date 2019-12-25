@@ -11,9 +11,7 @@ Atualizacao - Junho/2001
 
 */
 
-#ifdef HARBOUR
 function telacfg()
-#endif
 
 
 Local cTela:= ScreenSave( 0, 0, 24, 79 )
@@ -21,10 +19,13 @@ Local cCor:= SetColor(), aCorRes:= M->COR
 Local aCores, nCt, nTecla 
 Local oTab 
  
-   IF !File( GDir-"\CORES.DBF" ) 
+   if trim( GDir ) == ''
+      GDir:= 'dados'
+   end
+   IF !File( GDir-"/cores.dbf" ) 
       aCores:= {{"DESCRI","C", 15,00},; 
                 {"COR___","C", 60,00}} 
-      DBCreate( GDir-"\CORES.DBF", aCores ) 
+      DBCreate( GDir-"/cores.dbf", aCores ) 
    ENDIF 
  
    /* Abrir arquivo de TODAS AS CORES */ 
@@ -53,7 +54,7 @@ Local oTab
    @ 12,59 Say "["+_SETAS+"]  Movimenta" 
    @ 13,59 Say "[ESC]   Finaliza  " 
  
-   @ 14,59 Say "������������������" 
+   @ 14,59 Say "------------------" 
    @ 15,59 Say "As cores armazena-" Color "07/00" 
    @ 16,59 Say "das na  biblioteca" Color "07/00" 
    @ 17,59 Say "ficarao  disponi- " Color "07/00" 
@@ -88,6 +89,13 @@ Local oTab
          case nTecla==K_PGDN       ;oTab:pagedown() 
          Case nTecla==K_HOME .OR. nTecla==K_CTRL_PGUP ;oTab:gotop() 
          Case nTecla==K_END  .OR. nTecla==K_CTRL_PGDN ;oTab:gobottom() 
+         CASE nTecla==K_F8
+            FOR nCt:= 1 TO Len( Cor ) 
+               if Cor[nCt]=='00/00'
+                  Cor[nCt]:= '15/01'
+               end
+               @ nCt,01 say Cor[ nCt ] 
+            NEXT 
          CASE nTecla==K_DEL 
               IF CCC->( netrlock() ) 
                  CCC->( DBDelete() ) 
@@ -104,21 +112,25 @@ Local oTab
  
          CASE nTecla==K_ENTER 
               DBSelectAr( 124 ) 
-              IF !buscanet(15,{|| dbusearea(.f.,,_VPD_CONFIG,"CFG",.t.,.f.),!neterr()}) 
+              dbusearea(.f.,,_VPD_CONFIG,"CFG",.t.,.f.)
+              IF !Used() 
                  ScreenRest( cTela ) 
                  SetColor( cCor ) 
-                 DBSelectAr( _COD_CLIENTE ) 
+                 DBSelectAr( _COD_CLIENTE )
+                 Aviso( 'Base de configurações fechada: ' + _VPD_CONFIG ) 
                  Return Nil 
               ENDIF 
- 
-              DBGoTop() 
+              mensagem( 'Salvando configurações de cores: ' + _VPD_CONFIG )
+              //DBGoTop() 
               cCorSalva:= "" 
               FOR nCt:= 1 TO Len( Cor ) 
                   cCorSalva:= cCorSalva + TranByte( Cor[ nCt ] ) 
               NEXT 
-              IF netrlock() 
+              IF rlock() 
                  Replace CORESV With cCorSalva 
               ENDIF 
+              mensagem( 'Cor selecionada: ' + cCorSalva )
+              inkey(0)
               XCONFIG:= .T. 
               DBCloseArea() 
  
@@ -413,7 +425,6 @@ Local aOpcoes:= { { " Tela Principal  ", 1 },;
 STAT func tranbyte(STRING) 
 return(chr(val(substr(STRING,1,2))+150)+chr(val(substr(STRING,4,2))+150)) 
  
- 
 Static Function ConfigTela( nOpcao ) 
  
   DispBegin() 
@@ -424,7 +435,7 @@ Static Function ConfigTela( nOpcao )
   @ 04,48 Say " Usuario "                                     Color _COR_USUARIO 
   @ 05,02 Say " <<< Barra de Rolagem <<<                              " Color _COR_BARRA 
   SetColor( _COR_FUNDO ) 
-  VPFundoFraze( 06, 02, 19, 56, ScreenBack ) 
+  VPFundoFrase( 06, 02, 19, 56, ScreenBack ) 
   @ 20,02 Say "                  Mensagem de Auxilio                  " Color _COR_MENSAGEM 
   @ 21,02 Say "                     [Tecla]Funcao                     " Color _COR_AJUDA 
  

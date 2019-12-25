@@ -15,17 +15,17 @@ function vpc91600()
   vpbox(15,34,21,62) 
   whil .t. 
      mensagem("") 
-     aadd(MENULIST,menunew(16,35," 1 Bloquetos              ",2,COR[11],; 
+     aadd(MENULIST,swmenunew(16,35," 1 Bloquetos              ",2,COR[11],; 
           "Inclusao, alteracao, verificacao e exclusao de bloquetos.",,,    COR[6],.T.)) 
-     aadd(MENULIST,menunew(17,35," 2 Bloquetos Programados  ",2,COR[11],; 
+     aadd(MENULIST,swmenunew(17,35," 2 Bloquetos Programados  ",2,COR[11],; 
           "Alteracao, verificacao e exclusao de bloquetos programados.",,,  COR[6],.T.)) 
-     aadd(MENULIST,menunew(18,35," 3 Gerar Automaticamente  ",2,COR[11],; 
+     aadd(MENULIST,swmenunew(18,35," 3 Gerar Automaticamente  ",2,COR[11],; 
           "Gerar bloquetos a partir do cadastro de Contas a Receber.",,,          COR[6],.T.)) 
-     aadd(MENULIST,menunew(19,35," 4 Pesquisas              ",2,COR[11],; 
+     aadd(MENULIST,swmenunew(19,35," 4 Pesquisas              ",2,COR[11],; 
           "Consultar os bloquetos ativos e pendentes.",,,                   COR[6],.T.)) 
-     aadd(MENULIST,menunew(20,35," 0 Retorna                ",2,COR[11],; 
+     aadd(MENULIST,swmenunew(20,35," 0 Retorna                ",2,COR[11],; 
           "Retorna ao menu anterior.",,,COR[6],.T.)) 
-     menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+     swMenu(MENULIST,@nOPCAO); MENULIST:={} 
      do case 
         case nOpcao=5 .OR. lastkey()=K_ESC ; exit 
         case nOpcao==1 ; Bloquetos() 
@@ -43,18 +43,18 @@ return nil
   vpbox(11,53,17,77) 
   whil .t. 
      mensagem("") 
-     aadd(MENULIST,menunew(12,54," 1 Bloq. por Clientes ",2,COR[11],; 
+     aadd(MENULIST,swmenunew(12,54," 1 Bloq. por Clientes ",2,COR[11],; 
           "Consulta bloquetos por clientes.",,,    COR[6],.T.)) 
-     aadd(MENULIST,menunew(13,54," 2 Bloq. por Vencto.  ",2,COR[11],; 
+     aadd(MENULIST,swmenunew(13,54," 2 Bloq. por Vencto.  ",2,COR[11],; 
           "Consulta bloquetos por intervalo de vencimento.",,,  COR[6],.T.)) 
-     aadd(MENULIST,menunew(14,54," 3 Bloq. por periodo  ",2,COR[11],; 
+     aadd(MENULIST,swmenunew(14,54," 3 Bloq. por periodo  ",2,COR[11],; 
           "Consulta bloquetos por periodo de emissao.",,,          COR[6],.T.)) 
-     aadd(MENULIST,menunew(15,54," 4 Bloq. por historico",2,COR[11],; 
+     aadd(MENULIST,swmenunew(15,54," 4 Bloq. por historico",2,COR[11],; 
           "Consulta bloquetos por historicos.",,,                   COR[6],.T.)) 
-     aadd(MENULIST,menunew(16,54," 0 Retorna            ",2,COR[11],; 
+     aadd(MENULIST,swmenunew(16,54," 0 Retorna            ",2,COR[11],; 
           "Retorna ao menu anterior.",,,COR[6],.T.)) 
  
-     menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+     swMenu(MENULIST,@nOPCAO); MENULIST:={} 
      do case 
         case nOpcao=5 .OR. lastkey()=K_ESC ; exit 
         case nOpcao=1; BloqCliente() 

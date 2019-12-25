@@ -20,17 +20,17 @@ Local nOpcao:= 0
    SetColor( COR[12]+","+COR[13] ) 
    VPBox( 11, 35, 18, 53 ) 
    WHILE .T. 
-      aadd(MENULIST,menunew(12,36," 1 Bancos       ",2,COR[11],; 
+      aadd(MENULIST,swmenunew(12,36," 1 Bancos       ",2,COR[11],; 
            "Cadastro de bancos.",,,COR[6],.F.)) 
-      aadd(MENULIST,menunew(13,36," 2 Ag�ncias     ",2,COR[11],; 
+      aadd(MENULIST,swmenunew(13,36," 2 Ag�ncias     ",2,COR[11],; 
            "Cadastros de ag�ncias.",,,COR[6],.F.)) 
       @ 14,36 Say  "�����������������" 
-      aadd(MENULIST,menunew(15,36," 3 Contas       ",2,COR[11],; 
+      aadd(MENULIST,swmenunew(15,36," 3 Contas       ",2,COR[11],; 
            "Lancamento de contas correntes.",,,COR[6],.F.)) 
       @ 16,36 Say  "�����������������" 
-      aadd(MENULIST,menunew(17,36," 0 Retorna      ",2,COR[11],; 
+      aadd(MENULIST,swmenunew(17,36," 0 Retorna      ",2,COR[11],; 
            "Retorna ao menu anterior.",,,COR[6],.F.)) 
-      menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+      swMenu(MENULIST,@nOPCAO); MENULIST:={} 
       do case 
          case nOPCAO==4 .or. nOpcao==0; exit 
          case nOPCAO==1 ;BancoCad() 

@@ -18,21 +18,21 @@ loca cTELA:=zoom(11,24,19,41), cCOR:=setcolor(), nOPCAO:=0
 vpbox(11,24,19,41) 
 whil .t. 
    mensagem("") 
-   aadd(MENULIST,menunew(12,25," 1 Inclusao    ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(12,25," 1 Inclusao    ",2,COR[11],; 
         "Lancamento manual de Ordem de compra.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(13,25," 2 Alteracao   ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(13,25," 2 Alteracao   ",2,COR[11],; 
         "Alteracao de Ordem de compra.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(14,25," 3 Verificacao ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(14,25," 3 Verificacao ",2,COR[11],; 
         "Verificacao do cadastro de Ordem de Compra.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(15,25," 4 Exclusao    ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(15,25," 4 Exclusao    ",2,COR[11],; 
         "Exclusao de Ordem de Compra.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(16,25," 5 Baixa       ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(16,25," 5 Baixa       ",2,COR[11],; 
         "Baixa de Ordens de Compra.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(17,25," 6 Pesquisas   ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(17,25," 6 Pesquisas   ",2,COR[11],; 
         "Verificacao de O. C. pendentes por fornecedor.",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(18,25," 0 Retorna     ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(18,25," 0 Retorna     ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    do case 
       case nOPCAO=0 .or. nOPCAO=7; exit 
       case nOPCAO=1; do VPC59999 
@@ -64,14 +64,14 @@ loca cTELA:=zoom(13,34,21,73), cCOR:=setcolor(), nOPCAO:=0
 vpbox(13,34,21,73) 
 whil .t. 
    mensagem("") 
-   aadd(MENULIST,menunew(14,35," 1 O.C. Pendentes                  ",2,COR[11], "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(15,35," 2 Preco Por Produto x Fornecedor  ",2,COR[11], "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(16,35," 3 O.C. Por Produto                ",2,COR[11], "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(17,35," 4 O.C. Por Fornecedor             ",2,COR[11], "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(18,35," 5 O.C. Emitidas Por Periodo       ",2,COR[11], "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(19,35," 6 O.C. x Pedidos                  ",2,COR[11], "",,,COR[6],.T.)) 
-   aadd(MENULIST,menunew(20,35," 0 Retorna                         ",2,COR[11], "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   aadd(MENULIST,swmenunew(14,35," 1 O.C. Pendentes                  ",2,COR[11], "",,,COR[6],.T.)) 
+   aadd(MENULIST,swmenunew(15,35," 2 Preco Por Produto x Fornecedor  ",2,COR[11], "",,,COR[6],.T.)) 
+   aadd(MENULIST,swmenunew(16,35," 3 O.C. Por Produto                ",2,COR[11], "",,,COR[6],.T.)) 
+   aadd(MENULIST,swmenunew(17,35," 4 O.C. Por Fornecedor             ",2,COR[11], "",,,COR[6],.T.)) 
+   aadd(MENULIST,swmenunew(18,35," 5 O.C. Emitidas Por Periodo       ",2,COR[11], "",,,COR[6],.T.)) 
+   aadd(MENULIST,swmenunew(19,35," 6 O.C. x Pedidos                  ",2,COR[11], "",,,COR[6],.T.)) 
+   aadd(MENULIST,swmenunew(20,35," 0 Retorna                         ",2,COR[11], "Retorna ao menu anterior.",,,COR[6],.T.)) 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
    do case 
       case nOPCAO=0 .or. nOPCAO=7; exit 
       case nOPCAO=1; IMPOrdemCompra() // IMPOC 

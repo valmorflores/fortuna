@@ -24,22 +24,22 @@ whil .t.
  
    mensagem("") 
  
-   aadd( MENULIST, menunew( 16, 28," 1 Extrato           ",2,COR[11],; 
+   aadd( MENULIST, swmenunew( 16, 28," 1 Extrato           ",2,COR[11],; 
          "Extrato.",,,COR[6],.F.)) 
  
-   aadd( MENULIST, menunew( 17, 28," 2 Conveniados       ",2,COR[11],; 
+   aadd( MENULIST, swmenunew( 17, 28," 2 Conveniados       ",2,COR[11],; 
          "Gerar arquivo.",,,COR[6],.F.)) 
  
-   aadd( MENULIST, menunew( 18, 28," 3 Pesquisas         ",2,COR[11],; 
+   aadd( MENULIST, swmenunew( 18, 28," 3 Pesquisas         ",2,COR[11],; 
          "Outras Pesquisas relativas a convenios/conveniados.",,,COR[6],.F.)) 
  
-   aadd( MENULIST, menunew( 19, 28," 4 Comunicacao       ",2,COR[11],; 
+   aadd( MENULIST, swmenunew( 19, 28," 4 Comunicacao       ",2,COR[11],; 
          "Importacao de Arquivos.",,,COR[6],.F.)) 
  
-   aadd( MENULIST, menunew( 20, 28," 0 Retorna           ",2,COR[11],; 
+   aadd( MENULIST, swmenunew( 20, 28," 0 Retorna           ",2,COR[11],; 
          "Inclusao, alteracao e exclusao de grupos de classificacao de produtos.",,,COR[6],.F.)) 
  
-   menumodal(MENULIST,@nOPCAO); MENULIST:={} 
+   swMenu(MENULIST,@nOPCAO); MENULIST:={} 
  
    do case 
       case nOPCAO=0 .or. nOPCAO=5; exit 
