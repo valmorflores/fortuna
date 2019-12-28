@@ -15,8 +15,8 @@ function vpc10000()
 #endif
 
 
-Local cTELA:=zoom( 08, 14, 18, 34 ), cCOR:=setcolor(), nOPCAO:=0 
-VPBox( 08, 14, 18, 34 ) 
+Local cTELA:=zoom( 08, 14, 19, 34 ), cCOR:=setcolor(), nOPCAO:=0 
+VPBox( 08, 14, 19, 34 ) 
 WHILE .T. 
    mensagem("") 
    aadd(MENULIST,swmenunew(09,15," 1 Senhas         ",2,COR[11],; 
@@ -35,13 +35,15 @@ WHILE .T.
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
    aadd(MENULIST,swmenunew(16,15," 8 Limpeza Dados  ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
-   aadd(MENULIST,swmenunew(17,15," 0 Retorna        ",2,COR[11],; 
+   aadd(MENULIST,swmenunew(17,15," 9 API comunicar  ",2,COR[11],; 
+        "Retorna ao menu anterior.",,,COR[6],.T.)) 
+   aadd(MENULIST,swmenunew(18,15," 0 Retorna        ",2,COR[11],; 
         "Retorna ao menu anterior.",,,COR[6],.T.)) 
    swMenu(MENULIST,@nOPCAO); MENULIST:={} 
  
    // Selecoes de menu 
    do case 
-      case nOpcao=0 .or. nOPCAO=9; exit 
+      case nOpcao=0 .or. nOPCAO=10; exit 
       case nOpcao=1; DisplayUsuarios() 
       case nOpcao=2; VPC14300() 
       case nOpcao=3; VPC15000() 
@@ -49,6 +51,7 @@ WHILE .T.
       case nOpcao=5; Transferencia() 
       case nOpcao=6; Empresa() 
       case nOpcao=8; MenuLimpa() 
+      case nOpcao=9; ComunicaAPI()
       case nOpcao=7 
            ViewFile( "LOG.TXT" ) 
            EXIT 

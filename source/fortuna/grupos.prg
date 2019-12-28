@@ -147,7 +147,7 @@ Function AbreGrupo( cGrupo )
    WHILE (.T.) 
       nCnt ++ 
       IF (nCnt > 99)
-          #ifdef HARBOUR
+          #ifdef LINUX
           #else
             IF Diretorio( "TEMP" ) 
                RUN COPY TEMP\CONV_VPB.T?? TEMP\CONV_VPB.SWL > NUL 

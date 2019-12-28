@@ -21,7 +21,7 @@ loca mPARAM_, WSENHA_:=spac(T_SENHA), WCODIGO:=0, WCT, WFLAG:=.t.
 loca lConfirm, lDelimiters 
 priv WSENHAG:="", WCOD:="*", WDESCRI:=spac(T_DESCR), WOP:=0, MENULIST:={} 
  
-  IF ! nGCodUser == 0 .AND. ! nGCodUser == 999 
+  IF ! nGCodUser == 0 .AND. ! nGCodUser == 999 .AND. ! nGCodUser == 888 
      VPObsBox(.t.,16,25,"ATENCAO",{ PADC( "Desculpe " + Alltrim( Left( wUsuario, At( " ", wUsuario ) ) ) + ", mas voce" , 35 ),; 
                                     PADC( "nao esta autorizado a acessar este", 35 ),; 
                                     PADC( "modulo do sistema", 35 ) }) 
@@ -293,9 +293,11 @@ priv WSENHAG:="", WCOD:="*", WDESCRI:=spac(T_DESCR), WOP:=0, MENULIST:={}
                 PODER_ with cSimNao,; 
                 GRUPO_ With ZipChr("000") 
         /* Arquivo senhas para Administrador */ 
-        xFile:= SWSet( _SYS_DIRREPORT ) - "\SENHAS.000" 
+        xFile:= SWSet( _SYS_DIRREPORT ) + _PATH_SEPARATOR + "\senhas.000" 
         IF !File( xFile ) 
-           Copy File SENHAS.SYS To &xFile 
+           if File( 'senhas.sys' ) 
+              Copy File senhas.sys To &xFile 
+           endif
         ENDIF 
         IF BuscaNet(5,{|| dbappend(),!neterr()}) 
            Replace CODIGO with 999,; 
@@ -305,9 +307,11 @@ priv WSENHAG:="", WCOD:="*", WDESCRI:=spac(T_DESCR), WOP:=0, MENULIST:={}
                    PODER_ with cSimNao,; 
                    GRUPO_ With ZipChr("000") 
            /* Arquivo Senhas para Soft&Ware */ 
-           xFile:= SWSet( _SYS_DIRREPORT ) - "\SENHAS.999" 
+           xFile:= SWSet( _SYS_DIRREPORT ) + _PATH_SEPARATOR + "senhas.999" 
            IF !File( xFile ) 
-              Copy File SENHAS.SYS To &xFile 
+              if File( 'senhas.sys' )
+                 Copy File senhas.sys To &xFile 
+              endif
            ENDIF 
         ENDIF 
      ENDIF 
