@@ -93,11 +93,11 @@
 #define  _VPB_OPERACOES     "&DiretorioDeDados/.dbf" // "OPE", .F. )
  #define _COD_GARANTIA    34
 #define  _VPB_GARANTIA     "&DiretorioDeDados/.dbf" // "GAR", .F. )
- #define _COD_CONDICOES   35
-#define  _VPB_CONDICOES     "&DiretorioDeDados/.dbf" // "CND", .F. )
- #define _COD_DETALHE  36
+
+#define _COD_DETALHE  36
 #define  _VPB_DETALHE     "&DiretorioDeDados/.dbf" // "DET", .F. )
- #define _COD_DETNOTA   37
+
+#define _COD_DETNOTA   37
 #define  _VPB_DETNOTA     "&DiretorioDeDados/.dbf" // "D_N", .F. )
  #define _COD_MIDIA   38 
 #define  _VPB_MIDIA     "&DiretorioDeDados/.dbf" // "MID", .F. )
@@ -125,39 +125,33 @@
 #define  _VPB_REDAUX     "&DiretorioDeDados/.dbf" // "RDA", .F. )
  #define _COD_SETORES  50
 #define  _VPB_SETORES     "&DiretorioDeDados/.dbf" // "SET", .F. )
- #define _COD_CORES   51
-#define  _VPB_CORES     "&DiretorioDeDados/.dbf" // "COR", .F. )
- #define _COD_CLASSES   52
-#define  _VPB_CLASSES     "&DiretorioDeDados/.dbf" // "CLA", .F. )
- #define _COD_PCPESTO    53
+
+#define _COD_PCPESTO    53
 #define  _VPB_PCPESTO     "&DiretorioDeDados/.dbf" // "PCE", .F. )
  #define _COD_PCPMOVI   54
 #define  _VPB_PCPMOVI     "&DiretorioDeDados/.dbf" // "PCM", .F. )
  #define _COD_PCPRELA  55
 #define  _VPB_PCPRELA     "&DiretorioDeDados/.dbf" // "PCL", .F. )
- #define _COD_PDVEAN   56
-#define  _VPB_PDVEAN     "&DiretorioDeDados/.dbf" // "EAN", .F. )
- #define _COD_CTRLBANC   57
+
+#define _COD_CTRLBANC   57
 #define  _VPB_CTRLBANC     "&DiretorioDeDados/.dbf" // "CTB", .F. )
- #define _COD_SIMILAR   58 
+
+#define _COD_SIMILAR   58 
 #define  _VPB_SIMILAR     "&DiretorioDeDados/.dbf" // "SIM", .F. )
- #define _COD_TELA    59
+
+#define _COD_TELA    59
 #define  _VPB_TELA     "&DiretorioDeDados/.dbf" // "VPT", .F. )
- #define _COD_CAIXA   60
-#define  _VPB_CAIXA     "&DiretorioDeDados/.dbf" // "CX_", .F. )
- #define _COD_TABPRECO   61
-#define  _VPB_TABPRECO     "&DiretorioDeDados/.dbf" // "PRE", .F. )
- #define _COD_TABROTAS  62
+
+#define _COD_TABROTAS  62
 #define  _VPB_TABROTAS     "&DiretorioDeDados/.dbf" // "ROT", .F. )
- #define _COD_TABAUX   63
-#define  _VPB_TABAUX     "&DiretorioDeDados/.dbf" // "TAX", .F. )
- #define _COD_MOVIMENTO   64
+
+#define _COD_MOVIMENTO   64
 #define  _VPB_MOVIMENTO     "&DiretorioDeDados/.dbf" // "MOV", .F. )
- #define _COD_CAIXAAUX   65
+
+#define _COD_CAIXAAUX   65
 #define  _VPB_CAIXAAUX     "&DiretorioDeDados/.dbf" // "CXA", .F. )
- #define _COD_GRUPO   66
-#define  _VPB_GRUPO     "&DiretorioDeDados/.dbf" // "GR0", .F. )
- #define _COD_BLOPROG  67
+
+#define _COD_BLOPROG  67
 #define  _VPB_BLOPROG     "&DiretorioDeDados/.dbf" // "BLP", .F. )
  #define _COD_AGENCIA   68
 #define  _VPB_AGENCIA     "&DiretorioDeDados/.dbf" // "AGE", .F. )
@@ -165,9 +159,8 @@
 #define  _VPB_CONTA     "&DiretorioDeDados/.dbf" // "CON", .F. )
  #define _COD_HISTORICO   70
 #define  _VPB_HISTORICO     "&DiretorioDeDados/.dbf" // "His", .F. )
- #define _COD_ASSEMBLER  71
-#define  _VPB_ASSEMBLER     "&DiretorioDeDados/.dbf" // "Asm", .F. )
- #define _COD_NATOPERA  72
+
+#define _COD_NATOPERA  72
 #define  _VPB_NATOPERA     "&DiretorioDeDados/.dbf" // "CFO", .F. )
  #define _COD_ATIVIDADES  73
 #define  _VPB_ATIVIDADES     "&DiretorioDeDados/.dbf" // "Atv", .F. )
@@ -180,9 +173,8 @@
  
 #define _COD_CONFIG    78
 #define  _VPB_CONFIG     "&DiretorioDeDados/.dbf" // "Cf1", .F. )
- #define _COD_VENDEDOR   79
-#define  _VPB_VENDEDOR     "&DiretorioDeDados/.dbf" // "Ven", .F. )
- #define _COD_COMISSAO   80
+
+#define _COD_COMISSAO   80
 #define  _VPB_COMISSAO     "&DiretorioDeDados/.dbf" // "Com", .F. )
  #define _COD_COMISAUX  81
 #define  _VPB_COMISAUX     "&DiretorioDeDados/.dbf" // "Cm1", .F. )
@@ -192,9 +184,8 @@
 #define  _VPB_DESPESAS     "&DiretorioDeDados/.dbf" // "Des", .F. )
  #define _COD_FORNECEDOR  84
 #define  _VPB_FORNECEDOR     "&DiretorioDeDados/.dbf" // "For", .F. )
- #define _COD_MPRIMA     85
-#define  _VPB_MPRIMA     "&DiretorioDeDados/.dbf" // "MPr", .F. )
- #define _COD_PRODNF   86
+
+#define _COD_PRODNF   86
 #define  _VPB_PRODNF     "&DiretorioDeDados/.dbf" // "Pnf", .F. )
  #define _COD_PRECOXFORN   87
 #define  _VPB_PRECOXFORN     "&DiretorioDeDados/.dbf" // "PXF", .F. )
@@ -202,16 +193,11 @@
 #define  _VPB_PAGAR     "&DiretorioDeDados/.dbf" // "PAG", .F. )
  #define _COD_OBSERVACOES    89
 #define  _VPB_OBSERVACOES     "&DiretorioDeDados/.dbf" // "OBS", .F. )
- #define _COD_DUPAUX     90
-#define  _VPB_DUPAUX     "&DiretorioDeDados/.dbf" // "DPA", .F. )
  
  #define _COD_NFISCAL   91
 #define  _VPB_NFISCAL     "&DiretorioDeDados/.dbf" // "NF_", .F. )
  
- #define _COD_CUPOM   92
-#define  _VPB_CUPOM     "&DiretorioDeDados/.dbf" // "CUP", .F. )
- 
- #define _COD_CUPOMAUX   93
+#define _COD_CUPOMAUX   93
 #define  _VPB_CUPOMAUX     "&DiretorioDeDados/.dbf" // "CAU", .F. )
  
  #define _COD_CLASFISCAL   94
@@ -225,15 +211,9 @@
          
  #define _COD_OC_AUXILIA   97
 #define  _VPB_OC_AUXILIA     "&DiretorioDeDados/.dbf" // "OCA", .F. )
-         
- #define _COD_ESTOQUE   98
-#define  _VPB_ESTOQUE     "&DiretorioDeDados/.dbf" // "EST", .F. )
-         
+        
  #define _COD_FERIADOS  99 
-#define  _VPB_FERIADOS     "&DiretorioDeDados/.dbf" // "Fer", .F. )
-         
- #define _COD_BANCO    100
-#define  _VPB_BANCO     "&DiretorioDeDados/.dbf" // "Ban", .F. )
+#define  _VPB_FERIADOS     "&DiretorioDeDados/.dbf" // "Fer", .F. )        
          
  #define _COD_PEDIDO   101
 #define  _VPB_PEDIDO     "&DiretorioDeDados/.dbf" // "Ped", .F. )
